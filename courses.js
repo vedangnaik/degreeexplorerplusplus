@@ -23,16 +23,16 @@ export default {
     "name": "Foundations of Computer Science I",
     "prerequisites": null,
     "corequisites": null,
-    "exclusions": "CSC108H1, CSC148H1, CSC165H1",
+    "exclusions": [["CSC108H1"], ["CSC148H1"], ["CSC165H1"]],
     "campus": "St. George",
     "arts_and_science_breadth": "(5) The Physical and Mathematical Universes",
     "arts_and_science_distribution": "Science"
   },
   "CSC111H1": {
     "name": "Foundations of Computer Science II",
-    "prerequisites": "CSC110Y1 (70% or higher)",
+    "prerequisites": [["CSC110Y1"]],
     "corequisites": null,
-    "exclusions": "CSC108H1, CSC148H1, CSC165H1",
+    "exclusions": [["CSC108H1"], ["CSC148H1"], ["CSC165H1"]],
     "campus": "St. George",
     "arts_and_science_breadth": "(5) The Physical and Mathematical Universes",
     "arts_and_science_distribution": "Science"
@@ -41,7 +41,7 @@ export default {
     "name": "Introduction to Computer Science",
     "prerequisites": [["CSC108H1"]],
     "corequisites": null,
-    "exclusions": [["CSC111H1", "CSC207H1", "CSC148H5", "CSCA48H3"]],
+    "exclusions": [["CSC111H1"], ["CSC207H1"], ["CSC148H5"], ["CSCA48H3"]],
     "campus": "St. George",
     "arts_and_science_breadth": "(5) The Physical and Mathematical Universes",
     "arts_and_science_distribution": "Science"
@@ -50,7 +50,7 @@ export default {
     "name": "Mathematical Expression and Reasoning for Computer Science",
     "prerequisites": null,
     "corequisites": [["CSC108H1", "CSC120H1"]],
-    "exclusions": [["CSC111H1", "CSC236H1", "CSC240H1", "MAT102H5", "CSCA65H3"]],
+    "exclusions": [["CSC111H1"], ["CSC236H1"], ["CSC240H1"], ["MAT102H5"], ["CSCA65H3"]],
     "campus": "St. George",
     "arts_and_science_breadth": "(5) The Physical and Mathematical Universes",
     "arts_and_science_distribution": "Science"
@@ -102,7 +102,7 @@ export default {
   },
   "CSC236H1": {
     "name": "Introduction to the Theory of Computation",
-    "prerequisites": [["CSC148H1", "CSC165H1"], ["CSC111H1"]],
+    "prerequisites": [["CSC148H1", "CSC111H1"], ["CSC165H1", "CSC111H1"]],
     "corequisites": null,
     "exclusions": [["CSC240H1"]],
     "campus": "St. George",

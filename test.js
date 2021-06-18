@@ -37,7 +37,29 @@ class CourseSlot extends HTMLTableCellElement {
 
 
 function evaluate_schedule() {
-    console.log("Evaluating...");
+    // temp, get rid of this and move entire profile into separate class
+    const profile = ["CSC108H1", "CSC148H1", "CSC165H1", "CSC207H1", "CSC236H1", "CSC209H1", "CSC258H1", "CSC263H1"];
+    
+    let semesters = document.getElementById('scheduler').firstElementChild.children;
+    for (let course of profile) {
+        // let course = "CSC207H1";
+        const prereqs = courses[course]["prerequisites"];
+        let courseTile = document.getElementById(course);
+        let semester = Array.prototype.indexOf.call(semesters, courseTile.parentElement.parentElement);
+
+        const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
+        const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
+            const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
+            return ORCourseGroup.map(ORPrereq => {
+                return profile.includes(ORPrereq) && semester < Array.prototype.indexOf.call(
+                    semesters, 
+                    document.getElementById(ORPrereq).parentElement.parentElement
+                );
+            }).reduce(booleanORReducer);
+        }).reduce(booleanANDReducer);
+        
+        document.getElementById(course).style.backgroundColor = satisfied ? "green" : "red";
+    }
 }
 
 
