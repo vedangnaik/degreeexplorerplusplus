@@ -1,0 +1,28 @@
+/* * {
+    border: 1px dotted red;
+} */
+
+.courseTile {
+    width: 8.5vmax;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.courseSlot {
+    width: 8.5vmax;
+    height: 50px;
+    border: 1px solid red;
+}
+
+.courseName {
+    color: blue;
+}
+
+.courseDescription {
+    color: green;
+}
+
+#scheduler th {
+    width: 8.5vmax;
+    height: 55px;
+}
