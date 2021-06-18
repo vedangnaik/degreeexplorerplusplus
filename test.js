@@ -1,7 +1,6 @@
 import courses from "./courses.js"
 
-
-class CourseTile extends HTMLDivElement {
+class CourseTile extends HTMLDivElement {    
     constructor() {
         super();
         this.className = "courseTile";
@@ -14,7 +13,6 @@ class CourseTile extends HTMLDivElement {
         ev.dataTransfer.setData("text/plain", ev.target.id);
     }
 }
-
 
 class CourseSlot extends HTMLTableCellElement {
     constructor() {
@@ -38,32 +36,37 @@ class CourseSlot extends HTMLTableCellElement {
 }
 
 
+function evaluate_schedule() {
+    console.log("Evaluating...");
+}
+
+
 
 // main
 window.addEventListener('DOMContentLoaded', () => {
     customElements.define('course-slot', CourseSlot, {extends: 'td' });
     customElements.define('course-tile', CourseTile, {extends: 'div'});
+    document.getElementById("evaluate-schedule").onclick = evaluate_schedule;
 
-    // populate table with 5 semesters of classes
-    let table = document.getElementById('scheduler'); 
-    for (let row = 0; row < 4; row++) {
-        let tr = document.createElement('tr');
+    // // populate table with 5 semesters of classes
+    // let table = document.getElementById('scheduler'); 
+    // for (let row = 0; row < 5; row++) {
+    //     let tr = document.createElement('tr');
 
-        let th = document.createElement('th');
-        th.innerText = "Semester " + row;
-        tr.appendChild(th);
+    //     let th = document.createElement('th');
+    //     th.innerText = "Semester " + row;
+    //     tr.appendChild(th);
 
-        for (let col = 0; col < 8; col++) {
-            let cs = document.createElement('td', {is: "course-slot"});
-            if (row < 2) {
-                let ct = document.createElement('div', {is: "course-tile"});
-                ct.id = row + " " + col;
-                ct.innerText = ct.id;
-                cs.appendChild(ct);
-            }
-            tr.appendChild(cs);
-        }
+    //     for (let col = 0; col < 8; col++) {
+    //         let cs = document.createElement('td', {is: "course-slot"});
+    //         if (row < 2) {
+    //             let ct = document.createElement('div', {is: "course-tile"});
+    //             ct.id = "CSC165H1";
+    //             cs.appendChild(ct);
+    //         }
+    //         tr.appendChild(cs);
+    //     }
 
-        table.insertBefore(tr, table.firstChild);
-    }
+    //     table.insertBefore(tr, table.firstChild);
+    // }
 });
