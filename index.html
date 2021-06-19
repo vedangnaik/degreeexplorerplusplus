@@ -5,14 +5,26 @@
         <link rel="stylesheet" href="index.css">
     </head>
     
-    <body style="display: flex;">
-        <div id="scheduler" style="flex: 8;">
-            <table is="course-plan"></table>
-        </div>
-        <div id="toolbox" style="flex: 2;">
-            <table>
-                <tr><td is="course-slot"></td></tr>
-            </table>
-        </div>
+    <body style="margin: 1vmax;">
+        <header>
+            <h1 style="text-align: center;">Degree Explorer++</h1>
+        </header>
+        
+        <div style="display: flex;">
+            <div id="scheduler" style="flex: 8;">
+                <table is="course-plan"></table>
+            </div>
+
+            <div id="toolbox" style="flex: 2; display: flex; flex-direction: column;">
+                <div style="flex: auto; border: 1px solid black;">Toolbox Area</div>
+                <div style="display: flex;">
+                    <div is="course-slot" id="new-course-slot"></div>
+                    <div style="flex: auto; display: flex; flex-direction: column;">
+                        <input type="text" style="flex: 1;" id="course-search-id"/>
+                        <button style="flex: 1;" id="course-search-button">Add Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </body>
 </html>

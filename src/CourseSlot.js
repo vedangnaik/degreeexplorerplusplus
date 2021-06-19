@@ -1,17 +1,13 @@
 export function CreateCourseSlot() {
-    if (!customElements.get('course-slot')) {
-        customElements.define('course-slot', CourseSlot, {extends: 'td'});
-    }
-
-    let cs = document.createElement('td', {is: 'course-slot'});
+    let cs = document.createElement('div', {is: 'course-slot'});
     return cs;
 }
 
 
-class CourseSlot extends HTMLTableCellElement {
+class CourseSlot extends HTMLDivElement {
     static stylesheet = `
-        width: 8.6vmax; 
-        height: 10.1vmin;
+        width: 8.1vmax; 
+        height: 4.1vmax;
         border: 1px dotted red;
     `;
 
@@ -35,4 +31,4 @@ class CourseSlot extends HTMLTableCellElement {
     }
 }
 
-customElements.define('course-slot', CourseSlot, {extends: 'td'});
+customElements.define('course-slot', CourseSlot, {extends: 'div'});

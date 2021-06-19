@@ -44,15 +44,17 @@ class CoursePlan extends HTMLTableElement {
         tr.appendChild(th);
         // add 8 course slots
         for (let col = 0; col < 8; col++) {
+            let td = document.createElement('td');
             let cs = CreateCourseSlot();
-            tr.appendChild(cs);
+            td.appendChild(cs);
+            tr.appendChild(td);
         }
         // append row
         this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
     evaluate() {
-        let courses = this.tbody.getElementsByTagName('course-tile');
+        let courses = this.tbody.getElementsByTagName('course-slot');
         console.log(courses);
         
         // let semesters = document.getElementById('scheduler').firstElementChild.children;

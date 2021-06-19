@@ -7,8 +7,8 @@ export function CreateCourseTile(courseID, courseName, courseDescription, course
 
 class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
-        width: 8.5vmax;
-        height: 5vmin;
+        width: 8vmax;
+        height: 2vmax;
         border: 1px solid black;
     `;
     static courseNameStylesheet = `
@@ -46,7 +46,7 @@ class CourseTile extends HTMLDivElement {
         this.cd.innerText = courseDescription;
         switch(courseLength) {
             case 'Y':
-                this.style.height = "100px";
+                this.style.height = "4vmax";
                 break;
             case 'H':
                 break;            
