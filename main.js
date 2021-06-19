@@ -1,5 +1,5 @@
 import CourseData from "./resources/CourseData.js"
-import { CreateCourseSlot } from "./src/Course.js";
+import { CreateCourseSlot } from "./src/CourseSlot.js";
 
 
 class CourseSlotFactory {
@@ -62,9 +62,8 @@ function evaluate_schedule() {
 
 // main
 window.addEventListener('DOMContentLoaded', () => {
-    // customElements.define('course-slot', CourseSlot, {extends: 'td' });
-    // customElements.define('course-tile', CourseTile, {extends: 'div'});
     document.getElementById("evaluate-schedule").onclick = evaluate_schedule;
+    const allCourseIDs = Object.keys(CourseData);
 
     // populate table with 5 semesters of classes
     let tbody = document.getElementById('scheduler').firstElementChild; 
@@ -78,7 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
         for (let col = 0; col < 8; col++) {
             let cs = CourseSlotFactory.createCourseSlot();
             if (row < 2) {
-                let ct = CreateCourseSlot(row + " " + col, row, col);
+                let randomID = allCourseIDs[Math.floor(Math.random() * allCourseIDs.length)];
+                let ct = CreateCourseSlot(randomID, randomID, CourseData[randomID]["name"], randomID[6]);
                 cs.appendChild(ct);
             }
             tr.appendChild(cs);

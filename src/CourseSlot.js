@@ -1,12 +1,10 @@
-export function CreateCourseSlot(courseID, courseName, courseDescription) {
+export function CreateCourseSlot(courseID, courseName, courseDescription, courseLength) {
     if (!customElements.get('course-slot')) {
         customElements.define('course-slot', CourseSlot, {extends: 'div'});
     }
 
     let cs = document.createElement('div', {is: 'course-slot'});
-    cs.id = courseID;
-    cs.cn.innerText = courseName;
-    cs.cd.innerText = courseDescription;
+    cs.configure(courseID, courseName, courseDescription, courseLength);
     return cs;
 }
 
@@ -43,5 +41,20 @@ class CourseSlot extends HTMLDivElement {
     onDragStart(ev) {
         ev.dataTransfer.effectAllowed = "move";
         ev.dataTransfer.setData("text/plain", ev.target.id);
+    }
+
+    configure(courseID, courseName, courseDescription, courseLength) {
+        this.id = courseID;
+        this.cn.innerText = courseName;
+        this.cd.innerText = courseDescription;
+        switch(courseLength) {
+            case 'Y':
+                this.style.height = "100px";
+                break;
+            case 'H':
+                break;            
+            default:
+                console.log("Unsupported course length, defaulting to 'H'");
+        }
     }
 }
