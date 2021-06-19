@@ -1,8 +1,4 @@
 export function CreateCourseTile(courseID, courseName, courseDescription, courseLength) {
-    if (!customElements.get('course-tile')) {
-        customElements.define('course-tile', CourseTile, {extends: 'div'});
-    }
-
     let ct = document.createElement('div', {is: 'course-tile'});
     ct.configure(courseID, courseName, courseDescription, courseLength);
     return ct;
@@ -12,7 +8,7 @@ export function CreateCourseTile(courseID, courseName, courseDescription, course
 class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 8.5vmax;
-        height: 50px;
+        height: 5vmin;
         border: 1px solid black;
     `;
     static courseNameStylesheet = `
@@ -59,3 +55,6 @@ class CourseTile extends HTMLDivElement {
         }
     }
 }
+
+
+customElements.define('course-tile', CourseTile, {extends: 'div'});

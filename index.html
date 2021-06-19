@@ -5,7 +5,14 @@
         <link rel="stylesheet" href="index.css">
     </head>
     
-    <body>
-        
+    <body style="display: flex;">
+        <div id="scheduler" style="flex: 8;">
+            <table is="course-plan"></table>
+        </div>
+        <div id="toolbox" style="flex: 2;">
+            <table>
+                <tr><td is="course-slot"></td></tr>
+            </table>
+        </div>
     </body>
 </html>

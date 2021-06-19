@@ -1,14 +1,13 @@
 import { CreateCourseSlot } from "./CourseSlot.js";
+import { CreateCourseTile } from "./CourseTile.js";
+
 
 export function CreateCoursePlan(profileID) {
-    if (!customElements.get('course-plan')) {
-        customElements.define('course-plan', CoursePlan, {extends: 'table'});
-    }
-
     let p = document.createElement('table', {is: 'course-plan'});
     p.id = profileID;
     return p;
 }
+
 
 class CoursePlan extends HTMLTableElement {
     constructor() {
@@ -78,3 +77,6 @@ class CoursePlan extends HTMLTableElement {
         // }
     }
 }
+
+
+customElements.define('course-plan', CoursePlan, {extends: 'table'});

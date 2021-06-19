@@ -11,7 +11,7 @@ export function CreateCourseSlot() {
 class CourseSlot extends HTMLTableCellElement {
     static stylesheet = `
         width: 8.6vmax; 
-        height: 102px; 
+        height: 10.1vmin;
         border: 1px dotted red;
     `;
 
@@ -34,3 +34,5 @@ class CourseSlot extends HTMLTableCellElement {
         ev.target.appendChild(element);
     }
 }
+
+customElements.define('course-slot', CourseSlot, {extends: 'td'});

@@ -4,6 +4,10 @@
     border: 0;
 }
 
+table {
+    border-spacing: 0;
+}
+
 .courseTile {
     width: 8.5vmax;
     height: 50px;
