@@ -14,6 +14,7 @@ export class CourseTile extends HTMLDivElement {
     constructor(courseID, courseName, courseDescription, courseLength) {
         super();
         this.id = courseID;
+        this.customTagName = "course-tile"
         this.style = CourseTile.courseTileStylesheet;
         this.draggable = true;
         this.ondragstart = this.onDragStart.bind(this);

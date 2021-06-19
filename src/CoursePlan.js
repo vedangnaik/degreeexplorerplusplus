@@ -34,7 +34,7 @@ export class CoursePlan extends HTMLTableElement {
         let tr = document.createElement('tr');
         // header for row based on current number of semesters
         let th = document.createElement('th');
-        th.innerText = "Semester " + this.tbody.children.length;
+        th.innerText = "Semester " + (this.tbody.children.length + 1);
         tr.appendChild(th);
         // add 8 course slots
         for (let col = 0; col < 8; col++) {
@@ -48,29 +48,35 @@ export class CoursePlan extends HTMLTableElement {
     }
 
     evaluate() {
-        let courses = this.tbody.getElementsByTagName('course-slot');
-        console.log(courses);
+        let profile = {};
+        let semesters = this.getElementsByTagName('tr');
+        Array.prototype.filter.call(this.tbody.getElementsByTagName('div'), div => {
+                return div.customTagName === "course-tile"; // filter out only the course-tiles
+            }).map(div => {
+                profile[div.id] = semesters.length - Array.prototype.indexOf.call(semesters, div.parentElement.parentElement.parentElement) // the tr is the great-grandparent of the slot
+            }
+        );
         
         // let semesters = document.getElementById('scheduler').firstElementChild.children;
-        // for (let course of profile) {
-        //     // let course = "CSC207H1";
-        //     const prereqs = CourseData[course]["prerequisites"];
-        //     let courseTile = document.getElementById(course);
-        //     let semester = Array.prototype.indexOf.call(semesters, courseTile.parentElement.parentElement);
+        for (let course in profile) {
+            // let course = "CSC207H1";
+            const prereqs = CourseData[course]["prerequisites"];
+            let courseTile = document.getElementById(course);
+            let semester = Array.prototype.indexOf.call(semesters, courseTile.parentElement.parentElement);
 
-        //     const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
-        //     const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
-        //         const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
-        //         return ORCourseGroup.map(ORPrereq => {
-        //             return profile.includes(ORPrereq) && semester < Array.prototype.indexOf.call(
-        //                 semesters, 
-        //                 document.getElementById(ORPrereq).parentElement.parentElement
-        //             );
-        //         }).reduce(booleanORReducer);
-        //     }).reduce(booleanANDReducer);
+            const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
+            const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
+                const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
+                return ORCourseGroup.map(ORPrereq => {
+                    return profile.includes(ORPrereq) && semester < Array.prototype.indexOf.call(
+                        semesters, 
+                        document.getElementById(ORPrereq).parentElement.parentElement
+                    );
+                }).reduce(booleanORReducer);
+            }).reduce(booleanANDReducer);
             
-        //     document.getElementById(course).style.backgroundColor = satisfied ? "green" : "red";
-        // }
+            document.getElementById(course).style.backgroundColor = satisfied ? "green" : "red";
+        }
     }
 }
 

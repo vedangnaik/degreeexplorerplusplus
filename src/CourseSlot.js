@@ -7,6 +7,7 @@ export class CourseSlot extends HTMLDivElement {
 
     constructor() {
         super();
+        this.customTagName = "course-slot";
         this.style = CourseSlot.stylesheet;
         this.ondragover = this.onDragOver.bind(this);
         this.ondrop = this.onDrop.bind(this);
