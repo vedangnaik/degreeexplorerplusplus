@@ -1,35 +1,6 @@
-import CourseData from "./resources/CourseData.js"
+import CourseData from "./resources/CourseData.js";
+import { CreateCourseTile } from "./src/CourseTile.js";
 import { CreateCourseSlot } from "./src/CourseSlot.js";
-
-
-class CourseSlotFactory {
-    static stylesheet = `
-        width: 8.6vmax; 
-        height: 52px; 
-        border: 1px dotted red;
-    `;
-
-    static createCourseSlot() {
-        let cs = document.createElement('td');
-        cs.style = CourseSlotFactory.stylesheet;
-        
-        // create callbacks
-        cs.ondragover = function(ev) {
-            ev.preventDefault();
-            ev.dataTransfer.dropEffect = "move";
-        };
-        cs.ondrop = function(ev) {
-            ev.preventDefault();
-            const id = ev.dataTransfer.getData("text/plain");
-            const element = document.getElementById(id);
-            ev.target.appendChild(element);
-        }
-
-        return cs;
-    }
-}
-
-
 
 
 function evaluate_schedule() {
@@ -75,10 +46,10 @@ window.addEventListener('DOMContentLoaded', () => {
         tr.appendChild(th);
 
         for (let col = 0; col < 8; col++) {
-            let cs = CourseSlotFactory.createCourseSlot();
+            let cs = CreateCourseSlot();
             if (row < 2) {
                 let randomID = allCourseIDs[Math.floor(Math.random() * allCourseIDs.length)];
-                let ct = CreateCourseSlot(randomID, randomID, CourseData[randomID]["name"], randomID[6]);
+                let ct = CreateCourseTile(randomID, randomID, CourseData[randomID]["name"], randomID[6]);
                 cs.appendChild(ct);
             }
             tr.appendChild(cs);
