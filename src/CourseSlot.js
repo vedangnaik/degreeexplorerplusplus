@@ -1,10 +1,4 @@
-export function CreateCourseSlot() {
-    let cs = document.createElement('div', {is: 'course-slot'});
-    return cs;
-}
-
-
-class CourseSlot extends HTMLDivElement {
+export class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         width: 8.1vmax; 
         height: 4.1vmax;

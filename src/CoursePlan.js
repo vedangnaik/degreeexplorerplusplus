@@ -1,17 +1,11 @@
-import { CreateCourseSlot } from "./CourseSlot.js";
-import { CreateCourseTile } from "./CourseTile.js";
+import { CourseSlot } from "./CourseSlot.js";
+import { CourseTile } from "./CourseTile.js";
 
 
-export function CreateCoursePlan(profileID) {
-    let p = document.createElement('table', {is: 'course-plan'});
-    p.id = profileID;
-    return p;
-}
-
-
-class CoursePlan extends HTMLTableElement {
-    constructor() {
+export class CoursePlan extends HTMLTableElement {
+    constructor(profileID) {
         super();
+        this.id = profileID;
         // create table head to store add semester button
         let thead = document.createElement('thead');
         this.appendChild(thead);
@@ -45,7 +39,7 @@ class CoursePlan extends HTMLTableElement {
         // add 8 course slots
         for (let col = 0; col < 8; col++) {
             let td = document.createElement('td');
-            let cs = CreateCourseSlot();
+            let cs = new CourseSlot();
             td.appendChild(cs);
             tr.appendChild(td);
         }
