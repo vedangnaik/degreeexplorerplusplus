@@ -1,6 +1,6 @@
-import CourseData from "./resources/CourseData.js";
 import { CoursePlan } from "./src/CoursePlan.js";
 import { CourseTile } from "./src/CourseTile.js";
+import CourseData from "./resources/CourseData.js";
 
 
 function searchCourse() {

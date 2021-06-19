@@ -1,3 +1,4 @@
+import CourseData from "../resources/CourseData.js";
 import { CourseSlot } from "./CourseSlot.js";
 import { CourseTile } from "./CourseTile.js";
 
@@ -49,33 +50,30 @@ export class CoursePlan extends HTMLTableElement {
 
     evaluate() {
         let profile = {};
-        let semesters = this.getElementsByTagName('tr');
+        const semesters = this.getElementsByTagName('tr');
+        // don't ask
         Array.prototype.filter.call(this.tbody.getElementsByTagName('div'), div => {
                 return div.customTagName === "course-tile"; // filter out only the course-tiles
             }).map(div => {
-                profile[div.id] = semesters.length - Array.prototype.indexOf.call(semesters, div.parentElement.parentElement.parentElement) // the tr is the great-grandparent of the slot
+                profile[div.id] = Array.prototype.indexOf.call(semesters, div.closest('tr')) // the tr is the great-grandparent of the slot
             }
         );
-        
-        // let semesters = document.getElementById('scheduler').firstElementChild.children;
-        for (let course in profile) {
-            // let course = "CSC207H1";
-            const prereqs = CourseData[course]["prerequisites"];
-            let courseTile = document.getElementById(course);
-            let semester = Array.prototype.indexOf.call(semesters, courseTile.parentElement.parentElement);
+
+        console.log(profile);
+
+        for (let id in profile) {
+            const prereqs = CourseData[id]["prerequisites"];
+            let semester = profile[id];
 
             const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
             const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
                 const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
                 return ORCourseGroup.map(ORPrereq => {
-                    return profile.includes(ORPrereq) && semester < Array.prototype.indexOf.call(
-                        semesters, 
-                        document.getElementById(ORPrereq).parentElement.parentElement
-                    );
+                    return profile[ORPrereq] && profile[id] < Array.prototype.indexOf.call(semesters, document.getElementById(ORPrereq).closest('tr'));
                 }).reduce(booleanORReducer);
             }).reduce(booleanANDReducer);
             
-            document.getElementById(course).style.backgroundColor = satisfied ? "green" : "red";
+            document.getElementById(id).style.backgroundColor = satisfied ? "green" : "red";
         }
     }
 }
