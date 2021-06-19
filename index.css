@@ -1,6 +1,8 @@
-/* * {
-    border: 1px dotted red;
-} */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 .courseTile {
     width: 8.5vmax;
