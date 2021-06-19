@@ -1,7 +1,7 @@
 export class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         width: 8.1vmax; 
-        height: 4.1vmax;
+        height: 2.1vmax;
         border: 1px dotted red;
     `;
 
@@ -22,7 +22,10 @@ export class CourseSlot extends HTMLDivElement {
         ev.preventDefault();
         const id = ev.dataTransfer.getData("text/plain");
         const element = document.getElementById(id);
-        ev.target.appendChild(element);
+        // If this slot already has a course tile in it then cancel the append.
+        if (ev.currentTarget.children.length === 0) {
+            ev.currentTarget.appendChild(element);
+        }
     }
 }
 
