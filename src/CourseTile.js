@@ -32,9 +32,11 @@ export class CourseTile extends HTMLDivElement {
         this.appendChild(this.cd);
 
         // change length is required
+        this.courseLength = 'H';
         switch(courseLength) {
             case 'Y':
                 this.style.height = "4vmax";
+                this.courseLength = 'Y';
                 break;
             case 'H':
                 break;            

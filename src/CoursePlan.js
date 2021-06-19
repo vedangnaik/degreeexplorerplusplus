@@ -40,8 +40,10 @@ export class CoursePlan extends HTMLTableElement {
         // add 8 course slots
         for (let col = 0; col < 8; col++) {
             let td = document.createElement('td');
-            let cs = new CourseSlot();
-            td.appendChild(cs);
+            let cs1 = new CourseSlot();
+            let cs2 = new CourseSlot();
+            td.appendChild(cs1);
+            td.appendChild(cs2);
             tr.appendChild(td);
         }
         // append row
@@ -77,6 +79,34 @@ export class CoursePlan extends HTMLTableElement {
         }
     }
 }
+
+
+// class Semester extends HTMLTableRowElement {
+//     constructor() {
+//         super();
+//         // create new rows
+//         let tr1 = document.createElement('tr');
+//         let tr2 = document.createElement('tr');
+        
+//         // header for row based on current number of semesters
+//         let th = document.createElement('th');
+//         th.innerText = "Semester " + (this.tbody.children.length + 1);
+//         th.rowSpan = 2;
+//         t1.appendChild(th);
+
+//         // add 8 course slots to each row
+//         for (let col = 0; col < 8; col++) {
+//             let td = document.createElement('td');
+//             let cs = new CourseSlot();
+//             td.appendChild(cs);
+
+//             tr1.appendChild(td);
+//             tr2.appendChild(td.cloneNode(true));
+//         }
+//         // append row
+//         this.tbody.insertBefore(tr, this.tbody.firstChild);
+//     }
+// }
 
 
 customElements.define('course-plan', CoursePlan, {extends: 'table'});
