@@ -26,7 +26,7 @@ class CourseTile extends HTMLDivElement {
         super();
         this.style = CourseTile.courseTileStylesheet;
         this.draggable = true;
-        this.ondragstart = this.onDragStart;
+        this.ondragstart = this.onDragStart.bind(this);
 
         // course name header
         this.cn = document.createElement('h5');

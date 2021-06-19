@@ -18,8 +18,8 @@ class CourseSlot extends HTMLTableCellElement {
     constructor() {
         super();
         this.style = CourseSlot.stylesheet;
-        this.ondragover = this.onDragOver;
-        this.ondrop = this.onDrop;
+        this.ondragover = this.onDragOver.bind(this);
+        this.ondrop = this.onDrop.bind(this);
     }
 
     onDragOver(ev) {
