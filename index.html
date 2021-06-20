@@ -12,13 +12,14 @@
         
         <div style="display: flex;">
             <div id="scheduler" style="flex: 8;">
-                <table is="course-plan"></table>
+                <table is="depp-profile"></table>
             </div>
 
-            <div id="toolbox" style="flex: 2; display: flex; flex-direction: column;">
-                <div style="flex: auto; border: 1px solid black;">Toolbox Area</div>
+            <div style="flex: 2; display: flex; flex-direction: column;">
+                <div is="depp-scratchpad" style="flex: auto; border: 1px solid black; position: relative;" id="toolbox"></div>
+
                 <div style="display: flex;">
-                    <div is="course-slot" id="new-course-slot"></div>
+                    <div is="depp-course-slot" id="new-course-slot"></div>
                     <div style="flex: auto; display: flex; flex-direction: column;">
                         <input type="text" style="flex: 1;" id="course-search-id"/>
                         <button style="flex: 1;" id="course-search-button">Add Course</button>

@@ -7,3 +7,7 @@
 table {
     border-spacing: 0;
 }
+
+#toolbox > div {
+    position: absolute;
+}

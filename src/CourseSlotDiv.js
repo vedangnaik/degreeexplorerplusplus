@@ -1,4 +1,4 @@
-export class CourseSlotContainer extends HTMLDivElement {
+export class CourseSlotDiv extends HTMLDivElement {
     static stylesheet = `
         width: 8vmax;
         height: 4vmax;
@@ -10,7 +10,7 @@ export class CourseSlotContainer extends HTMLDivElement {
     constructor() {
         super();
         // Set up outer container
-        this.style = CourseSlotContainer.stylesheet;
+        this.style = CourseSlotDiv.stylesheet;
         // set up inner slots
         this.upperSlot = new CourseSlot();
         this.lowerSlot = new CourseSlot();
@@ -56,5 +56,5 @@ class CourseSlot extends HTMLDivElement {
 }
 
 
-customElements.define('course-slot', CourseSlot, {extends: 'div'});
-customElements.define('course-slot-container', CourseSlotContainer, {extends: 'div'});
+customElements.define('depp-course-slot', CourseSlot, {extends: 'div'});
+customElements.define('depp-course-slot-div', CourseSlotDiv, {extends: 'div'});

@@ -52,4 +52,4 @@ export class CourseTile extends HTMLDivElement {
 }
 
 
-customElements.define('course-tile', CourseTile, {extends: 'div'});
+customElements.define('depp-course-tile', CourseTile, {extends: 'div'});

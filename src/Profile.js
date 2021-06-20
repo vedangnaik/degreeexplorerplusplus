@@ -1,26 +1,26 @@
 import CourseData from "../resources/CourseData.js";
-import { CourseSlotContainer } from "./CourseSlot.js";
-import { CourseTile } from "./CourseTile.js";
+import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 
-export class CoursePlan extends HTMLTableElement {
+export class Profile extends HTMLTableElement {
     constructor(profileID) {
         super();
         this.id = profileID;
         this.style = "border-collapse: collapse;"
-        // create table head to store add semester button
-        let thead = document.createElement('thead');
-        this.appendChild(thead);
+
+        // create table footer to store add semester button
+        let tfoot = document.createElement('tfoot');
+        this.appendChild(tfoot);
         // create add semester button and rebind callback
         let addSemesterButton = document.createElement('button');
         addSemesterButton.innerText = "Add Semester";
         addSemesterButton.onclick = this.addSemester.bind(this);
-        thead.appendChild(addSemesterButton);
+        tfoot.appendChild(addSemesterButton);
         // create evaluate button and rebind callback
         let evaluateButton = document.createElement('button');
         evaluateButton.innerText = "Evaluate Plan";
-        evaluateButton.onclick = this.evaluate.bind(this);
-        thead.appendChild(evaluateButton);
+        evaluateButton.onclick = this.evaluateProfile.bind(this);
+        tfoot.appendChild(evaluateButton);
 
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
@@ -41,7 +41,7 @@ export class CoursePlan extends HTMLTableElement {
         // add 8 course slot containers
         for (let col = 0; col < 8; col++) {
             let td = document.createElement('td');
-            let csc = new CourseSlotContainer();
+            let csc = new CourseSlotDiv();
             td.appendChild(csc);
             tr.appendChild(td);
         }
@@ -49,8 +49,8 @@ export class CoursePlan extends HTMLTableElement {
         this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
-    evaluate() {
-        let profile = {}; // TODO: Maybe make this a Map
+    evaluateProfile() {
+        let plan = {}; // TODO: Maybe make this a Map
         const semesters = Array.prototype.slice.call(this.getElementsByTagName('tr'));
         const divs = Array.prototype.slice.call(this.tbody.getElementsByTagName('div'));
         // Transform the list of divs into a profile representation
@@ -67,18 +67,18 @@ export class CoursePlan extends HTMLTableElement {
             } else {
                 semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
             }
-            profile[courseTile.id] = semesterNum;
+            plan[courseTile.id] = semesterNum;
         });
 
         // Evaluate the courses
-        for (let id in profile) {
+        for (let id in plan) {
             const prereqs = CourseData[id]["prerequisites"];
 
             const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
             const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
                 const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
                 return ORCourseGroup.map(ORPrereq => {
-                    return profile[ORPrereq] && profile[id] < profile[ORPrereq];
+                    return plan[ORPrereq] && plan[id] < plan[ORPrereq];
                 }).reduce(booleanORReducer);
             }).reduce(booleanANDReducer);
             
@@ -88,32 +88,4 @@ export class CoursePlan extends HTMLTableElement {
 }
 
 
-// class Semester extends HTMLTableRowElement {
-//     constructor() {
-//         super();
-//         // create new rows
-//         let tr1 = document.createElement('tr');
-//         let tr2 = document.createElement('tr');
-        
-//         // header for row based on current number of semesters
-//         let th = document.createElement('th');
-//         th.innerText = "Semester " + (this.tbody.children.length + 1);
-//         th.rowSpan = 2;
-//         t1.appendChild(th);
-
-//         // add 8 course slots to each row
-//         for (let col = 0; col < 8; col++) {
-//             let td = document.createElement('td');
-//             let cs = new CourseSlot();
-//             td.appendChild(cs);
-
-//             tr1.appendChild(td);
-//             tr2.appendChild(td.cloneNode(true));
-//         }
-//         // append row
-//         this.tbody.insertBefore(tr, this.tbody.firstChild);
-//     }
-// }
-
-
-customElements.define('course-plan', CoursePlan, {extends: 'table'});
+customElements.define('depp-profile', Profile, {extends: 'table'});
