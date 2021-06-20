@@ -1,5 +1,5 @@
 import CourseData from "../resources/CourseData.js";
-import { CourseSlot } from "./CourseSlot.js";
+import { CourseSlotContainer } from "./CourseSlot.js";
 import { CourseTile } from "./CourseTile.js";
 
 
@@ -7,6 +7,7 @@ export class CoursePlan extends HTMLTableElement {
     constructor(profileID) {
         super();
         this.id = profileID;
+        this.style = "border-collapse: collapse;"
         // create table head to store add semester button
         let thead = document.createElement('thead');
         this.appendChild(thead);
@@ -37,16 +38,11 @@ export class CoursePlan extends HTMLTableElement {
         let th = document.createElement('th');
         th.innerText = "Semester " + (this.tbody.children.length + 1);
         tr.appendChild(th);
-        // add 8 course slots
+        // add 8 course slot containers
         for (let col = 0; col < 8; col++) {
             let td = document.createElement('td');
-            let d = document.createElement('div');
-            d.style = "display: flex; height: 4.1vmax; flex-direction: column;"
-            let cs1 = new CourseSlot();
-            let cs2 = new CourseSlot();
-            d.appendChild(cs1);
-            d.appendChild(cs2);
-            td.appendChild(d);
+            let csc = new CourseSlotContainer();
+            td.appendChild(csc);
             tr.appendChild(td);
         }
         // append row
@@ -54,27 +50,35 @@ export class CoursePlan extends HTMLTableElement {
     }
 
     evaluate() {
-        let profile = {};
-        const semesters = this.getElementsByTagName('tr');
-        // don't ask
-        Array.prototype.filter.call(this.tbody.getElementsByTagName('div'), div => {
-                return div.customTagName === "course-tile"; // filter out only the course-tiles
-            }).map(div => {
-                profile[div.id] = Array.prototype.indexOf.call(semesters, div.closest('tr')) // the tr is the great-grandparent of the slot
+        let profile = {}; // TODO: Maybe make this a Map
+        const semesters = Array.prototype.slice.call(this.getElementsByTagName('tr'));
+        const divs = Array.prototype.slice.call(this.tbody.getElementsByTagName('div'));
+        // Transform the list of divs into a profile representation
+        // First, filter out only the course-tiles 
+        divs.filter(div => {
+            return div.customTagName === "course-tile";
+        // Then, assign a semester number to each.
+        }).forEach(courseTile => {
+            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number if twice the row number
+            // If the course is year-long, then it will be counted as the lower semester
+            if (courseTile.courseLength === 'Y') {
+                semesterNum += 1;
+            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that tot he base.
+            } else {
+                semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
             }
-        );
+            profile[courseTile.id] = semesterNum;
+        });
 
-        console.log(profile);
-
+        // Evaluate the courses
         for (let id in profile) {
             const prereqs = CourseData[id]["prerequisites"];
-            let semester = profile[id];
 
             const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
             const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
                 const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
                 return ORCourseGroup.map(ORPrereq => {
-                    return profile[ORPrereq] && profile[id] < Array.prototype.indexOf.call(semesters, document.getElementById(ORPrereq).closest('tr'));
+                    return profile[ORPrereq] && profile[id] < profile[ORPrereq];
                 }).reduce(booleanORReducer);
             }).reduce(booleanANDReducer);
             
