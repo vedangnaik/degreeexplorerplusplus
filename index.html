@@ -5,26 +5,41 @@
         <link rel="stylesheet" href="index.css">
     </head>
     
-    <body style="margin: 1vmax;">
+    <body style="margin: 1vw;">
         <header>
             <h1 style="text-align: center;">Degree Explorer++</h1>
         </header>
         
-        <div style="display: flex;">
-            <div id="scheduler" style="flex: 8;">
-                <table is="depp-profile"></table>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="width: 81vw;">
+                <header><h3>Scheduler</h3></header>
+                <table is="depp-scheduler"></table>
+                <div style="display: flex; justify-content: space-between;">
+                    <button>Add Semester</button>
+                    <div style="display: flex;">
+                        <button>Add Course/Program</button>
+                        <input type="text"/>
+                        <div is="depp-course-slot"></div>
+                        <button>Save Profile</button>
+                        <button>Load Profile</button>
+                    </div>
+                    <button>Evaluate Profile</button>
+                </div>
             </div>
 
-            <div style="flex: 2; display: flex; flex-direction: column;">
+            <div style="width: 16vw;">
+                <header>
+                    <h3>Scratchpad</h3>
+                </header>
                 <div is="depp-scratchpad" style="flex: auto; border: 1px solid black; position: relative;" id="toolbox"></div>
 
-                <div style="display: flex;">
+                <!-- <div style="display: flex;">
                     <div is="depp-course-slot" id="new-course-slot"></div>
                     <div style="flex: auto; display: flex; flex-direction: column;">
                         <input type="text" style="flex: 1;" id="course-search-id"/>
                         <button style="flex: 1;" id="course-search-button">Add Course</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>        
     </body>

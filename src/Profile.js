@@ -2,25 +2,11 @@ import CourseData from "../resources/CourseData.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 
-export class Profile extends HTMLTableElement {
+export class Scheduler extends HTMLTableElement {
     constructor(profileID) {
         super();
         this.id = profileID;
         this.style = "border-collapse: collapse;"
-
-        // create table footer to store add semester button
-        let tfoot = document.createElement('tfoot');
-        this.appendChild(tfoot);
-        // create add semester button and rebind callback
-        let addSemesterButton = document.createElement('button');
-        addSemesterButton.innerText = "Add Semester";
-        addSemesterButton.onclick = this.addSemester.bind(this);
-        tfoot.appendChild(addSemesterButton);
-        // create evaluate button and rebind callback
-        let evaluateButton = document.createElement('button');
-        evaluateButton.innerText = "Evaluate Plan";
-        evaluateButton.onclick = this.evaluateProfile.bind(this);
-        tfoot.appendChild(evaluateButton);
 
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
@@ -36,6 +22,8 @@ export class Profile extends HTMLTableElement {
         let tr = document.createElement('tr');
         // header for row based on current number of semesters
         let th = document.createElement('th');
+        th.style.width = "100%";
+        th.style.border = "1px solid black";
         th.innerText = "Semester " + (this.tbody.children.length + 1);
         tr.appendChild(th);
         // add 8 course slot containers
@@ -88,4 +76,4 @@ export class Profile extends HTMLTableElement {
 }
 
 
-customElements.define('depp-profile', Profile, {extends: 'table'});
+customElements.define('depp-scheduler', Scheduler, {extends: 'table'});
