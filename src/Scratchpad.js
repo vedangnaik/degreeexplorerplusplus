@@ -20,11 +20,11 @@ export class Scratchpad extends HTMLDivElement {
         // This is for a corner case where you drag the course tile onto itself
         // The offsets in the dragevent then become relative to itself, so we need to make the coords relative to the scratchpad
         // This involves adding the actual top and left coordinates of the tile to the reported offset coords
-        let targetIsDescendant = tileBeingDragged.contains(ev.target);
-        let tileLocalLeftCoord = tileBeingDragged.getBoundingClientRect().left - this.getBoundingClientRect().left;
-        let tileLocalTopCoord = tileBeingDragged.getBoundingClientRect().top - this.getBoundingClientRect().top;
-        let newX = ev.offsetX + (targetIsDescendant ? tileLocalLeftCoord : 0);
-        let newY = ev.offsetY + (targetIsDescendant ? tileLocalTopCoord : 0);
+        let targetIsNotScratchpad = ev.target !== this;
+        let tileLocalLeftCoord = ev.target.getBoundingClientRect().left - this.getBoundingClientRect().left;
+        let tileLocalTopCoord = ev.target.getBoundingClientRect().top - this.getBoundingClientRect().top;
+        let newX = ev.offsetX + (targetIsNotScratchpad ? tileLocalLeftCoord : 0);
+        let newY = ev.offsetY + (targetIsNotScratchpad ? tileLocalTopCoord : 0);
         // Now we can append the child to the scratchpad, which will reset its top and left to 0. Then we can set the top and left explicitly
         ev.currentTarget.appendChild(tileBeingDragged);
         // To do so, we need to subtract the coords the pointer started at inside the tile, otherwise the tile
