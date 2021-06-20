@@ -47,7 +47,11 @@ export class CourseTile extends HTMLDivElement {
 
     onDragStart(ev) {
         ev.dataTransfer.effectAllowed = "move";
-        ev.dataTransfer.setData("text/plain", ev.target.id);
+        ev.dataTransfer.setData("id", ev.target.id);
+        // for anyone who needs the starting coords
+        // mainly for the scratchpad tho
+        ev.dataTransfer.setData("dragstartx", ev.offsetX);
+        ev.dataTransfer.setData("dragstarty", ev.offsetY);
     }
 }
 

@@ -12,11 +12,14 @@ export class Scratchpad extends HTMLDivElement {
 
     onDrop(ev) {
         ev.preventDefault();
-        const id = ev.dataTransfer.getData("text/plain");
+        const id = ev.dataTransfer.getData("id");
+        const dragStartX = ev.dataTransfer.getData("dragstartx");
+        const dragStartY = ev.dataTransfer.getData("dragstarty");
         const element = document.getElementById(id);
         ev.currentTarget.appendChild(element);
-        element.style.left = ev.offsetX + "px";
-        element.style.top = ev.offsetY + "px";
+        element.style.left = Math.min(Math.max(ev.offsetX - dragStartX, 0), this.offsetWidth - element.offsetWidth) + "px";
+        element.style.top  = Math.min(Math.max(ev.offsetY - dragStartY, 0), this.offsetHeight - element.offsetHeight) + "px";
+        console.log(this.offsetWidth, this.offsetHeight);
     }
 }
 
