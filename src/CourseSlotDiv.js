@@ -13,7 +13,9 @@ export class CourseSlotDiv extends HTMLDivElement {
         this.style = CourseSlotDiv.stylesheet;
         // set up inner slots
         this.upperSlot = new CourseSlot();
+        this.upperSlot.style.borderBottom = "1px dotted red;";
         this.lowerSlot = new CourseSlot();
+        this.lowerSlot.style.borderTop = "1px dotted red";
         this.appendChild(this.upperSlot);
         this.appendChild(this.lowerSlot);
     }
@@ -29,7 +31,6 @@ export class CourseSlotDiv extends HTMLDivElement {
 class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         flex: 1;
-        border: 1px dotted red;
     `;
 
     constructor() {

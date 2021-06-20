@@ -1,5 +1,7 @@
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Scheduler } from "./Scheduler.js";
+import { CourseTile } from "./CourseTile.js";
+import CourseData from "../resources/CourseData.js";
 
 export class Profile extends HTMLDivElement {
     constructor() {
@@ -21,18 +23,20 @@ export class Profile extends HTMLDivElement {
                 // controls div - contains all course and program search stuff
                 let controlsDiv = document.createElement('div');
                 controlsDiv.style = "display: flex; flex-direction: column; height: 100%;";
-                    let searchInput = document.createElement('input');
-                    searchInput.type = "text";
-                    searchInput.style = "flex: 1;"
+                    this.searchInput = document.createElement('input');
+                    this.searchInput.type = "text";
+                    this.searchInput.style = "flex: 1;"
                     let searchButton = document.createElement('button');
                     searchButton.innerText = "Search";
-                    searchButton.style = "flex: 1;"
-                controlsDiv.append(searchInput);
+                    searchButton.style = "flex: 1;";
+                    searchButton.onclick = this.searchCourse.bind(this);
+                controlsDiv.append(this.searchInput);
                 controlsDiv.append(searchButton);
                 // course slot
-                let cs = new CourseSlotDiv();
+                this.cs = new CourseSlotDiv();
+                this.cs.firstElementChild.style = ""; // hide one of the slots by making it width 0; TODO fix this, kinda hacky
             addCoursesAndProgramsDiv.appendChild(controlsDiv);
-            addCoursesAndProgramsDiv.appendChild(cs);
+            addCoursesAndProgramsDiv.appendChild(this.cs);
 
             // evalute profile button
             let evaluateButton = document.createElement('button');
@@ -41,12 +45,24 @@ export class Profile extends HTMLDivElement {
         toolbar.appendChild(addSemesterButton);
         toolbar.appendChild(addCoursesAndProgramsDiv);
         toolbar.appendChild(evaluateButton);
+        // program manager - TODO
         // this.programManager = new programManager(); 
-        // TODO
 
         this.appendChild(this.scheduler);
         this.appendChild(toolbar);
-        // this.appendChild(programManager);
+        // this.appendChild(programManager); TODO
+    }
+
+    searchCourse() {
+        const id = this.searchInput.value;
+        if (CourseData[id]) {
+            let ct = new CourseTile(id, id, "", id[6]);
+            let t = this.cs.childNodes[1];
+            if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
+            t.appendChild(ct);
+        } else {
+            console.log(`course '${id}' not found`);
+        }
     }
 }
 
