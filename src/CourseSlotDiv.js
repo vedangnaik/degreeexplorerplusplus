@@ -47,10 +47,10 @@ class CourseSlot extends HTMLDivElement {
     onDrop(ev) {
         ev.preventDefault();
         const id = ev.dataTransfer.getData("id");
-        const element = document.getElementById(id);
+        const tileBeingDragged = document.getElementById(id);
         // If this slot already has a course tile in it then cancel the append.
         if (ev.currentTarget.children.length === 0) {
-            ev.currentTarget.appendChild(element);
+            ev.currentTarget.appendChild(tileBeingDragged);
         }
     }
 }

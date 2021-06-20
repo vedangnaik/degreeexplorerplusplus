@@ -12,14 +12,30 @@ export class Scratchpad extends HTMLDivElement {
 
     onDrop(ev) {
         ev.preventDefault();
+        // retrive the id and start x and y coords from the dragevent object
         const id = ev.dataTransfer.getData("id");
         const dragStartX = ev.dataTransfer.getData("dragstartx");
         const dragStartY = ev.dataTransfer.getData("dragstarty");
-        const element = document.getElementById(id);
-        ev.currentTarget.appendChild(element);
-        element.style.left = Math.min(Math.max(ev.offsetX - dragStartX, 0), this.offsetWidth - element.offsetWidth) + "px";
-        element.style.top  = Math.min(Math.max(ev.offsetY - dragStartY, 0), this.offsetHeight - element.offsetHeight) + "px";
-        console.log(this.offsetWidth, this.offsetHeight);
+        const tileBeingDragged = document.getElementById(id);
+        // This is for a corner case where you drag the course tile onto itself
+        // The offsets in the dragevent then become relative to itself, so we need to make the coords relative to the scratchpad
+        // This involves adding the actual top and left coordinates of the tile to the reported offset coords
+        let targetIsDescendant = tileBeingDragged.contains(ev.target);
+        let tileLocalLeftCoord = tileBeingDragged.getBoundingClientRect().left - this.getBoundingClientRect().left;
+        let tileLocalTopCoord = tileBeingDragged.getBoundingClientRect().top - this.getBoundingClientRect().top;
+        let newX = ev.offsetX + (targetIsDescendant ? tileLocalLeftCoord : 0);
+        let newY = ev.offsetY + (targetIsDescendant ? tileLocalTopCoord : 0);
+        // Now we can append the child to the scratchpad, which will reset its top and left to 0. Then we can set the top and left explicitly
+        ev.currentTarget.appendChild(tileBeingDragged);
+        // To do so, we need to subtract the coords the pointer started at inside the tile, otherwise the tile
+        // will jump to where the pointer is and not to where the corner looks like it should go.
+        // We also need to ensure that the box itself doesn't stick outside the scratchpad even if the cursor is still inside
+        // For this, we need a clamp function
+        const clamp = (x, lower, upper) => Math.min(Math.max(x, lower), upper);
+        // The lower bound is zero, to prevent it from exiting the top and left.
+        // The upper bound is the scratchpad's width minus the tile's width and same for the height, to prevent it exiting the bottom and right. 
+        tileBeingDragged.style.left = clamp(newX - dragStartX, 0, ev.currentTarget.offsetWidth - tileBeingDragged.offsetWidth) + "px";
+        tileBeingDragged.style.top  = clamp(newY - dragStartY, 0, ev.currentTarget.offsetHeight - tileBeingDragged.offsetHeight) + "px";
     }
 }
 
