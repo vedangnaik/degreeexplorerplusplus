@@ -3,6 +3,7 @@ export class CourseTile extends HTMLDivElement {
         width: 8vmax;
         height: 2vmax;
         border: 1px solid black;
+        z-index: 1;
     `;
     static courseNameStylesheet = `
         color: blue;
