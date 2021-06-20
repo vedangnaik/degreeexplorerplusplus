@@ -1,7 +1,7 @@
 export class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         width: 8vmax; 
-        height: 2vmax;
+        flex: 1;
         border: 1px dotted red;
     `;
 
@@ -25,15 +25,15 @@ export class CourseSlot extends HTMLDivElement {
 
         // If this slot already has a course tile in it then cancel the append.
         if (ev.currentTarget.children.length === 0) {
-            if (element.courseLength === 'H') {
-                ev.currentTarget.appendChild(element);
-            // If it's a full length course, make sure this slot is the first child of the parent td
-            // Then, hide the slot under this guy TODO
-            } else {
-                if (Array.prototype.indexOf.call(this.parentElement.children, this) === 0) {
-                    ev.currentTarget.appendChild(element);
-                }
-            }
+            ev.currentTarget.appendChild(element);
+            // if (element.courseLength === 'H') {
+            // // If it's a full length course, make sure this slot is the first child of the parent td
+            // // Then, hide the slot under this guy TODO
+            // } else {
+            //     if (Array.prototype.indexOf.call(this.parentElement.children, this) === 0) {
+            //         ev.currentTarget.appendChild(element);
+            //     }
+            // }
         }
     }
 }

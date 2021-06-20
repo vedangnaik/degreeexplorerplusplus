@@ -40,10 +40,13 @@ export class CoursePlan extends HTMLTableElement {
         // add 8 course slots
         for (let col = 0; col < 8; col++) {
             let td = document.createElement('td');
+            let d = document.createElement('div');
+            d.style = "display: flex; height: 4.1vmax; flex-direction: column;"
             let cs1 = new CourseSlot();
             let cs2 = new CourseSlot();
-            td.appendChild(cs1);
-            td.appendChild(cs2);
+            d.appendChild(cs1);
+            d.appendChild(cs2);
+            td.appendChild(d);
             tr.appendChild(td);
         }
         // append row
