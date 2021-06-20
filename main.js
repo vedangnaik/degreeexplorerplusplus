@@ -1,6 +1,8 @@
-import { Scheduler } from "./src/Profile.js";
+import { Scheduler } from "./src/Scheduler.js";
 import { CourseTile } from "./src/CourseTile.js";
 import { Scratchpad } from "./src/Scratchpad.js";
+import { Profile } from "./src/Profile.js";
+
 import CourseData from "./resources/CourseData.js";
 
 
