@@ -51,6 +51,12 @@ export class Profile extends HTMLDivElement {
         this.appendChild(this.scheduler);
         this.appendChild(toolbar);
         // this.appendChild(programManager); TODO
+
+        // TODO Temp remove this, only for testing
+        let ct = new CourseTile("CSC148H1", "CSC148H1", "", 'H');
+        let t = this.cs.childNodes[1];
+        if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
+        t.appendChild(ct);
     }
 
     searchCourse() {
