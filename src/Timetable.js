@@ -20,9 +20,18 @@ export class Timetable extends HTMLTableElement {
         let tr = document.createElement('tr');
         // header for row based on current number of semesters
         let th = document.createElement('th');
-        th.style.width = "100%";
-        th.style.border = "1px solid black";
-        th.innerText = "Semester " + (this.tbody.children.length + 1);
+        th.style = "display: flex;"; 
+            let name = document.createElement('div');
+            name.innerText = "Semester " + (this.tbody.children.length + 1);
+            name.style = "flex: 0 0 90%;"
+            let b = document.createElement('button');
+            b.innerText = 'X';
+            b.style = "flex: 1";
+            b.onclick = this.deleteSemester.bind(tr);
+
+        th.appendChild(name);
+        th.appendChild(b);
+
         tr.appendChild(th);
         // add 8 course slot containers
         for (let col = 0; col < 8; col++) {
@@ -70,6 +79,10 @@ export class Timetable extends HTMLTableElement {
             
             document.getElementById(id).style.backgroundColor = satisfied ? "green" : "red";
         }
+    }
+
+    deleteSemester() {
+        this.parentElement.removeChild(this);
     }
 }
 
