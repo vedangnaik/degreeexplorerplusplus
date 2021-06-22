@@ -2,7 +2,8 @@ export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 9vw;
         height: 2vw;
-        border: 1px solid black;
+        background-color: grey;
+        border-radius: 5px;
         z-index: 1;
         display: flex;
     `;

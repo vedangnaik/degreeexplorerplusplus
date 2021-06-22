@@ -63,7 +63,7 @@ export class Profile extends HTMLDivElement {
         const id = this.searchInput.value;
         if (CourseData[id]) {
             let ct = new CourseTile(id, id, "", id[6]);
-            let t = this.cs.childNodes[1];
+            let t = this.cs.childNodes[0];
             if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
             t.appendChild(ct);
         } else {

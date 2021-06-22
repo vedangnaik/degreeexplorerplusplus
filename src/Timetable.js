@@ -21,7 +21,7 @@ export class Timetable extends HTMLTableElement {
         // header for row based on current number of semesters
         let th = document.createElement('th');
         th.style.width = "100%";
-        th.style.outline = "black solid 1px";
+        th.style.border = "1px solid black";
         th.innerText = "Semester " + (this.tbody.children.length + 1);
         tr.appendChild(th);
         // add 8 course slot containers
