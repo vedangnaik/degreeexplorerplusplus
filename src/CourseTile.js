@@ -1,7 +1,7 @@
 export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
-        width: 8.5vw;
-        height: 2.25vw;
+        width: 9vw;
+        height: 2vw;
         border: 1px solid black;
         z-index: 1;
         display: flex;
@@ -42,7 +42,7 @@ export class CourseTile extends HTMLDivElement {
         this.courseLength = 'H';
         switch(courseLength) {
             case 'Y':
-                this.style.height = "5.5vw";
+                this.style.height = "4vw";
                 this.courseLength = 'Y';
                 break;
             case 'H':

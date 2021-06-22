@@ -1,4 +1,4 @@
-import { Scheduler } from "./src/Scheduler.js";
+import { Timetable } from "./src/Timetable.js";
 import { CourseTile } from "./src/CourseTile.js";
 import { Scratchpad } from "./src/Scratchpad.js";
 import { Profile } from "./src/Profile.js";

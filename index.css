@@ -2,11 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-}
-
-table {
-    border-spacing: 0;
-    /* border: 1px solid blue; */
+    box-sizing: border-box;
 }
 
 #toolbox > div {

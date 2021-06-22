@@ -1,5 +1,5 @@
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
-import { Scheduler } from "./Scheduler.js";
+import { Timetable } from "./Timetable.js";
 import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
 
@@ -8,7 +8,7 @@ export class Profile extends HTMLDivElement {
         super();
 
         // the timetable bit
-        this.scheduler = new Scheduler();
+        this.scheduler = new Timetable();
         // the toolbar with the buttons and stuff
         let toolbar = document.createElement('div');
         toolbar.style = "display: flex; justify-content: space-between;";
@@ -34,7 +34,7 @@ export class Profile extends HTMLDivElement {
                 controlsDiv.append(searchButton);
                 // course slot
                 this.cs = new CourseSlotDiv();
-                this.cs.firstElementChild.style = ""; // hide one of the slots by making it width 0; TODO fix this, kinda hacky
+                // this.cs.firstElementChild.style = ""; // hide one of the slots by making it width 0; TODO fix this, kinda hacky
             addCoursesAndProgramsDiv.appendChild(controlsDiv);
             addCoursesAndProgramsDiv.appendChild(this.cs);
 

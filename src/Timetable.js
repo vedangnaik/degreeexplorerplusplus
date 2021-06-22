@@ -2,10 +2,9 @@ import CourseData from "../resources/CourseData.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 
-export class Scheduler extends HTMLTableElement {
+export class Timetable extends HTMLTableElement {
     constructor() {
         super();
-        this.style = "border-collapse: collapse;"
 
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
@@ -22,7 +21,7 @@ export class Scheduler extends HTMLTableElement {
         // header for row based on current number of semesters
         let th = document.createElement('th');
         th.style.width = "100%";
-        th.style.border = "1px solid black";
+        th.style.outline = "black solid 1px";
         th.innerText = "Semester " + (this.tbody.children.length + 1);
         tr.appendChild(th);
         // add 8 course slot containers
@@ -75,4 +74,4 @@ export class Scheduler extends HTMLTableElement {
 }
 
 
-customElements.define('depp-scheduler', Scheduler, {extends: 'table'});
+customElements.define('depp-timetable', Timetable, {extends: 'table'});
