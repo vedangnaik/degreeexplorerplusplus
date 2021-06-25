@@ -2,20 +2,21 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Timetable } from "./Timetable.js";
 import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
+import ProgramData from "../resources/ProgramData.js";
 
 export class Profile extends HTMLDivElement {
     constructor() {
         super();
 
         // the timetable bit
-        this.scheduler = new Timetable();
+        this.timetable = new Timetable();
         // the toolbar with the buttons and stuff
         let toolbar = document.createElement('div');
         toolbar.style = "display: flex; justify-content: space-between;";
             // add semester button
             let addSemesterButton = document.createElement('button');    
             addSemesterButton.innerText = "Add Semester";
-            addSemesterButton.onclick = this.scheduler.addSemester.bind(this.scheduler);
+            addSemesterButton.onclick = this.timetable.addSemester.bind(this.timetable);
             
             // this div contains the course/program search buttons plus the slot
             let addCoursesAndProgramsDiv = document.createElement('div');
@@ -38,17 +39,23 @@ export class Profile extends HTMLDivElement {
             addCoursesAndProgramsDiv.appendChild(controlsDiv);
             addCoursesAndProgramsDiv.appendChild(this.cs);
 
-            // evalute profile button
-            let evaluateButton = document.createElement('button');
-            evaluateButton.innerText = "Evaluate Profile";
-            evaluateButton.onclick = this.scheduler.evaluateProfile.bind(this.scheduler);
+            // check prereqs button
+            let checkPrereqsButton = document.createElement('button');
+            checkPrereqsButton.innerText = "Check Prerequisites";
+            checkPrereqsButton.onclick = this.timetable.checkPrereqs.bind(this.timetable);
+
+            // check program reqs button
+            let checkProgramReqsButton = document.createElement('button');
+            checkProgramReqsButton.innerText = "Check CS Specialist Requirements"
+            checkProgramReqsButton.onclick = this.TEMP.bind(this)
         toolbar.appendChild(addSemesterButton);
         toolbar.appendChild(addCoursesAndProgramsDiv);
-        toolbar.appendChild(evaluateButton);
+        toolbar.appendChild(checkPrereqsButton);
+        toolbar.appendChild(checkProgramReqsButton);
         // program manager - TODO
         // this.programManager = new programManager(); 
 
-        this.appendChild(this.scheduler);
+        this.appendChild(this.timetable);
         this.appendChild(toolbar);
         // this.appendChild(programManager); TODO
 
@@ -69,6 +76,17 @@ export class Profile extends HTMLDivElement {
         } else {
             console.log(`course '${id}' not found`);
         }
+    }
+
+    TEMP() {
+        let courses = this.timetable.getScheduledCourses();
+        for (let constraintFunc of ProgramData["ASSPE1689"]["completion"]) {
+            if (!constraintFunc(courses)) {
+                console.log(constraintFunc);
+                return false;
+            }
+        }
+        return true;
     }
 }
 
