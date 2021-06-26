@@ -44,41 +44,25 @@ export class Timetable extends HTMLTableElement {
         this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
-    checkPrereqs() {
-        let plan = {}; // TODO: Maybe make this a Map
-        const semesters = Array.prototype.slice.call(this.getElementsByTagName('tr'));
-        const divs = Array.prototype.slice.call(this.tbody.getElementsByTagName('div'));
-        // Transform the list of divs into a profile representation
-        // First, filter out only the course-tiles 
-        divs.filter(div => {
-            return div.customTagName === "course-tile";
-        // Then, assign a semester number to each.
-        }).forEach(courseTile => {
-            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number if twice the row number
-            // If the course is year-long, then it will be counted as the lower semester
-            if (courseTile.courseLength === 'Y') {
-                semesterNum += 1;
-            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that tot he base.
-            } else {
-                semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
-            }
-            plan[courseTile.id] = semesterNum;
-        });
-
-        // Evaluate the courses
-        for (let id in plan) {
+    evaluatePrerequisites(courses) {
+        let allSatisfied = true;
+        for (let id in courses) {
             const prereqs = CourseData[id]["prerequisites"];
 
             const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
             const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
                 const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
                 return ORCourseGroup.map(ORPrereq => {
-                    return plan[ORPrereq] && plan[id] < plan[ORPrereq];
+                    return courses[ORPrereq] && courses[id] < courses[ORPrereq];
                 }).reduce(booleanORReducer);
             }).reduce(booleanANDReducer);
+
+            if (!satisfied) { allSatisfied = false; }
             
             document.getElementById(id).style.backgroundColor = satisfied ? "green" : "red";
         }
+
+        return allSatisfied;
     }
 
     deleteSemester() {
