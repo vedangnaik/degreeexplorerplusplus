@@ -78,29 +78,36 @@ export class Profile extends HTMLDivElement {
     }
 
     evaluateProfile() {
-        let courses = this.timetable.getScheduledCourses();
+        let courses = this.getScheduledCourses();
         if (!this.timetable.evaluatePrerequisites(courses)) { return; }
         for (let program of this.programs) {
-            program.checkRequirements(courses);
+            program.evaluateRequirements(courses);
         }
     }
 
-    // TEMP() {
-    //     // let courses = this.timetable.getScheduledCourses();
+    getScheduledCourses() {
+        let plan = {}; // TODO: Maybe make this a Map
+        const semesters = Array.prototype.slice.call(this.timetable.getElementsByTagName('tr'));
+        const divs = Array.prototype.slice.call(this.timetable.tbody.getElementsByTagName('div'));
+        // Transform the list of divs into a profile representation
+        // First, filter out only the course-tiles 
+        divs.filter(div => {
+            return div.customTagName === "course-tile";
+        // Then, assign a semester number to each.
+        }).forEach(courseTile => {
+            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number if twice the row number
+            // If the course is year-long, then it will be counted as the lower semester
+            if (courseTile.courseLength === 'Y') {
+                semesterNum += 1;
+            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that tot he base.
+            } else {
+                semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
+            }
+            plan[courseTile.id] = semesterNum;
+        });
 
-    //     let courses = {"CSC108H1": 1, "CSC148H1": 1, "CSC165H1": 1, "CSC207H1": 1, "CSC209H1": 1, "CSC236H1": 1, "CSC258H1": 1, "CSC263H1": 1, "CSC309H1": 1, "CSC311H1": 1, "CSC324H1": 1, "CSC336H1": 1, "CSC343H1": 1, "CSC367H1": 1, "CSC369H1": 1, "CSC373H1": 1, "CSC436H1": 1, "CSC443H1": 1, "CSC448H1": 1, "CSC456H1": 1, "CSC457H1": 1, "CSC458H1": 1, "CSC469H1": 1, "CSC488H1": 1, "GGR101H1": 1, "HPS390H1": 1, "HPS391H1": 1, "MAT137Y1": 1, "MAT223H1": 1, "MAT224H1": 1, "MAT237Y1": 1, "PCL102H1": 1, "PHL100Y1": 1, "PHY131H1": 1, "STA247H1": 1, "STA248H1": 1}
-
-    //     let courses = {"CSC108H1": 1, "CSC148H1": 1, "CSC165H1": 1, "CSC207H1": 1, "CSC209H1": 1, "CSC236H1": 1, "CSC258H1": 1, "CSC263H1": 1, "CSC324H1": 1, "CSC343H1": 1, "CSC369H1": 1, "CSC373H1": 1, "CSC443H1": 1, "CSC488H1": 1, "CSC495H1": 1, "GGR101H1": 1, "MAT137Y1": 1, "MAT223H1": 1, "MAT224H1": 1, "MAT237Y1": 1, "PHL100Y1": 1, "PHY131H1": 1, "STA247H1": 1, "STA248H1": 1};
-
-    //     for (let constraintFunc of ProgramData["ASSPE1689"]["completion"]) {
-    //         if (!constraintFunc(courses)) {
-    //             console.log(constraintFunc);
-    //             return false;
-    //         }
-    //     }
-    //     console.log("passed");
-    //     return true;
-    // }
+        return plan;
+    }
 }
 
 

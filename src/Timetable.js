@@ -68,31 +68,6 @@ export class Timetable extends HTMLTableElement {
     deleteSemester() {
         this.parentElement.removeChild(this);
     }
-
-    // TODO: TEMP, refactor this and the evaluate thing out into Profile.js
-    getScheduledCourses() {
-        let plan = {}; // TODO: Maybe make this a Map
-        const semesters = Array.prototype.slice.call(this.getElementsByTagName('tr'));
-        const divs = Array.prototype.slice.call(this.tbody.getElementsByTagName('div'));
-        // Transform the list of divs into a profile representation
-        // First, filter out only the course-tiles 
-        divs.filter(div => {
-            return div.customTagName === "course-tile";
-        // Then, assign a semester number to each.
-        }).forEach(courseTile => {
-            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number if twice the row number
-            // If the course is year-long, then it will be counted as the lower semester
-            if (courseTile.courseLength === 'Y') {
-                semesterNum += 1;
-            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that tot he base.
-            } else {
-                semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
-            }
-            plan[courseTile.id] = semesterNum;
-        });
-
-        return plan;
-    }
 }
 
 

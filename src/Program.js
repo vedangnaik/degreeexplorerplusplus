@@ -43,7 +43,7 @@ export class Program extends HTMLTableElement {
         this.appendChild(this.tbody);
     }
 
-    checkRequirements(courses) {
+    evaluateRequirements(courses) {
         for (let i in ProgramData[this.programID]["completion"]) {
             let requirement = ProgramData[this.programID]["completion"][i];
             let statusCell = this.tbody.children[i].children[2];
