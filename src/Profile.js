@@ -79,7 +79,7 @@ export class Profile extends HTMLDivElement {
 
     evaluateProfile() {
         let courses = this.getScheduledCourses();
-        if (!this.timetable.evaluatePrerequisites(courses)) { return; }
+        // if (!this.timetable.evaluatePrerequisites(courses)) { return; }
         for (let program of this.programs) {
             program.evaluateRequirements(courses);
         }

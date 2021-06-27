@@ -47,7 +47,8 @@ export class Program extends HTMLTableElement {
         for (let i in ProgramData[this.programID]["completion"]) {
             let requirement = ProgramData[this.programID]["completion"][i];
             let statusCell = this.tbody.children[i].children[2];
-            statusCell.innerText = requirement["checker"](courses) ? "Completed" : "Failed"
+            let statusObj = requirement["checker"](courses);
+            statusCell.innerText = statusObj["status"] ? "Completed" : statusObj["errors"];
         }
     }
 }
