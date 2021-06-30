@@ -12,26 +12,50 @@ export class Timetable extends HTMLTableElement {
         border-radius: 7px;
     `;
 
-    static semesterNameStylesheet = `
-        flex: 11;
-        margin: auto;
-    `;
-
-    static deleteSemesterButtonStyleSheet = `
-        flex: 1;
-        background-color: #ff4d4d; 
-    `;
-
     constructor() {
         super();
 
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
-        this.addSemester();
-        this.addSemester();
-        this.addSemester();
-        this.addSemester();        
+        // the bottom row is fixed and unremovable. It contains the starting semester
+        // value upon which the labels of the other semesters are calculated
+        let tr = document.createElement('tr');
+        let th = document.createElement('th');
+        th.style = Timetable.headerStylesheet;
+            // create the select for the semester  
+            let semesterSelect = document.createElement('select');
+            semesterSelect.style = Timetable.semesterNameStylesheet;
+                let fallWinter = document.createElement('option');
+                fallWinter.innerText = "Fall/Winter";
+                let summer = document.createElement('option');
+                summer.innerText = "Summer";
+            semesterSelect.appendChild(fallWinter);
+            semesterSelect.appendChild(summer);
+            // create the select for the year
+            let yearSelect = document.createElement('select');
+            yearSelect.style = Timetable.semesterNameStylesheet;
+            for (let year = 1950; year <= 2050; year++) {
+                let yearOption = document.createElement('option');
+                yearOption.innerText = year;
+                yearSelect.appendChild(yearOption);
+            }
+            // rely on ordering of children to correctly set the option of the current year to default
+            yearSelect.children[new Date().getFullYear() - 1950].selected = "selected";
+        th.appendChild(semesterSelect);
+        th.appendChild(yearSelect);
+        
+        tr.appendChild(th);
+        tr.appendChild(th);
+        // add 6 course slot containers
+        for (let col = 0; col < 6; col++) {
+            let td = document.createElement('td');
+            let csc = new CourseSlotDiv();
+            td.appendChild(csc);
+            tr.appendChild(td);
+        }
+
+        this.tbody.appendChild(tr);
     }
 
     addSemester() {
@@ -51,7 +75,7 @@ export class Timetable extends HTMLTableElement {
         th.appendChild(semesterName);
 
         tr.appendChild(th);
-        // add 8 course slot containers
+        // add 6 course slot containers
         for (let col = 0; col < 6; col++) {
             let td = document.createElement('td');
             let csc = new CourseSlotDiv();
@@ -62,8 +86,28 @@ export class Timetable extends HTMLTableElement {
         this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
+
+
     deleteSemester() {
         this.parentElement.removeChild(this);
+    }
+}
+
+
+class SemesterHeader extends HTMLTableCellElement {
+    static semesterNameStylesheet = `
+        flex: 11;
+        margin: auto;
+    `;
+
+    static deleteSemesterButtonStyleSheet = `
+        flex: 1;
+        background-color: #ff4d4d; 
+    `;
+
+    constructor() {
+        super();
+
     }
 }
 
