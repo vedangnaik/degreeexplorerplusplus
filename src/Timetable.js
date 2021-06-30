@@ -89,8 +89,11 @@ export class Timetable extends HTMLTableElement {
             td.appendChild(csc);
             tr.appendChild(td);
         }
-
         this.tbody.appendChild(tr);
+
+        this.addSemester();
+        this.addSemester();
+        this.addSemester();
     }
 
     addSemester() {
