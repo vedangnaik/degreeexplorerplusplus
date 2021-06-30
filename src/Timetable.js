@@ -6,10 +6,20 @@ export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
         overflow: hidden;
         display: flex;
-        width: 11vw; 
+        width: 13vw; 
         height: 4vw;
         background-color: #4d9900;
         border-radius: 7px;
+    `;
+
+    static semesterNameStylesheet = `
+        flex: 11;
+        margin: auto;
+    `;
+
+    static deleteSemesterButtonStyleSheet = `
+        flex: 1;
+        background-color: #ff4d4d; 
     `;
 
     constructor() {
@@ -24,26 +34,32 @@ export class Timetable extends HTMLTableElement {
         let th = document.createElement('th');
         th.style = Timetable.headerStylesheet;
             // create the select for the semester  
-            let semesterSelect = document.createElement('select');
-            semesterSelect.style = Timetable.semesterNameStylesheet;
+            this.semesterSelect = document.createElement('select');
+            this.semesterSelect.style = "margin: auto; background-color: #4d9900;";
                 let fallWinter = document.createElement('option');
+                fallWinter.style.backgroundColor = "white";
+                fallWinter.value = "Fall/Winter";
                 fallWinter.innerText = "Fall/Winter";
                 let summer = document.createElement('option');
+                summer.style.backgroundColor = "white";
+                summer.value = "Summer";
                 summer.innerText = "Summer";
-            semesterSelect.appendChild(fallWinter);
-            semesterSelect.appendChild(summer);
+            this.semesterSelect.appendChild(fallWinter);
+            this.semesterSelect.appendChild(summer);
             // create the select for the year
-            let yearSelect = document.createElement('select');
-            yearSelect.style = Timetable.semesterNameStylesheet;
-            for (let year = 1950; year <= 2050; year++) {
+            this.yearSelect = document.createElement('select');
+            this.yearSelect.style = "margin: auto; background-color: #4d9900;";
+            for (let year = 2050; year >= 1950; year--) {
                 let yearOption = document.createElement('option');
+                yearOption.style.backgroundColor = "white";
+                yearOption.value = year;
                 yearOption.innerText = year;
-                yearSelect.appendChild(yearOption);
+                this.yearSelect.appendChild(yearOption);
             }
             // rely on ordering of children to correctly set the option of the current year to default
-            yearSelect.children[new Date().getFullYear() - 1950].selected = "selected";
-        th.appendChild(semesterSelect);
-        th.appendChild(yearSelect);
+            this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
+        th.appendChild(this.semesterSelect);
+        th.appendChild(this.yearSelect);
         
         tr.appendChild(th);
         tr.appendChild(th);
@@ -68,7 +84,7 @@ export class Timetable extends HTMLTableElement {
             deleteSemesterButton.innerText = '✖';
             deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
             deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
-            let semesterName = document.createElement('h3');
+            let semesterName = document.createElement('h4');
             semesterName.innerText = "Semester " + (this.tbody.children.length + 1);
             semesterName.style = Timetable.semesterNameStylesheet;
         th.appendChild(deleteSemesterButton);
@@ -84,32 +100,31 @@ export class Timetable extends HTMLTableElement {
         }
         // append row
         this.tbody.insertBefore(tr, this.tbody.firstChild);
+
+        this.refreshSemsterNames()
     }
-
-
 
     deleteSemester() {
+        let temp_table = this.closest('table');
         this.parentElement.removeChild(this);
+        temp_table.refreshSemsterNames();
+    }
+
+    refreshSemsterNames() {
+        let semesters = this.tbody.children;
+        let anchorSemester = this.semesterSelect.value;
+        let anchorYear = parseInt(this.yearSelect.value);
+        for (let i = 1; i < semesters.length; i++) {
+            let semesterHeader = semesters[semesters.length - 1 - i].children[0];
+            
+            if (anchorSemester == 'Fall/Winter') {
+                semesterHeader.children[1].innerText = i % 2 == 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
+            } else {
+                let newBaseYear = 
+                semesterHeader.children[1].innerText = i % 2 == 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
+            }
+        }
     }
 }
-
-
-class SemesterHeader extends HTMLTableCellElement {
-    static semesterNameStylesheet = `
-        flex: 11;
-        margin: auto;
-    `;
-
-    static deleteSemesterButtonStyleSheet = `
-        flex: 1;
-        background-color: #ff4d4d; 
-    `;
-
-    constructor() {
-        super();
-
-    }
-}
-
 
 customElements.define('depp-timetable', Timetable, {extends: 'table'});
