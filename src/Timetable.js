@@ -3,6 +3,25 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 
 export class Timetable extends HTMLTableElement {
+    static headerStylesheet = `
+        overflow: hidden;
+        display: flex;
+        width: 11vw; 
+        height: 4vw;
+        background-color: #4d9900;
+        border-radius: 7px;
+    `;
+
+    static semesterNameStylesheet = `
+        flex: 11;
+        margin: auto;
+    `;
+
+    static deleteSemesterButtonStyleSheet = `
+        flex: 1;
+        background-color: #ff4d4d; 
+    `;
+
     constructor() {
         super();
 
@@ -20,21 +39,20 @@ export class Timetable extends HTMLTableElement {
         let tr = document.createElement('tr');
         // header for row based on current number of semesters
         let th = document.createElement('th');
-        th.style = "display: flex;"; 
-            let name = document.createElement('div');
-            name.innerText = "Semester " + (this.tbody.children.length + 1);
-            name.style = "flex: 0 0 90%;"
-            let b = document.createElement('button');
-            b.innerText = 'X';
-            b.style = "flex: 1";
-            b.onclick = this.deleteSemester.bind(tr);
-
-        th.appendChild(name);
-        th.appendChild(b);
+        th.style = Timetable.headerStylesheet;
+            let deleteSemesterButton = document.createElement('button');
+            deleteSemesterButton.innerText = '✖';
+            deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
+            deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
+            let semesterName = document.createElement('h3');
+            semesterName.innerText = "Semester " + (this.tbody.children.length + 1);
+            semesterName.style = Timetable.semesterNameStylesheet;
+        th.appendChild(deleteSemesterButton);
+        th.appendChild(semesterName);
 
         tr.appendChild(th);
         // add 8 course slot containers
-        for (let col = 0; col < 8; col++) {
+        for (let col = 0; col < 6; col++) {
             let td = document.createElement('td');
             let csc = new CourseSlotDiv();
             td.appendChild(csc);
@@ -42,27 +60,6 @@ export class Timetable extends HTMLTableElement {
         }
         // append row
         this.tbody.insertBefore(tr, this.tbody.firstChild);
-    }
-
-    evaluatePrerequisites(courses) {
-        let allSatisfied = true;
-        for (let id in courses) {
-            const prereqs = CourseData[id]["prerequisites"];
-
-            const booleanANDReducer = (accumulator, currentValue) => accumulator && currentValue;
-            const satisfied = !prereqs || prereqs.map(ORCourseGroup => {
-                const booleanORReducer = (accumulator, currentValue) => accumulator || currentValue;
-                return ORCourseGroup.map(ORPrereq => {
-                    return courses[ORPrereq] && courses[id] < courses[ORPrereq];
-                }).reduce(booleanORReducer);
-            }).reduce(booleanANDReducer);
-
-            if (!satisfied) { allSatisfied = false; }
-            
-            document.getElementById(id).style.backgroundColor = satisfied ? "green" : "red";
-        }
-
-        return allSatisfied;
     }
 
     deleteSemester() {

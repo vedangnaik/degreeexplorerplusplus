@@ -4,7 +4,6 @@ export class CourseSlotDiv extends HTMLDivElement {
         height: 4vw;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
     `;
 
     constructor() {
@@ -31,7 +30,7 @@ export class CourseSlotDiv extends HTMLDivElement {
 class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         flex: 1;
-        border-radius: 5px;
+        border-radius: 7px;
     `;
 
     constructor() {

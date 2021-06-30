@@ -3,7 +3,6 @@ import { Timetable } from "./Timetable.js";
 import { CourseTile } from "./CourseTile.js";
 import { Program } from "./Program.js";
 import CourseData from "../resources/CourseData.js";
-import ProgramData from "../resources/ProgramData.js";
 
 export class Profile extends HTMLDivElement {
     constructor() {
@@ -59,7 +58,7 @@ export class Profile extends HTMLDivElement {
         this.appendChild(program);
 
         // TODO Temp remove this, only for testing
-        let ct = new CourseTile("CSC148H1", "CSC148H1", "", 'H');
+        let ct = new CourseTile("CSC148H1");
         let t = this.cs.childNodes[1];
         if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
         t.appendChild(ct);
@@ -68,7 +67,7 @@ export class Profile extends HTMLDivElement {
     searchCourse() {
         const id = this.searchInput.value;
         if (CourseData[id]) {
-            let ct = new CourseTile(id, id, "", id[6]);
+            let ct = new CourseTile(id);
             let t = this.cs.childNodes[0];
             if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
             t.appendChild(ct);
@@ -79,7 +78,14 @@ export class Profile extends HTMLDivElement {
 
     evaluateProfile() {
         let courses = this.getScheduledCourses();
-        // if (!this.timetable.evaluatePrerequisites(courses)) { return; }
+        let programs = {} // TODO get this
+
+        for (let courseID in courses) {
+            courseDiv = document.getElementById(courseID);
+            courseDiv.evaluatePrerequisites(courses, programs);
+            // TODO check that this actually returns true
+        }
+
         for (let program of this.programs) {
             program.evaluateRequirements(courses);
         }

@@ -3,6 +3,11 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace
+}
+
+table {
+    border-collapse: collapse;
 }
 
 #toolbox > div {
