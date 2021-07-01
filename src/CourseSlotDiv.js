@@ -1,6 +1,6 @@
 export class CourseSlotDiv extends HTMLDivElement {
     static stylesheet = `
-        width: 9vw;
+        width: 8vw;
         height: 4vw;
         display: flex;
         flex-direction: column;

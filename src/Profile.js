@@ -3,15 +3,32 @@ import { Timetable } from "./Timetable.js";
 import { CourseTile } from "./CourseTile.js";
 import { Program } from "./Program.js";
 import CourseData from "../resources/CourseData.js";
+import { CourseInfoPanel } from "./CourseInfoPanel.js";
+import { Spacer } from "./Spacer.js";
 
 export class Profile extends HTMLDivElement {
     constructor() {
         super();
-
-        // the timetable bit
-        this.timetable = new Timetable();
         // array to hold all programs
         this.programs = []
+
+        // this convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution.
+        let main = document.createElement('div');
+        main.style = "display: flex;";
+            let timetableSection = document.createElement('section');
+            timetableSection.style = "display: flex; flex-direction: column;";
+                this.timetable = new Timetable();
+            timetableSection.appendChild(this.timetable);
+            let courseInfoPanelSection = document.createElement('section');
+            courseInfoPanelSection.style = "display: flex; flex-direction: column;";
+                let courseInfoPanelDiv = document.createElement('div');
+                courseInfoPanelDiv.style = "flex-basis: 0px; flex-grow: 1; overflow-y: scroll;";
+                    this.courseInfoPanel = new CourseInfoPanel();
+                courseInfoPanelDiv.appendChild(new CourseInfoPanel());
+            courseInfoPanelSection.appendChild(courseInfoPanelDiv);
+        main.appendChild(timetableSection);
+        main.appendChild(new Spacer({"width": "1vw"}));
+        main.appendChild(courseInfoPanelSection);
 
         // the toolbar with the buttons and stuff
         let toolbar = document.createElement('div');
@@ -53,8 +70,10 @@ export class Profile extends HTMLDivElement {
         let program = new Program("ASSPE1689");
         this.programs.push(program);
 
-        this.appendChild(this.timetable);
+        this.appendChild(main);
+        this.appendChild(new Spacer({ "height": "1vw" }));
         this.appendChild(toolbar);
+        this.appendChild(new Spacer({ "height": "1vw" }));
         this.appendChild(program);
 
         // TODO Temp remove this, only for testing
