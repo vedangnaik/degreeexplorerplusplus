@@ -4,38 +4,36 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
-        overflow: hidden;
         display: flex;
-        width: 13vw; 
+        width: 8vw; 
         height: 4vw;
-        background-color: #4d9900;
-        border-radius: 7px;
+        outline: grey solid thin;
     `;
     
     static semesterSelectStylesheet = `
         margin-left: auto;
-        background-color: #4d9900;
+        background-color: transparent;
         text-align-last: center;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 0.83em;
     `;
 
     static yearSelectStylesheet = `
         margin-right: auto;
-        background-color: #4d9900;
+        background-color: transparent;
         text-align-last: center;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 0.83em;
     `;
 
     static semesterNameStylesheet = `
-        flex: 11;
+        flex: 9;
         margin: auto;
     `;
 
     static deleteSemesterButtonStyleSheet = `
         flex: 1;
-        background-color: #ff4d4d; 
+        background-color: #ff4d4d;
     `;
 
     constructor() {
@@ -47,40 +45,41 @@ export class Timetable extends HTMLTableElement {
         // the bottom row is fixed and unremovable. It contains the starting semester
         // value upon which the labels of the other semesters are calculated
         let tr = document.createElement('tr');
-        let th = document.createElement('th');
-        th.style = Timetable.headerStylesheet;
-            // create the select for the semester  
-            this.semesterSelect = document.createElement('select');
-            this.semesterSelect.style = Timetable.semesterSelectStylesheet;
-                // option for fall/winter
-                let fallWinterOption = document.createElement('option');
-                fallWinterOption.style.backgroundColor = "white";
-                fallWinterOption.value = "Fall/Winter";
-                fallWinterOption.innerText = "Fall/Winter";
-                // option for summer
-                let summerOption = document.createElement('option');
-                summerOption.style.backgroundColor = "white";
-                summerOption.value = "Summer";
-                summerOption.innerText = "Summer";
-            this.semesterSelect.appendChild(fallWinterOption);
-            this.semesterSelect.appendChild(summerOption);
-            this.semesterSelect.onchange = this.refreshSemsterNames.bind(this);
-            // create the select for the year
-            this.yearSelect = document.createElement('select');
-            this.yearSelect.style = Timetable.yearSelectStylesheet;
-            for (let year = 2050; year >= 1950; year--) {
-                let yearOption = document.createElement('option');
-                yearOption.style.backgroundColor = "white";
-                yearOption.value = year;
-                yearOption.innerText = year;
-                this.yearSelect.appendChild(yearOption);
-            }
-            this.yearSelect.onchange = this.refreshSemsterNames.bind(this);
-            // rely on ordering of children to correctly set the option of the current year to default
-            this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
-        th.appendChild(this.semesterSelect);
-        th.appendChild(this.yearSelect);
-        
+        tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
+            let th = document.createElement('th');
+            th.style = Timetable.headerStylesheet;
+            th.style.display = "revert"; // reset the display so that it doesn't overflow the table cell
+                // create the select for the semester  
+                this.semesterSelect = document.createElement('select');
+                this.semesterSelect.style = Timetable.semesterSelectStylesheet;
+                    // option for fall/winter
+                    let fallWinterOption = document.createElement('option');
+                    fallWinterOption.style.backgroundColor = "white";
+                    fallWinterOption.value = "Fall/Winter";
+                    fallWinterOption.innerText = "Fall/Winter";
+                    // option for summer
+                    let summerOption = document.createElement('option');
+                    summerOption.style.backgroundColor = "white";
+                    summerOption.value = "Summer";
+                    summerOption.innerText = "Summer";
+                this.semesterSelect.appendChild(fallWinterOption);
+                this.semesterSelect.appendChild(summerOption);
+                this.semesterSelect.onchange = this.refreshSemsterNames.bind(this);
+                // create the select for the year
+                this.yearSelect = document.createElement('select');
+                this.yearSelect.style = Timetable.yearSelectStylesheet;
+                for (let year = 2050; year >= 1950; year--) {
+                    let yearOption = document.createElement('option');
+                    yearOption.style.backgroundColor = "white";
+                    yearOption.value = year;
+                    yearOption.innerText = year;
+                    this.yearSelect.appendChild(yearOption);
+                }
+                this.yearSelect.onchange = this.refreshSemsterNames.bind(this);
+                // rely on ordering of children to correctly set the option of the current year to default
+                this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
+            th.appendChild(this.semesterSelect);
+            th.appendChild(this.yearSelect);
         tr.appendChild(th);
         // add 6 course slot containers
         for (let col = 0; col < 6; col++) {
@@ -91,6 +90,8 @@ export class Timetable extends HTMLTableElement {
         }
         this.tbody.appendChild(tr);
 
+        this.addSemester();
+        this.addSemester();
         this.addSemester();
         this.addSemester();
         this.addSemester();
@@ -106,7 +107,7 @@ export class Timetable extends HTMLTableElement {
             deleteSemesterButton.innerText = '✖';
             deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
             deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
-            let semesterName = document.createElement('h4');
+            let semesterName = document.createElement('h5');
             semesterName.innerText = "Semester " + (this.tbody.children.length + 1);
             semesterName.style = Timetable.semesterNameStylesheet;
         th.appendChild(deleteSemesterButton);

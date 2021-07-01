@@ -1,16 +1,14 @@
 export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
-        overflow: hidden;
         width: 8vw;
         height: 2vw;
         background-color: grey;
-        border-radius: 7px;
         z-index: 1;
         display: flex;
     `;
 
     static courseNameStylesheet = `
-        flex: 11;
+        flex: 9;
         margin: auto;
         text-align: center;
     `;

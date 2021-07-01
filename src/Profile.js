@@ -21,11 +21,12 @@ export class Profile extends HTMLDivElement {
             timetableSection.appendChild(this.timetable);
             let courseInfoPanelSection = document.createElement('section');
             courseInfoPanelSection.style = "display: flex; flex-direction: column;";
-                let courseInfoPanelDiv = document.createElement('div');
-                courseInfoPanelDiv.style = "flex-basis: 0px; flex-grow: 1; overflow-y: scroll;";
-                    this.courseInfoPanel = new CourseInfoPanel();
-                courseInfoPanelDiv.appendChild(new CourseInfoPanel());
-            courseInfoPanelSection.appendChild(courseInfoPanelDiv);
+                this.courseInfoPanel = new CourseInfoPanel();
+                // extra properties needed for the height thing 
+                this.courseInfoPanel.style.flexBasis = "0px";
+                this.courseInfoPanel.style.flexGrow = "1";
+                this.courseInfoPanel.style.overflowY = "scroll";
+            courseInfoPanelSection.appendChild(this.courseInfoPanel);
         main.appendChild(timetableSection);
         main.appendChild(new Spacer({"width": "1vw"}));
         main.appendChild(courseInfoPanelSection);
