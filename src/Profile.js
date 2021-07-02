@@ -21,12 +21,12 @@ export class Profile extends HTMLDivElement {
             timetableSection.appendChild(this.timetable);
             let courseInfoPanelSection = document.createElement('section');
             courseInfoPanelSection.style = "display: flex; flex-direction: column;";
-                this.courseInfoPanel = new CourseInfoPanel();
+                let courseInfoPanel = new CourseInfoPanel("CourseInfoPanel");
                 // extra properties needed for the height thing 
-                this.courseInfoPanel.style.flexBasis = "0px";
-                this.courseInfoPanel.style.flexGrow = "1";
-                this.courseInfoPanel.style.overflowY = "scroll";
-            courseInfoPanelSection.appendChild(this.courseInfoPanel);
+                courseInfoPanel.style.flexBasis = "0px";
+                courseInfoPanel.style.flexGrow = "1";
+                courseInfoPanel.style.overflowY = "scroll";
+            courseInfoPanelSection.appendChild(courseInfoPanel);
         main.appendChild(timetableSection);
         main.appendChild(new Spacer({"width": "1vw"}));
         main.appendChild(courseInfoPanelSection);
@@ -101,8 +101,7 @@ export class Profile extends HTMLDivElement {
         let programs = {} // TODO get this
 
         for (let courseID in courses) {
-            courseDiv = document.getElementById(courseID);
-            courseDiv.evaluatePrerequisites(courses, programs);
+            document.getElementById(courseID).evaluatePrerequisites(courses, programs);
             // TODO check that this actually returns true
         }
 

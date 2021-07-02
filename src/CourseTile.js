@@ -1,3 +1,5 @@
+import CourseData from "../resources/CourseData.js";
+
 export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 8vw;
@@ -66,7 +68,7 @@ export class CourseTile extends HTMLDivElement {
     }
 
     evaluatePrerequisites(courses, programs) {
-        let prerequisites = CourseData["CSC488H1"]["prerequisites"];
+        let prerequisites = CourseData[this.id]["prerequisites"];
         let prerequisitesTracker = {}
     
         for (let prereqID in prerequisites) {
@@ -74,7 +76,8 @@ export class CourseTile extends HTMLDivElement {
                 prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(courses, programs, prereqID);
             }
         }
-    
+
+        document.getElementById("CourseInfoPanel").prerequisiteCell.innerText = JSON.stringify(prerequisitesTracker, null, 2);
         return prerequisitesTracker; // TODO use this to change the colour and return true/false
     
         function recursiveEvaluatePrerequisite(courses, programs, prereqID) {
@@ -149,7 +152,7 @@ export class CourseTile extends HTMLDivElement {
                         }
                     }
                 }
-                case 'GRADES': {
+                case 'GRADE': {
                     return true;
                 }
                 case 'SUBJECT_POSTS': {
