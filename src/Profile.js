@@ -19,12 +19,12 @@ export class Profile extends HTMLDivElement {
             timetableSection.appendChild(this.timetable);
             let courseInfoPanelSection = document.createElement('section');
             courseInfoPanelSection.style = "display: flex; flex-direction: column;";
-                let courseInfoPanel = new CourseInfoPanel("CourseInfoPanel");
+                this.courseInfoPanel = new CourseInfoPanel("CourseInfoPanel");
                 // extra properties needed for the height thing 
-                courseInfoPanel.style.flexBasis = "0px";
-                courseInfoPanel.style.flexGrow = "1";
-                courseInfoPanel.style.overflowY = "scroll";
-            courseInfoPanelSection.appendChild(courseInfoPanel);
+                this.courseInfoPanel.style.flexBasis = "0px";
+                this.courseInfoPanel.style.flexGrow = "1";
+                this.courseInfoPanel.style.overflowY = "scroll";
+            courseInfoPanelSection.appendChild(this.courseInfoPanel);
         main.appendChild(timetableSection);
         main.appendChild(new Spacer({"width": "1vw"}));
         main.appendChild(courseInfoPanelSection);
@@ -133,6 +133,7 @@ export class Profile extends HTMLDivElement {
         for (let div of this.timetable.tbody.getElementsByTagName('div')) {
             if (div.customTagName === "course-tile") { div.resetCourse(); }
         }
+        this.courseInfoPanel.resetPanel();
     }
 }
 

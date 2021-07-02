@@ -91,11 +91,11 @@ export class CourseTile extends HTMLDivElement {
 
         this.style.backgroundColor = "green";
         Object.entries(this.prerequisitesTracker).forEach(([_, prereqStatus]) => {
-            if (prereqStatus == PrerequisiteStatuses.INCOMPLETE) { 
+            if (prereqStatus === PrerequisiteStatuses.INCOMPLETE) { 
                 this.style.backgroundColor = "salmon";
                 return;
             };
-            if (prereqStatus == PrerequisiteStatuses.WARNING) { 
+            if (prereqStatus === PrerequisiteStatuses.WARNING) { 
                 this.style.backgroundColor = "yellow";
             }
         });
@@ -104,7 +104,7 @@ export class CourseTile extends HTMLDivElement {
         function recursiveEvaluatePrerequisite(courses, programs, prereqID) {
             let prerequisite = prerequisites[prereqID]
         
-            if (prerequisite.type == "NOTE") {
+            if (prerequisite.type === "NOTE") {
                 return PrerequisiteStatuses.COMPLETE;
             }
         
@@ -156,16 +156,16 @@ export class CourseTile extends HTMLDivElement {
                         case 'MINIMUM': {
                             return (prerequisite.count <= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
-                                .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
+                                .map(courseID => courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
-                            return (prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length == 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return (prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
                             return (prerequisite.count >= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
-                                .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
+                                .map(courseID => courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
