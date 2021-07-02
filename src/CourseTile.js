@@ -1,5 +1,12 @@
 import CourseData from "../resources/CourseData.js";
 
+export const PrerequisiteStatuses = Object.freeze({
+    COMPLETE: Symbol("COMPLETE"),
+    INCOMPLETE: Symbol("INCOMPLETE"),
+    NA: Symbol("NA"),
+    WARNING: Symbol("WARNING")
+});
+
 export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 8vw;
@@ -77,14 +84,13 @@ export class CourseTile extends HTMLDivElement {
             }
         }
 
-        document.getElementById("CourseInfoPanel").prerequisiteCell.innerText = JSON.stringify(prerequisitesTracker, null, 2);
-        return prerequisitesTracker; // TODO use this to change the colour and return true/false
+        document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, prerequisitesTracker)
     
         function recursiveEvaluatePrerequisite(courses, programs, prereqID) {
             let prerequisite = prerequisites[prereqID]
         
             if (prerequisite.type == "NOTE") {
-                return true;
+                return PrerequisiteStatuses.COMPLETE;
             }
         
             switch(prerequisite.countType) {
@@ -100,71 +106,71 @@ export class CourseTile extends HTMLDivElement {
                                 } else if (recursiveEvaluatePrerequisite(courses, prerequisites, dependent_prereqID)) {
                                     usedPrereqs.push(dependent_prereqID);
                                     count += 1;
-                                    prerequisitesTracker[dependent_prereqID] = true;
+                                    prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.COMPLETE;
                                 } else {
-                                    prerequisitesTracker[dependent_prereqID] = false;
+                                    prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.INCOMPLETE;
                                 }
     
                                 if (count >= prerequisite.count) {
                                     prerequisite.requisiteItems
                                         .filter(dependent_prereqID => !usedPrereqs.includes(dependent_prereqID))
-                                        .forEach(dependent_prereqID => prerequisitesTracker[dependent_prereqID] = 'N/A');
-                                    return true;
+                                        .forEach(dependent_prereqID => prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.NA);
+                                    return PrerequisiteStatuses.COMPLETE;
                                 }
                             }
     
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
                             console.log('prereq maximum');
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
                             console.log('prereq list');
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
                             console.log('prereq unknown type: ' + prerequisite.type);
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }
                 case 'FCES': {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
-                            return prerequisite.count >= prerequisite.requisiteItems
+                            return (prerequisite.count >= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
                                 .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
-                                .reduce((x, y) => x + y, 0);
+                                .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
-                            return prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length == 0;
+                            return (prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length == 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
-                            return prerequisite.count <= prerequisite.requisiteItems
+                            return (prerequisite.count <= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
                                 .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
-                                .reduce((x, y) => x + y, 0);
+                                .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
                             console.log('unknown fces type: ' + prerequisites.type);
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }
                 case 'GRADE': {
-                    return true;
+                    return PrerequisiteStatuses.COMPLETE;
                 }
                 case 'SUBJECT_POSTS': {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
-                            return prerequisite.count >= prerequisite.requisiteItems
+                            return (prerequisite.count >= prerequisite.requisiteItems
                                 .filter(postID => postID in programs)
-                                .reduce((x, y) => x + y, 0);
+                                .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
                             console.log('unknown subject post type: ' + prerequisite.type);
-                            return false;
+                            return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }

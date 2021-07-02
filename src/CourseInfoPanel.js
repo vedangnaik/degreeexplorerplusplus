@@ -1,4 +1,6 @@
+import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
+import { PrerequisiteStatuses } from "./CourseTile.js";
 
 export class CourseInfoPanel extends HTMLDivElement {
     static stylesheet = `
@@ -62,6 +64,32 @@ export class CourseInfoPanel extends HTMLDivElement {
         this.appendChild(this.courseDescriptionP);
         this.appendChild(new Spacer({"height": "0.5vw"}));
         this.appendChild(courseInfoTable);
+    }
+
+    printPrereqisiteInfo(courseID, prerequisitesTracker) {
+        this.courseTitleHeader.innerText = courseID;
+        this.courseDescriptionP.innerText = CourseData[courseID].title;
+        this.prerequisiteCell.replaceChildren();
+
+        for (let prereqID in prerequisitesTracker) {
+            let p = document.createElement('p');
+            p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].displayPrefix}`;
+            switch (prerequisitesTracker[prereqID]) {
+                case PrerequisiteStatuses.COMPLETE:
+                    p.style.color = "green";
+                    break;
+                case PrerequisiteStatuses.INCOMPLETE:
+                    p.style.color = "red";
+                    break;
+                case PrerequisiteStatuses.NA:
+                    p.style.color = "grey";
+                    break;
+                case PrerequisiteStatuses.WARNING:
+                    p.style.color = "yellow";
+                    break;
+            }
+            this.prerequisiteCell.appendChild(p);
+        }
     }
 }
 
