@@ -34,6 +34,8 @@ export class CourseTile extends HTMLDivElement {
         this.style = CourseTile.courseTileStylesheet;
         this.draggable = true;
         this.ondragstart = this.onDragStart.bind(this);
+        this.prerequisitesTracker = {};
+        this.onclick = () => document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, this.prerequisitesTracker);
 
         // course name header
         let courseName = document.createElement('h3');
@@ -75,18 +77,15 @@ export class CourseTile extends HTMLDivElement {
     }
 
     evaluatePrerequisites(courses, programs) {
-        let prerequisites = CourseData[this.id]["prerequisites"];
-        let prerequisitesTracker = {}
-    
+        let prerequisites = CourseData[this.id]["prerequisites"];    
         Object.keys(prerequisites).forEach(prereqID => {
-            if (!(prereqID in prerequisitesTracker)) { 
-                prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(courses, programs, prereqID);
+            if (!(prereqID in this.prerequisitesTracker)) { 
+                this.prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(courses, programs, prereqID);
             }
         });
 
-        // document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, prerequisitesTracker)
         this.style.backgroundColor = "green";
-        Object.entries(prerequisitesTracker).forEach(([_, prereqStatus]) => {
+        Object.entries(this.prerequisitesTracker).forEach(([_, prereqStatus]) => {
             if (prereqStatus == PrerequisiteStatuses.INCOMPLETE) { 
                 this.style.backgroundColor = "salmon";
                 return;

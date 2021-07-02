@@ -24,7 +24,6 @@ export class CourseInfoPanel extends HTMLDivElement {
 
     constructor(id) {
         super();
-
         this.id = id;
         this.style = CourseInfoPanel.stylesheet;
 
@@ -70,7 +69,8 @@ export class CourseInfoPanel extends HTMLDivElement {
         this.courseDescriptionP.innerText = CourseData[courseID].title;
         this.prerequisiteCell.replaceChildren();
 
-        for (let prereqID in prerequisitesTracker) {
+        // This loop actually goes over prerequisite defined for the course, and then applies the color based on whether that prerequisite was evaluated in the passed-in argument. This is to allow courses which have not been evaluated yet to still show their prerequisite info.
+        for (let prereqID in CourseData[courseID].prerequisites) {
             let p = document.createElement('p');
             p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].description}`;
             switch (prerequisitesTracker[prereqID]) {
@@ -86,6 +86,8 @@ export class CourseInfoPanel extends HTMLDivElement {
                 case PrerequisiteStatuses.WARNING:
                     p.style.color = "yellow";
                     break;
+                default:
+                    p.style.color = "black";
             }
             this.prerequisiteCell.appendChild(p);
         }

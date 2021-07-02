@@ -38,7 +38,6 @@ export class Timetable extends HTMLTableElement {
 
     constructor() {
         super();
-
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
