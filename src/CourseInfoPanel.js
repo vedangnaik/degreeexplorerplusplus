@@ -18,7 +18,6 @@ export class CourseInfoPanel extends HTMLDivElement {
     `;
 
     static requisiteCellStylesheet = `
-        text-align: justify;
         border: 1px solid black;
         padding: 0.5vw;
     `;
@@ -31,11 +30,11 @@ export class CourseInfoPanel extends HTMLDivElement {
 
         this.courseTitleHeader = document.createElement('h3');
         this.courseTitleHeader.style.textAlign = "center";
-        this.courseTitleHeader.innerText = "CSC165H1";
+        this.courseTitleHeader.innerText = "Course ID";
 
         this.courseDescriptionP = document.createElement('h4');
         this.courseDescriptionP.style.textAlign = "center";
-        this.courseDescriptionP.innerText = "Mathematical Expression and Reasoning for Computer Science";
+        this.courseDescriptionP.innerText = "Course Description";
 
         let courseInfoTable = document.createElement('table');
         courseInfoTable.style = "border-style: hidden; margin: 0.5vw;";
@@ -73,7 +72,7 @@ export class CourseInfoPanel extends HTMLDivElement {
 
         for (let prereqID in prerequisitesTracker) {
             let p = document.createElement('p');
-            p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].displayPrefix}`;
+            p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].description}`;
             switch (prerequisitesTracker[prereqID]) {
                 case PrerequisiteStatuses.COMPLETE:
                     p.style.color = "green";

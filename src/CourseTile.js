@@ -78,14 +78,25 @@ export class CourseTile extends HTMLDivElement {
         let prerequisites = CourseData[this.id]["prerequisites"];
         let prerequisitesTracker = {}
     
-        for (let prereqID in prerequisites) {
+        Object.keys(prerequisites).forEach(prereqID => {
             if (!(prereqID in prerequisitesTracker)) { 
                 prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(courses, programs, prereqID);
             }
-        }
+        });
 
-        document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, prerequisitesTracker)
-    
+        // document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, prerequisitesTracker)
+        this.style.backgroundColor = "green";
+        Object.entries(prerequisitesTracker).forEach(([_, prereqStatus]) => {
+            if (prereqStatus == PrerequisiteStatuses.INCOMPLETE) { 
+                this.style.backgroundColor = "salmon";
+                return;
+            };
+            if (prereqStatus == PrerequisiteStatuses.WARNING) { 
+                this.style.backgroundColor = "yellow";
+            }
+        });
+
+
         function recursiveEvaluatePrerequisite(courses, programs, prereqID) {
             let prerequisite = prerequisites[prereqID]
         
@@ -122,19 +133,20 @@ export class CourseTile extends HTMLDivElement {
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
-                            console.log('prereq maximum');
+                            console.log('REQUISITE MAXIMUM');
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
-                            console.log('prereq list');
+                            console.log('REQUISITE LIST');
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
-                            console.log('prereq unknown type: ' + prerequisite.type);
+                            console.log('Unknown REQUISITE type: ' + prerequisite.type);
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }
+                case 'COURSES': // Don't ask me why there is more than one label for this :(
                 case 'FCES': {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
@@ -153,13 +165,13 @@ export class CourseTile extends HTMLDivElement {
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
-                            console.log('unknown fces type: ' + prerequisites.type);
+                            console.log('Unknown FCES type: ' + prerequisites.type);
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }
                 case 'GRADE': {
-                    return PrerequisiteStatuses.COMPLETE;
+                    return PrerequisiteStatuses.WARNING;
                 }
                 case 'SUBJECT_POSTS': {
                     switch (prerequisite.type) {
@@ -169,13 +181,14 @@ export class CourseTile extends HTMLDivElement {
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
-                            console.log('unknown subject post type: ' + prerequisite.type);
+                            console.log('Unknown subject post type: ' + prerequisite.type);
                             return PrerequisiteStatuses.INCOMPLETE;
                         }
                     }
                 }
                 default: {
-                    console.log(prerequisite.countType);
+                    console.log(`Unknown countType: ${prerequisite.countType}`);
+                    return PrerequisiteStatuses.INCOMPLETE;
                 }
             }
         }
