@@ -111,7 +111,7 @@ export class CourseTile extends HTMLDivElement {
                                     prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.INCOMPLETE;
                                 }
     
-                                if (count >= prerequisite.count) {
+                                if (prerequisite.count <= count) {
                                     prerequisite.requisiteItems
                                         .filter(dependent_prereqID => !usedPrereqs.includes(dependent_prereqID))
                                         .forEach(dependent_prereqID => prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.NA);
@@ -138,7 +138,7 @@ export class CourseTile extends HTMLDivElement {
                 case 'FCES': {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
-                            return (prerequisite.count >= prerequisite.requisiteItems
+                            return (prerequisite.count <= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
                                 .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
@@ -147,7 +147,7 @@ export class CourseTile extends HTMLDivElement {
                             return (prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length == 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
-                            return (prerequisite.count <= prerequisite.requisiteItems
+                            return (prerequisite.count >= prerequisite.requisiteItems
                                 .filter(courseID => courseID in courses)
                                 .map(courseID => courseID[6] == 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
@@ -164,7 +164,7 @@ export class CourseTile extends HTMLDivElement {
                 case 'SUBJECT_POSTS': {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
-                            return (prerequisite.count >= prerequisite.requisiteItems
+                            return (prerequisite.count <= prerequisite.requisiteItems
                                 .filter(postID => postID in programs)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
