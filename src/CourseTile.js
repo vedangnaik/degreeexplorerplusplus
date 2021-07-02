@@ -85,7 +85,7 @@ export class CourseTile extends HTMLDivElement {
         let prerequisites = CourseData[this.id]["prerequisites"];    
         Object.keys(prerequisites).forEach(prereqID => {
             if (!(prereqID in this.prerequisitesTracker)) { 
-                this.prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(courses, programs, prereqID);
+                this.prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs);
             }
         });
 
@@ -101,8 +101,8 @@ export class CourseTile extends HTMLDivElement {
         });
 
 
-        function recursiveEvaluatePrerequisite(courses, programs, prereqID) {
-            let prerequisite = prerequisites[prereqID]
+        function recursiveEvaluatePrerequisite(courseID, prereqID, scheduledCourses, scheduledPrograms) {
+            let prerequisite = CourseData[courseID]["prerequisites"][prereqID]
         
             if (prerequisite.type === "NOTE") {
                 return PrerequisiteStatuses.COMPLETE;
@@ -118,7 +118,7 @@ export class CourseTile extends HTMLDivElement {
                                 if (dependent_prereqID in prerequisitesTracker && prerequisitesTracker[dependent_prereqID]) {
                                     usedPrereqs.push(dependent_prereqID);
                                     count += 1;
-                                } else if (recursiveEvaluatePrerequisite(courses, prerequisites, dependent_prereqID)) {
+                                } else if (recursiveEvaluatePrerequisite(courseID, dependent_prereqID, scheduledCourses, scheduledPrograms)) {
                                     usedPrereqs.push(dependent_prereqID);
                                     count += 1;
                                     prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.COMPLETE;
@@ -155,17 +155,19 @@ export class CourseTile extends HTMLDivElement {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
                             return (prerequisite.count <= prerequisite.requisiteItems
-                                .filter(courseID => courseID in courses)
-                                .map(courseID => courseID[6] === 'H' ? 0.5 : 1)
+                                .filter(dependent_courseID => dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID])
+                                .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
-                            return (prerequisite.requisiteItems.filter(courseID => !(courseID in courses)).length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return (prerequisite.requisiteItems.filter(dependent_courseID => { 
+                                return !(dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID]);
+                            }).length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
                             return (prerequisite.count >= prerequisite.requisiteItems
-                                .filter(courseID => courseID in courses)
-                                .map(courseID => courseID[6] === 'H' ? 0.5 : 1)
+                                .filter(dependent_courseID => dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID])
+                                .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
@@ -181,7 +183,7 @@ export class CourseTile extends HTMLDivElement {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
                             return (prerequisite.count <= prerequisite.requisiteItems
-                                .filter(postID => postID in programs)
+                                .filter(dependent_programID => dependent_programID in scheduledPrograms)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         default: {
