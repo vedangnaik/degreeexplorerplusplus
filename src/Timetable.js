@@ -139,11 +139,11 @@ export class Timetable extends HTMLTableElement {
         for (let i = 1; i < semesters.length; i++) {
             let semesterHeader = semesters[semesters.length - 1 - i].children[0];
             
-            if (anchorSemester == 'Fall/Winter') {
-                semesterHeader.children[1].innerText = i % 2 == 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
+            if (anchorSemester === 'Fall/Winter') {
+                semesterHeader.children[1].innerText = i % 2 === 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
             } else {
                 let newBaseYear = 
-                semesterHeader.children[1].innerText = i % 2 == 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
+                semesterHeader.children[1].innerText = i % 2 === 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
             }
         }
     }

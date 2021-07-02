@@ -76,6 +76,11 @@ export class CourseTile extends HTMLDivElement {
         this.parentElement.removeChild(this);
     }
 
+    resetCourse() {
+        this.prerequisitesTracker = {};
+        this.style.backgroundColor = "grey";
+    }
+
     evaluatePrerequisites(courses, programs) {
         let prerequisites = CourseData[this.id]["prerequisites"];    
         Object.keys(prerequisites).forEach(prereqID => {

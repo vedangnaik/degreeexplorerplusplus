@@ -36,6 +36,8 @@ export class Scratchpad extends HTMLDivElement {
         // The upper bound is the scratchpad's width minus the tile's width and same for the height, to prevent it exiting the bottom and right. 
         tileBeingDragged.style.left = clamp(newX - dragStartX, 0, ev.currentTarget.offsetWidth - tileBeingDragged.offsetWidth) + "px";
         tileBeingDragged.style.top  = clamp(newY - dragStartY, 0, ev.currentTarget.offsetHeight - tileBeingDragged.offsetHeight) + "px";
+        // Finally, we reset the courseTile so that the prerequisite cache isn't corrupted
+        tileBeingDragged.resetCourse();
     }
 }
 

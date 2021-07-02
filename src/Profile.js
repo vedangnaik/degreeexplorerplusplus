@@ -9,8 +9,6 @@ import { Spacer } from "./Spacer.js";
 export class Profile extends HTMLDivElement {
     constructor() {
         super();
-        // array to hold all programs
-        this.programs = []
 
         // this convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution.
         let main = document.createElement('div');
@@ -67,15 +65,14 @@ export class Profile extends HTMLDivElement {
         toolbar.appendChild(addCoursesAndProgramsDiv);
         toolbar.appendChild(evaluateProfileButton);
 
-        // TODO Temp, just for checking if programs work
-        let program = new Program("ASSPE1689");
-        this.programs.push(program);
-
         this.appendChild(main);
         this.appendChild(new Spacer({ "height": "1vw" }));
         this.appendChild(toolbar);
         this.appendChild(new Spacer({ "height": "1vw" }));
-        this.appendChild(program);
+
+        // Connect all the MutationObservers
+        this.timetableObserver = new MutationObserver(this.invalidatePrerequisitesAndClearInfoPanel.bind(this));
+        this.timetableObserver.observe(this.timetable, { childList: true, subtree: true});
 
         // TODO Temp remove this, only for testing
         let ct = new CourseTile("CSC148H1");
@@ -98,16 +95,14 @@ export class Profile extends HTMLDivElement {
 
     evaluateProfile() {
         let courses = this.getScheduledCourses();
-        let programs = {} // TODO get this
+        let programs = {} // TODO check the programs
 
         for (let courseID in courses) {
             document.getElementById(courseID).evaluatePrerequisites(courses, programs);
             // TODO check that this actually returns true
         }
 
-        for (let program of this.programs) {
-            program.evaluateRequirements(courses);
-        }
+        // TODO check the programs
     }
 
     getScheduledCourses() {
@@ -120,11 +115,11 @@ export class Profile extends HTMLDivElement {
             return div.customTagName === "course-tile";
         // Then, assign a semester number to each.
         }).forEach(courseTile => {
-            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number if twice the row number
+            let semesterNum = 2 * semesters.indexOf(courseTile.closest('tr')); // The base number is twice the row number
             // If the course is year-long, then it will be counted as the lower semester
             if (courseTile.courseLength === 'Y') {
                 semesterNum += 1;
-            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that tot he base.
+            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that to the base.
             } else {
                 semesterNum += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
             }
@@ -132,6 +127,12 @@ export class Profile extends HTMLDivElement {
         });
 
         return plan;
+    }
+
+    invalidatePrerequisitesAndClearInfoPanel() {
+        for (let div of this.timetable.tbody.getElementsByTagName('div')) {
+            if (div.customTagName === "course-tile") { div.resetCourse(); }
+        }
     }
 }
 
