@@ -4,11 +4,10 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
-        box-sizing: content-box;
         display: flex;
         width: 8vw; 
         height: 4vw;
-        border: 1px solid grey;
+        outline: 1px solid grey;
     `;
     
     static semesterSelectStylesheet = `
@@ -39,14 +38,14 @@ export class Timetable extends HTMLTableElement {
 
     constructor() {
         super();
-        this.style.border = "1px solid grey";
+        this.style.outline = "1px solid grey";
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
         // the bottom row is fixed and unremovable. It contains the starting semester
         // value upon which the labels of the other semesters are calculated
         let tr = document.createElement('tr');
-        tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
+        // tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
             let th = document.createElement('th');
             th.style = Timetable.headerStylesheet;
                 let deleteSemesterButton = document.createElement('button');

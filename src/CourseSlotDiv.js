@@ -1,12 +1,11 @@
 export class CourseSlotDiv extends HTMLDivElement {
     // Switching back to content-box is the best way I could think of to get the borders to play nicely while also keeping the size of the internal slots and the tile itself the same. 
     static stylesheet = `
-        box-sizing: content-box;
         width: 8vw;
         height: 4vw;
         display: flex;
         flex-direction: column;
-        border: 1px solid grey;
+        outline: 1px solid grey;
     `;
 
     constructor() {
