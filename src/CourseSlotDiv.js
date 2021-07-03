@@ -5,7 +5,7 @@ export class CourseSlotDiv extends HTMLDivElement {
         height: 4vw;
         display: flex;
         flex-direction: column;
-        outline: 1px solid grey;
+        outline: 1px solid white;
     `;
 
     constructor() {

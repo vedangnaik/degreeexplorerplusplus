@@ -7,7 +7,8 @@ export class Timetable extends HTMLTableElement {
         display: flex;
         width: 8vw; 
         height: 4vw;
-        outline: 1px solid grey;
+        outline: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.5);
     `;
     
     static semesterSelectStylesheet = `
@@ -36,16 +37,18 @@ export class Timetable extends HTMLTableElement {
         background-color: #ff4d4d;
     `;
 
+    static fallWinterGradient = "linear-gradient(5deg, #fdbb2da0, #f44336a0, #42a5f5a0)";
+    static summerGradient = "linear-gradient(5deg, #42a5f5a0, #22c1c3a0, #fdbb2da0)";
+
     constructor() {
         super();
-        this.style.outline = "1px solid grey";
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
         // the bottom row is fixed and unremovable. It contains the starting semester
         // value upon which the labels of the other semesters are calculated
         let tr = document.createElement('tr');
-        // tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
+        tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
             let th = document.createElement('th');
             th.style = Timetable.headerStylesheet;
                 let deleteSemesterButton = document.createElement('button');
@@ -70,7 +73,6 @@ export class Timetable extends HTMLTableElement {
                         summerOption.innerText = "Summer";
                     this.semesterSelect.appendChild(fallWinterOption);
                     this.semesterSelect.appendChild(summerOption);
-                    this.semesterSelect.onchange = this.refreshSemsterNames.bind(this);
                 selectDiv.appendChild(this.semesterSelect);
                     this.yearSelect = document.createElement('select');
                     this.yearSelect.style = Timetable.yearSelectStylesheet;
@@ -81,17 +83,16 @@ export class Timetable extends HTMLTableElement {
                         yearOption.innerText = year;
                         this.yearSelect.appendChild(yearOption);
                     }
-                    this.yearSelect.onchange = this.refreshSemsterNames.bind(this);
                     // rely on ordering of children to correctly set the option of the current year to default
                     this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
                 selectDiv.appendChild(this.yearSelect);
             th.appendChild(selectDiv);
         tr.appendChild(th);
+        
         // add 6 course slot containers
-        for (let col = 0; col < 6; col++) {
+        for (let _ = 0; _ < 6; _++) {
             let td = document.createElement('td');
-            let csc = new CourseSlotDiv();
-            td.appendChild(csc);
+            td.appendChild(new CourseSlotDiv());
             tr.appendChild(td);
         }
         this.tbody.appendChild(tr);
@@ -100,58 +101,66 @@ export class Timetable extends HTMLTableElement {
         this.addSemester();
         this.addSemester();
         this.addSemester();
+
+        // We use a single observer on the tbody to tell us if any rows get added or deleted. This will account for adding and deleting semesters. The selects do not affect the DOM so these need to be hooked up explicitly to the function via JS.
+        this.semesterObserver = new MutationObserver(this.refreshSemstersInfo.bind(this));
+        this.semesterObserver.observe(this.tbody, { childList: true });
+        this.semesterSelect.onchange = this.refreshSemstersInfo.bind(this);
+        this.yearSelect.onchange = this.refreshSemstersInfo.bind(this);
+
+        // Add one last semester to get the refreshSemesterNames to fire and give all the previous semesters the correct name. This is a bit of a pointless micro-optimization but hey, why not right
         this.addSemester();
     }
 
     addSemester() {
-        // create new row
         let tr = document.createElement('tr');
         tr.style.background = "linear-gradient(25deg, #03a9f4, #ffeb3b)";
-        // header for row based on current number of semesters
-        let th = document.createElement('th');
-        th.style = Timetable.headerStylesheet;
-            let deleteSemesterButton = document.createElement('button');
-            deleteSemesterButton.innerText = '✖';
-            deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
-            deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
-        th.appendChild(deleteSemesterButton);
-            let semesterName = document.createElement('h5');
-            semesterName.innerText = "Semester " + (this.tbody.children.length + 1);
-            semesterName.style = Timetable.semesterNameStylesheet;
-        th.appendChild(semesterName);
-
+            let th = document.createElement('th');
+            th.style = Timetable.headerStylesheet;
+                let deleteSemesterButton = document.createElement('button');
+                deleteSemesterButton.innerText = '✖';
+                deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
+                deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
+            th.appendChild(deleteSemesterButton);
+                let semesterName = document.createElement('h5');
+                semesterName.style = Timetable.semesterNameStylesheet;
+            th.appendChild(semesterName);
         tr.appendChild(th);
-        // add 6 course slot containers
-        for (let col = 0; col < 6; col++) {
+
+        for (let _ = 0; _ < 6; _++) {
             let td = document.createElement('td');
-            let csc = new CourseSlotDiv();
-            td.appendChild(csc);
+            td.appendChild(new CourseSlotDiv());
             tr.appendChild(td);
         }
-        // append row
-        this.tbody.insertBefore(tr, this.tbody.firstChild);
 
-        this.refreshSemsterNames()
+        // Add the row to the top of the table so that the bottom one isn't disturbed
+        this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
     deleteSemester() {
-        let temp_table = this.closest('table');
         this.parentElement.removeChild(this);
-        temp_table.refreshSemsterNames();
     }
 
-    refreshSemsterNames() {
+    refreshSemstersInfo() {
+        // TODO: Add the differential row styling based on the season
         let semesters = this.tbody.children;
         let anchorSemester = this.semesterSelect.value;
         let anchorYear = parseInt(this.yearSelect.value);
+
+        // Set only the gradient for the very first semester
+        semesters[semesters.length - 1].style.background = anchorSemester === 'Fall/Winter' ? Timetable.fallWinterGradient : Timetable.summerGradient;
+
         for (let i = 1; i < semesters.length; i++) {
-            let semesterHeader = semesters[semesters.length - 1 - i].children[0];
+            let semester = semesters[semesters.length - 1 - i];
+            let semesterHeader = semester.children[0];
             
             if (anchorSemester === 'Fall/Winter') {
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
+                semester.style.background = i % 2 === 0 ? Timetable.fallWinterGradient : Timetable.summerGradient;
             } else {
                 let newBaseYear = 
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
+                semester.style.background = i % 2 === 0 ? Timetable.summerGradient : Timetable.fallWinterGradient;
             }
         }
     }

@@ -75,7 +75,7 @@ export class Profile extends HTMLDivElement {
         this.timetableObserver.observe(this.timetable, { childList: true, subtree: true});
 
         // TODO Temp remove this, only for testing
-        let ct = new CourseTile("CSC148Y1");
+        let ct = new CourseTile("CSC148H1");
         let t = this.cs.childNodes[1];
         if (t.children.length > 0) { t.removeChild(t.childNodes[0]); }
         t.appendChild(ct);

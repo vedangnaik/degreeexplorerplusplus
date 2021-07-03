@@ -11,7 +11,7 @@ export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 8vw;
         height: 2vw;
-        background-color: lightgrey;
+        background-color: grey;
         z-index: 1;
         display: flex;
     `;
@@ -78,7 +78,7 @@ export class CourseTile extends HTMLDivElement {
 
     resetCourse() {
         this.prerequisitesTracker = {};
-        this.style.backgroundColor = "lightgrey";
+        this.style.backgroundColor = "grey";
     }
 
     evaluatePrerequisites(courses, programs) {
@@ -92,7 +92,7 @@ export class CourseTile extends HTMLDivElement {
         this.style.backgroundColor = "green";
         Object.entries(this.prerequisitesTracker).forEach(([_, prereqStatus]) => {
             if (prereqStatus === PrerequisiteStatuses.INCOMPLETE) { 
-                this.style.backgroundColor = "salmon";
+                this.style.backgroundColor = "red";
                 return;
             };
             if (prereqStatus === PrerequisiteStatuses.WARNING) { 
