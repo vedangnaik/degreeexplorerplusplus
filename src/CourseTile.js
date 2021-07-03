@@ -11,7 +11,7 @@ export class CourseTile extends HTMLDivElement {
     static courseTileStylesheet = `
         width: 8vw;
         height: 2vw;
-        background-color: grey;
+        background-color: lightgrey;
         z-index: 1;
         display: flex;
     `;
@@ -78,7 +78,7 @@ export class CourseTile extends HTMLDivElement {
 
     resetCourse() {
         this.prerequisitesTracker = {};
-        this.style.backgroundColor = "grey";
+        this.style.backgroundColor = "lightgrey";
     }
 
     evaluatePrerequisites(courses, programs) {

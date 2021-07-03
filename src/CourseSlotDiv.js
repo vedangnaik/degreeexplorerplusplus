@@ -1,9 +1,11 @@
 export class CourseSlotDiv extends HTMLDivElement {
     static stylesheet = `
+        box-sizing: content-box;
         width: 8vw;
         height: 4vw;
         display: flex;
         flex-direction: column;
+        border: 1px solid grey;
     `;
 
     constructor() {
@@ -12,9 +14,7 @@ export class CourseSlotDiv extends HTMLDivElement {
         this.style = CourseSlotDiv.stylesheet;
         // set up inner slots
         this.upperSlot = new CourseSlot();
-        // this.upperSlot.style.backgroundColor = "#e1ddd1";
         this.lowerSlot = new CourseSlot();
-        // this.lowerSlot.style.backgroundColor = "#faac4a";
         this.appendChild(this.upperSlot);
         this.appendChild(this.lowerSlot);
     }
@@ -30,7 +30,6 @@ export class CourseSlotDiv extends HTMLDivElement {
 class CourseSlot extends HTMLDivElement {
     static stylesheet = `
         flex: 1;
-        outline: grey solid thin;
     `;
 
     constructor() {

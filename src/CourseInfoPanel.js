@@ -5,8 +5,8 @@ import { PrerequisiteStatuses } from "./CourseTile.js";
 export class CourseInfoPanel extends HTMLDivElement {
     static stylesheet = `
         background-color: lightgrey;
-        width: 28vw;
-        outline: grey solid thin;
+        width: 26vw;
+        border: 2px solid grey;
         display: flex;
     `;
 

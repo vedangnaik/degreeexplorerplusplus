@@ -4,10 +4,11 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
+        box-sizing: content-box;
         display: flex;
-        width: 8vw; 
+        width: 9vw; 
         height: 4vw;
-        outline: grey solid thin;
+        border: 1px solid grey;
     `;
     
     static semesterSelectStylesheet = `
@@ -38,6 +39,7 @@ export class Timetable extends HTMLTableElement {
 
     constructor() {
         super();
+        this.style.border = "1px solid grey";
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
@@ -47,7 +49,7 @@ export class Timetable extends HTMLTableElement {
         tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
             let th = document.createElement('th');
             th.style = Timetable.headerStylesheet;
-            th.style.display = "revert"; // reset the display so that it doesn't overflow the table cell
+            // th.style.display = "revert"; // reset the display so that it doesn't overflow the table cell
                 // create the select for the semester  
                 this.semesterSelect = document.createElement('select');
                 this.semesterSelect.style = Timetable.semesterSelectStylesheet;
@@ -99,6 +101,7 @@ export class Timetable extends HTMLTableElement {
     addSemester() {
         // create new row
         let tr = document.createElement('tr');
+        tr.style.background = "linear-gradient(25deg, #03a9f4, #ffeb3b)";
         // header for row based on current number of semesters
         let th = document.createElement('th');
         th.style = Timetable.headerStylesheet;
