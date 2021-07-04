@@ -50,6 +50,93 @@ export class Program extends HTMLTableElement {
             let statusObj = requirement["checker"](courses);
             statusCell.innerText = statusObj["status"] ? "Completed" : statusObj["errors"];
         }
+
+        function recursiveEvaluateRequirements(requirement) {
+            if (requirement.type == "NOTE") { 
+                return {
+                    "completed": true,
+                    "usedCourses": []
+                };
+            }
+        
+            if (requirement.requisiteItems[0].includes('Req')) {
+                if (requirement.type == "MINIMUM") {
+                    for (reqID of requirement.requisiteItems) {
+                        let statusObj = recursiveEvaluateRequirements(requirements[reqID]);
+                        if (statusObj.completed) {
+                            return {
+                                "completed": true,
+                                "usedCourses": statusObj.usedCourses
+                            }
+                        };
+                    }
+        
+                    return {
+                        "completed": false,
+                        "usedCourses": []
+                    }
+                }
+                
+                else if (requirement.type == "GROUPMAXIMUM") {
+                    console.log("req groupmaximum");
+                    console.log(requirement);
+                } 
+                
+                else if (requirement.type == "LIST") {
+                    console.log("req list");
+                    console.log(requirement);
+                }
+            }
+        
+            else {
+                if (requirement.type == "MINIMUM") {
+                    let credits = 0;
+                    let requiredCredits = requirement.requiredCredits;
+                    let completed = false;
+                    let usedCourses = [];
+                    
+                    for (let courseID of requirement.requisiteItems) {
+                        if (credits == requiredCredits) { 
+                            completed = true;
+                            break;
+                        }
+                        
+                        if (courseID in courses) {
+                            credits += courseID[6] == 'H' ? 0.5 : 1.0;
+                            usedCourses.push(courseID);
+                        }
+                    }
+        
+                    return {
+                        "completed": completed,
+                        "usedCourses": usedCourses
+                    };
+                }
+                
+                else if (requirement.type == "GROUPMAXIMUM") {
+                    console.log("course groupmaximum");
+                    console.log(requirement);
+                } 
+                
+                else if (requirement.type == "LIST") {
+                    let completed = true;
+                    let usedCourses = [];
+                    
+                    for (let courseID of requirement.requisiteItems) {
+                        if (courseID in courses) {
+                            usedCourses.push(courseID);
+                        } else {
+                            completed = false;
+                        }
+                    }
+        
+                    return {
+                        "completed": completed,
+                        "usedCourses": usedCourses
+                    };
+                }
+            }
+        }
     }
 }
 

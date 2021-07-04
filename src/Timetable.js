@@ -7,8 +7,8 @@ export class Timetable extends HTMLTableElement {
         display: flex;
         width: 8vw; 
         height: 4vw;
-        outline: 1px solid white;
-        background-color: rgba(255, 255, 255, 0.5);
+        outline: 1px solid #909090;
+        background-color: lightgrey;
     `;
     
     static semesterSelectStylesheet = `
@@ -37,9 +37,6 @@ export class Timetable extends HTMLTableElement {
         background-color: #ff4d4d;
     `;
 
-    static fallWinterGradient = "linear-gradient(5deg, #fdbb2da0, #f44336a0, #42a5f5a0)";
-    static summerGradient = "linear-gradient(5deg, #42a5f5a0, #22c1c3a0, #fdbb2da0)";
-
     constructor() {
         super();
         this.tbody = document.createElement('tbody');
@@ -48,7 +45,6 @@ export class Timetable extends HTMLTableElement {
         // the bottom row is fixed and unremovable. It contains the starting semester
         // value upon which the labels of the other semesters are calculated
         let tr = document.createElement('tr');
-        tr.style.background = "linear-gradient(35deg, #03a9f4, #ffeb3b)";
             let th = document.createElement('th');
             th.style = Timetable.headerStylesheet;
                 let deleteSemesterButton = document.createElement('button');
@@ -114,7 +110,6 @@ export class Timetable extends HTMLTableElement {
 
     addSemester() {
         let tr = document.createElement('tr');
-        tr.style.background = "linear-gradient(25deg, #03a9f4, #ffeb3b)";
             let th = document.createElement('th');
             th.style = Timetable.headerStylesheet;
                 let deleteSemesterButton = document.createElement('button');
@@ -147,20 +142,15 @@ export class Timetable extends HTMLTableElement {
         let anchorSemester = this.semesterSelect.value;
         let anchorYear = parseInt(this.yearSelect.value);
 
-        // Set only the gradient for the very first semester
-        semesters[semesters.length - 1].style.background = anchorSemester === 'Fall/Winter' ? Timetable.fallWinterGradient : Timetable.summerGradient;
-
         for (let i = 1; i < semesters.length; i++) {
             let semester = semesters[semesters.length - 1 - i];
             let semesterHeader = semester.children[0];
             
             if (anchorSemester === 'Fall/Winter') {
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
-                semester.style.background = i % 2 === 0 ? Timetable.fallWinterGradient : Timetable.summerGradient;
             } else {
                 let newBaseYear = 
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
-                semester.style.background = i % 2 === 0 ? Timetable.summerGradient : Timetable.fallWinterGradient;
             }
         }
     }

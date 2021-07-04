@@ -32,11 +32,6 @@ export class Profile extends HTMLDivElement {
         // the toolbar with the buttons and stuff
         let toolbar = document.createElement('div');
         toolbar.style = "display: flex; justify-content: space-between;";
-            // add semester button
-            let addSemesterButton = document.createElement('button');    
-            addSemesterButton.innerText = "Add Semester";
-            addSemesterButton.onclick = this.timetable.addSemester.bind(this.timetable);
-            
             // this div contains the course/program search buttons plus the slot
             let addCoursesAndProgramsDiv = document.createElement('div');
             addCoursesAndProgramsDiv.style = "display: flex;";
@@ -60,8 +55,7 @@ export class Profile extends HTMLDivElement {
 
             let evaluateProfileButton = document.createElement('button');
             evaluateProfileButton.innerText = "Check CS Specialist Requirements"
-            evaluateProfileButton.onclick = this.evaluateProfile.bind(this)
-        toolbar.appendChild(addSemesterButton);
+            evaluateProfileButton.onclick = this.evaluateProfile.bind(this);
         toolbar.appendChild(addCoursesAndProgramsDiv);
         toolbar.appendChild(evaluateProfileButton);
 
