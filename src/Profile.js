@@ -27,7 +27,7 @@ export class Profile extends HTMLDivElement {
         main.appendChild(courseInfoPanelSection);
 
         this.appendChild(main);
-        this.appendChild(new Spacer({ "height": "1vw" }));
+        // this.appendChild(new Spacer({ "height": "1vw" }));
         // TODO Temp remove this, only for testing
         // let program = new Program("ASSPE1689");
         // this.appendChild(program);

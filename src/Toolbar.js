@@ -5,12 +5,20 @@ import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
 
 export class Toolbar extends HTMLDivElement {
+    static searchButtonStylesheet = `
+        padding: 0.5vw; 
+        width: 4.5vw; 
+        font-size: 12px; 
+        outline: 1px solid grey;
+    `;
+
     constructor() {
         super();
         this.style = "width: 13vw; display: flex; flex-direction: column";
 
         this.searchInput = document.createElement('input');
         this.searchInput.style = "border: 1px solid black; border-radius: 5px;";
+
         let div = document.createElement('div');
         div.style = "display: flex"
             // Course slot to hold newly added course. The bottom slot is deleted to prevent confusion
@@ -20,14 +28,20 @@ export class Toolbar extends HTMLDivElement {
             this.searchButton = document.createElement('button');
             this.searchButton.innerText = "Add Courses & PoSTs";
             this.searchButton.onclick = this.searchCourse.bind(this);
-            this.searchButton.style = "padding: 0.5vw; width: 4.5vw; font-size: 12px";
+            this.searchButton.style = Toolbar.searchButtonStylesheet;
         div.appendChild(this.courseSlot);
         div.appendChild(new Spacer({ "width": "0.5vw" }));
         div.appendChild(this.searchButton);
+        
+        this.evaluateProfileButton = document.createElement('button');
+        this.evaluateProfileButton.innerText = "Evaluate Profile";
+        this.evaluateProfileButton.style = "outline: 1px solid grey; padding: 0.15vw";
 
         this.appendChild(this.searchInput);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
         this.appendChild(div);
+        this.appendChild(new Spacer({ "height": "0.5vw" }));
+        this.appendChild(this.evaluateProfileButton);
     }
 
     searchCourse() {
