@@ -3,7 +3,13 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
+    scrollbar-width: none;
+}
+
+/* Disable all scrollbars */
+*::-webkit-scrollbar {
+    display: none;
 }
 
 table {

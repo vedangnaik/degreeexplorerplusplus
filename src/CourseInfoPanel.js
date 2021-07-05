@@ -6,7 +6,7 @@ export class CourseInfoPanel extends HTMLDivElement {
     static stylesheet = `
         background-color: lightgrey;
         outline: 1px solid #909090;
-        width: 28vw;
+        width: 26vw;
         display: flex;
     `;
 

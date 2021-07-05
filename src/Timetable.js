@@ -5,7 +5,7 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
         display: flex;
-        width: 8vw; 
+        width: 9vw; 
         height: 4vw;
         outline: 1px solid #909090;
         background-color: lightgrey;
