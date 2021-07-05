@@ -115,7 +115,7 @@ export class Timetable extends HTMLTableElement {
                 let deleteSemesterButton = document.createElement('button');
                 deleteSemesterButton.innerText = '✖';
                 deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
-                deleteSemesterButton.onclick = this.deleteSemester.bind(tr);
+                deleteSemesterButton.onclick = this.deleteSemester.bind(this, tr);
             th.appendChild(deleteSemesterButton);
                 let semesterName = document.createElement('h5');
                 semesterName.style = Timetable.semesterNameStylesheet;
@@ -132,12 +132,11 @@ export class Timetable extends HTMLTableElement {
         this.tbody.insertBefore(tr, this.tbody.firstChild);
     }
 
-    deleteSemester() {
-        this.parentElement.removeChild(this);
+    deleteSemester(tr) {
+        this.tbody.removeChild(tr);
     }
 
     refreshSemstersInfo() {
-        // TODO: Add the differential row styling based on the season
         let semesters = this.tbody.children;
         let anchorSemester = this.semesterSelect.value;
         let anchorYear = parseInt(this.yearSelect.value);
