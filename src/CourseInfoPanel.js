@@ -3,6 +3,8 @@ import { Spacer } from "./Spacer.js";
 import { PrerequisiteStatuses } from "./CourseTile.js";
 
 export class CourseInfoPanel extends HTMLDivElement {
+    static panelGlobalID = "CourseInfoPanel_GlobalID";
+
     static stylesheet = `
         background-color: lightgrey;
         outline: 1px solid #909090;
@@ -23,10 +25,14 @@ export class CourseInfoPanel extends HTMLDivElement {
         padding: 0.5vw;
     `;
 
-    constructor(id) {
+    constructor() {
         super();
-        this.id = id;
+        this.id = CourseInfoPanel.panelGlobalID;
         this.style = CourseInfoPanel.stylesheet;
+        // These are required for the panel to expand and fit the height of the timetable.
+        this.style.flexBasis = "0px";
+        this.style.flexGrow = "1";
+        this.style.overflowY = "scroll";
 
         // This div contains the actual panel.
         this.courseInfoDiv = document.createElement('div');

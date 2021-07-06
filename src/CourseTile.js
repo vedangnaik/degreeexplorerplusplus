@@ -1,4 +1,5 @@
 import CourseData from "../resources/CourseData.js";
+import { CourseInfoPanel } from "./CourseInfoPanel.js";
 
 export const PrerequisiteStatuses = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
@@ -35,7 +36,7 @@ export class CourseTile extends HTMLDivElement {
         this.draggable = true;
         this.ondragstart = this.onDragStart.bind(this);
         this.prerequisitesTracker = {};
-        this.onclick = () => document.getElementById("CourseInfoPanel").printPrereqisiteInfo(this.id, this.prerequisitesTracker);
+        this.onclick = () => document.getElementById(CourseInfoPanel.panelGlobalID).printPrereqisiteInfo(this.id, this.prerequisitesTracker);
 
         // course name header
         let courseName = document.createElement('h3');

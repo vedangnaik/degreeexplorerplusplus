@@ -69,6 +69,7 @@ export class Timetable extends HTMLTableElement {
                         summerOption.innerText = "Summer";
                     this.semesterSelect.appendChild(fallWinterOption);
                     this.semesterSelect.appendChild(summerOption);
+                    this.semesterSelect.onchange = this.refreshSemsters.bind(this);
                 selectDiv.appendChild(this.semesterSelect);
                     this.yearSelect = document.createElement('select');
                     this.yearSelect.style = Timetable.yearSelectStylesheet;
@@ -81,6 +82,7 @@ export class Timetable extends HTMLTableElement {
                     }
                     // rely on ordering of children to correctly set the option of the current year to default
                     this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
+                    this.yearSelect.onchange = this.refreshSemsters.bind(this);
                 selectDiv.appendChild(this.yearSelect);
             th.appendChild(selectDiv);
         tr.appendChild(th);
@@ -97,15 +99,11 @@ export class Timetable extends HTMLTableElement {
         this.addSemester();
         this.addSemester();
         this.addSemester();
-
-        // We use a single observer on the tbody to tell us if any rows get added or deleted. This will account for adding and deleting semesters. The selects do not affect the DOM so these need to be hooked up explicitly to the function via JS.
-        this.semesterObserver = new MutationObserver(this.refreshSemstersInfo.bind(this));
-        this.semesterObserver.observe(this.tbody, { childList: true });
-        this.semesterSelect.onchange = this.refreshSemstersInfo.bind(this);
-        this.yearSelect.onchange = this.refreshSemstersInfo.bind(this);
-
-        // Add one last semester to get the refreshSemesterNames to fire and give all the previous semesters the correct name. This is a bit of a pointless micro-optimization but hey, why not right
         this.addSemester();
+
+        // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses.
+        this.semesterObserver = new MutationObserver(this.refreshCourses.bind(this));
+        this.semesterObserver.observe(this.tbody, { childList: true, subtree: true });
     }
 
     addSemester() {
@@ -130,13 +128,16 @@ export class Timetable extends HTMLTableElement {
 
         // Add the row to the top of the table so that the bottom one isn't disturbed
         this.tbody.insertBefore(tr, this.tbody.firstChild);
+
+        this.refreshSemsters();
     }
 
     deleteSemester(tr) {
         this.tbody.removeChild(tr);
+        this.refreshSemsters();
     }
 
-    refreshSemstersInfo() {
+    refreshSemsters() {
         let semesters = this.tbody.children;
         let anchorSemester = this.semesterSelect.value;
         let anchorYear = parseInt(this.yearSelect.value);
@@ -151,6 +152,12 @@ export class Timetable extends HTMLTableElement {
                 let newBaseYear = 
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
             }
+        }
+    }
+
+    refreshCourses() {
+        for (let courseTile of this.timetable.tbody.getElementsByTagName('div')) {
+            if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
     }
 }

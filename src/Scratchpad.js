@@ -1,4 +1,10 @@
 export class Scratchpad extends HTMLDivElement {
+    static stylesheet = `
+        flex: 1;
+        outline: 1px solid grey;
+        position: relative    
+    `;
+
     constructor() {
         super();
         this.ondragover = this.onDragOver.bind(this);
