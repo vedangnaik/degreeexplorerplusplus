@@ -107,6 +107,46 @@ export class Timetable extends HTMLTableElement {
         this.semesterObserver.observe(this.tbody, { childList: true, subtree: true });
     }
 
+    // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect
+    getTimetableJSON() {
+        let scheduledCourses = {};
+        const semesterTrs = Array.prototype.slice.call(this.timetable.getElementsByTagName('tr'));
+        const divs = Array.prototype.slice.call(this.timetable.tbody.getElementsByTagName('div'));
+
+        // Filter out only the course-tiles 
+        divs.filter(div => {
+            return div.customTagName === "course-tile";
+        }).forEach(courseTile => {
+            const semesterTr = courseTile.closest('tr');
+            const semesterTd = courseTile.closest('td');
+
+            // Get the y-coordinate - This is used to determine which courses have been taken before others. The 'top' of the grid (0, 0) is the top left cell of the timetable. Although this means that the latest semester has a lower y coordinate, it makes calculations a bit simpler.
+            // The base number is twice the row number, since each table tr contains two semesters
+            let yCoord = 2 * semesterTrs.indexOf(semesterTr);
+            if (courseTile.courseLength === 'Y') {
+                // If the course is year-long, then it will be counted as the lower semester
+                yCoord += 1;
+            } else {
+                // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that to the base.
+                yCoord += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
+            }
+
+            // Get the x coordinate - This doesn't make a difference to anything, it's only for stylistic purposes
+            const xCoord = semesterTr.indexOf(semesterTd);
+
+            scheduledCourses[courseTile.id] = {
+                "x": xCoord,
+                "y": yCoord
+            };
+        });
+
+        return {
+            "anchorSemester": this.semesterSelect.value,
+            "anchorYear": this.yearSelect.value,
+            "scheduledCourses": scheduledCourses
+        };
+    }
+
     addSemester() {
         let tr = document.createElement('tr');
             let th = document.createElement('th');

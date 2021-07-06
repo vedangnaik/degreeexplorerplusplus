@@ -6,35 +6,6 @@ import { Spacer } from "./Spacer.js";
 export class Profile extends HTMLDivElement {
     constructor() {
         super();
-
-        // this convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution.
-        let main = document.createElement('div');
-        main.style = "display: flex;";
-            let timetableSection = document.createElement('section');
-            timetableSection.style = "display: flex; flex-direction: column;";
-                this.timetable = new Timetable();
-            timetableSection.appendChild(this.timetable);
-            let courseInfoPanelSection = document.createElement('section');
-            courseInfoPanelSection.style = "display: flex; flex-direction: column;";
-                this.courseInfoPanel = new CourseInfoPanel("CourseInfoPanel");
-                // extra properties needed for the height thing 
-                this.courseInfoPanel.style.flexBasis = "0px";
-                this.courseInfoPanel.style.flexGrow = "1";
-                this.courseInfoPanel.style.overflowY = "scroll";
-            courseInfoPanelSection.appendChild(this.courseInfoPanel);
-        main.appendChild(timetableSection);
-        main.appendChild(new Spacer({"width": "1vw"}));
-        main.appendChild(courseInfoPanelSection);
-
-        this.appendChild(main);
-        // this.appendChild(new Spacer({ "height": "1vw" }));
-        // TODO Temp remove this, only for testing
-        // let program = new Program("ASSPE1689");
-        // this.appendChild(program);
-
-        // Connect all the MutationObservers
-        this.timetableObserver = new MutationObserver(this.invalidatePrerequisitesAndClearInfoPanel.bind(this));
-        this.timetableObserver.observe(this.timetable, { childList: true, subtree: true});
     }
 
     evaluateProfile() {
@@ -71,12 +42,6 @@ export class Profile extends HTMLDivElement {
         });
 
         return plan;
-    }
-
-    invalidatePrerequisitesAndClearInfoPanel() {
-        for (let div of this.timetable.tbody.getElementsByTagName('div')) {
-            if (div.customTagName === "course-tile") { div.resetCourse(); }
-        }
     }
 }
 
