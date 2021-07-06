@@ -1,4 +1,5 @@
 import CourseData from "../resources/CourseData.js";
+import { CourseInfoPanel } from "./CourseInfoPanel.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 
@@ -101,7 +102,7 @@ export class Timetable extends HTMLTableElement {
         this.addSemester();
         this.addSemester();
 
-        // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses.
+        // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
         this.semesterObserver = new MutationObserver(this.refreshCourses.bind(this));
         this.semesterObserver.observe(this.tbody, { childList: true, subtree: true });
     }
@@ -156,9 +157,10 @@ export class Timetable extends HTMLTableElement {
     }
 
     refreshCourses() {
-        for (let courseTile of this.timetable.tbody.getElementsByTagName('div')) {
+        for (let courseTile of this.tbody.getElementsByTagName('div')) {
             if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
+        document.getElementById(CourseInfoPanel.panelGlobalID).resetPanel();
     }
 }
 

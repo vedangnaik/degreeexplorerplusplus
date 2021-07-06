@@ -77,7 +77,6 @@ export class Profile extends HTMLDivElement {
         for (let div of this.timetable.tbody.getElementsByTagName('div')) {
             if (div.customTagName === "course-tile") { div.resetCourse(); }
         }
-        this.courseInfoPanel.resetPanel();
     }
 }
 

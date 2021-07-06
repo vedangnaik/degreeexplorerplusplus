@@ -4,7 +4,6 @@ export class Scratchpad extends HTMLDivElement {
         outline: 1px solid grey;
         position: relative;
         text-align: center;
-        color: grey;
     `;
 
     constructor() {

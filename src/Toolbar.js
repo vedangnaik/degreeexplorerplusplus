@@ -5,6 +5,12 @@ import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
 
 export class Toolbar extends HTMLDivElement {
+    static stylesheet = `
+        width: 13vw; 
+        display: flex; 
+        flex-direction: column;
+    `;
+
     static searchButtonStylesheet = `
         padding: 0.5vw; 
         width: 4.5vw; 
@@ -14,7 +20,7 @@ export class Toolbar extends HTMLDivElement {
 
     constructor() {
         super();
-        this.style = "width: 13vw; display: flex; flex-direction: column";
+        this.style = Toolbar.stylesheet;
 
         this.searchInput = document.createElement('input');
         this.searchInput.style = "border: 1px solid black; border-radius: 5px;";
