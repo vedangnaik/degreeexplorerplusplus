@@ -15,7 +15,3 @@
 table {
     border-collapse: collapse;
 }
-
-#toolbox > div {
-    position: absolute;
-}

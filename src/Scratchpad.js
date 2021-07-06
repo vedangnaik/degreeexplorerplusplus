@@ -2,11 +2,27 @@ export class Scratchpad extends HTMLDivElement {
     static stylesheet = `
         flex: 1;
         outline: 1px solid grey;
-        position: relative    
+        position: relative;
+        text-align: center;
+        color: grey;
     `;
 
     constructor() {
         super();
+        this.id = "scratchpad";
+        this.style = Scratchpad.stylesheet;
+        this.innerText = "SCRATCHPAD";
+
+        // add a new style node that gives each child of the pad absolute position
+        let styleNode = document.createElement('style');
+        styleNode.innerText = `
+            #scratchpad > div {
+                position: absolute;
+            }
+        `;
+        this.appendChild(styleNode);
+
+        // Connect the dragging functions
         this.ondragover = this.onDragOver.bind(this);
         this.ondrop = this.onDrop.bind(this);
     }

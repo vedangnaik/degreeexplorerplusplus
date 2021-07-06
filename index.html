@@ -17,13 +17,14 @@
                 <!-- Spacer -->
                 <div style="height: 1.0vw;"></div>
                 <!-- Scratchpad -->
-                <div is="depp-scratchpad" style="flex: 1; outline: 1px solid grey; position: relative">
-                    <!-- <p style="text-align: center; color: grey; margin: auto;">SCRATCHPAD</p> -->
-                </div>
+                <div is="depp-scratchpad"></div>
             </div>
+
             <!-- Spacer -->
             <div style="width: 1vw;"></div>
+
             <!-- Timetable, Course Info Panel, and Programs -->
+            <!-- This convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution. -->
             <div style="width: 84vw;">
                 <div style="display: flex;">
                     <section style="display: flex; flex-direction: column;">
