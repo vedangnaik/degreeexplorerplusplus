@@ -2,9 +2,9 @@ import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 import { PrerequisiteStatuses } from "./CourseTile.js";
 
-export class CourseInfoPanel extends HTMLDivElement {
-    static panelGlobalID = "CourseInfoPanel_GlobalID";
+export const GlobalCourseInfoPanelID = "CourseInfoPanel_GlobalID";
 
+export class CourseInfoPanel extends HTMLDivElement {
     static stylesheet = `
         background-color: lightgrey;
         outline: 1px solid #909090;
@@ -27,7 +27,7 @@ export class CourseInfoPanel extends HTMLDivElement {
 
     constructor() {
         super();
-        this.id = CourseInfoPanel.panelGlobalID;
+        this.id = GlobalCourseInfoPanelID
         this.style = CourseInfoPanel.stylesheet;
         // These are required for the panel to expand and fit the height of the timetable.
         this.style.flexBasis = "0px";

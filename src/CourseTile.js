@@ -1,5 +1,5 @@
 import CourseData from "../resources/CourseData.js";
-import { CourseInfoPanel } from "./CourseInfoPanel.js";
+import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
 
 export const PrerequisiteStatuses = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
@@ -36,7 +36,7 @@ export class CourseTile extends HTMLDivElement {
         this.draggable = true;
         this.ondragstart = this.onDragStart.bind(this);
         this.prerequisitesTracker = {};
-        this.onclick = () => document.getElementById(CourseInfoPanel.panelGlobalID).printPrereqisiteInfo(this.id, this.prerequisitesTracker);
+        this.onclick = () => document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.prerequisitesTracker);
 
         // course name header
         let courseName = document.createElement('h3');
@@ -156,18 +156,22 @@ export class CourseTile extends HTMLDivElement {
                     switch (prerequisite.type) {
                         case 'MINIMUM': {
                             return (prerequisite.count <= prerequisite.requisiteItems
-                                .filter(dependent_courseID => dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID])
+                                .filter(dependent_courseID => 
+                                    dependent_courseID in scheduledCourses && 
+                                    scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                                 .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'LIST': {
                             return (prerequisite.requisiteItems.filter(dependent_courseID => { 
-                                return !(dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID]);
+                                return !(dependent_courseID in scheduledCourses && scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"]);
                             }).length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }
                         case 'MAXIMUM': {
                             return (prerequisite.count >= prerequisite.requisiteItems
-                                .filter(dependent_courseID => dependent_courseID in scheduledCourses && scheduledCourses[courseID] < scheduledCourses[dependent_courseID])
+                                .filter(dependent_courseID => 
+                                    dependent_courseID in scheduledCourses && 
+                                    scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                                 .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
                         }

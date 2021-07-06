@@ -1,8 +1,9 @@
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
-import { Scratchpad } from "./Scratchpad.js";
 import { CourseTile } from "./CourseTile.js";
+import { GlobalTimetableID } from "./Timetable.js";
 import CourseData from "../resources/CourseData.js";
+
 
 export class Toolbar extends HTMLDivElement {
     static stylesheet = `
@@ -42,6 +43,7 @@ export class Toolbar extends HTMLDivElement {
         this.evaluateProfileButton = document.createElement('button');
         this.evaluateProfileButton.innerText = "Evaluate Profile";
         this.evaluateProfileButton.style = "outline: 1px solid grey; padding: 0.15vw";
+        this.evaluateProfileButton.onclick = this.evaluateProfile.bind(this);
 
         this.appendChild(this.searchInput);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
@@ -63,6 +65,15 @@ export class Toolbar extends HTMLDivElement {
             setTimeout(() => {
                this.courseSlot.style.backgroundColor = "transparent"; 
             }, 1000);
+        }
+    }
+
+    evaluateProfile() {
+        const scheduledCourses = document.getElementById(GlobalTimetableID).getTimetableJSON()["scheduledCourses"];
+        const scheduledPrograms = {};
+
+        for (let courseID in scheduledCourses) {
+            document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
         }
     }
 }

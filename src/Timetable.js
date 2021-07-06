@@ -1,7 +1,8 @@
 import CourseData from "../resources/CourseData.js";
-import { CourseInfoPanel } from "./CourseInfoPanel.js";
+import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
+export const GlobalTimetableID = "globalTimetableInstance";
 
 export class Timetable extends HTMLTableElement {
     static headerStylesheet = `
@@ -40,6 +41,7 @@ export class Timetable extends HTMLTableElement {
 
     constructor() {
         super();
+        this.id = GlobalTimetableID;
         this.tbody = document.createElement('tbody');
         this.appendChild(this.tbody);
 
@@ -110,8 +112,8 @@ export class Timetable extends HTMLTableElement {
     // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect
     getTimetableJSON() {
         let scheduledCourses = {};
-        const semesterTrs = Array.prototype.slice.call(this.timetable.getElementsByTagName('tr'));
-        const divs = Array.prototype.slice.call(this.timetable.tbody.getElementsByTagName('div'));
+        const semesterTrs = Array.prototype.slice.call(this.getElementsByTagName('tr'));
+        const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
 
         // Filter out only the course-tiles 
         divs.filter(div => {
@@ -120,19 +122,15 @@ export class Timetable extends HTMLTableElement {
             const semesterTr = courseTile.closest('tr');
             const semesterTd = courseTile.closest('td');
 
-            // Get the y-coordinate - This is used to determine which courses have been taken before others. The 'top' of the grid (0, 0) is the top left cell of the timetable. Although this means that the latest semester has a lower y coordinate, it makes calculations a bit simpler.
-            // The base number is twice the row number, since each table tr contains two semesters
+            // The 'top' of the grid (0, 0) is the top left cell of the timetable. Although this means that the latest semester has a lower y coordinate, it makes calculations a bit simpler.
+            // Get the y-coordinate - The base number is twice the row number, since each table tr contains two semesters
             let yCoord = 2 * semesterTrs.indexOf(semesterTr);
-            if (courseTile.courseLength === 'Y') {
-                // If the course is year-long, then it will be counted as the lower semester
-                yCoord += 1;
-            } else {
-                // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that to the base.
-                yCoord += courseTile.parentElement.parentElement.getSlotNumber(courseTile);
-            }
+            // If the course is year-long, then it will be counted as the lower semester
+            // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that to the base.
+            yCoord += (courseTile.courseLength === 'Y') ? 1 : courseTile.parentElement.parentElement.getSlotNumber(courseTile);
 
             // Get the x coordinate - This doesn't make a difference to anything, it's only for stylistic purposes
-            const xCoord = semesterTr.indexOf(semesterTd);
+            const xCoord = Array.prototype.slice.call(semesterTr.children).indexOf(semesterTd);
 
             scheduledCourses[courseTile.id] = {
                 "x": xCoord,
@@ -140,6 +138,7 @@ export class Timetable extends HTMLTableElement {
             };
         });
 
+        // Append the anchor semester and year before returning
         return {
             "anchorSemester": this.semesterSelect.value,
             "anchorYear": this.yearSelect.value,
@@ -200,7 +199,7 @@ export class Timetable extends HTMLTableElement {
         for (let courseTile of this.tbody.getElementsByTagName('div')) {
             if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
-        document.getElementById(CourseInfoPanel.panelGlobalID).resetPanel();
+        document.getElementById(GlobalCourseInfoPanelID).resetPanel();
     }
 }
 
