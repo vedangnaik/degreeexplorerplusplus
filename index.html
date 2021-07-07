@@ -12,12 +12,8 @@
         
         <div style="display: flex;">
             <!-- Toolbar -->
-            <div style="width: 13vw; display: flex; flex-direction: column;">
+            <div style="width: 13vw; display: flex;">
                 <div is="depp-toolbar"></div>
-                <!-- Spacer -->
-                <div style="height: 1.0vw;"></div>
-                <!-- Scratchpad -->
-                <div is="depp-scratchpad"></div>
             </div>
 
             <!-- Spacer -->
@@ -25,18 +21,16 @@
 
             <!-- Timetable, Course Info Panel, and Programs -->
             <!-- This convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution. -->
-            <div style="width: 84vw;">
-                <div style="display: flex;">
-                    <section style="display: flex; flex-direction: column;">
-                        <table is="depp-timetable"></table>
-                    </section>
-                    <!-- Spacer -->
-                    <div style="width: 1.0vw;"></div>
-                    <!-- Course Info Panel -->
-                    <section style="display: flex; flex-direction: column;">
-                        <div is="depp-course-info-panel"></div>
-                    </section>
-                </div>
+            <div style="width: 84vw; display: flex;">
+                <section style="display: flex; flex-direction: column;">
+                    <table is="depp-timetable"></table>
+                </section>
+                <!-- Spacer -->
+                <div style="width: 1.0vw;"></div>
+                <!-- Course Info Panel -->
+                <section style="display: flex; flex-direction: column;">
+                    <div is="depp-course-info-panel"></div>
+                </section>
             </div>
         </div>        
     </body>
