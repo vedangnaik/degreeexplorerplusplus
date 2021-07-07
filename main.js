@@ -1,7 +1,8 @@
 import { Timetable } from "./src/Timetable.js";
 import { CourseTile } from "./src/CourseTile.js";
 import { Scratchpad } from "./src/Scratchpad.js";
-import { Toolbar } from "./src/Toolbar.js";
+import { Console } from "./src/Console.js";
+import { Serializer } from "./src/Serializer.js";
 import ProgramData from "./resources/ProgramData.js";
 import CourseData from "./resources/CourseData.js";
 
