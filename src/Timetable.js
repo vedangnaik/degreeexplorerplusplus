@@ -142,8 +142,13 @@ export class Timetable extends HTMLTableElement {
         return {
             "anchorSemester": this.semesterSelect.value,
             "anchorYear": this.yearSelect.value,
+            "numSemesters": this.tbody.children.length,
             "scheduledCourses": scheduledCourses
         };
+    }
+
+    loadTimetableJSON(timetableJSON) {
+        console.log(timetableJSON);
     }
 
     addSemester() {
