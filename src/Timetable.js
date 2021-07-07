@@ -155,6 +155,14 @@ export class Timetable extends HTMLTableElement {
             courseTile.parentElement.removeChild(courseTile);
         });
 
+        const currentNumSemesters = this.tbody.children.length;
+        const newNumSemesters = timetableJSON["numSemesters"];
+        for (let _ = Math.min(currentNumSemesters, newNumSemesters); _ < Math.max(currentNumSemesters, newNumSemesters); _++) {
+            if (currentNumSemesters < newNumSemesters) { this.#addSemester(); }
+            else if (currentNumSemesters > newNumSemesters) { this.#deleteSemester(this.tbody.children[0]); }
+            else { /* do nothing, you're done. This should never happen in this loop */ }
+        }
+
         // TODO: Add the new courses in
 
         this.#refreshSemsters();
