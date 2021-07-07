@@ -28,7 +28,6 @@ export class Console extends HTMLDivElement {
     constructor() {
         super();
         this.style = Console.stylesheet;
-        // First, the stuff for searching for courses and programs and evaluating profiles
             this.searchInput = document.createElement('input');
             this.searchInput.style = "border: 1px solid black; border-radius: 5px;";
         this.appendChild(this.searchInput);
