@@ -1,8 +1,6 @@
 import { Spacer } from "./Spacer.js";
 import { GlobalTimetableID } from "./Timetable.js";
 
-const LoadedProfileSelectorsGroupName = "test";
-
 export class Serializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
@@ -90,7 +88,7 @@ class LoadedProfileSelector extends HTMLDivElement {
         this.style = "display: flex;";
             this.#radioInput = document.createElement('input');
             this.#radioInput.type = "radio";
-            this.#radioInput.name = LoadedProfileSelectorsGroupName;
+            this.#radioInput.name = "😃" // This name must be constant across all the radio buttons :)
             this.#radioInput.oninput = onInputFunc;
         this.appendChild(this.#radioInput);
             const nameInput = document.createElement('input');
