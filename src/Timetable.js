@@ -5,7 +5,7 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 export const GlobalTimetableID = "globalTimetableInstance";
 
 export class Timetable extends HTMLTableElement {
-    static headerStylesheet = `
+    static #headerStylesheet = `
         display: flex;
         width: 9vw; 
         height: 4vw;
@@ -13,7 +13,7 @@ export class Timetable extends HTMLTableElement {
         background-color: lightgrey;
     `;
     
-    static semesterSelectStylesheet = `
+    static #semesterSelectStylesheet = `
         margin-left: auto;
         background-color: transparent;
         text-align-last: center;
@@ -21,7 +21,7 @@ export class Timetable extends HTMLTableElement {
         font-size: 0.83em;
     `;
 
-    static yearSelectStylesheet = `
+    static #yearSelectStylesheet = `
         margin-right: auto;
         background-color: transparent;
         text-align-last: center;
@@ -29,15 +29,18 @@ export class Timetable extends HTMLTableElement {
         font-size: 0.83em;
     `;
 
-    static semesterNameStylesheet = `
+    static #semesterNameStylesheet = `
         flex: 9;
         margin: auto;
     `;
 
-    static deleteSemesterButtonStyleSheet = `
+    static #deleteSemesterButtonStyleSheet = `
         flex: 1;
         background-color: #ff4d4d;
     `;
+
+    static #latestAnchorYear = 2050;
+    static #earliestAnchorYEar = 1950;
 
     constructor() {
         super();
@@ -49,17 +52,17 @@ export class Timetable extends HTMLTableElement {
         // value upon which the labels of the other semesters are calculated
         let tr = document.createElement('tr');
             let th = document.createElement('th');
-            th.style = Timetable.headerStylesheet;
-                let deleteSemesterButton = document.createElement('button');
-                deleteSemesterButton.innerText = '+';
-                deleteSemesterButton.style = "flex: 1; background-color: forestgreen; font-weight: bold;"
-                deleteSemesterButton.onclick = this.addSemester.bind(this);
-            th.appendChild(deleteSemesterButton);
+            th.style = Timetable.#headerStylesheet;
+                let addSemesterButton = document.createElement('button');
+                addSemesterButton.innerText = '+';
+                addSemesterButton.style = "flex: 1; background-color: forestgreen; font-weight: bold;"
+                addSemesterButton.onclick = this.#addSemester.bind(this);
+            th.appendChild(addSemesterButton);
                 // This div is responsible for centering the two selectors on top of each other.
                 let selectDiv = document.createElement('div');
                 selectDiv.style = "flex: 9; margin: auto;"
                     this.semesterSelect = document.createElement('select');
-                    this.semesterSelect.style = Timetable.semesterSelectStylesheet;
+                    this.semesterSelect.style = Timetable.#semesterSelectStylesheet;
                         // option for fall/winter
                         let fallWinterOption = document.createElement('option');
                         fallWinterOption.style.backgroundColor = "white";
@@ -72,11 +75,11 @@ export class Timetable extends HTMLTableElement {
                         summerOption.innerText = "Summer";
                     this.semesterSelect.appendChild(fallWinterOption);
                     this.semesterSelect.appendChild(summerOption);
-                    this.semesterSelect.onchange = this.refreshSemsters.bind(this);
+                    this.semesterSelect.onchange = this.#refreshSemsters.bind(this);
                 selectDiv.appendChild(this.semesterSelect);
                     this.yearSelect = document.createElement('select');
-                    this.yearSelect.style = Timetable.yearSelectStylesheet;
-                    for (let year = 2050; year >= 1950; year--) {
+                    this.yearSelect.style = Timetable.#yearSelectStylesheet;
+                    for (let year = Timetable.#latestAnchorYear; year >= Timetable.#earliestAnchorYEar; year--) {
                         let yearOption = document.createElement('option');
                         yearOption.style.backgroundColor = "white";
                         yearOption.value = year;
@@ -84,8 +87,8 @@ export class Timetable extends HTMLTableElement {
                         this.yearSelect.appendChild(yearOption);
                     }
                     // rely on ordering of children to correctly set the option of the current year to default
-                    this.yearSelect.children[2050 - new Date().getFullYear()].selected = "selected";
-                    this.yearSelect.onchange = this.refreshSemsters.bind(this);
+                    this.yearSelect.children[Timetable.#latestAnchorYear - new Date().getFullYear()].selected = "selected";
+                    this.yearSelect.onchange = this.#refreshSemsters.bind(this);
                 selectDiv.appendChild(this.yearSelect);
             th.appendChild(selectDiv);
         tr.appendChild(th);
@@ -98,12 +101,12 @@ export class Timetable extends HTMLTableElement {
         }
         this.tbody.appendChild(tr);
 
-        this.addSemester();
-        this.addSemester();
-        this.addSemester();
+        this.#addSemester();
+        this.#addSemester();
+        this.#addSemester();
 
         // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
-        this.semesterObserver = new MutationObserver(this.refreshCourses.bind(this));
+        this.semesterObserver = new MutationObserver(this.#refreshCourses.bind(this));
         this.semesterObserver.observe(this.tbody, { childList: true, subtree: true });
     }
 
@@ -114,19 +117,15 @@ export class Timetable extends HTMLTableElement {
         const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
 
         // Filter out only the course-tiles 
-        divs.filter(div => {
-            return div.customTagName === "course-tile";
-        }).forEach(courseTile => {
+        divs.filter(div => div.customTagName === "course-tile").forEach(courseTile => {
             const semesterTr = courseTile.closest('tr');
             const semesterTd = courseTile.closest('td');
-
             // The 'top' of the grid (0, 0) is the top left cell of the timetable. Although this means that the latest semester has a lower y coordinate, it makes calculations a bit simpler.
             // Get the y-coordinate - The base number is twice the row number, since each table tr contains two semesters
             let yCoord = 2 * semesterTrs.indexOf(semesterTr);
             // If the course is year-long, then it will be counted as the lower semester
             // Otherwise, we ask the CourseSlotContainer what slot this course is in, and add that to the base.
             yCoord += (courseTile.courseLength === 'Y') ? 1 : courseTile.parentElement.parentElement.getSlotNumber(courseTile);
-
             // Get the x coordinate - This doesn't make a difference to anything, it's only for stylistic purposes
             const xCoord = Array.prototype.slice.call(semesterTr.children).indexOf(semesterTd);
 
@@ -139,27 +138,39 @@ export class Timetable extends HTMLTableElement {
         // Append the anchor semester and year before returning
         return {
             "anchorSemester": this.semesterSelect.value,
-            "anchorYear": this.yearSelect.value,
+            "anchorYear": parseInt(this.yearSelect.value),
             "numSemesters": this.tbody.children.length,
             "scheduledCourses": scheduledCourses
         };
     }
 
     loadTimetableJSON(timetableJSON) {
-        console.log(timetableJSON);
+        // Set the anchor year and semester
+        this.yearSelect.children[Timetable.#latestAnchorYear - timetableJSON["anchorYear"]].selected = "selected";
+        this.semesterSelect.value = timetableJSON["anchorSemester"];
+
+        // Filter out and delete the course-tiles 
+        const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
+        divs.filter(div => div.customTagName === "course-tile").forEach(courseTile => {
+            courseTile.parentElement.removeChild(courseTile);
+        });
+
+        // TODO: Add the new courses in
+
+        this.#refreshSemsters();
     }
 
-    addSemester() {
+    #addSemester() {
         let tr = document.createElement('tr');
             let th = document.createElement('th');
-            th.style = Timetable.headerStylesheet;
+            th.style = Timetable.#headerStylesheet;
                 let deleteSemesterButton = document.createElement('button');
                 deleteSemesterButton.innerText = '✖';
-                deleteSemesterButton.style = Timetable.deleteSemesterButtonStyleSheet;
-                deleteSemesterButton.onclick = this.deleteSemester.bind(this, tr);
+                deleteSemesterButton.style = Timetable.#deleteSemesterButtonStyleSheet;
+                deleteSemesterButton.onclick = this.#deleteSemester.bind(this, tr);
             th.appendChild(deleteSemesterButton);
                 let semesterName = document.createElement('h5');
-                semesterName.style = Timetable.semesterNameStylesheet;
+                semesterName.style = Timetable.#semesterNameStylesheet;
             th.appendChild(semesterName);
         tr.appendChild(th);
 
@@ -172,15 +183,15 @@ export class Timetable extends HTMLTableElement {
         // Add the row to the top of the table so that the bottom one isn't disturbed
         this.tbody.insertBefore(tr, this.tbody.firstChild);
 
-        this.refreshSemsters();
+        this.#refreshSemsters();
     }
 
-    deleteSemester(tr) {
+    #deleteSemester(tr) {
         this.tbody.removeChild(tr);
-        this.refreshSemsters();
+        this.#refreshSemsters();
     }
 
-    refreshSemsters() {
+    #refreshSemsters() {
         let semesters = this.tbody.children;
         let anchorSemester = this.semesterSelect.value;
         let anchorYear = parseInt(this.yearSelect.value);
@@ -198,7 +209,7 @@ export class Timetable extends HTMLTableElement {
         }
     }
 
-    refreshCourses() {
+    #refreshCourses() {
         for (let courseTile of this.tbody.getElementsByTagName('div')) {
             if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
