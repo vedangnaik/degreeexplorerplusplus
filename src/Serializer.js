@@ -4,12 +4,21 @@ import { GlobalTimetableID } from "./Timetable.js";
 const LoadedProfileSelectorsGroupName = "test";
 
 export class Serializer extends HTMLDivElement {
-    static #loadAndSaveStylesheet = `
+    static #controlButtonsStylesheet = `
         flex: 1;
         outline: 1px solid grey;    
     `;
 
+    // This is a generic empty timetableJSON structure created here to back up new profiles. It is not connected to the actual timetable class in any way. This is to keep the two classes as separated as possible.
+    static #newProfileTimetableJSON = {
+        "anchorSemester": "Fall/Winter",
+        "anchorYear": new Date().getFullYear(),
+        "numSemesters": 4,
+        "scheduledCourses": {}
+    }
+
     #loadedProfiles;
+    #loadedProfilesDiv;
     #currentProfileNumber;
 
     constructor() {
@@ -17,32 +26,38 @@ export class Serializer extends HTMLDivElement {
         // Array to hold profile data for ones the user loads in
         this.#loadedProfiles = [];
         this.#currentProfileNumber = 0;
-            const loadAndSaveDiv = document.createElement('div');
-            loadAndSaveDiv.style = "display: flex";
-                this.saveProfileButton = document.createElement('button');
-                this.saveProfileButton.innerHTML = "Save Profile";
-                this.saveProfileButton.style = Serializer.#loadAndSaveStylesheet;
+            const mainControlPanelDiv = document.createElement('div');
+            mainControlPanelDiv.style = "display: flex";
+                const loadAndSaveDiv = document.createElement('div');
+                loadAndSaveDiv.style = "display: flex; flex-direction: column; width: 8vw;";
+                    this.saveProfileButton = document.createElement('button');
+                    this.saveProfileButton.innerHTML = "Save Profile";
+                    this.saveProfileButton.style = Serializer.#controlButtonsStylesheet;
 
-                this.loadProfileButton = document.createElement('button');
-                this.loadProfileButton.innerHTML = "Load Profile";
-                this.loadProfileButton.style = Serializer.#loadAndSaveStylesheet
-            loadAndSaveDiv.appendChild(this.saveProfileButton)
-            loadAndSaveDiv.appendChild(new Spacer( {"width": "0.5vw"} ));
-            loadAndSaveDiv.appendChild(this.loadProfileButton)
-        this.appendChild(loadAndSaveDiv);
+                    this.loadProfileButton = document.createElement('button');
+                    this.loadProfileButton.innerHTML = "Load Profile";
+                    this.loadProfileButton.style = Serializer.#controlButtonsStylesheet
+                loadAndSaveDiv.appendChild(this.saveProfileButton);
+                loadAndSaveDiv.appendChild(new Spacer({ "height": "0.5vw" }));
+                loadAndSaveDiv.appendChild(this.loadProfileButton);
+            mainControlPanelDiv.appendChild(loadAndSaveDiv)
+            mainControlPanelDiv.appendChild(new Spacer( {"width": "0.5vw"} ));
+                const newProfileButton = document.createElement('button');
+                newProfileButton.innerText = "New Profile";
+                newProfileButton.style = Serializer.#controlButtonsStylesheet;
+                newProfileButton.onclick = this.#addNewProfile.bind(this);
+            mainControlPanelDiv.appendChild(newProfileButton);
+        this.appendChild(mainControlPanelDiv);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
-            this.loadedProfilesDiv = document.createElement('div');
-            this.loadedProfilesDiv.style = "display: flex; flex-direction: column;";
-                const defaultProfileSelector = new LoadedProfileSelector("New Profile 1", this.#switchProfile.bind(this));
-                defaultProfileSelector.setCheckedState(true);
-            this.loadedProfilesDiv.appendChild(defaultProfileSelector);
-        this.appendChild(this.loadedProfilesDiv);
+            this.#loadedProfilesDiv = document.createElement('div');
+            this.#loadedProfilesDiv.style = "display: flex; flex-direction: column;";
+        this.appendChild(this.#loadedProfilesDiv);
 
-        this.#loadedProfiles.push(document.getElementById(GlobalTimetableID));
+        this.#addNewProfile();
     }
 
     #switchProfile() {
-        const inputs = Array.prototype.slice.call(this.loadedProfilesDiv.getElementsByTagName('div'));
+        const inputs = Array.prototype.slice.call(this.#loadedProfilesDiv.getElementsByTagName('div'));
         const selectedProfile = inputs.filter(div => div.getCheckedState())[0];
         const newProfileNumber = inputs.indexOf(selectedProfile);
         
@@ -50,6 +65,19 @@ export class Serializer extends HTMLDivElement {
         document.getElementById(GlobalTimetableID).loadTimetableJSON(this.#loadedProfiles[newProfileNumber]);
         
         this.#currentProfileNumber = newProfileNumber;
+    }
+
+    #addNewProfile() {
+        const newProfileSelector = new LoadedProfileSelector(
+            `New Profile ${this.#loadedProfilesDiv.children.length + 1}`, 
+            this.#switchProfile.bind(this)
+        );
+        // The new selector must apparently be attached to a parent before the event listeners work
+        this.#loadedProfilesDiv.appendChild(newProfileSelector);
+        // Append the new timetable object to the array
+        this.#loadedProfiles.push(Serializer.#newProfileTimetableJSON);
+        // Select the selector to have the timetable switch to it
+        newProfileSelector.select();
     }
 }
 
@@ -76,8 +104,8 @@ class LoadedProfileSelector extends HTMLDivElement {
         return this.#radioInput.checked;
     }
 
-    setCheckedState(state) {
-        this.#radioInput.checked = state;
+    select() {
+        this.#radioInput.click();
     }
 }
 
