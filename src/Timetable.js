@@ -4,6 +4,14 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 
 export const GlobalTimetableID = "globalTimetableInstance";
 
+// This is a generic empty timetableJSON structure created here to back up new profiles. It is not connected to the actual timetable class in any way. This is to keep the two classes as separated as possible.
+export const NewProfileTimetableJSON = {
+    "anchorSemester": "Fall/Winter",
+    "anchorYear": new Date().getFullYear(),
+    "numSemesters": 4,
+    "scheduledCourses": {}
+}
+
 export class Timetable extends HTMLTableElement {
     static #headerStylesheet = `
         display: flex;
@@ -40,7 +48,7 @@ export class Timetable extends HTMLTableElement {
     `;
 
     static #latestAnchorYear = 2050;
-    static #earliestAnchorYEar = 1950;
+    static #earliestAnchorYear = 1950;
 
     constructor() {
         super();
@@ -79,7 +87,7 @@ export class Timetable extends HTMLTableElement {
                 selectDiv.appendChild(this.semesterSelect);
                     this.yearSelect = document.createElement('select');
                     this.yearSelect.style = Timetable.#yearSelectStylesheet;
-                    for (let year = Timetable.#latestAnchorYear; year >= Timetable.#earliestAnchorYEar; year--) {
+                    for (let year = Timetable.#latestAnchorYear; year >= Timetable.#earliestAnchorYear; year--) {
                         let yearOption = document.createElement('option');
                         yearOption.style.backgroundColor = "white";
                         yearOption.value = year;
@@ -101,9 +109,7 @@ export class Timetable extends HTMLTableElement {
         }
         this.tbody.appendChild(tr);
 
-        this.#addSemester();
-        this.#addSemester();
-        this.#addSemester();
+        this.loadTimetableJSON(NewProfileTimetableJSON);
 
         // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
         this.semesterObserver = new MutationObserver(this.#refreshCourses.bind(this));

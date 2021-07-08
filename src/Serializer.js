@@ -1,19 +1,12 @@
 import { Spacer } from "./Spacer.js";
 import { GlobalTimetableID } from "./Timetable.js";
+import { NewProfileTimetableJSON } from "./Timetable.js";
 
 export class Serializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
         outline: 1px solid grey;    
     `;
-
-    // This is a generic empty timetableJSON structure created here to back up new profiles. It is not connected to the actual timetable class in any way. This is to keep the two classes as separated as possible.
-    static #newProfileTimetableJSON = {
-        "anchorSemester": "Fall/Winter",
-        "anchorYear": new Date().getFullYear(),
-        "numSemesters": 4,
-        "scheduledCourses": {}
-    }
 
     #loadedProfiles;
     #loadedProfilesDiv;
@@ -73,7 +66,7 @@ export class Serializer extends HTMLDivElement {
         // The new selector must apparently be attached to a parent before the event listeners work
         this.#loadedProfilesDiv.appendChild(newProfileSelector);
         // Append the new timetable object to the array
-        this.#loadedProfiles.push(Serializer.#newProfileTimetableJSON);
+        this.#loadedProfiles.push(NewProfileTimetableJSON);
         // Select the selector to have the timetable switch to it
         newProfileSelector.select();
     }
