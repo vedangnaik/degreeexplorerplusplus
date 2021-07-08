@@ -1,6 +1,7 @@
 import CourseData from "../resources/CourseData.js";
 import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
+import { CourseTile } from "./CourseTile.js";
 
 export const GlobalTimetableID = "globalTimetableInstance";
 
@@ -155,7 +156,7 @@ export class Timetable extends HTMLTableElement {
         this.yearSelect.children[Timetable.#latestAnchorYear - timetableJSON["anchorYear"]].selected = "selected";
         this.semesterSelect.value = timetableJSON["anchorSemester"];
 
-        // Filter out and delete the course-tiles 
+        // Filter out and delete the existing course-tiles 
         const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
         divs.filter(div => div.customTagName === "course-tile").forEach(courseTile => {
             courseTile.parentElement.removeChild(courseTile);
@@ -169,7 +170,15 @@ export class Timetable extends HTMLTableElement {
             else { /* do nothing, you're done. This should never happen in this loop */ }
         }
 
-        // TODO: Add the new courses in
+        // Add the new courses in
+        Object.entries(timetableJSON["scheduledCourses"]).forEach(([courseID, {x, y}]) => {
+            console.log(`${courseID} at ${x}, ${y}`);
+
+            const td = this.tbody.children[Math.floor(y/2)].children[x];
+            const courseSlot = td.children[0];
+            const newCourse = new CourseTile(courseID);
+            y % 2 === 0 ? courseSlot.upperSlot.appendChild(newCourse) : courseSlot.lowerSlot.appendChild(newCourse);
+        });
 
         this.#refreshSemsters();
     }
@@ -217,7 +226,6 @@ export class Timetable extends HTMLTableElement {
             if (anchorSemester === 'Fall/Winter') {
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Fall/Winter ${anchorYear + (i / 2)}` : `Summer ${anchorYear + Math.ceil(i / 2)}`;
             } else {
-                let newBaseYear = 
                 semesterHeader.children[1].innerText = i % 2 === 0 ? `Summer ${anchorYear + (i / 2)}` : `Fall/Winter ${anchorYear + Math.ceil(i / 2)}`;
             }
         }
