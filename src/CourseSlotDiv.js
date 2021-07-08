@@ -1,5 +1,4 @@
 export class CourseSlotDiv extends HTMLDivElement {
-    // These two are kept public since they need to be direcly accessed quite often.
     upperSlot;
     lowerSlot;
 
@@ -30,16 +29,16 @@ class CourseSlot extends HTMLDivElement {
     constructor() {
         super();
         this.style.flex = "1";
-        this.ondragover = this.onDragOver.bind(this);
-        this.ondrop = this.onDrop.bind(this);
+        this.ondragover = this.#onDragOver.bind(this);
+        this.ondrop = this.#onDrop.bind(this);
     }
 
-    onDragOver(ev) {
+    #onDragOver(ev) {
         ev.preventDefault();
         ev.dataTransfer.dropEffect = "move";
     }
 
-    onDrop(ev) {
+    #onDrop(ev) {
         ev.preventDefault();
         const id = ev.dataTransfer.getData("id");
         const tileBeingDragged = document.getElementById(id);
