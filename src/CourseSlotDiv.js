@@ -1,16 +1,17 @@
 export class CourseSlotDiv extends HTMLDivElement {
-    // Switching back to content-box is the best way I could think of to get the borders to play nicely while also keeping the size of the internal slots and the tile itself the same. 
-    static stylesheet = `
-        width: 8vw;
-        height: 4vw;
-        display: flex;
-        flex-direction: column;
-        outline: 1px solid #909090;
-    `;
+    // These two are kept public since they need to be direcly accessed quite often.
+    upperSlot;
+    lowerSlot;
 
     constructor() {
         super();
-        this.style = CourseSlotDiv.stylesheet;
+        this.style = `
+            width: 8vw;
+            height: 4vw;
+            display: flex;
+            flex-direction: column;
+            outline: 1px solid #909090;
+        `;
             this.upperSlot = new CourseSlot();
             this.lowerSlot = new CourseSlot();
         this.appendChild(this.upperSlot);
@@ -26,13 +27,9 @@ export class CourseSlotDiv extends HTMLDivElement {
 
 
 class CourseSlot extends HTMLDivElement {
-    static stylesheet = `
-        flex: 1;
-    `;
-
     constructor() {
         super();
-        this.style = CourseSlot.stylesheet;
+        this.style.flex = "1";
         this.ondragover = this.onDragOver.bind(this);
         this.ondrop = this.onDrop.bind(this);
     }
