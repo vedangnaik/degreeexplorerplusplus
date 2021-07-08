@@ -9,44 +9,34 @@ export const PrerequisiteStatuses = Object.freeze({
 });
 
 export class CourseTile extends HTMLDivElement {
-    static courseTileStylesheet = `
-        width: 8vw;
-        height: 2vw;
-        background-color: lightblue;
-        z-index: 1;
-        display: flex;
-    `;
-
-    static courseNameStylesheet = `
-        flex: 9;
-        margin: auto;
-        text-align: center;
-    `;
-
-    static deleteCourseButtonStylesheet = `
-        flex: 1;
-        background-color: #ff4d4d;
-    `;
+    #prerequisitesTracker = {};
 
     constructor(courseID) {
         super();
         this.id = courseID;
-        this.customTagName = "course-tile"
-        this.style = CourseTile.courseTileStylesheet;
-        this.draggable = true;
-        this.ondragstart = this.onDragStart.bind(this);
-        this.prerequisitesTracker = {};
-        this.onclick = () => document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.prerequisitesTracker);
-
-        // course name header
-        let courseName = document.createElement('h3');
-        courseName.innerText = courseID;
-        courseName.style = CourseTile.courseNameStylesheet;
-        let deleteCourseButton = document.createElement('button');
-        deleteCourseButton.innerText = '✖';
-        deleteCourseButton.style = CourseTile.deleteCourseButtonStylesheet;
-        deleteCourseButton.onclick = this.deleteCourse.bind(this);
+        this.customTagName = "course-tile" // Used to quickly identify this div subclass among other divs
+        this.style = `
+            width: 8vw;
+            background-color: lightblue;
+            z-index: 1;
+            display: flex;
+        `;
+            let courseName = document.createElement('h3');
+            courseName.innerText = courseID;
+            courseName.style = `
+                flex: 9;
+                margin: auto;
+                text-align: center;
+            `;
+            courseName.onclick = this.#displayPrerequisitesOnPanel.bind(this); // This needs to be bound here becuase otherwise clicking the delete button to remove the course also displays the course info lol
         this.appendChild(courseName);
+            let deleteCourseButton = document.createElement('button');
+            deleteCourseButton.innerText = '✖';
+            deleteCourseButton.style = `
+                flex: 1;
+                background-color: #ff4d4d;
+            `;
+            deleteCourseButton.onclick = this.deleteCourse.bind(this);
         this.appendChild(deleteCourseButton);
 
         // change the length if required
@@ -59,11 +49,20 @@ export class CourseTile extends HTMLDivElement {
                 this.style.height = "2vw";
                 break;            
             default:
-                console.log("Unsupported course length, defaulting to 'H'");
+                this.style.height = "2vw";
+                console.log(`Unsupported course length ${this.courseLength} for id ${this.id}. Defaulting to H`);
         }
+
+        // Set the draggable event handlers and sending prerequisites to the panel
+        this.draggable = true;
+        this.ondragstart = this.#onDragStart.bind(this);
     }
 
-    onDragStart(ev) {
+    #displayPrerequisitesOnPanel() {
+        document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.#prerequisitesTracker);
+    }
+
+    #onDragStart(ev) {
         ev.dataTransfer.effectAllowed = "move";
         ev.dataTransfer.setData("id", this.id);
         // for anyone who needs the starting coords
@@ -78,20 +77,20 @@ export class CourseTile extends HTMLDivElement {
     }
 
     resetCourse() {
-        this.prerequisitesTracker = {};
+        this.#prerequisitesTracker = {};
         this.style.backgroundColor = "lightblue";
     }
 
     evaluatePrerequisites(courses, programs) {
         let prerequisites = CourseData[this.id]["prerequisites"];    
         Object.keys(prerequisites).forEach(prereqID => {
-            if (!(prereqID in this.prerequisitesTracker)) { 
-                this.prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs);
+            if (!(prereqID in this.#prerequisitesTracker)) { 
+                this.#prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs);
             }
         });
 
         this.style.backgroundColor = "lightgreen";
-        Object.entries(this.prerequisitesTracker).forEach(([_, prereqStatus]) => {
+        Object.entries(this.#prerequisitesTracker).forEach(([_, prereqStatus]) => {
             if (prereqStatus === PrerequisiteStatuses.INCOMPLETE) { 
                 this.style.backgroundColor = "#ff8080";
                 return;

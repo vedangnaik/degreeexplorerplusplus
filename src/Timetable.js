@@ -151,7 +151,7 @@ export class Timetable extends HTMLTableElement {
         // Filter out and delete the existing course-tiles 
         const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
         divs.filter(div => div.customTagName === "course-tile").forEach(courseTile => {
-            courseTile.parentElement.removeChild(courseTile);
+            courseTile.deleteCourse();
         });
 
         // Add or delete semesters until you've equalled the number of semesters in the timetableJSON
