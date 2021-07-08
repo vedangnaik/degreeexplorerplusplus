@@ -9,7 +9,7 @@ export const PrerequisiteStatuses = Object.freeze({
 });
 
 export class CourseTile extends HTMLDivElement {
-    #prerequisitesTracker = {};
+    #evaluatedPrerequisites = {};
 
     constructor(courseID) {
         super();
@@ -21,7 +21,7 @@ export class CourseTile extends HTMLDivElement {
             z-index: 1;
             display: flex;
         `;
-            let courseName = document.createElement('h3');
+            const courseName = document.createElement('h3');
             courseName.innerText = courseID;
             courseName.style = `
                 flex: 9;
@@ -30,7 +30,7 @@ export class CourseTile extends HTMLDivElement {
             `;
             courseName.onclick = this.#displayPrerequisitesOnPanel.bind(this); // This needs to be bound here becuase otherwise clicking the delete button to remove the course also displays the course info lol
         this.appendChild(courseName);
-            let deleteCourseButton = document.createElement('button');
+            const deleteCourseButton = document.createElement('button');
             deleteCourseButton.innerText = '✖';
             deleteCourseButton.style = `
                 flex: 1;
@@ -53,13 +53,13 @@ export class CourseTile extends HTMLDivElement {
                 console.log(`Unsupported course length ${this.courseLength} for id ${this.id}. Defaulting to H`);
         }
 
-        // Set the draggable event handlers and sending prerequisites to the panel
+        // Set the draggable event handlers
         this.draggable = true;
         this.ondragstart = this.#onDragStart.bind(this);
     }
 
     #displayPrerequisitesOnPanel() {
-        document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.#prerequisitesTracker);
+        document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.#evaluatedPrerequisites);
     }
 
     #onDragStart(ev) {
@@ -77,128 +77,151 @@ export class CourseTile extends HTMLDivElement {
     }
 
     resetCourse() {
-        this.#prerequisitesTracker = {};
+        this.#evaluatedPrerequisites = {};
         this.style.backgroundColor = "lightblue";
     }
 
     evaluatePrerequisites(courses, programs) {
-        let prerequisites = CourseData[this.id]["prerequisites"];    
+        const prerequisites = CourseData[this.id]["prerequisites"];    
         Object.keys(prerequisites).forEach(prereqID => {
-            if (!(prereqID in this.#prerequisitesTracker)) { 
-                this.#prerequisitesTracker[prereqID] = recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs);
+            if (!(prereqID in this.#evaluatedPrerequisites)) { 
+                recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs, this.#evaluatedPrerequisites);
             }
         });
 
-        this.style.backgroundColor = "lightgreen";
-        Object.entries(this.#prerequisitesTracker).forEach(([_, prereqStatus]) => {
-            if (prereqStatus === PrerequisiteStatuses.INCOMPLETE) { 
-                this.style.backgroundColor = "#ff8080";
+        const statuses = Object.values(this.#evaluatedPrerequisites);
+        if (statuses.includes(PrerequisiteStatuses.INCOMPLETE)) {
+            this.style.backgroundColor = "#ff8080";
+        } else if (statuses.includes(PrerequisiteStatuses.WARNING)) {
+            this.style.backgroundColor = "lightyellow";
+        } else {
+            this.style.backgroundColor = "lightgreen";
+        }
+
+        return;
+
+        /* 
+        This is a super impure mildly recursive function which calculates the status for a given prerequisite and course.
+        It modifies evaluatedPrequisites in-place with the status for prereqID
+        */
+        function recursiveEvaluatePrerequisite(courseID, prereqID, scheduledCourses, scheduledPrograms, evaluatedPrerequisites) {
+            // Quick exit case: this ID has already been evaluated, so there's no need to do it again.
+            if (prereqID in evaluatedPrerequisites) {
                 return;
-            };
-            if (prereqStatus === PrerequisiteStatuses.WARNING) { 
-                this.style.backgroundColor = "lightyellow";
             }
-        });
 
+            const prerequisiteObj = CourseData[courseID].prerequisites[prereqID];
 
-        function recursiveEvaluatePrerequisite(courseID, prereqID, scheduledCourses, scheduledPrograms) {
-            let prerequisite = CourseData[courseID]["prerequisites"][prereqID]
-        
-            if (prerequisite.type === "NOTE") {
-                return PrerequisiteStatuses.COMPLETE;
+            // If it's a NOTE, then we can just mark it complete and exit
+            if (prerequisiteObj.type === "NOTE") {
+                evaluatedPrerequisites[prereqID] =  PrerequisiteStatuses.COMPLETE;
+                return;
             }
         
-            switch(prerequisite.countType) {
+            switch(prerequisiteObj.countType) {
                 case 'REQUISITES': {
-                    switch(prerequisite.type) {
+                    switch(prerequisiteObj.type) {
                         case 'MINIMUM': {
                             let usedPrereqs = [];
                             let count = 0;
-                            for (let dependent_prereqID of prerequisite.requisiteItems) {
-                                if (dependent_prereqID in prerequisitesTracker && prerequisitesTracker[dependent_prereqID]) {
+                            for (const dependent_prereqID of prerequisiteObj.requisiteItems) {
+                                // Evaluate the dependent prereqID and check if it's acceptable
+                                recursiveEvaluatePrerequisite(courseID, dependent_prereqID, scheduledCourses, scheduledPrograms, evaluatedPrerequisites);
+                                if ([PrerequisiteStatuses.COMPLETE, PrerequisiteStatuses.WARNING].includes(evaluatedPrerequisites[dependent_prereqID])) {
                                     usedPrereqs.push(dependent_prereqID);
                                     count += 1;
-                                } else if (recursiveEvaluatePrerequisite(courseID, dependent_prereqID, scheduledCourses, scheduledPrograms)) {
-                                    usedPrereqs.push(dependent_prereqID);
-                                    count += 1;
-                                    prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.COMPLETE;
-                                } else {
-                                    prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.INCOMPLETE;
                                 }
     
-                                if (prerequisite.count <= count) {
-                                    prerequisite.requisiteItems
+                                if (prerequisiteObj.count <= count) {
+                                    // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
+                                    prerequisiteObj.requisiteItems
                                         .filter(dependent_prereqID => !usedPrereqs.includes(dependent_prereqID))
-                                        .forEach(dependent_prereqID => prerequisitesTracker[dependent_prereqID] = PrerequisiteStatuses.NA);
-                                    return PrerequisiteStatuses.COMPLETE;
+                                        .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = PrerequisiteStatuses.NA);
+                                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.COMPLETE;
+                                    // return early to not waste time
+                                    return;
                                 }
                             }
     
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         case 'MAXIMUM': {
-                            console.log('REQUISITE MAXIMUM');
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            console.log(`${courseID}, ${prereqID}: Unimplemented type REQUISITE MAXIMUM`);
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         case 'LIST': {
-                            console.log('REQUISITE LIST');
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            console.log(`${courseID}, ${prereqID}: Unimplemented type REQUISITE LIST`);
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         default: {
-                            console.log('Unknown REQUISITE type: ' + prerequisite.type);
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            console.log(`${courseID}, ${prereqID}: Unknown REQUISITE type: ${prerequisiteObj.type}`);
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                     }
                 }
                 case 'COURSES': // Don't ask me why there is more than one label for this :(
                 case 'FCES': {
-                    switch (prerequisite.type) {
+                    switch (prerequisiteObj.type) {
                         case 'MINIMUM': {
-                            return (prerequisite.count <= prerequisite.requisiteItems
+                            evaluatedPrerequisites[prereqID] = (prerequisiteObj.count <= prerequisiteObj.requisiteItems
                                 .filter(dependent_courseID => 
                                     dependent_courseID in scheduledCourses && 
                                     scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                                 .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         case 'LIST': {
-                            return (prerequisite.requisiteItems.filter(dependent_courseID => { 
-                                return !(dependent_courseID in scheduledCourses && scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"]);
-                            }).length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            evaluatedPrerequisites[prereqID] = (prerequisiteObj.requisiteItems
+                                .filter(dependent_courseID => 
+                                    !(dependent_courseID in scheduledCourses) || 
+                                    scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
+                                .length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         case 'MAXIMUM': {
-                            return (prerequisite.count >= prerequisite.requisiteItems
+                            evaluatedPrerequisites[prereqID] = (prerequisiteObj.count >= prerequisiteObj.requisiteItems
                                 .filter(dependent_courseID => 
                                     dependent_courseID in scheduledCourses && 
                                     scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                                 .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         default: {
-                            console.log('Unknown FCES type: ' + prerequisites.type);
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            console.log(`${courseID}, ${prereqID}: Unknown FCES type: ${prerequisiteObj.type}`);
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                     }
                 }
                 case 'GRADE': {
-                    return PrerequisiteStatuses.WARNING;
+                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.WARNING;
+                    return;
                 }
                 case 'SUBJECT_POSTS': {
-                    switch (prerequisite.type) {
+                    switch (prerequisiteObj.type) {
                         case 'MINIMUM': {
-                            return (prerequisite.count <= prerequisite.requisiteItems
+                            evaluatedPrerequisites[prereqID] = (prerequisiteObj.count <= prerequisiteObj.requisiteItems
                                 .filter(dependent_programID => dependent_programID in scheduledPrograms)
                                 .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                         default: {
-                            console.log('Unknown subject post type: ' + prerequisite.type);
-                            return PrerequisiteStatuses.INCOMPLETE;
+                            console.log(`${courseID}, ${prereqID}: Unknown SUBJECT_POSTS type: ${prerequisiteObj.type}`);
+                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                            return;
                         }
                     }
                 }
                 default: {
-                    console.log(`Unknown countType: ${prerequisite.countType}`);
-                    return PrerequisiteStatuses.INCOMPLETE;
+                    console.log(`${courseID}, ${prereqID}: Unknown COUNTTYPE: ${prerequisiteObj.countType}`);
+                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    return;
                 }
             }
         }
