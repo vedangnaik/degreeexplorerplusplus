@@ -58,8 +58,6 @@ export class Serializer extends HTMLDivElement {
                 flex-direction: column;
             `;
         this.appendChild(this.#loadedProfilesDiv);
-
-        this.#addNewProfile(NewProfileJSON);
     }
 
     #switchProfile() {
@@ -91,8 +89,6 @@ export class Serializer extends HTMLDivElement {
         this.#loadedProfilesDiv.appendChild(newProfileSelector);
         // Append the new timetable object to the array
         this.#loadedProfiles.push(profileObj);
-        // Select the selector to have the timetable switch to it
-        // newProfileSelector.select();
     }
 
     #loadProfile() {
@@ -107,7 +103,7 @@ export class Serializer extends HTMLDivElement {
 
     #saveProfile() {
         // We manually select the curent profile again to trigger #switchProfile() and get the latest versions of the timetable and program in the array
-        // this.#switchProfile();
+        this.#switchProfile();
         
         // Since the file format is JSON but with a different extension, we will mark it as such for the constructor
         const profileFileName = `${this.#loadedProfiles[this.#currentProfileNumber]["name"]}.de++`;
