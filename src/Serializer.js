@@ -7,9 +7,8 @@ export class Serializer extends HTMLDivElement {
         flex: 1;
         outline: 1px solid grey;    
     `;
-
-    #loadedProfiles = [];
-    #loadedProfilesDiv;
+    
+    #profilesDiv;
     #currentProfileNumber = null;
     #loadProfileInput;
 
@@ -52,43 +51,37 @@ export class Serializer extends HTMLDivElement {
             mainControlPanelDiv.appendChild(newProfileButton);
         this.appendChild(mainControlPanelDiv);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
-            this.#loadedProfilesDiv = document.createElement('div');
-            this.#loadedProfilesDiv.style = `
+            this.#profilesDiv = document.createElement('div');
+            this.#profilesDiv.style = `
                 display: flex; 
                 flex-direction: column;
             `;
-        this.appendChild(this.#loadedProfilesDiv);
+        this.appendChild(this.#profilesDiv);
     }
 
     #switchProfile() {
-        const inputs = Array.prototype.slice.call(this.#loadedProfilesDiv.getElementsByTagName('div'));
-        const selectedProfile = inputs.filter(div => div.getCheckedState())[0];
-        const newProfileNumber = inputs.indexOf(selectedProfile);
+        const inputs = Array.prototype.slice.call(this.#profilesDiv.getElementsByTagName('div'));
+        const selectedProfile = inputs.filter(div => div.radioInput.checked)[0];
 
         // If there is another profile being switched from, save the old profile's information to the array.
         // Otherwise, skip this and move on to restoring the selected profile's information.
         if (this.#currentProfileNumber !== null) {
-            this.#loadedProfiles[this.#currentProfileNumber] = {
-                "name": this.#loadedProfilesDiv.children[this.#currentProfileNumber].nameInput.value,
-                "programs": {}, // TODO: Get this from the program manager
-                "timetable": document.getElementById(GlobalTimetableID).getTimetableJSON()
-            }
+            this.#profilesDiv.children[this.#currentProfileNumber].profileObj["name"] = this.#profilesDiv.children[this.#currentProfileNumber].nameInput.value;
+            this.#profilesDiv.children[this.#currentProfileNumber].profileObj["programs"] = {} // TODO change this once programs are done
+            this.#profilesDiv.children[this.#currentProfileNumber].profileObj["timetable"] = document.getElementById(GlobalTimetableID).getTimetableJSON();
         }
 
         // Copy the new profile's information to the relevant places
-        this.#loadedProfilesDiv.children[newProfileNumber].nameInput.value = this.#loadedProfiles[newProfileNumber]["name"]
-        document.getElementById(GlobalTimetableID).loadTimetableJSON(this.#loadedProfiles[newProfileNumber]["timetable"]);
-        // TODO: Ask the program manager to load the program based on this.#loadedProfiles[newProfileNumber]["programs"] (or whatever)
+        selectedProfile.nameInput.value = selectedProfile.profileObj["name"];
+        document.getElementById(GlobalTimetableID).loadTimetableJSON(selectedProfile.profileObj["timetable"]);
+        // TODO: Ask the program manager to load the program based on this.
         
-        this.#currentProfileNumber = newProfileNumber;
+        this.#currentProfileNumber = inputs.indexOf(selectedProfile);;
     }
 
     #addNewProfile(profileObj) {
-        const newProfileSelector = new LoadedProfileSelector(profileObj["name"], this.#switchProfile.bind(this));
-        // The new selector must apparently be attached to a parent before the event listeners work
-        this.#loadedProfilesDiv.appendChild(newProfileSelector);
-        // Append the new timetable object to the array
-        this.#loadedProfiles.push(profileObj);
+        const newProfileSelector = new ProfileSelector(profileObj, this.#switchProfile.bind(this));
+        this.#profilesDiv.appendChild(newProfileSelector);
     }
 
     #loadProfile() {
@@ -106,8 +99,8 @@ export class Serializer extends HTMLDivElement {
         this.#switchProfile();
         
         // Since the file format is JSON but with a different extension, we will mark it as such for the constructor
-        const profileFileName = `${this.#loadedProfiles[this.#currentProfileNumber]["name"]}.de++`;
-        const profile = new File([JSON.stringify(this.#loadedProfiles[this.#currentProfileNumber])], profileFileName, { "type": "text/json" });
+        const profileFileName = `${this.#profilesDiv.children[this.#currentProfileNumber].profileObj["name"]}.de++`;
+        const profile = new File([JSON.stringify(this.#profilesDiv.children[this.#currentProfileNumber].profileObj)], profileFileName, { "type": "text/json" });
 
         // To save the file, we create a downloadable <a> element and embed the URI of the file into it, the append and click it. This will open a dialog box for the user
         const a = document.createElement('a');
@@ -124,35 +117,29 @@ export class Serializer extends HTMLDivElement {
 }
 
 
-class LoadedProfileSelector extends HTMLDivElement {
-    #radioInput;
-
+class ProfileSelector extends HTMLDivElement {
+    radioInput;
+    
     nameInput;
+    profileObj;
 
-    constructor(profileName, onInputFunc) {
+    constructor(profileObj, onInputFunc) {
         super();
+        this.profileObj = Object.assign({}, profileObj); // deep copy the object - it appears that by default, these are shared, which causes major issues.
         this.style = "display: flex;";
-            this.#radioInput = document.createElement('input');
-            this.#radioInput.type = "radio";
-            this.#radioInput.name = "😃" // This name must be constant across all the radio buttons :)
-            this.#radioInput.oninput = onInputFunc;
-        this.appendChild(this.#radioInput);
+            this.radioInput = document.createElement('input');
+            this.radioInput.type = "radio";
+            this.radioInput.name = "😃" // This name must be constant across all the radio buttons :)
+            this.radioInput.oninput = onInputFunc;
+        this.appendChild(this.radioInput);
             this.nameInput = document.createElement('input');
             this.nameInput.style.border = "1px solid green";
             this.nameInput.type = "text";
-            this.nameInput.value = profileName;
+            this.nameInput.value = this.profileObj["name"];
         this.appendChild(this.nameInput);
-    }
-
-    getCheckedState () {
-        return this.#radioInput.checked;
-    }
-
-    select() {
-        this.#radioInput.click();
     }
 }
 
 
-customElements.define('depp-loaded-profile-selector', LoadedProfileSelector, {extends: 'div'});
+customElements.define('depp-profile-selector', ProfileSelector, {extends: 'div'});
 customElements.define('depp-serializer', Serializer, {extends: 'div'});
