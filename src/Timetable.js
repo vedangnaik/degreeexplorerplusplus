@@ -1,17 +1,9 @@
-import CourseData from "../resources/CourseData.js";
 import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { CourseTile } from "./CourseTile.js";
+import { NewProfileJSON } from "./Serializer.js";
 
 export const GlobalTimetableID = "globalTimetableInstance";
-
-// This is a generic empty timetableJSON structure created here to back up new profiles. It is not connected to the actual timetable class in any way. This is to keep the two classes as separated as possible.
-export const NewProfileTimetableJSON = {
-    "anchorSemester": "Fall/Winter",
-    "anchorYear": new Date().getFullYear(),
-    "numSemesters": 4,
-    "scheduledCourses": {}
-}
 
 export class Timetable extends HTMLTableElement {
     static #headerStylesheet = `
@@ -102,7 +94,7 @@ export class Timetable extends HTMLTableElement {
         }
         this.#tbody.appendChild(tr);
 
-        this.loadTimetableJSON(NewProfileTimetableJSON);
+        this.loadTimetableJSON(NewProfileJSON["timetable"]);
 
         // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
         this.#semesterObserver = new MutationObserver(this.#refreshCoursesAndPanel.bind(this));
