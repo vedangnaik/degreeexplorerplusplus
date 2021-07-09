@@ -17,7 +17,6 @@ export class Timetable extends HTMLTableElement {
     #tbody;
     #semesterSelect;
     #yearSelect;
-    #semesterObserver;
 
     constructor() {
         super();
@@ -89,10 +88,6 @@ export class Timetable extends HTMLTableElement {
             tr.appendChild(td);
         }
         this.#tbody.appendChild(tr);
-
-        // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
-        this.#semesterObserver = new MutationObserver(this.#refreshCoursesAndPanel.bind(this));
-        this.#semesterObserver.observe(this.#tbody, { childList: true, subtree: true });
     }
 
     // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect.
@@ -221,11 +216,10 @@ export class Timetable extends HTMLTableElement {
         }
     }
 
-    #refreshCoursesAndPanel() {
+    refreshCoursesAndPanel() {
         for (const courseTile of this.#tbody.getElementsByTagName('div')) {
             if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
-        document.getElementById(GlobalCourseInfoPanelID).resetPanel();
     }
 }
 
