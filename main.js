@@ -1,16 +1,16 @@
-import { Timetable } from "./src/Timetable.js";
-import { CourseTile } from "./src/CourseTile.js";
-import { Scratchpad } from "./src/Scratchpad.js";
-import { Console } from "./src/Console.js";
-import { Serializer } from "./src/Serializer.js";
-import ProgramData from "./resources/ProgramData.js";
-import CourseData from "./resources/CourseData.js";
+import "./src/Console.js";
+import "./src/Constants.js";
+import "./src/CourseInfoPanel.js";
+import "./src/CourseTile.js";
+import "./src/Program.js";
+import "./src/Scratchpad.js";
+import "./src/Serializer.js";
+import "./src/Spacer.js";
+import "./src/Timetable.js";
+import "./resources/CourseData.js"
+import "./resources/ProgramData.js"
 
 window.addEventListener('DOMContentLoaded', main);
 function main() {
-    // let courses = {"CSC108H1": 1, "CSC148H1": 1, "CSC165H1": 1, "CSC207H1": 1, "CSC209H1": 1, "CSC236H1": 1, "CSC258H1": 1, "CSC263H1": 1, "CSC309H1": 1, "CSC311H1": 1, "CSC324H1": 1, "CSC336H1": 1, "CSC343H1": 1, "CSC367H1": 1, "CSC369H1": 1, "CSC373H1": 1, "CSC436H1": 1, "CSC443H1": 1, "CSC448H1": 1, "CSC456H1": 1, "CSC457H1": 1, "CSC458H1": 1, "CSC469H1": 1, "CSC488H1": 1, "GGR101H1": 1, "HPS390H1": 1, "HPS391H1": 1, "MAT137Y1": 1, "MAT223H1": 1, "MAT224H1": 1, "MAT237Y1": 1, "MAT257Y1": 1, "PHL100Y1": 1, "PHY131H1": 1, "STA247H1": 1, "STA248H1": 1}
-
-    // let programs = {"ASSPE1689": 1};
-
-    // console.log(checkPrerequisites(courses, programs));
+    document.querySelector("body > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > input[type=radio]:nth-child(1)").click();
 }

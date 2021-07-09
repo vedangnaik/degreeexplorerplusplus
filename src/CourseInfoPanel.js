@@ -1,8 +1,8 @@
+import { GlobalCourseInfoPanelID } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 import { PrerequisiteStatuses } from "./CourseTile.js";
 
-export const GlobalCourseInfoPanelID = "globalCourseInfoPanelInstance";
 
 export class CourseInfoPanel extends HTMLDivElement {
     static #tableHeaderStylesheet = `

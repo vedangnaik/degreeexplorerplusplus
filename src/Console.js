@@ -1,7 +1,7 @@
+import { GlobalTimetableID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
-import { GlobalTimetableID } from "./Timetable.js";
 import CourseData from "../resources/CourseData.js";
 
 export class Console extends HTMLDivElement {

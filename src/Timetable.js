@@ -1,9 +1,7 @@
-import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
+import { GlobalCourseInfoPanelID, GlobalTimetableID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { CourseTile } from "./CourseTile.js";
-import { NewProfileJSON } from "./Serializer.js";
 
-export const GlobalTimetableID = "globalTimetableInstance";
 
 export class Timetable extends HTMLTableElement {
     static #headerStylesheet = `
@@ -79,8 +77,6 @@ export class Timetable extends HTMLTableElement {
                         yearOption.innerText = year;
                         this.#yearSelect.appendChild(yearOption);
                     }
-                    // rely on ordering of children to correctly set the option of the current year to default
-                    this.#yearSelect.children[Timetable.#latestAnchorYear - new Date().getFullYear()].selected = "selected";
                     this.#yearSelect.onchange = this.#refreshSemsters.bind(this);
                 selectDiv.appendChild(this.#yearSelect);
             th.appendChild(selectDiv);
@@ -93,8 +89,6 @@ export class Timetable extends HTMLTableElement {
             tr.appendChild(td);
         }
         this.#tbody.appendChild(tr);
-
-        this.loadTimetableJSON(NewProfileJSON["timetable"]);
 
         // We use one observer on the tbody to tell us if any courses get moved around. If that happens, we reset the all the courses and clear the info panel.
         this.#semesterObserver = new MutationObserver(this.#refreshCoursesAndPanel.bind(this));

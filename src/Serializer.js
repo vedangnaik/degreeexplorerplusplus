@@ -1,17 +1,6 @@
+import { GlobalTimetableID, NewProfileJSON } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
-import { GlobalTimetableID } from "./Timetable.js";
 
-// This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
-export const NewProfileJSON = {
-    "name": "New Profile", // The name of the profile, displayed in the left bar. This does not need to be unique, it's just an identifier
-    "programs": {}, // TODO: Create the empty program structure based on how that turns out
-    "timetable": { // For now, the empty timetable structure that has evolved
-        "anchorSemester": "Fall/Winter",
-        "anchorYear": new Date().getFullYear(),
-        "numSemesters": 4,
-        "scheduledCourses": {}
-    }
-}
 
 export class Serializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
@@ -19,16 +8,13 @@ export class Serializer extends HTMLDivElement {
         outline: 1px solid grey;    
     `;
 
-    #loadedProfiles;
+    #loadedProfiles = [];
     #loadedProfilesDiv;
-    #currentProfileNumber;
+    #currentProfileNumber = null;
     #loadProfileInput;
 
     constructor() {
         super();
-        // Array to hold profile data for ones the user loads in
-        this.#loadedProfiles = [];
-        this.#currentProfileNumber = 0;
             const mainControlPanelDiv = document.createElement('div');
             mainControlPanelDiv.style.display = "flex";
                 const loadAndSaveDiv = document.createElement('div');
@@ -80,15 +66,18 @@ export class Serializer extends HTMLDivElement {
         const inputs = Array.prototype.slice.call(this.#loadedProfilesDiv.getElementsByTagName('div'));
         const selectedProfile = inputs.filter(div => div.getCheckedState())[0];
         const newProfileNumber = inputs.indexOf(selectedProfile);
-        
-        // save the old profile's information to the array
-        this.#loadedProfiles[this.#currentProfileNumber]["timetable"] = {
-            "name": this.#loadedProfilesDiv.children[this.#currentProfileNumber].nameInput.value,
-            "programs": {}, // TODO: Get this from the program manager
-            "timetable": document.getElementById(GlobalTimetableID).getTimetableJSON()
+
+        // If there is another profile being switched from, save the old profile's information to the array.
+        // Otherwise, skip this and move on to restoring the selected profile's information.
+        if (this.#currentProfileNumber !== null) {
+            this.#loadedProfiles[this.#currentProfileNumber] = {
+                "name": this.#loadedProfilesDiv.children[this.#currentProfileNumber].nameInput.value,
+                "programs": {}, // TODO: Get this from the program manager
+                "timetable": document.getElementById(GlobalTimetableID).getTimetableJSON()
+            }
         }
 
-        // copy the new profile's information to the relevant places
+        // Copy the new profile's information to the relevant places
         this.#loadedProfilesDiv.children[newProfileNumber].nameInput.value = this.#loadedProfiles[newProfileNumber]["name"]
         document.getElementById(GlobalTimetableID).loadTimetableJSON(this.#loadedProfiles[newProfileNumber]["timetable"]);
         // TODO: Ask the program manager to load the program based on this.#loadedProfiles[newProfileNumber]["programs"] (or whatever)
@@ -103,7 +92,7 @@ export class Serializer extends HTMLDivElement {
         // Append the new timetable object to the array
         this.#loadedProfiles.push(profileObj);
         // Select the selector to have the timetable switch to it
-        newProfileSelector.select();
+        // newProfileSelector.select();
     }
 
     #loadProfile() {

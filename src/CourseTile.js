@@ -1,5 +1,5 @@
+import { GlobalCourseInfoPanelID } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
-import { GlobalCourseInfoPanelID } from "./CourseInfoPanel.js";
 
 export const PrerequisiteStatuses = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
