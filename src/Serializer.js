@@ -24,7 +24,7 @@ export class Serializer extends HTMLDivElement {
                     const saveProfileButton = document.createElement('button');
                     saveProfileButton.innerHTML = "Save Profile";
                     saveProfileButton.style = Serializer.#controlButtonsStylesheet;
-                    saveProfileButton.onclick = () => { this.#profilesDiv.children[ProfileSelector.currentProfileNum].saveProfile(); }
+                    saveProfileButton.onclick = this.#saveCurrentProfile.bind(this);
 
                     // This is a input of type file which is used for selecting the profile. It is hidden since it cannot be styled easily. Instead, another button forwards any clicks it receives to this input, which handles the file stuff behind the scenes. Partially inspired by https://stackoverflow.com/a/36248168. A similar thing can also been found on the MDN docs somewhere
                     this.#loadProfileInput = document.createElement('input');
@@ -56,6 +56,15 @@ export class Serializer extends HTMLDivElement {
                 flex-direction: column;
             `;
         this.appendChild(this.#profilesDiv);
+    }
+
+    #saveCurrentProfile() {
+        if (ProfileSelector.currentProfileNum === null) {
+            // TODO: Maybe flash the button red or something
+            // Perhaps also make a new profile and save that
+        } else {
+            this.#profilesDiv.children[ProfileSelector.currentProfileNum].saveProfile();
+        }
     }
 
     #addProfile(profileObj) {
@@ -101,6 +110,7 @@ class ProfileSelector extends HTMLDivElement {
         this.appendChild(this.nameInput);
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
+            deleteProfileButton.onclick = this.#deleteProfile.bind(this);
         this.appendChild(deleteProfileButton);
     }
 
@@ -120,6 +130,13 @@ class ProfileSelector extends HTMLDivElement {
         
         // Update the currently selected profile's number with this guy's index
         ProfileSelector.currentProfileNum = Array.prototype.indexOf.call(this.#containerElem.getElementsByTagName('div'), this);
+    }
+
+    #deleteProfile() {
+        if (ProfileSelector.currentProfileNum === Array.prototype.indexOf.call(this.#containerElem.getElementsByTagName('div'), this)) {
+            ProfileSelector.currentProfileNum = null;
+        }
+        this.#containerElem.removeChild(this);
     }
 
     saveProfile() {
