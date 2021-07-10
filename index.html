@@ -5,12 +5,12 @@
         <link rel="stylesheet" href="index.css">
     </head>
     
-    <body style="margin: 1vw;">
-        <header>
+    <body>
+        <div style="height: 6vh">
             <h1 style="text-align: center;">Degree Explorer++</h1>
-        </header>
-        
-        <div style="display: flex;">
+        </div>
+
+        <div style="height: 90vh; display: flex; flex: 1;">
             <!-- Toolbar -->
             <div style="width: 13vw; display: flex; flex-direction: column;">
                 <!-- Panel with course/program search stuff -->
@@ -24,22 +24,17 @@
                 <!-- Scratchpad -->
                 <div is="depp-scratchpad"></div>
             </div>
-
             <!-- Spacer -->
-            <div style="width: 1vw;"></div>
-
-            <!-- Timetable, Course Info Panel, and Programs -->
-            <!-- This convoluted pattern is required to get the main div to follow the height of the timetable and not expand to fit the height of the course info panel. See this link: https://stackoverflow.com/questions/34194042/one-flex-grid-item-sets-the-size-limit-for-siblings. The names of these elements have been chosen to match the solution. -->
-            <div style="width: 84vw; display: flex;">
-                <section style="display: flex; flex-direction: column;">
-                    <table is="depp-timetable"></table>
-                </section>
-                <!-- Spacer -->
-                <div style="width: 1.0vw;"></div>
-                <!-- Course Info Panel -->
-                <section style="display: flex; flex-direction: column;">
-                    <div is="depp-course-info-panel"></div>
-                </section>
+            <div style="width: 0.5vw;"></div>
+            <!-- Timetable and Programs -->
+            <div style="overflow-y: scroll; width: 58vw; padding: 0 0.5vw;">
+                <table is="depp-timetable"></table>
+            </div>
+            <!-- Spacer -->
+            <div style="width: 0.5vw;"></div>
+            <!-- Course Info Panel -->
+            <div style="display: flex; width: 26vw;">
+                <div is="depp-course-info-panel"></div>
             </div>
         </div>        
     </body>

@@ -5,19 +5,6 @@ import { PrerequisiteStatuses } from "./CourseTile.js";
 
 
 export class CourseInfoPanel extends HTMLDivElement {
-    static #tableHeaderStylesheet = `
-        width: 7%;
-        writing-mode: vertical-lr;
-        text-align: center;
-        border: 1px solid black;
-        padding: 0.5vw;
-    `;
-
-    static #requisiteCellStylesheet = `
-        border: 1px solid black;
-        padding: 0.5vw;
-    `;
-
     #courseTitleHeader;
     #courseDescriptionP;
     #prerequisiteCell;
@@ -33,8 +20,6 @@ export class CourseInfoPanel extends HTMLDivElement {
             outline: 1px solid #909090;
             width: 26vw;
             display: flex;
-            flex-bases: 0px;
-            flex-grow: 1;
             overflow-y: scroll;
         `;
 
@@ -58,9 +43,18 @@ export class CourseInfoPanel extends HTMLDivElement {
                     let tr = document.createElement('tr')
                         let prerequisiteHeader = document.createElement('th');
                         prerequisiteHeader.innerText = "Prerequisites";
-                        prerequisiteHeader.style = CourseInfoPanel.#tableHeaderStylesheet;
+                        prerequisiteHeader.style = `
+                            width: 7%;
+                            writing-mode: vertical-lr;
+                            text-align: center;
+                            border: 1px solid black;
+                            padding: 0.5vw;
+                        `;
                         this.#prerequisiteCell = document.createElement('td');
-                        this.#prerequisiteCell.style = CourseInfoPanel.#requisiteCellStylesheet;
+                        this.#prerequisiteCell.style = `
+                            border: 1px solid black;
+                            padding: 0.5vw;
+                        `;
                     tr.appendChild(prerequisiteHeader);
                     tr.appendChild(this.#prerequisiteCell);
                 tbody.appendChild(tr);
