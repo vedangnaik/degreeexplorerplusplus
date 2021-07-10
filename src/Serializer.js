@@ -88,7 +88,7 @@ class ProfileSelector extends HTMLDivElement {
     static currentProfileNum = null;
 
     radioInput;
-    nameInput;
+    nameLabel;
     profileObj;
 
     #containerElem;
@@ -98,33 +98,40 @@ class ProfileSelector extends HTMLDivElement {
         this.profileObj = Object.assign({}, profileObj); // deep copy the object - it appears that by default, these are shared, which causes major issues.
         this.#containerElem = containerElem;
         this.style = "display: flex;";
-            this.radioInput = document.createElement('input');
-            this.radioInput.type = "radio";
-            this.radioInput.name = "😃" // This name must be constant across all the radio buttons :)
-            this.radioInput.oninput = this.#switchProfile.bind(this);
-        this.appendChild(this.radioInput);
-            this.nameInput = document.createElement('input');
-            this.nameInput.style.border = "1px solid green";
-            this.nameInput.type = "text";
-            this.nameInput.value = this.profileObj["name"];
-        this.appendChild(this.nameInput);
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
             deleteProfileButton.onclick = this.#deleteProfile.bind(this);
         this.appendChild(deleteProfileButton);
+            this.nameLabel = document.createElement('label');
+            this.nameLabel.contentEditable = "true";
+            this.nameLabel.innerText = this.profileObj["name"];
+                this.radioInput = document.createElement('input');
+                this.radioInput.type = "radio";
+                this.radioInput.name = "😃" // This name must be constant across all the radio buttons :)
+                this.radioInput.oninput = this.#switchProfile.bind(this);
+            this.nameLabel.appendChild(this.radioInput);
+        this.appendChild(this.nameLabel);
+            const styleNode = document.createElement('style');
+            styleNode.innerText = `
+                input:checked + label {
+                    border: 1px solid green;
+                }
+            `;
+        // this.appendChild(styleNode);
     }
 
     #switchProfile() {
         // If there is another profile being switched from, save the old profile's information to the array.
         // Otherwise, skip this and move on to restoring the selected profile's information.
         if (ProfileSelector.currentProfileNum !== null) {
-            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameInput.value;
+            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameLabel.innerText;
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = {} // TODO change this once programs are done
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalTimetableID).getTimetableJSON();
         }
 
         // Copy this profile's information to the timetable and other places
-        this.nameInput.value = this.profileObj["name"];
+        // The 0th child of the label is the text it contains, while the 1st child is the radio input
+        this.nameLabel.children[0].innerText = this.profileObj["name"];
         document.getElementById(GlobalTimetableID).loadTimetableJSON(this.profileObj["timetable"]);
         // TODO: Ask the program manager to load the program based on this
         
