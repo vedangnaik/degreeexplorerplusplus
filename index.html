@@ -27,8 +27,8 @@
             <!-- Spacer -->
             <div style="width: 1vw;"></div>
             <!-- Timetable and Programs -->
-            <!-- Why the +3px? The timetable is exactly 57vw wide, but due to ridiculous subpixel rounding issues, putting internal borders is out of the question. Hence, the table has an outline of 1px around it. This means the table's actual width is 57vw + 2px. Now, overflow of any kind on a div appears to apply a 1px wide interal white bar to the top and right borders. This covers the outline around the top and right of the table. Hence we add 2+1=3px to the width to ensure this white bar is to the right of the outline. Then, we add a padding of 1px to the top and bottom to push the outline below the top white bar. Don't ask me why these lines are still present even tho the scroll bars themselves aren't. As for how the extra width on the page is accomodated... also don't ask. It appears flexbox can take care of it. -->
-            <div style="overflow-y: scroll; width: calc(57vw + 3px); padding: 1px 0;">
+            <!-- Why the +4px? The timetable is exactly 57vw wide, but due to ridiculous subpixel rounding issues, putting internal borders is out of the question. Hence, the table has an outline of 1px around it. This means the table's actual width is 57vw + 2px. Now, overflow of any kind on a div appears to apply a 2px wide interal white bar to the right border and a 1px wide bar to the top border. This covers the outline around the top and right of the table. Hence we add 2+2=4px to the width to ensure this white bar is to the right of the outline. Then, we add a padding of 1px to the top to push the outline below the top white bar. Don't ask me why these lines are still present even tho the scroll bars themselves aren't. As for how the extra width on the page is accomodated... also don't ask. It appears flexbox can take care of it. -->
+            <div style="overflow-y: scroll; width: calc(57vw + 4px); padding-top: 1px;">
                 <table is="depp-timetable"></table>
             </div>
             <!-- Spacer -->
