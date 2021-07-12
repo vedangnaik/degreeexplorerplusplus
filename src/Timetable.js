@@ -146,8 +146,6 @@ export class Timetable extends HTMLTableElement {
 
         // Add the new courses in
         Object.entries(timetableJSON["scheduledCourses"]).forEach(([courseID, {x, y}]) => {
-            console.log(`${courseID} at ${x}, ${y}`);
-
             const td = this.#tbody.children[Math.floor(y/2)].children[x];
             const courseSlot = td.children[0];
             const newCourse = new CourseTile(courseID);
