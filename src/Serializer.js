@@ -119,7 +119,7 @@ class ProfileSelector extends HTMLDivElement {
                 // This is the div which takes the place of the actual 'radio button' circular element. It's made into a circle by background-radius 50%, and has a default height and width equal to the font size of the elements in this row.
                 const actualRadioButtonCircleDiv = document.createElement('div');
                 actualRadioButtonCircleDiv.style = `
-                    border-radius: 50% 0 0 50%;
+                    border-radius: 1em 0 0 1em;
                     border-right: 1px solid black;
                     width: 1vw;
                     height: 100%;
@@ -130,14 +130,17 @@ class ProfileSelector extends HTMLDivElement {
                 this.nameSpan.innerText = this.profileObj["name"];
                 this.nameSpan.contentEditable = "true";
                 this.nameSpan.style = `
-                    width: 10.75vw; 
+                    width: 10vw; 
                     outline: none;
+                    display: block;
+                    overflow: hidden;
                 `;
             inputLabel.appendChild(radioInput);
             inputLabel.appendChild(actualRadioButtonCircleDiv);
-            inputLabel.appendChild(new Spacer({"width": "0.25vw"}));
+            inputLabel.appendChild(new Spacer({"width": "0.5vw"}));
             inputLabel.appendChild(this.nameSpan);
         this.appendChild(inputLabel);
+        this.appendChild(new Spacer({"width": "0.5vw"}));
             // The delete profile button is outside the label to prevent the profile from being switched to when deleted.
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
