@@ -97,11 +97,9 @@ class ProfileSelector extends HTMLDivElement {
         this.profileObj = Object.assign({}, profileObj); // deep copy the object - it appears that by default, these are shared, which causes major issues.
         this.#containerElem = containerElem;
         this.style = `
-            display: flex; 
-            justify-content: space-between;
+            display: flex;
             border: 1px solid grey;
             border-radius: 1em 0 0 1em;
-            padding-left: 1px;
             margin: 1px 0;
         `;
             // A label must be used here since an input nested with a label makes the input selectable even by clicking on the label elements.
@@ -123,24 +121,27 @@ class ProfileSelector extends HTMLDivElement {
                 actualRadioButtonCircleDiv.style = `
                     border-radius: 50% 0 0 50%;
                     border-right: 1px solid black;
-                    width: 1em;
-                    height: 1em;
+                    width: 1vw;
+                    height: 100%;
                     margin: auto;
                 `;
                 // This is the span which contains the label text. It needs to be in a span to ensure it comes after the input and div.
                 this.nameSpan = document.createElement('span');
                 this.nameSpan.innerText = this.profileObj["name"];
                 this.nameSpan.contentEditable = "true";
-                this.nameSpan.style.width = "10vw";
+                this.nameSpan.style = `
+                    width: 10.75vw; 
+                    outline: none;
+                `;
             inputLabel.appendChild(radioInput);
             inputLabel.appendChild(actualRadioButtonCircleDiv);
-            inputLabel.appendChild(new Spacer({"width": "0.5vw"}));
+            inputLabel.appendChild(new Spacer({"width": "0.25vw"}));
             inputLabel.appendChild(this.nameSpan);
         this.appendChild(inputLabel);
             // The delete profile button is outside the label to prevent the profile from being switched to when deleted.
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
-            deleteProfileButton.style = "background-color: #ff4d4d; padding: 0 2px";
+            deleteProfileButton.style = "background-color: #ff4d4d; width: 1vw";
             deleteProfileButton.onclick = this.#deleteProfile.bind(this);
         this.appendChild(deleteProfileButton);
             // This CSS style node changes actualRadioButtonCircleDiv's backgrond based on whether radioInput is checked or not. The immediate sibling selector (+) is being used for this.
