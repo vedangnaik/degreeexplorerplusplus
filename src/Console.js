@@ -15,8 +15,9 @@ export class Console extends HTMLDivElement {
             flex-direction: column;
         `;
             this.#searchInput = document.createElement('input');
+            this.#searchInput.placeholder = "Search for Course/Program ID";
             this.#searchInput.style = `
-                border: 1px solid black; 
+                border: 1px solid grey; 
                 border-radius: 5px;
             `;
         this.appendChild(this.#searchInput);
@@ -29,6 +30,9 @@ export class Console extends HTMLDivElement {
                 // The top slot's dragover and drop handlers are deleted to prevent the box being used as a storage for course tiles and potentially messing up the prerequisite data.
                 this.#courseSlot.upperSlot.ondragover = () => {};
                 this.#courseSlot.upperSlot.ondrop  = () => {};
+                // We add this nice construcion-pattern looking gradient to emphasize that new courses will appear here ;)
+                this.#courseSlot.style.background = "repeating-linear-gradient(135deg, #000000ab 0% 10%, #d7a21996 10% 20%)";
+                this.#courseSlot.style.outline = "";
                 
                 const searchButton = document.createElement('button');
                 searchButton.innerText = "Add Courses & PoSTs";
@@ -37,7 +41,7 @@ export class Console extends HTMLDivElement {
                     padding: 0.5vw; 
                     flex: 1;
                     font-size: 12px; 
-                    outline: 1px solid grey;
+                    border: 1px solid grey;
                 `;
             slotAndSearchDiv.appendChild(this.#courseSlot);
             slotAndSearchDiv.appendChild(new Spacer({ "width": "0.5vw" }));

@@ -4,7 +4,7 @@ export class Scratchpad extends HTMLDivElement {
         this.id = "scratchpad"; // This is for the style node below
         this.style = `
             flex: 1;
-            outline: 1px solid grey;
+            border: 1px solid grey;
             position: relative;
             text-align: center;
         `;
@@ -35,22 +35,22 @@ export class Scratchpad extends HTMLDivElement {
         const dragStartX = ev.dataTransfer.getData("dragstartx");
         const dragStartY = ev.dataTransfer.getData("dragstarty");
         const tileBeingDragged = document.getElementById(id);
-        // This is for a corner case where you drag the course tile onto itself
-        // The offsets in the dragevent then become relative to itself, so we need to make the coords relative to the scratchpad
-        // This involves adding the actual top and left coordinates of the tile to the reported offset coords
+        // This is for a corner case where you drag the course tile onto itself.
+        // dragStartX and dragStartY now become relative to the tile itself, so we need to make the coords relative to the scratchpad. This involves adding the actual top and left coordinates of the tile to the reported offset coords.
         const targetIsNotScratchpad = ev.target !== this;
         const tileLocalLeftCoord = ev.target.getBoundingClientRect().left - this.getBoundingClientRect().left;
         const tileLocalTopCoord = ev.target.getBoundingClientRect().top - this.getBoundingClientRect().top;
         const newX = ev.offsetX + (targetIsNotScratchpad ? tileLocalLeftCoord : 0);
         const newY = ev.offsetY + (targetIsNotScratchpad ? tileLocalTopCoord : 0);
-        // Now we can append the child to the scratchpad, which will reset its top and left to 0. Then we can set the top and left explicitly
+        // Now we can append the child to the scratchpad, which will reset its top and left to 0. Then we can set the top and left explicitly.
         ev.currentTarget.appendChild(tileBeingDragged);
-        // To do so, we need to subtract the coords the pointer started at inside the tile, otherwise the tile will jump to where the pointer is and not to where the corner looks like it should go.
-        // We also need to ensure that the box itself doesn't stick outside the scratchpad even if the cursor is still inside. For this, we need a clamp function, which is defined as a method of this class.
-        // The lower bound is zero, to prevent it from exiting the top and left.
-        // The upper bound is the scratchpad's width minus the tile's width and same for the height, to prevent it exiting the bottom and right. 
-        tileBeingDragged.style.left = this.#clamp(newX - dragStartX, 0, ev.currentTarget.offsetWidth - tileBeingDragged.offsetWidth) + "px";
-        tileBeingDragged.style.top  = this.#clamp(newY - dragStartY, 0, ev.currentTarget.offsetHeight - tileBeingDragged.offsetHeight) + "px";
+        // To do so, we need to subtract the coords the mouse started at inside the tile, otherwise the tile will jump to where the pointer is and not to where the corner looks like it should go. We also need to ensure that the box itself doesn't stick outside the scratchpad even if the cursor is still inside. For this, we need to clamp the final coordinates so that they don't get too close to the right or bottom borders.
+        /* For this clamp, 
+            The lower bound is zero, to prevent it from exiting the top and left.
+            The upper bound is the scratchpad's width minus the tile's width and same for the height, to prevent it exiting the bottom and right. The -2 is for the 1px border of the scratchpad. Since we are using border-box model, the width of the pad includes the border's width; we need to subtract it to prevent the tile from covering the border. However, it appears that for some reason, (0, 0) is not on the border, but still the top left of the content area. Hence, we have to do -2 from the upper bounds, and not -1 each from the upper and lower bounds.
+        */
+        tileBeingDragged.style.left = this.#clamp(newX - dragStartX, 0, ev.currentTarget.offsetWidth - tileBeingDragged.offsetWidth - 2) + "px";
+        tileBeingDragged.style.top  = this.#clamp(newY - dragStartY, 0, ev.currentTarget.offsetHeight - tileBeingDragged.offsetHeight - 2) + "px";
         // Finally, we reset the courseTile so that the prerequisite cache isn't corrupted
         tileBeingDragged.resetCourse();
     }

@@ -17,7 +17,7 @@ export class CourseInfoPanel extends HTMLDivElement {
         // The last three are required for the panel to expand and fit the height of the timetable.
         this.style = `
             background-color: lightgrey;
-            outline: 1px solid #909090;
+            border: 1px solid grey;
             width: 26vw;
             display: flex;
             overflow-y: scroll;

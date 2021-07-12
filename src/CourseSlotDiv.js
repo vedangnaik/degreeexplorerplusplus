@@ -9,7 +9,7 @@ export class CourseSlotDiv extends HTMLDivElement {
             height: 4vw;
             display: flex;
             flex-direction: column;
-            outline: 1px solid #909090;
+            outline: 1px solid grey;
         `;
             this.upperSlot = new CourseSlot();
             this.lowerSlot = new CourseSlot();

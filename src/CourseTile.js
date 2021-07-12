@@ -65,8 +65,7 @@ export class CourseTile extends HTMLDivElement {
     #onDragStart(ev) {
         ev.dataTransfer.effectAllowed = "move";
         ev.dataTransfer.setData("id", this.id);
-        // for anyone who needs the starting coords
-        // mainly for the scratchpad
+        // The starting coordinates of the mouse pointer when the drag was started, relative to the top left of the tile. Used by the scrathpad to properly position dragged tiles.
         ev.dataTransfer.setData("dragstartx", ev.offsetX);
         ev.dataTransfer.setData("dragstarty", ev.offsetY);
     }

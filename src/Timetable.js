@@ -8,7 +8,7 @@ export class Timetable extends HTMLTableElement {
         display: flex;
         width: 9vw; 
         height: 4vw;
-        outline: 1px solid #909090;
+        outline: 1px solid grey;
         background-color: lightgrey;
     `;
     static #latestAnchorYear = 2050;

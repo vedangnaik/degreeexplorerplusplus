@@ -27,7 +27,7 @@ function main() {
     // This link clicks the 'New Profile' button to create a new profile for the user to use.
     document.querySelector("body > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > button").click()
     // This line clicks the radio button of the new profile that was just created.
-    document.querySelector("body > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > input[type=radio]:nth-child(1)").click();
+    document.querySelector("body > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > label > div:nth-child(2)").click();
 }
 
 window.addEventListener('DOMContentLoaded', main);

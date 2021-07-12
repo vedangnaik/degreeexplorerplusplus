@@ -5,7 +5,7 @@ import { Spacer } from "./Spacer.js";
 export class Serializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
-        outline: 1px solid grey;    
+        border: 1px solid grey;    
     `;
     
     #profilesDiv;
@@ -141,14 +141,16 @@ class ProfileSelector extends HTMLDivElement {
             // The delete profile button is outside the label to prevent the profile from being switched to when deleted.
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
-            deleteProfileButton.style = "background-color: #ff4d4d; width: 1vw";
+            deleteProfileButton.style = `
+                background-color: #ff4d4d; 
+                width: 1vw
+            `;
             deleteProfileButton.onclick = this.#deleteProfile.bind(this);
         this.appendChild(deleteProfileButton);
             // This CSS style node changes actualRadioButtonCircleDiv's backgrond based on whether radioInput is checked or not. The immediate sibling selector (+) is being used for this.
             const styleNode = document.createElement('style');
             styleNode.innerText = `
                 input:checked + div {
-                    // background: radial-gradient(black 50%, white 85%);
                     background-color: black;
                 }
             `;

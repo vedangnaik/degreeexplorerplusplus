@@ -25,15 +25,16 @@
                 <div is="depp-scratchpad"></div>
             </div>
             <!-- Spacer -->
-            <div style="width: 1vw;"></div>
+            <div style="width: 0.5vw;"></div>
             <!-- Timetable and Programs -->
-            <!-- Why the +4px? The timetable is exactly 57vw wide, but due to ridiculous subpixel rounding issues, putting internal borders is out of the question. Hence, the table has an outline of 1px around it. This means the table's actual width is 57vw + 2px. Now, overflow of any kind on a div appears to apply a 2px wide interal white bar to the right border and a 1px wide bar to the top border. This covers the outline around the top and right of the table. Hence we add 2+2=4px to the width to ensure this white bar is to the right of the outline. Then, we add a padding of 1px to the top to push the outline below the top white bar. Don't ask me why these lines are still present even tho the scroll bars themselves aren't. As for how the extra width on the page is accomodated... also don't ask. It appears flexbox can take care of it. -->
-            <div style="overflow-y: scroll; width: calc(57vw + 4px); padding-top: 1px;">
+            <!-- Why the padding of 1px on the top? This is because overflow-y adds a strange white border of some sort to the top and sides, even though the scrollbars themselves are not visible ¯\_(ツ)_/¯ -->
+            <div style="overflow-y: scroll; width: 58vw; padding: 1px 0.5vw 0 0.5vw;">
                 <table is="depp-timetable"></table>
             </div>
             <!-- Spacer -->
-            <div style="width: 1vw;"></div>
+            <div style="width: 0.5vw;"></div>
             <!-- Course Info Panel -->
+            <!-- If you're wondering why this div and the first one don't need a padding-top: 1px to bring them in line with the table, it's because these elements use a standard border. Due to us using the border-box model on everything, the border is counted as part of the element's height and width. However, the outline on the timetable is explicitly always outside the table, regardless of box-sizing. Hence, the table's 'top' is actually 1px below these divs, but the outline makes it look like it's level with them. -->
             <div style="display: flex; width: 26vw;">
                 <div is="depp-course-info-panel"></div>
             </div>
