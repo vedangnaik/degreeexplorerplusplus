@@ -87,8 +87,7 @@ export class Serializer extends HTMLDivElement {
 class ProfileSelector extends HTMLDivElement {
     static currentProfileNum = null;
 
-    radioInput;
-    nameLabel;
+    nameSpan;
     profileObj;
 
     #containerElem;
@@ -97,46 +96,80 @@ class ProfileSelector extends HTMLDivElement {
         super();
         this.profileObj = Object.assign({}, profileObj); // deep copy the object - it appears that by default, these are shared, which causes major issues.
         this.#containerElem = containerElem;
-        this.style = "display: flex;";
+        this.style = `
+            display: flex; 
+            justify-content: space-between;
+            border: 1px solid grey;
+            border-radius: 1em 0 0 1em;
+            padding-left: 1px;
+            margin: 1px 0;
+        `;
+            // A label must be used here since an input nested with a label makes the input selectable even by clicking on the label elements.
+            const inputLabel = document.createElement('label');
+            inputLabel.style = "display: flex;";
+                // This section implements a customizable 'radio button' which looks nicer than the defaults. Inspired by https://moderncss.dev/pure-css-custom-styled-radio-buttons/
+                // This is the actual radio input element. It is hidden but is still focusable and checkable.
+                const radioInput = document.createElement('input');
+                radioInput.type = "radio";
+                radioInput.name = "😃" // This name must be constant across all the radio buttons :)
+                radioInput.style = `
+                    width: 0; 
+                    height: 0; 
+                    opacity: 0
+                `;
+                radioInput.oninput = this.#switchProfile.bind(this);
+                // This is the div which takes the place of the actual 'radio button' circular element. It's made into a circle by background-radius 50%, and has a default height and width equal to the font size of the elements in this row.
+                const actualRadioButtonCircleDiv = document.createElement('div');
+                actualRadioButtonCircleDiv.style = `
+                    border-radius: 50%; 
+                    border: 1px solid black;
+                    width: 1em; 
+                    height: 1em;
+                    margin: auto;
+                `;
+                // This is the span which contains the label text. It needs to be in a span to ensure it comes after the input and div.
+                this.nameSpan = document.createElement('span');
+                this.nameSpan.innerText = this.profileObj["name"];
+                this.nameSpan.contentEditable = "true";
+            inputLabel.appendChild(radioInput);
+            inputLabel.appendChild(actualRadioButtonCircleDiv);
+            inputLabel.appendChild(new Spacer({"width": "0.5vw"}));
+            inputLabel.appendChild(this.nameSpan);
+        this.appendChild(inputLabel);
+        this.appendChild(new Spacer({"width": "0.5vw"}));
+            // The delete profile button is outside the label to prevent the profile from being switched to when deleted.
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
+            deleteProfileButton.style = "background-color: #ff4d4d; padding: 0 2px";
             deleteProfileButton.onclick = this.#deleteProfile.bind(this);
         this.appendChild(deleteProfileButton);
-            this.nameLabel = document.createElement('label');
-            this.nameLabel.contentEditable = "true";
-            this.nameLabel.innerText = this.profileObj["name"];
-                this.radioInput = document.createElement('input');
-                this.radioInput.type = "radio";
-                this.radioInput.name = "😃" // This name must be constant across all the radio buttons :)
-                this.radioInput.oninput = this.#switchProfile.bind(this);
-            this.nameLabel.appendChild(this.radioInput);
-        this.appendChild(this.nameLabel);
+            // This CSS style node changes actualRadioButtonCircleDiv's backgrond based on whether radioInput is checked or not. The immediate sibling selector (+) is being used for this.
             const styleNode = document.createElement('style');
             styleNode.innerText = `
-                input:checked + label {
-                    border: 1px solid green;
+                input:checked + div {
+                    background: radial-gradient(black 50%, white 60%);
                 }
             `;
-        // this.appendChild(styleNode);
+        this.appendChild(styleNode);
     }
 
     #switchProfile() {
         // If there is another profile being switched from, save the old profile's information to the array.
         // Otherwise, skip this and move on to restoring the selected profile's information.
         if (ProfileSelector.currentProfileNum !== null) {
-            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameLabel.innerText;
+            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameSpan.innerText;
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = {} // TODO change this once programs are done
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalTimetableID).getTimetableJSON();
         }
 
         // Copy this profile's information to the timetable and other places
         // The 0th child of the label is the text it contains, while the 1st child is the radio input
-        this.nameLabel.children[0].innerText = this.profileObj["name"];
+        this.nameSpan.innerText = this.profileObj["name"];
         document.getElementById(GlobalTimetableID).loadTimetableJSON(this.profileObj["timetable"]);
         // TODO: Ask the program manager to load the program based on this
         
         // Update the currently selected profile's number with this guy's index
-        ProfileSelector.currentProfileNum = Array.prototype.indexOf.call(this.#containerElem.getElementsByTagName('div'), this);
+        ProfileSelector.currentProfileNum = Array.prototype.indexOf.call(this.#containerElem.children, this);
     }
 
     #deleteProfile() {
