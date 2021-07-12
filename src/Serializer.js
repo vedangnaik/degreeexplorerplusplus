@@ -121,9 +121,9 @@ class ProfileSelector extends HTMLDivElement {
                 // This is the div which takes the place of the actual 'radio button' circular element. It's made into a circle by background-radius 50%, and has a default height and width equal to the font size of the elements in this row.
                 const actualRadioButtonCircleDiv = document.createElement('div');
                 actualRadioButtonCircleDiv.style = `
-                    border-radius: 50%; 
-                    border: 1px solid black;
-                    width: 1em; 
+                    border-radius: 50% 0 0 50%;
+                    border-right: 1px solid black;
+                    width: 1em;
                     height: 1em;
                     margin: auto;
                 `;
@@ -131,12 +131,12 @@ class ProfileSelector extends HTMLDivElement {
                 this.nameSpan = document.createElement('span');
                 this.nameSpan.innerText = this.profileObj["name"];
                 this.nameSpan.contentEditable = "true";
+                this.nameSpan.style.width = "10vw";
             inputLabel.appendChild(radioInput);
             inputLabel.appendChild(actualRadioButtonCircleDiv);
             inputLabel.appendChild(new Spacer({"width": "0.5vw"}));
             inputLabel.appendChild(this.nameSpan);
         this.appendChild(inputLabel);
-        this.appendChild(new Spacer({"width": "0.5vw"}));
             // The delete profile button is outside the label to prevent the profile from being switched to when deleted.
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
@@ -147,7 +147,8 @@ class ProfileSelector extends HTMLDivElement {
             const styleNode = document.createElement('style');
             styleNode.innerText = `
                 input:checked + div {
-                    background: radial-gradient(black 50%, white 60%);
+                    // background: radial-gradient(black 50%, white 85%);
+                    background-color: black;
                 }
             `;
         this.appendChild(styleNode);
