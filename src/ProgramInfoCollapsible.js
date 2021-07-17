@@ -9,6 +9,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             display: flex;
             flex-direction: column;
         `;
+            // This is the visible header part of the collapsible. When this is clicked, the body is toggled into appearing/disappearing.
             this.collapsibleHeaderDiv = document.createElement('div');
             this.collapsibleHeaderDiv.style = `
                 display: flex;
@@ -27,27 +28,54 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 deleteProgramButton.onclick = this.#deleteProgram.bind(this);
             this.collapsibleHeaderDiv.appendChild(deleteProgramButton);
         this.appendChild(this.collapsibleHeaderDiv);
+            // This is the body of the collapsible. It mainly contains the table which enumerates the requirements for the program.
             this.collapsibleBodyDiv = document.createElement('div');
             this.collapsibleBodyDiv.style = `
                 display: block;
+                outline: 1px solid grey;
+                padding: 0.5vw;
             `;
                 const requirementsTable = document.createElement('table');
                 requirementsTable.style = `
                     width: 100%;
+                    table-layout: auto;
                 `;
-                    let thead = document.createElement('thead');
+                    // The thead contains the headings for the table
+                    const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
-                            let requirementHeader = document.createElement('th');
-                            let descriptionHeader = document.createElement('th');
-                            let statusHeader = document.createElement('th');
-                            requirementHeader.innerText = "Requirement #";
-                            descriptionHeader.innerText = "Description";
-                            statusHeader.innerText = "Completion Status";
-                        tr.appendChild(requirementHeader);
-                        tr.appendChild(descriptionHeader);
-                        tr.appendChild(statusHeader);
+                            let th = document.createElement('th');
+                            th.innerText = "Requirement ID";
+                        tr.appendChild(th);
+                            th = document.createElement('th');
+                            th.innerText = "Description";
+                        tr.appendChild(th);
+                            th = document.createElement('th');
+                            th.innerText = "Courses Used";
+                        tr.appendChild(th);
+                            th = document.createElement('th');
+                            th.innerText = "Credits Completed";
+                        tr.appendChild(th);
                     thead.appendChild(tr);
                 requirementsTable.appendChild(thead);
+                    const tbody = document.createElement('tbody');
+                    // For each requirement in ProgramData, we create a row with it's ID, description, and set the courses used and credits to N/A to start. These fields will be filled, and the row coloured in, when this program is evaluated.
+                    Object.entries(ProgramData[this.id]["detailAssessments"]).forEach(([reqID, requirement]) => {
+                        tr = document.createElement('tr');
+                            let td = document.createElement('td');
+                            td.innerText = reqID;
+                        tr.appendChild(td);
+                            td = document.createElement('td');
+                            td.innerText = requirement["displayPrefix"];
+                        tr.appendChild(td);
+                            td = document.createElement('td');
+                            td.innerText = "N/A";
+                        tr.appendChild(td);
+                            td = document.createElement('td');
+                            td.innerText = "N/A";
+                        tr.appendChild(td);
+                        tbody.appendChild(tr);
+                    });
+                requirementsTable.appendChild(tbody);
             this.collapsibleBodyDiv.appendChild(requirementsTable);
         this.appendChild(this.collapsibleBodyDiv);
     }
