@@ -9,6 +9,7 @@ export const RequirementStatuses = Object.freeze({
 
 export class ProgramInfoCollapsible extends HTMLDivElement {
     #evaluatedRequirements = {};
+    #requirementRows = {};
 
     constructor(programID) {
         super();
@@ -67,9 +68,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     thead.appendChild(tr);
                 requirementsTable.appendChild(thead);
                     const tbody = document.createElement('tbody');
-                    // For each requirement in ProgramData, we create a row with it's ID, description, and set the courses used and credits to N/A to start. These fields will be filled, and the row coloured in, when this program is evaluated.
+                    // For each requirement in ProgramData, we create a row with it's ID, description, and set the courses used and credits to N/A to start. These fields will be filled, and the row coloured in, when this program is evaluated. The obj #requirementRows will map the IDs to the rows for each access.
                     Object.entries(ProgramData[this.id]["detailAssessments"]).forEach(([reqID, requirement]) => {
                         tr = document.createElement('tr');
+                        this.#requirementRows[reqID] = tr;
                             let td = document.createElement('td');
                             td.innerText = reqID;
                         tr.appendChild(td);
@@ -105,6 +107,34 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             }
         });
 
+        for (const reqID in this.#requirementRows) {
+            const row = this.#requirementRows[reqID];
+            if (reqID in this.#evaluatedRequirements) {
+                const status = this.#evaluatedRequirements[reqID].status;
+                const usedCourses = this.#evaluatedRequirements[reqID].usedCourses;
+                switch (status) {
+                case RequirementStatuses.COMPLETE:
+                    row.style.backgroundColor = "green";
+                    row.children[2].innerText = `${usedCourses}`.trim();
+                    break;
+
+                case RequirementStatuses.INCOMPLETE:
+                    row.style.backgroundColor = "red";
+                    break;
+
+                case RequirementStatuses.NA:
+                    row.style.backgroundColor = "grey";
+                    break;
+
+                case RequirementStatuses.WARNING:
+                    row.style.backgroundColor = "yellow";
+                    row.children[2].innerText = `${usedCourses}`.trim();
+                    break;
+                }
+            } else {
+                row.style.backgroundColor = "lightgrey";
+            }
+        }        
 
         function recursiveEvaluateRequirements(programID, reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements) {
             // Quick exit case: this ID has already been evaluated, so there's no need to do it again.
@@ -129,9 +159,9 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     let usedPrereqs = [];
                     let count = 0;
                     for (const dependent_reqID of requirementObj.requisiteItems) {
-                        // Evaluate the dependent prereqID and check if it's acceptable
-                        recursiveEvaluatePrerequisite(programID, dependent_reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements);
-                        if (evaluatedPrerequisites[dependent_reqID].status !== RequirementStatuses.INCOMPLETE) {
+                        // Evaluate the dependent reqID and check if it's acceptable
+                        recursiveEvaluateRequirements(programID, dependent_reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements);
+                        if (evaluatedRequirements[dependent_reqID].status !== RequirementStatuses.INCOMPLETE) {
                             usedPrereqs.push(dependent_reqID);
                             count += 1;
                         }
@@ -140,22 +170,22 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                             // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
                             requirementObj.requisiteItems
                                 .filter(dependent_reqID => !usedPrereqs.includes(dependent_reqID))
-                                .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = {
+                                .forEach(dependent_reqID => evaluatedRequirements[dependent_reqID] = {
                                     "status": RequirementStatuses.NA,
                                     "usedCourses": []
                                 });
                             
-                                evaluatedRequirements[prereqID] = {
+                                evaluatedRequirements[reqID] = {
                                 "status": RequirementStatuses.COMPLETE,
                                 // We concat all the usedCourses of each used requirements. Right now it's only one, but this is in case the format changes in the future. 
                                 "usedCourses": usedPrereqs
-                                    .map(prereqID => evaluatedRequirements[prereqID].usedCourses)
+                                    .map(reqID => evaluatedRequirements[reqID].usedCourses)
                                     .reduce((acc, curr) => acc.concat(curr), [])
                             }
                             return;
                         }
                     }
-                    evaluatedRequirements[prereqID] = {
+                    evaluatedRequirements[reqID] = {
                         "status": RequirementStatuses.INCOMPLETE,
                         "usedCourses": []
                     }
@@ -166,17 +196,26 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 //     return;
                 default:
                     console.log(`${programID}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
-                    evaluatedRequirements[reqID] = RequirementStatuses.INCOMPLETE;
+                    evaluatedRequirements[reqID] = {
+                        "status": RequirementStatuses.INCOMPLETE,
+                        "usedCourses": []
+                    }
                     return;
                 }
             } else {
                 switch (requirementObj.type) {
-                case "LIST":
+                case "LIST":                    
                     evaluatedRequirements[reqID] = (requirementObj.requisiteItems
-                        .filter(dependent_courseID => 
-                            !(dependent_courseID in scheduledCourses) || 
-                            scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                        .length === 0) ? RequirementStatuses.COMPLETE : RequirementStatuses.INCOMPLETE;
+                        .filter(dependent_courseID => !(dependent_courseID in scheduledCourses))
+                        .length === 0) ? 
+                    {
+                        "status":  RequirementStatuses.COMPLETE,
+                        "usedCourses": requirementObj.requisiteItems
+                    } : 
+                    {
+                        "status": RequirementStatuses.INCOMPLETE,
+                        "usedCourses": []
+                    }
                     return;
                 // case "MINIMUM":
                 //     return;
@@ -184,7 +223,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 //     return;
                 default:
                     console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
-                    evaluatedRequirements[reqID] = RequirementStatuses.INCOMPLETE;
+                    evaluatedRequirements[reqID] = {
+                        "status": RequirementStatuses.INCOMPLETE,
+                        "usedCourses": []
+                    }
                     return;
                 }
             }

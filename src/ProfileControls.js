@@ -83,6 +83,9 @@ export class ProfileControls extends HTMLDivElement {
         for (const courseID in scheduledCourses) {
             document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
         }
+
+        // TEMP TODO: remove this, only for testing
+        document.getElementById('ASSPE1689').evaluateRequirements(scheduledCourses, scheduledPrograms);
     }
 }
 
