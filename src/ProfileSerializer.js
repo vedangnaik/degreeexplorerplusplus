@@ -77,6 +77,7 @@ export class ProfileSerializer extends HTMLDivElement {
         reader.onload = (evt) => {
             // TODO: Way more error checking, and separating out program and timetable code
             this.#addProfile(JSON.parse(evt.target.result));
+            this.#loadProfileInput.value = '';
         };
 
         reader.readAsText(this.#loadProfileInput.files[0]);
