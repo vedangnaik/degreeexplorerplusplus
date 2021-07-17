@@ -18,7 +18,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             `;
             this.collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
                 const programNameP = document.createElement('p');
-                programNameP.innerText = programID;
+                programNameP.innerText = `${programID}: ${ProgramData[programID]['title']}`;
                 programNameP.style = `
                     flex: 1;
                 `;
@@ -65,7 +65,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                             td.innerText = reqID;
                         tr.appendChild(td);
                             td = document.createElement('td');
-                            td.innerText = requirement["displayPrefix"];
+                            td.innerText = requirement["description"];
                         tr.appendChild(td);
                             td = document.createElement('td');
                             td.innerText = "N/A";
