@@ -14,22 +14,25 @@
             <!-- Toolbar -->
             <div style="width: 13vw; display: flex; flex-direction: column;">
                 <!-- Panel with course/program search stuff -->
-                <div is="depp-console"></div>
+                <div is="depp-profile-console"></div>
                 <!-- Spacer -->
                 <div style="height: 1vw;"></div>
                 <!-- Panel with Save and Load stuff -->
-                <div is="depp-serializer"></div>
+                <div is="depp-profile-serializer"></div>
                 <!-- Spacer -->
                 <div style="height: 1vw;"></div>
                 <!-- Scratchpad -->
-                <div is="depp-scratchpad"></div>
+                <div is="depp-course-scratchpad"></div>
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>
             <!-- Timetable and Programs -->
             <!-- Why the padding of 1px on the top and bottom? This is because overflow-y adds a strange white border of some sort to the top, bottom, and sides, even though the scrollbars themselves are not visible ¯\_(ツ)_/¯ -->
             <div style="overflow-y: scroll; width: 58vw; padding: 1px 0.5vw;">
-                <table is="depp-timetable"></table>
+                <table is="depp-course-schedule"></table>
+                <!-- Spacer -->
+                <div style="height: 1vw;"></div>
+
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>

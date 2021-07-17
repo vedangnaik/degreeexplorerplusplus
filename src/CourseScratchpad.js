@@ -1,7 +1,7 @@
-export class Scratchpad extends HTMLDivElement {
+export class CourseScratchpad extends HTMLDivElement {
     constructor() {
         super();
-        this.id = "scratchpad"; // This is for the style node below
+        this.id = "courseScratchpad"; // This is for the style node below
         this.style = `
             flex: 1;
             border: 1px solid grey;
@@ -12,7 +12,7 @@ export class Scratchpad extends HTMLDivElement {
             // add a new style node that gives each child of the pad absolute position
             const styleNode = document.createElement('style');
             styleNode.innerText = `
-                #scratchpad > div {
+                #courseScratchpad > div {
                     position: absolute;
                 }
             `;
@@ -61,4 +61,4 @@ export class Scratchpad extends HTMLDivElement {
 }
 
 
-customElements.define('depp-scratchpad', Scratchpad, {extends: 'div'});
+customElements.define('depp-course-scratchpad', CourseScratchpad, {extends: 'div'});

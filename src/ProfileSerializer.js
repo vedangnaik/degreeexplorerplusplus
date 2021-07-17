@@ -1,8 +1,8 @@
-import { GlobalTimetableID, NewProfileJSON } from "./Constants.js";
+import { GlobalCourseScheduleID, NewProfileJSON } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 
-export class Serializer extends HTMLDivElement {
+export class ProfileSerializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
         border: 1px solid grey;    
@@ -23,7 +23,7 @@ export class Serializer extends HTMLDivElement {
                 `;
                     const saveProfileButton = document.createElement('button');
                     saveProfileButton.innerHTML = "Save Profile";
-                    saveProfileButton.style = Serializer.#controlButtonsStylesheet;
+                    saveProfileButton.style = ProfileSerializer.#controlButtonsStylesheet;
                     saveProfileButton.onclick = this.#saveCurrentProfile.bind(this);
 
                     // This is a input of type file which is used for selecting the profile. It is hidden since it cannot be styled easily. Instead, another button forwards any clicks it receives to this input, which handles the file stuff behind the scenes. Partially inspired by https://stackoverflow.com/a/36248168. A similar thing can also been found on the MDN docs somewhere
@@ -35,7 +35,7 @@ export class Serializer extends HTMLDivElement {
 
                     const loadProfileButton = document.createElement('button');
                     loadProfileButton.innerHTML = "Load Profile";
-                    loadProfileButton.style = Serializer.#controlButtonsStylesheet
+                    loadProfileButton.style = ProfileSerializer.#controlButtonsStylesheet
                     loadProfileButton.onclick = () => { this.#loadProfileInput.click(); }
                 loadAndSaveDiv.appendChild(saveProfileButton);
                 loadAndSaveDiv.appendChild(new Spacer({ "height": "0.5vw" }));
@@ -45,7 +45,7 @@ export class Serializer extends HTMLDivElement {
             mainControlPanelDiv.appendChild(new Spacer( {"width": "0.5vw"} ));
                 const newProfileButton = document.createElement('button');
                 newProfileButton.innerText = "New Profile";
-                newProfileButton.style = Serializer.#controlButtonsStylesheet;
+                newProfileButton.style = ProfileSerializer.#controlButtonsStylesheet;
                 newProfileButton.onclick = this.#addProfile.bind(this, NewProfileJSON);
             mainControlPanelDiv.appendChild(newProfileButton);
         this.appendChild(mainControlPanelDiv);
@@ -166,13 +166,13 @@ class ProfileSelector extends HTMLDivElement {
         if (ProfileSelector.currentProfileNum !== null) {
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameSpan.innerText;
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = {} // TODO change this once programs are done
-            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalTimetableID).getTimetableJSON();
+            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalCourseScheduleID).getTimetableJSON();
         }
 
         // Copy this profile's information to the timetable and other places
         // The 0th child of the label is the text it contains, while the 1st child is the radio input
         this.nameSpan.innerText = this.profileObj["name"];
-        document.getElementById(GlobalTimetableID).loadTimetableJSON(this.profileObj["timetable"]);
+        document.getElementById(GlobalCourseScheduleID).loadTimetableJSON(this.profileObj["timetable"]);
         // TODO: Ask the program manager to load the program based on this
         
         // Update the currently selected profile's number with this guy's index
@@ -210,4 +210,4 @@ class ProfileSelector extends HTMLDivElement {
 
 
 customElements.define('depp-profile-selector', ProfileSelector, {extends: 'div'});
-customElements.define('depp-serializer', Serializer, {extends: 'div'});
+customElements.define('depp-profile-serializer', ProfileSerializer, {extends: 'div'});

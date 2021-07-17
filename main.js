@@ -1,22 +1,23 @@
 // Side-effect imports, to get all the constructors and stuff into this file.
-import "./src/Console.js";
 import "./src/Constants.js";
+import "./src/CourseSchedule.js";
 import "./src/CourseInfoPanel.js";
 import "./src/CourseTile.js";
-import "./src/Program.js";
-import "./src/Scratchpad.js";
-import "./src/Serializer.js";
+import "./src/CourseScratchpad.js";
+import "./src/PoSTInfoTable.js";
+import "./src/ProfileSerializer.js";
+import "./src/ProfileConsole.js";
 import "./src/Spacer.js";
-import "./src/Timetable.js";
+
 import "./resources/CourseData.js"
 import "./resources/ProgramData.js"
 
 // Specific imports this main needs
-import { GlobalCourseInfoPanelID, GlobalTimetableID } from "./src/Constants.js";
+import { GlobalCourseInfoPanelID, GlobalCourseScheduleID } from "./src/Constants.js";
 
 function main() {
     // Start observing the timetable for changes here - tell the timetable itself and the course panel if something changes
-    const timetableInstance = document.getElementById(GlobalTimetableID);
+    const timetableInstance = document.getElementById(GlobalCourseScheduleID);
     const coursePanelInstance = document.getElementById(GlobalCourseInfoPanelID);
     const timetableObserver = new MutationObserver(() => {
         timetableInstance.refreshCoursesAndPanel();

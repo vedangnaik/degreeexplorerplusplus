@@ -1,10 +1,10 @@
-import { GlobalTimetableID } from "./Constants.js";
+import { GlobalCourseScheduleID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
 
-export class Console extends HTMLDivElement {
+export class ProfileConsole extends HTMLDivElement {
     #courseSlot;
     #searchInput;
 
@@ -77,7 +77,7 @@ export class Console extends HTMLDivElement {
     }
 
     #evaluateProfile() {
-        const scheduledCourses = document.getElementById(GlobalTimetableID).getTimetableJSON()["scheduledCourses"];
+        const scheduledCourses = document.getElementById(GlobalCourseScheduleID).getTimetableJSON()["scheduledCourses"];
         const scheduledPrograms = {};
 
         for (const courseID in scheduledCourses) {
@@ -86,4 +86,4 @@ export class Console extends HTMLDivElement {
     }
 }
 
-customElements.define('depp-console', Console, {extends: 'div'});
+customElements.define('depp-profile-console', ProfileConsole, {extends: 'div'});

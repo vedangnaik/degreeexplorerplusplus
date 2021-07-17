@@ -1,4 +1,4 @@
-export const GlobalTimetableID = "globalTimetableInstance";
+export const GlobalCourseScheduleID = "globalTimetableInstance";
 
 export const GlobalCourseInfoPanelID = "globalCourseInfoPanelInstance";
 
