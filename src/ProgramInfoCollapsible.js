@@ -101,7 +101,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         // Yeah, don't ask why it's called this.
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
             if (!(reqID in this.#evaluatedRequirements)) {
-                recursiveEvaluateRequirements(this.programID, reqID, courses, programs, this.#evaluatedRequirements);
+                recursiveEvaluateRequirements(this.id, reqID, courses, programs, this.#evaluatedRequirements);
             }
         });
 
@@ -115,93 +115,77 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             const requirementObj = ProgramData[programID].detailAssessments[reqID];
 
             if (requirementObj.type == "NOTE") {
-                evaluatedRequirements[reqID] = RequirementStatuses.NA;
+                evaluatedRequirements[reqID] = {
+                    "status": RequirementStatuses.NA,
+                    "usedCourses": []
+                };
                 return;
             }
 
             if (requirementObj.requisiteItems[0].includes('Req')) {
                 switch (requirementObj.type) {
-                    
-                }
-            } else {
+                // At least 1 requirement is needed. It's assumed to be 1 because count is not specified for this field anywhere.
+                case "MINIMUM":
+                    let usedPrereqs = [];
+                    let count = 0;
+                    for (const dependent_reqID of requirementObj.requisiteItems) {
+                        // Evaluate the dependent prereqID and check if it's acceptable
+                        recursiveEvaluatePrerequisite(programID, dependent_reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements);
+                        if (evaluatedPrerequisites[dependent_reqID].status !== RequirementStatuses.INCOMPLETE) {
+                            usedPrereqs.push(dependent_reqID);
+                            count += 1;
+                        }
 
-            }
-        
-            if (requirement.requisiteItems[0].includes('Req')) {
-                if (requirement.type == "MINIMUM") {
-                    for (reqID of requirement.requisiteItems) {
-                        let statusObj = recursiveEvaluateRequirements(requirements[reqID]);
-                        if (statusObj.completed) {
-                            return {
-                                "completed": true,
-                                "usedCourses": statusObj.usedCourses
+                        if (1 <= count) {
+                            // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
+                            requirementObj.requisiteItems
+                                .filter(dependent_reqID => !usedPrereqs.includes(dependent_reqID))
+                                .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = {
+                                    "status": RequirementStatuses.NA,
+                                    "usedCourses": []
+                                });
+                            
+                                evaluatedRequirements[prereqID] = {
+                                "status": RequirementStatuses.COMPLETE,
+                                // We concat all the usedCourses of each used requirements. Right now it's only one, but this is in case the format changes in the future. 
+                                "usedCourses": usedPrereqs
+                                    .map(prereqID => evaluatedRequirements[prereqID].usedCourses)
+                                    .reduce((acc, curr) => acc.concat(curr), [])
                             }
-                        };
+                            return;
+                        }
                     }
-        
-                    return {
-                        "completed": false,
+                    evaluatedRequirements[prereqID] = {
+                        "status": RequirementStatuses.INCOMPLETE,
                         "usedCourses": []
                     }
+                    return;
+                // case "REUSE":
+                //     return;
+                // case "NO_REUSE":
+                //     return;
+                default:
+                    console.log(`${programID}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
+                    evaluatedRequirements[reqID] = RequirementStatuses.INCOMPLETE;
+                    return;
                 }
-                
-                else if (requirement.type == "GROUPMAXIMUM") {
-                    console.log("req groupmaximum");
-                    console.log(requirement);
-                } 
-                
-                else if (requirement.type == "LIST") {
-                    console.log("req list");
-                    console.log(requirement);
-                }
-            }
-        
-            else {
-                if (requirement.type == "MINIMUM") {
-                    let credits = 0;
-                    let requiredCredits = requirement.requiredCredits;
-                    let completed = false;
-                    let usedCourses = [];
-                    
-                    for (let courseID of requirement.requisiteItems) {
-                        if (credits == requiredCredits) { 
-                            completed = true;
-                            break;
-                        }
-                        
-                        if (courseID in courses) {
-                            credits += courseID[6] == 'H' ? 0.5 : 1.0;
-                            usedCourses.push(courseID);
-                        }
-                    }
-        
-                    return {
-                        "completed": completed,
-                        "usedCourses": usedCourses
-                    };
-                }
-                
-                else if (requirement.type == "GROUPMAXIMUM") {
-                    console.log("course groupmaximum");
-                    console.log(requirement);
-                } 
-                
-                else if (requirement.type == "LIST") {
-                    let completed = true;
-                    let usedCourses = [];
-                    
-                    for (let courseID of requirement.requisiteItems) {
-                        if (courseID in courses) {
-                            usedCourses.push(courseID);
-                        } else {
-                            completed = false;
-                        }
-                    }
-        
-                    return {
-                        "completed": completed,
-                        "usedCourses": usedCourses
-                    };
+            } else {
+                switch (requirementObj.type) {
+                case "LIST":
+                    evaluatedRequirements[reqID] = (requirementObj.requisiteItems
+                        .filter(dependent_courseID => 
+                            !(dependent_courseID in scheduledCourses) || 
+                            scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
+                        .length === 0) ? RequirementStatuses.COMPLETE : RequirementStatuses.INCOMPLETE;
+                    return;
+                // case "MINIMUM":
+                //     return;
+                // case "GROUPMAXIMUM":
+                //     return;
+                default:
+                    console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
+                    evaluatedRequirements[reqID] = RequirementStatuses.INCOMPLETE;
+                    return;
                 }
             }
         }

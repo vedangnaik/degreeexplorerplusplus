@@ -83,7 +83,7 @@ export class CourseTile extends HTMLDivElement {
     evaluatePrerequisites(courses, programs) {
         Object.keys(CourseData[this.id]["prerequisites"]).forEach(prereqID => {
             if (!(prereqID in this.#evaluatedPrerequisites)) { 
-                recursiveEvaluatePrerequisite(this.courseID, prereqID, courses, programs, this.#evaluatedPrerequisites);
+                recursiveEvaluatePrerequisite(this.id, prereqID, courses, programs, this.#evaluatedPrerequisites);
             }
         });
 
@@ -137,8 +137,8 @@ export class CourseTile extends HTMLDivElement {
                             prerequisiteObj.requisiteItems
                                 .filter(dependent_prereqID => !usedPrereqs.includes(dependent_prereqID))
                                 .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = PrerequisiteStatuses.NA);
+                            
                             evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.COMPLETE;
-                            // return early to not waste time
                             return;
                         }
                     }
