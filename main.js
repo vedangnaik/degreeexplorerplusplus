@@ -4,9 +4,9 @@ import "./src/CourseSchedule.js";
 import "./src/CourseInfoPanel.js";
 import "./src/CourseTile.js";
 import "./src/CourseScratchpad.js";
-import "./src/PoSTInfoTable.js";
+import "./src/ProgramInfoCollapsible.js";
 import "./src/ProfileSerializer.js";
-import "./src/ProfileConsole.js";
+import "./src/ProfileControls.js";
 import "./src/Spacer.js";
 
 import "./resources/CourseData.js"
@@ -14,8 +14,12 @@ import "./resources/ProgramData.js"
 
 // Specific imports this main needs
 import { GlobalCourseInfoPanelID, GlobalCourseScheduleID } from "./src/Constants.js";
+import { ProgramInfoCollapsible } from "./src/ProgramInfoCollapsible.js";
 
 function main() {
+    // TODO: Remove, only for testing
+    document.querySelector("body > div:nth-child(2) > div:nth-child(3)").appendChild(new ProgramInfoCollapsible("ASSPE1689"));
+
     // Start observing the timetable for changes here - tell the timetable itself and the course panel if something changes
     const timetableInstance = document.getElementById(GlobalCourseScheduleID);
     const coursePanelInstance = document.getElementById(GlobalCourseInfoPanelID);

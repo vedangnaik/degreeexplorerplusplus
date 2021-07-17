@@ -4,7 +4,7 @@ import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
 
-export class ProfileConsole extends HTMLDivElement {
+export class ProfileControls extends HTMLDivElement {
     #courseSlot;
     #searchInput;
 
@@ -86,4 +86,4 @@ export class ProfileConsole extends HTMLDivElement {
     }
 }
 
-customElements.define('depp-profile-console', ProfileConsole, {extends: 'div'});
+customElements.define('depp-profile-controls', ProfileControls, {extends: 'div'});

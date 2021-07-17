@@ -21,77 +21,78 @@ export class CourseSchedule extends HTMLTableElement {
     constructor() {
         super();
         this.id = GlobalCourseScheduleID;
-        this.#tbody = document.createElement('tbody');
+        this.style = `
+            border-collapse: collapse;
+        `;
+            this.#tbody = document.createElement('tbody');
+                // The bottom row is fixed and unremovable. It contains the starting semester value upon which the labels of the other semesters are calculated
+                const tr = document.createElement('tr');
+                    const th = document.createElement('th');
+                    th.style = CourseSchedule.#headerStylesheet;
+                        const addSemesterButton = document.createElement('button');
+                        addSemesterButton.innerText = '+';
+                        addSemesterButton.style = `
+                            flex: 1; 
+                            background-color: forestgreen; 
+                            font-weight: bold;
+                        `;
+                        addSemesterButton.onclick = this.#addSemester.bind(this);
+                    th.appendChild(addSemesterButton);
+                        // This div is responsible for centering the two selectors on top of each other.
+                        const selectDiv = document.createElement('div');
+                        selectDiv.style = `
+                            flex: 9; 
+                            margin: auto;
+                        `;
+                            this.#semesterSelect = document.createElement('select');
+                            this.#semesterSelect.style = `
+                                margin-left: auto;
+                                background-color: transparent;
+                                text-align-last: center;
+                                font-weight: bold;
+                                font-size: 0.83em;
+                            `;
+                                // Option for fall/winter
+                                const fallWinterOption = document.createElement('option');
+                                fallWinterOption.style.backgroundColor = "white";
+                                fallWinterOption.value = "Fall/Winter";
+                                fallWinterOption.innerText = "Fall/Winter";
+                                // Option for summer
+                                const summerOption = document.createElement('option');
+                                summerOption.style.backgroundColor = "white";
+                                summerOption.value = "Summer";
+                                summerOption.innerText = "Summer";
+                            this.#semesterSelect.appendChild(fallWinterOption);
+                            this.#semesterSelect.appendChild(summerOption);
+                            this.#semesterSelect.onchange = this.#refreshSemsters.bind(this);
+                        selectDiv.appendChild(this.#semesterSelect);
+                            this.#yearSelect = document.createElement('select');
+                            this.#yearSelect.style = `
+                                margin-right: auto;
+                                background-color: transparent;
+                                text-align-last: center;
+                                font-weight: bold;
+                                font-size: 0.83em;
+                            `;
+                            for (let year = CourseSchedule.#latestAnchorYear; year >= CourseSchedule.#earliestAnchorYear; year--) {
+                                const yearOption = document.createElement('option');
+                                yearOption.style.backgroundColor = "white";
+                                yearOption.value = year;
+                                yearOption.innerText = year;
+                                this.#yearSelect.appendChild(yearOption);
+                            }
+                            this.#yearSelect.onchange = this.#refreshSemsters.bind(this);
+                        selectDiv.appendChild(this.#yearSelect);
+                    th.appendChild(selectDiv);
+                tr.appendChild(th);
+                // add 6 course slot containers
+                for (let _ = 0; _ < 6; _++) {
+                    const td = document.createElement('td');
+                    td.appendChild(new CourseSlotDiv());
+                    tr.appendChild(td);
+                }
+            this.#tbody.appendChild(tr);
         this.appendChild(this.#tbody);
-
-        // The bottom row is fixed and unremovable. It contains the starting semester value upon which the labels of the other semesters are calculated
-        const tr = document.createElement('tr');
-            const th = document.createElement('th');
-            th.style = CourseSchedule.#headerStylesheet;
-                const addSemesterButton = document.createElement('button');
-                addSemesterButton.innerText = '+';
-                addSemesterButton.style = `
-                    flex: 1; 
-                    background-color: forestgreen; 
-                    font-weight: bold;
-                `;
-                addSemesterButton.onclick = this.#addSemester.bind(this);
-            th.appendChild(addSemesterButton);
-                // This div is responsible for centering the two selectors on top of each other.
-                const selectDiv = document.createElement('div');
-                selectDiv.style = `
-                    flex: 9; 
-                    margin: auto;
-                `;
-                    this.#semesterSelect = document.createElement('select');
-                    this.#semesterSelect.style = `
-                        margin-left: auto;
-                        background-color: transparent;
-                        text-align-last: center;
-                        font-weight: bold;
-                        font-size: 0.83em;
-                    `;
-                        // Option for fall/winter
-                        const fallWinterOption = document.createElement('option');
-                        fallWinterOption.style.backgroundColor = "white";
-                        fallWinterOption.value = "Fall/Winter";
-                        fallWinterOption.innerText = "Fall/Winter";
-                        // Option for summer
-                        const summerOption = document.createElement('option');
-                        summerOption.style.backgroundColor = "white";
-                        summerOption.value = "Summer";
-                        summerOption.innerText = "Summer";
-                    this.#semesterSelect.appendChild(fallWinterOption);
-                    this.#semesterSelect.appendChild(summerOption);
-                    this.#semesterSelect.onchange = this.#refreshSemsters.bind(this);
-                selectDiv.appendChild(this.#semesterSelect);
-                    this.#yearSelect = document.createElement('select');
-                    this.#yearSelect.style = `
-                        margin-right: auto;
-                        background-color: transparent;
-                        text-align-last: center;
-                        font-weight: bold;
-                        font-size: 0.83em;
-                    `;
-                    for (let year = CourseSchedule.#latestAnchorYear; year >= CourseSchedule.#earliestAnchorYear; year--) {
-                        const yearOption = document.createElement('option');
-                        yearOption.style.backgroundColor = "white";
-                        yearOption.value = year;
-                        yearOption.innerText = year;
-                        this.#yearSelect.appendChild(yearOption);
-                    }
-                    this.#yearSelect.onchange = this.#refreshSemsters.bind(this);
-                selectDiv.appendChild(this.#yearSelect);
-            th.appendChild(selectDiv);
-        tr.appendChild(th);
-        
-        // add 6 course slot containers
-        for (let _ = 0; _ < 6; _++) {
-            const td = document.createElement('td');
-            td.appendChild(new CourseSlotDiv());
-            tr.appendChild(td);
-        }
-        this.#tbody.appendChild(tr);
     }
 
     // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect.
