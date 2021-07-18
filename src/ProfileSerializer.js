@@ -167,13 +167,13 @@ class ProfileSelector extends HTMLDivElement {
         if (ProfileSelector.currentProfileNum !== null) {
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameSpan.innerText;
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = {} // TODO change this once programs are done
-            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalCourseScheduleID).getTimetableJSON();
+            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["timetable"] = document.getElementById(GlobalCourseScheduleID).getCourseScheduleJSON();
         }
 
         // Copy this profile's information to the timetable and other places
         // The 0th child of the label is the text it contains, while the 1st child is the radio input
         this.nameSpan.innerText = this.profileObj["name"];
-        document.getElementById(GlobalCourseScheduleID).loadTimetableJSON(this.profileObj["timetable"]);
+        document.getElementById(GlobalCourseScheduleID).loadCourseScheduleJSON(this.profileObj["timetable"]);
         // TODO: Ask the program manager to load the program based on this
         
         // Update the currently selected profile's number with this guy's index

@@ -35,7 +35,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             this.collapsibleHeaderDiv.appendChild(programNameP);
                 const deleteProgramButton = document.createElement('button');
                 deleteProgramButton.innerText = "Delete PoST";
-                deleteProgramButton.onclick = this.#deleteProgram.bind(this);
+                deleteProgramButton.onclick = this.deleteProgram.bind(this);
             this.collapsibleHeaderDiv.appendChild(deleteProgramButton);
         this.appendChild(this.collapsibleHeaderDiv);
             // This is the body of the collapsible. It mainly contains the table which enumerates the requirements for the program.
@@ -95,14 +95,14 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.collapsibleBodyDiv.style.display = (this.collapsibleBodyDiv.style.display === "none") ? "block" : "none";
     }
 
-    #deleteProgram() {
+    deleteProgram() {
         this.parentElement.removeChild(this);
     }
 
     evaluateRequirements(courses, programs) {
         // Yeah, don't ask why it's called this.
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
-            if (!(reqID in this.#evaluatedRequirements)) {
+            if (!(reqID in this.#evaluatedRequirements)) {1
                 recursiveEvaluateRequirements(this.id, reqID, courses, programs, this.#evaluatedRequirements);
             }
         });

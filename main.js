@@ -21,13 +21,13 @@ function main() {
     document.querySelector("body > div:nth-child(2) > div:nth-child(3)").appendChild(new ProgramInfoCollapsible("ASSPE1689"));
 
     // Start observing the timetable for changes here - tell the timetable itself and the course panel if something changes
-    const timetableInstance = document.getElementById(GlobalCourseScheduleID);
+    const courseScheduleInstance = document.getElementById(GlobalCourseScheduleID);
     const coursePanelInstance = document.getElementById(GlobalCourseInfoPanelID);
     const timetableObserver = new MutationObserver(() => {
-        timetableInstance.refreshCoursesAndPanel();
+        courseScheduleInstance.refreshCourses();
         coursePanelInstance.resetPanel();
     });
-    timetableObserver.observe(timetableInstance, { childList: true, subtree: true });
+    timetableObserver.observe(courseScheduleInstance, { childList: true, subtree: true });
 
     // This link clicks the 'New Profile' button to create a new profile for the user to use.
     document.querySelector("body > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > button").click()

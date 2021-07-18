@@ -96,7 +96,7 @@ export class CourseSchedule extends HTMLTableElement {
     }
 
     // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect.
-    getTimetableJSON() {
+    getCourseScheduleJSON() {
         let scheduledCourses = {};
         const semesterTrs = Array.prototype.slice.call(this.getElementsByTagName('tr'));
         const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
@@ -129,10 +129,10 @@ export class CourseSchedule extends HTMLTableElement {
         };
     }
 
-    loadTimetableJSON(timetableJSON) {
+    loadCourseScheduleJSON(scheduleJSON) {
         // Set the anchor year and semester
-        this.#yearSelect.children[CourseSchedule.#latestAnchorYear - timetableJSON["anchorYear"]].selected = "selected";
-        this.#semesterSelect.value = timetableJSON["anchorSemester"];
+        this.#yearSelect.children[CourseSchedule.#latestAnchorYear - scheduleJSON["anchorYear"]].selected = "selected";
+        this.#semesterSelect.value = scheduleJSON["anchorSemester"];
 
         // Filter out and delete the existing course-tiles 
         const divs = Array.prototype.slice.call(this.getElementsByTagName('div'));
@@ -142,7 +142,7 @@ export class CourseSchedule extends HTMLTableElement {
 
         // Add or delete semesters until you've equalled the number of semesters in the timetableJSON
         const currentNumSemesters = this.#tbody.children.length;
-        const newNumSemesters = timetableJSON["numSemesters"];
+        const newNumSemesters = scheduleJSON["numSemesters"];
         for (let _ = Math.min(currentNumSemesters, newNumSemesters); _ < Math.max(currentNumSemesters, newNumSemesters); _++) {
             if (currentNumSemesters < newNumSemesters) { this.#addSemester(); }
             else if (currentNumSemesters > newNumSemesters) { this.#deleteSemester(this.#tbody.children[0]); }
@@ -150,7 +150,7 @@ export class CourseSchedule extends HTMLTableElement {
         }
 
         // Add the new courses in
-        Object.entries(timetableJSON["scheduledCourses"]).forEach(([courseID, {x, y}]) => {
+        Object.entries(scheduleJSON["scheduledCourses"]).forEach(([courseID, {x, y}]) => {
             const td = this.#tbody.children[Math.floor(y/2)].children[x];
             const courseSlot = td.children[0];
             const newCourse = new CourseTile(courseID);
@@ -219,7 +219,7 @@ export class CourseSchedule extends HTMLTableElement {
         }
     }
 
-    refreshCoursesAndPanel() {
+    refreshCourses() {
         for (const courseTile of this.#tbody.getElementsByTagName('div')) {
             if (courseTile.customTagName === "course-tile") { courseTile.resetCourse(); }
         }
