@@ -20,9 +20,9 @@ export class ProgramSchedule extends HTMLDivElement {
     }
 
     loadProgramScheduleJSON(scheduleJSON) {
-        // First, delete all the courses here.
-        for (const program of this.children) {
-            program.deleteProgram();
+        // First, delete all the courses here. We go backwards to avoid i skipping elements.
+        for (let i = this.children.length - 1; i >= 0; i--) {
+            this.children[i].deleteProgram();
         }
         // Then, add the ones listed in the JSON.
         for (const programID of scheduleJSON) {

@@ -42,7 +42,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This is the body of the collapsible. It mainly contains the table which enumerates the requirements for the program.
             this.collapsibleBodyDiv = document.createElement('div');
             this.collapsibleBodyDiv.style = `
-                display: block;
+                display: none;
                 outline: 1px solid grey;
                 padding: 0.5vw;
             `;

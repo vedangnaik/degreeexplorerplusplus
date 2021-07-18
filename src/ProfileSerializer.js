@@ -1,4 +1,4 @@
-import { GlobalCourseScheduleID, NewProfileJSON } from "./Constants.js";
+import { GlobalCourseScheduleID, GlobalProgramScheduleID, NewProfileJSON } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 
@@ -166,15 +166,15 @@ class ProfileSelector extends HTMLDivElement {
         // Otherwise, skip this and move on to restoring the selected profile's information.
         if (ProfileSelector.currentProfileNum !== null) {
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["name"] = this.#containerElem.children[ProfileSelector.currentProfileNum].nameSpan.innerText;
-            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = {} // TODO change this once programs are done
             this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["courses"] = document.getElementById(GlobalCourseScheduleID).getCourseScheduleJSON();
+            this.#containerElem.children[ProfileSelector.currentProfileNum].profileObj["programs"] = document.getElementById(GlobalProgramScheduleID).getProgramScheduleJSON();
         }
 
         // Copy this profile's information to the timetable and other places
         // The 0th child of the label is the text it contains, while the 1st child is the radio input
         this.nameSpan.innerText = this.profileObj["name"];
         document.getElementById(GlobalCourseScheduleID).loadCourseScheduleJSON(this.profileObj["courses"]);
-        // TODO: Ask the program manager to load the program based on this
+        document.getElementById(GlobalProgramScheduleID).loadProgramScheduleJSON(this.profileObj["programs"]);
         
         // Update the currently selected profile's number with this guy's index
         ProfileSelector.currentProfileNum = Array.prototype.indexOf.call(this.#containerElem.children, this);
