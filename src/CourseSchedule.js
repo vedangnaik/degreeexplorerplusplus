@@ -95,7 +95,7 @@ export class CourseSchedule extends HTMLTableElement {
         this.appendChild(this.#tbody);
     }
 
-    // This function converts the current state of the timetable into JSON, which can be stored and loaded back later. We want the coordiantes of all courses as well as the current value of the semesterSelect and yearSelect.
+    // This function converts the current state of the course schedule into JSON, which can be stored and loaded back later. We want the coordinates of all courses as well as the current value of the semesterSelect and yearSelect.
     getCourseScheduleJSON() {
         let scheduledCourses = {};
         const semesterTrs = Array.prototype.slice.call(this.getElementsByTagName('tr'));

@@ -1,8 +1,9 @@
-import { GlobalCourseScheduleID } from "./Constants.js";
+import { GlobalCourseScheduleID, GlobalProgramScheduleID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
 import CourseData from "../resources/CourseData.js";
+import ProgramData from "../resources/ProgramData.js";
 
 export class ProfileControls extends HTMLDivElement {
     #courseSlot;
@@ -36,7 +37,7 @@ export class ProfileControls extends HTMLDivElement {
                 
                 const searchButton = document.createElement('button');
                 searchButton.innerText = "Add Courses & PoSTs";
-                searchButton.onclick = this.#searchCourse.bind(this);
+                searchButton.onclick = this.#searchCoursesAndPrograms.bind(this);
                 searchButton.style = `
                     padding: 0.5vw; 
                     flex: 1;
@@ -60,12 +61,14 @@ export class ProfileControls extends HTMLDivElement {
         this.appendChild(evaluateProfileButton);
     }
 
-    #searchCourse() {
+    #searchCoursesAndPrograms() {
         const id = this.#searchInput.value;
-        if (CourseData[id]) {
+        if (id in CourseData) {
             // Delete any existing tiles in the slot, then add the new child
             this.#courseSlot.upperSlot.replaceChildren();
             this.#courseSlot.upperSlot.appendChild(new CourseTile(id));
+        } else if (id in ProgramData) {
+            document.getElementById(GlobalProgramScheduleID).addProgram(id);
         } else {
             // Flash the slot red for a second to indicate an error
             // TODO: Maybe change this into a smooth fadein/fadeout
@@ -77,7 +80,7 @@ export class ProfileControls extends HTMLDivElement {
     }
 
     #evaluateProfile() {
-        const scheduledCourses = document.getElementById(GlobalCourseScheduleID).getTimetableJSON()["scheduledCourses"];
+        const scheduledCourses = document.getElementById(GlobalCourseScheduleID).getCourseScheduleJSON()["scheduledCourses"];
         const scheduledPrograms = {};
 
         for (const courseID in scheduledCourses) {

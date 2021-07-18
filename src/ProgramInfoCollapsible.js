@@ -1,4 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
+import { Spacer } from "./Spacer.js";
 
 export const RequirementStatuses = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
@@ -89,6 +90,9 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 requirementsTable.appendChild(tbody);
             this.collapsibleBodyDiv.appendChild(requirementsTable);
         this.appendChild(this.collapsibleBodyDiv);
+            // This is to give some space between this course and the next. It's a little crude, but it works OK. This was originally going to be handled by ProgramSchedule, but deletion becomes an issue.
+            const spacer = new Spacer({"height": "1vw"});
+        this.appendChild(spacer);
     }
 
     #toggleCollapsible() {
