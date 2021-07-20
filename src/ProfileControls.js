@@ -87,7 +87,7 @@ export class ProfileControls extends HTMLDivElement {
             document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
         }
 
-        for (const programID in scheduledPrograms) {
+        for (const programID of scheduledPrograms) {
             document.getElementById(programID).evaluateRequirements(scheduledCourses, scheduledPrograms);
         }
     }

@@ -103,6 +103,13 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.parentElement.removeChild(this);
     }
 
+    // Sets all the rows back to the default color
+    resetProgram() {
+        for (const row of Object.values(this.#requirementRows)) {
+            row.style.backgroundColor = "revert";
+        }
+    }
+
     evaluateRequirements(courses, programs) {
         // Yeah, don't ask why it's called this.
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {

@@ -11,6 +11,12 @@ export class ProgramSchedule extends HTMLDivElement {
         this.appendChild(new ProgramInfoCollapsible(programID));
     }
 
+    resetPrograms() {
+        for (const programInfoCollapsible of this.children) {
+            programInfoCollapsible.resetProgram();
+        }
+    }
+
     getProgramScheduleJSON() {
         let scheduledPrograms = [];
         for (const program of this.children) {

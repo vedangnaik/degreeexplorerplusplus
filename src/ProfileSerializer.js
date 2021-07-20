@@ -5,9 +5,9 @@ import { Spacer } from "./Spacer.js";
 export class ProfileSerializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
-        border: 1px solid grey;    
+        border: 1px solid grey;
     `;
-    
+
     #profilesDiv;
     #loadProfileInput;
 
@@ -17,8 +17,8 @@ export class ProfileSerializer extends HTMLDivElement {
             mainControlPanelDiv.style.display = "flex";
                 const loadAndSaveDiv = document.createElement('div');
                 loadAndSaveDiv.style = `
-                    display: flex; 
-                    flex-direction: 
+                    display: flex;
+                    flex-direction:
                     column; width: 8vw;
                 `;
                     const saveProfileButton = document.createElement('button');
@@ -26,7 +26,7 @@ export class ProfileSerializer extends HTMLDivElement {
                     saveProfileButton.style = ProfileSerializer.#controlButtonsStylesheet;
                     saveProfileButton.onclick = this.#saveCurrentProfile.bind(this);
 
-                    // This is a input of type file which is used for selecting the profile. It is hidden since it cannot be styled easily. Instead, another button forwards any clicks it receives to this input, which handles the file stuff behind the scenes. Partially inspired by https://stackoverflow.com/a/36248168. A similar thing can also been found on the MDN docs somewhere
+                    // This is a input of type file which is used for selecting the profile. It is hidden since it cannot be styled easily. Instead, another button forwards any clicks it receives to this input, which handles the file stuff behind the scenes. Partially inspired by https://stackoverflow.com/a/36248168. A similar thing can also been found on the MDN docs somewhere.
                     this.#loadProfileInput = document.createElement('input');
                     this.#loadProfileInput.type = "file";
                     this.#loadProfileInput.accept = ".de++";
@@ -52,7 +52,7 @@ export class ProfileSerializer extends HTMLDivElement {
         this.appendChild(new Spacer({ "height": "0.5vw" }));
             this.#profilesDiv = document.createElement('div');
             this.#profilesDiv.style = `
-                display: flex; 
+                display: flex;
                 flex-direction: column;
             `;
         this.appendChild(this.#profilesDiv);
@@ -112,8 +112,8 @@ class ProfileSelector extends HTMLDivElement {
                 radioInput.type = "radio";
                 radioInput.name = "😃" // This name must be constant across all the radio buttons :)
                 radioInput.style = `
-                    width: 0; 
-                    height: 0; 
+                    width: 0;
+                    height: 0;
                     opacity: 0
                 `;
                 radioInput.oninput = this.#switchProfile.bind(this);
@@ -131,7 +131,7 @@ class ProfileSelector extends HTMLDivElement {
                 this.nameSpan.innerText = this.profileObj["name"];
                 this.nameSpan.contentEditable = "true";
                 this.nameSpan.style = `
-                    width: 10vw; 
+                    width: 10vw;
                     outline: none;
                     display: block;
                     overflow: hidden;
@@ -146,7 +146,7 @@ class ProfileSelector extends HTMLDivElement {
             const deleteProfileButton = document.createElement('button');
             deleteProfileButton.innerText = '✖';
             deleteProfileButton.style = `
-                background-color: #ff4d4d; 
+                background-color: #ff4d4d;
                 width: 1vw
             `;
             deleteProfileButton.onclick = this.#deleteProfile.bind(this);
@@ -175,7 +175,7 @@ class ProfileSelector extends HTMLDivElement {
         this.nameSpan.innerText = this.profileObj["name"];
         document.getElementById(GlobalCourseScheduleID).loadCourseScheduleJSON(this.profileObj["courses"]);
         document.getElementById(GlobalProgramScheduleID).loadProgramScheduleJSON(this.profileObj["programs"]);
-        
+
         // Update the currently selected profile's number with this guy's index
         ProfileSelector.currentProfileNum = Array.prototype.indexOf.call(this.#containerElem.children, this);
     }
@@ -190,7 +190,7 @@ class ProfileSelector extends HTMLDivElement {
     saveProfile() {
         // We manually select the curent profile again to trigger #switchProfile() and get the latest versions of the timetable and program in the array
         this.#switchProfile();
-        
+
         // Since the file format is JSON but with a different extension, we will mark it as such for the constructor
         const profileFileName = `${this.profileObj["name"]}.de++`;
         const profile = new File([JSON.stringify(this.profileObj)], profileFileName, { "type": "text/json" });
@@ -199,7 +199,7 @@ class ProfileSelector extends HTMLDivElement {
         const a = document.createElement('a');
         a.href = URL.createObjectURL(profile);
         // Make it invisble, just so that it doesn't get rendered and flash
-        a.style.display = "none"; 
+        a.style.display = "none";
         a.download = profileFileName;
 
         // Temporarily append it to the body, and then remove it afterwards

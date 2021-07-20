@@ -14,16 +14,18 @@ import "./resources/CourseData.js"
 import "./resources/ProgramData.js"
 
 // Specific imports this main needs
-import { GlobalCourseInfoPanelID, GlobalCourseScheduleID } from "./src/Constants.js";
-import { ProgramInfoCollapsible } from "./src/ProgramInfoCollapsible.js";
+import { GlobalCourseInfoPanelID, GlobalCourseScheduleID, GlobalProgramScheduleID } from "./src/Constants.js";
 
 function main() {
     // Start observing the timetable for changes here - tell the timetable itself and the course panel if something changes
     const courseScheduleInstance = document.getElementById(GlobalCourseScheduleID);
     const coursePanelInstance = document.getElementById(GlobalCourseInfoPanelID);
+    const programScheduleInstance = document.getElementById(GlobalProgramScheduleID);
+    
     const timetableObserver = new MutationObserver(() => {
         courseScheduleInstance.refreshCourses();
         coursePanelInstance.resetPanel();
+        programScheduleInstance.resetPrograms();
     });
     timetableObserver.observe(courseScheduleInstance, { childList: true, subtree: true });
 
