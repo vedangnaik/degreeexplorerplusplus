@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 
 export const PrerequisiteStatuses = Object.freeze({
@@ -31,10 +31,10 @@ export class CourseTile extends HTMLDivElement {
             courseName.onclick = this.#displayPrerequisitesOnPanel.bind(this); // This needs to be bound here becuase otherwise clicking the delete button to remove the course also displays the course info lol
         this.appendChild(courseName);
             const deleteCourseButton = document.createElement('button');
-            deleteCourseButton.innerText = '✖';
+            deleteCourseButton.innerText = DELETE_SYMBOL;
             deleteCourseButton.style = `
                 width: 1vw;
-                background-color: #ff4d4d;
+                background-color: ${DELETE_COLOR};
             `;
             deleteCourseButton.onclick = this.deleteCourse.bind(this);
         this.appendChild(deleteCourseButton);

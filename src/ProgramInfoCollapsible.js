@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL } from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 export const RequirementStatuses = Object.freeze({
@@ -28,19 +28,32 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             this.collapsibleHeaderDiv = document.createElement('div');
             this.collapsibleHeaderDiv.style = `
                 width: 57vw;
+                height: 2vw;
                 display: flex;
                 outline: 1px solid grey;
                 background-color: lightgrey;
             `;
             this.collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
-                const programNameP = document.createElement('p');
-                programNameP.innerText = `${programID}: ${ProgramData[programID]['title']}`;
-                programNameP.style = `
+                this.collapsibleStatusH2 = document.createElement('h3');
+                this.collapsibleStatusH2.innerText = '▼';
+                this.collapsibleStatusH2.style = `
+                    margin: auto;
+                    padding: 0 10px;
+                `;
+            this.collapsibleHeaderDiv.appendChild(this.collapsibleStatusH2);
+                const programNameH3 = document.createElement('h3');
+                programNameH3.innerText = `${programID}: ${ProgramData[programID]['title']}`;
+                programNameH3.style = `
+                    margin: auto;
                     flex: 1;
                 `;
-            this.collapsibleHeaderDiv.appendChild(programNameP);
+            this.collapsibleHeaderDiv.appendChild(programNameH3);
                 const deleteProgramButton = document.createElement('button');
-                deleteProgramButton.innerText = "Delete PoST";
+                deleteProgramButton.innerText = DELETE_SYMBOL;
+                deleteProgramButton.style = `
+                    width: 1vw;
+                    background-color: ${DELETE_COLOR};
+                `;
                 deleteProgramButton.onclick = this.deleteProgram.bind(this);
             this.collapsibleHeaderDiv.appendChild(deleteProgramButton);
         this.appendChild(this.collapsibleHeaderDiv);
@@ -130,7 +143,13 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     }
 
     #toggleCollapsible() {
-        this.collapsibleBodyDiv.style.display = (this.collapsibleBodyDiv.style.display === "none") ? "block" : "none";
+        if (this.collapsibleBodyDiv.style.display === "none") {
+            this.collapsibleBodyDiv.style.display = "block";
+            this.collapsibleStatusH2.innerText = '▲';
+        } else {
+            this.collapsibleBodyDiv.style.display = "none";
+            this.collapsibleStatusH2.innerText = '▼';
+        }
     }
 
     deleteProgram() {

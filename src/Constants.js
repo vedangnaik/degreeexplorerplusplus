@@ -5,11 +5,13 @@ export const GLOBAL_COURSE_INFO_PANEL_ID = "GLOBAL_COURSE_INFO_PANEL_IDID";
 export const COMPLETE_COLOR = "lightgreen";
 export const INCOMPLETE_COLOR = "#ff8080";
 export const WARNING_COLOR = "lightyellow";
+export const DELETE_COLOR = "#ff4d4d";
 
-export const COMPELTE_SYMBOL = '✔️'
-export const INCOMPELTE_SYMBOL = '❌'
-export const WARNING_SYMBOL = '⚠️'
-export const NOTE_SYMBOL = '📝'
+export const COMPELTE_SYMBOL = '✔️';
+export const INCOMPELTE_SYMBOL = '❌';
+export const WARNING_SYMBOL = '⚠️';
+export const NOTE_SYMBOL = '📝';
+export const DELETE_SYMBOL = '✖';
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
 export const NEW_PROFILE_JSON = {

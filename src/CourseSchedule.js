@@ -1,4 +1,4 @@
-import { GLOBAL_COURSE_SCHEDULE_ID } from "./Constants.js";
+import { DELETE_COLOR, DELETE_SYMBOL, GLOBAL_COURSE_SCHEDULE_ID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { CourseTile } from "./CourseTile.js";
 
@@ -163,9 +163,9 @@ export class CourseSchedule extends HTMLTableElement {
             const th = document.createElement('th');
             th.style = CourseSchedule.#headerStylesheet;
                 const deleteSemesterButton = document.createElement('button');
-                deleteSemesterButton.innerText = '✖';
+                deleteSemesterButton.innerText = DELETE_SYMBOL;
                 deleteSemesterButton.style = `
-                    background-color: #ff4d4d;
+                    background-color: ${DELETE_COLOR};
                     width: 1vw;
                 `;
                 deleteSemesterButton.onclick = this.#deleteSemester.bind(this, tr);
