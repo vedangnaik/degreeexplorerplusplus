@@ -50,7 +50,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 width: 57vw;
                 display: none;
                 outline: 1px solid grey;
-                padding: 0vw;
             `;
                 const requirementsTable = document.createElement('table');
                 requirementsTable.id = "reqTable" // This is for the stylesheet below
@@ -120,11 +119,11 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 }
                 #reqTable td:first-child, #reqTable th:first-child {
                     text-align: center;
-                    width: 6vw;
+                    width: 8vw;
                 }
 
                 #reqTable th:nth-of-type(4), #reqTable td:nth-of-type(4) {
-                    width: 10.5vw;
+                    width: 10vw;
                 }
             `;
         this.appendChild(styleElem);
@@ -141,6 +140,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns.
     resetProgram() {
         for (const row of Object.values(this.#requirementRows)) {
+            row.style.backgroundColor = "revert";
             row.children[0].innerText = '';
             row.children[3].innerText = '';
             row.children[4].innerText = '';

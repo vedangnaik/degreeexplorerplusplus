@@ -32,7 +32,7 @@ export class CourseSchedule extends HTMLTableElement {
                         const addSemesterButton = document.createElement('button');
                         addSemesterButton.innerText = '+';
                         addSemesterButton.style = `
-                            flex: 1;
+                            width: 1vw;
                             background-color: forestgreen; 
                             font-weight: bold;
                         `;
@@ -41,7 +41,7 @@ export class CourseSchedule extends HTMLTableElement {
                         // This div is responsible for centering the two selectors on top of each other.
                         const selectDiv = document.createElement('div');
                         selectDiv.style = `
-                            flex: 9; 
+                            width: 8vw;
                             margin: auto;
                         `;
                             this.#semesterSelect = document.createElement('select');
@@ -49,7 +49,7 @@ export class CourseSchedule extends HTMLTableElement {
                                 margin-left: auto;
                                 background-color: transparent;
                                 text-align-last: center;
-                                font-weight: bold;
+                                text-transform: uppercase;
                             `;
                                 // Option for fall/winter
                                 const fallWinterOption = document.createElement('option');
@@ -70,7 +70,7 @@ export class CourseSchedule extends HTMLTableElement {
                                 margin-right: auto;
                                 background-color: transparent;
                                 text-align-last: center;
-                                font-weight: bold;
+                                text-transform: uppercase;
                             `;
                             for (let year = CourseSchedule.#latestAnchorYear; year >= CourseSchedule.#earliestAnchorYear; year--) {
                                 const yearOption = document.createElement('option');
@@ -165,15 +165,16 @@ export class CourseSchedule extends HTMLTableElement {
                 const deleteSemesterButton = document.createElement('button');
                 deleteSemesterButton.innerText = '✖';
                 deleteSemesterButton.style = `
-                    flex: 1;
                     background-color: #ff4d4d;
+                    width: 1vw;
                 `;
                 deleteSemesterButton.onclick = this.#deleteSemester.bind(this, tr);
             th.appendChild(deleteSemesterButton);
-                let semesterName = document.createElement('h5');
+                let semesterName = document.createElement('h4');
                 semesterName.style = `
-                    flex: 9;
+                    width: 8vw;
                     margin: auto;
+                    padding: 0 10px;
                 `;
             th.appendChild(semesterName);
         tr.appendChild(th);

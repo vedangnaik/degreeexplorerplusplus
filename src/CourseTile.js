@@ -24,7 +24,7 @@ export class CourseTile extends HTMLDivElement {
             const courseName = document.createElement('h3');
             courseName.innerText = courseID;
             courseName.style = `
-                flex: 9;
+                width: 7vw;
                 margin: auto;
                 text-align: center;
             `;
@@ -33,7 +33,7 @@ export class CourseTile extends HTMLDivElement {
             const deleteCourseButton = document.createElement('button');
             deleteCourseButton.innerText = '✖';
             deleteCourseButton.style = `
-                flex: 1;
+                width: 1vw;
                 background-color: #ff4d4d;
             `;
             deleteCourseButton.onclick = this.deleteCourse.bind(this);
