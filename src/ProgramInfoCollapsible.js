@@ -53,7 +53,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 padding: 1vw;
             `;
                 const requirementsTable = document.createElement('table');
-                requirementsTable.id = "requirementsTable" // This is for the stylesheet below
+                requirementsTable.id = "reqTable" // This is for the stylesheet below
                 requirementsTable.style = `
                     width: 55vw;
                 `;
@@ -105,25 +105,18 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This style element is used to add the inner border style as well some fixed width columns and font size stuff.
             const styleElem = document.createElement('style');
             styleElem.innerText = `
-                #requirementsTable {
+                #reqTable {
                     table-layout: auto;
                     border-collapse: collapse;
                 }
-                #requirementsTable td, #requirementsTable th {
-                    padding: 3px 10px;
-                }
-                #requirementsTable td:first-child {
-                    text-align: center;
-                }
-                #requirementsTable thead tr, #requirementsTable tbody tr:not(:last-child) {
-                    border-bottom: 1px solid black;
-                }
-                #requirementsTable td:not(:last-child), #requirementsTable th:not(:last-child) {
-                    border-right: 1px solid black;
-                }
-                #requirementsTable th:nth-of-type(4), #requirementsTable td:nth-of-type(4) {
-                    width: 10.5vw;
-                }
+
+                #reqTable thead tr, #reqTable tbody tr:not(:last-child) { border-bottom: 1px solid black; }
+                #reqTable td:not(:last-child), #reqTable th:not(:last-child) { border-right: 1px solid black; }
+
+                #reqTable td, #reqTable th { padding: 3px 10px; }
+                #reqTable td:first-child { text-align: center; }
+                
+                #reqTable th:nth-of-type(4), #reqTable td:nth-of-type(4) { width: 10.5vw; }
             `;
         this.appendChild(styleElem);
     }

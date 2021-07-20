@@ -32,7 +32,7 @@ export class CourseSchedule extends HTMLTableElement {
                         const addSemesterButton = document.createElement('button');
                         addSemesterButton.innerText = '+';
                         addSemesterButton.style = `
-                            flex: 1; 
+                            flex: 1;
                             background-color: forestgreen; 
                             font-weight: bold;
                         `;
@@ -50,7 +50,6 @@ export class CourseSchedule extends HTMLTableElement {
                                 background-color: transparent;
                                 text-align-last: center;
                                 font-weight: bold;
-                                font-size: 0.83em;
                             `;
                                 // Option for fall/winter
                                 const fallWinterOption = document.createElement('option');
@@ -72,7 +71,6 @@ export class CourseSchedule extends HTMLTableElement {
                                 background-color: transparent;
                                 text-align-last: center;
                                 font-weight: bold;
-                                font-size: 0.83em;
                             `;
                             for (let year = CourseSchedule.#latestAnchorYear; year >= CourseSchedule.#earliestAnchorYear; year--) {
                                 const yearOption = document.createElement('option');
