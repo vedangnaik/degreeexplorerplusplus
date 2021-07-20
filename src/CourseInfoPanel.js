@@ -1,4 +1,4 @@
-import { GlobalCourseInfoPanelID } from "./Constants.js";
+import { INCOMPLETE_COLOR, GlobalCourseInfoPanelID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 import { PrerequisiteStatuses } from "./CourseTile.js";
@@ -88,19 +88,17 @@ export class CourseInfoPanel extends HTMLDivElement {
             p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].description}`;
             switch (prerequisitesTracker[prereqID]) {
                 case PrerequisiteStatuses.COMPLETE:
-                    p.style.color = "green";
+                    p.style.color = COMPLETE_COLOR;
                     break;
                 case PrerequisiteStatuses.INCOMPLETE:
-                    p.style.color = "red";
-                    break;
-                case PrerequisiteStatuses.NA:
-                    p.style.color = "grey";
+                    p.style.color = INCOMPLETE_COLOR;
                     break;
                 case PrerequisiteStatuses.WARNING:
-                    p.style.color = "yellow";
+                    p.style.color = WARNING_COLOR;
                     break;
+                case PrerequisiteStatuses.NA:
                 default:
-                    p.style.color = "black";
+                    p.style.color = "revert";
             }
             this.#prerequisiteCell.appendChild(p);
         }

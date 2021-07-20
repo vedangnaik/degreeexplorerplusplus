@@ -1,4 +1,4 @@
-import { GlobalCourseInfoPanelID } from "./Constants.js";
+import { INCOMPLETE_COLOR, GlobalCourseInfoPanelID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 
 export const PrerequisiteStatuses = Object.freeze({
@@ -89,11 +89,11 @@ export class CourseTile extends HTMLDivElement {
 
         const statuses = Object.values(this.#evaluatedPrerequisites);
         if (statuses.includes(PrerequisiteStatuses.INCOMPLETE)) {
-            this.style.backgroundColor = "#ff8080";
+            this.style.backgroundColor = INCOMPLETE_COLOR;
         } else if (statuses.includes(PrerequisiteStatuses.WARNING)) {
-            this.style.backgroundColor = "lightyellow";
+            this.style.backgroundColor = WARNING_COLOR;
         } else {
-            this.style.backgroundColor = "lightgreen";
+            this.style.backgroundColor = COMPLETE_COLOR;
         }
 
         return;

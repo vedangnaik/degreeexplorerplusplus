@@ -1,8 +1,9 @@
 export const GlobalCourseScheduleID = "GlobalCourseScheduleID";
-
 export const GlobalProgramScheduleID = "GlobalProgramScheduleID";
-
 export const GlobalCourseInfoPanelID = "GlobalCourseInfoPanelID";
+export const COMPLETE_COLOR = "lightgreen";
+export const INCOMPLETE_COLOR = "#ff8080";
+export const WARNING_COLOR = "lightyellow";
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
 export const NewProfileJSON = {

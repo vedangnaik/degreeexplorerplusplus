@@ -1,4 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 export const RequirementStatuses = Object.freeze({
@@ -60,6 +61,9 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
                             let th = document.createElement('th');
+                            th.innerText = "Status";
+                        tr.appendChild(th);
+                            th = document.createElement('th');
                             th.innerText = "ID";
                         tr.appendChild(th);
                             th = document.createElement('th');
@@ -79,16 +83,16 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                         tr = document.createElement('tr');
                         this.#requirementRows[reqID] = tr;
                             let td = document.createElement('td');
+                        tr.appendChild(td);
+                            td = document.createElement('td');
                             td.innerText = reqID;
                         tr.appendChild(td);
                             td = document.createElement('td');
                             td.innerText = requirement["description"];
                         tr.appendChild(td);
                             td = document.createElement('td');
-                            td.innerText = "N/A";
                         tr.appendChild(td);
                             td = document.createElement('td');
-                            td.innerText = "N/A";
                         tr.appendChild(td);
                         tbody.appendChild(tr);
                     });
@@ -103,12 +107,15 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             const styleElem = document.createElement('style');
             styleElem.innerText = `
                 #requirementsTable {
-                    table-layout: fixed;
+                    table-layout: auto;
                     border-collapse: collapse;
                     font-size: 14px;
                 }
-                #requirementsTable td {
+                #requirementsTable td, #requirementsTable th {
                     padding: 3px 10px;
+                }
+                #requirementsTable td:first-child {
+                    text-align: center;
                 }
                 #requirementsTable thead tr, #requirementsTable tbody tr:not(:last-child) {
                     border-bottom: 1px solid black;
@@ -116,16 +123,8 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 #requirementsTable td:not(:last-child), #requirementsTable th:not(:last-child) {
                     border-right: 1px solid black;
                 }
-                #requirementsTable th:nth-of-type(1), #requirementsTable td:nth-of-type(1) {
-                    width: 4vw;
-                }
-                #requirementsTable th:nth-of-type(3), #requirementsTable td:nth-of-type(3) {
-                    width: 10.5vw;
-                    text-align: center;
-                }
                 #requirementsTable th:nth-of-type(4), #requirementsTable td:nth-of-type(4) {
-                    width: 4.5vw;
-                    text-align: center;
+                    width: 10.5vw;
                 }
             `;
         this.appendChild(styleElem);
@@ -139,10 +138,12 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.parentElement.removeChild(this);
     }
 
-    // Sets all the rows back to the default color.
+    // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns.
     resetProgram() {
         for (const row of Object.values(this.#requirementRows)) {
-            row.style.backgroundColor = "revert";
+            row.children[0].innerText = '';
+            row.children[3].innerText = '';
+            row.children[4].innerText = '';
         }
     }
 
@@ -161,25 +162,28 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 const usedCourses = this.#evaluatedRequirements[reqID].usedCourses;
                 switch (status) {
                 case RequirementStatuses.COMPLETE:
-                    row.style.backgroundColor = "green";
-                    row.children[2].innerText = `${usedCourses.join(', ')}`.trim();
+                    row.children[0].innerText = '✔️';
+                    row.style.backgroundColor = COMPLETE_COLOR;
+                    row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
 
                 case RequirementStatuses.INCOMPLETE:
-                    row.style.backgroundColor = "red";
+                    row.children[0].innerText = '❌';
+                    row.style.backgroundColor = INCOMPLETE_COLOR;
                     break;
 
                 case RequirementStatuses.NA:
-                    row.style.backgroundColor = "lightgrey";
+                    row.children[0].innerText = '📝'
                     break;
 
                 case RequirementStatuses.WARNING:
-                    row.style.backgroundColor = "yellow";
-                    row.children[2].innerText = `${usedCourses.join(', ')}`.trim();
+                    row.children[0].innerText = '⚠️'
+                    row.style.backgroundColor = WARNING_COLOR;
+                    row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
                 }
             } else {
-                row.style.backgroundColor = "revert";
+                // Shouldn't happen.
             }
         }        
 
