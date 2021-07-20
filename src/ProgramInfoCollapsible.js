@@ -50,12 +50,12 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 width: 57vw;
                 display: none;
                 outline: 1px solid grey;
-                padding: 0.5vw;
+                padding: 1vw;
             `;
                 const requirementsTable = document.createElement('table');
                 requirementsTable.id = "requirementsTable" // This is for the stylesheet below
                 requirementsTable.style = `
-                    width: 56vw;
+                    width: 55vw;
                 `;
                     // The thead contains the headings for the table
                     const thead = document.createElement('thead');
@@ -102,14 +102,12 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This is to give some space between this course and the next. It's a little crude, but it works OK. This was originally going to be handled by ProgramSchedule, but deletion becomes an issue.
             const spacer = new Spacer({"height": "1vw"});
         this.appendChild(spacer);
-            // This style element is mainly used to cleanly give the table columns proper width.
-            // The column with the requirement text is not touched, to allow the browser to calculate its width.
+            // This style element is used to add the inner border style as well some fixed width columns and font size stuff.
             const styleElem = document.createElement('style');
             styleElem.innerText = `
                 #requirementsTable {
                     table-layout: auto;
                     border-collapse: collapse;
-                    font-size: 14px;
                 }
                 #requirementsTable td, #requirementsTable th {
                     padding: 3px 10px;

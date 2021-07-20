@@ -2,7 +2,21 @@
 <html>
     <head>
         <script type="module" src="main.js"></script>
-        <link rel="stylesheet" href="index.css">
+        <style>
+            *, *:before, *:after {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                box-sizing: border-box;
+                font-family: monospace;
+                scrollbar-width: none;
+            }
+
+            /* Disable all scrollbars */
+            *::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
     </head>
     
     <body style="padding: 2vh 1vw;">
