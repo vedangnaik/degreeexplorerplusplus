@@ -103,7 +103,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.parentElement.removeChild(this);
     }
 
-    // Sets all the rows back to the default color
+    // Sets all the rows back to the default color.
     resetProgram() {
         for (const row of Object.values(this.#requirementRows)) {
             row.style.backgroundColor = "revert";
@@ -126,7 +126,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 switch (status) {
                 case RequirementStatuses.COMPLETE:
                     row.style.backgroundColor = "green";
-                    row.children[2].innerText = `${usedCourses}`.trim();
+                    row.children[2].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
 
                 case RequirementStatuses.INCOMPLETE:
@@ -139,7 +139,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
 
                 case RequirementStatuses.WARNING:
                     row.style.backgroundColor = "yellow";
-                    row.children[2].innerText = `${usedCourses}`.trim();
+                    row.children[2].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
                 }
             } else {
