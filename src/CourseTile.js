@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GlobalCourseInfoPanelID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 
 export const PrerequisiteStatuses = Object.freeze({
@@ -59,7 +59,7 @@ export class CourseTile extends HTMLDivElement {
     }
 
     #displayPrerequisitesOnPanel() {
-        document.getElementById(GlobalCourseInfoPanelID).printPrereqisiteInfo(this.id, this.#evaluatedPrerequisites);
+        document.getElementById(GLOBAL_COURSE_INFO_PANEL_ID).printPrereqisiteInfo(this.id, this.#evaluatedPrerequisites);
     }
 
     #onDragStart(ev) {

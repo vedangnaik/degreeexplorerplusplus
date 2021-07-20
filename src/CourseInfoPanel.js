@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GlobalCourseInfoPanelID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 import { PrerequisiteStatuses } from "./CourseTile.js";
@@ -13,7 +13,7 @@ export class CourseInfoPanel extends HTMLDivElement {
 
     constructor() {
         super();
-        this.id = GlobalCourseInfoPanelID
+        this.id = GLOBAL_COURSE_INFO_PANEL_ID
         // The last three are required for the panel to expand and fit the height of the timetable.
         this.style = `
             background-color: lightgrey;

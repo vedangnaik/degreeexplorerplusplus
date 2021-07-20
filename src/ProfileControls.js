@@ -1,4 +1,4 @@
-import { GlobalCourseScheduleID, GlobalProgramScheduleID } from "./Constants.js";
+import { GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
@@ -68,7 +68,7 @@ export class ProfileControls extends HTMLDivElement {
             this.#courseSlot.upperSlot.replaceChildren();
             this.#courseSlot.upperSlot.appendChild(new CourseTile(id));
         } else if (id in ProgramData) {
-            document.getElementById(GlobalProgramScheduleID).addProgram(id);
+            document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID).addProgram(id);
         } else {
             // Flash the slot red for a second to indicate an error
             // TODO: Maybe change this into a smooth fadein/fadeout
@@ -80,8 +80,8 @@ export class ProfileControls extends HTMLDivElement {
     }
 
     #evaluateProfile() {
-        const scheduledCourses = document.getElementById(GlobalCourseScheduleID).getCourseScheduleJSON()["scheduledCourses"];
-        const scheduledPrograms = document.getElementById(GlobalProgramScheduleID).getProgramScheduleJSON();
+        const scheduledCourses = document.getElementById(GLOBAL_COURSE_SCHEDULE_ID).getCourseScheduleJSON()["scheduledCourses"];
+        const scheduledPrograms = document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID).getProgramScheduleJSON();
 
         for (const courseID in scheduledCourses) {
             document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);

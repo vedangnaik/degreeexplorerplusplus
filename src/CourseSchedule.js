@@ -1,4 +1,4 @@
-import { GlobalCourseScheduleID } from "./Constants.js";
+import { GLOBAL_COURSE_SCHEDULE_ID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { CourseTile } from "./CourseTile.js";
 
@@ -20,7 +20,7 @@ export class CourseSchedule extends HTMLTableElement {
 
     constructor() {
         super();
-        this.id = GlobalCourseScheduleID;
+        this.id = GLOBAL_COURSE_SCHEDULE_ID;
         this.style = `
             border-collapse: collapse;
         `;

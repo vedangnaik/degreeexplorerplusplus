@@ -1,10 +1,10 @@
-import { GlobalProgramScheduleID } from "./Constants.js";
+import { GLOBAL_PROGRAM_SCHEDULE_ID } from "./Constants.js";
 import { ProgramInfoCollapsible } from "./ProgramInfoCollapsible.js";
 
 export class ProgramSchedule extends HTMLDivElement {
     constructor() {
         super();
-        this.id = GlobalProgramScheduleID;
+        this.id = GLOBAL_PROGRAM_SCHEDULE_ID;
     }
 
     addProgram(programID) {

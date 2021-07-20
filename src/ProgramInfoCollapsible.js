@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL } from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 export const RequirementStatuses = Object.freeze({
@@ -50,13 +50,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 width: 57vw;
                 display: none;
                 outline: 1px solid grey;
-                padding: 1vw;
+                padding: 0vw;
             `;
                 const requirementsTable = document.createElement('table');
                 requirementsTable.id = "reqTable" // This is for the stylesheet below
-                requirementsTable.style = `
-                    width: 55vw;
-                `;
                     // The thead contains the headings for the table
                     const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
@@ -108,15 +105,27 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 #reqTable {
                     table-layout: auto;
                     border-collapse: collapse;
+                    width: 57vw;
                 }
 
-                #reqTable thead tr, #reqTable tbody tr:not(:last-child) { border-bottom: 1px solid black; }
-                #reqTable td:not(:last-child), #reqTable th:not(:last-child) { border-right: 1px solid black; }
+                #reqTable thead tr, #reqTable tbody tr:not(:last-child) { 
+                    border-bottom: 1px solid black; 
+                }
+                #reqTable td:not(:last-child), #reqTable th:not(:last-child) { 
+                    border-right: 1px solid black;
+                }
 
-                #reqTable td, #reqTable th { padding: 3px 10px; }
-                #reqTable td:first-child { text-align: center; }
-                
-                #reqTable th:nth-of-type(4), #reqTable td:nth-of-type(4) { width: 10.5vw; }
+                #reqTable td, #reqTable th {
+                    padding: 5px 10px;
+                }
+                #reqTable td:first-child, #reqTable th:first-child {
+                    text-align: center;
+                    width: 6vw;
+                }
+
+                #reqTable th:nth-of-type(4), #reqTable td:nth-of-type(4) {
+                    width: 10.5vw;
+                }
             `;
         this.appendChild(styleElem);
     }
@@ -153,22 +162,22 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 const usedCourses = this.#evaluatedRequirements[reqID].usedCourses;
                 switch (status) {
                 case RequirementStatuses.COMPLETE:
-                    row.children[0].innerText = '✔️';
+                    row.children[0].innerText = `${COMPELTE_SYMBOL} Complete`;
                     row.style.backgroundColor = COMPLETE_COLOR;
                     row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
 
                 case RequirementStatuses.INCOMPLETE:
-                    row.children[0].innerText = '❌';
+                    row.children[0].innerText = `${INCOMPELTE_SYMBOL} Incomplete`;
                     row.style.backgroundColor = INCOMPLETE_COLOR;
                     break;
 
                 case RequirementStatuses.NA:
-                    row.children[0].innerText = '📝'
+                    row.children[0].innerText = `${NOTE_SYMBOL} Note`;
                     break;
 
                 case RequirementStatuses.WARNING:
-                    row.children[0].innerText = '⚠️'
+                    row.children[0].innerText = `${WARNING_SYMBOL} Warning`;
                     row.style.backgroundColor = WARNING_COLOR;
                     row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                     break;
