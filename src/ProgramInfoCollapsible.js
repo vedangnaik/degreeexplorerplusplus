@@ -9,6 +9,8 @@ export const RequirementStatuses = Object.freeze({
 });
 
 export class ProgramInfoCollapsible extends HTMLDivElement {
+
+
     #evaluatedRequirements = {};
     #requirementRows = {};
 
@@ -17,12 +19,14 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
 
         this.id = programID;
         this.style = `
+            width: 57vw;
             display: flex;
             flex-direction: column;
         `;
             // This is the visible header part of the collapsible. When this is clicked, the body is toggled into appearing/disappearing.
             this.collapsibleHeaderDiv = document.createElement('div');
             this.collapsibleHeaderDiv.style = `
+                width: 57vw;
                 display: flex;
                 outline: 1px solid grey;
                 background-color: lightgrey;
@@ -42,20 +46,21 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This is the body of the collapsible. It mainly contains the table which enumerates the requirements for the program.
             this.collapsibleBodyDiv = document.createElement('div');
             this.collapsibleBodyDiv.style = `
+                width: 57vw;
                 display: none;
                 outline: 1px solid grey;
                 padding: 0.5vw;
             `;
                 const requirementsTable = document.createElement('table');
+                requirementsTable.id = "requirementsTable" // This is for the stylesheet below
                 requirementsTable.style = `
-                    width: 100%;
-                    table-layout: auto;
+                    width: 56vw;
                 `;
                     // The thead contains the headings for the table
                     const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
                             let th = document.createElement('th');
-                            th.innerText = "Requirement ID";
+                            th.innerText = "ID";
                         tr.appendChild(th);
                             th = document.createElement('th');
                             th.innerText = "Description";
@@ -64,7 +69,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                             th.innerText = "Courses Used";
                         tr.appendChild(th);
                             th = document.createElement('th');
-                            th.innerText = "Credits Completed";
+                            th.innerText = "Credits";
                         tr.appendChild(th);
                     thead.appendChild(tr);
                 requirementsTable.appendChild(thead);
@@ -93,6 +98,37 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This is to give some space between this course and the next. It's a little crude, but it works OK. This was originally going to be handled by ProgramSchedule, but deletion becomes an issue.
             const spacer = new Spacer({"height": "1vw"});
         this.appendChild(spacer);
+            // This style element is mainly used to cleanly give the table columns proper width.
+            // The column with the requirement text is not touched, to allow the browser to calculate its width.
+            const styleElem = document.createElement('style');
+            styleElem.innerText = `
+                #requirementsTable {
+                    table-layout: fixed;
+                    border-collapse: collapse;
+                    font-size: 14px;
+                }
+                #requirementsTable td {
+                    padding: 3px 10px;
+                }
+                #requirementsTable thead tr, #requirementsTable tbody tr:not(:last-child) {
+                    border-bottom: 1px solid black;
+                }
+                #requirementsTable td:not(:last-child), #requirementsTable th:not(:last-child) {
+                    border-right: 1px solid black;
+                }
+                #requirementsTable th:nth-of-type(1), #requirementsTable td:nth-of-type(1) {
+                    width: 4vw;
+                }
+                #requirementsTable th:nth-of-type(3), #requirementsTable td:nth-of-type(3) {
+                    width: 10.5vw;
+                    text-align: center;
+                }
+                #requirementsTable th:nth-of-type(4), #requirementsTable td:nth-of-type(4) {
+                    width: 4.5vw;
+                    text-align: center;
+                }
+            `;
+        this.appendChild(styleElem);
     }
 
     #toggleCollapsible() {
@@ -134,7 +170,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     break;
 
                 case RequirementStatuses.NA:
-                    row.style.backgroundColor = "grey";
+                    row.style.backgroundColor = "lightgrey";
                     break;
 
                 case RequirementStatuses.WARNING:
@@ -143,7 +179,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     break;
                 }
             } else {
-                row.style.backgroundColor = "lightgrey";
+                row.style.backgroundColor = "revert";
             }
         }        
 

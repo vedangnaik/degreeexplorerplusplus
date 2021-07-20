@@ -6,7 +6,7 @@ import { CourseTile } from "./CourseTile.js";
 export class CourseSchedule extends HTMLTableElement {
     static #headerStylesheet = `
         display: flex;
-        width: 9vw; 
+        width: 9vw;
         height: 4vw;
         outline: 1px solid grey;
         background-color: lightgrey;
