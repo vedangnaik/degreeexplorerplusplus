@@ -24,7 +24,7 @@ function main() {
     
     const timetableObserver = new MutationObserver(() => {
         courseScheduleInstance.refreshCourses();
-        coursePanelInstance.resetPanel();
+        coursePanelInstance.setContentsVisibility(false);
         programScheduleInstance.resetPrograms();
     });
     timetableObserver.observe(courseScheduleInstance, { childList: true, subtree: true });

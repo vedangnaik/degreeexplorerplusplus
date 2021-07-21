@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, STATUSES } from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 
@@ -8,126 +8,190 @@ export class CourseInfoPanel extends HTMLDivElement {
     #placeholderP;
 
     #courseTitleH2;
-    #courseDescriptionH3;
+    #courseDescriptionP;
 
-    #prerequisitesDiv;
-    #corequisitesDiv;
-    #exclusionsDiv;
+    #prerequisitesPanel;
+    #corequisitesPanel;
+    #exclusionsPanel;
 
     constructor() {
         super();
         this.id = GLOBAL_COURSE_INFO_PANEL_ID
         // The last three are required for the panel to expand and fit the height of the timetable.
         this.style = `
-            background-color: lightgrey;
             border: 1px solid grey;
             width: 26vw;
             display: flex;
             overflow-y: scroll;
             padding: 1vw;
         `;
-
-        // This div contains the actual panel.
-        this.#courseInfoDiv = document.createElement('div');
-        this.#courseInfoDiv.style = `
-            width: 100%;
-            display; none;
-        `;
-            this.#courseTitleH2 = document.createElement('h2');
-            this.#courseTitleH2.style.textAlign = "center";
-            this.#courseTitleH2.innerText = "Course ID";
-        this.#courseInfoDiv.appendChild(this.#courseTitleH2);
-            this.#courseDescriptionH3 = document.createElement('h3');
-            this.#courseDescriptionH3.style.textAlign = "center";
-            this.#courseDescriptionH3.innerText = "Course Description";
-        this.#courseInfoDiv.appendChild(this.#courseDescriptionH3);
-        this.#courseInfoDiv.appendChild(new Spacer({"height": "0.5vw"}));
-            this.#prerequisitesDiv = new RequisiteDiv("PREREQUISITES");
-        this.#courseInfoDiv.appendChild(this.#prerequisitesDiv);
-        // this.#courseInfoDiv.appendChild(new Spacer({"height": "0.25vw"}));
-            this.#corequisitesDiv = new RequisiteDiv("COREQUISITES");
-        this.#courseInfoDiv.appendChild(this.#corequisitesDiv);
-        // this.#courseInfoDiv.appendChild(new Spacer({"height": "0.25vw"}));
-            this.#exclusionsDiv = new RequisiteDiv("EXCLUSIONS");
-        this.#courseInfoDiv.appendChild(this.#exclusionsDiv);
-        
-        // This paragraph contains the placeholder text that appears when no course has been selected
-        this.#placeholderP = document.createElement('p');
-        this.#placeholderP.innerText = "Click a course to see stuff here";
-        this.#placeholderP.style.margin = "auto";
-        
+            // This div contains the actual panel.
+            this.#courseInfoDiv = document.createElement('div');
+            this.#courseInfoDiv.style = `
+                width: 100%;
+            `;
+                this.#courseTitleH2 = document.createElement('h2');
+                this.#courseTitleH2.style.textAlign = "center";
+                this.#courseTitleH2.innerText = "Course ID";
+            this.#courseInfoDiv.appendChild(this.#courseTitleH2);
+                this.#courseDescriptionP = document.createElement('p');
+                this.#courseDescriptionP.style.textAlign = "center";
+                this.#courseDescriptionP.innerText = "Course Description";
+            this.#courseInfoDiv.appendChild(this.#courseDescriptionP);
+            this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
+                this.#prerequisitesPanel = new RequisitesPanel("PREREQUISITES");
+            this.#courseInfoDiv.appendChild(this.#prerequisitesPanel);
+            this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
+                this.#corequisitesPanel = new RequisitesPanel("COREQUISITES");
+            this.#courseInfoDiv.appendChild(this.#corequisitesPanel);
+            this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
+                this.#exclusionsPanel = new RequisitesPanel("EXCLUSIONS");
+            this.#courseInfoDiv.appendChild(this.#exclusionsPanel);
         this.appendChild(this.#courseInfoDiv);
+            // This paragraph contains the placeholder text that appears when no course has been selected
+            this.#placeholderP = document.createElement('p');
+            this.#placeholderP.innerText = "Click a course to see stuff here";
+            this.#placeholderP.style.margin = "auto";
         this.appendChild(this.#placeholderP);
     }
 
     printPrereqisiteInfo(courseID, prerequisitesTracker) {
-        this.#courseInfoDiv.style.display = "revert";
+        // Ensure contents are visible
+        this.setContentsVisibility(true);
+        // Set header and description from table
+        this.#courseTitleH2.innerText = courseID;
+        this.#courseDescriptionP.innerText = CourseData[courseID].title;
+        // Reset panels
+        this.#prerequisitesPanel.resetPanel();
+        this.#corequisitesPanel.resetPanel();
+        this.#exclusionsPanel.resetPanel();
+
+        // This loop goes over prerequisite defined for the course, and then applies the color based on whether that prerequisite was evaluated in the passed-in argument. This is to allow courses which have not been evaluated yet to still show their prerequisite info.
+        for (let prereqID in CourseData[courseID].prerequisites) {
+            this.#prerequisitesPanel.addRequisite(prerequisitesTracker[prereqID], prereqID, CourseData[courseID].prerequisites[prereqID]["description"]);
+        }
+
+        // TODO: Corequisites and exclusions
+    }
+
+    setContentsVisibility(visible) {
+        this.#courseInfoDiv.style.display = visible ? "revert" : "none";
+        this.#placeholderP.style.display = visible ? "none" : "revert";
+    }
+}
+
+/**
+ * This class is a div which contains prerequisite, corerequisite, or exclusion info. It contains a table where each req can be inserted into a row. If there are no rows, the table is hidden and a <p> with a message is shown, similar to the InfoPanel itself. It also has a header element, for completion's sake. This can be styled as well.
+ */
+class RequisitesPanel extends HTMLDivElement {
+    static RPStylesheetText = `
+        .RPTable {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .RPTable td, .RPTable th {
+            padding: 5px 10px;
+            border: 1px solid grey;
+        }
+
+        .RPTable td:first-child, .RPTable th:first-child {
+            text-align: center;
+            width: 6vw;
+        }
+
+        .RPTable td:nth-child(2), .RPTable th:nth-child(2) {
+            width: 2.5vw;
+        }
+    `;
+
+    #requisiteH3;
+    #placeholderP;
+    #requisitesTable;
+    #requisitesTBody;
+
+    constructor(headerText) {
+        super();
+            this.#requisiteH3 = document.createElement('h3');
+            this.#requisiteH3.innerText = headerText;
+        this.appendChild(this.#requisiteH3);
+        this.appendChild(new Spacer({"height": "0.25vw"}));
+            this.#placeholderP = document.createElement('p');
+            this.#placeholderP.innerText = `No ${headerText.toLowerCase()}`;
+            this.#placeholderP.style = `
+                text-align: center;
+            `;
+        this.appendChild(this.#placeholderP);
+            this.#requisitesTable = document.createElement('table');
+            this.#requisitesTable.style.display = "none"; // The table is hidden by default;
+            this.#requisitesTable.className = "RPTable";
+                let thead = document.createElement('thead');
+                    let tr = document.createElement('tr')
+                        let th = document.createElement('th');
+                        th.innerText = "Status";
+                    tr.appendChild(th);
+                        th = document.createElement('th');
+                        th.innerText = "ID";
+                    tr.appendChild(th);
+                        th = document.createElement('th');
+                        th.innerText = "Description";
+                    tr.appendChild(th);
+                thead.appendChild(tr);
+            this.#requisitesTable.appendChild(thead);
+                this.#requisitesTBody = document.createElement('tbody');
+            this.#requisitesTable.appendChild(this.#requisitesTBody);
+        this.appendChild(this.#requisitesTable);            
+    }
+
+    addRequisite(STATUS, id, description) {
+        this.#requisitesTable.style.display = "revert";
         this.#placeholderP.style.display = "none";
 
-        this.#courseTitleH2.innerText = courseID;
-        this.#courseDescriptionH3.innerText = CourseData[courseID].title;
-        this.#prerequisitesDiv.bodyDiv.replaceChildren();
-
-        // This loop actually goes over prerequisite defined for the course, and then applies the color based on whether that prerequisite was evaluated in the passed-in argument. This is to allow courses which have not been evaluated yet to still show their prerequisite info.
-        for (let prereqID in CourseData[courseID].prerequisites) {
-            const p = document.createElement('p');
-            p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].description}`;
-            switch (prerequisitesTracker[prereqID]) {
+        let tr = document.createElement('tr');
+            let td = document.createElement('td');
+            switch (STATUS) {
                 case STATUSES.COMPLETE:
-                    p.style.color = COMPLETE_COLOR;
+                    td.innerText = `${COMPLETE_SYMBOL} Complete`;
+                    tr.style.backgroundColor = COMPLETE_COLOR;
                     break;
                 case STATUSES.INCOMPLETE:
-                    p.style.color = INCOMPLETE_COLOR;
-                    break;
-                case STATUSES.WARNING:
-                    p.style.color = WARNING_COLOR;
+                    td.innerText = `${INCOMPLETE_SYMBOL} Incomplete`;
+                    tr.style.backgroundColor = INCOMPLETE_COLOR; 
                     break;
                 case STATUSES.NA:
-                default:
-                    p.style.color = "revert";
+                    td.innerText = `${NOT_USED_SYMBOL} Not Used`;
+                    tr.style.backgroundColor = NOT_USED_COLOR;
+                    break;
+                case STATUSES.WARNING:
+                    td.innerText = `${WARNING_SYMBOL} Warning`;
+                    tr.style.backgroundColor = WARNING_COLOR;
+                    break;
+                case STATUSES.NOTE:
+                    td.innerText = `${NOTE_SYMBOL} Note`;
+                    break;
             }
-            this.#prerequisitesDiv.bodyDiv.appendChild(p);
-        }
+        tr.appendChild(td)
+            td = document.createElement('td');
+            td.innerText = id;
+        tr.appendChild(td)
+            td = document.createElement('td');
+            td.innerText = description;
+        tr.appendChild(td)
+        this.#requisitesTBody.appendChild(tr);
     }
 
     resetPanel() {
-        this.#courseInfoDiv.style.display = "none";
+        // Remove all children, then hide and table and make the placeholder visible.
+        this.#requisitesTBody.replaceChildren();
+        this.#requisitesTable.style.display = "none";
         this.#placeholderP.style.display = "revert";
     }
 }
 
-// This is a template div that is cloned thrice, once each for the prerequisites, corequisites, and exclusions. The styles are the same in each case - only the text is different. It also provides cleaner access to the header and body divs for styling.
-class RequisiteDiv extends HTMLDivElement {
-    constructor(headerText) {
-        super();
-        this.style = `
-            display: flex;
-        `
-            this.headerDiv = document.createElement('div');
-            this.headerDiv.style = `
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                flex-direction: column;
-                writing-mode: vertical-lr;
-                text-align: center;
-                border: 1px solid grey;
-                padding: 0.5vw;
-                font-weight: bold;
-            `;
-            this.headerDiv.innerText = headerText;
-        this.appendChild(this.headerDiv);
-        // this.appendChild(new Spacer({"width": "0.25vw"}));
-            // This body contains a table to which rows can be added for each requisite item.
-            this.bodyDiv = document.createElement('div');
-            this.bodyDiv.style = `
-                border: 1px solid grey;
-                padding: 0.5vw;
-                width: 100%;
-            `;
-        this.appendChild(this.bodyDiv)
-    }
-}
+// Append the styles to the head - see the comment in ProgramInfoCollapsible.
+const styleElem = document.createElement('style');
+styleElem.innerText = RequisitesPanel.RPStylesheetText;
+document.head.appendChild(styleElem);
 
-customElements.define('depp-course-info-panel-requisite-div', RequisiteDiv, {extends: 'div'});
+customElements.define('depp-course-requisites-panel', RequisitesPanel, {extends: 'div'});
 customElements.define('depp-course-info-panel', CourseInfoPanel, {extends: 'div'});

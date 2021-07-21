@@ -1,8 +1,37 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
+
+
 export class ProgramInfoCollapsible extends HTMLDivElement {
+    // This is the CSS stylesheet for the table in this element. It's implemented as CSS since it's much easier to style the various td and th like this. However, the actual style element cannot be created here since otherwise it would be duplicated. Hence, it's appended to the head of the document from here.
+    static PICStylesheetText = `
+        .PICTable {
+            border-collapse: collapse;
+            width: 57vw;
+        }
+
+        .PICTable thead tr, .PICTable tbody tr:not(:last-child) { 
+            border-bottom: 1px solid grey; 
+        }
+        .PICTable td:not(:last-child), .PICTable th:not(:last-child) { 
+            border-right: 1px solid grey;
+        }
+
+        .PICTable td, .PICTable th {
+            padding: 5px 10px;
+        }
+        .PICTable td:first-child, .PICTable th:first-child {
+            text-align: center;
+            width: 8vw;
+        }
+
+        .PICTable th:nth-of-type(4), .PICTable td:nth-of-type(4) {
+            width: 10vw;
+        }
+    `;
+
     static #COLLAPSIBLE_HEADER_DEFAULT_COLOR = "lightgrey";
 
     #evaluatedRequirements = {};
@@ -58,7 +87,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 outline: 1px solid grey;
             `;
                 const requirementsTable = document.createElement('table');
-                requirementsTable.id = "reqTable" // This is for the stylesheet below
+                requirementsTable.className = "PICTable" // This is for the stylesheet below
                     // The thead contains the headings for the table
                     const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
@@ -104,35 +133,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             // This is to give some space between this course and the next. It's a little crude, but it works OK. This was originally going to be handled by ProgramSchedule, but deletion becomes an issue.
             const spacer = new Spacer({"height": "1vw"});
         this.appendChild(spacer);
-            // This style element is used to add the inner border style as well some fixed width columns and font size stuff.
-            const styleElem = document.createElement('style');
-            styleElem.innerText = `
-                #reqTable {
-                    table-layout: auto;
-                    border-collapse: collapse;
-                    width: 57vw;
-                }
-
-                #reqTable thead tr, #reqTable tbody tr:not(:last-child) { 
-                    border-bottom: 1px solid grey; 
-                }
-                #reqTable td:not(:last-child), #reqTable th:not(:last-child) { 
-                    border-right: 1px solid grey;
-                }
-
-                #reqTable td, #reqTable th {
-                    padding: 5px 10px;
-                }
-                #reqTable td:first-child, #reqTable th:first-child {
-                    text-align: center;
-                    width: 8vw;
-                }
-
-                #reqTable th:nth-of-type(4), #reqTable td:nth-of-type(4) {
-                    width: 10vw;
-                }
-            `;
-        this.appendChild(styleElem);
     }
 
     #toggleCollapsible() {
@@ -180,13 +180,13 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             const usedCourses = this.#evaluatedRequirements[reqID].usedCourses;
             switch (status) {
             case STATUSES.COMPLETE:
-                row.children[0].innerText = `${COMPELTE_SYMBOL} Complete`;
+                row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
                 row.style.backgroundColor = COMPLETE_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                 break;
             case STATUSES.INCOMPLETE:
                 incomplete = true;
-                row.children[0].innerText = `${INCOMPELTE_SYMBOL} Incomplete`;
+                row.children[0].innerText = `${INCOMPLETE_SYMBOL} Incomplete`;
                 row.style.backgroundColor = INCOMPLETE_COLOR;
                 break;
             case STATUSES.NA:
@@ -328,5 +328,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         }
     }
 }
+
+// Append the styles to the head
+const styleElem = document.createElement('style');
+styleElem.innerText = ProgramInfoCollapsible.PICStylesheetText;
+document.head.appendChild(styleElem);
 
 customElements.define('depp-program-info-collapsible', ProgramInfoCollapsible, {extends: 'div'});
