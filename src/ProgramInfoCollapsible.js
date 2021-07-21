@@ -280,6 +280,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             }
         } else {
             switch (requirementObj.type) {
+            // All of the courses in the list
             case "LIST":                    
                 this.#evaluatedRequirements[reqID] = (requirementObj.requisiteItems
                     .filter(dependent_courseID => !(dependent_courseID in scheduledCourses))
@@ -293,8 +294,26 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     "usedCourses": []
                 }
                 return;
-            // case "MINIMUM":
-            //     return;
+            // At least count credits
+            case "MINIMUM":
+                // Filter out the courses from the schedule which are relevant here.
+                const potentialUsedCourses = requirementObj.requisiteItems
+                    .filter(dependent_courseID => dependent_courseID in scheduledCourses);
+                // Calculate the total number of credits in this list.
+                const numCredits = potentialUsedCourses
+                    .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
+                    .reduce((x, y) => x + y, 0);
+                // Handle appropriately depending on whether it's more or less than needed.
+                this.#evaluatedRequirements[reqID] = (numCredits >= requirementObj.count) ?
+                {
+                    "status":  STATUSES.COMPLETE,
+                    "usedCourses": potentialUsedCourses
+                } : 
+                {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
+                }
+                return;
             // case "GROUPMAXIMUM":
             //     return;
             default:
