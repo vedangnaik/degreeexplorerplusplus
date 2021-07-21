@@ -4,15 +4,15 @@ import { CourseTile } from "./CourseTile.js";
 
 
 export class CourseSchedule extends HTMLTableElement {
-    static #headerStylesheet = `
+    static #HEADER_STYLE_SHEET = `
         display: flex;
         width: 9vw;
         height: 4vw;
         outline: 1px solid grey;
         background-color: lightgrey;
     `;
-    static #latestAnchorYear = 2050;
-    static #earliestAnchorYear = 1950;
+    static #ANCHOR_YEAR_MAX = 2050;
+    static #ANCHOR_YEAR_MIN = 1950;
 
     #tbody;
     #semesterSelect;
@@ -28,7 +28,7 @@ export class CourseSchedule extends HTMLTableElement {
                 // The bottom row is fixed and unremovable. It contains the starting semester value upon which the labels of the other semesters are calculated
                 const tr = document.createElement('tr');
                     const th = document.createElement('th');
-                    th.style = CourseSchedule.#headerStylesheet;
+                    th.style = CourseSchedule.#HEADER_STYLE_SHEET;
                         const addSemesterButton = document.createElement('button');
                         addSemesterButton.innerText = '+';
                         addSemesterButton.style = `
@@ -72,7 +72,7 @@ export class CourseSchedule extends HTMLTableElement {
                                 text-align-last: center;
                                 text-transform: uppercase;
                             `;
-                            for (let year = CourseSchedule.#latestAnchorYear; year >= CourseSchedule.#earliestAnchorYear; year--) {
+                            for (let year = CourseSchedule.#ANCHOR_YEAR_MAX; year >= CourseSchedule.#ANCHOR_YEAR_MIN; year--) {
                                 const yearOption = document.createElement('option');
                                 yearOption.style.backgroundColor = "white";
                                 yearOption.value = year;
@@ -129,7 +129,7 @@ export class CourseSchedule extends HTMLTableElement {
 
     loadCourseScheduleJSON(scheduleJSON) {
         // Set the anchor year and semester
-        this.#yearSelect.children[CourseSchedule.#latestAnchorYear - scheduleJSON["anchorYear"]].selected = "selected";
+        this.#yearSelect.children[CourseSchedule.#ANCHOR_YEAR_MAX - scheduleJSON["anchorYear"]].selected = "selected";
         this.#semesterSelect.value = scheduleJSON["anchorSemester"];
 
         // Filter out and delete the existing course-tiles 
@@ -161,7 +161,7 @@ export class CourseSchedule extends HTMLTableElement {
     #addSemester() {
         const tr = document.createElement('tr');
             const th = document.createElement('th');
-            th.style = CourseSchedule.#headerStylesheet;
+            th.style = CourseSchedule.#HEADER_STYLE_SHEET;
                 const deleteSemesterButton = document.createElement('button');
                 deleteSemesterButton.innerText = DELETE_SYMBOL;
                 deleteSemesterButton.style = `

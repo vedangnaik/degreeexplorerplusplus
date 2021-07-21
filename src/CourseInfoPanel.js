@@ -1,7 +1,6 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, STATUSES } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
-import { PrerequisiteStatuses } from "./CourseTile.js";
 
 
 export class CourseInfoPanel extends HTMLDivElement {
@@ -87,16 +86,16 @@ export class CourseInfoPanel extends HTMLDivElement {
             const p = document.createElement('p');
             p.innerText = `${prereqID}: ${CourseData[courseID].prerequisites[prereqID].description}`;
             switch (prerequisitesTracker[prereqID]) {
-                case PrerequisiteStatuses.COMPLETE:
+                case STATUSES.COMPLETE:
                     p.style.color = COMPLETE_COLOR;
                     break;
-                case PrerequisiteStatuses.INCOMPLETE:
+                case STATUSES.INCOMPLETE:
                     p.style.color = INCOMPLETE_COLOR;
                     break;
-                case PrerequisiteStatuses.WARNING:
+                case STATUSES.WARNING:
                     p.style.color = WARNING_COLOR;
                     break;
-                case PrerequisiteStatuses.NA:
+                case STATUSES.NA:
                 default:
                     p.style.color = "revert";
             }

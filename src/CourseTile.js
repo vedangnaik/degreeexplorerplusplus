@@ -1,12 +1,5 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
-
-export const PrerequisiteStatuses = Object.freeze({
-    COMPLETE: Symbol("COMPLETE"),
-    INCOMPLETE: Symbol("INCOMPLETE"),
-    NA: Symbol("NA"),
-    WARNING: Symbol("WARNING")
-});
 
 export class CourseTile extends HTMLDivElement {
     #evaluatedPrerequisites = {};
@@ -88,9 +81,9 @@ export class CourseTile extends HTMLDivElement {
         });
 
         const statuses = Object.values(this.#evaluatedPrerequisites);
-        if (statuses.includes(PrerequisiteStatuses.INCOMPLETE)) {
+        if (statuses.includes(STATUSES.INCOMPLETE)) {
             this.style.backgroundColor = INCOMPLETE_COLOR;
-        } else if (statuses.includes(PrerequisiteStatuses.WARNING)) {
+        } else if (statuses.includes(STATUSES.WARNING)) {
             this.style.backgroundColor = WARNING_COLOR;
         } else {
             this.style.backgroundColor = COMPLETE_COLOR;
@@ -112,7 +105,7 @@ export class CourseTile extends HTMLDivElement {
 
             // If it's a NOTE, then we can just mark it complete and exit
             if (prerequisiteObj.type === "NOTE") {
-                evaluatedPrerequisites[prereqID] =  PrerequisiteStatuses.NA;
+                evaluatedPrerequisites[prereqID] =  STATUSES.NA;
                 return;
             }
         
@@ -127,7 +120,7 @@ export class CourseTile extends HTMLDivElement {
                     for (const dependent_prereqID of prerequisiteObj.requisiteItems) {
                         // Evaluate the dependent prereqID and check if it's acceptable
                         recursiveEvaluatePrerequisite(courseID, dependent_prereqID, scheduledCourses, scheduledPrograms, evaluatedPrerequisites);
-                        if ([PrerequisiteStatuses.COMPLETE, PrerequisiteStatuses.WARNING].includes(evaluatedPrerequisites[dependent_prereqID])) {
+                        if ([STATUSES.COMPLETE, STATUSES.WARNING].includes(evaluatedPrerequisites[dependent_prereqID])) {
                             usedPrereqs.push(dependent_prereqID);
                             count += 1;
                         }
@@ -136,28 +129,28 @@ export class CourseTile extends HTMLDivElement {
                             // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
                             prerequisiteObj.requisiteItems
                                 .filter(dependent_prereqID => !usedPrereqs.includes(dependent_prereqID))
-                                .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = PrerequisiteStatuses.NA);
+                                .forEach(dependent_prereqID => evaluatedPrerequisites[dependent_prereqID] = STATUSES.NA);
                             
-                            evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.COMPLETE;
+                            evaluatedPrerequisites[prereqID] = STATUSES.COMPLETE;
                             return;
                         }
                     }
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 // Unimplemented
                 case 'MAXIMUM':
                     console.log(`${courseID}, ${prereqID}: Unimplemented type REQUISITE MAXIMUM`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 // Unimplemented
                 case 'LIST':
                     console.log(`${courseID}, ${prereqID}: Unimplemented type REQUISITE LIST`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 // To handle unknown/unimplemented cases
                 default:
                     console.log(`${courseID}, ${prereqID}: Unknown REQUISITE type: ${prerequisiteObj.type}`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 }
             
@@ -170,7 +163,7 @@ export class CourseTile extends HTMLDivElement {
                         .filter(dependent_courseID => 
                             dependent_courseID in scheduledCourses && 
                             scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
-                        .length >= prerequisiteObj.count) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .length >= prerequisiteObj.count) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // All of the courses in the list
                 case 'LIST':
@@ -178,12 +171,12 @@ export class CourseTile extends HTMLDivElement {
                         .filter(dependent_courseID => 
                             !(dependent_courseID in scheduledCourses) || 
                             scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                        .length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .length === 0) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // To handle unknown/unimplemented cases
                 default:
                     console.log(`${courseID}, ${prereqID}: Unknown COURSES type: ${prerequisiteObj.type}`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 }
             
@@ -197,7 +190,7 @@ export class CourseTile extends HTMLDivElement {
                             dependent_courseID in scheduledCourses && 
                             scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                         .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                        .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .reduce((x, y) => x + y, 0)) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // All of the courses in the list
                 case 'LIST':
@@ -205,7 +198,7 @@ export class CourseTile extends HTMLDivElement {
                         .filter(dependent_courseID => 
                             !(dependent_courseID in scheduledCourses) || 
                             scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                        .length === 0) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .length === 0) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // At most count credits
                 case 'MAXIMUM':
@@ -214,18 +207,18 @@ export class CourseTile extends HTMLDivElement {
                             dependent_courseID in scheduledCourses && 
                             scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
                         .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                        .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .reduce((x, y) => x + y, 0)) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // To handle unknown/unimplemented cases
                 default:
                     console.log(`${courseID}, ${prereqID}: Unknown FCES type: ${prerequisiteObj.type}`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 }
                 
             // GRADE places a requirement on the grade in a course. These cannot be determined without access to student grades. Hence, these are marked with a warning for manual checking by the user.
             case 'GRADE':
-                evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.WARNING;
+                evaluatedPrerequisites[prereqID] = STATUSES.WARNING;
                 return;
             
             // POST places a requirement on enrollment in a specific program.
@@ -235,19 +228,19 @@ export class CourseTile extends HTMLDivElement {
                 case 'MINIMUM':
                     evaluatedPrerequisites[prereqID] = (prerequisiteObj.count <= prerequisiteObj.requisiteItems
                         .filter(dependent_programID => dependent_programID in scheduledPrograms)
-                        .reduce((x, y) => x + y, 0)) ? PrerequisiteStatuses.COMPLETE : PrerequisiteStatuses.INCOMPLETE;
+                        .reduce((x, y) => x + y, 0)) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // To handle unknown/unimplemented cases
                 default:
                     console.log(`${courseID}, ${prereqID}: Unknown SUBJECT_POSTS type: ${prerequisiteObj.type}`);
-                    evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                     return;
                 }
                 
             // To handle unknown/unimplemented cases
             default:
                 console.log(`${courseID}, ${prereqID}: Unknown COUNTTYPE: ${prerequisiteObj.countType}`);
-                evaluatedPrerequisites[prereqID] = PrerequisiteStatuses.INCOMPLETE;
+                evaluatedPrerequisites[prereqID] = STATUSES.INCOMPLETE;
                 return;
             }
         }

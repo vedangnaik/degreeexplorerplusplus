@@ -13,6 +13,13 @@ export const WARNING_SYMBOL = '⚠️';
 export const NOTE_SYMBOL = '📝';
 export const DELETE_SYMBOL = '✖';
 
+export const STATUSES = Object.freeze({
+    COMPLETE: Symbol("COMPLETE"),
+    INCOMPLETE: Symbol("INCOMPLETE"),
+    NA: Symbol("NA"),
+    WARNING: Symbol("WARNING")
+});
+
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
 export const NEW_PROFILE_JSON = {
     "name": "New Profile", // The name of the profile, displayed in the left bar. This does not need to be unique, it's just an identifier
