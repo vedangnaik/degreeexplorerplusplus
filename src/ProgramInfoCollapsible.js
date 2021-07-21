@@ -24,7 +24,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         }
         .PICTable td:first-child, .PICTable th:first-child {
             text-align: center;
-            width: 8vw;
+            width: 7vw;
         }
 
         .PICTable th:nth-of-type(4), .PICTable td:nth-of-type(4) {

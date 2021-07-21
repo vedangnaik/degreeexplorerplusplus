@@ -97,7 +97,7 @@ class RequisitesPanel extends HTMLDivElement {
 
         .RPTable td:first-child, .RPTable th:first-child {
             text-align: center;
-            width: 6vw;
+            width: 7vw;
         }
 
         .RPTable td:nth-child(2), .RPTable th:nth-child(2) {
