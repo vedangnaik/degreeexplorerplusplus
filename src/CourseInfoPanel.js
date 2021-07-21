@@ -4,11 +4,15 @@ import { Spacer } from "./Spacer.js";
 
 
 export class CourseInfoPanel extends HTMLDivElement {
-    #courseTitleHeader;
-    #courseDescriptionP;
-    #prerequisiteCell;
     #courseInfoDiv;
     #placeholderP;
+
+    #courseTitleH2;
+    #courseDescriptionH3;
+
+    #prerequisitesDiv;
+    #corequisitesDiv;
+    #exclusionsDiv;
 
     constructor() {
         super();
@@ -20,49 +24,32 @@ export class CourseInfoPanel extends HTMLDivElement {
             width: 26vw;
             display: flex;
             overflow-y: scroll;
+            padding: 1vw;
         `;
 
         // This div contains the actual panel.
         this.#courseInfoDiv = document.createElement('div');
-        this.#courseInfoDiv.style.width = "100%";
-            this.#courseTitleHeader = document.createElement('h3');
-            this.#courseTitleHeader.style.textAlign = "center";
-            this.#courseTitleHeader.innerText = "Course ID";
-
-            this.#courseDescriptionP = document.createElement('h4');
-            this.#courseDescriptionP.style.textAlign = "center";
-            this.#courseDescriptionP.innerText = "Course Description";
-
-            let courseInfoTable = document.createElement('table');
-            courseInfoTable.style = `
-                border-style: hidden; 
-                margin: 0.5vw;
-            `;
-                let tbody = document.createElement('tbody');
-                    let tr = document.createElement('tr')
-                        let prerequisiteHeader = document.createElement('th');
-                        prerequisiteHeader.innerText = "Prerequisites";
-                        prerequisiteHeader.style = `
-                            width: 7%;
-                            writing-mode: vertical-lr;
-                            text-align: center;
-                            border: 1px solid black;
-                            padding: 0.5vw;
-                        `;
-                        this.#prerequisiteCell = document.createElement('td');
-                        this.#prerequisiteCell.style = `
-                            border: 1px solid black;
-                            padding: 0.5vw;
-                        `;
-                    tr.appendChild(prerequisiteHeader);
-                    tr.appendChild(this.#prerequisiteCell);
-                tbody.appendChild(tr);
-            courseInfoTable.appendChild(tbody);
-        this.#courseInfoDiv.appendChild(this.#courseTitleHeader);
-        this.#courseInfoDiv.appendChild(this.#courseDescriptionP);
+        this.#courseInfoDiv.style = `
+            width: 100%;
+            display; none;
+        `;
+            this.#courseTitleH2 = document.createElement('h2');
+            this.#courseTitleH2.style.textAlign = "center";
+            this.#courseTitleH2.innerText = "Course ID";
+        this.#courseInfoDiv.appendChild(this.#courseTitleH2);
+            this.#courseDescriptionH3 = document.createElement('h3');
+            this.#courseDescriptionH3.style.textAlign = "center";
+            this.#courseDescriptionH3.innerText = "Course Description";
+        this.#courseInfoDiv.appendChild(this.#courseDescriptionH3);
         this.#courseInfoDiv.appendChild(new Spacer({"height": "0.5vw"}));
-        this.#courseInfoDiv.appendChild(courseInfoTable);
-        this.#courseInfoDiv.style.display = "none";
+            this.#prerequisitesDiv = new RequisiteDiv("PREREQUISITES");
+        this.#courseInfoDiv.appendChild(this.#prerequisitesDiv);
+        // this.#courseInfoDiv.appendChild(new Spacer({"height": "0.25vw"}));
+            this.#corequisitesDiv = new RequisiteDiv("COREQUISITES");
+        this.#courseInfoDiv.appendChild(this.#corequisitesDiv);
+        // this.#courseInfoDiv.appendChild(new Spacer({"height": "0.25vw"}));
+            this.#exclusionsDiv = new RequisiteDiv("EXCLUSIONS");
+        this.#courseInfoDiv.appendChild(this.#exclusionsDiv);
         
         // This paragraph contains the placeholder text that appears when no course has been selected
         this.#placeholderP = document.createElement('p');
@@ -77,9 +64,9 @@ export class CourseInfoPanel extends HTMLDivElement {
         this.#courseInfoDiv.style.display = "revert";
         this.#placeholderP.style.display = "none";
 
-        this.#courseTitleHeader.innerText = courseID;
-        this.#courseDescriptionP.innerText = CourseData[courseID].title;
-        this.#prerequisiteCell.replaceChildren();
+        this.#courseTitleH2.innerText = courseID;
+        this.#courseDescriptionH3.innerText = CourseData[courseID].title;
+        this.#prerequisitesDiv.bodyDiv.replaceChildren();
 
         // This loop actually goes over prerequisite defined for the course, and then applies the color based on whether that prerequisite was evaluated in the passed-in argument. This is to allow courses which have not been evaluated yet to still show their prerequisite info.
         for (let prereqID in CourseData[courseID].prerequisites) {
@@ -99,7 +86,7 @@ export class CourseInfoPanel extends HTMLDivElement {
                 default:
                     p.style.color = "revert";
             }
-            this.#prerequisiteCell.appendChild(p);
+            this.#prerequisitesDiv.bodyDiv.appendChild(p);
         }
     }
 
@@ -109,4 +96,38 @@ export class CourseInfoPanel extends HTMLDivElement {
     }
 }
 
+// This is a template div that is cloned thrice, once each for the prerequisites, corequisites, and exclusions. The styles are the same in each case - only the text is different. It also provides cleaner access to the header and body divs for styling.
+class RequisiteDiv extends HTMLDivElement {
+    constructor(headerText) {
+        super();
+        this.style = `
+            display: flex;
+        `
+            this.headerDiv = document.createElement('div');
+            this.headerDiv.style = `
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+                writing-mode: vertical-lr;
+                text-align: center;
+                border: 1px solid grey;
+                padding: 0.5vw;
+                font-weight: bold;
+            `;
+            this.headerDiv.innerText = headerText;
+        this.appendChild(this.headerDiv);
+        // this.appendChild(new Spacer({"width": "0.25vw"}));
+            // This body contains a table to which rows can be added for each requisite item.
+            this.bodyDiv = document.createElement('div');
+            this.bodyDiv.style = `
+                border: 1px solid grey;
+                padding: 0.5vw;
+                width: 100%;
+            `;
+        this.appendChild(this.bodyDiv)
+    }
+}
+
+customElements.define('depp-course-info-panel-requisite-div', RequisiteDiv, {extends: 'div'});
 customElements.define('depp-course-info-panel', CourseInfoPanel, {extends: 'div'});

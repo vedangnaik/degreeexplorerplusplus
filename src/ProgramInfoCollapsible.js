@@ -27,13 +27,13 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 background-color: ${ProgramInfoCollapsible.#COLLAPSIBLE_HEADER_DEFAULT_COLOR};
             `;
             this.collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
-                this.collapsibleStatusH2 = document.createElement('h3');
-                this.collapsibleStatusH2.innerText = '▼';
-                this.collapsibleStatusH2.style = `
+                this.collapsibleStatusH3 = document.createElement('h3');
+                this.collapsibleStatusH3.innerText = '▼';
+                this.collapsibleStatusH3.style = `
                     margin: auto;
                     padding: 0 10px;
                 `;
-            this.collapsibleHeaderDiv.appendChild(this.collapsibleStatusH2);
+            this.collapsibleHeaderDiv.appendChild(this.collapsibleStatusH3);
                 const programNameH3 = document.createElement('h3');
                 programNameH3.innerText = `${programID}: ${ProgramData[programID]['title']}`;
                 programNameH3.style = `
@@ -138,10 +138,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     #toggleCollapsible() {
         if (this.collapsibleBodyDiv.style.display === "none") {
             this.collapsibleBodyDiv.style.display = "block";
-            this.collapsibleStatusH2.innerText = '▲';
+            this.collapsibleStatusH3.innerText = '▲';
         } else {
             this.collapsibleBodyDiv.style.display = "none";
-            this.collapsibleStatusH2.innerText = '▼';
+            this.collapsibleStatusH3.innerText = '▼';
         }
     }
 
@@ -169,6 +169,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             }
         });
 
+        // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warings, it's yellow. Otherwise, it's green.
         let incomplete = false;
         let warning = false;
 
