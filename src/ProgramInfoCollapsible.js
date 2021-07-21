@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL, INCOMPELTE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 export class ProgramInfoCollapsible extends HTMLDivElement {
@@ -149,8 +149,9 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.parentElement.removeChild(this);
     }
 
-    // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns, and reset the background color of the header.
+    // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns, reset the background color of the header, and clear the evaluatedRequirements object.
     resetProgram() {
+        this.#evaluatedRequirements = {};
         for (const row of Object.values(this.#requirementRows)) {
             row.style.backgroundColor = "revert";
             row.children[0].innerText = '';
@@ -163,8 +164,8 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     evaluateRequirements(courses, programs) {
         // Yeah, don't ask why it's called this.
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
-            if (!(reqID in this.#evaluatedRequirements)) {1
-                recursiveEvaluateRequirements(this.id, reqID, courses, programs, this.#evaluatedRequirements);
+            if (!(reqID in this.#evaluatedRequirements)) {
+                this.#evaluateRequirement(reqID, courses, programs);
             }
         });
 
@@ -182,23 +183,23 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 row.style.backgroundColor = COMPLETE_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                 break;
-
             case STATUSES.INCOMPLETE:
                 incomplete = true;
                 row.children[0].innerText = `${INCOMPELTE_SYMBOL} Incomplete`;
                 row.style.backgroundColor = INCOMPLETE_COLOR;
                 break;
-
             case STATUSES.NA:
-                row.children[0].innerText = `${NOTE_SYMBOL} Note`;
+                row.children[0].innerText = `${NOT_USED_SYMBOL} Not Used`;
+                row.style.backgroundColor = NOT_USED_COLOR;
                 break;
-
             case STATUSES.WARNING:
                 warning = true;
                 row.children[0].innerText = `${WARNING_SYMBOL} Warning`;
                 row.style.backgroundColor = WARNING_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                 break;
+            case STATUSES.NOTE:
+                row.children[0].innerText = `${NOTE_SYMBOL} Note`;
             }
         }
 
@@ -209,102 +210,100 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         } else {
             this.collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
         }
+    }
 
+    #evaluateRequirement(reqID, scheduledCourses, scheduledPrograms) {
+        // Quick exit case: this ID has already been evaluated, so there's no need to do it again.
+        if (reqID in this.#evaluatedRequirements) {
+            return;
+        }
 
+        const requirementObj = ProgramData[this.id].detailAssessments[reqID];
 
-        function recursiveEvaluateRequirements(programID, reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements) {
-            // Quick exit case: this ID has already been evaluated, so there's no need to do it again.
-            if (reqID in evaluatedRequirements) {
-                return;
-            }
+        if (requirementObj.type == "NOTE") {
+            this.#evaluatedRequirements[reqID] = {
+                "status": STATUSES.NOTE,
+                "usedCourses": []
+            };
+            return;
+        }
 
-            const requirementObj = ProgramData[programID].detailAssessments[reqID];
+        if (requirementObj.requisiteItems[0].includes('Req')) {
+            switch (requirementObj.type) {
+            // At least 1 requirement is needed. It's assumed to be 1 because count is not specified for this field anywhere.
+            case "MINIMUM":
+                let usedPrereqs = [];
+                let count = 0;
+                for (const dependent_reqID of requirementObj.requisiteItems) {
+                    // Evaluate the dependent reqID and check if it's acceptable
+                    this.#evaluateRequirement(dependent_reqID, scheduledCourses, scheduledPrograms);
+                    if (this.#evaluatedRequirements[dependent_reqID].status !== STATUSES.INCOMPLETE) {
+                        usedPrereqs.push(dependent_reqID);
+                        count += 1;
+                    }
 
-            if (requirementObj.type == "NOTE") {
-                evaluatedRequirements[reqID] = {
-                    "status": STATUSES.NA,
+                    if (1 <= count) {
+                        // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
+                        requirementObj.requisiteItems
+                            .filter(dependent_reqID => !usedPrereqs.includes(dependent_reqID))
+                            .forEach(dependent_reqID => this.#evaluatedRequirements[dependent_reqID] = {
+                                "status": STATUSES.NA,
+                                "usedCourses": []
+                            });
+                        
+                            this.#evaluatedRequirements[reqID] = {
+                            "status": STATUSES.COMPLETE,
+                            // We concat all the usedCourses of each used requirements. Right now it's only one, but this is in case the format changes in the future. 
+                            "usedCourses": usedPrereqs
+                                .map(reqID => this.#evaluatedRequirements[reqID].usedCourses)
+                                .reduce((acc, curr) => acc.concat(curr), [])
+                        }
+                        return;
+                    }
+                }
+                this.#evaluatedRequirements[reqID] = {
+                    "status": STATUSES.INCOMPLETE,
                     "usedCourses": []
-                };
+                }
+                return;
+            // case "REUSE":
+            //     return;
+            // case "NO_REUSE":
+            //     return;
+            default:
+                console.log(`${this.id}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
+                this.#evaluatedRequirements[reqID] = {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
+                }
                 return;
             }
-
-            if (requirementObj.requisiteItems[0].includes('Req')) {
-                switch (requirementObj.type) {
-                // At least 1 requirement is needed. It's assumed to be 1 because count is not specified for this field anywhere.
-                case "MINIMUM":
-                    let usedPrereqs = [];
-                    let count = 0;
-                    for (const dependent_reqID of requirementObj.requisiteItems) {
-                        // Evaluate the dependent reqID and check if it's acceptable
-                        recursiveEvaluateRequirements(programID, dependent_reqID, scheduledCourses, scheduledPrograms, evaluatedRequirements);
-                        if (evaluatedRequirements[dependent_reqID].status !== STATUSES.INCOMPLETE) {
-                            usedPrereqs.push(dependent_reqID);
-                            count += 1;
-                        }
-
-                        if (1 <= count) {
-                            // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
-                            requirementObj.requisiteItems
-                                .filter(dependent_reqID => !usedPrereqs.includes(dependent_reqID))
-                                .forEach(dependent_reqID => evaluatedRequirements[dependent_reqID] = {
-                                    "status": STATUSES.NA,
-                                    "usedCourses": []
-                                });
-                            
-                                evaluatedRequirements[reqID] = {
-                                "status": STATUSES.COMPLETE,
-                                // We concat all the usedCourses of each used requirements. Right now it's only one, but this is in case the format changes in the future. 
-                                "usedCourses": usedPrereqs
-                                    .map(reqID => evaluatedRequirements[reqID].usedCourses)
-                                    .reduce((acc, curr) => acc.concat(curr), [])
-                            }
-                            return;
-                        }
-                    }
-                    evaluatedRequirements[reqID] = {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                    return;
-                // case "REUSE":
-                //     return;
-                // case "NO_REUSE":
-                //     return;
-                default:
-                    console.log(`${programID}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
-                    evaluatedRequirements[reqID] = {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                    return;
+        } else {
+            switch (requirementObj.type) {
+            case "LIST":                    
+                this.#evaluatedRequirements[reqID] = (requirementObj.requisiteItems
+                    .filter(dependent_courseID => !(dependent_courseID in scheduledCourses))
+                    .length === 0) ? 
+                {
+                    "status":  STATUSES.COMPLETE,
+                    "usedCourses": requirementObj.requisiteItems
+                } : 
+                {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
                 }
-            } else {
-                switch (requirementObj.type) {
-                case "LIST":                    
-                    evaluatedRequirements[reqID] = (requirementObj.requisiteItems
-                        .filter(dependent_courseID => !(dependent_courseID in scheduledCourses))
-                        .length === 0) ? 
-                    {
-                        "status":  STATUSES.COMPLETE,
-                        "usedCourses": requirementObj.requisiteItems
-                    } : 
-                    {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                    return;
-                // case "MINIMUM":
-                //     return;
-                // case "GROUPMAXIMUM":
-                //     return;
-                default:
-                    console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
-                    evaluatedRequirements[reqID] = {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                    return;
+                return;
+            // case "MINIMUM":
+            //     return;
+            // case "GROUPMAXIMUM":
+            //     return;
+            default:
+                console.log(`${this.id}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
+                this.#evaluatedRequirements[reqID] = {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
                 }
+                return;
             }
         }
     }

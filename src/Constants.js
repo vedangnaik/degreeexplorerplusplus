@@ -6,10 +6,12 @@ export const COMPLETE_COLOR = "lightgreen";
 export const INCOMPLETE_COLOR = "#ff8080";
 export const WARNING_COLOR = "lightyellow";
 export const DELETE_COLOR = "#ff4d4d";
+export const NOT_USED_COLOR = "lightgrey";
 
 export const COMPELTE_SYMBOL = '✔️';
 export const INCOMPELTE_SYMBOL = '❌';
 export const WARNING_SYMBOL = '⚠️';
+export const NOT_USED_SYMBOL = '🚫';
 export const NOTE_SYMBOL = '📝';
 export const DELETE_SYMBOL = '✖';
 
@@ -17,7 +19,8 @@ export const STATUSES = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
     INCOMPLETE: Symbol("INCOMPLETE"),
     NA: Symbol("NA"),
-    WARNING: Symbol("WARNING")
+    WARNING: Symbol("WARNING"),
+    NOTE: Symbol("NOTE")
 });
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
