@@ -1,4 +1,4 @@
-import { GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID } from "./Constants.js";
+import { GLOBAL_COURSE_INFO_PANEL_ID, GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID } from "./Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
@@ -80,8 +80,12 @@ export class ProfileControls extends HTMLDivElement {
     }
 
     #evaluateProfile() {
+        // Grab the user's courses and programs from here.
         const scheduledCourses = document.getElementById(GLOBAL_COURSE_SCHEDULE_ID).getCourseScheduleJSON()["scheduledCourses"];
         const scheduledPrograms = document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID).getProgramScheduleJSON();
+
+        // Reset the course info panel so it doesn't look like nothing happened.
+        document.getElementById(GLOBAL_COURSE_INFO_PANEL_ID).setContentsVisibility(false);
 
         for (const courseID in scheduledCourses) {
             document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
