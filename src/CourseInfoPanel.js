@@ -47,6 +47,7 @@ export class CourseInfoPanel extends HTMLDivElement {
             this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
                 this.#exclusionsPanel = new RequisitesPanel("EXCLUSIONS");
             this.#courseInfoDiv.appendChild(this.#exclusionsPanel);
+            this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"})); // This is just to prevent the last element from going into the padding if it scrolls. Kinda jank TODO fix this.
         this.appendChild(this.#courseInfoDiv);
             // This paragraph contains the placeholder text that appears when no course has been selected
             this.#placeholderP = document.createElement('p');
@@ -127,6 +128,9 @@ class RequisitesPanel extends HTMLDivElement {
             this.#requisitesTable.className = "RPTable";
                 let thead = document.createElement('thead');
                     let tr = document.createElement('tr')
+                    tr.style = `
+                        background-color: white;
+                    `
                         let th = document.createElement('th');
                         th.innerText = "Status";
                     tr.appendChild(th);

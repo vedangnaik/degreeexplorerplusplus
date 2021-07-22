@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_EVALUATED_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 
 export class CourseTile extends HTMLDivElement {
@@ -10,7 +10,7 @@ export class CourseTile extends HTMLDivElement {
         this.customTagName = "course-tile" // Used to quickly identify this div subclass among other divs
         this.style = `
             width: 8vw;
-            background-color: lightblue;
+            background-color: ${NOT_EVALUATED_COLOR};
             z-index: 1;
             display: flex;
         `;
@@ -70,7 +70,7 @@ export class CourseTile extends HTMLDivElement {
 
     resetCourse() {
         this.#evaluatedPrerequisites = {};
-        this.style.backgroundColor = "lightblue";
+        this.style.backgroundColor = NOT_EVALUATED_COLOR;
     }
 
     evaluatePrerequisites(courses, programs) {

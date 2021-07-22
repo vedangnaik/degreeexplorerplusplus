@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 
 
@@ -32,8 +32,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         }
     `;
 
-    static #COLLAPSIBLE_HEADER_DEFAULT_COLOR = "lightgrey";
-
     #evaluatedRequirements = {};
     #requirementRows = {};
 
@@ -53,7 +51,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 height: 1.5vw;
                 display: flex;
                 outline: 1px solid grey;
-                background-color: ${ProgramInfoCollapsible.#COLLAPSIBLE_HEADER_DEFAULT_COLOR};
+                background-color: ${NOT_EVALUATED_COLOR};
             `;
             this.collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
                 this.collapsibleStatusH3 = document.createElement('h3');
@@ -158,7 +156,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             row.children[3].innerText = '';
             row.children[4].innerText = '';
         }
-        this.collapsibleHeaderDiv.style.backgroundColor = ProgramInfoCollapsible.#COLLAPSIBLE_HEADER_DEFAULT_COLOR;
+        this.collapsibleHeaderDiv.style.backgroundColor = NOT_EVALUATED_COLOR;
     }
 
     evaluateRequirements(courses, programs) {
