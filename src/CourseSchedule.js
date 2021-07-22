@@ -9,7 +9,7 @@ export class CourseSchedule extends HTMLTableElement {
         width: 9vw;
         height: 4vw;
         outline: 1px solid grey;
-        background-color: lightgrey;
+        background-color: beige;
     `;
     static #ANCHOR_YEAR_MAX = 2050;
     static #ANCHOR_YEAR_MIN = 1950;

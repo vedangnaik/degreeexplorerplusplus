@@ -5,9 +5,9 @@ export const GLOBAL_COURSE_INFO_PANEL_ID = "GLOBAL_COURSE_INFO_PANEL_ID";
 
 // Colors for coloring the UI of prerequisites and requirements based on their status.
 export const COMPLETE_COLOR = "lightgreen";
-export const INCOMPLETE_COLOR = "#ff8080";
+export const INCOMPLETE_COLOR = "salmon";
 export const WARNING_COLOR = "lightyellow";
-export const DELETE_COLOR = "#ff4d4d";
+export const DELETE_COLOR = "red";
 export const NOT_USED_COLOR = "lightgrey";
 // Eye-candy emojis for the same ;)
 export const COMPELTE_SYMBOL = '✔️';
