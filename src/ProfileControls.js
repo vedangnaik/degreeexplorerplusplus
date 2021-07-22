@@ -16,10 +16,11 @@ export class ProfileControls extends HTMLDivElement {
             flex-direction: column;
         `;
             this.#searchInput = document.createElement('input');
-            this.#searchInput.placeholder = "Search for Course/Program ID";
+            this.#searchInput.placeholder = "Type Course/Program ID";
             this.#searchInput.style = `
-                border: 1px solid grey; 
+                border: 1px solid grey;
                 border-radius: 5px;
+                font-size: 1.25em;
             `;
         this.appendChild(this.#searchInput);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
@@ -36,13 +37,13 @@ export class ProfileControls extends HTMLDivElement {
                 this.#courseSlot.style.outline = "";
                 
                 const searchButton = document.createElement('button');
-                searchButton.innerText = "Add Courses & PoSTs";
+                searchButton.innerText = "Add Course or PoST";
                 searchButton.onclick = this.#searchCoursesAndPrograms.bind(this);
                 searchButton.style = `
                     padding: 0.5vw; 
                     flex: 1;
-                    font-size: 12px; 
                     border: 1px solid grey;
+                    background-color: silver;
                 `;
             slotAndSearchDiv.appendChild(this.#courseSlot);
             slotAndSearchDiv.appendChild(new Spacer({ "width": "0.5vw" }));
@@ -53,9 +54,10 @@ export class ProfileControls extends HTMLDivElement {
             evaluateProfileButton.innerText = "EVALUATE PROFILE";
             evaluateProfileButton.style = `
                 border: 1px solid grey;
-                padding: 0.15vw;
+                padding: 0.25vw 0.15vw;
                 border-radius: 5px;
                 background-color: gold;
+                font-size: 1.5em;
             `;
             evaluateProfileButton.onclick = this.#evaluateProfile.bind(this);
         this.appendChild(evaluateProfileButton);
@@ -63,20 +65,32 @@ export class ProfileControls extends HTMLDivElement {
 
     #searchCoursesAndPrograms() {
         const id = this.#searchInput.value;
-        if (id in CourseData) {
-            // Delete any existing tiles in the slot, then add the new child
+
+        if (document.getElementById(id) !== null) {
+            // Ensure this hasn't already been added.
+            // TODO: Passing in any string which is a valid id will trigger this. Perhaps this should be changed?
+            this.#flashCourseSlot();
+        } else if (id in CourseData) {
+            // Check the courses. Delete any existing tiles in the slot if it exists, then add the new child.
             this.#courseSlot.upperSlot.replaceChildren();
             this.#courseSlot.upperSlot.appendChild(new CourseTile(id));
         } else if (id in ProgramData) {
+            // Check the programs and add if exists.
             document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID).addProgram(id);
         } else {
-            // Flash the slot red for a second to indicate an error
-            // TODO: Maybe change this into a smooth fadein/fadeout
-            this.#courseSlot.style.backgroundColor = "#ff8080";
-            setTimeout(() => {
-               this.#courseSlot.style.backgroundColor = "transparent"; 
-            }, 1000);
+            this.#flashCourseSlot();
         }
+    }
+
+    /**
+     * Flashes the course slot to indicate an error.
+     * TODO: Maybe change this into a smooth fadein/fadeout
+     */
+    #flashCourseSlot() {
+        this.#courseSlot.style.backgroundColor = "#ff8080";
+        setTimeout(() => {
+           this.#courseSlot.style.backgroundColor = "revert"; 
+        }, 1000);
     }
 
     #evaluateProfile() {

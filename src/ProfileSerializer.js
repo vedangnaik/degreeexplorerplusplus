@@ -6,6 +6,7 @@ export class ProfileSerializer extends HTMLDivElement {
     static #controlButtonsStylesheet = `
         flex: 1;
         border: 1px solid grey;
+        padding: 2px;
     `;
 
     #profilesDiv;
@@ -18,11 +19,11 @@ export class ProfileSerializer extends HTMLDivElement {
                 const loadAndSaveDiv = document.createElement('div');
                 loadAndSaveDiv.style = `
                     display: flex;
-                    flex-direction:
-                    column; width: 8vw;
+                    flex-direction: column; 
+                    width: 8vw;
                 `;
                     const saveProfileButton = document.createElement('button');
-                    saveProfileButton.innerHTML = "Save Profile";
+                    saveProfileButton.innerHTML = "💾 Save Profile";
                     saveProfileButton.style = ProfileSerializer.#controlButtonsStylesheet;
                     saveProfileButton.onclick = this.#saveCurrentProfile.bind(this);
 
@@ -34,7 +35,7 @@ export class ProfileSerializer extends HTMLDivElement {
                     this.#loadProfileInput.onchange = this.#loadProfile.bind(this);
 
                     const loadProfileButton = document.createElement('button');
-                    loadProfileButton.innerHTML = "Load Profile";
+                    loadProfileButton.innerHTML = "📁 Load Profile";
                     loadProfileButton.style = ProfileSerializer.#controlButtonsStylesheet
                     loadProfileButton.onclick = () => { this.#loadProfileInput.click(); }
                 loadAndSaveDiv.appendChild(saveProfileButton);
@@ -46,6 +47,7 @@ export class ProfileSerializer extends HTMLDivElement {
                 const newProfileButton = document.createElement('button');
                 newProfileButton.innerText = "New Profile";
                 newProfileButton.style = ProfileSerializer.#controlButtonsStylesheet;
+                newProfileButton.style.borderRadius = "5px"; // Just a little extra :)
                 newProfileButton.onclick = this.#addProfile.bind(this, NEW_PROFILE_JSON);
             mainControlPanelDiv.appendChild(newProfileButton);
         this.appendChild(mainControlPanelDiv);
