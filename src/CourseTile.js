@@ -226,9 +226,9 @@ export class CourseTile extends HTMLDivElement {
                 switch (prerequisiteObj.type) {
                 // At least these programs
                 case 'MINIMUM':
-                    evaluatedPrerequisites[prereqID] = (prerequisiteObj.count <= prerequisiteObj.requisiteItems
-                        .filter(dependent_programID => dependent_programID in scheduledPrograms)
-                        .reduce((x, y) => x + y, 0)) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
+                    evaluatedPrerequisites[prereqID] = (prerequisiteObj.requisiteItems
+                        .filter(dependent_programID => scheduledPrograms.includes(dependent_programID))
+                        .length >= prerequisiteObj.count) ? STATUSES.COMPLETE : STATUSES.INCOMPLETE;
                     return;
                 // To handle unknown/unimplemented cases
                 default:

@@ -21,13 +21,16 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
 
         .PICTable td, .PICTable th {
             padding: 5px 10px;
-        }
-        .PICTable td:first-child, .PICTable th:first-child {
             text-align: center;
-            width: 7vw;
         }
 
-        .PICTable th:nth-of-type(4), .PICTable td:nth-of-type(4) {
+        .PICTable td:first-child, .PICTable th:first-child {
+            width: 7vw;
+        }
+        .PICTable th:nth-child(3), .PICTable td:nth-child(3) {
+            text-align: left;
+        }
+        .PICTable th:nth-child(4), .PICTable td:nth-child(4) {
             width: 10vw;
         }
     `;
@@ -181,6 +184,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
                 row.style.backgroundColor = COMPLETE_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
+                row.children[4].innerText = usedCourses
+                    .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
+                    .reduce((x, y) => x + y, 0.0)
+                    .toFixed(2);
                 break;
             case STATUSES.INCOMPLETE:
                 incomplete = true;
@@ -196,6 +203,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 row.children[0].innerText = `${WARNING_SYMBOL} Warning`;
                 row.style.backgroundColor = WARNING_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
+                row.children[4].innerText = usedCourses
+                    .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
+                    .reduce((x, y) => x + y, 0.0)
+                    .toFixed(2);
                 break;
             case STATUSES.NOTE:
                 row.children[0].innerText = `${NOTE_SYMBOL} Note`;
@@ -265,10 +276,42 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     "usedCourses": []
                 }
                 return;
-            // case "REUSE":
-            //     return;
-            // case "NO_REUSE":
-            //     return;
+
+            // REUSE allows courses to be used across multiple requirements. There's really nothing to check here since it doesn't matter even if they are not reused. Hence it'll just return COMPELTE.
+            case "REUSE":
+                this.#evaluatedRequirements[reqID] = {
+                    "status": STATUSES.COMPLETE,
+                    "usedCourses": []
+                }
+                return;
+
+            // NO_REUSE disallows courses to be common between requirements.
+            case "NO_REUSE":
+                // Get all the used courses
+                let allUsedCourses = [];
+                for (const dependent_reqID of requirementObj.requisiteItems) {
+                    this.#evaluateRequirement(dependent_reqID, scheduledCourses, scheduledPrograms);
+                    allUsedCourses.push(this.#evaluatedRequirements[dependent_reqID].usedCourses);
+                }
+                // Get the intersection of all the used courses using this snippet from MDN.
+                const usedCoursesIntersection = allUsedCourses.reduce((usedCoursesArrayA, usedCoursesArrayB) => {
+                    const setA = new Set(usedCoursesArrayA);
+                    const setB = new Set(usedCoursesArrayB);
+                    let intersection = new Set();
+                    for (let elem of setB) {
+                        if (setA.has(elem)) {
+                            intersection.add(elem);
+                        }
+                    }
+                    return intersection;
+                }, []);
+                // If the intersection is empty, return COMPLETE, else INCOMPLETE.
+                this.#evaluatedRequirements[reqID] = {
+                    "status": usedCoursesIntersection.size === 0 ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": []
+                }
+                return;
+            //
             default:
                 console.log(`${this.id}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
                 this.#evaluatedRequirements[reqID] = {
@@ -293,6 +336,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     "usedCourses": []
                 }
                 return;
+
             // At least count credits
             case "MINIMUM":
                 // Filter out the courses from the schedule which are relevant here.
@@ -313,8 +357,11 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     "usedCourses": []
                 }
                 return;
+
             // case "GROUPMAXIMUM":
             //     return;
+
+            //
             default:
                 console.log(`${this.id}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
                 this.#evaluatedRequirements[reqID] = {
