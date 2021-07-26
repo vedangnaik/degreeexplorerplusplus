@@ -60,7 +60,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
                     "usedCourses": usedCourses
                 }
             };
-
         // REUSE allows courses to be used across multiple requirements. There's really nothing to check here since it doesn't matter even if they are not reused. Hence it'll just return COMPELTE.
         case "REUSE":
             return {
@@ -128,35 +127,27 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
                 }
             };
         // At least count credits
-        case "MINIMUM":
-            let potentialUsedCourses = [];
-            // Get all courses in requisiteItems which are also in sheduledCourses
-            potentialUsedCourses = potentialUsedCourses.concat(
-                requirementObj.requisiteItems
-                    .filter(dependent_course => dependent_course["itemType"] === "course" && dependent_course["code"] in scheduledCourses)
-                    .map(dependent_course => dependent_course["code"])
-            );
-            // Get all courses from scheduledCourses which belong to some category in requisiteItems
-            requirementObj.requisiteItems
-                .filter(dependent_course => dependent_course["itemType"] == "category")
-                .forEach(dependent_course => {
-                    let regex = new RegExp(CourseCategoriesData[dependent_course["code"]]["regex"]);
-                    potentialUsedCourses = potentialUsedCourses.concat(
-                        Object.keys(scheduledCourses).filter(courseID => regex.test(courseID))
-                    );
-                });
-
-            // Calculate the total number of credits in this list.
-            const numCredits = potentialUsedCourses
-                .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                .reduce((x, y) => x + y, 0);
-            // Handle appropriately depending on whether it's more or less than needed.
+        case "MINIMUM": {
+            let [potentialUsedCourses, validatable] = getAllApplicableCoursesAndValidity(requirementObj.requisiteItems, scheduledCourses);
+            const numCredits = validatable ? getTotalCreditsOfCourseIDList(potentialUsedCourses) : NaN;
             return {
                 [reqID]: {
-                    "status": numCredits >= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": numCredits >= requirementObj.count ? potentialUsedCourses : []
+                    "status": validatable ? (numCredits >= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.WARNING,
+                    "usedCourses": validatable ? (numCredits >= requirementObj.count ? potentialUsedCourses : []) : []
                 }
             };
+        }
+        // At most count credits from this category (or something, idk)
+        case "GROUPMAXIMUM": {
+            let [potentialUsedCourses, validatable] = getAllApplicableCoursesAndValidity(requirementObj.requisiteItems, scheduledCourses);
+            const numCredits = validatable ? getTotalCreditsOfCourseIDList(potentialUsedCourses) : NaN;
+            return {
+                [reqID]: {
+                    "status": validatable ? (numCredits <= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.WARNING,
+                    "usedCourses": validatable ? (numCredits <= requirementObj.count ? potentialUsedCourses : []) : []
+                }
+            };
+        }
         // For debugging
         default:
             console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
@@ -168,4 +159,36 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             };
         }
     }
+}
+
+// Returns all courses from scheduled courses which equal the "course" objects and match the "category" regexes from requisiteItems. If any of the regexes are not validatable, then the whole thing is marked is not validatable.
+function getAllApplicableCoursesAndValidity(requisiteItems, scheduledCourses) {
+    let courses = [];
+    let validatable = true;
+    // Courses: Get all courses in requisiteItems which are also in sheduledCourses
+    courses = courses.concat(
+        requisiteItems
+            .filter(dependent_course => dependent_course["itemType"] === "course" && dependent_course["code"] in scheduledCourses)
+            .map(dependent_course => dependent_course["code"])
+    );
+    // Categories: Get all courses from scheduledCourses which belong to some category in requisiteItems
+    requisiteItems
+        .filter(dependent_course => dependent_course["itemType"] == "category")
+        .forEach(dependent_course => {
+            if (!CourseCategoriesData[dependent_course["code"]]["validatable"]) {
+                validatable = false;
+                return; // quit this loop now, no point continuing 
+            }
+            let regex = new RegExp(CourseCategoriesData[dependent_course["code"]]["regex"]);
+            courses = courses.concat(
+                Object.keys(scheduledCourses).filter(courseID => regex.test(courseID))
+            );
+        });
+    return [courses, validatable];
+}
+
+function getTotalCreditsOfCourseIDList(courses) {
+    return courses
+        .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
+        .reduce((x, y) => x + y, 0);
 }
