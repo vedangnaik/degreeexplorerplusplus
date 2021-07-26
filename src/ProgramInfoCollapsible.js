@@ -1,6 +1,7 @@
 import ProgramData from "../resources/ProgramData.js";
 import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
+import { evaluateProgramRequirement } from "./Evaluators.js";
 
 
 
@@ -35,7 +36,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         }
     `;
 
-    #evaluatedRequirements = {};
     #requirementRows = {};
 
     constructor(programID) {
@@ -152,7 +152,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
 
     // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns, reset the background color of the header, and clear the evaluatedRequirements object.
     resetProgram() {
-        this.#evaluatedRequirements = {};
         for (const row of Object.values(this.#requirementRows)) {
             row.style.backgroundColor = "revert";
             row.children[0].innerText = '';
@@ -164,11 +163,14 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
 
     evaluateRequirements(courses, programs) {
         // Yeah, don't ask why it's called this.
+        let evaluatedRequirements = {};
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
-            if (!(reqID in this.#evaluatedRequirements)) {
-                this.#evaluateRequirement(reqID, courses, programs);
+            if (!(reqID in evaluatedRequirements)) {
+                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, courses, programs)};
             }
         });
+
+        console.log(evaluatedRequirements);
 
         // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warings, it's yellow. Otherwise, it's green.
         let incomplete = false;
@@ -177,8 +179,8 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         for (const reqID in this.#requirementRows) {
             // reqID is gauranteed to be in this object so we don't have to check.
             const row = this.#requirementRows[reqID];
-            const status = this.#evaluatedRequirements[reqID].status;
-            const usedCourses = this.#evaluatedRequirements[reqID].usedCourses;
+            const status = evaluatedRequirements[reqID].status;
+            const usedCourses = evaluatedRequirements[reqID].usedCourses;
             switch (status) {
             case STATUSES.COMPLETE:
                 row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
@@ -219,157 +221,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             this.collapsibleHeaderDiv.style.backgroundColor = WARNING_COLOR;
         } else {
             this.collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
-        }
-    }
-
-    #evaluateRequirement(reqID, scheduledCourses, scheduledPrograms) {
-        // Quick exit case: this ID has already been evaluated, so there's no need to do it again.
-        if (reqID in this.#evaluatedRequirements) {
-            return;
-        }
-
-        const requirementObj = ProgramData[this.id].detailAssessments[reqID];
-
-        if (requirementObj.type == "NOTE") {
-            this.#evaluatedRequirements[reqID] = {
-                "status": STATUSES.NOTE,
-                "usedCourses": []
-            };
-            return;
-        }
-
-        if (requirementObj.requisiteItems[0].includes('Req')) {
-            switch (requirementObj.type) {
-            // At least 1 requirement is needed. It's assumed to be 1 because count is not specified for this field anywhere.
-            case "MINIMUM":
-                let usedPrereqs = [];
-                let count = 0;
-                for (const dependent_reqID of requirementObj.requisiteItems) {
-                    // Evaluate the dependent reqID and check if it's acceptable
-                    this.#evaluateRequirement(dependent_reqID, scheduledCourses, scheduledPrograms);
-                    if (this.#evaluatedRequirements[dependent_reqID].status !== STATUSES.INCOMPLETE) {
-                        usedPrereqs.push(dependent_reqID);
-                        count += 1;
-                    }
-
-                    if (1 <= count) {
-                        // We must mark all the unused prerequisites as NA to indicate to the user which ones were used.
-                        requirementObj.requisiteItems
-                            .filter(dependent_reqID => !usedPrereqs.includes(dependent_reqID))
-                            .forEach(dependent_reqID => this.#evaluatedRequirements[dependent_reqID] = {
-                                "status": STATUSES.NA,
-                                "usedCourses": []
-                            });
-                        
-                            this.#evaluatedRequirements[reqID] = {
-                            "status": STATUSES.COMPLETE,
-                            // We concat all the usedCourses of each used requirements. Right now it's only one, but this is in case the format changes in the future. 
-                            "usedCourses": usedPrereqs
-                                .map(reqID => this.#evaluatedRequirements[reqID].usedCourses)
-                                .reduce((acc, curr) => acc.concat(curr), [])
-                        }
-                        return;
-                    }
-                }
-                this.#evaluatedRequirements[reqID] = {
-                    "status": STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-
-            // REUSE allows courses to be used across multiple requirements. There's really nothing to check here since it doesn't matter even if they are not reused. Hence it'll just return COMPELTE.
-            case "REUSE":
-                this.#evaluatedRequirements[reqID] = {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": []
-                }
-                return;
-
-            // NO_REUSE disallows courses to be common between requirements.
-            case "NO_REUSE":
-                // Get all the used courses
-                let allUsedCourses = [];
-                for (const dependent_reqID of requirementObj.requisiteItems) {
-                    this.#evaluateRequirement(dependent_reqID, scheduledCourses, scheduledPrograms);
-                    allUsedCourses.push(this.#evaluatedRequirements[dependent_reqID].usedCourses);
-                }
-                // Get the intersection of all the used courses using this snippet from MDN.
-                const usedCoursesIntersection = allUsedCourses.reduce((usedCoursesArrayA, usedCoursesArrayB) => {
-                    const setA = new Set(usedCoursesArrayA);
-                    const setB = new Set(usedCoursesArrayB);
-                    let intersection = new Set();
-                    for (let elem of setB) {
-                        if (setA.has(elem)) {
-                            intersection.add(elem);
-                        }
-                    }
-                    return intersection;
-                }, []);
-                // If the intersection is empty, return COMPLETE, else INCOMPLETE.
-                this.#evaluatedRequirements[reqID] = {
-                    "status": usedCoursesIntersection.size === 0 ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-            //
-            default:
-                console.log(`${this.id}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
-                this.#evaluatedRequirements[reqID] = {
-                    "status": STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-            }
-        } else {
-            switch (requirementObj.type) {
-            // All of the courses in the list
-            case "LIST":                    
-                this.#evaluatedRequirements[reqID] = (requirementObj.requisiteItems
-                    .filter(dependent_courseID => !(dependent_courseID in scheduledCourses))
-                    .length === 0) ? 
-                {
-                    "status":  STATUSES.COMPLETE,
-                    "usedCourses": requirementObj.requisiteItems
-                } : 
-                {
-                    "status": STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-
-            // At least count credits
-            case "MINIMUM":
-                // Filter out the courses from the schedule which are relevant here.
-                const potentialUsedCourses = requirementObj.requisiteItems
-                    .filter(dependent_courseID => dependent_courseID in scheduledCourses);
-                // Calculate the total number of credits in this list.
-                const numCredits = potentialUsedCourses
-                    .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                    .reduce((x, y) => x + y, 0);
-                // Handle appropriately depending on whether it's more or less than needed.
-                this.#evaluatedRequirements[reqID] = (numCredits >= requirementObj.count) ?
-                {
-                    "status":  STATUSES.COMPLETE,
-                    "usedCourses": potentialUsedCourses
-                } : 
-                {
-                    "status": STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-
-            // case "GROUPMAXIMUM":
-            //     return;
-
-            //
-            default:
-                console.log(`${this.id}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
-                this.#evaluatedRequirements[reqID] = {
-                    "status": STATUSES.INCOMPLETE,
-                    "usedCourses": []
-                }
-                return;
-            }
         }
     }
 }
