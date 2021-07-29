@@ -101,9 +101,9 @@ export class ProfileControls extends HTMLDivElement {
         // Reset the course info panel so it doesn't look like nothing happened.
         document.getElementById(GLOBAL_COURSE_INFO_PANEL_ID).setContentsVisibility(false);
 
-        // for (const courseID in scheduledCourses) {
-        //     document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
-        // }
+        for (const courseID in scheduledCourses) {
+            document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
+        }
 
         for (const programID of scheduledPrograms) {
             document.getElementById(programID).evaluateRequirements(scheduledCourses, scheduledPrograms);
