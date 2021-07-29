@@ -170,8 +170,6 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             }
         });
 
-        console.log(evaluatedRequirements);
-
         // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warings, it's yellow. Otherwise, it's green.
         let incomplete = false;
         let warning = false;

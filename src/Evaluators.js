@@ -2,6 +2,8 @@ import ProgramData from "../resources/ProgramData.js";
 import CourseCategoriesData from "../resources/CourseCategoriesData.js"
 import { STATUSES } from "./Constants.js";
 
+// These are all the types in the programs. 6/8 have been done but consolidation is needed.
+// {'REUSE', 'COMPLEX', 'NOTE', 'LIST', 'MINIMUM', 'GROUPMINIMUM', 'NO_REUSE', 'GROUPMAXIMUM'}
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses, scheduledPrograms) {
     const requirementObj = ProgramData[programID].detailAssessments[reqID];
 
@@ -157,6 +159,14 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
                     "usedCourses": []
                 }
             };
+        }
+    default:
+        console.log(`${programID}: ${reqID}: No requisiteType found.`);
+        return {
+            [reqID]: {
+                "status": STATUSES.INCOMPLETE,
+                "usedCourses": []
+            }
         }
     }
 }

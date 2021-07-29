@@ -11,8 +11,8 @@ export class CourseSchedule extends HTMLTableElement {
         outline: 1px solid grey;
         background-color: lightgrey;
     `;
-    static #ANCHOR_YEAR_MAX = 2050;
-    static #ANCHOR_YEAR_MIN = 1950;
+    static #ANCHOR_YEAR_MAX = 2827;
+    static #ANCHOR_YEAR_MIN = 1827;
 
     #tbody;
     #semesterSelect;
