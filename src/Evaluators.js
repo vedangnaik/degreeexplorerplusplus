@@ -108,7 +108,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             console.log(`${programID}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
             return {
                 [reqID]: {
-                    "status": STATUSES.INCOMPLETE,
+                    "status": STATUSES.WARNING,
                     "usedCourses": []
                 }
             };
@@ -155,7 +155,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
             return {
                 [reqID]: {
-                    "status": STATUSES.INCOMPLETE,
+                    "status": STATUSES.WARNING,
                     "usedCourses": []
                 }
             };
@@ -164,7 +164,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
         console.log(`${programID}: ${reqID}: No requisiteType found.`);
         return {
             [reqID]: {
-                "status": STATUSES.INCOMPLETE,
+                "status": STATUSES.WARNING,
                 "usedCourses": []
             }
         }
