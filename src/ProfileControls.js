@@ -16,7 +16,7 @@ export class ProfileControls extends HTMLDivElement {
             flex-direction: column;
         `;
             this.#searchInput = document.createElement('input');
-            this.#searchInput.placeholder = "Type Course/Program ID";
+            this.#searchInput.placeholder = "CSC404H1, ASSPE1689, etc.";
             this.#searchInput.style = `
                 border: 1px solid grey;
                 border-radius: 5px;
