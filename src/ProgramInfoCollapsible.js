@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, NOT_IMPLEMENTED_SYMBOL, NOT_IMPLEMENTED_BACKGROUND} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 import { evaluateProgramRequirement } from "./Evaluators.js";
 
@@ -162,16 +162,16 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.collapsibleHeaderDiv.style.backgroundColor = NOT_EVALUATED_COLOR;
     }
 
-    evaluateRequirements(courses, programs) {
+    evaluateRequirements(scheduledCourses, scheduledPrograms) {
         // Yeah, don't ask why it's called this.
         let evaluatedRequirements = {};
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
             if (!(reqID in evaluatedRequirements)) {
-                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, courses, programs)};
+                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, scheduledCourses, scheduledPrograms)};
             }
         });
 
-        // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warings, it's yellow. Otherwise, it's green.
+        // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warnings/unimplemented reqs, it's yellow. Otherwise, it's green.
         let incomplete = false;
         let warning = false;
 
@@ -212,10 +212,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             case STATUSES.NOTE:
                 row.children[0].innerText = `${NOTE_SYMBOL} Note`;
                 break;
-            case STATUSES.NOT_IMPLEMENTED:
+            case STATUSES.UNIMPLEMENTED:
                 warning = true;
-                row.children[0].innerText = `${NOT_IMPLEMENTED_SYMBOL} Unimplemented`;
-                row.style.background = NOT_IMPLEMENTED_BACKGROUND;
+                row.children[0].innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
+                row.style.background = UNIMPLEMENTED_BACKGROUND;
                 break;
             }
         }

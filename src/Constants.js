@@ -9,7 +9,7 @@ export const INCOMPLETE_COLOR = "salmon";
 export const UNVERIFIABLE_COLOR = "lightyellow";
 export const DELETE_COLOR = "red";
 export const NOT_USED_COLOR = "lightgrey";
-export const NOT_IMPLEMENTED_BACKGROUND = "repeating-linear-gradient(135deg, #000000ab 0% 10%, #d7a21996 10% 20%)"
+export const UNIMPLEMENTED_BACKGROUND = "repeating-linear-gradient(135deg, #000000ab 0% 10%, #d7a21996 10% 20%)"
 // Eye-candy emojis for the same ;)
 export const COMPELTE_SYMBOL = '✔️';
 export const INCOMPELTE_SYMBOL = '❌';
@@ -17,7 +17,7 @@ export const UNVERIFIABLE_SYMBOL = '⚠️';
 export const NOT_USED_SYMBOL = '🚫';
 export const NOTE_SYMBOL = '📝';
 export const DELETE_SYMBOL = '✖';
-export const NOT_IMPLEMENTED_SYMBOL = '🚧'
+export const UNIMPLEMENTED_SYMBOL = '🚧'
 
 // Color for courses and programs which are non-evaluated.
 export const NOT_EVALUATED_COLOR = "lightblue";
@@ -29,7 +29,7 @@ export const STATUSES = Object.freeze({
     NA: Symbol("NA"),
     UNVERIFIABLE: Symbol("UNVERIFIABLE"),
     NOTE: Symbol("NOTE"),
-    NOT_IMPLEMENTED: Symbol("NOT_IMPLEMENTED")
+    UNIMPLEMENTED: Symbol("UNIMPLEMENTED")
 });
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
