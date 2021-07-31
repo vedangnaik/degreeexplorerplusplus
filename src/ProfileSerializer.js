@@ -30,7 +30,7 @@ export class ProfileSerializer extends HTMLDivElement {
                     // This is a input of type file which is used for selecting the profile. It is hidden since it cannot be styled easily. Instead, another button forwards any clicks it receives to this input, which handles the file stuff behind the scenes. Partially inspired by https://stackoverflow.com/a/36248168. A similar thing can also been found on the MDN docs somewhere.
                     this.#loadProfileInput = document.createElement('input');
                     this.#loadProfileInput.type = "file";
-                    this.#loadProfileInput.accept = ".depp";
+                    this.#loadProfileInput.accept = ".json";
                     this.#loadProfileInput.style.display = "none";
                     this.#loadProfileInput.onchange = this.#loadProfile.bind(this);
 
@@ -194,7 +194,7 @@ class ProfileSelector extends HTMLDivElement {
         this.#switchProfile();
 
         // Since the file format is JSON but with a different extension, we will mark it as such for the constructor
-        const profileFileName = `${this.profileObj["name"]}.depp`;
+        const profileFileName = `${this.profileObj["name"]}.json`;
         const profile = new File([JSON.stringify(this.profileObj)], profileFileName, { "type": "text/json" });
 
         // To save the file, we create a downloadable <a> element and embed the URI of the file into it, the append and click it. This will open a dialog box for the user
