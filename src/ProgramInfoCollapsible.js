@@ -1,5 +1,5 @@
 import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, NOT_IMPLEMENTED_SYMBOL, NOT_IMPLEMENTED_BACKGROUND} from "./Constants.js";
 import { Spacer } from "./Spacer.js";
 import { evaluateProgramRequirement } from "./Evaluators.js";
 
@@ -28,7 +28,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         .PICTable td:first-child, .PICTable th:first-child {
             width: 7vw;
         }
-        .PICTable th:nth-child(3), .PICTable td:nth-child(3) {
+        .PICTable td:nth-child(3) {
             text-align: left;
         }
         .PICTable th:nth-child(4), .PICTable td:nth-child(4) {
@@ -92,6 +92,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     // The thead contains the headings for the table
                     const thead = document.createElement('thead');
                         let tr = document.createElement('tr');
+                        tr.style.backgroundColor = "grey";
                             let th = document.createElement('th');
                             th.innerText = "Status";
                         tr.appendChild(th);
@@ -198,10 +199,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 row.children[0].innerText = `${NOT_USED_SYMBOL} Not Used`;
                 row.style.backgroundColor = NOT_USED_COLOR;
                 break;
-            case STATUSES.WARNING:
+            case STATUSES.UNVERIFIABLE:
                 warning = true;
-                row.children[0].innerText = `${WARNING_SYMBOL} Warning`;
-                row.style.backgroundColor = WARNING_COLOR;
+                row.children[0].innerText = `${UNVERIFIABLE_SYMBOL} Unverifiable`;
+                row.style.backgroundColor = UNVERIFIABLE_COLOR;
                 row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
                 row.children[4].innerText = usedCourses
                     .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
@@ -210,13 +211,19 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                 break;
             case STATUSES.NOTE:
                 row.children[0].innerText = `${NOTE_SYMBOL} Note`;
+                break;
+            case STATUSES.NOT_IMPLEMENTED:
+                warning = true;
+                row.children[0].innerText = `${NOT_IMPLEMENTED_SYMBOL} Unimplemented`;
+                row.style.background = NOT_IMPLEMENTED_BACKGROUND;
+                break;
             }
         }
 
         if (incomplete) {
             this.collapsibleHeaderDiv.style.backgroundColor = INCOMPLETE_COLOR;
         } else if (warning) {
-            this.collapsibleHeaderDiv.style.backgroundColor = WARNING_COLOR;
+            this.collapsibleHeaderDiv.style.backgroundColor = UNVERIFIABLE_COLOR;
         } else {
             this.collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
         }

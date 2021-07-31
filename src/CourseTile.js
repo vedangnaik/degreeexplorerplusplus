@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, WARNING_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_EVALUATED_COLOR } from "./Constants.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, UNVERIFIABLE_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_EVALUATED_COLOR } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 
 export class CourseTile extends HTMLDivElement {
@@ -83,8 +83,8 @@ export class CourseTile extends HTMLDivElement {
         const statuses = Object.values(this.#evaluatedPrerequisites);
         if (statuses.includes(STATUSES.INCOMPLETE)) {
             this.style.backgroundColor = INCOMPLETE_COLOR;
-        } else if (statuses.includes(STATUSES.WARNING)) {
-            this.style.backgroundColor = WARNING_COLOR;
+        } else if (statuses.includes(STATUSES.UNVERIFIABLE)) {
+            this.style.backgroundColor = UNVERIFIABLE_COLOR;
         } else {
             this.style.backgroundColor = COMPLETE_COLOR;
         }
@@ -120,7 +120,7 @@ export class CourseTile extends HTMLDivElement {
                     for (const dependent_prereqID of prerequisiteObj.requisiteItems) {
                         // Evaluate the dependent prereqID and check if it's acceptable
                         recursiveEvaluatePrerequisite(courseID, dependent_prereqID, scheduledCourses, scheduledPrograms, evaluatedPrerequisites);
-                        if ([STATUSES.COMPLETE, STATUSES.WARNING].includes(evaluatedPrerequisites[dependent_prereqID])) {
+                        if ([STATUSES.COMPLETE, STATUSES.UNVERIFIABLE].includes(evaluatedPrerequisites[dependent_prereqID])) {
                             usedPrereqs.push(dependent_prereqID);
                             count += 1;
                         }
@@ -218,7 +218,7 @@ export class CourseTile extends HTMLDivElement {
                 
             // GRADE places a requirement on the grade in a course. These cannot be determined without access to student grades. Hence, these are marked with a warning for manual checking by the user.
             case 'GRADE':
-                evaluatedPrerequisites[prereqID] = STATUSES.WARNING;
+                evaluatedPrerequisites[prereqID] = STATUSES.UNVERIFIABLE;
                 return;
             
             // POST places a requirement on enrollment in a specific program.

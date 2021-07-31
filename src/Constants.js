@@ -6,16 +6,18 @@ export const GLOBAL_COURSE_INFO_PANEL_ID = "GLOBAL_COURSE_INFO_PANEL_ID";
 // Colors for coloring the UI of prerequisites and requirements based on their status.
 export const COMPLETE_COLOR = "lightgreen";
 export const INCOMPLETE_COLOR = "salmon";
-export const WARNING_COLOR = "lightyellow";
+export const UNVERIFIABLE_COLOR = "lightyellow";
 export const DELETE_COLOR = "red";
 export const NOT_USED_COLOR = "lightgrey";
+export const NOT_IMPLEMENTED_BACKGROUND = "repeating-linear-gradient(135deg, #000000ab 0% 10%, #d7a21996 10% 20%)"
 // Eye-candy emojis for the same ;)
 export const COMPELTE_SYMBOL = '✔️';
 export const INCOMPELTE_SYMBOL = '❌';
-export const WARNING_SYMBOL = '⚠️';
+export const UNVERIFIABLE_SYMBOL = '⚠️';
 export const NOT_USED_SYMBOL = '🚫';
 export const NOTE_SYMBOL = '📝';
 export const DELETE_SYMBOL = '✖';
+export const NOT_IMPLEMENTED_SYMBOL = '🚧'
 
 // Color for courses and programs which are non-evaluated.
 export const NOT_EVALUATED_COLOR = "lightblue";
@@ -25,8 +27,9 @@ export const STATUSES = Object.freeze({
     COMPLETE: Symbol("COMPLETE"),
     INCOMPLETE: Symbol("INCOMPLETE"),
     NA: Symbol("NA"),
-    WARNING: Symbol("WARNING"),
-    NOTE: Symbol("NOTE")
+    UNVERIFIABLE: Symbol("UNVERIFIABLE"),
+    NOTE: Symbol("NOTE"),
+    NOT_IMPLEMENTED: Symbol("NOT_IMPLEMENTED")
 });
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible

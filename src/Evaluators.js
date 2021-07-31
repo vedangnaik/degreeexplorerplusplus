@@ -108,7 +108,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             console.log(`${programID}, ${reqID}: Unknown recursive type: ${requirementObj.type}`);
             return {
                 [reqID]: {
-                    "status": STATUSES.WARNING,
+                    "status": STATUSES.NOT_IMPLEMENTED,
                     "usedCourses": []
                 }
             };
@@ -134,7 +134,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             const numCredits = validatable ? getTotalCreditsOfCourseIDList(potentialUsedCourses) : NaN;
             return {
                 [reqID]: {
-                    "status": validatable ? (numCredits >= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.WARNING,
+                    "status": validatable ? (numCredits >= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
                     "usedCourses": validatable ? (numCredits >= requirementObj.count ? potentialUsedCourses : []) : []
                 }
             };
@@ -145,7 +145,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             const numCredits = validatable ? getTotalCreditsOfCourseIDList(potentialUsedCourses) : NaN;
             return {
                 [reqID]: {
-                    "status": validatable ? (numCredits <= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.WARNING,
+                    "status": validatable ? (numCredits <= requirementObj.count ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
                     "usedCourses": validatable ? (numCredits <= requirementObj.count ? potentialUsedCourses : []) : []
                 }
             };
@@ -155,7 +155,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             console.log(`${programID}, ${reqID}: Unknown normal type: ${requirementObj.type}`);
             return {
                 [reqID]: {
-                    "status": STATUSES.WARNING,
+                    "status": STATUSES.NOT_IMPLEMENTED,
                     "usedCourses": []
                 }
             };
@@ -164,7 +164,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
         console.log(`${programID}: ${reqID}: No requisiteType found.`);
         return {
             [reqID]: {
-                "status": STATUSES.WARNING,
+                "status": STATUSES.NOT_IMPLEMENTED,
                 "usedCourses": []
             }
         }

@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, WARNING_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, WARNING_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID } from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 
@@ -129,7 +129,7 @@ class RequisitesPanel extends HTMLDivElement {
                 let thead = document.createElement('thead');
                     let tr = document.createElement('tr')
                     tr.style = `
-                        background-color: white;
+                        background-color: grey;
                     `
                         let th = document.createElement('th');
                         th.innerText = "Status";
@@ -166,9 +166,9 @@ class RequisitesPanel extends HTMLDivElement {
                     td.innerText = `${NOT_USED_SYMBOL} Not Used`;
                     tr.style.backgroundColor = NOT_USED_COLOR;
                     break;
-                case STATUSES.WARNING:
-                    td.innerText = `${WARNING_SYMBOL} Warning`;
-                    tr.style.backgroundColor = WARNING_COLOR;
+                case STATUSES.UNVERIFIABLE:
+                    td.innerText = `${UNVERIFIABLE_SYMBOL} Unverifiable`;
+                    tr.style.backgroundColor = UNVERIFIABLE_COLOR;
                     break;
                 case STATUSES.NOTE:
                     td.innerText = `${NOTE_SYMBOL} Note`;
