@@ -228,7 +228,7 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
         // REQUISITES place a requirement upon other requisites. These are currently the only type upon which the function recurses, in order to determine those.
         case 'REQUISITES': {
             switch(prerequisiteObj.type) {
-            // At least count requisites
+                // At least count requisites
                 case 'MINIMUM': {
                     // Evaluate all dependent prerequisites first
                     let dependentPrereqs = {};
@@ -263,6 +263,12 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                             [prereqID]: STATUSES.INCOMPLETE
                         }
                     }
+                }
+                // TODO
+                case 'LIST': {
+                    return {
+                        [prereqID]: STATUSES.UNIMPLEMENTED
+                    };
                 }
                 // To handle unknown/unimplemented cases
                 default: {
@@ -304,6 +310,12 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                 case 'COMPLEX': {
                     return {
                         [prereqID]: STATUSES.UNVERIFIABLE
+                    };
+                }
+                // TODO
+                case 'GROUPMINIMUM': {
+                    return {
+                        [prereqID]: STATUSES.UNIMPLEMENTED
                     };
                 }
                 // To handle unknown/unimplemented cases
@@ -362,6 +374,12 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                         [prereqID]: STATUSES.UNVERIFIABLE
                     };
                 }
+                // TODO
+                case 'GROUPMINIMUM': {
+                    return {
+                        [prereqID]: STATUSES.UNIMPLEMENTED
+                    };
+                }
                 // To handle unknown/unimplemented cases
                 default: {
                     console.log(`${courseID}, ${prereqID}: Unknown FCES type: ${prerequisiteObj.type}`);
@@ -389,6 +407,18 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                                 STATUSES.COMPLETE : 
                                 STATUSES.INCOMPLETE
                     }
+                }
+                // TODO
+                case 'COMPLEX': {
+                    return {
+                        [prereqID]: STATUSES.UNIMPLEMENTED
+                    };
+                }
+                // TODO
+                case 'LIST': {
+                    return {
+                        [prereqID]: STATUSES.UNIMPLEMENTED
+                    };
                 }
                 // To handle unknown/unimplemented cases
                 default: {
