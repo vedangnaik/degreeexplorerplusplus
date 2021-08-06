@@ -2,8 +2,9 @@ import { GLOBAL_COURSE_INFO_PANEL_ID, GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
-import CourseData from "../resources/CourseData.js";
-import ProgramData from "../resources/ProgramData.js";
+
+const CourseData = await import("../resources/CourseData.js");
+const ProgramData = await import("../resources/ProgramData.js");
 
 export class ProfileControls extends HTMLDivElement {
     #courseSlot;
