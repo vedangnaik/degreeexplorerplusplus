@@ -1,7 +1,7 @@
 import { STATUSES } from "./Constants.js";
-const ProgramData = await import("../resources/ProgramData.js");
-const CourseCategoriesData = await import("../resources/CourseCategoriesData.js");
-const CourseData = await import("../resources/CourseData.js");
+const { default: ProgramData } = await import("../resources/ProgramData.js");
+const { default: CourseCategoriesData } = await import("../resources/CourseCategoriesData.js");
+const { default: CourseData } = await import("../resources/CourseData.js");
 
 // These are all the types in the programs. 6/8 have been done but consolidation is needed.
 // {'REUSE', 'COMPLEX', 'NOTE', 'LIST', 'MINIMUM', 'GROUPMINIMUM', 'NO_REUSE', 'GROUPMAXIMUM'}
