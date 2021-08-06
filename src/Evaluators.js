@@ -1,7 +1,7 @@
-import ProgramData from "../resources/ProgramData.js";
-import CourseCategoriesData from "../resources/CourseCategoriesData.js"
 import { STATUSES } from "./Constants.js";
-import CourseData from "../resources/CourseData.js";
+const { default: ProgramData } = await import("../resources/ProgramData.js");
+const { default: CourseCategoriesData } = await import("../resources/CourseCategoriesData.js");
+const { default: CourseData } = await import("../resources/CourseData.js");
 
 // These are all the types in the programs. 6/8 have been done but consolidation is needed.
 // {'REUSE', 'COMPLEX', 'NOTE', 'LIST', 'MINIMUM', 'GROUPMINIMUM', 'NO_REUSE', 'GROUPMAXIMUM'}
@@ -214,202 +214,184 @@ function getTotalCreditsOfCourseIDList(courses) {
 
 
 
-export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses, scheduledPrograms) {
-    const prerequisiteObj = CourseData[courseID].prerequisites[prereqID];
 
-    // If it's a NOTE, then we can just mark it as such and exit
-    if (prerequisiteObj.type === "NOTE") {
-        return {
-            [prereqID]: STATUSES.NOTE
+
+
+function getValidScheduledCoursesForPrerequisite(courses, categories, scheduledCoursesArray) {
+    // First, we check that all the course categories are valid. If even one isn't, we can't be sure of this anyway
+    for (const categoryID of categories) {
+        if (!(categoryID in CourseCategoriesData)) {
+            return null
         }
     }
 
-    switch(prerequisiteObj.countType) {
-        // REQUISITES place a requirement upon other requisites. These are currently the only type upon which the function recurses, in order to determine those.
-        case 'REQUISITES': {
-            switch(prerequisiteObj.type) {
-            // At least count requisites
-                case 'MINIMUM': {
-                    // Evaluate all dependent prerequisites first
-                    let dependentPrereqs = {};
-                    for (const dependentPrereqID of prerequisiteObj.requisiteItems) {
-                        dependentPrereqs = {...dependentPrereqs, ...evaluateCoursePrerequisite(courseID, dependentPrereqID, scheduledCourses, scheduledPrograms)};
-                    }
-                    // Check if enough are complete to pass
-                    let usedPrereqs = []
-                    let count = 0;
-                    for (const dependentPrereqID of prerequisiteObj.requisiteItems) {
-                        if (dependentPrereqs[dependentPrereqID] !== STATUSES.INCOMPLETE && dependentPrereqs[dependentPrereqID] !== STATUSES.UNIMPLEMENTED) {
-                            usedPrereqs.push(dependentPrereqID);
-                            count += 1
-                        }
+    let validScheduledCourses = []
+    // Now, we apply each category's regex to all the scheduledcourses and extract the applicable ones
+    categories.forEach(categoryID => {
+        const regexObj = new RegExp(CourseCategoriesData[categoryID]["regex"])
+        validScheduledCourses = validScheduledCourses.concat(scheduledCoursesArray.filter(courseID => regexObj.test(courseID)));
+    })
+    // Next, we filter everything from courses which is also in scheduledCoursesArray
+    validScheduledCourses = validScheduledCourses.concat(courses.filter(courseID => scheduledCoursesArray.includes(courseID)))
 
-                        if (prerequisiteObj.count <= count) { break; }
-                    }
-                    // Mark others NA if so
-                    if (prerequisiteObj.count <= count) {
-                        for (const dependentPrereqID in dependentPrereqs) {
-                            if (!usedPrereqs.includes(dependentPrereqID)) {
-                                dependentPrereqs[dependentPrereqID] = STATUSES.NA;
-                            }
-                        }
-                        return {
-                            ...dependentPrereqs,
-                            [prereqID]: STATUSES.COMPLETE
-                        };
-                    } else {
-                        return {
-                            ...dependentPrereqs,
-                            [prereqID]: STATUSES.INCOMPLETE
-                        }
-                    }
-                }
-                // To handle unknown/unimplemented cases
-                default: {
-                    console.log(`${courseID}, ${prereqID}: Unknown REQUISITE type: ${prerequisiteObj.type}`);
-                    return {
-                        [prereqID]: STATUSES.UNIMPLEMENTED
-                    };
-                }
-            }
-        }
-        // COURSES places a restriction upon the *number* of courses that can be taken from a list. The number of credits these courses add up to is immaterial.
-        case 'COURSES': {
-            switch (prerequisiteObj.type) {
-                // At least count courses
-                case 'MINIMUM': {
-                    return {
-                        [prereqID]: (prerequisiteObj.requisiteItems
-                            .filter(dependent_courseID => 
-                                dependent_courseID in scheduledCourses && 
-                                scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
-                            .length >= prerequisiteObj.count) ?
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
-                    }
-                }
-                // All of the courses in the list
-                case 'LIST': {
-                    return {
-                        [prereqID]: (prerequisiteObj.requisiteItems
-                            .filter(dependent_courseID => 
-                                !(dependent_courseID in scheduledCourses) || 
-                                scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                            .length === 0) ? 
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
-                    }
-                }
-                // These usually represent specific departmental permissions or exemptions which cannot be checked here.
-                case 'COMPLEX': {
-                    return {
-                        [prereqID]: STATUSES.UNVERIFIABLE
-                    };
-                }
-                // To handle unknown/unimplemented cases
-                default: {
-                    console.log(`${courseID}, ${prereqID}: Unknown COURSES type: ${prerequisiteObj.type}`);
-                    return {
-                        [prereqID]: STATUSES.UNIMPLEMENTED
-                    };
-                }
-            }
-        }    
-        // FCES places a restriction upon the *number of credits* worth of courses that can be taken from a list.
-        case 'FCES': {
-            switch (prerequisiteObj.type) {
-                // At least count credits
-                case 'MINIMUM': {
-                    return {
-                        [prereqID]: (prerequisiteObj.count <= prerequisiteObj.requisiteItems
-                            .filter(dependent_courseID => 
-                                dependent_courseID in scheduledCourses && 
-                                scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
-                            .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                            .reduce((x, y) => x + y, 0)) ? 
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
-                    }
-                }
-                // All of the courses in the list
-                case 'LIST': {
-                    return {
-                        [prereqID]: (prerequisiteObj.requisiteItems
-                            .filter(dependent_courseID => 
-                                !(dependent_courseID in scheduledCourses) || 
-                                scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                            .length === 0) ? 
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
-                    }
-                }
-                // At most count credits
-                case 'MAXIMUM': {
-                    return {
-                        [prereqID]: (prerequisiteObj.count >= prerequisiteObj.requisiteItems
-                            .filter(dependent_courseID => 
-                                dependent_courseID in scheduledCourses && 
-                                scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"])
-                            .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-                            .reduce((x, y) => x + y, 0)) ? 
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
-                    }
-                }
-                // These usually represent specific departmental permissions or exemptions which cannot be checked here.
-                case 'COMPLEX': {
-                    return {
-                        [prereqID]: STATUSES.UNVERIFIABLE
-                    };
-                }
-                // To handle unknown/unimplemented cases
-                default: {
-                    console.log(`${courseID}, ${prereqID}: Unknown FCES type: ${prerequisiteObj.type}`);
-                    return {
-                        [prereqID]: STATUSES.UNIMPLEMENTED
-                    };
-                }
-            }
-        }
-        // GRADE places a requirement on the grade in a course. These cannot be determined without access to student grades. Hence, these are marked with a warning for manual checking by the user.
-        case 'GRADE': {
+    return validScheduledCourses;
+}
+
+export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses, scheduledPrograms) {
+    const prerequisiteObj = CourseData[courseID].prerequisites[prereqID];
+    switch(prerequisiteObj.type) {
+        case "UNVERIFIABLE": {
             return {
                 [prereqID]: STATUSES.UNVERIFIABLE
-            };
+            }
         }
-        // POST places a requirement on enrollment in a specific program.
-        case 'SUBJECT_POSTS': {
-            switch (prerequisiteObj.type) {
-                // At least these programs
-                case 'MINIMUM': {
-                    return {
-                        [prereqID]: (prerequisiteObj.requisiteItems
-                            .filter(dependent_programID => scheduledPrograms.includes(dependent_programID))
-                            .length >= prerequisiteObj.count) ? 
-                                STATUSES.COMPLETE : 
-                                STATUSES.INCOMPLETE
+        case "NOTE": {
+            return {
+                [prereqID]: STATUSES.NOTE
+            }
+        }
+        case "REQUISITES_MIN": {
+            // Evaluate all dependent prerequisites first
+            let dependentPrereqs = {};
+            for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
+                dependentPrereqs = {...dependentPrereqs, ...evaluateCoursePrerequisite(courseID, dependentPrereqID, scheduledCourses, scheduledPrograms)};
+            }
+            // Check if enough are complete to pass
+            let usedPrereqs = []
+            let count = 0;
+            for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
+                if (dependentPrereqs[dependentPrereqID] !== STATUSES.INCOMPLETE && dependentPrereqs[dependentPrereqID] !== STATUSES.UNIMPLEMENTED) {
+                    usedPrereqs.push(dependentPrereqID);
+                    count += 1
+                }
+
+                if (prerequisiteObj.count <= count) { break; }
+            }
+            // Mark others NA if so
+            if (prerequisiteObj["count"] <= count) {
+                for (const dependentPrereqID in dependentPrereqs) {
+                    if (!usedPrereqs.includes(dependentPrereqID)) {
+                        dependentPrereqs[dependentPrereqID] = STATUSES.NA;
                     }
                 }
-                // To handle unknown/unimplemented cases
-                default: {
-                    console.log(`${courseID}, ${prereqID}: Unknown SUBJECT_POSTS type: ${prerequisiteObj.type}`);
-                    return {
-                        [prereqID]: STATUSES.UNIMPLEMENTED
-                    };
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: STATUSES.COMPLETE
+                };
+            } else {
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: STATUSES.INCOMPLETE
                 }
             }
         }
-        // GPA and Year of Study and Average cannot be checked
-        case 'AVERAGE':
-        case 'YOS':
-        case 'GPA': {
+        case "COURSES_MIN": {
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            if (validScheduledCourses === null) {
+                return {
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                return {
+                    [prereqID]: (validScheduledCourses
+                        .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"])
+                        .length >= prerequisiteObj["count"]) ?
+                            STATUSES.COMPLETE : 
+                            STATUSES.INCOMPLETE
+                }
+            }
+        }
+        case "COURSES_LIST": {
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            if (validScheduledCourses === null) {
+                return {
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                // TODO: Currently, we do not check if every course in the categories is satisfied or not. This is becuase they're stored as regexes and not as the actual lists, so one would have to go through all 5000 courses to see what the actual category is.
+                return {
+                    [prereqID]: (validScheduledCourses
+                        .filter(dependent_courseID => 
+                            scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
+                        .length === 0) ? 
+                            STATUSES.COMPLETE : 
+                            STATUSES.INCOMPLETE
+                }
+            }
+        }
+        case "COURSES_GROUPMIN": {
             return {
-                [prereqID]: STATUSES.UNVERIFIABLE
+                [prereqID]: STATUSES.UNIMPLEMENTED
             };
         }
-        // To handle unknown/unimplemented cases
+        case "FCES_MIN": {
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            if (validScheduledCourses === null) {
+                return {
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                return {
+                    [prereqID]: (prerequisiteObj["count"] <= validScheduledCourses
+                        .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"])
+                        .map(dependentCourseID => dependentCourseID[6] === 'H' ? 0.5 : 1)
+                        .reduce((x, y) => x + y, 0)) ? 
+                            STATUSES.COMPLETE : 
+                            STATUSES.INCOMPLETE
+                }
+            }
+        }
+        case "FCES_LIST": {
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            if (validScheduledCourses === null) {
+                return {
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                // TODO: Currently, we do not check if every course in the categories is satisfied or not. This is becuase they're stored as regexes and not as the actual lists, so one would have to go through all 5000 courses to see what the actual category is.
+                return {
+                    [prereqID]: (validScheduledCourses
+                        .filter(dependentCourseID => scheduledCourses[courseID]["y"] >= scheduledCourses[dependentCourseID]["y"])
+                        .length === 0) ? 
+                            STATUSES.COMPLETE : 
+                            STATUSES.INCOMPLETE
+                }
+            }
+        }
+        case "FCES_MAX": {
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            if (validScheduledCourses === null) {
+                return {
+                    [prereqID] : STATUSES.UNVERIFIABLE
+                }
+            } else {
+                return {
+                    [prereqID]: (prerequisiteObj["count"] >= validScheduledCourses
+                        .filter(dependentCourseID => 
+                            scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"])
+                        .map(dependentCourseID => dependentCourseID[6] === 'H' ? 0.5 : 1)
+                        .reduce((x, y) => x + y, 0)) ? 
+                            STATUSES.COMPLETE : 
+                            STATUSES.INCOMPLETE
+                }
+            }
+        }
+        case "FCES_GROUPMIN": {
+            return {
+                [prereqID]: STATUSES.UNIMPLEMENTED
+            };
+        }
+        case "PROGRAM_MIN": {
+            return {
+                [prereqID]: (prerequisiteObj["programs"]
+                    .filter(dependentProgramID => scheduledPrograms.includes(dependentProgramID))
+                    .length >= prerequisiteObj.count) ? 
+                        STATUSES.COMPLETE : 
+                        STATUSES.INCOMPLETE
+            }
+        }
         default: {
-            console.log(`${courseID}, ${prereqID}: Unknown COUNTTYPE: ${prerequisiteObj.countType}`);
+            console.log(`${courseID}, ${prereqID}: Unknown type: ${prerequisiteObj.type}`);
             return {
                 [prereqID]: STATUSES.UNIMPLEMENTED
             };

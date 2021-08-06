@@ -1,0 +1,14 @@
+# Everything
+*
+# except
+!resources/
+!src/
+!utils
+!.gitignore
+!.gitmodules
+!CNAME
+!Dockerfile
+!index.html
+!LICENSE
+!main.js
+!README.md
