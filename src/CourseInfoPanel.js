@@ -1,5 +1,5 @@
 import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID } from "./Constants.js";
-const { default: CourseData } = await import("../resources/CourseData.js");
+import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 
 

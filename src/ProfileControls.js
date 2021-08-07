@@ -3,8 +3,8 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
 
-const { default: CourseData } = await import("../resources/CourseData.js");
-const { default: ProgramData } = await import("../resources/ProgramData.js");
+import CourseData from "../resources/CourseData.js";
+import ProgramData from "../resources/ProgramData.js";
 
 export class ProfileControls extends HTMLDivElement {
     #courseSlot;
