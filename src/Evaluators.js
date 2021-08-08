@@ -341,17 +341,27 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                     [prereqID]: STATUSES.UNVERIFIABLE
                 }
             } else {
-                // TODO: Currently, we do not check if every course in the categories is satisfied or not. This is becuase they're stored as regexes and not as the actual lists, so one would have to go through all 5000 courses to see what the actual category is.
-                return {
-                    [prereqID]: (validScheduledCourses
-                        .filter(dependent_courseID => 
-                            scheduledCourses[courseID]["y"] >= scheduledCourses[dependent_courseID]["y"])
-                        .length === 0) ? 
-                            STATUSES.COMPLETE : 
-                            STATUSES.INCOMPLETE
+                let tentativeCourses = validScheduledCourses
+                    .filter(dependent_courseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependent_courseID]["y"]);
+                let satisfied = true;
+                // Check that every course listed is present here.
+                for (const courseID of prerequisiteObj["courses"]) {
+                    if (!tentativeCourses.includes(courseID)) { 
+                        satisfied = false;
+                        break;
+                    }
                 }
+                // Currently, none of the prerequisites which use COURSES_LIST use the categories. Thus, they are ignored here.
+
+                return {
+                    // We map each course see if it's in the tentative list which has been filtered, then and all of them together to ensure they're all there.
+                    [prereqID]: satisfied ? 
+                            STATUSES.COMPLETE :
+                            STATUSES.INCOMPLETE
+                };
             }
         }
+        case "FCES_GROUPMIN":
         case "FCES_MIN": {
             const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
             if (validScheduledCourses === null) {
@@ -367,6 +377,39 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                             STATUSES.COMPLETE : 
                             STATUSES.INCOMPLETE
                 }
+            }
+        }
+        // This is very similar to COURSES_MIN-RECURS: see it for more details.
+        case "FCES_MIN-RECURS": {
+            let dependentPrereqs = {};
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            // If this one itself cannot be verified, mark all as unverifiable
+            if (validScheduledCourses === null) {
+                prerequisiteObj["dependentPrereqs"].forEach(dependentPrereqID => {
+                    dependentPrereqs[dependentPrereqID] = STATUSES.UNVERIFIABLE;
+                });
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                let tentativeCourses = validScheduledCourses
+                    .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"]);
+                let tentativeScheduledCourses = Object.fromEntries(Object.entries(scheduledCourses)
+                    .filter(([courseID, _]) => tentativeCourses.includes(courseID)));
+                tentativeScheduledCourses[courseID] = scheduledCourses[courseID];
+                // Pass this to every dependent prereq for further checks.
+                for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
+                    dependentPrereqs = {...dependentPrereqs, ...evaluateCoursePrerequisite(courseID, dependentPrereqID, tentativeScheduledCourses, scheduledPrograms)}
+                }
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: tentativeCourses
+                        .map(dependentCourseID => dependentCourseID[6] === 'H' ? 0.5 : 1)
+                        .reduce((x, y) => x + y, 0) >= prerequisiteObj["count"] ? 
+                            STATUSES.COMPLETE:
+                            STATUSES.INCOMPLETE
+                };
             }
         }
         case "FCES_LIST": {
