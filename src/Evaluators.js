@@ -220,7 +220,7 @@ function getTotalCreditsOfCourseIDList(courses) {
 function getValidScheduledCoursesForPrerequisite(courses, categories, scheduledCoursesArray) {
     // First, we check that all the course categories are valid. If even one isn't, we can't be sure of this anyway
     for (const categoryID of categories) {
-        if (!(CourseCategoriesData[categoryID]["validatable"])) {
+        if (!(categoryID in CourseCategoriesData && CourseCategoriesData[categoryID]["validatable"])) {
             return null
         }
     }
