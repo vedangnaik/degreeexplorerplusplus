@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID } from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND } from "./Constants.js";
 import CourseData from "../resources/CourseData.js";
 import { Spacer } from "./Spacer.js";
 
@@ -173,6 +173,10 @@ class RequisitesPanel extends HTMLDivElement {
                     break;
                 case STATUSES.NOTE:
                     td.innerText = `${NOTE_SYMBOL} Note`;
+                    break;
+                case STATUSES.UNIMPLEMENTED:
+                    td.innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
+                    tr.style.background = UNIMPLEMENTED_BACKGROUND;
                     break;
             }
         tr.appendChild(td)
