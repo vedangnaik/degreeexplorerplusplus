@@ -269,7 +269,7 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
             }
             // Mark others NA if so
             if (prerequisiteObj["count"] <= count) {
-                for (const dependentPrereqID in dependentPrereqs) {
+                for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
                     if (!usedPrereqs.includes(dependentPrereqID)) {
                         dependentPrereqs[dependentPrereqID] = STATUSES.NA;
                     }
