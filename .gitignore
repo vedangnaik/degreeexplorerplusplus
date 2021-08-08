@@ -2,6 +2,7 @@
 *
 # except
 !resources/
+!resources/**
 !src
 !src/**
 !utils
