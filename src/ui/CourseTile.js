@@ -1,6 +1,8 @@
-import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, UNVERIFIABLE_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_EVALUATED_COLOR } from "./Constants.js";
-import CourseData from "../resources/CourseData.js";
-import { evaluateCoursePrerequisite } from "./Evaluators.js";
+import { INCOMPLETE_COLOR, GLOBAL_COURSE_INFO_PANEL_ID, COMPLETE_COLOR, UNVERIFIABLE_COLOR, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_EVALUATED_COLOR } from "../Constants.js";
+import { CourseData } from "../../resources/__exports__.js";
+import { evaluateCoursePrerequisite } from "../evaluators/__exports__.js";
+
+
 
 export class CourseTile extends HTMLDivElement {
     #evaluatedPrerequisites = {};

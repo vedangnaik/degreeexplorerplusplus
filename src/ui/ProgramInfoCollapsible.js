@@ -1,8 +1,7 @@
-import ProgramData from "../resources/ProgramData.js";
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND} from "./Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND} from "../Constants.js";
 import { Spacer } from "./Spacer.js";
-import { evaluateProgramRequirement } from "./Evaluators.js";
-
+import { evaluateProgramRequirement } from "../evaluators/__exports__.js";
+import { ProgramData } from "../../resources/__exports__.js";
 
 
 export class ProgramInfoCollapsible extends HTMLDivElement {

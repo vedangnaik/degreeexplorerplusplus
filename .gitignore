@@ -2,7 +2,8 @@
 *
 # except
 !resources/
-!src/
+!src
+!src/**
 !utils
 !.gitignore
 !.gitmodules
@@ -10,5 +11,4 @@
 !Dockerfile
 !index.html
 !LICENSE
-!main.js
 !README.md

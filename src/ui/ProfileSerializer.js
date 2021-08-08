@@ -1,5 +1,6 @@
-import { GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID, NEW_PROFILE_JSON } from "./Constants.js";
+import { GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID, NEW_PROFILE_JSON } from "../Constants.js";
 import { Spacer } from "./Spacer.js";
+
 
 
 export class ProfileSerializer extends HTMLDivElement {

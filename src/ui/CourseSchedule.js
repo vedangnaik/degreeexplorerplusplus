@@ -1,4 +1,4 @@
-import { DELETE_COLOR, DELETE_SYMBOL, GLOBAL_COURSE_SCHEDULE_ID } from "./Constants.js";
+import { DELETE_COLOR, DELETE_SYMBOL, GLOBAL_COURSE_SCHEDULE_ID } from "../Constants.js";
 import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { CourseTile } from "./CourseTile.js";
 
