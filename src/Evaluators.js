@@ -285,6 +285,39 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                 }
             }
         }
+        case "COURSES_MIN-RECURS": {
+            let dependentPrereqs = {};
+            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
+            // If this one itself cannot be verified, mark all as unverifiable
+            if (validScheduledCourses === null) {
+                prerequisiteObj["dependentPrereqs"].forEach(dependentPrereqID => {
+                    dependentPrereqs[dependentPrereqID] = STATUSES.UNVERIFIABLE;
+                });
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: STATUSES.UNVERIFIABLE
+                }
+            } else {
+                let tentativeCourses = validScheduledCourses
+                    .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"]);
+                // Get only that subset of scheduledCourses which includes those that are valid for this prereq. We ensure that this course's ID is kept in the scheduled list since it's being passes down one more stack.
+                let tentativeScheduledCourses = Object.fromEntries(Object.entries(scheduledCourses)
+                    .filter(([courseID, _]) => tentativeCourses.includes(courseID)));
+                tentativeScheduledCourses[courseID] = scheduledCourses[courseID];
+                // Pass this to every dependent prereq for further checks.
+                for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
+                    dependentPrereqs = {...dependentPrereqs, ...evaluateCoursePrerequisite(courseID, dependentPrereqID, tentativeScheduledCourses, scheduledPrograms)}
+                }
+                // Note: Here, we do not change the status of the parent prereq even if its children have failed. This is because the prereq description usually doesn't indicate a relationship between them. TODO: Perhaps it'd be best to add a 'courses used' column to the prereqs as well?
+                return {
+                    ...dependentPrereqs,
+                    [prereqID]: tentativeCourses.length >= prerequisiteObj["count"] ? 
+                        STATUSES.COMPLETE:
+                        STATUSES.INCOMPLETE
+                };
+            }
+        }
+        case "COURSES_GROUPMIN":
         case "COURSES_MIN": {
             const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
             if (validScheduledCourses === null) {
@@ -292,41 +325,12 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                     [prereqID]: STATUSES.UNVERIFIABLE
                 }
             } else {
-                let dependentPrereqs = {};
-                let tentativeCourses = validScheduledCourses
-                    .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"]);
-
-                if (prerequisiteObj["dependentPrereqs"] && tentativeCourses.length >= prerequisiteObj["count"]) {
-                    // Get only that subset of scheduledCourses which includes those that are valid for this prereq.
-                    let tentativeScheduledCourses = Object.fromEntries(Object.entries(scheduledCourses)
-                        .filter(([courseID, _]) => tentativeCourses.includes(courseID)));
-                    // Pass this to every dependent prereq for further checks.
-                    for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
-                        dependentPrereqs = {...dependentPrereqs, ...evaluateCoursePrerequisite(courseID, dependentPrereqID, tentativeScheduledCourses, scheduledPrograms)}
-                    }
-                    // Note: Here, we do not change the status of the parent prereq even if its children have failed. This is because, technically, the prereq description doesn't indicate a relationship between them. TODO: Perhaps it'd be best to add a 'courses used' column to the prereqs as well?
-                    return {
-                        ...dependentPrereqs,
-                        [prereqID]: STATUSES.COMPLETE
-                    };
-
-                } else if (prerequisiteObj["dependentPrereqs"] && tentativeCourses.length < prerequisiteObj["count"]) {
-                    // Return INCOMPLETE for everybody here
-                    for (const dependentPrereqID of prerequisiteObj["dependentPrereqs"]) {
-                        dependentPrereqs[dependentPrereqID] = STATUSES.INCOMPLETE;
-                    }
-                    return {
-                        ...dependentPrereqs,
-                        [prereqID]: STATUSES.INCOMPLETE
-                    };
-
-                } else {
-                    // Return based only on the tentative courses
-                    return {
-                        [prereqID]: tentativeCourses.length >= prerequisiteObj["count"] ?
-                            STATUSES.COMPLETE : 
-                            STATUSES.INCOMPLETE
-                    }
+                return {
+                    [prereqID]: validScheduledCourses
+                        .filter(dependentCourseID => scheduledCourses[courseID]["y"] < scheduledCourses[dependentCourseID]["y"])
+                        .length >= prerequisiteObj["count"] ?
+                        STATUSES.COMPLETE : 
+                        STATUSES.INCOMPLETE
                 }
             }
         }
@@ -398,20 +402,6 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
                             STATUSES.COMPLETE : 
                             STATUSES.INCOMPLETE
                 }
-            }
-        }
-        case "COURSES_GROUPMIN": {
-            const validScheduledCourses = getValidScheduledCoursesForPrerequisite(prerequisiteObj["courses"], prerequisiteObj["categories"], Object.keys(scheduledCourses));
-            if (validScheduledCourses === null) {
-                return {
-                    [prereqID]: STATUSES.UNVERIFIABLE
-                }
-            } else {
-                return {
-                    [prereqID]: validScheduledCourses.length >= prerequisiteObj["count"] ? 
-                        STATUSES.COMPLETE:
-                        STATUSES.INCOMPLETE
-                };
             }
         }
         case "FCES_GROUPMIN": {
