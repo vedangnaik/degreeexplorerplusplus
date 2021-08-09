@@ -1,8 +1,42 @@
 import { STATUSES } from "../Constants.js";
 import { ProgramData, CourseCategoriesData } from "../../resources/__exports__.js"
 
+
+
+// Returns all courses from scheduled courses which equal the "course" objects and match the "category" regexes from requisiteItems. If any of the regexes are not validatable, then the whole thing is marked is not validatable.
+function getAllApplicableCoursesAndValidity(requisiteItems, scheduledCourses) {
+    let courses = [];
+    let validatable = true;
+    // Courses: Get all courses in requisiteItems which are also in sheduledCourses
+    courses = courses.concat(
+        requisiteItems
+            .filter(dependent_course => dependent_course["itemType"] === "course" && dependent_course["code"] in scheduledCourses)
+            .map(dependent_course => dependent_course["code"])
+    );
+    // Categories: Get all courses from scheduledCourses which belong to some category in requisiteItems
+    requisiteItems
+        .filter(dependent_course => dependent_course["itemType"] == "category")
+        .forEach(dependent_course => {
+            if (!CourseCategoriesData[dependent_course["code"]]["validatable"]) {
+                validatable = false;
+                return; // quit this loop now, no point continuing 
+            }
+            let regex = new RegExp(CourseCategoriesData[dependent_course["code"]]["regex"]);
+            courses = courses.concat(
+                Object.keys(scheduledCourses).filter(courseID => regex.test(courseID))
+            );
+        });
+    return [courses, validatable];
+}
+
+function getTotalCreditsOfCourseIDList(courses) {
+    return courses
+        .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
+        .reduce((x, y) => x + y, 0);
+}
+
 // These are all the types in the programs. 6/8 have been done but consolidation is needed.
-// {'REUSE', 'COMPLEX', 'NOTE', 'LIST', 'MINIMUM', 'GROUPMINIMUM', 'NO_REUSE', 'GROUPMAXIMUM'}
+// {'MINIMUM', 'LIST', 'NO_REUSE', 'GROUPMINIMUM', 'COMPLEX', 'NOTE', 'REUSE', 'GROUPMAXIMUM'}
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses, scheduledPrograms) {
     const requirementObj = ProgramData[programID].detailAssessments[reqID];
 
@@ -176,36 +210,4 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, s
             }
         }
     }
-}
-
-// Returns all courses from scheduled courses which equal the "course" objects and match the "category" regexes from requisiteItems. If any of the regexes are not validatable, then the whole thing is marked is not validatable.
-function getAllApplicableCoursesAndValidity(requisiteItems, scheduledCourses) {
-    let courses = [];
-    let validatable = true;
-    // Courses: Get all courses in requisiteItems which are also in sheduledCourses
-    courses = courses.concat(
-        requisiteItems
-            .filter(dependent_course => dependent_course["itemType"] === "course" && dependent_course["code"] in scheduledCourses)
-            .map(dependent_course => dependent_course["code"])
-    );
-    // Categories: Get all courses from scheduledCourses which belong to some category in requisiteItems
-    requisiteItems
-        .filter(dependent_course => dependent_course["itemType"] == "category")
-        .forEach(dependent_course => {
-            if (!CourseCategoriesData[dependent_course["code"]]["validatable"]) {
-                validatable = false;
-                return; // quit this loop now, no point continuing 
-            }
-            let regex = new RegExp(CourseCategoriesData[dependent_course["code"]]["regex"]);
-            courses = courses.concat(
-                Object.keys(scheduledCourses).filter(courseID => regex.test(courseID))
-            );
-        });
-    return [courses, validatable];
-}
-
-function getTotalCreditsOfCourseIDList(courses) {
-    return courses
-        .map(dependent_courseID => dependent_courseID[6] === 'H' ? 0.5 : 1)
-        .reduce((x, y) => x + y, 0);
 }
