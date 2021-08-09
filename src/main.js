@@ -1,5 +1,5 @@
 // Side-effect import the UI classes here to get their constructors registered for the window to use.
-import "./ui/__exports__.js"
+import "./ui/exports.js"
 // Specific imports this main needs for the final setup
 import { GLOBAL_COURSE_INFO_PANEL_ID, GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID } from "./Constants.js";
 

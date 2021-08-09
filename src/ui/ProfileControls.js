@@ -2,7 +2,7 @@ import { CourseSlotDiv } from "./CourseSlotDiv.js";
 import { Spacer } from "./Spacer.js";
 import { CourseTile } from "./CourseTile.js";
 import { GLOBAL_COURSE_INFO_PANEL_ID, GLOBAL_COURSE_SCHEDULE_ID, GLOBAL_PROGRAM_SCHEDULE_ID } from "../Constants.js";
-import { CourseData, ProgramData } from "../../resources/__exports__.js";
+import { CourseData, ProgramData } from "../../resources/exports.js";
 
 
 

@@ -1,5 +1,5 @@
 import { STATUSES } from "../Constants.js";
-import { CourseData, CourseCategoriesData } from "../../resources/__exports__.js";
+import { CourseData, CourseCategoriesData } from "../../resources/exports.js";
 
 
 function getValidScheduledCoursesForPrerequisite(courses, categories, scheduledCoursesArray) {

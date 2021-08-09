@@ -1,5 +1,5 @@
 import { STATUSES } from "../Constants.js";
-import { ProgramData, CourseCategoriesData } from "../../resources/__exports__.js"
+import { ProgramData, CourseCategoriesData } from "../../resources/exports.js"
 
 
 
