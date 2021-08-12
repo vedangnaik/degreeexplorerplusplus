@@ -84,6 +84,26 @@ function markRequirementAsNA(programID, reqID, requirementStatuses) {
 }
 
 /**
+ * @param {Array} courses List of courses from which to choose numCredits worth of courses. 
+ * @param {Number} numCredits Number of credits worth of courses to choose.
+ * @returns [true, [...]] if the desired worth of courses has been found, else [false, []].
+ */
+function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
+    let usedCourses = [];
+    let count = 0;
+    
+    for (const courseID of courses) {
+        usedCourses.push(courseID)
+        count += courseID[6] == 'Y' ? 1.0 : 0.5;
+        // The moment we hit the threshold, return.
+        if (count >= numCredits) {
+            return [true, usedCourses];
+        }
+    }
+    return [false, []];
+}
+
+/**
  * @param {Array} courses Courses to calculate total number of credits of.
  * @returns Total credits worth of courses.
  */
@@ -124,11 +144,11 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         // At least "count" credits in courses belonging to "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            const numCredits = getTotalCreditsOfCoursesList(coursesInSchedule);
+            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
             return {
                 [reqID]: {
-                    "status": numCredits >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    usedCourses: numCredits >= requirementObj["count"] ? coursesInSchedule : []
+                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    usedCourses: satisfied ? usedCourses : []
                 }
             };
         }
@@ -141,7 +161,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             const numCredits = getTotalCreditsOfCoursesList(coursesInSchedule);
             let recursReqs = {};
             if (numCredits >= requirementObj["count"]) {
-                // We need to recurse here to check
+                // We need to recurse here to check.
             } else {
                 // We can return false immediately. None of other requirements can do anything anyway. However, we still need to check the other requirements, since the user can use that information to see how to fulfill this one.
                 for (const recursReqID of requirementObj["recursReqs"]) {
@@ -183,7 +203,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
                 const dependentStatus = dependentReqs[dependentReqID]["status"];
                 if (dependentStatus !== STATUSES.INCOMPLETE && dependentStatus !== STATUSES.UNIMPLEMENTED) {
                     usedPrereqs.push(dependentReqID);
-                    usedCourses.concat(dependentReqs[dependentReqID]["usedCourses"]);
+                    usedCourses = usedCourses.concat(dependentReqs[dependentReqID]["usedCourses"]);
                     count += 1;
                 }
             }

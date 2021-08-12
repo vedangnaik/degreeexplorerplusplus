@@ -153,6 +153,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     // Sets all the rows back to the default color, clear the Status, Courses Used, and Credits columns, reset the background color of the header, and clear the evaluatedRequirements object.
     resetProgram() {
         for (const row of Object.values(this.#requirementRows)) {
+            row.style.background = "revert";
             row.style.backgroundColor = "revert";
             row.children[0].innerText = '';
             row.children[3].innerText = '';
@@ -177,45 +178,46 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         for (const reqID in this.#requirementRows) {
             // reqID is gauranteed to be in this object so we don't have to check.
             const row = this.#requirementRows[reqID];
-            const status = evaluatedRequirements[reqID].status;
-            const usedCourses = evaluatedRequirements[reqID].usedCourses;
+            // We show the used courses regardless of the status since even for a failure, they'll help the user decide how to fix it.
+            const usedCourses = evaluatedRequirements[reqID]["usedCourses"];
+            row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
+            // We assign different styles and other stuff based on the status here.
+            const status = evaluatedRequirements[reqID]["status"];
             switch (status) {
-            case STATUSES.COMPLETE:
-                row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
-                row.style.backgroundColor = COMPLETE_COLOR;
-                row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
-                row.children[4].innerText = usedCourses
-                    .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
-                    .reduce((x, y) => x + y, 0.0)
-                    .toFixed(2);
-                break;
-            case STATUSES.INCOMPLETE:
-                incomplete = true;
-                row.children[0].innerText = `${INCOMPLETE_SYMBOL} Incomplete`;
-                row.style.backgroundColor = INCOMPLETE_COLOR;
-                break;
-            case STATUSES.NA:
-                row.children[0].innerText = `${NOT_USED_SYMBOL} Not Used`;
-                row.style.backgroundColor = NOT_USED_COLOR;
-                break;
-            case STATUSES.UNVERIFIABLE:
-                warning = true;
-                row.children[0].innerText = `${UNVERIFIABLE_SYMBOL} Unverifiable`;
-                row.style.backgroundColor = UNVERIFIABLE_COLOR;
-                row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
-                row.children[4].innerText = usedCourses
-                    .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
-                    .reduce((x, y) => x + y, 0.0)
-                    .toFixed(2);
-                break;
-            case STATUSES.NOTE:
-                row.children[0].innerText = `${NOTE_SYMBOL} Note`;
-                break;
-            case STATUSES.UNIMPLEMENTED:
-                warning = true;
-                row.children[0].innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
-                row.style.background = UNIMPLEMENTED_BACKGROUND;
-                break;
+                case STATUSES.COMPLETE:
+                    row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
+                    row.style.backgroundColor = COMPLETE_COLOR;
+                    row.children[4].innerText = usedCourses
+                        .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
+                        .reduce((x, y) => x + y, 0.0)
+                        .toFixed(2);
+                    break;
+                case STATUSES.INCOMPLETE:
+                    incomplete = true;
+                    row.children[0].innerText = `${INCOMPLETE_SYMBOL} Incomplete`;
+                    row.style.backgroundColor = INCOMPLETE_COLOR;
+                    break;
+                case STATUSES.NA:
+                    row.children[0].innerText = `${NOT_USED_SYMBOL} Not Used`;
+                    row.style.backgroundColor = NOT_USED_COLOR;
+                    break;
+                case STATUSES.UNVERIFIABLE:
+                    warning = true;
+                    row.children[0].innerText = `${UNVERIFIABLE_SYMBOL} Unverifiable`;
+                    row.style.backgroundColor = UNVERIFIABLE_COLOR;
+                    row.children[4].innerText = usedCourses
+                        .map(courseID => courseID[6] === 'H' ? 0.5 : 1.0)
+                        .reduce((x, y) => x + y, 0.0)
+                        .toFixed(2);
+                    break;
+                case STATUSES.NOTE:
+                    row.children[0].innerText = `${NOTE_SYMBOL} Note`;
+                    break;
+                case STATUSES.UNIMPLEMENTED:
+                    warning = true;
+                    row.children[0].innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
+                    row.style.background = UNIMPLEMENTED_BACKGROUND;
+                    break;
             }
         }
 
