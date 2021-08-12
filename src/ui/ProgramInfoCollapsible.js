@@ -161,12 +161,12 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         this.collapsibleHeaderDiv.style.backgroundColor = NOT_EVALUATED_COLOR;
     }
 
-    evaluateRequirements(scheduledCourses, scheduledPrograms) {
+    evaluateRequirements(scheduledCourses) {
         // Yeah, don't ask why it's called this.
         let evaluatedRequirements = {};
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
             if (!(reqID in evaluatedRequirements)) {
-                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, scheduledCourses, scheduledPrograms)};
+                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, scheduledCourses)};
             }
         });
 
