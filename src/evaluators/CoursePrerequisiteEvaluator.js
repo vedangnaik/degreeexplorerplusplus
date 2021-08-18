@@ -206,9 +206,9 @@ export function evaluateCoursePrerequisite(courseID, prereqID, scheduledCourses,
             } else {
                 // TODO: Currently, we do not check if every course in the categories is satisfied or not. This is becuase they're stored as regexes and not as the actual lists, so one would have to go through all 5000 courses to see what the actual category is.
                 return {
-                    [prereqID]: (validScheduledCourses
-                        .filter(dependentCourseID => scheduledCourses[courseID]["y"] >= scheduledCourses[dependentCourseID]["y"])
-                        .length === 0) ? 
+                    [prereqID]: prerequisiteObj["courses"]
+                        .map(courseID => validScheduledCourses.includes(courseID))
+                        .reduce((x, y) => x && y, true) ? 
                             STATUSES.COMPLETE : 
                             STATUSES.INCOMPLETE
                 }
