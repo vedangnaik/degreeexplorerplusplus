@@ -1,4 +1,4 @@
-import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPELTE_SYMBOL as COMPLETE_SYMBOL, INCOMPELTE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND} from "../Constants.js";
+import { INCOMPLETE_COLOR, COMPLETE_COLOR, UNVERIFIABLE_COLOR, COMPLETE_SYMBOL as COMPLETE_SYMBOL, INCOMPLETE_SYMBOL as INCOMPLETE_SYMBOL, NOTE_SYMBOL, UNVERIFIABLE_SYMBOL, DELETE_SYMBOL, DELETE_COLOR, STATUSES, NOT_USED_SYMBOL, NOT_USED_COLOR, NOT_EVALUATED_COLOR, UNIMPLEMENTED_SYMBOL, UNIMPLEMENTED_BACKGROUND} from "../Constants.js";
 import { Spacer } from "./Spacer.js";
 import { evaluateProgramRequirement } from "../evaluators/exports.js";
 import { ProgramData } from "../../resources/exports.js";
@@ -176,7 +176,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         let warning = false;
 
         for (const reqID in this.#requirementRows) {
-            // reqID is gauranteed to be in this object so we don't have to check.
+            // reqID is guaranteed to be in this object so we don't have to check.
             const row = this.#requirementRows[reqID];
             // We show the used courses regardless of the status since even for a failure, they'll help the user decide how to fix it.
             const usedCourses = evaluatedRequirements[reqID]["usedCourses"];

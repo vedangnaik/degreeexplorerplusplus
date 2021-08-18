@@ -11,8 +11,8 @@ export const DELETE_COLOR = "red";
 export const NOT_USED_COLOR = "lightgrey";
 export const UNIMPLEMENTED_BACKGROUND = "repeating-linear-gradient(135deg, #000000ab 0% 10%, #d7a21996 10% 20%)"
 // Eye-candy emojis for the same ;)
-export const COMPELTE_SYMBOL = '✔️';
-export const INCOMPELTE_SYMBOL = '❌';
+export const COMPLETE_SYMBOL = '✔️';
+export const INCOMPLETE_SYMBOL = '❌';
 export const UNVERIFIABLE_SYMBOL = '⚠️';
 export const NOT_USED_SYMBOL = '🚫';
 export const NOTE_SYMBOL = '📝';
