@@ -1,39 +1,6 @@
 import { STATUSES } from "../Constants.js";
 import { ProgramData, CourseCategoriesData } from "../../resources/exports.js";
 
-// case "NO_REUSE": {
-//     // Evaluate all requirements this one depends on first
-//     let dependentReqs = {};
-//     for (const dependentReq of requirementObj.requisiteItems) {
-//         dependentReqs = {...dependentReqs, ...evaluateProgramRequirement(programID, dependentReq["code"], scheduledCourses, scheduledPrograms)};
-//     }
-//     // Get all the used courses
-//     let allUsedCourses = [];
-//     for (const dependentReqID in dependentReqs) {
-//         allUsedCourses.push(dependentReqs[dependentReqID].usedCourses);
-//     }
-//     // Get the intersection of all the used courses using this snippet from MDN.
-//     const usedCoursesIntersection = allUsedCourses.reduce((usedCoursesArrayA, usedCoursesArrayB) => {
-//         const setA = new Set(usedCoursesArrayA);
-//         const setB = new Set(usedCoursesArrayB);
-//         let intersection = new Set();
-//         for (let elem of setB) {
-//             if (setA.has(elem)) {
-//                 intersection.add(elem);
-//             }
-//         }
-//         return intersection;
-//     }, []);
-//     // If the intersection is empty, return COMPLETE, else INCOMPLETE.
-//     return {
-//         ...dependentReqs,
-//         [reqID]: {
-//             "status": usedCoursesIntersection.size === 0 ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-//             "usedCourses": []
-//         }
-//     };
-// }
-
 
 /**
  * @param {Array} scheduledCourses Courses in the user's schedule.
@@ -94,7 +61,7 @@ function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
     
     for (const courseID of courses) {
         usedCourses.push(courseID)
-        count += courseID[6] == 'Y' ? 1.0 : 0.5;
+        count += courseID[6] === 'Y' ? 1.0 : 0.5;
         // The moment we hit the threshold, return.
         if (count >= numCredits) {
             return [true, usedCourses];
@@ -103,15 +70,15 @@ function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
     return [false, []];
 }
 
-/**
- * @param {Array} courses Courses to calculate total number of credits of.
- * @returns Total credits worth of courses.
- */
-function getTotalCreditsOfCoursesList(courses) {
-    return courses
-        .map(courseID => courseID[6] == 'Y' ? 1.0 : 0.5)
-        .reduce((x, y) => x + y, 0.0);
-}
+// /**
+//  * @param {Array} courses Courses to calculate total number of credits of.
+//  * @returns Total credits worth of courses.
+//  */
+// function getTotalCreditsOfCoursesList(courses) {
+//     return courses
+//         .map(courseID => courseID[6] == 'Y' ? 1.0 : 0.5)
+//         .reduce((x, y) => x + y, 0.0);
+// }
 
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
     const requirementObj = ProgramData[programID].detailAssessments[reqID];
@@ -158,21 +125,51 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])[1]);
 
-            const numCredits = getTotalCreditsOfCoursesList(coursesInSchedule);
+            // These recursReqs are always going to be either GROUPMAX or GROUPMIN. coursesInSchdule will be modifed in place by the recursive calls.
             let recursReqs = {};
-            if (numCredits >= requirementObj["count"]) {
-                // We need to recurse here to check.
-            } else {
-                // We can return false immediately. None of other requirements can do anything anyway. However, we still need to check the other requirements, since the user can use that information to see how to fulfill this one.
-                for (const recursReqID of requirementObj["recursReqs"]) {
-                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+            }
+
+            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
+            return {
+                ...recursReqs,
+                [reqID]: {
+                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    usedCourses: usedCourses
                 }
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": coursesInSchedule
-                    }
+            }
+        }
+
+        case "COURSES/FCES/GROUPMAX": {
+            const coursesToFilterWith = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+            let usedCourses = scheduledCourses.filter(courseID => coursesToFilterWith.includes(courseID));
+            while (usedCourses.length > requirementObj["count"]) {
+                const courseToRemove = usedCourses.pop();
+                scheduledCourses.splice(scheduledCourses.indexOf(courseToRemove), 1);
+            }
+            return {
+                [reqID]: {
+                    "status": STATUSES.COMPLETE,
+                    "usedCourses": usedCourses
+                }
+            }
+        }
+
+        case "CATEGORIES/FCES/GROUPMAX": {
+            // Get the courses we are supposed to remove the excesses from.
+            const [validatable, coursesToFilterWith] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
+            // If we have all valid categories, grab their intersection with scheduledCourses. Else, return empty.
+            let usedCourses = validatable ? scheduledCourses.filter(courseID => coursesToFilterWith.includes(courseID)) : [];
+            // Remove an excess courses from both the usedCourses and scheduledCourses, mutating both in place
+            while (usedCourses.length > requirementObj["count"]) {
+                const courseToRemove = usedCourses.pop();
+                scheduledCourses.splice(scheduledCourses.indexOf(courseToRemove), 1);
+            }
+            return {
+                [reqID]: {
+                    "status": validatable ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
+                    "usedCourses": usedCourses
                 }
             }
         }
@@ -243,14 +240,12 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
-        case "CATEGORIES/FCES/GROUPMAX":
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/FCES/GROUPMIN/RECURS":
         case "CATEGORIES/FCES/MIN":
         case "CATEGORIES/FCES/MIN/RECURS":
         case "CATEGORIES/NUM/GROUPMIN":
         case "CATEGORIES/NUM/MIN":
-        case "COURSES/FCES/GROUPMAX":
         case "COURSES/FCES/GROUPMIN":
         case "COURSES/FCES/GROUPMIN/RECURS":
         case "COURSES/FCES/MIN/RECURS":
@@ -261,7 +256,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "COURSES/NUM/MIN/RECURS":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "COURSES_CATEGORIES/FCES/MIN":
-        case "COURSES_CATEGORIES/FCES/MIN/RECURS":
         case "REQUIREMENTS/NUM/NO_REUSE":
         case "REQUIREMENTS/REQS/MIN/RECURS": { 
             return {
