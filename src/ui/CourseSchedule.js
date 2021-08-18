@@ -65,20 +65,17 @@ export class CourseSchedule extends HTMLTableElement {
                             this.#semesterSelect.appendChild(summerOption);
                             this.#semesterSelect.onchange = this.#refreshSemsters.bind(this);
                         selectDiv.appendChild(this.#semesterSelect);
-                            this.#yearSelect = document.createElement('select');
+                            this.#yearSelect = document.createElement("input");
+                            this.#yearSelect.type = "number";
+                            this.#yearSelect.min = CourseSchedule.#ANCHOR_YEAR_MIN;
+                            this.#yearSelect.max = CourseSchedule.#ANCHOR_YEAR_MAX;
+                            this.#yearSelect.step = 1;
                             this.#yearSelect.style = `
                                 margin-right: auto;
                                 background-color: transparent;
                                 text-align-last: center;
                                 text-transform: uppercase;
                             `;
-                            for (let year = CourseSchedule.#ANCHOR_YEAR_MAX; year >= CourseSchedule.#ANCHOR_YEAR_MIN; year--) {
-                                const yearOption = document.createElement('option');
-                                yearOption.style.backgroundColor = "white";
-                                yearOption.value = year;
-                                yearOption.innerText = year;
-                                this.#yearSelect.appendChild(yearOption);
-                            }
                             this.#yearSelect.onchange = this.#refreshSemsters.bind(this);
                         selectDiv.appendChild(this.#yearSelect);
                     th.appendChild(selectDiv);
@@ -129,7 +126,7 @@ export class CourseSchedule extends HTMLTableElement {
 
     loadCourseScheduleJSON(scheduleJSON) {
         // Set the anchor year and semester
-        this.#yearSelect.children[CourseSchedule.#ANCHOR_YEAR_MAX - scheduleJSON["anchorYear"]].selected = "selected";
+        this.#yearSelect.value = scheduleJSON["anchorYear"];
         this.#semesterSelect.value = scheduleJSON["anchorSemester"];
 
         // Filter out and delete the existing course-tiles 
