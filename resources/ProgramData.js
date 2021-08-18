@@ -1549,7 +1549,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req4 and Req6 and Req7 and Req8 and Req11"
       },
       "Req13": {
@@ -3664,7 +3664,7 @@ export default {
         "description": "Note: MA PORTUGUESE - Last updated with 2020-2021 Calendar."
       },
       "Req10": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4 and Req5 and Req6"
       },
       "Req11": {
@@ -4922,7 +4922,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req3 and Req5 and Req7 and Req8"
       },
       "Req11": {
@@ -5434,7 +5434,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req11 and Req12"
       },
       "Req14": {
@@ -5511,7 +5511,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4"
       },
       "Req6": {
@@ -5916,7 +5916,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req9 and Req8 and Req1 and Req2 and Req3 and Req4 and Req5 and Req7"
       },
       "Req11": {
@@ -11001,7 +11001,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req5 and Req6 and Req7"
       },
       "Req10": {
@@ -14046,7 +14046,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11"
       },
       "Req14": {
@@ -14682,7 +14682,7 @@ export default {
         ]
       },
       "Req29": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req12 and Req20"
       },
       "Req30": {
@@ -19152,7 +19152,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3"
       },
       "Req6": {
@@ -20155,7 +20155,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3"
       },
       "Req6": {
@@ -20583,7 +20583,7 @@ export default {
         "description": "Note: MI FINE ART (HISTORY OF ART) - Last updated with 2015-2016 Calendar."
       },
       "Req10": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req4 and Req5 and Req6 and Req7"
       },
       "Req11": {
@@ -22745,7 +22745,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req5 and Req4 and Req3"
       },
       "Req7": {
@@ -23378,7 +23378,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req4 and Req5 and Req6"
       },
       "Req9": {
@@ -27096,7 +27096,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4 and Req5 and Req6"
       },
       "Req9": {
@@ -29499,7 +29499,7 @@ export default {
         "description": "Note: Reqs 24 and 25 above represent completion of the Arts & Science Internship program (ASIP) stream"
       },
       "Req27": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req12 and Req19"
       },
       "Req28": {
@@ -30007,7 +30007,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req11 and Req12 and Req16 and Req17"
       },
       "Req19": {
@@ -30497,7 +30497,7 @@ export default {
         "description": "Note: Notes: 1. It is strongly recommended that students acquire a reading knowledge of German, French, or Italian by the end of the Third Year. 2. No more than 13 FAH and VIS courses may be taken in combination. 3. Approved courses in other programs may be substituted for up to two FAH courses. See Department website for details."
       },
       "Req16": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10"
       },
       "Req17": {
@@ -37346,7 +37346,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req1 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11"
       },
       "Req14": {
@@ -38225,7 +38225,7 @@ export default {
         "description": "Note: Reqs 31 and 32 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req34": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req21 and Req26"
       },
       "Req35": {
@@ -38556,7 +38556,7 @@ export default {
         ]
       },
       "Req32": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req14 and Req16 and Req23"
       },
       "Req33": {
@@ -41691,7 +41691,7 @@ export default {
         "description": "Note: Reqs28 and 29 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req31": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req15 and Req20 and Req23"
       },
       "Req32": {
@@ -43219,7 +43219,7 @@ export default {
         "description": "Note: Reqs 27 and 28 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req30": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req14 and Req19 and Req22"
       },
       "Req31": {
@@ -44309,7 +44309,7 @@ export default {
         "description": "Note: Req26 and 27 represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req29": {
-        "type": "COMPLETE/./.",
+        "type": "NOTE/./.",
         "description": "Courses may be reused to satisfy requirements Req13 and Req18 and Req21"
       },
       "Req30": {
