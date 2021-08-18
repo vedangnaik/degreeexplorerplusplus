@@ -43,9 +43,17 @@ function markRequirementAsNA(programID, reqID, requirementStatuses) {
         "usedCourses": []
     };
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
+    console.log(programID, reqID)
+    // Mark any dependent reqs as NA
     if ("dependentReqs" in requirementObj) {
-        for (const dependentReqID in requirementObj["dependentReqs"]) {
+        for (const dependentReqID of requirementObj["dependentReqs"]) {
             markRequirementAsNA(programID, dependentReqID, requirementStatuses);
+        }
+    }
+    // Mark any recursive reqs as NA
+    if ("recursReqs" in requirementObj) {
+        for (const recursReqID of requirementObj["recursReqs"]) {
+            markRequirementAsNA(programID, recursReqID, requirementStatuses);
         }
     }
 }
