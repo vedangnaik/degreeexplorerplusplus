@@ -98,6 +98,28 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             };
         }
 
+        // At least "count" credits in courses belonging to "categories".
+        case "CATEGORIES/FCES/MIN": {
+            const [validatable, coursesInSchdule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
+            if (validatable) {
+                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
+                return {
+                    [reqID]: {
+                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                        "usedCourses": usedCourses
+                    }
+                };
+            } else {
+                return {
+                    [reqID]: {
+                        "status": STATUSES.UNVERIFIABLE,
+                        "usedCourses": []
+                    }
+                }
+            }
+        }
+
+
         // At least "count" credits in courses belonging to "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
@@ -232,7 +254,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
 
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/FCES/GROUPMIN/RECURS":
-        case "CATEGORIES/FCES/MIN":
         case "CATEGORIES/FCES/MIN/RECURS":
         case "CATEGORIES/NUM/GROUPMIN":
         case "CATEGORIES/NUM/MIN":
