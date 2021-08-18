@@ -23,8 +23,8 @@ The provided `Dockerfile` creates a Python image and automatically installs all 
 ```
 $ git clone https://github.com/vedangnaik/degreeexplorerplusplus.git
 $ cd degreeexplorerplusplus
-$ docker build .
-$ docker run -d -t -p 8000:8000 --mount type=bind,source=<absolute path to degreeexplorerplusplus>,target="/root/Desktop/degreeexplorerplusplus" <image id>
+$ docker build -t depp_dev_img .
+$ docker run -d -t -p 8000:8000 --name depp_dev_cont --mount type=bind,source=<absolute path to degreeexplorerplusplus>,target="/root/Desktop/degreeexplorerplusplus" depp_dev_img
 ```
 
 #### Normal

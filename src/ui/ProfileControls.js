@@ -106,8 +106,9 @@ export class ProfileControls extends HTMLDivElement {
             document.getElementById(courseID).evaluatePrerequisites(scheduledCourses, scheduledPrograms);
         }
 
+        // Program requirements don't need to know about the other programs you're taking.
         for (const programID of scheduledPrograms) {
-            document.getElementById(programID).evaluateRequirements(scheduledCourses, scheduledPrograms);
+            document.getElementById(programID).evaluateRequirements(Object.keys(scheduledCourses));
         }
     }
 }
