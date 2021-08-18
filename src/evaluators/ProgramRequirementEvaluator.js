@@ -67,18 +67,8 @@ function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
             return [true, usedCourses];
         }
     }
-    return [false, []];
+    return [false, usedCourses];
 }
-
-// /**
-//  * @param {Array} courses Courses to calculate total number of credits of.
-//  * @returns Total credits worth of courses.
-//  */
-// function getTotalCreditsOfCoursesList(courses) {
-//     return courses
-//         .map(courseID => courseID[6] == 'Y' ? 1.0 : 0.5)
-//         .reduce((x, y) => x + y, 0.0);
-// }
 
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
     const requirementObj = ProgramData[programID].detailAssessments[reqID];
@@ -124,13 +114,13 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             let coursesInSchedule = []
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])[1]);
-
+            
             // These recursReqs are always going to be either GROUPMAX or GROUPMIN. coursesInSchdule will be modifed in place by the recursive calls.
             let recursReqs = {};
             for (const recursReqID of requirementObj["recursReqs"]) {
                 recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
             }
-
+            
             const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
             return {
                 ...recursReqs,

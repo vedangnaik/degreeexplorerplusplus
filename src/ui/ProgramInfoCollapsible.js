@@ -180,6 +180,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             const row = this.#requirementRows[reqID];
             // We show the used courses regardless of the status since even for a failure, they'll help the user decide how to fix it.
             const usedCourses = evaluatedRequirements[reqID]["usedCourses"];
+            row.children[3].innerText += (row.children[3].innerText === "" ? "" : "\n\n");
             row.children[3].innerText = `${usedCourses.join(', ')}`.trim();
             // We assign different styles and other stuff based on the status here.
             const status = evaluatedRequirements[reqID]["status"];

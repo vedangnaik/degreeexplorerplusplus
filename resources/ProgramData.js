@@ -179,7 +179,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EAS100Y1 or EAS110Y1 or EAS120Y1 or EST100H1 or EST101H1 or FIN100H1 or FIN110H1 or FSL100H1 or FSL102H1 or FSL121Y1 or GER100Y1 or GRK101H1 or GRK102H1 or HUN100Y1 or INS210Y1 or INS215Y1 or INS220Y1 or INS230H1 or ITA100Y1 or LAT101H1 or LAT102H1 or MGR100H1 or NEW280Y1 or AFR280Y1 or NML110Y1 or NML155H1 or NML156H1 or NML260Y1 or NML270Y1 or PRT100Y1 or PRT120Y1 or RLG260H1 or RLG261H1 or RLG262H1 or RLG263H1 or RLG264H1 or SLA100H1 or SLA101H1 or SLA105Y1 or SLA106H1 or SLA107Y1 or SLA108Y1 or SLA109Y1 or SLA116H1 or SPA100Y1 or SWE100H1 or SWE101H1",
+        "description": "At least 1.0 Credit from EAS100Y1 or EAS110Y1 or EAS120Y1 or EST100H1 or EST101H1 or FIN100H1 or FIN110H1 or FSL100H1 or FSL102H1 or FSL121Y1 or GER100Y1 or GRK101H1 or GRK102H1 or HUN100Y1 or INS210Y1 or INS215Y1 or INS220Y1 or INS230H1 or ITA100Y1 or LAT101H1 or LAT102H1 or MGR100H1 or NEW280Y1 or AFR280Y1 or NML110Y1 or NML155H1 or NML156H1 or NML260Y1 or NML270Y1 or PRT100Y1 or PRT120Y1 or RLG260H1 or RLG261H1 or RLG262H1 or RLG263H1 or RLG264H1 or SLA100H1 or SLA101H1 or SLA105Y1 or SLA106H1 or SLA107Y1 or SLA108Y1 or SLA109Y1 or SLA116H1 or SPA100Y1 or SWE100H1 or SWE101H1 under constraint from Req3",
         "courses": [
           "EAS100Y1",
           "EAS110Y1",
@@ -265,7 +265,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from POL208H1 or POL201H1 or POL205H1 or POL211H1 or POL218H1 or POL219H1 or POL220H1 or POL223H1 or POL224H1",
+        "description": "At least 1.0 Credit from POL208H1 or POL201H1 or POL205H1 or POL211H1 or POL218H1 or POL219H1 or POL220H1 or POL223H1 or POL224H1 under constraint from Req7",
         "courses": [
           "POL208H1",
           "POL201H1",
@@ -343,7 +343,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from VIC271H1 or CRE271H1 or WGS273H1 or PHL273H1 or ANT204H1 or HPS200H1 or NEW240H1 or CSE240H1 or JIG322H1 or ENV333H1 or FOR302H1 or TRN312H1 or PHL373H1 or ANT366H1",
+        "description": "At least 0.5 Credits from VIC271H1 or CRE271H1 or WGS273H1 or PHL273H1 or ANT204H1 or HPS200H1 or NEW240H1 or CSE240H1 or JIG322H1 or ENV333H1 or FOR302H1 or TRN312H1 or PHL373H1 or ANT366H1 under constraint from Req9 and Req10",
         "courses": [
           "VIC271H1",
           "CRE271H1",
@@ -387,7 +387,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO220H1 or NFS284H1 or CSB202H1 or VIC326H1 or MCS326H1 or GGR329H1 or INS355H1 or WGS367H1 or ENV341H1 or NEW342H1 or CSE342H1",
+        "description": "At least 0.5 Credits from BIO220H1 or NFS284H1 or CSB202H1 or VIC326H1 or MCS326H1 or GGR329H1 or INS355H1 or WGS367H1 or ENV341H1 or NEW342H1 or CSE342H1 under constraint from Req11 and Req12",
         "courses": [
           "BIO220H1",
           "NFS284H1",
@@ -409,7 +409,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV221H1 or ENV200H1 or ESS205H1 or EEB208H1 or INS250H1 or HIS218H1 or INS240Y1 or ENV322H1 or GGR314H1 or VIC271H1 or CRE271H1 or WGS273H1 or PHL273H1 or ANT204H1 or HPS200H1 or NEW240H1 or CSE240H1 or JIG322H1 or ENV333H1 or FOR302H1 or TRN312H1 or PHL373H1 or ANT366H1 or CAS202H1 or GGR223H1 or ENV261H1 or POL205H1 or GGR334H1 or FOR303H1 or JGE331H1 or POL384H1 or ENV307H1 or TRN350H1 or ECO313H1 or ENV341H1 or BIO220H1 or NFS284H1 or CSB202H1 or VIC326H1 or MCS326H1 or GGR329H1 or INS355H1 or WGS367H1 or NEW342H1 or CSE342H1",
+        "description": "At least 0.5 Credits from ENV221H1 or ENV200H1 or ESS205H1 or EEB208H1 or INS250H1 or HIS218H1 or INS240Y1 or ENV322H1 or GGR314H1 or VIC271H1 or CRE271H1 or WGS273H1 or PHL273H1 or ANT204H1 or HPS200H1 or NEW240H1 or CSE240H1 or JIG322H1 or ENV333H1 or FOR302H1 or TRN312H1 or PHL373H1 or ANT366H1 or CAS202H1 or GGR223H1 or ENV261H1 or POL205H1 or GGR334H1 or FOR303H1 or JGE331H1 or POL384H1 or ENV307H1 or TRN350H1 or ECO313H1 or ENV341H1 or BIO220H1 or NFS284H1 or CSB202H1 or VIC326H1 or MCS326H1 or GGR329H1 or INS355H1 or WGS367H1 or NEW342H1 or CSE342H1 under constraint from Req9 and Req10 and Req11 and Req12",
         "courses": [
           "ENV221H1",
           "ENV200H1",
@@ -547,7 +547,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from HIS101Y1 or HIS230H1 or HIS231H1 or HIS283Y1 or HIS303H1 or HIS308H1 or HIS357Y1 or HIS379H1 or HIS390H1 or HIS391Y1 or HIS397H1 or HIS419H1 or HIS424H1 or HIS438H1 or HIS443H1 or HIS470H1 or HIS493H1 or JHN323H1",
+        "description": "At least 2.5 Credits from HIS101Y1 or HIS230H1 or HIS231H1 or HIS283Y1 or HIS303H1 or HIS308H1 or HIS357Y1 or HIS379H1 or HIS390H1 or HIS391Y1 or HIS397H1 or HIS419H1 or HIS424H1 or HIS438H1 or HIS443H1 or HIS470H1 or HIS493H1 or JHN323H1 under constraint from Req3",
         "courses": [
           "HIS101Y1",
           "HIS230H1",
@@ -607,7 +607,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from HIS101Y1 or HIS230H1 or HIS231H1 or HIS283Y1 or HIS303H1 or HIS308H1 or HIS357Y1 or HIS379H1 or HIS390H1 or HIS391Y1 or HIS397H1 or HIS419H1 or HIS424H1 or HIS438H1 or HIS443H1 or HIS470H1 or HIS493H1 or JHN323H1",
+        "description": "At least 2.5 Credits from HIS101Y1 or HIS230H1 or HIS231H1 or HIS283Y1 or HIS303H1 or HIS308H1 or HIS357Y1 or HIS379H1 or HIS390H1 or HIS391Y1 or HIS397H1 or HIS419H1 or HIS424H1 or HIS438H1 or HIS443H1 or HIS470H1 or HIS493H1 or JHN323H1 under constraint from Req3",
         "courses": [
           "HIS101Y1",
           "HIS230H1",
@@ -740,7 +740,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from ECO362H1 or ECO364H1 or ECO365H1 or ECO368H1 or GGR326H1 or POL361H1 or POL362H1 or GGR344H1 or POL372H1 or ECO403H1 or ECO419H1 or ECO459H1 or ECO465H1 or GGR418H1 or GGR430H1 or HIS417H1 or POL411H1 or POL435H1 or POL477H1",
+        "description": "At least 1.5 Credits from ECO362H1 or ECO364H1 or ECO365H1 or ECO368H1 or GGR326H1 or POL361H1 or POL362H1 or GGR344H1 or POL372H1 or ECO403H1 or ECO419H1 or ECO459H1 or ECO465H1 or GGR418H1 or GGR430H1 or HIS417H1 or POL411H1 or POL435H1 or POL477H1 under constraint from Req4",
         "courses": [
           "ECO362H1",
           "ECO364H1",
@@ -859,7 +859,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from ECO365H1 or ECO368H1 or HIS324H1 or HIS341Y1 or HIS359H1 or HIS415Y1 or HIS439H1 or HIS494H1 or JHA394H1 or GGR324H1 or POL371H1 or GGR344H1 or POL372H1 or POL409H1 or POL456Y1 or POL445H1 or POL472H1 or TRN410H1",
+        "description": "At least 2.5 Credits from ECO365H1 or ECO368H1 or HIS324H1 or HIS341Y1 or HIS359H1 or HIS415Y1 or HIS439H1 or HIS494H1 or JHA394H1 or GGR324H1 or POL371H1 or GGR344H1 or POL372H1 or POL409H1 or POL456Y1 or POL445H1 or POL472H1 or TRN410H1 under constraint from Req2 and Req3",
         "courses": [
           "ECO365H1",
           "ECO368H1",
@@ -915,7 +915,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from ECO365H1 or ECO368H1 or HIS324H1 or HIS341Y1 or HIS359H1 or HIS415Y1 or HIS439H1 or HIS494H1 or JHA394H1 or GGR324H1 or POL371H1 or GGR344H1 or POL372H1 or POL409H1 or POL456Y1 or POL445H1 or POL472H1 or TRN410H1",
+        "description": "At least 2.5 Credits from ECO365H1 or ECO368H1 or HIS324H1 or HIS341Y1 or HIS359H1 or HIS415Y1 or HIS439H1 or HIS494H1 or JHA394H1 or GGR324H1 or POL371H1 or GGR344H1 or POL372H1 or POL409H1 or POL456Y1 or POL445H1 or POL472H1 or TRN410H1 under constraint from Req2 and Req3",
         "courses": [
           "ECO365H1",
           "ECO368H1",
@@ -1125,7 +1125,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR217H1 or JGI346H1",
+        "description": "At least 1.0 Credit from GGR217H1 or JGI346H1 under constraint from Req4",
         "courses": [
           "GGR217H1",
           "JGI346H1"
@@ -1137,7 +1137,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from GGR241H1 or GGR338H1 or GGR339H1 or GGR343H1 or GGR349H1 or GGR354H1 or GGR359H1 or GGR424H1 or GGR433H1 or GGR434H1 or GGR460H1",
+        "description": "At least 1.5 Credits from GGR241H1 or GGR338H1 or GGR339H1 or GGR343H1 or GGR349H1 or GGR354H1 or GGR359H1 or GGR424H1 or GGR433H1 or GGR434H1 or GGR460H1 under constraint from Req4",
         "courses": [
           "GGR241H1",
           "GGR338H1",
@@ -1175,7 +1175,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR217H1 or JGI346H1",
+        "description": "At least 1.0 Credit from GGR217H1 or JGI346H1 under constraint from Req4",
         "courses": [
           "GGR217H1",
           "JGI346H1"
@@ -1187,7 +1187,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from GGR241H1 or GGR338H1 or GGR339H1 or GGR343H1 or GGR349H1 or GGR354H1 or GGR359H1 or GGR424H1 or GGR433H1 or GGR434H1 or GGR460H1",
+        "description": "At least 1.5 Credits from GGR241H1 or GGR338H1 or GGR339H1 or GGR343H1 or GGR349H1 or GGR354H1 or GGR359H1 or GGR424H1 or GGR433H1 or GGR434H1 or GGR460H1 under constraint from Req4",
         "courses": [
           "GGR241H1",
           "GGR338H1",
@@ -1221,7 +1221,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR124H1 or GGR241H1 or JGI216H1",
+        "description": "At least 1.0 Credit from GGR124H1 or GGR241H1 or JGI216H1 under constraint from Req3",
         "courses": [
           "GGR124H1",
           "GGR241H1",
@@ -1234,7 +1234,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from GGR254H1 or GGR336H1 or GGR339H1 or GGR349H1 or GGR357H1 or GGR359H1 or GGR374H1 or GGR382H1 or GGR424H1 or GGR458H1 or GGR460H1 or GGR482H1",
+        "description": "At least 1.5 Credits from GGR254H1 or GGR336H1 or GGR339H1 or GGR349H1 or GGR357H1 or GGR359H1 or GGR374H1 or GGR382H1 or GGR424H1 or GGR458H1 or GGR460H1 or GGR482H1 under constraint from Req3",
         "courses": [
           "GGR254H1",
           "GGR336H1",
@@ -1273,7 +1273,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR124H1 or GGR241H1 or JGI216H1",
+        "description": "At least 1.0 Credit from GGR124H1 or GGR241H1 or JGI216H1 under constraint from Req3",
         "courses": [
           "GGR124H1",
           "GGR241H1",
@@ -1286,7 +1286,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from GGR254H1 or GGR336H1 or GGR339H1 or GGR349H1 or GGR357H1 or GGR359H1 or GGR374H1 or GGR382H1 or GGR424H1 or GGR458H1 or GGR460H1 or GGR482H1",
+        "description": "At least 1.5 Credits from GGR254H1 or GGR336H1 or GGR339H1 or GGR349H1 or GGR357H1 or GGR359H1 or GGR374H1 or GGR382H1 or GGR424H1 or GGR458H1 or GGR460H1 or GGR482H1 under constraint from Req3",
         "courses": [
           "GGR254H1",
           "GGR336H1",
@@ -1412,7 +1412,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CSC336H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or APM236H1 or MAT224H1 or MAT247H1 or STA248H1 or STA261H1 or STA302H1 or STA347H1",
+        "description": "At least 1.0 Credit from CSC336H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or APM236H1 or MAT224H1 or MAT247H1 or STA248H1 or STA261H1 or STA302H1 or STA347H1 under constraint from Req2 and Req3",
         "courses": [
           "CSC336H1",
           "MAT235Y1",
@@ -1502,7 +1502,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CSC413H1 or CSC421H1 or CSC321H1 or CSC311H1 or CSC411H1 or CSC412H1 or STA414H1",
+        "description": "At least 0.5 Credits from CSC413H1 or CSC421H1 or CSC321H1 or CSC311H1 or CSC411H1 or CSC412H1 or STA414H1 under constraint from Req9 and Req10",
         "courses": [
           "CSC413H1",
           "CSC421H1",
@@ -1583,7 +1583,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from CSC309H1 or CSC413H1 or CSC421H1 or CSC321H1 or CSC311H1 or CSC411H1 or CSC428H1 or CSC486H1",
+        "description": "At least 1.5 Credits from CSC309H1 or CSC413H1 or CSC421H1 or CSC321H1 or CSC311H1 or CSC411H1 or CSC428H1 or CSC486H1 under constraint from Req4 and Req5",
         "courses": [
           "CSC309H1",
           "CSC413H1",
@@ -1728,7 +1728,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from CSC300H1 or CSC301H1 or CSC318H1 or CSC384H1 or CSC317H1 or CSC417H1 or CSC418H1 or CSC419H1 or CSC404H1",
+        "description": "At least 3.0 Credits from CSC300H1 or CSC301H1 or CSC318H1 or CSC384H1 or CSC317H1 or CSC417H1 or CSC418H1 or CSC419H1 or CSC404H1 under constraint from Req2",
         "courses": [
           "CSC300H1",
           "CSC301H1",
@@ -1788,7 +1788,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from SOC200H1 or SOC202H1 or SOC204H1 or SOC252H1 or SOC254H1 or SOC302H1",
+        "description": "At least 1.5 Credits from SOC200H1 or SOC202H1 or SOC204H1 or SOC252H1 or SOC254H1 or SOC302H1 under constraint from Req4 and Req5",
         "courses": [
           "SOC200H1",
           "SOC202H1",
@@ -1824,7 +1824,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CSC309H1 or CSC320H1 or CSC321H1 or CSC343H1 or CSC384H1 or CSC401H1 or CSC404H1 or CSC418H1 or CSC485H1 or CSC490H1 or CSC491H1",
+        "description": "At least 1.0 Credit from CSC309H1 or CSC320H1 or CSC321H1 or CSC343H1 or CSC384H1 or CSC401H1 or CSC404H1 or CSC418H1 or CSC485H1 or CSC490H1 or CSC491H1 under constraint from Req7",
         "courses": [
           "CSC309H1",
           "CSC320H1",
@@ -1930,7 +1930,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from APM236H1 or MIE262H1 or MIE263H1 or APM421H1 or APM461H1 or MAT224H1 or MAT247H1 or MAT237Y1 or MAT257Y1 or MAT244H1 or MAT267H1 or MAT301H1 or MAT347Y1 or MAT315H1 or MAT327H1 or MAT334H1 or MAT335H1 or MAT337H1 or MAT354H1 or MAT357H1 or STA248H1 or STA261H1 or STA347H1 or AS-MAT4_ALL",
+        "description": "At least 2.0 Credits from APM236H1 or MIE262H1 or MIE263H1 or APM421H1 or APM461H1 or MAT224H1 or MAT247H1 or MAT237Y1 or MAT257Y1 or MAT244H1 or MAT267H1 or MAT301H1 or MAT347Y1 or MAT315H1 or MAT327H1 or MAT334H1 or MAT335H1 or MAT337H1 or MAT354H1 or MAT357H1 or STA248H1 or STA261H1 or STA347H1 or AS-MAT4_ALL under constraint from Req7 and Req8 and Req9 and Req10 and Req11 and Req12 and Req13 and Req14",
         "courses": [
           "APM236H1",
           "MIE262H1",
@@ -2054,7 +2054,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from STA248H1 or STA261H1 or CSC309H1 or CSC343H1 or CSC358H1 or CSC458H1 or CSC311H1 or CSC411H1",
+        "description": "At least 3.0 Credits from STA248H1 or STA261H1 or CSC309H1 or CSC343H1 or CSC358H1 or CSC458H1 or CSC311H1 or CSC411H1 under constraint from Req2 and Req3",
         "courses": [
           "STA248H1",
           "STA261H1",
@@ -2223,7 +2223,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from RSM251H1 or RSM350H1 or RSM353H1 or RSM352H1",
+        "description": "At least 1.5 Credits from RSM251H1 or RSM350H1 or RSM353H1 or RSM352H1 under constraint from Req2",
         "courses": [
           "RSM251H1",
           "RSM350H1",
@@ -2273,7 +2273,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from RSM336H1 or RSM435H1 or RSM433H1 or RSM330H1",
+        "description": "At least 1.0 Credit from RSM336H1 or RSM435H1 or RSM433H1 or RSM330H1 under constraint from Req3",
         "courses": [
           "RSM336H1",
           "RSM435H1",
@@ -2287,7 +2287,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from RSM329H1 or RSM330H1 or RSM336H1 or RSM429H1 or RSM430H1 or RSM432H1 or RSM433H1 or RSM434H1 or RSM435H1 or RSM437H1 or RSM438H1 or RSM439H1",
+        "description": "At least 1.5 Credits from RSM329H1 or RSM330H1 or RSM336H1 or RSM429H1 or RSM430H1 or RSM432H1 or RSM433H1 or RSM434H1 or RSM435H1 or RSM437H1 or RSM438H1 or RSM439H1 under constraint from Req3",
         "courses": [
           "RSM329H1",
           "RSM330H1",
@@ -2572,7 +2572,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-EEB-BIODIVERSITY-GP1_20215 or AS-EEB-BIODIVERSITY-GROUP2",
+        "description": "At least 1.5 Credits from AS-EEB-BIODIVERSITY-GP1_20215 or AS-EEB-BIODIVERSITY-GROUP2 under constraint from Req6 and Req7",
         "categories": [
           "AS-EEB-BIODIVERSITY-GP1_20215",
           "AS-EEB-BIODIVERSITY-GROUP2"
@@ -2687,7 +2687,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of INS300Y1",
+        "description": "All of INS300Y1 under constraint from Req9",
         "courses": [
           "INS300Y1"
         ],
@@ -2698,7 +2698,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from INS301Y1 or INS351Y1",
+        "description": "At least 1.0 Credit from INS301Y1 or INS351Y1 under constraint from Req9",
         "courses": [
           "INS301Y1",
           "INS351Y1"
@@ -2709,7 +2709,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of INS390H1",
+        "description": "All of INS390H1 under constraint from Req9",
         "courses": [
           "INS390H1"
         ],
@@ -2720,7 +2720,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-INS_ALL",
+        "description": "At least 2.0 Credits from AS-INS_ALL under constraint from Req8 and Req9",
         "categories": [
           "AS-INS_ALL"
         ],
@@ -2732,7 +2732,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-ABS-GROUPA or AS-ABS-GROUPB",
+        "description": "At least 0.5 Credits from AS-ABS-GROUPA or AS-ABS-GROUPB under constraint from Req8 and Req9",
         "categories": [
           "AS-ABS-GROUPA",
           "AS-ABS-GROUPB"
@@ -2822,7 +2822,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ENG235H1 or ENG250H1 or ENG270H1 or HIS271Y1 or GGR240H1 or GGR254H1 or POL386Y1 or CIN270Y1",
+        "description": "At least 1.0 Credit from ENG235H1 or ENG250H1 or ENG270H1 or HIS271Y1 or GGR240H1 or GGR254H1 or POL386Y1 or CIN270Y1 under constraint from Req2 and Req12 and Req13",
         "courses": [
           "ENG235H1",
           "ENG250H1",
@@ -2851,7 +2851,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from USA200H1 or USA300H1",
+        "description": "At least 1.0 Credit from USA200H1 or USA300H1 under constraint from Req12 and Req13",
         "courses": [
           "USA200H1",
           "USA300H1"
@@ -2864,7 +2864,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req12 and Req13",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -2876,7 +2876,7 @@ export default {
       "Req5": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "3",
-        "description": "At least 3 Requirements from Req6 or Req7 or Req9 or Req10",
+        "description": "At least 3 Requirements from Req6 or Req7 or Req9 or Req10 under constraint from Req12 and Req13",
         "dependentReqs": [
           "Req6",
           "Req7",
@@ -2891,7 +2891,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-CSUS-POL or AS-CSUS-ECONOMICS",
+        "description": "At least 1.0 Credit from AS-CSUS-POL or AS-CSUS-ECONOMICS under constraint from Req12 and Req13",
         "categories": [
           "AS-CSUS-POL",
           "AS-CSUS-ECONOMICS"
@@ -2904,7 +2904,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-CSUS-INDIGENOUS or AS-CSUS-GEOGRAPHY or AS-CSUS-SOCIOLOGY",
+        "description": "At least 1.0 Credit from AS-CSUS-INDIGENOUS or AS-CSUS-GEOGRAPHY or AS-CSUS-SOCIOLOGY under constraint from Req12 and Req13",
         "categories": [
           "AS-CSUS-INDIGENOUS",
           "AS-CSUS-GEOGRAPHY",
@@ -2922,7 +2922,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-CSUS-CARIBBEAN or AS-CSUS-CINEMA or AS-CSUS-ENGLISH or AS-CSUS-MUSIC or AS-CSUS-RELIGION",
+        "description": "At least 1.0 Credit from AS-CSUS-CARIBBEAN or AS-CSUS-CINEMA or AS-CSUS-ENGLISH or AS-CSUS-MUSIC or AS-CSUS-RELIGION under constraint from Req12 and Req13",
         "categories": [
           "AS-CSUS-CARIBBEAN",
           "AS-CSUS-CINEMA",
@@ -2938,7 +2938,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-CSUS-HISTORY",
+        "description": "At least 1.0 Credit from AS-CSUS-HISTORY under constraint from Req12 and Req13",
         "categories": [
           "AS-CSUS-HISTORY"
         ],
@@ -2950,7 +2950,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-CSUS-COURSES-2017",
+        "description": "At least 1.5 Credits from AS-CSUS-COURSES-2017 under constraint from Req12 and Req13",
         "categories": [
           "AS-CSUS-COURSES-2017"
         ],
@@ -3021,7 +3021,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG201H1 or RLG331H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG201H1 or RLG331H1 or AS-RLG-300+ under constraint from Req6",
         "courses": [
           "RLG201H1",
           "RLG331H1"
@@ -3045,7 +3045,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG202H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG202H1 or AS-RLG-300+ under constraint from Req8 and Req9",
         "courses": [
           "RLG202H1"
         ],
@@ -3076,7 +3076,7 @@ export default {
       "Req10": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG203H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG203H1 or AS-RLG-300+ under constraint from Req11 and Req12",
         "courses": [
           "RLG203H1"
         ],
@@ -3107,7 +3107,7 @@ export default {
       "Req13": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG204H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG204H1 or AS-RLG-300+ under constraint from Req14 and Req15",
         "courses": [
           "RLG204H1"
         ],
@@ -3138,7 +3138,7 @@ export default {
       "Req16": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG205H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG205H1 or AS-RLG-300+ under constraint from Req17 and Req18",
         "courses": [
           "RLG205H1"
         ],
@@ -3169,7 +3169,7 @@ export default {
       "Req19": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG206H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG206H1 or AS-RLG-300+ under constraint from Req20 and Req21",
         "courses": [
           "RLG206H1"
         ],
@@ -3200,7 +3200,7 @@ export default {
       "Req22": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG208H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG208H1 or AS-RLG-300+ under constraint from Req23 and Req24",
         "courses": [
           "RLG208H1"
         ],
@@ -3231,7 +3231,7 @@ export default {
       "Req25": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RLG241H1 or AS-RLG-300+",
+        "description": "At least 2.5 Credits from RLG241H1 or AS-RLG-300+ under constraint from Req26 and Req27",
         "courses": [
           "RLG241H1"
         ],
@@ -3262,7 +3262,7 @@ export default {
       "Req28": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-RLG_ALL or AS-RLG-CROSSLISTED_20215",
+        "description": "At least 2.0 Credits from AS-RLG_ALL or AS-RLG-CROSSLISTED_20215 under constraint from Req29",
         "categories": [
           "AS-RLG_ALL",
           "AS-RLG-CROSSLISTED_20215"
@@ -3328,7 +3328,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CLA160H1 or CLA210H1 or CLA230H1 or CLA231H1 or FAH206H1 or FAH207H1 or GGR100H1 or GGR101H1 or NMC262H1",
+        "description": "At least 1.0 Credit from CLA160H1 or CLA210H1 or CLA230H1 or CLA231H1 or FAH206H1 or FAH207H1 or GGR100H1 or GGR101H1 or NMC262H1 under constraint from Req6",
         "courses": [
           "CLA160H1",
           "CLA210H1",
@@ -3354,7 +3354,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ARH305H1 and ARH309H1",
+        "description": "All of ARH305H1 and ARH309H1 under constraint from Req11 and Req12",
         "courses": [
           "ARH305H1",
           "ARH309H1"
@@ -3367,7 +3367,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ARH306Y1 or ARH312Y1 or ARH361Y1 or ARH361H1 or ANT311Y1 or NMC261Y0 or NMC465H1 or NMC466H1",
+        "description": "At least 1.0 Credit from ARH306Y1 or ARH312Y1 or ARH361Y1 or ARH361H1 or ANT311Y1 or NMC261Y0 or NMC465H1 or NMC466H1 under constraint from Req11 and Req12",
         "courses": [
           "ARH306Y1",
           "ARH312Y1",
@@ -3386,7 +3386,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-ARH-GROUP-A_20215",
+        "description": "At least 2.5 Credits from AS-ARH-GROUP-A_20215 under constraint from Req11 and Req12",
         "categories": [
           "AS-ARH-GROUP-A_20215"
         ],
@@ -3398,7 +3398,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-ARH-GROUP-B_20215",
+        "description": "At least 0.5 Credits from AS-ARH-GROUP-B_20215 under constraint from Req11 and Req12",
         "categories": [
           "AS-ARH-GROUP-B_20215"
         ],
@@ -3476,7 +3476,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from PHL_ALL",
+        "description": "At least 4.0 Credits from PHL_ALL under constraint from Req6 and Req7",
         "categories": [
           "PHL_ALL"
         ],
@@ -3593,7 +3593,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-PRT_ALL or AS-PRT-COGNATE_20215",
+        "description": "At least 7.0 Credits from AS-PRT_ALL or AS-PRT-COGNATE_20215 under constraint from Req6 and Req8",
         "categories": [
           "AS-PRT_ALL",
           "AS-PRT-COGNATE_20215"
@@ -3691,7 +3691,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1 under constraint from Req3 and Req4",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -3842,7 +3842,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from CLA2_ALL_ALL+ or AS-CLA-SUBST or AS-CLA-GRKLAT",
+        "description": "At least 5.5 Credits from CLA2_ALL_ALL+ or AS-CLA-SUBST or AS-CLA-GRKLAT under constraint from Req4 and Req5 and Req6",
         "categories": [
           "CLA2_ALL_ALL+",
           "AS-CLA-SUBST",
@@ -3907,7 +3907,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.0",
-        "description": "At least 5.0 Credits from AS-CJS-AREAS-ABCD",
+        "description": "At least 5.0 Credits from AS-CJS-AREAS-ABCD under constraint from Req4",
         "categories": [
           "AS-CJS-AREAS-ABCD"
         ],
@@ -3970,7 +3970,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21",
+        "description": "At least 3.0 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21 under constraint from Req4 and Req7 and Req8",
         "categories": [
           "AS-SMC-CC-SOCIETY_2020-21",
           "AS-SMC-CC-ARTS_2020-21",
@@ -4000,7 +4000,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or JCA302H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC370H1 or SMC371H1 or SMC383H1",
+        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or JCA302H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC370H1 or SMC371H1 or SMC383H1 under constraint from Req7 and Req8",
         "courses": [
           "CHC232H1",
           "CHC370H1",
@@ -4129,7 +4129,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANA300Y1 or ANA301H1 or CSB325H1 or CSB330H1 or CSB332H1 or CJH332H1 or CSB343H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or IMM340H1 or IMM341H1 or IMM350H1 or IMM351H1 or JPM300H1 or NFS284H1 or PCL201H1 or PCL285H1 or PCL302H1 or PSY201H1 or PSY397H1 or STA220H1",
+        "description": "At least 1.0 Credit from ANA300Y1 or ANA301H1 or CSB325H1 or CSB330H1 or CSB332H1 or CJH332H1 or CSB343H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or IMM340H1 or IMM341H1 or IMM350H1 or IMM351H1 or JPM300H1 or NFS284H1 or PCL201H1 or PCL285H1 or PCL302H1 or PSY201H1 or PSY397H1 or STA220H1 under constraint from Req10 and Req11 and Req12 and Req16",
         "courses": [
           "ANA300Y1",
           "ANA301H1",
@@ -4194,7 +4194,7 @@ export default {
       "Req13": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMB430H1 or HMB470H1 or HMB472H1 or JPM400Y1 or PSL304H1 or PSL305H1 or PSL310H1 or PSL374H1 or PSL378H1 or PSL379H1 or PSL379H0 or PSL398H0 or PSL399Y1 or PSL-400",
+        "description": "At least 1.0 Credit from HMB430H1 or HMB470H1 or HMB472H1 or JPM400Y1 or PSL304H1 or PSL305H1 or PSL310H1 or PSL374H1 or PSL378H1 or PSL379H1 or PSL379H0 or PSL398H0 or PSL399Y1 or PSL-400 under constraint from Req14 and Req15 and Req16",
         "courses": [
           "HMB430H1",
           "HMB470H1",
@@ -4279,7 +4279,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-LIN-COURSES or PRT364H1 or PRT368H1",
+        "description": "At least 3.5 Credits from AS-LIN-COURSES or PRT364H1 or PRT368H1 under constraint from Req4 and Req5 and Req6",
         "courses": [
           "PRT364H1",
           "PRT368H1"
@@ -4330,7 +4330,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from BIO120H1 or CHM135H1 or CHM136H1 or MAT135H1 or MAT136H1 or MAT137Y1 or PHY131H1 or PHY132H1",
+        "description": "At least 2.0 Credits from BIO120H1 or CHM135H1 or CHM136H1 or MAT135H1 or MAT136H1 or MAT137Y1 or PHY131H1 or PHY132H1 under constraint from Req9 and Req10",
         "courses": [
           "BIO120H1",
           "CHM135H1",
@@ -4349,7 +4349,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from JEG100H1 or ESS102H1 or ENV234H1 or ESS262H1 or ESS223H1 or ENV223H1 or ESS224H1 or ESS222H1 or ESS241H1 or ESS331H1",
+        "description": "At least 2.5 Credits from JEG100H1 or ESS102H1 or ENV234H1 or ESS262H1 or ESS223H1 or ENV223H1 or ESS224H1 or ESS222H1 or ESS241H1 or ESS331H1 under constraint from Req3 and Req4 and Req5 and Req9 and Req10",
         "courses": [
           "JEG100H1",
           "ESS102H1",
@@ -4402,7 +4402,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ESS234H1 or ESS324H1 or ESS410H1 or ESS450H1",
+        "description": "At least 0.5 Credits from ESS234H1 or ESS324H1 or ESS410H1 or ESS450H1 under constraint from Req9 and Req10",
         "courses": [
           "ESS234H1",
           "ESS324H1",
@@ -4417,7 +4417,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-ESS3_ALL or AS-ESS4_ALL or AS-JGA_300-400",
+        "description": "At least 3.0 Credits from AS-ESS3_ALL or AS-ESS4_ALL or AS-JGA_300-400 under constraint from Req9 and Req10",
         "categories": [
           "AS-ESS3_ALL",
           "AS-ESS4_ALL",
@@ -4537,7 +4537,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492Y1 or VIC492H1",
+        "description": "At least 2.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492Y1 or VIC492H1 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req17 and Req18",
         "courses": [
           "VIC114H1",
           "VIC141H1",
@@ -4685,7 +4685,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or ITA431H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1",
+        "description": "At least 1.0 Credit from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or ITA431H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1 under constraint from Req17 and Req18",
         "courses": [
           "ENG220Y1",
           "ENG301H1",
@@ -4723,7 +4723,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1",
+        "description": "At least 1.0 Credit from HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1 under constraint from Req17 and Req18",
         "courses": [
           "HIS243H1",
           "HIS301H1",
@@ -4745,7 +4745,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1",
+        "description": "At least 1.0 Credit from FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1 under constraint from Req17 and Req18",
         "courses": [
           "FAH230H1",
           "FAH330H1",
@@ -4777,7 +4777,7 @@ export default {
       "Req14": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from REN440H1 or VIC440Y1 or AS-ASMAJ0532-REQ1",
+        "description": "At least 1.0 Credit from REN440H1 or VIC440Y1 or AS-ASMAJ0532-REQ1 under constraint from Req15 and Req17 and Req18",
         "courses": [
           "REN440H1",
           "VIC440Y1"
@@ -4836,7 +4836,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-LAS-COURSES_20215",
+        "description": "At least 7.0 Credits from AS-LAS-COURSES_20215 under constraint from Req9 and Req14 and Req15 and Req16 and Req17 and Req18 and Req19 and Req20",
         "categories": [
           "AS-LAS-COURSES_20215"
         ],
@@ -5027,7 +5027,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of WGS360H1",
+        "description": "All of WGS360H1 under constraint from Req7",
         "courses": [
           "WGS360H1"
         ],
@@ -5038,7 +5038,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-WGS-CORE_2020-21",
+        "description": "At least 3.0 Credits from AS-WGS-CORE_2020-21 under constraint from Req6 and Req7",
         "categories": [
           "AS-WGS-CORE_2020-21"
         ],
@@ -5050,7 +5050,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-WGS-GROUPA_2020-21 or AS-WGS-GROUPB_2020-21",
+        "description": "At least 2.0 Credits from AS-WGS-GROUPA_2020-21 or AS-WGS-GROUPB_2020-21 under constraint from Req6 and Req7",
         "categories": [
           "AS-WGS-GROUPA_2020-21",
           "AS-WGS-GROUPB_2020-21"
@@ -5191,7 +5191,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA120Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA120Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req4",
         "courses": [
           "SPA120Y1",
           "SPA320Y1",
@@ -5217,7 +5217,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA220Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA220Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req6",
         "courses": [
           "SPA220Y1",
           "SPA320Y1",
@@ -5243,7 +5243,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA219Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA219Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req8",
         "courses": [
           "SPA219Y1",
           "SPA420H1"
@@ -5325,7 +5325,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215",
+        "description": "At least 7.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req14 and Req15 and Req16",
         "categories": [
           "AS-HIS-ALL_20215",
           "AS-HIS-EQUIV_20215"
@@ -5469,7 +5469,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from HPS-COURSES or JHE353H1 or JHE355H1 or JPH311H1 or PHL245H1 or PHL355H1 or PHL356H1 or PHL357H1",
+        "description": "At least 7.0 Credits from HPS-COURSES or JHE353H1 or JHE355H1 or JPH311H1 or PHL245H1 or PHL355H1 or PHL356H1 or PHL357H1 under constraint from Req7",
         "courses": [
           "JHE353H1",
           "JHE355H1",
@@ -5579,7 +5579,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CDN367H1 and CDN368H1",
+        "description": "All of CDN367H1 and CDN368H1 under constraint from Req7",
         "courses": [
           "CDN367H1",
           "CDN368H1"
@@ -5591,7 +5591,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CDN307H1 or CDN335H1 or CDN380H1 or CDN390H1 or JSU325H1",
+        "description": "At least 0.5 Credits from CDN307H1 or CDN335H1 or CDN380H1 or CDN390H1 or JSU325H1 under constraint from Req7",
         "courses": [
           "CDN307H1",
           "CDN335H1",
@@ -5605,7 +5605,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CDN405H1",
+        "description": "All of CDN405H1 under constraint from Req7",
         "courses": [
           "CDN405H1"
         ],
@@ -5616,7 +5616,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-UNI-CDN-COURSES_2019-20",
+        "description": "At least 3.0 Credits from AS-UNI-CDN-COURSES_2019-20 under constraint from Req7",
         "categories": [
           "AS-UNI-CDN-COURSES_2019-20"
         ],
@@ -5676,7 +5676,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20",
+        "description": "At least 3.0 Credits from AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20 under constraint from Req6 and Req7",
         "categories": [
           "AS-CINEMA_GROUP-B_2019-20",
           "AS-CINEMA_GROUP-C_2019-20",
@@ -5768,7 +5768,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-WDW-CRIMMAJ_GROUP-A",
+        "description": "At least 2.0 Credits from AS-WDW-CRIMMAJ_GROUP-A under constraint from Req4",
         "categories": [
           "AS-WDW-CRIMMAJ_GROUP-A"
         ],
@@ -5813,7 +5813,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FAH102H1",
+        "description": "All of FAH102H1 under constraint from Req12 and Req13",
         "courses": [
           "FAH102H1"
         ],
@@ -5825,7 +5825,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPA",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPA under constraint from Req12 and Req13",
         "categories": [
           "AS-FAH-GROUPA"
         ],
@@ -5837,7 +5837,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPB",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPB under constraint from Req12 and Req13",
         "categories": [
           "AS-FAH-GROUPB"
         ],
@@ -5849,7 +5849,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPC",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPC under constraint from Req12 and Req13",
         "categories": [
           "AS-FAH-GROUPC"
         ],
@@ -5861,7 +5861,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPD",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPD under constraint from Req12 and Req13",
         "categories": [
           "AS-FAH-GROUPD"
         ],
@@ -5884,7 +5884,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-FAH-COURSES",
+        "description": "At least 4.0 Credits from AS-FAH-COURSES under constraint from Req12 and Req13",
         "categories": [
           "AS-FAH-COURSES"
         ],
@@ -5896,7 +5896,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-COURSES-400",
+        "description": "At least 0.5 Credits from AS-FAH-COURSES-400 under constraint from Req13",
         "categories": [
           "AS-FAH-COURSES-400"
         ],
@@ -5907,7 +5907,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-FAH-COURSES-300+",
+        "description": "At least 3.0 Credits from AS-FAH-COURSES-300+ under constraint from Req13",
         "categories": [
           "AS-FAH-COURSES-300+"
         ],
@@ -5971,7 +5971,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from GRK_ALL or LAT_ALL",
+        "description": "At least 6.0 Credits from GRK_ALL or LAT_ALL under constraint from Req3 and Req4 and Req5 and Req6",
         "categories": [
           "GRK_ALL",
           "LAT_ALL"
@@ -6035,7 +6035,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHL245H1 or PHL246H1",
+        "description": "At least 0.5 Credits from PHL245H1 or PHL246H1 under constraint from Req9",
         "courses": [
           "PHL245H1",
           "PHL246H1"
@@ -6047,7 +6047,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-PHL-BIOETHICS-1",
+        "description": "At least 1.0 Credit from AS-PHL-BIOETHICS-1 under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-1"
         ],
@@ -6059,7 +6059,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from PHL271H1 or PHL275H1 or AS-PHL-BIOETHICS-2",
+        "description": "At least 1.5 Credits from PHL271H1 or PHL275H1 or AS-PHL-BIOETHICS-2 under constraint from Req8 and Req9",
         "courses": [
           "PHL271H1",
           "PHL275H1"
@@ -6075,7 +6075,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-3",
+        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-3 under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-3"
         ],
@@ -6087,7 +6087,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-4 or PHL_ALL",
+        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-4 or PHL_ALL under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-4",
           "PHL_ALL"
@@ -6100,7 +6100,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from PHL_ALL",
+        "description": "At least 2.5 Credits from PHL_ALL under constraint from Req8 and Req9",
         "categories": [
           "PHL_ALL"
         ],
@@ -6316,7 +6316,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-CSB-CMB-MAJ_2019-20",
+        "description": "At least 1.5 Credits from AS-CSB-CMB-MAJ_2019-20 under constraint from Req10 and Req11",
         "categories": [
           "AS-CSB-CMB-MAJ_2019-20"
         ],
@@ -6465,7 +6465,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BCH422H1 or BCH426H1 or BCH444H1 or BCH445H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB330H1 or CSB331H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB475H1 or CSB490H1 or CSB491H1 or CSB497H1 or CSB498Y1 or CSB499Y1",
+        "description": "At least 1.0 Credit from BCH422H1 or BCH426H1 or BCH444H1 or BCH445H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB330H1 or CSB331H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB475H1 or CSB490H1 or CSB491H1 or CSB497H1 or CSB498Y1 or CSB499Y1 under constraint from Req13",
         "courses": [
           "BCH422H1",
           "BCH426H1",
@@ -6609,7 +6609,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CSB340H1 or CSB350H1 or CSB352H1 or CSB353H1",
+        "description": "At least 1.0 Credit from CSB340H1 or CSB350H1 or CSB352H1 or CSB353H1 under constraint from Req11",
         "courses": [
           "CSB340H1",
           "CSB350H1",
@@ -7147,7 +7147,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from NMC_ALL or NML_ALL",
+        "description": "At least 5.5 Credits from NMC_ALL or NML_ALL under constraint from Req3 and Req4 and Req5 and Req6",
         "categories": [
           "NMC_ALL",
           "NML_ALL"
@@ -7206,7 +7206,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SMC103Y1 and JSV200H1 and SMC313H1",
+        "description": "All of SMC103Y1 and JSV200H1 and SMC313H1 under constraint from Req9",
         "courses": [
           "SMC103Y1",
           "JSV200H1",
@@ -7237,7 +7237,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SMC218Y1 or SMC366H1 or SMC362Y1 or SMC471H1",
+        "description": "At least 0.5 Credits from SMC218Y1 or SMC366H1 or SMC362Y1 or SMC471H1 under constraint from Req8 and Req9",
         "courses": [
           "SMC218Y1",
           "SMC366H1",
@@ -7252,7 +7252,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.5",
-        "description": "At least 4.5 Credits from AS-SMC-CHRISTCULTURE or AS-SMC-CC-XLISTED",
+        "description": "At least 4.5 Credits from AS-SMC-CHRISTCULTURE or AS-SMC-CC-XLISTED under constraint from Req6 and Req7 and Req8 and Req9",
         "categories": [
           "AS-SMC-CHRISTCULTURE",
           "AS-SMC-CC-XLISTED"
@@ -7317,7 +7317,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT202Y1",
+        "description": "All of LCT202Y1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT202Y1"
         ],
@@ -7329,7 +7329,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT203H1 and LCT205H1",
+        "description": "All of LCT203H1 and LCT205H1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT203H1",
           "LCT205H1"
@@ -7343,7 +7343,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1",
+        "description": "At least 2.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1 under constraint from Req4 and Req5 and Req10 and Req11 and Req12",
         "courses": [
           "VIC162H1",
           "VIC163H1",
@@ -7392,7 +7392,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req10 and Req11 and Req12",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -7404,7 +7404,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT402H1",
+        "description": "All of LCT402H1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT402H1"
         ],
@@ -7416,7 +7416,7 @@ export default {
       },
       "Req8": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 1.0 credit in ONE other discipline offered within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator.",
+        "description": "Requirements of this program are incomplete: 1.0 credit in ONE other discipline offered within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator. under constraint from Req10 and Req11 and Req12",
         "recursReqs": [
           "Req10",
           "Req11",
@@ -7425,7 +7425,7 @@ export default {
       },
       "Req9": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 1.0 credit in courses at the 200+ level where the primary language of study is not English .",
+        "description": "Requirements of this program are incomplete: 1.0 credit in courses at the 200+ level where the primary language of study is not English . under constraint from Req10 and Req11 and Req12",
         "recursReqs": [
           "Req10",
           "Req11",
@@ -7471,7 +7471,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT202Y1",
+        "description": "All of LCT202Y1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT202Y1"
         ],
@@ -7483,7 +7483,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT203H1 and LCT205H1",
+        "description": "All of LCT203H1 and LCT205H1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT203H1",
           "LCT205H1"
@@ -7497,7 +7497,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1",
+        "description": "At least 2.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1 under constraint from Req4 and Req5 and Req9 and Req10 and Req11",
         "courses": [
           "VIC162H1",
           "VIC163H1",
@@ -7546,7 +7546,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req9 and Req10 and Req11",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -7558,7 +7558,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT402H1",
+        "description": "All of LCT402H1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT402H1"
         ],
@@ -7570,7 +7570,7 @@ export default {
       },
       "Req8": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 2.0 credits in languages or literatures drawn from other departments, that involve reading texts in a language other than English. At least 1.0 credit must be at the 300+ level.",
+        "description": "Requirements of this program are incomplete: 2.0 credits in languages or literatures drawn from other departments, that involve reading texts in a language other than English. At least 1.0 credit must be at the 300+ level. under constraint from Req9 and Req10 and Req11",
         "recursReqs": [
           "Req9",
           "Req10",
@@ -7686,7 +7686,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB360H1 or HMB421H1 or HMB435H1 or HMB437H1 or HMB474H1 or BCH311H1 or BCH425H1 or BCH426H1 or BCH440H1 or BCH445H1 or BCH448H1 or CSB328H1 or CSB331H1 or CSB340H1 or CSB349H1 or CSB351Y1 or CSB353H1 or CSB428H1 or CSB429H1 or EEB318H1 or EEB323H1 or EEB365H1 or EHJ352H1 or MGY314H1 or MGY315H1 or MGY340H1 or MGY428H1 or MGY470H1 or PSL350H1",
+        "description": "At least 0.5 Credits from HMB360H1 or HMB421H1 or HMB435H1 or HMB437H1 or HMB474H1 or BCH311H1 or BCH425H1 or BCH426H1 or BCH440H1 or BCH445H1 or BCH448H1 or CSB328H1 or CSB331H1 or CSB340H1 or CSB349H1 or CSB351Y1 or CSB353H1 or CSB428H1 or CSB429H1 or EEB318H1 or EEB323H1 or EEB365H1 or EHJ352H1 or MGY314H1 or MGY315H1 or MGY340H1 or MGY428H1 or MGY470H1 or PSL350H1 under constraint from Req16",
         "courses": [
           "HMB360H1",
           "HMB421H1",
@@ -7744,7 +7744,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB301H1 or HMB401H1 or HMB431H1 or HMB436H1 or HMB441H1 or HMB489H1 or BCH311H1 or BCH340H1 or BCH350H1 or BCH441H1 or BCH447H1 or CSB352H1 or CSB458H1 or CSB459H1 or CSB472H1 or CSB473H1 or CSB474H1 or EEB325H1 or EEB459H1 or EEB460H1 or NFS487H1 or PHL384H1 or PSL350H1 or PSL404H1 or PSY390H1",
+        "description": "At least 0.5 Credits from HMB301H1 or HMB401H1 or HMB431H1 or HMB436H1 or HMB441H1 or HMB489H1 or BCH311H1 or BCH340H1 or BCH350H1 or BCH441H1 or BCH447H1 or CSB352H1 or CSB458H1 or CSB459H1 or CSB472H1 or CSB473H1 or CSB474H1 or EEB325H1 or EEB459H1 or EEB460H1 or NFS487H1 or PHL384H1 or PSL350H1 or PSL404H1 or PSY390H1 under constraint from Req16",
         "courses": [
           "HMB301H1",
           "HMB401H1",
@@ -7790,7 +7790,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB311H1 or HMB314H1 or MGY315H1 or HMB342H1 or HMB360H1 or HMB490Y1 or HMB496Y1 or HST373H1 or MGY314H1 or MGY377H1 or MGY378H1",
+        "description": "At least 0.5 Credits from HMB311H1 or HMB314H1 or MGY315H1 or HMB342H1 or HMB360H1 or HMB490Y1 or HMB496Y1 or HST373H1 or MGY314H1 or MGY377H1 or MGY378H1 under constraint from Req16",
         "courses": [
           "HMB311H1",
           "HMB314H1",
@@ -7836,7 +7836,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-EAS_ALL or AS-EAS-SOC-CUL-OTHER_2019-20",
+        "description": "At least 7.0 Credits from AS-EAS_ALL or AS-EAS-SOC-CUL-OTHER_2019-20 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8",
         "categories": [
           "AS-EAS_ALL",
           "AS-EAS-SOC-CUL-OTHER_2019-20"
@@ -8131,7 +8131,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-ENV-ENVSCI-MAJ-GP-A_2020-21 or AS-ENV-ENVSCI-MAJ-GP-B_2020-21 or AS-ENV-ENVSCI-MAJ-GROUPC",
+        "description": "At least 2.0 Credits from AS-ENV-ENVSCI-MAJ-GP-A_2020-21 or AS-ENV-ENVSCI-MAJ-GP-B_2020-21 or AS-ENV-ENVSCI-MAJ-GROUPC under constraint from Req10 and Req11",
         "categories": [
           "AS-ENV-ENVSCI-MAJ-GP-A_2020-21",
           "AS-ENV-ENVSCI-MAJ-GP-B_2020-21",
@@ -8195,7 +8195,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FIN300H1",
+        "description": "All of FIN300H1 under constraint from Req5",
         "courses": [
           "FIN300H1"
         ],
@@ -8206,7 +8206,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from FIN225H1 or FIN230H1 or FIN235H1 or FIN236H1 or FIN238H1 or FIN240H1 or FIN250H1 or FIN260H1 or FIN270H1 or FIN280H1 or FIN305H1 or FIN310H1 or FIN320H1 or FIN330H1 or FIN340H1 or FIN350H1 or FIN360H1 or FIN400H1 or FIN410H1 or FIN415H1 or FIN420Y1 or FIN430H1",
+        "description": "At least 3.0 Credits from FIN225H1 or FIN230H1 or FIN235H1 or FIN236H1 or FIN238H1 or FIN240H1 or FIN250H1 or FIN260H1 or FIN270H1 or FIN280H1 or FIN305H1 or FIN310H1 or FIN320H1 or FIN330H1 or FIN340H1 or FIN350H1 or FIN360H1 or FIN400H1 or FIN410H1 or FIN415H1 or FIN420Y1 or FIN430H1 under constraint from Req5 and Req6",
         "courses": [
           "FIN225H1",
           "FIN230H1",
@@ -8321,7 +8321,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR300H1 and FOR310H1",
+        "description": "All of FOR300H1 and FOR310H1 under constraint from Req10 and Req11",
         "courses": [
           "FOR300H1",
           "FOR310H1"
@@ -8334,7 +8334,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR302H1 or FOR305H1 or ENV315H1 or ENV350H1 or MSE330H1 or MSE316H1 or ARC341H1 or ARC342H1 or BCH370H1 or JGE348H1 or GGR348H1",
+        "description": "At least 1.0 Credit from FOR302H1 or FOR305H1 or ENV315H1 or ENV350H1 or MSE330H1 or MSE316H1 or ARC341H1 or ARC342H1 or BCH370H1 or JGE348H1 or GGR348H1 under constraint from Req10 and Req11",
         "courses": [
           "FOR302H1",
           "FOR305H1",
@@ -8355,7 +8355,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR401H1 and FOR410H1",
+        "description": "All of FOR401H1 and FOR410H1 under constraint from Req10 and Req11",
         "courses": [
           "FOR401H1",
           "FOR410H1"
@@ -8368,7 +8368,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR403H1 or FOR405H1 or FOR420H1 or FOR423H1 or CHE575H1 or CHE475H1",
+        "description": "At least 1.0 Credit from FOR403H1 or FOR405H1 or FOR420H1 or FOR423H1 or CHE575H1 or CHE475H1 under constraint from Req10 and Req11",
         "courses": [
           "FOR403H1",
           "FOR405H1",
@@ -8385,7 +8385,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from FOR302H1 or FOR305H1 or ENV350H1 or MSE316H1 or BCH370H1 or GGR348H1 or FOR403H1 or FOR405H1 or FOR420H1 or FOR423H1 or CHE475H1",
+        "description": "At least 0.5 Credits from FOR302H1 or FOR305H1 or ENV350H1 or MSE316H1 or BCH370H1 or GGR348H1 or FOR403H1 or FOR405H1 or FOR420H1 or FOR423H1 or CHE475H1 under constraint from Req10 and Req11",
         "courses": [
           "FOR302H1",
           "FOR305H1",
@@ -8655,7 +8655,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from ANT450H1 or EAS479H1 or ECO105Y1 or ENV330H1 or ENV333H1 or ENV335H1 or ENV347H1 or FAH446H1 or FOR302H1 or GGR321H1 or JIG322H1 or HIS318Y1 or HPS202H1 or HPS307H1 or INS402H1 or JGE331H1 or PHL373H1 or PHL275H1 or PHL295H1 or PHL375H1 or PHL394H1 or PHL395H1 or PHL413H1 or PSY335H1 or PSY435H1 or RLG318H1 or RLG228H1 or RLG345H1 or RLG484H1 or VIC271H1 or WGS273H1",
+        "description": "At least 2.5 Credits from ANT450H1 or EAS479H1 or ECO105Y1 or ENV330H1 or ENV333H1 or ENV335H1 or ENV347H1 or FAH446H1 or FOR302H1 or GGR321H1 or JIG322H1 or HIS318Y1 or HPS202H1 or HPS307H1 or INS402H1 or JGE331H1 or PHL373H1 or PHL275H1 or PHL295H1 or PHL375H1 or PHL394H1 or PHL395H1 or PHL413H1 or PSY335H1 or PSY435H1 or RLG318H1 or RLG228H1 or RLG345H1 or RLG484H1 or VIC271H1 or WGS273H1 under constraint from Req5 and Req6 and Req7",
         "courses": [
           "ANT450H1",
           "EAS479H1",
@@ -8783,7 +8783,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CSE240H1 or NEW240H1",
+        "description": "At least 0.5 Credits from CSE240H1 or NEW240H1 under constraint from Req12",
         "courses": [
           "CSE240H1",
           "NEW240H1"
@@ -8795,7 +8795,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CSE341H1 or NEW341H1",
+        "description": "At least 0.5 Credits from CSE341H1 or NEW341H1 under constraint from Req12",
         "courses": [
           "CSE341H1",
           "NEW341H1"
@@ -8806,7 +8806,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JQR360H1",
+        "description": "All of JQR360H1 under constraint from Req12",
         "courses": [
           "JQR360H1"
         ],
@@ -8817,7 +8817,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-NEW-EQUITY-CORE_2020-21",
+        "description": "At least 2.0 Credits from AS-NEW-EQUITY-CORE_2020-21 under constraint from Req5 and Req12",
         "categories": [
           "AS-NEW-EQUITY-CORE_2020-21"
         ],
@@ -8848,7 +8848,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-A_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-A_2020-21 under constraint from Req12",
         "categories": [
           "AS-NEW-EQUITY-A_2020-21"
         ],
@@ -8859,7 +8859,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-B_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-B_2020-21 under constraint from Req12",
         "categories": [
           "AS-NEW-EQUITY-B_2020-21"
         ],
@@ -8870,7 +8870,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-C_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-C_2020-21 under constraint from Req12",
         "categories": [
           "AS-NEW-EQUITY-C_2020-21"
         ],
@@ -8881,7 +8881,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-D_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-D_2020-21 under constraint from Req12",
         "categories": [
           "AS-NEW-EQUITY-D_2020-21"
         ],
@@ -8892,7 +8892,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21",
+        "description": "At least 0.5 Credits from AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21 under constraint from Req12",
         "categories": [
           "AS-NEW-EQUITY-A_2020-21",
           "AS-NEW-EQUITY-B_2020-21",
@@ -9078,7 +9078,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-MAT-ETHICS_2019-20",
+        "description": "At least 0.5 Credits from AS-MAT-ETHICS_2019-20 under constraint from Req12",
         "categories": [
           "AS-MAT-ETHICS_2019-20"
         ],
@@ -9088,7 +9088,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of MAT301H1 and MAT334H1",
+        "description": "All of MAT301H1 and MAT334H1 under constraint from Req12",
         "courses": [
           "MAT301H1",
           "MAT334H1"
@@ -9100,7 +9100,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from MAT309H1 or MAT315H1",
+        "description": "At least 0.5 Credits from MAT309H1 or MAT315H1 under constraint from Req12",
         "courses": [
           "MAT309H1",
           "MAT315H1"
@@ -9112,7 +9112,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ACT240H1 or ACT230H1 or APM236H1 or STA247H1 or STA257H1 or MAT309H1 or MAT315H1 or MAT335H1 or MAT337H1",
+        "description": "At least 0.5 Credits from ACT240H1 or ACT230H1 or APM236H1 or STA247H1 or STA257H1 or MAT309H1 or MAT315H1 or MAT335H1 or MAT337H1 under constraint from Req12",
         "courses": [
           "ACT240H1",
           "ACT230H1",
@@ -9131,7 +9131,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from APM346H1 or APM462H1 or MAT309H1 or MAT315H1 or MAT332H1 or MAT344H1 or MAT335H1 or MAT337H1 or MAT363H1 or MAT475H1 or HPS390H1 or HPS391H1 or PSL432H1",
+        "description": "At least 0.5 Credits from APM346H1 or APM462H1 or MAT309H1 or MAT315H1 or MAT332H1 or MAT344H1 or MAT335H1 or MAT337H1 or MAT363H1 or MAT475H1 or HPS390H1 or HPS391H1 or PSL432H1 under constraint from Req12",
         "courses": [
           "APM346H1",
           "APM462H1",
@@ -9154,7 +9154,7 @@ export default {
       "Req11": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from MAT401H1 or MAT402H1 or AS-APM/MAT400",
+        "description": "At least 0.5 Credits from MAT401H1 or MAT402H1 or AS-APM/MAT400 under constraint from Req12",
         "courses": [
           "MAT401H1",
           "MAT402H1"
@@ -9186,7 +9186,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1",
+        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1 under constraint from Req8 and Req9",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -9199,7 +9199,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA105Y1 or SLA204Y1",
+        "description": "At least 2.0 Credits from SLA105Y1 or SLA204Y1 under constraint from Req8 and Req9",
         "courses": [
           "SLA105Y1",
           "SLA204Y1"
@@ -9212,7 +9212,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1",
+        "description": "At least 2.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 under constraint from Req8 and Req9",
         "courses": [
           "SLA200H1",
           "SLA215H1",
@@ -9229,7 +9229,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req8 and Req9",
         "courses": [
           "SLA200H1",
           "SLA215H1",
@@ -9271,7 +9271,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req8 and Req9",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -9308,7 +9308,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1",
+        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -9321,7 +9321,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1",
+        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA106H1",
           "SLA116H1",
@@ -9337,7 +9337,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA216H1",
+        "description": "All of SLA216H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA216H1"
         ],
@@ -9349,7 +9349,7 @@ export default {
       "Req4": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req5 or Req6",
+        "description": "At least 1 Requirement from Req5 or Req6 under constraint from Req11 and Req12",
         "dependentReqs": [
           "Req5",
           "Req6"
@@ -9362,7 +9362,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1",
+        "description": "At least 2.0 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA226H1",
           "SLA229H1",
@@ -9382,7 +9382,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1",
+        "description": "At least 2.0 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1 under constraint from Req7 and Req11 and Req12",
         "courses": [
           "SLA226H1",
           "SLA229H1",
@@ -9413,7 +9413,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA230H1 or SLA235H1 or SLA254H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA230H1 or SLA235H1 or SLA254H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA226H1",
           "SLA229H1",
@@ -9460,7 +9460,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req11 and Req12",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -9497,7 +9497,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1",
+        "description": "At least 1.0 Credit from SLA103H1 or SLA256H1 under constraint from Req8 and Req9",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -9510,7 +9510,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1",
+        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1 under constraint from Req8 and Req9",
         "courses": [
           "SLA100H1",
           "SLA101H1",
@@ -9528,7 +9528,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from SLA245H1 or SLA320Y1",
+        "description": "At least 1.5 Credits from SLA245H1 or SLA320Y1 under constraint from Req8 and Req9",
         "courses": [
           "SLA245H1",
           "SLA320Y1"
@@ -9541,7 +9541,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-SLA-RUSSIAN-ELEC-MAJ_20215",
+        "description": "At least 1.0 Credit from AS-SLA-RUSSIAN-ELEC-MAJ_20215 under constraint from Req8 and Req9",
         "categories": [
           "AS-SLA-RUSSIAN-ELEC-MAJ_20215"
         ],
@@ -9553,7 +9553,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-SLA-RUSSIAN-ELEC-MAJ_20215 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from AS-SLA-RUSSIAN-ELEC-MAJ_20215 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req8 and Req9",
         "courses": [
           "SLA104H1",
           "SLA200H1",
@@ -9591,7 +9591,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req8 and Req9",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -9636,7 +9636,7 @@ export default {
       "Req2": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req3 or Req4",
+        "description": "At least 1 Requirement from Req3 or Req4 under constraint from Req11 and Req12",
         "dependentReqs": [
           "Req3",
           "Req4"
@@ -9649,7 +9649,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1",
+        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA107Y1",
           "SLA257H1",
@@ -9663,7 +9663,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA109Y1 and SLA209H1 and SLA213H1",
+        "description": "All of SLA109Y1 and SLA209H1 and SLA213H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA109Y1",
           "SLA209H1",
@@ -9677,7 +9677,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA227H1",
+        "description": "At least 0.5 Credits from SLA227H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA227H1"
         ],
@@ -9689,7 +9689,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1",
+        "description": "At least 2.0 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA200H1",
           "SLA217H1",
@@ -9707,7 +9707,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA377H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA357H1",
+        "description": "At least 0.5 Credits from SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA377H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA357H1 under constraint from Req11 and Req12",
         "courses": [
           "SLA104H1",
           "SLA200H1",
@@ -9750,7 +9750,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req11 and Req12",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -9786,7 +9786,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA103H1 and SLA256H1",
+        "description": "All of SLA103H1 and SLA256H1 under constraint from Req9 and Req10",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -9799,7 +9799,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA108Y1 or SLA208Y1 or SLA308Y1",
+        "description": "At least 2.0 Credits from SLA108Y1 or SLA208Y1 or SLA308Y1 under constraint from Req9 and Req10",
         "courses": [
           "SLA108Y1",
           "SLA208Y1",
@@ -9812,7 +9812,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA218Y1",
+        "description": "All of SLA218Y1 under constraint from Req9 and Req10",
         "courses": [
           "SLA218Y1"
         ],
@@ -9824,7 +9824,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from SLA200H1 or SLA203H1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1",
+        "description": "At least 1.5 Credits from SLA200H1 or SLA203H1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 under constraint from Req9 and Req10",
         "courses": [
           "SLA200H1",
           "SLA203H1",
@@ -9851,7 +9851,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA203H1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA330H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA203H1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA330H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req9 and Req10",
         "courses": [
           "SLA200H1",
           "SLA203H1",
@@ -9901,7 +9901,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req9 and Req10",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -10021,7 +10021,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from CRI429H1 or ECO200Y1 or ECO202Y1 or ECO220Y1 or GGR240H1 or GGR241H1 or GGR419H1 or HIS241H1 or HIS242H1 or HIS401H1 or JPR364Y1 or MUN101H1 or MUN102H1 or PHL378H1 or POL201Y1 or POL326Y1 or POL340Y1 or POL345Y1 or PHL373H1 or POL412H1 or POL417Y1 or POL459Y1 or PSY220H1 or PSY270H1 or PSY322H1 or RLG280Y1 or RLG309H1 or SOC210H1 or SOC260H1 or SOC249H1 or SOC367H1",
+        "description": "At least 2.0 Credits from CRI429H1 or ECO200Y1 or ECO202Y1 or ECO220Y1 or GGR240H1 or GGR241H1 or GGR419H1 or HIS241H1 or HIS242H1 or HIS401H1 or JPR364Y1 or MUN101H1 or MUN102H1 or PHL378H1 or POL201Y1 or POL326Y1 or POL340Y1 or POL345Y1 or PHL373H1 or POL412H1 or POL417Y1 or POL459Y1 or PSY220H1 or PSY270H1 or PSY322H1 or RLG280Y1 or RLG309H1 or SOC210H1 or SOC260H1 or SOC249H1 or SOC367H1 under constraint from Req11 and Req12",
         "courses": [
           "CRI429H1",
           "ECO200Y1",
@@ -10102,7 +10102,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1",
+        "description": "At least 1.0 Credit from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1 under constraint from Req7 and Req8",
         "courses": [
           "CHC200H1",
           "CHC307H1",
@@ -10140,7 +10140,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.5",
-        "description": "At least 4.5 Credits from AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1",
+        "description": "At least 4.5 Credits from AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1 under constraint from Req4 and Req7 and Req8",
         "courses": [
           "MST406H1",
           "MST407Y1",
@@ -10173,7 +10173,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST242H1 or MST341H1 or MST442H1 or AS-BR-PHYSUNI200+ or SMC323H1 or SMC370H1 or SMC371H1 or SMC383H1 or SMC385H1",
+        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST242H1 or MST341H1 or MST442H1 or AS-BR-PHYSUNI200+ or SMC323H1 or SMC370H1 or SMC371H1 or SMC383H1 or SMC385H1 under constraint from Req7",
         "courses": [
           "CHC232H1",
           "CHC370H1",
@@ -10198,7 +10198,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from MST406H1 or MST407Y1 or MST435H1 or MST436H1 or SMC457H1 or MST490Y1 or SMC406H1 or SMC407Y1 or SMC435H1 or SMC436H1 or SMC490Y1",
+        "description": "At least 0.5 Credits from MST406H1 or MST407Y1 or MST435H1 or MST436H1 or SMC457H1 or MST490Y1 or SMC406H1 or SMC407Y1 or SMC435H1 or SMC436H1 or SMC490Y1 under constraint from Req7 and Req8",
         "courses": [
           "MST406H1",
           "MST407Y1",
@@ -10249,7 +10249,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from AS-SDS-ELECTIVES_20215 or AS-SDS_CAPSTONE",
+        "description": "At least 6.0 Credits from AS-SDS-ELECTIVES_20215 or AS-SDS_CAPSTONE under constraint from Req2 and Req4 and Req6 and Req8 and Req10 and Req11 and Req12 and Req13 and Req14 and Req15 and Req16 and Req17",
         "categories": [
           "AS-SDS-ELECTIVES_20215",
           "AS-SDS_CAPSTONE"
@@ -10448,7 +10448,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1",
+        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1 under constraint from Req11",
         "courses": [
           "GGR201H1",
           "GGR203H1",
@@ -10468,7 +10468,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of GGR223H1 and GGR270H1 and GGR271H1",
+        "description": "All of GGR223H1 and GGR270H1 and GGR271H1 under constraint from Req11",
         "courses": [
           "GGR223H1",
           "GGR270H1",
@@ -10481,7 +10481,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1",
+        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1 under constraint from Req11",
         "courses": [
           "GGR240H1",
           "GGR246H1",
@@ -10498,7 +10498,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-GGR-GROUPA-400_2020-21",
+        "description": "At least 0.5 Credits from AS-GGR-GROUPA-400_2020-21 under constraint from Req11 and Req12",
         "categories": [
           "AS-GGR-GROUPA-400_2020-21"
         ],
@@ -10510,7 +10510,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21 or AS-GGR-NEWGROUPC_2020-21",
+        "description": "At least 2.5 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21 or AS-GGR-NEWGROUPC_2020-21 under constraint from Req9 and Req10 and Req11 and Req12",
         "categories": [
           "AS-GGR-NEWGROUPA_2020-21",
           "AS-GGR-NEWGROUPB_2020-21",
@@ -10583,7 +10583,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV320H1 or ENV322H1 or ENV323H1 or ENV347H1 or ENV350H1 or ENV422H1 or JGE331H1",
+        "description": "At least 0.5 Credits from ENV320H1 or ENV322H1 or ENV323H1 or ENV347H1 or ENV350H1 or ENV422H1 or JGE331H1 under constraint from Req9",
         "courses": [
           "ENV320H1",
           "ENV322H1",
@@ -10600,7 +10600,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV333H1 or JGE321H1 or CLA373H1 or PHL273H1 or WGS273H1",
+        "description": "At least 0.5 Credits from ENV333H1 or JGE321H1 or CLA373H1 or PHL273H1 or WGS273H1 under constraint from Req9",
         "courses": [
           "ENV333H1",
           "JGE321H1",
@@ -10615,7 +10615,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV421H1 or ENV440H1 or ENV451H1 or ENV461H1",
+        "description": "At least 0.5 Credits from ENV421H1 or ENV440H1 or ENV451H1 or ENV461H1 under constraint from Req9",
         "courses": [
           "ENV421H1",
           "ENV440H1",
@@ -10629,7 +10629,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-ENVSTU-MAJ-POL-LAW-SOC_2019-20 or AS-ENVSTU-MAJ-ENV-RHO-ETH_2019-20 or AS-ENVSTU-MAJ-ENV-SCI_2019-20",
+        "description": "At least 3.5 Credits from AS-ENVSTU-MAJ-POL-LAW-SOC_2019-20 or AS-ENVSTU-MAJ-ENV-RHO-ETH_2019-20 or AS-ENVSTU-MAJ-ENV-SCI_2019-20 under constraint from Req8 and Req9",
         "categories": [
           "AS-ENVSTU-MAJ-POL-LAW-SOC_2019-20",
           "AS-ENVSTU-MAJ-ENV-RHO-ETH_2019-20",
@@ -10781,7 +10781,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-BMS-ELECTIVES",
+        "description": "At least 3.5 Credits from AS-BMS-ELECTIVES under constraint from Req3 and Req5",
         "categories": [
           "AS-BMS-ELECTIVES"
         ],
@@ -10801,7 +10801,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BMS400H1 or BMS401H1 or BMS402H1 or BMS403H1 or BMS411H1",
+        "description": "At least 0.5 Credits from BMS400H1 or BMS401H1 or BMS402H1 or BMS403H1 or BMS411H1 under constraint from Req5",
         "courses": [
           "BMS400H1",
           "BMS401H1",
@@ -10867,7 +10867,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-RLG-ISLAMIC-MAJ_2019-20",
+        "description": "At least 3.5 Credits from AS-RLG-ISLAMIC-MAJ_2019-20 under constraint from Req6",
         "categories": [
           "AS-RLG-ISLAMIC-MAJ_2019-20"
         ],
@@ -10913,7 +10913,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1 under constraint from Req2 and Req3",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -10958,7 +10958,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from AS-CHM-FURTHER200+_2019-20",
+        "description": "At least 6.0 Credits from AS-CHM-FURTHER200+_2019-20 under constraint from Req8",
         "categories": [
           "AS-CHM-FURTHER200+_2019-20"
         ],
@@ -11088,7 +11088,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from MGY314H1 or MGY315H1 or MGY340H1 or MGY350H1 or MGY360H1 or MGY377H1 or MGY378H1 or MGY379Y1 or MGY380H1 or MGY381H1 or MGY420H1 or MGY425H1 or MGY428H1 or MGY434H1 or MGY440H1 or MGY460H1 or MGY470H1 or MIJ485H1 or BCH428H1",
+        "description": "At least 2.5 Credits from MGY314H1 or MGY315H1 or MGY340H1 or MGY350H1 or MGY360H1 or MGY377H1 or MGY378H1 or MGY379Y1 or MGY380H1 or MGY381H1 or MGY420H1 or MGY425H1 or MGY428H1 or MGY434H1 or MGY440H1 or MGY460H1 or MGY470H1 or MIJ485H1 or BCH428H1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "MGY314H1",
           "MGY315H1",
@@ -11215,7 +11215,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO251H1 or BIO270H1 or EEB266H1 or EEB267H1 or EEB268H1 or EEB340H1 or BIO260H1 or HMB265H1",
+        "description": "At least 0.5 Credits from BIO251H1 or BIO270H1 or EEB266H1 or EEB267H1 or EEB268H1 or EEB340H1 or BIO260H1 or HMB265H1 under constraint from Req11",
         "courses": [
           "BIO251H1",
           "BIO270H1",
@@ -11233,7 +11233,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CHM210H1 or ENV237H1 or ENV238H1 or ESS223H1 or ESS261H1 or ESS262H1 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 0.5 Credits from CHM210H1 or ENV237H1 or ENV238H1 or ESS223H1 or ESS261H1 or ESS262H1 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req11",
         "courses": [
           "CHM210H1",
           "ENV237H1",
@@ -11257,7 +11257,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EEB319H1 or EEB320H1 or EEB321H1 or EEB322H1 or EEB324H1 or EEB328H1",
+        "description": "At least 1.0 Credit from EEB319H1 or EEB320H1 or EEB321H1 or EEB322H1 or EEB324H1 or EEB328H1 under constraint from Req11",
         "courses": [
           "EEB319H1",
           "EEB320H1",
@@ -11273,7 +11273,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from EEB313H1 or EEB319H1 or EEB320H1 or EEB321H1 or EEB322H1 or EEB323H1 or EEB324H1 or EEB325H1 or EEB328H1 or EEB365H1 or EEB375H1 or EEB386H1 or EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or EEB428H1 or EEB430H1 or EEB433H1 or EEB441H1 or EEB497H1 or EEB498Y1 or EEB499Y1 or ENV316H1 or ENV337H1 or ENV432H1 or ENV452H1 or ESS311H1 or ESS361H1 or ESS362H1 or ESS462H1 or ESS463H1 or ESS464H1 or FOR305H1 or FOR307H1 or FOR418H1 or GGR305H1 or GGR307H1 or GGR308H1 or JFG470H1",
+        "description": "At least 1.5 Credits from EEB313H1 or EEB319H1 or EEB320H1 or EEB321H1 or EEB322H1 or EEB323H1 or EEB324H1 or EEB325H1 or EEB328H1 or EEB365H1 or EEB375H1 or EEB386H1 or EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or EEB428H1 or EEB430H1 or EEB433H1 or EEB441H1 or EEB497H1 or EEB498Y1 or EEB499Y1 or ENV316H1 or ENV337H1 or ENV432H1 or ENV452H1 or ESS311H1 or ESS361H1 or ESS362H1 or ESS462H1 or ESS463H1 or ESS464H1 or FOR305H1 or FOR307H1 or FOR418H1 or GGR305H1 or GGR307H1 or GGR308H1 or JFG470H1 under constraint from Req11",
         "courses": [
           "EEB313H1",
           "EEB319H1",
@@ -11329,7 +11329,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or FOR418H1 or EEB428H1 or EEB430H1 or EEB433H1 or EEB491H1 or EEB495H1 or ENV432H1 or ENV452H1 or ESS462H1 or ESS463H1 or ESS464H1 or JFG470H1 or EEB497H1 or EEB498Y1 or EEB499Y1",
+        "description": "At least 0.5 Credits from EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or FOR418H1 or EEB428H1 or EEB430H1 or EEB433H1 or EEB491H1 or EEB495H1 or ENV432H1 or ENV452H1 or ESS462H1 or ESS463H1 or ESS464H1 or JFG470H1 or EEB497H1 or EEB498Y1 or EEB499Y1 under constraint from Req11",
         "courses": [
           "EEB403H0",
           "EEB403H1",
@@ -11385,7 +11385,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-GER_ALL or JGJ360H1",
+        "description": "At least 7.0 Credits from AS-GER_ALL or JGJ360H1 under constraint from Req2 and Req3 and Req5 and Req6 and Req7",
         "courses": [
           "JGJ360H1"
         ],
@@ -11475,7 +11475,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of DTS300H1",
+        "description": "All of DTS300H1 under constraint from Req7",
         "courses": [
           "DTS300H1"
         ],
@@ -11486,7 +11486,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-DTS-GROUPA_20215",
+        "description": "At least 2.0 Credits from AS-DTS-GROUPA_20215 under constraint from Req7",
         "categories": [
           "AS-DTS-GROUPA_20215"
         ],
@@ -11497,7 +11497,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-DTS-GROUPB_20215",
+        "description": "At least 2.0 Credits from AS-DTS-GROUPB_20215 under constraint from Req7",
         "categories": [
           "AS-DTS-GROUPB_20215"
         ],
@@ -11508,7 +11508,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-DTS-GROUPA_20215 or AS-DTS-GROUPB_20215",
+        "description": "At least 0.5 Credits from AS-DTS-GROUPA_20215 or AS-DTS-GROUPB_20215 under constraint from Req7",
         "categories": [
           "AS-DTS-GROUPA_20215",
           "AS-DTS-GROUPB_20215"
@@ -11520,7 +11520,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from DTS4_ALL_ALL",
+        "description": "At least 1.0 Credit from DTS4_ALL_ALL under constraint from Req7",
         "categories": [
           "DTS4_ALL_ALL"
         ],
@@ -11601,7 +11601,7 @@ export default {
       },
       "Req6": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of AST320H1",
+        "description": "All of AST320H1 under constraint from Req12",
         "courses": [
           "AST320H1"
         ],
@@ -11612,7 +11612,7 @@ export default {
       "Req7": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Course from AST325H1 or AST326Y1",
+        "description": "At least 1 Course from AST325H1 or AST326Y1 under constraint from Req12",
         "courses": [
           "AST325H1",
           "AST326Y1"
@@ -11624,7 +11624,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HPS200H1 or JPH441H1",
+        "description": "At least 0.5 Credits from HPS200H1 or JPH441H1 under constraint from Req12",
         "courses": [
           "HPS200H1",
           "JPH441H1"
@@ -11636,7 +11636,7 @@ export default {
       "Req9": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Course from CSC336H1 or CSC456H1 or ECE385H1 or PHY350H1 or PHY354H1 or PHY356H1 or PHY357H1 or PHY358H1 or PHY385H1 or PHY407H1 or PHY408H1 or PHY450H1 or JPE395H1",
+        "description": "At least 1 Course from CSC336H1 or CSC456H1 or ECE385H1 or PHY350H1 or PHY354H1 or PHY356H1 or PHY357H1 or PHY358H1 or PHY385H1 or PHY407H1 or PHY408H1 or PHY450H1 or JPE395H1 under constraint from Req12",
         "courses": [
           "CSC336H1",
           "CSC456H1",
@@ -11659,7 +11659,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from APM3_ALL_ALL+ or AST3_ALL_ALL+ or CSC3_ALL_ALL+ or MAT3_ALL_ALL+ or PHY3_ALL_ALL+ or STA3_ALL_ALL+",
+        "description": "At least 0.5 Credits from APM3_ALL_ALL+ or AST3_ALL_ALL+ or CSC3_ALL_ALL+ or MAT3_ALL_ALL+ or PHY3_ALL_ALL+ or STA3_ALL_ALL+ under constraint from Req12",
         "categories": [
           "APM3_ALL_ALL+",
           "AST3_ALL_ALL+",
@@ -11674,7 +11674,7 @@ export default {
       },
       "Req11": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of AST424H1",
+        "description": "All of AST424H1 under constraint from Req12",
         "courses": [
           "AST424H1"
         ],
@@ -11882,7 +11882,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from COG260H1 or COG341H1 or COG342H1 or COG343H1 or COG415H1 or COG498H1 or COG499H1 or CSC401H1 or CSC485H1 or JLP315H1 or JLP374H1 or JLP471H1 or JLS472H1 or JLS473H1 or LIN232H1 or LIN241H1 or LIN331H1 or LIN341H1 or PHL245H1 or PHL340H1 or PHL345H1 or PHL351H1 or PHL451H1 or PSY210H1 or PSY312H1 or PSY473H1 or PSY493H1",
+        "description": "At least 2.0 Credits from COG260H1 or COG341H1 or COG342H1 or COG343H1 or COG415H1 or COG498H1 or COG499H1 or CSC401H1 or CSC485H1 or JLP315H1 or JLP374H1 or JLP471H1 or JLS472H1 or JLS473H1 or LIN232H1 or LIN241H1 or LIN331H1 or LIN341H1 or PHL245H1 or PHL340H1 or PHL345H1 or PHL351H1 or PHL451H1 or PSY210H1 or PSY312H1 or PSY473H1 or PSY493H1 under constraint from Req10",
         "courses": [
           "COG260H1",
           "COG341H1",
@@ -12116,7 +12116,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-COG-SCI_COMP-COG",
+        "description": "At least 2.5 Credits from AS-COG-SCI_COMP-COG under constraint from Req8 and Req9 and Req10 and Req11 and Req12 and Req13 and Req14 and Req15",
         "categories": [
           "AS-COG-SCI_COMP-COG"
         ],
@@ -12273,7 +12273,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-COG-SCI_COG-&-BRAIN",
+        "description": "At least 2.5 Credits from AS-COG-SCI_COG-&-BRAIN under constraint from Req8 and Req9",
         "categories": [
           "AS-COG-SCI_COG-&-BRAIN"
         ],
@@ -12332,7 +12332,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from LAT_ALL",
+        "description": "At least 4.0 Credits from LAT_ALL under constraint from Req4 and Req5 and Req6",
         "categories": [
           "LAT_ALL"
         ],
@@ -12613,7 +12613,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB320H1 or JHA410H1 or ANA300Y1",
+        "description": "At least 0.5 Credits from HMB320H1 or JHA410H1 or ANA300Y1 under constraint from Req12",
         "courses": [
           "HMB320H1",
           "JHA410H1",
@@ -12626,7 +12626,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB360H1 or HMB420H1 or HMB430H1 or HMB440H1 or HMB450H1 or HMB471H1 or HMB473H1 or HMB490Y1 or HMB496Y1 or JHA410H1 or CSB345H1 or CSB346H1 or CSB430H1 or CSB432H1 or CSB445H1 or CSC321H1 or LMP410H1 or NEW335H1 or NFS489H1 or PCL475H1 or PCL476H1 or PSL374H1 or PSL432H1 or PSL440Y1 or PSL445H1 or PSL446H1 or PSL450H1 or PSL452H1 or PSL472H1 or PSY342H1 or PSY371H1 or PSY372H1 or PSY390H1 or PSY395H1 or PSY460H1 or PSY470H1 or PSY471H1 or PSY473H1 or PSY480H1 or PSY490H1 or PSY492H1 or PSY493H1 or PSY494H1 or PSY496H1",
+        "description": "At least 0.5 Credits from HMB360H1 or HMB420H1 or HMB430H1 or HMB440H1 or HMB450H1 or HMB471H1 or HMB473H1 or HMB490Y1 or HMB496Y1 or JHA410H1 or CSB345H1 or CSB346H1 or CSB430H1 or CSB432H1 or CSB445H1 or CSC321H1 or LMP410H1 or NEW335H1 or NFS489H1 or PCL475H1 or PCL476H1 or PSL374H1 or PSL432H1 or PSL440Y1 or PSL445H1 or PSL446H1 or PSL450H1 or PSL452H1 or PSL472H1 or PSY342H1 or PSY371H1 or PSY372H1 or PSY390H1 or PSY395H1 or PSY460H1 or PSY470H1 or PSY471H1 or PSY473H1 or PSY480H1 or PSY490H1 or PSY492H1 or PSY493H1 or PSY494H1 or PSY496H1 under constraint from Req12",
         "courses": [
           "HMB360H1",
           "HMB420H1",
@@ -12819,7 +12819,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-ECO3_ALL_ALL+",
+        "description": "At least 2.0 Credits from AS-ECO3_ALL_ALL+ under constraint from Req12",
         "categories": [
           "AS-ECO3_ALL_ALL+"
         ],
@@ -12874,7 +12874,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BIO220H1 or AS-ANT-20215",
+        "description": "At least 1.0 Credit from BIO220H1 or AS-ANT-20215 under constraint from Req6 and Req11",
         "courses": [
           "BIO220H1"
         ],
@@ -12904,7 +12904,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ANT208H1 or ANT333Y1 or ANT334H1 or ANT335Y1 or ANT336H1",
+        "description": "At least 2.0 Credits from ANT208H1 or ANT333Y1 or ANT334H1 or ANT335Y1 or ANT336H1 under constraint from Req11",
         "courses": [
           "ANT208H1",
           "ANT333Y1",
@@ -12919,7 +12919,7 @@ export default {
       "Req9": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-ANT-GROUP-B_20215 or ANT406H1 or ANT415Y1 or ARH312Y1",
+        "description": "At least 1.5 Credits from AS-ANT-GROUP-B_20215 or ANT406H1 or ANT415Y1 or ARH312Y1 under constraint from Req11",
         "courses": [
           "ANT406H1",
           "ANT415Y1",
@@ -12935,7 +12935,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-ANT-GROUP-B-400_20215",
+        "description": "At least 0.5 Credits from AS-ANT-GROUP-B-400_20215 under constraint from Req11",
         "categories": [
           "AS-ANT-GROUP-B-400_20215"
         ],
@@ -12985,7 +12985,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from RLG205H1 or FAH260H1 or EAS209H1 or EAS215H1 or HIS280Y1 or HIS282Y1 or HIS283Y1 or NEW214H1 or NEW232H1 or PHL237H1 or RLG311H1 or RLG316H1 or RLG356H1 or RLG361H1 or RLG363H1 or RLG366H1 or RLG368H1 or RLG372H1 or RLG373H1 or RLG374H1 or RLG375H1 or RLG379H1 or RLG371H5 or RLG373H5 or RLG374H5 or RLGC07H3 or FAH363H1 or FAH364H1 or FAH368H1 or EAS338H1 or EAS346H1 or EAS361H1 or HIS380H1 or JNR301H1 or NEW332H1 or NEW333H1 or NEW339H1 or PHL337H1",
+        "description": "At least 4.0 Credits from RLG205H1 or FAH260H1 or EAS209H1 or EAS215H1 or HIS280Y1 or HIS282Y1 or HIS283Y1 or NEW214H1 or NEW232H1 or PHL237H1 or RLG311H1 or RLG316H1 or RLG356H1 or RLG361H1 or RLG363H1 or RLG366H1 or RLG368H1 or RLG372H1 or RLG373H1 or RLG374H1 or RLG375H1 or RLG379H1 or RLG371H5 or RLG373H5 or RLG374H5 or RLGC07H3 or FAH363H1 or FAH364H1 or FAH368H1 or EAS338H1 or EAS346H1 or EAS361H1 or HIS380H1 or JNR301H1 or NEW332H1 or NEW333H1 or NEW339H1 or PHL337H1 under constraint from Req5 and Req6",
         "courses": [
           "RLG205H1",
           "FAH260H1",
@@ -13133,7 +13133,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from IRE339H1 or IRE346H1 or IRE347H1 or IRE348H1 or IRE367H1 or IRE378H1 or IRE379H1 or AS-IRE-EMPLYRELATION-MAJ-GROUPB",
+        "description": "At least 2.0 Credits from IRE339H1 or IRE346H1 or IRE347H1 or IRE348H1 or IRE367H1 or IRE378H1 or IRE379H1 or AS-IRE-EMPLYRELATION-MAJ-GROUPB under constraint from Req6",
         "courses": [
           "IRE339H1",
           "IRE346H1",
@@ -13268,7 +13268,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from BCH210H1 or BIO260H1 or HMB265H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB343H1 or CSB346H1 or CSB348H1 or CSB352H1 or CSB397Y0 or CSB399Y1 or EEB263H1 or PSY397H1 or STA220H1",
+        "description": "At least 1.5 Credits from BCH210H1 or BIO260H1 or HMB265H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB343H1 or CSB346H1 or CSB348H1 or CSB352H1 or CSB397Y0 or CSB399Y1 or EEB263H1 or PSY397H1 or STA220H1 under constraint from Req13 and Req14",
         "courses": [
           "BCH210H1",
           "BIO260H1",
@@ -13383,7 +13383,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-NEW-CARIBBEAN-CORE-300+_20215",
+        "description": "At least 2.0 Credits from AS-NEW-CARIBBEAN-CORE-300+_20215 under constraint from Req5",
         "categories": [
           "AS-NEW-CARIBBEAN-CORE-300+_20215"
         ],
@@ -13476,7 +13476,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-TRN-ETHICS-A_2020-21",
+        "description": "At least 0.5 Credits from AS-TRN-ETHICS-A_2020-21 under constraint from Req13",
         "categories": [
           "AS-TRN-ETHICS-A_2020-21"
         ],
@@ -13487,7 +13487,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-TRN-ETHICS-B_2020-21",
+        "description": "At least 0.5 Credits from AS-TRN-ETHICS-B_2020-21 under constraint from Req13",
         "categories": [
           "AS-TRN-ETHICS-B_2020-21"
         ],
@@ -13498,7 +13498,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-TRN-ETHICS-C_2020-21",
+        "description": "At least 0.5 Credits from AS-TRN-ETHICS-C_2020-21 under constraint from Req8 and Req9 and Req13",
         "categories": [
           "AS-TRN-ETHICS-C_2020-21"
         ],
@@ -13529,7 +13529,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-TRN-ETHICS-A_2020-21 or AS-TRN-ETHICS-B_2020-21 or AS-TRN-ETHICS-C_2020-21 or AS-TRN-ETHICS-D_2020-21",
+        "description": "At least 1.5 Credits from AS-TRN-ETHICS-A_2020-21 or AS-TRN-ETHICS-B_2020-21 or AS-TRN-ETHICS-C_2020-21 or AS-TRN-ETHICS-D_2020-21 under constraint from Req11 and Req13",
         "categories": [
           "AS-TRN-ETHICS-A_2020-21",
           "AS-TRN-ETHICS-B_2020-21",
@@ -13650,7 +13650,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EST200Y1 or FIN200Y1 or FSL221Y1 or GER200Y1 or GER300Y1 or GER370H1 or GER372H1 or HUN200Y1 or ITA250Y1 or ITA251Y1 or ITA252Y1 or MGR245Y1 or PRT220Y1 or SLA204Y1 or SLA206Y1 or SLA207Y1 or SLA208Y1 or SLA209Y1 or SLA220Y1 or SLA237Y1 or SPA220Y1",
+        "description": "At least 1.0 Credit from EST200Y1 or FIN200Y1 or FSL221Y1 or GER200Y1 or GER300Y1 or GER370H1 or GER372H1 or HUN200Y1 or ITA250Y1 or ITA251Y1 or ITA252Y1 or MGR245Y1 or PRT220Y1 or SLA204Y1 or SLA206Y1 or SLA207Y1 or SLA208Y1 or SLA209Y1 or SLA220Y1 or SLA237Y1 or SPA220Y1 under constraint from Req28 and Req29",
         "courses": [
           "EST200Y1",
           "FIN200Y1",
@@ -13691,7 +13691,7 @@ export default {
       },
       "Req11": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL219H1 and POL387H1",
+        "description": "All of POL219H1 and POL387H1 under constraint from Req28 and Req29",
         "courses": [
           "POL219H1",
           "POL387H1"
@@ -13703,7 +13703,7 @@ export default {
       },
       "Req12": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL359Y1",
+        "description": "All of POL359Y1 under constraint from Req28 and Req29",
         "courses": [
           "POL359Y1"
         ],
@@ -13714,7 +13714,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL358H1 and POL359H1",
+        "description": "All of POL358H1 and POL359H1 under constraint from Req28 and Req29",
         "courses": [
           "POL358H1",
           "POL359H1"
@@ -13747,7 +13747,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EST300Y1 or FSL321Y1 or FSL421Y1 or GER300Y1 or HUN310Y1 or PRT320Y1 or PRT420Y1 or SLA307Y1 or SLA308Y1 or SLA316Y1 or SLA320Y1 or SLA321Y1 or SPA320Y1",
+        "description": "At least 1.0 Credit from EST300Y1 or FSL321Y1 or FSL421Y1 or GER300Y1 or HUN310Y1 or PRT320Y1 or PRT420Y1 or SLA307Y1 or SLA308Y1 or SLA316Y1 or SLA320Y1 or SLA321Y1 or SPA320Y1 under constraint from Req28 and Req29",
         "courses": [
           "EST300Y1",
           "FSL321Y1",
@@ -13771,7 +13771,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FIN300H1 or FIN310H1 or FIN340H1 or FIN350H1 or FIN415H1",
+        "description": "At least 1.0 Credit from FIN300H1 or FIN310H1 or FIN340H1 or FIN350H1 or FIN415H1 under constraint from Req18 and Req28 and Req29",
         "courses": [
           "FIN300H1",
           "FIN310H1",
@@ -13795,7 +13795,7 @@ export default {
       },
       "Req19": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FSL442H1 and FSL443H1",
+        "description": "All of FSL442H1 and FSL443H1 under constraint from Req28 and Req29",
         "courses": [
           "FSL442H1",
           "FSL443H1"
@@ -13808,7 +13808,7 @@ export default {
       "Req20": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GER370H1 or GER372H1 or GER400H1",
+        "description": "At least 1.0 Credit from GER370H1 or GER372H1 or GER400H1 under constraint from Req28 and Req29",
         "courses": [
           "GER370H1",
           "GER372H1",
@@ -13822,7 +13822,7 @@ export default {
       "Req21": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ITA343H1 or ITA344H1 or ITA354H1 or ITA355H1 or ITA364H1 or ITA365H1",
+        "description": "At least 1.0 Credit from ITA343H1 or ITA344H1 or ITA354H1 or ITA355H1 or ITA364H1 or ITA365H1 under constraint from Req28 and Req29",
         "courses": [
           "ITA343H1",
           "ITA344H1",
@@ -13838,7 +13838,7 @@ export default {
       },
       "Req22": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of MGR300H1 and MGR301H1",
+        "description": "All of MGR300H1 and MGR301H1 under constraint from Req28 and Req29",
         "courses": [
           "MGR300H1",
           "MGR301H1"
@@ -13850,7 +13850,7 @@ export default {
       },
       "Req23": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA306H1 and SLA336H1",
+        "description": "All of SLA306H1 and SLA336H1 under constraint from Req28 and Req29",
         "courses": [
           "SLA306H1",
           "SLA336H1"
@@ -13863,7 +13863,7 @@ export default {
       "Req24": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA351H1 or SLA402H1 or SLA403H1",
+        "description": "At least 1.0 Credit from SLA351H1 or SLA402H1 or SLA403H1 under constraint from Req28 and Req29",
         "courses": [
           "SLA351H1",
           "SLA402H1",
@@ -13877,7 +13877,7 @@ export default {
       "Req25": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SPA323H1 or SPA325H1 or SPA420H1 or SPA421H1",
+        "description": "At least 1.0 Credit from SPA323H1 or SPA325H1 or SPA420H1 or SPA421H1 under constraint from Req28 and Req29",
         "courses": [
           "SPA323H1",
           "SPA325H1",
@@ -13891,7 +13891,7 @@ export default {
       },
       "Req26": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of EUR498H1",
+        "description": "All of EUR498H1 under constraint from Req28 and Req29",
         "courses": [
           "EUR498H1"
         ],
@@ -13903,7 +13903,7 @@ export default {
       "Req27": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-EUR-ELECTIVE_20215",
+        "description": "At least 1.5 Credits from AS-EUR-ELECTIVE_20215 under constraint from Req28 and Req29",
         "categories": [
           "AS-EUR-ELECTIVE_20215"
         ],
@@ -13940,7 +13940,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-ENG-FCE",
+        "description": "At least 7.0 Credits from AS-ENG-FCE under constraint from Req2 and Req3 and Req12",
         "categories": [
           "AS-ENG-FCE"
         ],
@@ -14079,7 +14079,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1",
+        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1 under constraint from Req11",
         "courses": [
           "JEG100H1",
           "GGR101H1",
@@ -14124,7 +14124,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1",
+        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1 under constraint from Req11 and Req12",
         "courses": [
           "GGR240H1",
           "GGR246H1",
@@ -14142,7 +14142,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-GGR-GROUPE-400_2020-21",
+        "description": "At least 0.5 Credits from AS-GGR-GROUPE-400_2020-21 under constraint from Req11 and Req12",
         "categories": [
           "AS-GGR-GROUPE-400_2020-21"
         ],
@@ -14154,7 +14154,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21",
+        "description": "At least 3.5 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21 under constraint from Req10 and Req11 and Req12",
         "categories": [
           "AS-GGR-GROUP-E_2020-21",
           "AS-GGR-GROUP-F_2020-21"
@@ -14223,7 +14223,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC441Y1 or SMC445H1",
+        "description": "At least 1.0 Credit from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC441Y1 or SMC445H1 under constraint from Req6 and Req7",
         "courses": [
           "CLT141Y1",
           "CLT242Y1",
@@ -14251,7 +14251,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC165H1 or MST226H1 or CLT250H1 or CLT333H1 or CLT334H1 or CLT335Y1 or CLT337H1 or CLT338H1 or CLT341H1 or CLT342Y1 or CLT343H1 or CLT344Y1 or CLT345H1 or CLT346H1 or CLT347H1 or CLT348H1 or CLT350H1 or CLT351H1 or CLT355H1 or CLT356H1 or CLT373H1 or CLT374H1 or CLT375H1 or CLT376H1 or CLT377H1 or CLT378H1 or CLT395Y1 or CLT396H1 or CLT411H1 or CLT412H1 or CLT413H1 or CLT416H1 or CLT440H1 or CLT441H1 or CLT444H1 or CLT445H1 or SMC441Y1 or SMC457H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC445H1 or SMC188Y1 or SMC226H1 or SMC250H1 or SMC333H1 or SMC334H1 or SMC335Y1 or SMC337H1 or SMC338H1 or SMC341H1 or SMC342Y1 or SMC343H1 or SMC344Y1 or SMC345H1 or SMC346H1 or SMC347H1 or SMC348H1 or SMC350H1 or SMC351H1 or SMC355H1 or SMC356H1 or SMC373H1 or SMC374H1 or SMC375H1 or SMC376H1 or SMC377H1 or SMC378H1 or SMC395Y1 or SMC396H1 or SMC411H1 or SMC412H1 or SMC413H1 or SMC416H1 or SMC444H1",
+        "description": "At least 4.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC165H1 or MST226H1 or CLT250H1 or CLT333H1 or CLT334H1 or CLT335Y1 or CLT337H1 or CLT338H1 or CLT341H1 or CLT342Y1 or CLT343H1 or CLT344Y1 or CLT345H1 or CLT346H1 or CLT347H1 or CLT348H1 or CLT350H1 or CLT351H1 or CLT355H1 or CLT356H1 or CLT373H1 or CLT374H1 or CLT375H1 or CLT376H1 or CLT377H1 or CLT378H1 or CLT395Y1 or CLT396H1 or CLT411H1 or CLT412H1 or CLT413H1 or CLT416H1 or CLT440H1 or CLT441H1 or CLT444H1 or CLT445H1 or SMC441Y1 or SMC457H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC445H1 or SMC188Y1 or SMC226H1 or SMC250H1 or SMC333H1 or SMC334H1 or SMC335Y1 or SMC337H1 or SMC338H1 or SMC341H1 or SMC342Y1 or SMC343H1 or SMC344Y1 or SMC345H1 or SMC346H1 or SMC347H1 or SMC348H1 or SMC350H1 or SMC351H1 or SMC355H1 or SMC356H1 or SMC373H1 or SMC374H1 or SMC375H1 or SMC376H1 or SMC377H1 or SMC378H1 or SMC395Y1 or SMC396H1 or SMC411H1 or SMC412H1 or SMC413H1 or SMC416H1 or SMC444H1 under constraint from Req6 and Req7",
         "courses": [
           "CLT141Y1",
           "CLT242Y1",
@@ -14349,7 +14349,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CLT341H1 or CLT348H1 or CLT377H1 or CLT378H1 or CLT444H1 or CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST341H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC341H1 or SMC348H1 or SMC370H1 or SMC371H1 or SMC377H1 or SMC378H1 or SMC383H1 or SMC444H1",
+        "description": "At least 0.5 Credits from CLT341H1 or CLT348H1 or CLT377H1 or CLT378H1 or CLT444H1 or CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST341H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC341H1 or SMC348H1 or SMC370H1 or SMC371H1 or SMC377H1 or SMC378H1 or SMC383H1 or SMC444H1 under constraint from Req6 and Req7",
         "courses": [
           "CLT341H1",
           "CLT348H1",
@@ -14514,7 +14514,7 @@ export default {
       "Req12": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-CSC-200-300-400 or BCB410H1 or BCB420H1 or BCB330Y1 or BCB430Y1 or MAT223H1 or MAT240H1 or MAT221H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or AS-MAT3+_CSC_MAJ_SPEC or STA414H1",
+        "description": "At least 3.0 Credits from AS-CSC-200-300-400 or BCB410H1 or BCB420H1 or BCB330Y1 or BCB430Y1 or MAT223H1 or MAT240H1 or MAT221H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or AS-MAT3+_CSC_MAJ_SPEC or STA414H1 under constraint from Req13 and Req14 and Req15 and Req16 and Req17 and Req18 and Req28",
         "courses": [
           "BCB410H1",
           "BCB420H1",
@@ -14645,7 +14645,7 @@ export default {
       "Req25": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req26",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -14715,7 +14715,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AFR150Y1 or NEW150Y1",
+        "description": "At least 1.0 Credit from AFR150Y1 or NEW150Y1 under constraint from Req8",
         "courses": [
           "AFR150Y1",
           "NEW150Y1"
@@ -14726,7 +14726,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JQR360H1",
+        "description": "All of JQR360H1 under constraint from Req8",
         "courses": [
           "JQR360H1"
         ],
@@ -14737,7 +14737,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AFR450Y1 or NEW450Y1",
+        "description": "At least 1.0 Credit from AFR450Y1 or NEW450Y1 under constraint from Req8",
         "courses": [
           "AFR450Y1",
           "NEW450Y1"
@@ -14749,7 +14749,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-AFRICAN-A_20215",
+        "description": "At least 1.5 Credits from AS-AFRICAN-A_20215 under constraint from Req8",
         "categories": [
           "AS-AFRICAN-A_20215"
         ],
@@ -14760,7 +14760,7 @@ export default {
       "Req5": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req6 or Req7",
+        "description": "At least 1 Requirement from Req6 or Req7 under constraint from Req8",
         "dependentReqs": [
           "Req6",
           "Req7"
@@ -14772,7 +14772,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-AFRICAN-B_20215",
+        "description": "At least 2.0 Credits from AS-AFRICAN-B_20215 under constraint from Req8",
         "categories": [
           "AS-AFRICAN-B_20215"
         ],
@@ -14783,7 +14783,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AFR280Y1 or AFR380Y1",
+        "description": "At least 2.0 Credits from AFR280Y1 or AFR380Y1 under constraint from Req8",
         "courses": [
           "AFR280Y1",
           "AFR380Y1"
@@ -14906,7 +14906,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BCH422H1 or BCH425H1 or BCH426H1 or BCH428H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or BCH446H1 or BCH448H1 or BCH449H1 or CHM447H1",
+        "description": "At least 1.0 Credit from BCH422H1 or BCH425H1 or BCH426H1 or BCH428H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or BCH446H1 or BCH448H1 or BCH449H1 or CHM447H1 under constraint from Req12",
         "courses": [
           "BCH422H1",
           "BCH425H1",
@@ -14986,7 +14986,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-ANT-GROUP-A-300+_20215",
+        "description": "At least 2.5 Credits from AS-ANT-GROUP-A-300+_20215 under constraint from Req14 and Req17",
         "categories": [
           "AS-ANT-GROUP-A-300+_20215"
         ],
@@ -14998,7 +14998,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-ANT-GROUP-B-300+_20215",
+        "description": "At least 2.5 Credits from AS-ANT-GROUP-B-300+_20215 under constraint from Req15 and Req17",
         "categories": [
           "AS-ANT-GROUP-B-300+_20215"
         ],
@@ -15010,7 +15010,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-ANT-GROUP-C-ALL-300+_20215",
+        "description": "At least 2.5 Credits from AS-ANT-GROUP-C-ALL-300+_20215 under constraint from Req16 and Req17",
         "categories": [
           "AS-ANT-GROUP-C-ALL-300+_20215"
         ],
@@ -15032,7 +15032,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ANT-GROUP-A_20215 or AS-ANT-GROUP-C-ALL_20215",
+        "description": "At least 1.0 Credit from AS-ANT-GROUP-A_20215 or AS-ANT-GROUP-C-ALL_20215 under constraint from Req14 and Req16",
         "categories": [
           "AS-ANT-GROUP-A_20215",
           "AS-ANT-GROUP-C-ALL_20215"
@@ -15045,7 +15045,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ANT-GROUP-B_20215 or AS-ANT-GROUP-C-ALL_20215",
+        "description": "At least 1.0 Credit from AS-ANT-GROUP-B_20215 or AS-ANT-GROUP-C-ALL_20215 under constraint from Req15 and Req16",
         "categories": [
           "AS-ANT-GROUP-B_20215",
           "AS-ANT-GROUP-C-ALL_20215"
@@ -15058,7 +15058,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ANT-GROUP-A_20215 or AS-ANT-GROUP-B_20215",
+        "description": "At least 1.0 Credit from AS-ANT-GROUP-A_20215 or AS-ANT-GROUP-B_20215 under constraint from Req14 and Req15",
         "categories": [
           "AS-ANT-GROUP-A_20215",
           "AS-ANT-GROUP-B_20215"
@@ -15204,7 +15204,7 @@ export default {
       "Req10": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY-400-LEVEL or JPE395H1 or JPE493H1",
+        "description": "At least 1.5 Credits from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY-400-LEVEL or JPE395H1 or JPE493H1 under constraint from Req11",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -15332,7 +15332,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HAJ453H1 or HMB401H1 or HMB402H1 or HMB422H1 or HMB432H1 or HMB434H1 or HMB436H1 or HMB437H1 or HMB440H1 or HMB441H1 or HMB443H1 or HMB452H1 or HMB462H1 or HMB470H1 or HMB471H1 or HMB472H1 or HMB473H1 or HMB474H1 or EHJ352H1 or JEH455H1 or ANA300Y1 or ANA301H1 or BCH311H1 or CSB345H1 or EEB325H1 or LMP301H1 or LMP363H1 or LMP403H1 or LMP406H1 or NFS485H1 or NFS486H1 or PCL302H1 or PCL362H1 or PCL469H1 or PCL470H1 or PCL482H1 or PCL483H1 or PCL486H1 or PSL350H1 or PSL404H1 or PSL421H1 or PSL425H1",
+        "description": "At least 0.5 Credits from HAJ453H1 or HMB401H1 or HMB402H1 or HMB422H1 or HMB432H1 or HMB434H1 or HMB436H1 or HMB437H1 or HMB440H1 or HMB441H1 or HMB443H1 or HMB452H1 or HMB462H1 or HMB470H1 or HMB471H1 or HMB472H1 or HMB473H1 or HMB474H1 or EHJ352H1 or JEH455H1 or ANA300Y1 or ANA301H1 or BCH311H1 or CSB345H1 or EEB325H1 or LMP301H1 or LMP363H1 or LMP403H1 or LMP406H1 or NFS485H1 or NFS486H1 or PCL302H1 or PCL362H1 or PCL469H1 or PCL470H1 or PCL482H1 or PCL483H1 or PCL486H1 or PSL350H1 or PSL404H1 or PSL421H1 or PSL425H1 under constraint from Req15",
         "courses": [
           "HAJ453H1",
           "HMB401H1",
@@ -15395,7 +15395,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB312H1 or HMB314H1 or HMB323H1 or HMB342H1 or HST373H1 or HMB490Y1 or HMB496Y1 or BCH311H1 or CSB349H1 or PSL350H1",
+        "description": "At least 0.5 Credits from HMB312H1 or HMB314H1 or HMB323H1 or HMB342H1 or HST373H1 or HMB490Y1 or HMB496Y1 or BCH311H1 or CSB349H1 or PSL350H1 under constraint from Req15",
         "courses": [
           "HMB312H1",
           "HMB314H1",
@@ -15440,7 +15440,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "7.0",
-        "description": "At least 7.0 Credits from AS-POL-COURSES_2020-21 or AS-POL_NON-POL_2020-21 or AS-POL-CANPOL_2020-21 or AS-POL_DIV&IDENTITY_2020-21 or AS-POL-Y1-FYF",
+        "description": "At least 7.0 Credits from AS-POL-COURSES_2020-21 or AS-POL_NON-POL_2020-21 or AS-POL-CANPOL_2020-21 or AS-POL_DIV&IDENTITY_2020-21 or AS-POL-Y1-FYF under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req10 and Req11 and Req13 and Req14 and Req15 and Req16",
         "categories": [
           "AS-POL-COURSES_2020-21",
           "AS-POL_NON-POL_2020-21",
@@ -15624,7 +15624,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMU3_ALL_ALL+",
+        "description": "At least 1.0 Credit from HMU3_ALL_ALL+ under constraint from Req5",
         "categories": [
           "HMU3_ALL_ALL+"
         ],
@@ -15665,7 +15665,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from JEG100H1 or MAT133Y1 or MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1 or MAT223H1 or MAT240H1 or MAT224H1 or MAT247H1 or PHY131H1 or PHY151H1 or PHY132H1 or PHY152H1 or CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1 or BIO120H1 or BIO130H1",
+        "description": "At least 2.0 Credits from JEG100H1 or MAT133Y1 or MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1 or MAT223H1 or MAT240H1 or MAT224H1 or MAT247H1 or PHY131H1 or PHY151H1 or PHY132H1 or PHY152H1 or CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1 or BIO120H1 or BIO130H1 under constraint from Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11",
         "courses": [
           "JEG100H1",
           "MAT133Y1",
@@ -15823,7 +15823,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from GGR273H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR337H1 or GGR373H1 or GGR347H1 or GGR348H1 or GGR416H1 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1 or AS-GGR-GROUP-I_20215",
+        "description": "At least 2.0 Credits from GGR273H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR337H1 or GGR373H1 or GGR347H1 or GGR348H1 or GGR416H1 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1 or AS-GGR-GROUP-I_20215 under constraint from Req17 and Req18 and Req19",
         "courses": [
           "GGR273H1",
           "GGR301H1",
@@ -16008,7 +16008,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-HMB-HB-RELEVANT_2020-21",
+        "description": "At least 1.0 Credit from AS-HMB-HB-RELEVANT_2020-21 under constraint from Req12",
         "categories": [
           "AS-HMB-HB-RELEVANT_2020-21"
         ],
@@ -16115,7 +16115,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from JPM300H1 or JPM400Y1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL402H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1",
+        "description": "At least 1.0 Credit from JPM300H1 or JPM400Y1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL402H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 under constraint from Req12",
         "courses": [
           "JPM300H1",
           "JPM400Y1",
@@ -16261,7 +16261,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1",
+        "description": "At least 1.0 Credit from HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1 under constraint from Req12",
         "courses": [
           "HST307H1",
           "HST308H1",
@@ -16298,7 +16298,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from HST400Y1 or HST405H1 or HST408H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1",
+        "description": "At least 1.5 Credits from HST400Y1 or HST405H1 or HST408H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 under constraint from Req12",
         "courses": [
           "HST400Y1",
           "HST405H1",
@@ -16318,7 +16318,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ANT100Y1 or BIO130H1 or GGR107H1 or HPS100H1 or HPS110H1 or HPS120H1 or PCL102H1 or PHS100H1 or PHL100Y1 or PHL101Y1 or POL101Y1 or PSY100H1 or SOC100H1 or TRN135Y1 or UNI103H1 or UNI103Y1 or WGS160Y1 or PHL281H1 or INS200H1 or ANT208H1 or HMB202H1 or HMB203H1 or INS205H1 or JSU237H1 or NFS284H1 or PCL201H1 or PCL218H1 or SOC204H1 or SOC243H1 or STA221H1 or TRN235H1 or TRN236H1 or HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1 or HST400Y1 or HST405H1 or HST408H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 or ANT434H1 or ANT458H1 or ANT460H1 or ANT474H1 or ENV430H1 or GGR433H1 or JFP450H1 or HIS423H1 or HIS498H1 or HMB322H1 or HMB406H1 or HMB433H1 or HMB462H1 or IRE378H1 or NEW344Y1 or PSY333H1 or SOC412H1 or SOC488H1",
+        "description": "At least 0.5 Credits from ANT100Y1 or BIO130H1 or GGR107H1 or HPS100H1 or HPS110H1 or HPS120H1 or PCL102H1 or PHS100H1 or PHL100Y1 or PHL101Y1 or POL101Y1 or PSY100H1 or SOC100H1 or TRN135Y1 or UNI103H1 or UNI103Y1 or WGS160Y1 or PHL281H1 or INS200H1 or ANT208H1 or HMB202H1 or HMB203H1 or INS205H1 or JSU237H1 or NFS284H1 or PCL201H1 or PCL218H1 or SOC204H1 or SOC243H1 or STA221H1 or TRN235H1 or TRN236H1 or HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1 or HST400Y1 or HST405H1 or HST408H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 or ANT434H1 or ANT458H1 or ANT460H1 or ANT474H1 or ENV430H1 or GGR433H1 or JFP450H1 or HIS423H1 or HIS498H1 or HMB322H1 or HMB406H1 or HMB433H1 or HMB462H1 or IRE378H1 or NEW344Y1 or PSY333H1 or SOC412H1 or SOC488H1 under constraint from Req12",
         "courses": [
           "ANT100Y1",
           "BIO130H1",
@@ -16452,7 +16452,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ANT370H1 or ANT425H1",
+        "description": "At least 0.5 Credits from ANT370H1 or ANT425H1 under constraint from Req7",
         "courses": [
           "ANT370H1",
           "ANT425H1"
@@ -16464,7 +16464,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.0",
-        "description": "At least 5.0 Credits from AS-ANT-GROUP-C-ALL_20215",
+        "description": "At least 5.0 Credits from AS-ANT-GROUP-C-ALL_20215 under constraint from Req6 and Req7",
         "categories": [
           "AS-ANT-GROUP-C-ALL_20215"
         ],
@@ -16514,7 +16514,7 @@ export default {
       "Req2": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from GRK_ALL or GRK3_ALL_ALL+ or GRK4_ALL_ALL or GRK330H1 or GRK430H1",
+        "description": "At least 4.0 Credits from GRK_ALL or GRK3_ALL_ALL+ or GRK4_ALL_ALL or GRK330H1 or GRK430H1 under constraint from Req3 and Req4 and Req5",
         "courses": [
           "GRK330H1",
           "GRK430H1"
@@ -16591,7 +16591,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20",
+        "description": "At least 6.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20 under constraint from Req4 and Req5 and Req6 and Req7",
         "categories": [
           "AS-DRM-GROUPA_2020-21",
           "AS-DRM-GROUPB_2020-21",
@@ -16708,7 +16708,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from INI333H1 or INI336H1 or INI337H1 or INI338H1 or INI339H1 or INI342H1 or INI430H1 or INI432H1 or INI433H1 or INI437Y1 or INI439H1",
+        "description": "At least 1.0 Credit from INI333H1 or INI336H1 or INI337H1 or INI338H1 or INI339H1 or INI342H1 or INI430H1 or INI432H1 or INI433H1 or INI437Y1 or INI439H1 under constraint from Req8",
         "courses": [
           "INI333H1",
           "INI336H1",
@@ -16759,7 +16759,7 @@ export default {
       },
       "Req11": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here.",
+        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here. under constraint from Req20",
         "recursReqs": [
           "Req20"
         ]
@@ -16767,7 +16767,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-2017-GROUPB"
         ],
@@ -16778,7 +16778,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-GROUPC_20215"
         ],
@@ -16789,7 +16789,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-GROUPD_20215"
         ],
@@ -16800,7 +16800,7 @@ export default {
       "Req15": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-GROUPE_20215"
         ],
@@ -16811,7 +16811,7 @@ export default {
       "Req16": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-GROUPF_20215"
         ],
@@ -16822,7 +16822,7 @@ export default {
       "Req17": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-2017-GROUPG"
         ],
@@ -16833,7 +16833,7 @@ export default {
       "Req18": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-GROUPH_20215"
         ],
@@ -16844,7 +16844,7 @@ export default {
       "Req19": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 1.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215 under constraint from Req20",
         "categories": [
           "AS-INI-URBAN-2017-GROUPA",
           "AS-INI-URBAN-2017-GROUPB",
@@ -17262,7 +17262,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CSB352H1 or EEB319H1 or EEB323H1 or EEB324H1 or EEB362H1 or GGR337H1 or GGR372H1 or GGR373H1 or PHY331H1",
+        "description": "At least 1.0 Credit from CSB352H1 or EEB319H1 or EEB323H1 or EEB324H1 or EEB362H1 or GGR337H1 or GGR372H1 or GGR373H1 or PHY331H1 under constraint from Req12",
         "courses": [
           "CSB352H1",
           "EEB319H1",
@@ -17281,7 +17281,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or APM446H1 or APM461H1 or APM462H1 or BCH441H1 or CSB472H1 or CSC311H1 or CSC320H1 or CSC336H1 or CSC343H1 or CSC373H1 or CSC384H1 or CSC401H1 or CSC412H1 or CSC413H1 or CSC420H1 or EEB313H1 or EEB430H1 or EEB459H1 or EEB460H1 or EEB498Y1 or EEB499Y1 or MAT332H1 or MAT335H1 or MAT344H1 or MAT351Y1 or MGY428H1 or PHY431H1 or PSY305H1 or STA302H1 or STA303H1 or STA304H1 or STA305H1 or STA355H1 or STA365H1 or STA480H1",
+        "description": "At least 1.0 Credit from APM346H1 or APM446H1 or APM461H1 or APM462H1 or BCH441H1 or CSB472H1 or CSC311H1 or CSC320H1 or CSC336H1 or CSC343H1 or CSC373H1 or CSC384H1 or CSC401H1 or CSC412H1 or CSC413H1 or CSC420H1 or EEB313H1 or EEB430H1 or EEB459H1 or EEB460H1 or EEB498Y1 or EEB499Y1 or MAT332H1 or MAT335H1 or MAT344H1 or MAT351Y1 or MGY428H1 or PHY431H1 or PSY305H1 or STA302H1 or STA303H1 or STA304H1 or STA305H1 or STA355H1 or STA365H1 or STA480H1 under constraint from Req12 and Req13",
         "courses": [
           "APM346H1",
           "APM446H1",
@@ -17328,7 +17328,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BCB410H1 or BCB420H1 or BCH441H1 or CSB435H1 or CSB472H1 or CSB498Y1 or CSB499Y1 or EEB430H1 or EEB459H1 or EEB460H1 or EEB498Y1 or EEB499Y1 or PHY431H1 or PSY474H1 or STA480H1",
+        "description": "At least 0.5 Credits from BCB410H1 or BCB420H1 or BCH441H1 or CSB435H1 or CSB472H1 or CSB498Y1 or CSB499Y1 or EEB430H1 or EEB459H1 or EEB460H1 or EEB498Y1 or EEB499Y1 or PHY431H1 or PSY474H1 or STA480H1 under constraint from Req12 and Req13",
         "courses": [
           "BCB410H1",
           "BCB420H1",
@@ -17459,7 +17459,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ITA3_ALL_ALL+",
+        "description": "At least 1.0 Credit from ITA3_ALL_ALL+ under constraint from Req7",
         "categories": [
           "ITA3_ALL_ALL+"
         ],
@@ -17630,7 +17630,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from JPM300H1 or JPM400Y1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL402H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or ANA301H1 or LMP301H1 or LMP363H1",
+        "description": "At least 1.0 Credit from JPM300H1 or JPM400Y1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL402H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or ANA301H1 or LMP301H1 or LMP363H1 under constraint from Req9 and Req10",
         "courses": [
           "JPM300H1",
           "JPM400Y1",
@@ -17801,7 +17801,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-HMB-GH-BD",
+        "description": "At least 0.5 Credits from AS-HMB-GH-BD under constraint from Req13",
         "categories": [
           "AS-HMB-GH-BD"
         ],
@@ -17812,7 +17812,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-HMB-GH-SED",
+        "description": "At least 0.5 Credits from AS-HMB-GH-SED under constraint from Req13",
         "categories": [
           "AS-HMB-GH-SED"
         ],
@@ -18059,7 +18059,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ECO200Y1 or ECO204Y1 or ECO206Y1 or PPG200H1 or AS-PUBLICPOLICY-300COURSESUP_2019-20",
+        "description": "At least 1.0 Credit from ECO200Y1 or ECO204Y1 or ECO206Y1 or PPG200H1 or AS-PUBLICPOLICY-300COURSESUP_2019-20 under constraint from Req8",
         "courses": [
           "ECO200Y1",
           "ECO204Y1",
@@ -18174,7 +18174,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from NMC_ALL or NML_ALL",
+        "description": "At least 5.5 Credits from NMC_ALL or NML_ALL under constraint from Req3 and Req4 and Req5 and Req6 and Req7",
         "categories": [
           "NMC_ALL",
           "NML_ALL"
@@ -18255,7 +18255,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from NMC-COURSES or NML_ALL",
+        "description": "At least 5.5 Credits from NMC-COURSES or NML_ALL under constraint from Req3 and Req4 and Req5 and Req6 and Req7",
         "categories": [
           "NMC-COURSES",
           "NML_ALL"
@@ -18336,7 +18336,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from NMC-COURSES or NML_ALL",
+        "description": "At least 5.5 Credits from NMC-COURSES or NML_ALL under constraint from Req3 and Req4 and Req5 and Req6 and Req7",
         "categories": [
           "NMC-COURSES",
           "NML_ALL"
@@ -18406,7 +18406,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from JEG100H1 or ESS102H1 or BIO120H1 or BIO130H1 or CHM135H1 or CHM136H1 or PHY131H1 or PHY132H1 or MAT135H1 or ENV237H1 or ENV238H1",
+        "description": "At least 2.0 Credits from JEG100H1 or ESS102H1 or BIO120H1 or BIO130H1 or CHM135H1 or CHM136H1 or PHY131H1 or PHY132H1 or MAT135H1 or ENV237H1 or ENV238H1 under constraint from Req2 and Req3 and Req4",
         "courses": [
           "JEG100H1",
           "ESS102H1",
@@ -18504,7 +18504,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-ES-EARTH&ES-ELECT_20215",
+        "description": "At least 3.0 Credits from AS-ES-EARTH&ES-ELECT_20215 under constraint from Req11 and Req12",
         "categories": [
           "AS-ES-EARTH&ES-ELECT_20215"
         ],
@@ -18550,7 +18550,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from INS300Y1 or INS301Y1 or INS351Y1",
+        "description": "At least 1.0 Credit from INS300Y1 or INS301Y1 or INS351Y1 under constraint from Req5",
         "courses": [
           "INS300Y1",
           "INS301Y1",
@@ -18563,7 +18563,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-INS_ALL or AS-ABS-GROUPA",
+        "description": "At least 1.0 Credit from AS-INS_ALL or AS-ABS-GROUPA under constraint from Req5",
         "categories": [
           "AS-INS_ALL",
           "AS-ABS-GROUPA"
@@ -18575,7 +18575,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ABS-GROUPA",
+        "description": "At least 1.0 Credit from AS-ABS-GROUPA under constraint from Req5",
         "categories": [
           "AS-ABS-GROUPA"
         ],
@@ -18655,7 +18655,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ENG250H1 or ENG235H1 or ENG270H1 or HIS271Y1 or GGR240H1 or GGR254H1 or CIN270Y1 or POL386Y1",
+        "description": "At least 1.0 Credit from ENG250H1 or ENG235H1 or ENG270H1 or HIS271Y1 or GGR240H1 or GGR254H1 or CIN270Y1 or POL386Y1 under constraint from Req2",
         "courses": [
           "ENG250H1",
           "ENG235H1",
@@ -18707,7 +18707,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-POL",
+        "description": "At least 0.5 Credits from AS-CSUS-POL under constraint from Req16",
         "categories": [
           "AS-CSUS-POL"
         ],
@@ -18718,7 +18718,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-ECONOMICS",
+        "description": "At least 0.5 Credits from AS-CSUS-ECONOMICS under constraint from Req16",
         "categories": [
           "AS-CSUS-ECONOMICS"
         ],
@@ -18729,7 +18729,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-INDIGENOUS",
+        "description": "At least 0.5 Credits from AS-CSUS-INDIGENOUS under constraint from Req16",
         "categories": [
           "AS-CSUS-INDIGENOUS"
         ],
@@ -18740,7 +18740,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-GEOGRAPHY",
+        "description": "At least 0.5 Credits from AS-CSUS-GEOGRAPHY under constraint from Req16",
         "categories": [
           "AS-CSUS-GEOGRAPHY"
         ],
@@ -18751,7 +18751,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-SOCIOLOGY",
+        "description": "At least 0.5 Credits from AS-CSUS-SOCIOLOGY under constraint from Req16",
         "categories": [
           "AS-CSUS-SOCIOLOGY"
         ],
@@ -18762,7 +18762,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-CARIBBEAN",
+        "description": "At least 0.5 Credits from AS-CSUS-CARIBBEAN under constraint from Req16",
         "categories": [
           "AS-CSUS-CARIBBEAN"
         ],
@@ -18773,7 +18773,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-CINEMA",
+        "description": "At least 0.5 Credits from AS-CSUS-CINEMA under constraint from Req16",
         "categories": [
           "AS-CSUS-CINEMA"
         ],
@@ -18784,7 +18784,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-ENGLISH",
+        "description": "At least 0.5 Credits from AS-CSUS-ENGLISH under constraint from Req16",
         "categories": [
           "AS-CSUS-ENGLISH"
         ],
@@ -18795,7 +18795,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-MUSIC",
+        "description": "At least 0.5 Credits from AS-CSUS-MUSIC under constraint from Req16",
         "categories": [
           "AS-CSUS-MUSIC"
         ],
@@ -18806,7 +18806,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-RELIGION",
+        "description": "At least 0.5 Credits from AS-CSUS-RELIGION under constraint from Req16",
         "categories": [
           "AS-CSUS-RELIGION"
         ],
@@ -18817,7 +18817,7 @@ export default {
       "Req15": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CSUS-HISTORY",
+        "description": "At least 0.5 Credits from AS-CSUS-HISTORY under constraint from Req16",
         "categories": [
           "AS-CSUS-HISTORY"
         ],
@@ -18853,7 +18853,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-RLG-EXCL-LANG",
+        "description": "At least 4.0 Credits from AS-RLG-EXCL-LANG under constraint from Req2 and Req3",
         "categories": [
           "AS-RLG-EXCL-LANG"
         ],
@@ -18951,7 +18951,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PHL_ALL",
+        "description": "At least 3.0 Credits from AS-PHL_ALL under constraint from Req3",
         "categories": [
           "AS-PHL_ALL"
         ],
@@ -19034,7 +19034,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1",
+        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1 under constraint from Req7",
         "courses": [
           "JEG100H1",
           "GGR101H1",
@@ -19056,7 +19056,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of GGR270H1 and GGR272H1 and GGR273H1 and GGR373H1",
+        "description": "All of GGR270H1 and GGR272H1 and GGR273H1 and GGR373H1 under constraint from Req7",
         "courses": [
           "GGR270H1",
           "GGR272H1",
@@ -19070,7 +19070,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR225H1 or GGR337H1 or GGR372H1 or GGR386H1 or GGR413H1 or GGR414H1 or GGR462H1 or GGR472H1 or GGR491Y1 or GGR492H1 or GGR497H1 or GGR498H1 or GGR499H1",
+        "description": "At least 1.0 Credit from GGR225H1 or GGR337H1 or GGR372H1 or GGR386H1 or GGR413H1 or GGR414H1 or GGR462H1 or GGR472H1 or GGR491Y1 or GGR492H1 or GGR497H1 or GGR498H1 or GGR499H1 under constraint from Req7",
         "courses": [
           "GGR225H1",
           "GGR337H1",
@@ -19114,7 +19114,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-PRT_ALL or AS-SPA_ALL",
+        "description": "At least 4.0 Credits from AS-PRT_ALL or AS-SPA_ALL under constraint from Req4 and Req6",
         "categories": [
           "AS-PRT_ALL",
           "AS-SPA_ALL"
@@ -19182,7 +19182,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from CLA2_ALL_ALL+ or CLA3_ALL_ALL+ or AS-CLA-SUBST or AS-CLA-GRKLAT",
+        "description": "At least 3.5 Credits from CLA2_ALL_ALL+ or CLA3_ALL_ALL+ or AS-CLA-SUBST or AS-CLA-GRKLAT under constraint from Req3 and Req4 and Req5",
         "categories": [
           "CLA2_ALL_ALL+",
           "CLA3_ALL_ALL+",
@@ -19240,7 +19240,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-CJS-AREAS-ABCD",
+        "description": "At least 3.5 Credits from AS-CJS-AREAS-ABCD under constraint from Req3",
         "categories": [
           "AS-CJS-AREAS-ABCD"
         ],
@@ -19292,7 +19292,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21",
+        "description": "At least 2.0 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21 under constraint from Req4 and Req6",
         "categories": [
           "AS-SMC-CC-SOCIETY_2020-21",
           "AS-SMC-CC-ARTS_2020-21",
@@ -19350,7 +19350,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PSL201Y1 or PSL300H1 or PSL301H1",
+        "description": "At least 1.0 Credit from PSL201Y1 or PSL300H1 or PSL301H1 under constraint from Req8",
         "courses": [
           "PSL201Y1",
           "PSL300H1",
@@ -19363,7 +19363,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from BIO251H1 or BIO270H1 or BIO271H1 or CSB325H1 or CSB332H1 or CJH332H1 or CSC343H1 or CSB344H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or EEB328H1 or HMB200H1 or HMB220H1 or HMB430H1 or HMB470H1 or HMB472H1 or PSL280H1 or PSL299Y1 or AS-PSL-300_EXCL-300H-301H or PSL-400 or PSY290H1 or PSY396H1 or PSY397H1 or PSY369H1 or PSY399H1 or PSY490H1 or PSY492H1 or PSY494H1 or PSY497H1",
+        "description": "At least 2.0 Credits from BIO251H1 or BIO270H1 or BIO271H1 or CSB325H1 or CSB332H1 or CJH332H1 or CSC343H1 or CSB344H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or EEB328H1 or HMB200H1 or HMB220H1 or HMB430H1 or HMB470H1 or HMB472H1 or PSL280H1 or PSL299Y1 or AS-PSL-300_EXCL-300H-301H or PSL-400 or PSY290H1 or PSY396H1 or PSY397H1 or PSY369H1 or PSY399H1 or PSY490H1 or PSY492H1 or PSY494H1 or PSY497H1 under constraint from Req4 and Req5 and Req6 and Req7 and Req8",
         "courses": [
           "BIO251H1",
           "BIO270H1",
@@ -19470,7 +19470,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-LIN-MINOR-LIN_ALL",
+        "description": "At least 3.0 Credits from AS-LIN-MINOR-LIN_ALL under constraint from Req3",
         "categories": [
           "AS-LIN-MINOR-LIN_ALL"
         ],
@@ -19540,7 +19540,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN440H1 or VIC440Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492H1 or VIC492Y1",
+        "description": "At least 2.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN440H1 or VIC440Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492H1 or VIC492Y1 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11 and Req13 and Req14",
         "courses": [
           "VIC114H1",
           "VIC141H1",
@@ -19700,7 +19700,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or FRE441H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1 or HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1 or FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1",
+        "description": "At least 2.0 Credits from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or FRE441H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1 or HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1 or FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1 under constraint from Req13 and Req14",
         "courses": [
           "ENG220Y1",
           "ENG301H1",
@@ -19798,7 +19798,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT202Y1",
+        "description": "All of LCT202Y1 under constraint from Req5 and Req6",
         "courses": [
           "LCT202Y1"
         ],
@@ -19810,7 +19810,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT203H1 or LCT204H1 or LCT205H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT402H1 or LCT403H1 or LCT494H1 or LCT494Y1",
+        "description": "At least 3.0 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT203H1 or LCT204H1 or LCT205H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT402H1 or LCT403H1 or LCT494H1 or LCT494Y1 under constraint from Req3 and Req4 and Req5 and Req6",
         "courses": [
           "VIC162H1",
           "VIC163H1",
@@ -19899,7 +19899,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from LAS300H1 or LAS301H1",
+        "description": "At least 0.5 Credits from LAS300H1 or LAS301H1 under constraint from Req4 and Req5",
         "courses": [
           "LAS300H1",
           "LAS301H1"
@@ -19912,7 +19912,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-LAS-COURSES_20215",
+        "description": "At least 2.5 Credits from AS-LAS-COURSES_20215 under constraint from Req4 and Req5 and Req7 and Req8 and Req9 and Req10 and Req11 and Req12 and Req13",
         "categories": [
           "AS-LAS-COURSES_20215"
         ],
@@ -20088,7 +20088,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-WGS-CORE_2020-21 or AS-WGS-GROUPA_2020-21",
+        "description": "At least 3.0 Credits from AS-WGS-CORE_2020-21 or AS-WGS-GROUPA_2020-21 under constraint from Req3",
         "categories": [
           "AS-WGS-CORE_2020-21",
           "AS-WGS-GROUPA_2020-21"
@@ -20117,7 +20117,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-SPA_ALL or AS-PRT_ALL",
+        "description": "At least 4.0 Credits from AS-SPA_ALL or AS-PRT_ALL under constraint from Req4",
         "categories": [
           "AS-SPA_ALL",
           "AS-PRT_ALL"
@@ -20170,7 +20170,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215",
+        "description": "At least 4.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215 under constraint from Req2 and Req3 and Req4 and Req5",
         "categories": [
           "AS-HIS-ALL_20215",
           "AS-HIS-EQUIV_20215"
@@ -20251,7 +20251,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-VIS_ALL",
+        "description": "At least 2.5 Credits from AS-VIS_ALL under constraint from Req5",
         "categories": [
           "AS-VIS_ALL"
         ],
@@ -20283,7 +20283,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-HPS_ALL or JHE353H1 or JHE355H1 or JPH311H1 or PHL245H1 or PHL356H1 or PHL357H1",
+        "description": "At least 4.0 Credits from AS-HPS_ALL or JHE353H1 or JHE355H1 or JPH311H1 or PHL245H1 or PHL356H1 or PHL357H1 under constraint from Req3 and Req5",
         "courses": [
           "JHE353H1",
           "JHE355H1",
@@ -20355,7 +20355,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-MUS_ALL",
+        "description": "At least 2.5 Credits from AS-MUS_ALL under constraint from Req4 and Req5",
         "categories": [
           "AS-MUS_ALL"
         ],
@@ -20402,7 +20402,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CDN367H1 or CDN368H1",
+        "description": "At least 0.5 Credits from CDN367H1 or CDN368H1 under constraint from Req5",
         "courses": [
           "CDN367H1",
           "CDN368H1"
@@ -20414,7 +20414,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-UNI-CDN-MINOR3",
+        "description": "At least 1.0 Credit from AS-UNI-CDN-MINOR3 under constraint from Req5",
         "categories": [
           "AS-UNI-CDN-MINOR3"
         ],
@@ -20425,7 +20425,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-UNI-CDN-COURSES_2019-20",
+        "description": "At least 2.0 Credits from AS-UNI-CDN-COURSES_2019-20 under constraint from Req5",
         "categories": [
           "AS-UNI-CDN-COURSES_2019-20"
         ],
@@ -20467,7 +20467,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-CINEMA_GROUP-A_2019-20 or AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20",
+        "description": "At least 2.0 Credits from AS-CINEMA_GROUP-A_2019-20 or AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20 under constraint from Req4 and Req5",
         "categories": [
           "AS-CINEMA_GROUP-A_2019-20",
           "AS-CINEMA_GROUP-B_2019-20",
@@ -20510,7 +20510,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-FAH_ALL",
+        "description": "At least 4.0 Credits from AS-FAH_ALL under constraint from Req8",
         "categories": [
           "AS-FAH_ALL"
         ],
@@ -20618,7 +20618,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-1",
+        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-1 under constraint from Req6",
         "categories": [
           "AS-PHL-BIOETHICS-1"
         ],
@@ -20629,7 +20629,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHL271H1 or PHL275H1 or AS-PHL-BIOETHICS-2",
+        "description": "At least 1.0 Credit from PHL271H1 or PHL275H1 or AS-PHL-BIOETHICS-2 under constraint from Req6",
         "courses": [
           "PHL271H1",
           "PHL275H1"
@@ -20644,7 +20644,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from PHL_ALL",
+        "description": "At least 1.5 Credits from PHL_ALL under constraint from Req6",
         "categories": [
           "PHL_ALL"
         ],
@@ -20716,7 +20716,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of EUR200Y1",
+        "description": "All of EUR200Y1 under constraint from Req7",
         "courses": [
           "EUR200Y1"
         ],
@@ -20736,7 +20736,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL219H1 and POL387H1",
+        "description": "All of POL219H1 and POL387H1 under constraint from Req7",
         "courses": [
           "POL219H1",
           "POL387H1"
@@ -20747,7 +20747,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL359Y1",
+        "description": "All of POL359Y1 under constraint from Req7",
         "courses": [
           "POL359Y1"
         ],
@@ -20757,7 +20757,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of POL358H1 and POL359H1",
+        "description": "All of POL358H1 and POL359H1 under constraint from Req7",
         "courses": [
           "POL358H1",
           "POL359H1"
@@ -20769,7 +20769,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-EUR-ELECTIVE_20215",
+        "description": "At least 2.0 Credits from AS-EUR-ELECTIVE_20215 under constraint from Req7",
         "categories": [
           "AS-EUR-ELECTIVE_20215"
         ],
@@ -20883,7 +20883,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from CHC218H1 or CHC312H1 or CHC313H1 or SMC218H1 or SMC312H1 or SMC313H1",
+        "description": "At least 1.5 Credits from CHC218H1 or CHC312H1 or CHC313H1 or SMC218H1 or SMC312H1 or SMC313H1 under constraint from Req6",
         "courses": [
           "CHC218H1",
           "CHC312H1",
@@ -20899,7 +20899,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21",
+        "description": "At least 1.5 Credits from AS-SMC-CC-SOCIETY_2020-21 or AS-SMC-CC-ARTS_2020-21 or AS-SMC-CC-SCIENCE_2020-21 or AS-SMC-CC-EDUC_2020-21 or AS-SMC-CC-INDEP_2020-21 under constraint from Req4 and Req6",
         "categories": [
           "AS-SMC-CC-SOCIETY_2020-21",
           "AS-SMC-CC-ARTS_2020-21",
@@ -20956,7 +20956,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from BPM214H1 or BPM330H1 or BPM332H1 or BPM333H1 or BPM334H1 or BPM335H1 or BPM336H1 or BPM337H1 or BPM338H1 or BPM339H1 or BPM430H1 or BPM432H1 or BPM433H1 or BPM438H1",
+        "description": "At least 2.0 Credits from BPM214H1 or BPM330H1 or BPM332H1 or BPM333H1 or BPM334H1 or BPM335H1 or BPM336H1 or BPM337H1 or BPM338H1 or BPM339H1 or BPM430H1 or BPM432H1 or BPM433H1 or BPM438H1 under constraint from Req4",
         "courses": [
           "BPM214H1",
           "BPM330H1",
@@ -20980,7 +20980,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-NEW-BUDDHISM_A_20215",
+        "description": "At least 1.5 Credits from AS-NEW-BUDDHISM_A_20215 under constraint from Req4",
         "categories": [
           "AS-NEW-BUDDHISM_A_20215"
         ],
@@ -21012,7 +21012,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-NMC_ALL or NML_ALL",
+        "description": "At least 4.0 Credits from AS-NMC_ALL or NML_ALL under constraint from Req2",
         "categories": [
           "AS-NMC_ALL",
           "NML_ALL"
@@ -21051,7 +21051,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from EDS260H1 or EDS261H1 or EDS265H1 or EDS357H1 or VIC260H1 or VIC261H1 or VIC262H1 or VIC265H1",
+        "description": "At least 2.0 Credits from EDS260H1 or EDS261H1 or EDS265H1 or EDS357H1 or VIC260H1 or VIC261H1 or VIC262H1 or VIC265H1 under constraint from Req6",
         "courses": [
           "EDS260H1",
           "EDS261H1",
@@ -21069,7 +21069,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from EDS360H1 or EDS360Y1 or VIC360H1 or VIC360Y1",
+        "description": "At least 0.5 Credits from EDS360H1 or EDS360Y1 or VIC360H1 or VIC360Y1 under constraint from Req6",
         "courses": [
           "EDS360H1",
           "EDS360Y1",
@@ -21083,7 +21083,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EDS356H1 or EDS358H1 or EDS361H0 or EDS363H1 or EDS368H1 or EDS369H1 or VIC451H1 or VIC356H1 or VIC361H0 or VIC363H1 or VIC368H1 or VIC369H1",
+        "description": "At least 1.0 Credit from EDS356H1 or EDS358H1 or EDS361H0 or EDS363H1 or EDS368H1 or EDS369H1 or VIC451H1 or VIC356H1 or VIC361H0 or VIC363H1 or VIC368H1 or VIC369H1 under constraint from Req6",
         "courses": [
           "EDS356H1",
           "EDS358H1",
@@ -21140,7 +21140,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-EAS-SOCIETYCULT or AS-EAS-SOC-CUL-OTHERDEPT",
+        "description": "At least 3.0 Credits from AS-EAS-SOCIETYCULT or AS-EAS-SOC-CUL-OTHERDEPT under constraint from Req3 and Req4",
         "categories": [
           "AS-EAS-SOCIETYCULT",
           "AS-EAS-SOC-CUL-OTHERDEPT"
@@ -21219,7 +21219,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR300H1 and FOR310H1",
+        "description": "All of FOR300H1 and FOR310H1 under constraint from Req5 and Req6",
         "courses": [
           "FOR300H1",
           "FOR310H1"
@@ -21232,7 +21232,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV315H1 or ENV350H1 or MSE219H1 or MSE330H1 or MSE316H1 or FOR305H1 or BCH370H1 or JGE348H1 or GGR348H1",
+        "description": "At least 0.5 Credits from ENV315H1 or ENV350H1 or MSE219H1 or MSE330H1 or MSE316H1 or FOR305H1 or BCH370H1 or JGE348H1 or GGR348H1 under constraint from Req5 and Req6",
         "courses": [
           "ENV315H1",
           "ENV350H1",
@@ -21252,7 +21252,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR401H1 or FOR403H1 or FOR405H1 or FOR410H1 or FOR420H1 or FOR423H1",
+        "description": "At least 1.0 Credit from FOR401H1 or FOR403H1 or FOR405H1 or FOR410H1 or FOR420H1 or FOR423H1 under constraint from Req5 and Req6",
         "courses": [
           "FOR401H1",
           "FOR403H1",
@@ -21360,7 +21360,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR300H1 or FOR301H1 or FOR302H1 or FOR303H1 or FOR305H1 or FOR306H1 or FOR307H1 or FOR310H1",
+        "description": "At least 1.0 Credit from FOR300H1 or FOR301H1 or FOR302H1 or FOR303H1 or FOR305H1 or FOR306H1 or FOR307H1 or FOR310H1 under constraint from Req6",
         "courses": [
           "FOR300H1",
           "FOR301H1",
@@ -21377,7 +21377,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR400Y1",
+        "description": "All of FOR400Y1 under constraint from Req5",
         "courses": [
           "FOR400Y1"
         ],
@@ -21446,7 +21446,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PHL_ALL",
+        "description": "At least 2.0 Credits from PHL_ALL under constraint from Req5",
         "categories": [
           "PHL_ALL"
         ],
@@ -21474,7 +21474,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from HUN100Y1 or HUN200Y1 or HUN310Y1 or HUN320Y1 or HUN335H1 or HUN345H1 or HUN351H1 or HUN355H1 or HUN440Y1 or HUN450H1 or HUN451H1 or HUN455H1 or HIS453H1 or HIS241H1 or HIS251Y1 or HIS389H1 or INI381H1",
+        "description": "At least 4.0 Credits from HUN100Y1 or HUN200Y1 or HUN310Y1 or HUN320Y1 or HUN335H1 or HUN345H1 or HUN351H1 or HUN355H1 or HUN440Y1 or HUN450H1 or HUN451H1 or HUN455H1 or HIS453H1 or HIS241H1 or HIS251Y1 or HIS389H1 or INI381H1 under constraint from Req2",
         "courses": [
           "HUN100Y1",
           "HUN200Y1",
@@ -21556,7 +21556,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CSE240H1 or NEW240H1",
+        "description": "At least 0.5 Credits from CSE240H1 or NEW240H1 under constraint from Req5",
         "courses": [
           "CSE240H1",
           "NEW240H1"
@@ -21568,7 +21568,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-CORE_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-CORE_2020-21 under constraint from Req5",
         "categories": [
           "AS-NEW-EQUITY-CORE_2020-21"
         ],
@@ -21579,7 +21579,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-NEW-EQUITY-CORE_2020-21 or AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21",
+        "description": "At least 1.5 Credits from AS-NEW-EQUITY-CORE_2020-21 or AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21 under constraint from Req5",
         "categories": [
           "AS-NEW-EQUITY-CORE_2020-21",
           "AS-NEW-EQUITY-A_2020-21",
@@ -21594,7 +21594,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21",
+        "description": "At least 1.0 Credit from AS-NEW-EQUITY-A_2020-21 or AS-NEW-EQUITY-B_2020-21 or AS-NEW-EQUITY-C_2020-21 or AS-NEW-EQUITY-D_2020-21 under constraint from Req5",
         "categories": [
           "AS-NEW-EQUITY-A_2020-21",
           "AS-NEW-EQUITY-B_2020-21",
@@ -21715,7 +21715,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from GER463Y1 or GER361H1 or GER367H1 or JGJ360H1 or GER100Y1 or GER150H1 or AS-CJS_ALL",
+        "description": "At least 1.5 Credits from GER463Y1 or GER361H1 or GER367H1 or JGJ360H1 or GER100Y1 or GER150H1 or AS-CJS_ALL under constraint from Req4",
         "courses": [
           "GER463Y1",
           "GER361H1",
@@ -21824,7 +21824,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM3_ALL_ALL+ or MAT3_ALL_ALL+ or HPS390H1 or HPS391H1 or PSL432H1",
+        "description": "At least 1.0 Credit from APM3_ALL_ALL+ or MAT3_ALL_ALL+ or HPS390H1 or HPS391H1 or PSL432H1 under constraint from Req7",
         "courses": [
           "HPS390H1",
           "HPS391H1",
@@ -21858,7 +21858,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1",
+        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1 under constraint from Req7",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -21870,7 +21870,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA105Y1 or SLA204Y1",
+        "description": "At least 2.0 Credits from SLA105Y1 or SLA204Y1 under constraint from Req7",
         "courses": [
           "SLA105Y1",
           "SLA204Y1"
@@ -21882,7 +21882,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1",
+        "description": "At least 1.0 Credit from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 under constraint from Req7",
         "courses": [
           "SLA200H1",
           "SLA215H1",
@@ -21898,7 +21898,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA215H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req7",
         "courses": [
           "SLA200H1",
           "SLA215H1",
@@ -21956,7 +21956,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1",
+        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1 under constraint from Req9",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -21968,7 +21968,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1",
+        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1 under constraint from Req9",
         "courses": [
           "SLA106H1",
           "SLA116H1",
@@ -21993,7 +21993,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from SLA216H1 or SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or AS-SLA-INTERDIS_ASMIN1200B",
+        "description": "At least 1.5 Credits from SLA216H1 or SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or AS-SLA-INTERDIS_ASMIN1200B under constraint from Req7 and Req9",
         "courses": [
           "SLA216H1",
           "SLA226H1",
@@ -22017,7 +22017,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from HIS353Y1 or SLA216H1 or SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or AS-SLA-INTERDIS_ASMIN1200B",
+        "description": "At least 1.5 Credits from HIS353Y1 or SLA216H1 or SLA226H1 or SLA229H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or AS-SLA-INTERDIS_ASMIN1200B under constraint from Req6 and Req7 and Req9",
         "courses": [
           "HIS353Y1",
           "SLA216H1",
@@ -22080,7 +22080,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1",
+        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1 under constraint from Req6",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -22092,7 +22092,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1",
+        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1 under constraint from Req6",
         "courses": [
           "SLA100H1",
           "SLA101H1",
@@ -22109,7 +22109,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-SLA-RUSSIAN-ELEC-MIN_20215",
+        "description": "At least 1.0 Credit from AS-SLA-RUSSIAN-ELEC-MIN_20215 under constraint from Req6",
         "categories": [
           "AS-SLA-RUSSIAN-ELEC-MIN_20215"
         ],
@@ -22120,7 +22120,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-SLA-RUSSIAN-ELEC-MIN_20215 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA345H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from AS-SLA-RUSSIAN-ELEC-MIN_20215 or SLA104H1 or SLA200H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA345H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA330H1 or SLA331H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req6",
         "courses": [
           "SLA104H1",
           "SLA200H1",
@@ -22183,7 +22183,7 @@ export default {
       "Req2": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req3 or Req4",
+        "description": "At least 1 Requirement from Req3 or Req4 under constraint from Req9",
         "dependentReqs": [
           "Req3",
           "Req4"
@@ -22195,7 +22195,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1",
+        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1 under constraint from Req9",
         "courses": [
           "SLA107Y1",
           "SLA257H1",
@@ -22209,7 +22209,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA109Y1 or SLA209H1 or SLA213H1",
+        "description": "At least 2.0 Credits from SLA109Y1 or SLA209H1 or SLA213H1 under constraint from Req9",
         "courses": [
           "SLA109Y1",
           "SLA209H1",
@@ -22222,7 +22222,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA227H1",
+        "description": "At least 0.5 Credits from SLA227H1 under constraint from Req9",
         "courses": [
           "SLA227H1"
         ],
@@ -22233,7 +22233,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1 under constraint from Req9",
         "courses": [
           "SLA200H1",
           "SLA217H1",
@@ -22250,7 +22250,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA230H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA331H1 or SLA333H1 or SLA377H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA217H1 or SLA235H1 or SLA247H1 or SLA330H1 or SLA357H1 or SLA380H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA203H1 or SLA222H1 or SLA229H1 or SLA230H1 or SLA254H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA318H1 or SLA331H1 or SLA333H1 or SLA377H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req9",
         "courses": [
           "SLA200H1",
           "SLA217H1",
@@ -22306,7 +22306,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1",
+        "description": "At least 0.5 Credits from SLA103H1 or SLA256H1 under constraint from Req7",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -22318,7 +22318,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA108Y1 or SLA208Y1 or SLA308Y1",
+        "description": "At least 2.0 Credits from SLA108Y1 or SLA208Y1 or SLA308Y1 under constraint from Req7",
         "courses": [
           "SLA108Y1",
           "SLA208Y1",
@@ -22331,7 +22331,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from SLA200H1 or SLA203H1 or SLA218Y1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1",
+        "description": "At least 1.0 Credit from SLA200H1 or SLA203H1 or SLA218Y1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 under constraint from Req7",
         "courses": [
           "SLA200H1",
           "SLA203H1",
@@ -22358,7 +22358,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SLA200H1 or SLA203H1 or SLA218Y1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA330H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1",
+        "description": "At least 0.5 Credits from SLA200H1 or SLA203H1 or SLA218Y1 or SLA228H1 or SLA238H1 or SLA248H1 or SLA253H1 or SLA254H1 or SLA268H1 or SLA311H1 or SLA318H1 or SLA328H1 or SLA331H1 or SLA338H1 or SLA358H1 or SLA428Y1 or SLA429H1 or SLA104H1 or SLA201H1 or SLA202H1 or SLA222H1 or SLA229H1 or SLA235H1 or SLA286H1 or SLA301H1 or SLA302H1 or SLA330H1 or SLA333H1 or SLA380H1 or SLA486H1 or SLA498Y1 or SLA499H1 under constraint from Req7",
         "courses": [
           "SLA200H1",
           "SLA203H1",
@@ -22438,7 +22438,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or SMC359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC361H1 or SMC367H1 or MST359H1",
+        "description": "At least 1.0 Credit from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or SMC359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC361H1 or SMC367H1 or MST359H1 under constraint from Req4",
         "courses": [
           "CHC200H1",
           "CHC307H1",
@@ -22475,7 +22475,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1 or AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1",
+        "description": "At least 2.5 Credits from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1 or AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1 under constraint from Req4",
         "courses": [
           "CHC200H1",
           "CHC307H1",
@@ -22629,7 +22629,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SDS-ELECTIVES_20215",
+        "description": "At least 2.0 Credits from AS-SDS-ELECTIVES_20215 under constraint from Req11 and Req12 and Req13 and Req14",
         "categories": [
           "AS-SDS-ELECTIVES_20215"
         ],
@@ -22791,7 +22791,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1",
+        "description": "At least 0.5 Credits from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1 under constraint from Req9",
         "courses": [
           "GGR201H1",
           "GGR203H1",
@@ -22812,7 +22812,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21",
+        "description": "At least 2.5 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21 under constraint from Req8 and Req9",
         "categories": [
           "AS-GGR-NEWGROUPA_2020-21",
           "AS-GGR-NEWGROUPB_2020-21"
@@ -22891,7 +22891,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from ENV261H1 or ENV281H1 or ENV282H1 or ENV307H1 or ENV320H1 or ENV322H1 or ENV323H1 or ENV330H1 or JGE321H1 or JGE331H1 or ENV333H1 or ENV335H1 or ENV347H1 or ENV350H1 or ENV361H1 or ENV362H1 or ENV381H1 or ENV382H1 or ENV395Y0 or ENV396H0 or ENV396Y0 or ENV421H1 or ENV422H1 or ENV430H1 or ENV431H1 or ENV440H1 or ENV461H1 or ENV462H1 or PHL273H1 or AS-CFE-ENVSTU-A_2020-21",
+        "description": "At least 2.5 Credits from ENV261H1 or ENV281H1 or ENV282H1 or ENV307H1 or ENV320H1 or ENV322H1 or ENV323H1 or ENV330H1 or JGE321H1 or JGE331H1 or ENV333H1 or ENV335H1 or ENV347H1 or ENV350H1 or ENV361H1 or ENV362H1 or ENV381H1 or ENV382H1 or ENV395Y0 or ENV396H0 or ENV396Y0 or ENV421H1 or ENV422H1 or ENV430H1 or ENV431H1 or ENV440H1 or ENV461H1 or ENV462H1 or PHL273H1 or AS-CFE-ENVSTU-A_2020-21 under constraint from Req4 and Req5",
         "courses": [
           "ENV261H1",
           "ENV281H1",
@@ -22972,7 +22972,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-SLA-INTERDISPL or AS-SLA-RUSCUL",
+        "description": "At least 0.5 Credits from AS-SLA-INTERDISPL or AS-SLA-RUSCUL under constraint from Req4",
         "categories": [
           "AS-SLA-INTERDISPL",
           "AS-SLA-RUSCUL"
@@ -22984,7 +22984,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-SLA-RUSCUL",
+        "description": "At least 3.0 Credits from AS-SLA-RUSCUL under constraint from Req4",
         "categories": [
           "AS-SLA-RUSCUL"
         ],
@@ -23016,7 +23016,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT100Y1 or ENV221H1 or ENV222H1 or GGR223H1 or ENV222Y1",
+        "description": "At least 1.0 Credit from ANT100Y1 or ENV221H1 or ENV222H1 or GGR223H1 or ENV222Y1 under constraint from Req3 and Req9",
         "courses": [
           "ANT100Y1",
           "ENV221H1",
@@ -23041,7 +23041,7 @@ export default {
       "Req4": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req5 or Req6",
+        "description": "At least 1 Requirement from Req5 or Req6 under constraint from Req9",
         "dependentReqs": [
           "Req5",
           "Req6"
@@ -23052,7 +23052,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ANT200Y1",
+        "description": "All of ANT200Y1 under constraint from Req9",
         "courses": [
           "ANT200Y1"
         ],
@@ -23063,7 +23063,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT204H1 or ANT207H1 or AS-ANT-GROUP-C-ALL-300+_20215",
+        "description": "At least 1.0 Credit from ANT204H1 or ANT207H1 or AS-ANT-GROUP-C-ALL-300+_20215 under constraint from Req7 and Req9",
         "courses": [
           "ANT204H1",
           "ANT207H1"
@@ -23087,7 +23087,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ANT315H1 or ANT336H1 or ANT346H1 or ANT364H1 or ANT366H1 or ANT368H1 or ANT371H1 or ANT374H1 or ANT376H1 or ANT409H1 or ANT410H1 or ANT415Y1 or ANT420H1 or ANT430H1 or ANT450H1 or INS250H1 or INS402H1",
+        "description": "At least 2.0 Credits from ANT315H1 or ANT336H1 or ANT346H1 or ANT364H1 or ANT366H1 or ANT368H1 or ANT371H1 or ANT374H1 or ANT376H1 or ANT409H1 or ANT410H1 or ANT415Y1 or ANT420H1 or ANT430H1 or ANT450H1 or INS250H1 or INS402H1 under constraint from Req9",
         "courses": [
           "ANT315H1",
           "ANT336H1",
@@ -23140,7 +23140,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-BMS-ELECTIVES",
+        "description": "At least 2.0 Credits from AS-BMS-ELECTIVES under constraint from Req3 and Req4",
         "categories": [
           "AS-BMS-ELECTIVES"
         ],
@@ -23300,7 +23300,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1 under constraint from Req2 and Req3",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -23334,7 +23334,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-CHM-FURTHER200+_2019-20",
+        "description": "At least 3.0 Credits from AS-CHM-FURTHER200+_2019-20 under constraint from Req7",
         "categories": [
           "AS-CHM-FURTHER200+_2019-20"
         ],
@@ -23421,7 +23421,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-EEB-ENVBIO-CORE or AS-EEB-ENVBIO-BIODIV_2020-21 or AS-EEB-ENVBIO-FIELD or AS-EEB-ENVBIO-OTHERS",
+        "description": "At least 2.0 Credits from AS-EEB-ENVBIO-CORE or AS-EEB-ENVBIO-BIODIV_2020-21 or AS-EEB-ENVBIO-FIELD or AS-EEB-ENVBIO-OTHERS under constraint from Req4 and Req5 and Req6 and Req7 and Req8",
         "categories": [
           "AS-EEB-ENVBIO-CORE",
           "AS-EEB-ENVBIO-BIODIV_2020-21",
@@ -23488,7 +23488,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-GER_ALL or JGJ360H1",
+        "description": "At least 4.0 Credits from AS-GER_ALL or JGJ360H1 under constraint from Req2 and Req3 and Req4 and Req5",
         "courses": [
           "JGJ360H1"
         ],
@@ -23755,7 +23755,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from LAT_ALL",
+        "description": "At least 3.0 Credits from LAT_ALL under constraint from Req4",
         "categories": [
           "LAT_ALL"
         ],
@@ -23877,7 +23877,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-CARIBBEAN-CORE_20215",
+        "description": "At least 1.0 Credit from AS-NEW-CARIBBEAN-CORE_20215 under constraint from Req5",
         "categories": [
           "AS-NEW-CARIBBEAN-CORE_20215"
         ],
@@ -23888,7 +23888,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NEW-CARIBBEAN-CORE_20215 or AS-NEW-CARIBBEAN-A_20215",
+        "description": "At least 1.0 Credit from AS-NEW-CARIBBEAN-CORE_20215 or AS-NEW-CARIBBEAN-A_20215 under constraint from Req5",
         "categories": [
           "AS-NEW-CARIBBEAN-CORE_20215",
           "AS-NEW-CARIBBEAN-A_20215"
@@ -24014,7 +24014,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR332H1 or ENV462H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR347H1 or GGR348H1",
+        "description": "At least 1.0 Credit from GGR332H1 or ENV462H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR347H1 or GGR348H1 under constraint from Req6 and Req8",
         "courses": [
           "GGR332H1",
           "ENV462H1",
@@ -24041,7 +24041,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CFE-ENERGY_20215",
+        "description": "At least 0.5 Credits from AS-CFE-ENERGY_20215 under constraint from Req8",
         "categories": [
           "AS-CFE-ENERGY_20215"
         ],
@@ -24107,7 +24107,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM210H1 or ENV234H1 or ENV237H1 or ENV238H1 or ESS262H1",
+        "description": "At least 1.0 Credit from CHM210H1 or ENV234H1 or ENV237H1 or ENV238H1 or ESS262H1 under constraint from Req6",
         "courses": [
           "CHM210H1",
           "ENV234H1",
@@ -24131,7 +24131,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV337H1 or JEE337H1",
+        "description": "At least 0.5 Credits from ENV337H1 or JEE337H1 under constraint from Req9",
         "courses": [
           "ENV337H1",
           "JEE337H1"
@@ -24143,7 +24143,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-CFE-ENVSCI-GP-A_2020-21 or AS-CFE-ENVSCI-GP-B_2020-21",
+        "description": "At least 0.5 Credits from AS-CFE-ENVSCI-GP-A_2020-21 or AS-CFE-ENVSCI-GP-B_2020-21 under constraint from Req9",
         "categories": [
           "AS-CFE-ENVSCI-GP-A_2020-21",
           "AS-CFE-ENVSCI-GP-B_2020-21"
@@ -24172,7 +24172,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-ENG-FCE",
+        "description": "At least 4.0 Credits from AS-ENG-FCE under constraint from Req2 and Req3",
         "categories": [
           "AS-ENG-FCE"
         ],
@@ -24233,7 +24233,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21",
+        "description": "At least 3.0 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21 under constraint from Req5 and Req6",
         "categories": [
           "AS-GGR-GROUP-E_2020-21",
           "AS-GGR-GROUP-F_2020-21"
@@ -24271,7 +24271,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-SMC-CELTIC-OPT1 or AS-SMC-CELTIC-OPT2 or SMC240Y1 or SMC240H1 or SMC241H1 or SMC451Y1 or SMC385H1 or SMC444H1",
+        "description": "At least 4.0 Credits from AS-SMC-CELTIC-OPT1 or AS-SMC-CELTIC-OPT2 or SMC240Y1 or SMC240H1 or SMC241H1 or SMC451Y1 or SMC385H1 or SMC444H1 under constraint from Req2",
         "courses": [
           "SMC240Y1",
           "SMC240H1",
@@ -24327,7 +24327,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC240H1 or CSC207H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC240H1 or CSC207H1 or AS-CSC-200-300-400 under constraint from Req4 and Req19 and Req20",
         "courses": [
           "CSC108H1",
           "CSC148H1",
@@ -24357,7 +24357,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC240H1 or CSC207H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC240H1 or CSC207H1 or AS-CSC-200-300-400 under constraint from Req6 and Req19 and Req20",
         "courses": [
           "CSC120H1",
           "CSC148H1",
@@ -24387,7 +24387,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400 under constraint from Req8 and Req19 and Req20",
         "courses": [
           "CSC108H1",
           "CSC148H1",
@@ -24419,7 +24419,7 @@ export default {
       "Req9": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400 under constraint from Req10 and Req19 and Req20",
         "courses": [
           "CSC120H1",
           "CSC148H1",
@@ -24451,7 +24451,7 @@ export default {
       "Req11": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC108H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400 under constraint from Req12 and Req19 and Req20",
         "courses": [
           "CSC108H1",
           "CSC148H1",
@@ -24483,7 +24483,7 @@ export default {
       "Req13": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC120H1 or CSC148H1 or CSC165H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400 under constraint from Req14 and Req19 and Req20",
         "courses": [
           "CSC120H1",
           "CSC148H1",
@@ -24515,7 +24515,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC110Y1 or CSC111H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC110Y1 or CSC111H1 or CSC207H1 or CSC236H1 or AS-CSC-200-300-400 under constraint from Req16 and Req19 and Req20",
         "courses": [
           "CSC110Y1",
           "CSC111H1",
@@ -24545,7 +24545,7 @@ export default {
       "Req17": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CSC110Y1 or CSC111H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400",
+        "description": "At least 4.0 Credits from CSC110Y1 or CSC111H1 or CSC207H1 or CSC240H1 or AS-CSC-200-300-400 under constraint from Req18 and Req19 and Req20",
         "courses": [
           "CSC110Y1",
           "CSC111H1",
@@ -24609,7 +24609,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-AFRICAN-A_20215",
+        "description": "At least 1.0 Credit from AS-AFRICAN-A_20215 under constraint from Req5",
         "categories": [
           "AS-AFRICAN-A_20215"
         ],
@@ -24620,7 +24620,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-AFRICAN-A_20215 or AS-AFRICAN-B_20215",
+        "description": "At least 1.0 Credit from AS-AFRICAN-A_20215 or AS-AFRICAN-B_20215 under constraint from Req5",
         "categories": [
           "AS-AFRICAN-A_20215",
           "AS-AFRICAN-B_20215"
@@ -24632,7 +24632,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-AFRICAN-B_20215 or AFR280Y1 or AFR380Y1",
+        "description": "At least 1.0 Credit from AS-AFRICAN-B_20215 or AFR280Y1 or AFR380Y1 under constraint from Req5",
         "courses": [
           "AFR280Y1",
           "AFR380Y1"
@@ -24669,7 +24669,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from EST100Y1 or EST200Y1 or EST210H1 or EST300Y1 or EST400Y1 or EST420Y1 or FIN220H1",
+        "description": "At least 4.0 Credits from EST100Y1 or EST200Y1 or EST210H1 or EST300Y1 or EST400Y1 or EST420Y1 or FIN220H1 under constraint from Req2",
         "courses": [
           "EST100Y1",
           "EST200Y1",
@@ -24816,7 +24816,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-POL-COURSES",
+        "description": "At least 4.0 Credits from AS-POL-COURSES under constraint from Req2 and Req3",
         "categories": [
           "AS-POL-COURSES"
         ],
@@ -24903,7 +24903,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR347H1 or GGR348H1 or GGR390H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1",
+        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR347H1 or GGR348H1 or GGR390H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 under constraint from Req8",
         "courses": [
           "GGR201H1",
           "GGR203H1",
@@ -24954,7 +24954,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CLA_ALL or CLA160H1 or GRK101H1 or GRK102H1",
+        "description": "At least 1.0 Credit from CLA_ALL or CLA160H1 or GRK101H1 or GRK102H1 under constraint from Req2",
         "courses": [
           "CLA160H1",
           "GRK101H1",
@@ -24978,7 +24978,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from GRK_ALL",
+        "description": "At least 3.0 Credits from GRK_ALL under constraint from Req4",
         "categories": [
           "GRK_ALL"
         ],
@@ -25006,7 +25006,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-WRR-&-JWE_ALL",
+        "description": "At least 2.5 Credits from AS-WRR-&-JWE_ALL under constraint from Req3",
         "categories": [
           "AS-WRR-&-JWE_ALL"
         ],
@@ -25017,7 +25017,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-INI-WRCA-GROUPA or AS-INI-WRCA-GROUPB or AS-INI-WRCA-GROUPC",
+        "description": "At least 1.5 Credits from AS-INI-WRCA-GROUPA or AS-INI-WRCA-GROUPB or AS-INI-WRCA-GROUPC under constraint from Req3",
         "categories": [
           "AS-INI-WRCA-GROUPA",
           "AS-INI-WRCA-GROUPB",
@@ -25062,7 +25062,7 @@ export default {
       "Req2": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20 or DRM220Y1",
+        "description": "At least 3.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20 or DRM220Y1 under constraint from Req3 and Req4",
         "courses": [
           "DRM220Y1"
         ],
@@ -25189,7 +25189,7 @@ export default {
       },
       "Req9": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here",
+        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here under constraint from Req18",
         "recursReqs": [
           "Req18"
         ]
@@ -25197,7 +25197,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-2017-GROUPB"
         ],
@@ -25208,7 +25208,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-GROUPC_20215"
         ],
@@ -25219,7 +25219,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-GROUPD_20215"
         ],
@@ -25230,7 +25230,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-GROUPE_20215"
         ],
@@ -25241,7 +25241,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-GROUPF_20215"
         ],
@@ -25252,7 +25252,7 @@ export default {
       "Req15": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-2017-GROUPG"
         ],
@@ -25263,7 +25263,7 @@ export default {
       "Req16": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-GROUPH_20215"
         ],
@@ -25274,7 +25274,7 @@ export default {
       "Req17": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215 under constraint from Req18",
         "categories": [
           "AS-INI-URBAN-2017-GROUPA",
           "AS-INI-URBAN-2017-GROUPB",
@@ -25455,7 +25455,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BIO220H1 or BIO230H1 or BIO255H1 or BIO251H1 or BIO270H1 or PSL300H1 or BIO271H1 or PSL301H1 or BIO260H1 or HMB265H1",
+        "description": "At least 1.0 Credit from BIO220H1 or BIO230H1 or BIO255H1 or BIO251H1 or BIO270H1 or PSL300H1 or BIO271H1 or PSL301H1 or BIO260H1 or HMB265H1 under constraint from Req3 and Req4 and Req5 and Req6",
         "courses": [
           "BIO220H1",
           "BIO230H1",
@@ -25514,7 +25514,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-BIO-MIN07-3_20215",
+        "description": "At least 2.0 Credits from AS-BIO-MIN07-3_20215 under constraint from Req8",
         "categories": [
           "AS-BIO-MIN07-3_20215"
         ],
@@ -25542,7 +25542,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-GER_COURSES",
+        "description": "At least 4.0 Credits from AS-GER_COURSES under constraint from Req2 and Req3 and Req4 and Req5",
         "categories": [
           "AS-GER_COURSES"
         ],
@@ -25610,7 +25610,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from ITA_ALL or AS-ITA-LITERATURE3+",
+        "description": "At least 4.0 Credits from ITA_ALL or AS-ITA-LITERATURE3+ under constraint from Req2",
         "categories": [
           "ITA_ALL",
           "AS-ITA-LITERATURE3+"
@@ -25734,7 +25734,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of NUS227H0 and NUS228H0 and NUS328H0 and NUS398H0",
+        "description": "All of NUS227H0 and NUS228H0 and NUS328H0 and NUS398H0 under constraint from Req7",
         "courses": [
           "NUS227H0",
           "NUS228H0",
@@ -25747,7 +25747,7 @@ export default {
       },
       "Req6": {
         "type": "NOTE/././RECURS",
-        "description": "Note: Further CHM courses to make a total of 4.0 full course equivalents",
+        "description": "Note: Further CHM courses to make a total of 4.0 full course equivalents under constraint from Req7",
         "recursReqs": [
           "Req7"
         ]
@@ -25772,7 +25772,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ENG270H1 or ENG270Y1 or ENG369H1 or ENG370H1 or ENG370Y1 or NUS339H0",
+        "description": "At least 1.0 Credit from ENG270H1 or ENG270Y1 or ENG369H1 or ENG370H1 or ENG370Y1 or NUS339H0 under constraint from Req4",
         "courses": [
           "ENG270H1",
           "ENG270Y1",
@@ -25788,7 +25788,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ENG-FCE",
+        "description": "At least 1.0 Credit from AS-ENG-FCE under constraint from Req4",
         "categories": [
           "AS-ENG-FCE"
         ],
@@ -25799,7 +25799,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NUS231H0 or NUS332H0 or NUS333H0 or NUS334H0 or NUS338H0 or NUS339H0",
+        "description": "At least 2.0 Credits from NUS231H0 or NUS332H0 or NUS333H0 or NUS334H0 or NUS338H0 or NUS339H0 under constraint from Req4",
         "courses": [
           "NUS231H0",
           "NUS332H0",
@@ -25848,7 +25848,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-GGR-NUS-B",
+        "description": "At least 1.5 Credits from AS-GGR-NUS-B under constraint from Req6",
         "categories": [
           "AS-GGR-NUS-B"
         ],
@@ -25859,7 +25859,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NUS250H0 or NUS251H0 or NUS252H0 or NUS253H0 or NUS254H0 or NUS255H0 or NUS256H0 or NUS350H0 or NUS351Y0 or NUS352H0 or NUS353H0 or NUS354H0",
+        "description": "At least 2.0 Credits from NUS250H0 or NUS251H0 or NUS252H0 or NUS253H0 or NUS254H0 or NUS255H0 or NUS256H0 or NUS350H0 or NUS351Y0 or NUS352H0 or NUS353H0 or NUS354H0 under constraint from Req6",
         "courses": [
           "NUS250H0",
           "NUS251H0",
@@ -25916,7 +25916,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-CDN-ASIANCAD or AS-CDN-ASIANCAD2 or AS-CDN-ASIANCAD3_2019-20",
+        "description": "At least 3.0 Credits from AS-CDN-ASIANCAD or AS-CDN-ASIANCAD2 or AS-CDN-ASIANCAD3_2019-20 under constraint from Req4 and Req5 and Req6",
         "categories": [
           "AS-CDN-ASIANCAD",
           "AS-CDN-ASIANCAD2",
@@ -25931,7 +25931,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/GROUPMIN/RECURS",
         "count": 1.0,
-        "description": "At least 1.0 Credit from AS-CDN-ASIANCAD in Req3",
+        "description": "At least 1.0 Credit from AS-CDN-ASIANCAD in Req3 under constraint from Req6",
         "categories": [
           "AS-CDN-ASIANCAD"
         ],
@@ -25942,7 +25942,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/GROUPMIN/RECURS",
         "count": 1.0,
-        "description": "At least 1.0 Credit from AS-CDN-ASIANCAD2 or AS-CDN-ASIANCAD3_2019-20 in Req3",
+        "description": "At least 1.0 Credit from AS-CDN-ASIANCAD2 or AS-CDN-ASIANCAD3_2019-20 in Req3 under constraint from Req6",
         "categories": [
           "AS-CDN-ASIANCAD2",
           "AS-CDN-ASIANCAD3_2019-20"
@@ -26128,7 +26128,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-VIC-CES-GROUPA or AS-VIC-CES-GROUPB or AS-VIC-CES-CC_20215 or VIC191Y1 or VIC190Y1",
+        "description": "At least 4.0 Credits from AS-VIC-CES-GROUPA or AS-VIC-CES-GROUPB or AS-VIC-CES-CC_20215 or VIC191Y1 or VIC190Y1 under constraint from Req2 and Req4 and Req6 and Req7 and Req8",
         "courses": [
           "VIC191Y1",
           "VIC190Y1"
@@ -26231,7 +26231,7 @@ export default {
       "Req2": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ2_2020-21 or VIC121H1 or VIC122H1 or VIC170Y1 or VIC172Y1",
+        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ2_2020-21 or VIC121H1 or VIC122H1 or VIC170Y1 or VIC172Y1 under constraint from Req7",
         "courses": [
           "VIC121H1",
           "VIC122H1",
@@ -26252,7 +26252,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ3_2020-21",
+        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ3_2020-21 under constraint from Req7",
         "categories": [
           "AS-VIC-SSM-REQ3_2020-21"
         ],
@@ -26263,7 +26263,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-VIC-SSM-REQ2_2020-21 or AS-VIC-SSM-REQ3_2020-21",
+        "description": "At least 0.5 Credits from AS-VIC-SSM-REQ2_2020-21 or AS-VIC-SSM-REQ3_2020-21 under constraint from Req7",
         "categories": [
           "AS-VIC-SSM-REQ2_2020-21",
           "AS-VIC-SSM-REQ3_2020-21"
@@ -26275,7 +26275,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ2_2020-21 or AS-VIC-SSM-REQ3_2020-21 or AS-VIC-SSM-CC_2020-21",
+        "description": "At least 1.0 Credit from AS-VIC-SSM-REQ2_2020-21 or AS-VIC-SSM-REQ3_2020-21 or AS-VIC-SSM-CC_2020-21 under constraint from Req7",
         "categories": [
           "AS-VIC-SSM-REQ2_2020-21",
           "AS-VIC-SSM-REQ3_2020-21",
@@ -26352,7 +26352,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-ABS-GROUPA",
+        "description": "At least 4.0 Credits from AS-ABS-GROUPA under constraint from Req8 and Req9",
         "categories": [
           "AS-ABS-GROUPA"
         ],
@@ -26364,7 +26364,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-ABS-GROUPA or AS-ABS-GROUPB",
+        "description": "At least 1.0 Credit from AS-ABS-GROUPA or AS-ABS-GROUPB under constraint from Req8 and Req9",
         "categories": [
           "AS-ABS-GROUPA",
           "AS-ABS-GROUPB"
@@ -26467,7 +26467,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-RLG-ALL or AS-RLG-CROSSLISTED_20215",
+        "description": "At least 2.5 Credits from AS-RLG-ALL or AS-RLG-CROSSLISTED_20215 under constraint from Req9",
         "categories": [
           "AS-RLG-ALL",
           "AS-RLG-CROSSLISTED_20215"
@@ -26505,7 +26505,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ANT200Y1",
+        "description": "All of ANT200Y1 under constraint from Req18 and Req19",
         "courses": [
           "ANT200Y1"
         ],
@@ -26517,7 +26517,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR270H1 or STA220H1 or STA221H1 or STA247H1 or STA248H1 or STA255H1 or STA257H1 or STA261H1 or ANTC35H3",
+        "description": "At least 0.5 Credits from GGR270H1 or STA220H1 or STA221H1 or STA247H1 or STA248H1 or STA255H1 or STA257H1 or STA261H1 or ANTC35H3 under constraint from Req18 and Req19",
         "courses": [
           "GGR270H1",
           "STA220H1",
@@ -26545,7 +26545,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ANT100Y1",
+        "description": "All of ANT100Y1 under constraint from Req18 and Req19",
         "courses": [
           "ANT100Y1"
         ],
@@ -26557,7 +26557,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CLA160H1 or CLA210H1 or CLA230H1 or CLA231H1 or FAH206H1 or FAH207H1 or GGR100H1 or GGR101H1 or NMC262H1",
+        "description": "At least 1.0 Credit from CLA160H1 or CLA210H1 or CLA230H1 or CLA231H1 or FAH206H1 or FAH207H1 or GGR100H1 or GGR101H1 or NMC262H1 under constraint from Req6 and Req18 and Req19",
         "courses": [
           "CLA160H1",
           "CLA210H1",
@@ -26585,7 +26585,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ARH305H1 and ARH309H1 and ARH312Y1 and ANT411H1",
+        "description": "All of ARH305H1 and ARH309H1 and ARH312Y1 and ANT411H1 under constraint from Req18 and Req19",
         "courses": [
           "ARH305H1",
           "ARH309H1",
@@ -26610,7 +26610,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT311Y1 or ARH306Y1 or NMC261Y0 or ARH361Y1",
+        "description": "At least 1.0 Credit from ANT311Y1 or ARH306Y1 or NMC261Y0 or ARH361Y1 under constraint from Req18 and Req19",
         "courses": [
           "ANT311Y1",
           "ARH306Y1",
@@ -26625,7 +26625,7 @@ export default {
       "Req10": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ARH361H1 or AS-ANT_ALL_COURSES_20215",
+        "description": "At least 1.0 Credit from ARH361H1 or AS-ANT_ALL_COURSES_20215 under constraint from Req11 and Req18 and Req19",
         "courses": [
           "ARH361H1"
         ],
@@ -26649,7 +26649,7 @@ export default {
       "Req12": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT418H5 or AS-ANT_ALL_COURSES_20215",
+        "description": "At least 1.0 Credit from ANT418H5 or AS-ANT_ALL_COURSES_20215 under constraint from Req13 and Req18 and Req19",
         "courses": [
           "ANT418H5"
         ],
@@ -26673,7 +26673,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.0",
-        "description": "At least 5.0 Credits from AS-ARH-GROUP-A_20215 or AS-ARH-GROUP-B_20215",
+        "description": "At least 5.0 Credits from AS-ARH-GROUP-A_20215 or AS-ARH-GROUP-B_20215 under constraint from Req16 and Req17 and Req18 and Req19",
         "categories": [
           "AS-ARH-GROUP-A_20215",
           "AS-ARH-GROUP-B_20215"
@@ -26687,7 +26687,7 @@ export default {
       },
       "Req15": {
         "type": "NOTE/././RECURS",
-        "description": "Note: Note that students may substitute ARH495H1 (Research Practicum) for 0.5 FCE of this requirement (assignment to Group A or B to be determined by Undergraduate Coordinator).",
+        "description": "Note: Note that students may substitute ARH495H1 (Research Practicum) for 0.5 FCE of this requirement (assignment to Group A or B to be determined by Undergraduate Coordinator). under constraint from Req18 and Req19",
         "recursReqs": [
           "Req18",
           "Req19"
@@ -26777,7 +26777,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from PHL_ALL",
+        "description": "At least 6.0 Credits from PHL_ALL under constraint from Req6 and Req7",
         "categories": [
           "PHL_ALL"
         ],
@@ -26872,7 +26872,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of APM346H1 and AST320H1",
+        "description": "All of APM346H1 and AST320H1 under constraint from Req18",
         "courses": [
           "APM346H1",
           "AST320H1"
@@ -26884,7 +26884,7 @@ export default {
       "Req8": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Course from AST325H1 or AST326Y1",
+        "description": "At least 1 Course from AST325H1 or AST326Y1 under constraint from Req18",
         "courses": [
           "AST325H1",
           "AST326Y1"
@@ -26896,7 +26896,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PHY224H1 or PHY254H1 or PHY354H1 or PHY356H1",
+        "description": "At least 2.0 Credits from PHY224H1 or PHY254H1 or PHY354H1 or PHY356H1 under constraint from Req18",
         "courses": [
           "PHY224H1",
           "PHY254H1",
@@ -26910,7 +26910,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from MAT224H1 or MAT327H1 or MAT334H1 or MAT363H1 or STA257H1",
+        "description": "At least 0.5 Credits from MAT224H1 or MAT327H1 or MAT334H1 or MAT363H1 or STA257H1 under constraint from Req18",
         "courses": [
           "MAT224H1",
           "MAT327H1",
@@ -26925,7 +26925,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AST425Y1",
+        "description": "At least 1.0 Credit from AST425Y1 under constraint from Req17 and Req18",
         "courses": [
           "AST425Y1"
         ],
@@ -26937,7 +26937,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY350H1",
+        "description": "At least 0.5 Credits from PHY350H1 under constraint from Req18",
         "courses": [
           "PHY350H1"
         ],
@@ -26948,7 +26948,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY450H1",
+        "description": "At least 0.5 Credits from PHY450H1 under constraint from Req17 and Req18",
         "courses": [
           "PHY450H1"
         ],
@@ -26960,7 +26960,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY324H1 or PHY357H1 or PHY358H1 or PHY385H1 or PHY395H1 or PHY407H1 or PHY408H1 or PHY483H1 or JPE395H1",
+        "description": "At least 0.5 Credits from PHY324H1 or PHY357H1 or PHY358H1 or PHY385H1 or PHY395H1 or PHY407H1 or PHY408H1 or PHY483H1 or JPE395H1 under constraint from Req17 and Req18",
         "courses": [
           "PHY324H1",
           "PHY357H1",
@@ -26980,7 +26980,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AST430H1 or PHY454H1 or PHY456H1 or PHY460H1 or PHY483H1 or PHY484H1 or PHY495H1",
+        "description": "At least 0.5 Credits from AST430H1 or PHY454H1 or PHY456H1 or PHY460H1 or PHY483H1 or PHY484H1 or PHY495H1 under constraint from Req17 and Req18",
         "courses": [
           "AST430H1",
           "PHY454H1",
@@ -26998,7 +26998,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HPS200H1 or JPH441H1",
+        "description": "At least 0.5 Credits from HPS200H1 or JPH441H1 under constraint from Req18",
         "courses": [
           "HPS200H1",
           "JPH441H1"
@@ -27035,7 +27035,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-PRT_ALL or AS-PRT-COGNATE_20215",
+        "description": "At least 10.0 Credits from AS-PRT_ALL or AS-PRT-COGNATE_20215 under constraint from Req7",
         "categories": [
           "AS-PRT_ALL",
           "AS-PRT-COGNATE_20215"
@@ -27127,7 +27127,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1 under constraint from Req3 and Req4",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -27222,7 +27222,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV337H1 or JEE337H1",
+        "description": "At least 0.5 Credits from ENV337H1 or JEE337H1 under constraint from Req27",
         "courses": [
           "ENV337H1",
           "JEE337H1"
@@ -27266,7 +27266,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BCH311H1 or CSB349H1 or LMP363H1 or NFS284H1 or PSL350H1",
+        "description": "At least 0.5 Credits from BCH311H1 or CSB349H1 or LMP363H1 or NFS284H1 or PSL350H1 under constraint from Req27",
         "courses": [
           "BCH311H1",
           "CSB349H1",
@@ -27280,7 +27280,7 @@ export default {
       },
       "Req17": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PSL300H1 and PSL301H1",
+        "description": "All of PSL300H1 and PSL301H1 under constraint from Req27",
         "courses": [
           "PSL300H1",
           "PSL301H1"
@@ -27291,7 +27291,7 @@ export default {
       },
       "Req18": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JGE321H1 and ENV341H1",
+        "description": "All of JGE321H1 and ENV341H1 under constraint from Req27",
         "courses": [
           "JGE321H1",
           "ENV341H1"
@@ -27303,7 +27303,7 @@ export default {
       "Req19": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM210H1 or ENV334H1 or ENV233H1 or ESS261H1 or GGR203H1 or GGR303H1 or GGR314H1 or PHY231H1",
+        "description": "At least 1.0 Credit from CHM210H1 or ENV334H1 or ENV233H1 or ESS261H1 or GGR203H1 or GGR303H1 or GGR314H1 or PHY231H1 under constraint from Req20 and Req27",
         "courses": [
           "CHM210H1",
           "ENV334H1",
@@ -27335,7 +27335,7 @@ export default {
       "Req21": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-ENV-HEALTH-APP_20215",
+        "description": "At least 1.5 Credits from AS-ENV-HEALTH-APP_20215 under constraint from Req27 and Req28",
         "categories": [
           "AS-ENV-HEALTH-APP_20215"
         ],
@@ -27355,7 +27355,7 @@ export default {
       "Req24": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ENV421H1 or ENV491Y1 or ENV492H1 or ENV493H1",
+        "description": "At least 0.5 Credits from ENV421H1 or ENV491Y1 or ENV492H1 or ENV493H1 under constraint from Req27 and Req28",
         "courses": [
           "ENV421H1",
           "ENV491Y1",
@@ -27373,7 +27373,7 @@ export default {
       },
       "Req26": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JEH455H1",
+        "description": "All of JEH455H1 under constraint from Req27 and Req28",
         "courses": [
           "JEH455H1"
         ],
@@ -27427,7 +27427,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-CJS-ARAMAIC-HEBREW-YIDDISHLANGUAGE",
+        "description": "At least 3.0 Credits from AS-CJS-ARAMAIC-HEBREW-YIDDISHLANGUAGE under constraint from Req5",
         "categories": [
           "AS-CJS-ARAMAIC-HEBREW-YIDDISHLANGUAGE"
         ],
@@ -27438,7 +27438,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.0",
-        "description": "At least 5.0 Credits from AS-CJS-AREAS-ABCD",
+        "description": "At least 5.0 Credits from AS-CJS-AREAS-ABCD under constraint from Req5",
         "categories": [
           "AS-CJS-AREAS-ABCD"
         ],
@@ -27627,7 +27627,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from SMC385H1 or SMC233H1",
+        "description": "At least 0.5 Credits from SMC385H1 or SMC233H1 under constraint from Req12",
         "courses": [
           "SMC385H1",
           "SMC233H1"
@@ -27639,7 +27639,7 @@ export default {
       "Req5": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "3",
-        "description": "At least 3 Requirements from Req6 or Req7 or Req8 or Req9",
+        "description": "At least 3 Requirements from Req6 or Req7 or Req8 or Req9 under constraint from Req12",
         "dependentReqs": [
           "Req6",
           "Req7",
@@ -27653,7 +27653,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPA",
+        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPA under constraint from Req11 and Req12",
         "categories": [
           "AS-SMC-CC-GROUPA"
         ],
@@ -27665,7 +27665,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPB",
+        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPB under constraint from Req11 and Req12",
         "categories": [
           "AS-SMC-CC-GROUPB"
         ],
@@ -27677,7 +27677,7 @@ export default {
       "Req8": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPC",
+        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPC under constraint from Req11 and Req12",
         "categories": [
           "AS-SMC-CC-GROUPC"
         ],
@@ -27689,7 +27689,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPD",
+        "description": "At least 2.0 Credits from AS-SMC-CC-GROUPD under constraint from Req11 and Req12",
         "categories": [
           "AS-SMC-CC-GROUPD"
         ],
@@ -27701,7 +27701,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-SMC-CHRISTCULTURE or AS-SMC-CC-XLISTED",
+        "description": "At least 1.5 Credits from AS-SMC-CHRISTCULTURE or AS-SMC-CC-XLISTED under constraint from Req11 and Req12 and Req13",
         "categories": [
           "AS-SMC-CHRISTCULTURE",
           "AS-SMC-CC-XLISTED"
@@ -27836,7 +27836,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from BIO220H1 or BIO260H1 or HMB265H1 or MAT235Y1 or PHY231H1 or PSL299Y1 or PSL399Y1 or STA220H1 or STA250H1",
+        "description": "At least 1.5 Credits from BIO220H1 or BIO260H1 or HMB265H1 or MAT235Y1 or PHY231H1 or PSL299Y1 or PSL399Y1 or STA220H1 or STA250H1 under constraint from Req12 and Req13 and Req14",
         "courses": [
           "BIO220H1",
           "BIO260H1",
@@ -27905,7 +27905,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANA300Y1 or ANA301H1 or BME498Y1 or CSB325H1 or CSB332H1 or CJH332H1 or CSB343H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or IMM340H1 or IMM341H1 or IMM350H1 or IMM351H1 or JPM300H1 or PCL201H1 or PCL285H1 or PCL302H1 or PHY331H1 or PSL310H1 or PSL378H1 or PSL379H0 or PSL379H1 or PSY397H1 or PSL398H0",
+        "description": "At least 1.0 Credit from ANA300Y1 or ANA301H1 or BME498Y1 or CSB325H1 or CSB332H1 or CJH332H1 or CSB343H1 or CSB345H1 or CSB445H1 or CSB346H1 or CSB347H1 or IMM340H1 or IMM341H1 or IMM350H1 or IMM351H1 or JPM300H1 or PCL201H1 or PCL285H1 or PCL302H1 or PHY331H1 or PSL310H1 or PSL378H1 or PSL379H0 or PSL379H1 or PSY397H1 or PSL398H0 under constraint from Req18 and Req19 and Req20 and Req21 and Req22",
         "courses": [
           "ANA300Y1",
           "ANA301H1",
@@ -27990,7 +27990,7 @@ export default {
       "Req23": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PSL4_ALL_ALL or HMB430H1 or HMB470H1 or HMB472H1 or JPM400Y1",
+        "description": "At least 2.0 Credits from PSL4_ALL_ALL or HMB430H1 or HMB470H1 or HMB472H1 or JPM400Y1 under constraint from Req24 and Req25 and Req26",
         "courses": [
           "HMB430H1",
           "HMB470H1",
@@ -28098,7 +28098,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.5",
-        "description": "At least 4.5 Credits from AS-LIN-COURSES or AS-LIN-SPE-ELECTIVES_2019-20",
+        "description": "At least 4.5 Credits from AS-LIN-COURSES or AS-LIN-SPE-ELECTIVES_2019-20 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-LIN-COURSES",
           "AS-LIN-SPE-ELECTIVES_2019-20"
@@ -28144,7 +28144,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CHM135H1 and MAT135H1 and PHY131H1",
+        "description": "All of CHM135H1 and MAT135H1 and PHY131H1 under constraint from Req24",
         "courses": [
           "CHM135H1",
           "MAT135H1",
@@ -28157,7 +28157,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from BIO120H1 or BIO130H1 or CSC108H1 or CSC148H1 or ESS345H1 or CHM136H1 or CHM220H1 or CHM222H1 or MAT136H1 or MAT221H1 or PHY132H1 or PHY152H1 or STA220H1 or GGR270H1 or STA247H1 or STA257H1 or STA248H1 or STA261H1",
+        "description": "At least 3.0 Credits from BIO120H1 or BIO130H1 or CSC108H1 or CSC148H1 or ESS345H1 or CHM136H1 or CHM220H1 or CHM222H1 or MAT136H1 or MAT221H1 or PHY132H1 or PHY152H1 or STA220H1 or GGR270H1 or STA247H1 or STA257H1 or STA248H1 or STA261H1 under constraint from Req3 and Req4 and Req5 and Req6 and Req24",
         "courses": [
           "BIO120H1",
           "BIO130H1",
@@ -28230,7 +28230,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ESS234H1",
+        "description": "All of ESS234H1 under constraint from Req24",
         "courses": [
           "ESS234H1"
         ],
@@ -28241,7 +28241,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ESS222H1 or ESS224H1",
+        "description": "At least 0.5 Credits from ESS222H1 or ESS224H1 under constraint from Req24",
         "courses": [
           "ESS222H1",
           "ESS224H1"
@@ -28252,7 +28252,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ESS331H1",
+        "description": "All of ESS331H1 under constraint from Req24",
         "courses": [
           "ESS331H1"
         ],
@@ -28262,7 +28262,7 @@ export default {
       },
       "Req10": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ESS241H1",
+        "description": "All of ESS241H1 under constraint from Req24",
         "courses": [
           "ESS241H1"
         ],
@@ -28272,7 +28272,7 @@ export default {
       },
       "Req11": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ESS262H1",
+        "description": "All of ESS262H1 under constraint from Req24",
         "courses": [
           "ESS262H1"
         ],
@@ -28283,7 +28283,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ESS221H1 or ESS321H1",
+        "description": "At least 0.5 Credits from ESS221H1 or ESS321H1 under constraint from Req24",
         "courses": [
           "ESS221H1",
           "ESS321H1"
@@ -28294,7 +28294,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ESS324H1",
+        "description": "All of ESS324H1 under constraint from Req24",
         "courses": [
           "ESS324H1"
         ],
@@ -28305,7 +28305,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from ESS223H1 or JGA305H1 or ESS322H1 or ESS323H1 or ESS431H1 or GGR201H1 or GGR301H1 or GGR337H1",
+        "description": "At least 2.5 Credits from ESS223H1 or JGA305H1 or ESS322H1 or ESS323H1 or ESS431H1 or GGR201H1 or GGR301H1 or GGR337H1 under constraint from Req15 and Req16 and Req17 and Req19 and Req24",
         "courses": [
           "ESS223H1",
           "JGA305H1",
@@ -28356,7 +28356,7 @@ export default {
       "Req18": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ESS431H1 or ESS332H1",
+        "description": "At least 0.5 Credits from ESS431H1 or ESS332H1 under constraint from Req24",
         "courses": [
           "ESS431H1",
           "ESS332H1"
@@ -28379,7 +28379,7 @@ export default {
       "Req20": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from ENV234H1 or ESS223H1 or ESS261H1 or GGR201H1 or GGR205H1 or GGR206H1 or GGR272H1 or GGR273H1 or ESS311H1 or ESS312H1 or ESS323H1 or ESS324H1 or ESS345H1 or ESS362H1 or ESS381H1 or ESS391H1 or ESS392Y1 or GGR301H1 or GGR337H1 or JGA305H1 or JPE395H1 or ESS410H1 or ESS423H1 or ESS425H1 or ESS431H1 or ESS441H1 or ESS445H1 or ESS450H1 or ESS461H1 or ESS481H1 or ESS490H1 or ESS491H1 or ESS492Y1",
+        "description": "At least 3.5 Credits from ENV234H1 or ESS223H1 or ESS261H1 or GGR201H1 or GGR205H1 or GGR206H1 or GGR272H1 or GGR273H1 or ESS311H1 or ESS312H1 or ESS323H1 or ESS324H1 or ESS345H1 or ESS362H1 or ESS381H1 or ESS391H1 or ESS392Y1 or GGR301H1 or GGR337H1 or JGA305H1 or JPE395H1 or ESS410H1 or ESS423H1 or ESS425H1 or ESS431H1 or ESS441H1 or ESS445H1 or ESS450H1 or ESS461H1 or ESS481H1 or ESS490H1 or ESS491H1 or ESS492Y1 under constraint from Req21 and Req22 and Req23 and Req24",
         "courses": [
           "ENV234H1",
           "ESS223H1",
@@ -28532,7 +28532,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC338H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492H1 or VIC492Y1",
+        "description": "At least 3.0 Credits from VIC114H1 or VIC141H1 or VIC142H1 or REN240Y1 or REN241H1 or REN242H1 or REN338H1 or REN341H1 or REN342H1 or REN343H1 or REN344H1 or REN345H1 or REN346H1 or REN347H1 or REN348Y0 or REN349H1 or REN349Y1 or REN392H1 or REN392Y1 or REN441H1 or REN442H1 or REN449H1 or REN449Y1 or REN492H1 or REN492Y1 or VIC240Y1 or VIC241H1 or VIC242H1 or VIC338H1 or VIC341H1 or VIC342H1 or VIC343H1 or VIC343Y1 or VIC344H1 or VIC345H1 or VIC346H1 or VIC347H1 or VIC348Y0 or VIC349H1 or VIC349Y1 or VIC392H1 or VIC392Y1 or VIC441H1 or VIC442H1 or VIC449H1 or VIC449Y1 or VIC492H1 or VIC492Y1 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req25 and Req26 and Req27",
         "courses": [
           "VIC114H1",
           "VIC141H1",
@@ -28682,7 +28682,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or ITA431H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1",
+        "description": "At least 1.0 Credit from ENG220Y1 or ENG301H1 or ENG302Y1 or ENG303H1 or ENG304Y1 or ENG330H1 or ENG331H1 or ENG335H1 or ENG336H1 or FRE319H1 or FRE320H1 or ITA200H1 or ITA249H1 or ITA300H1 or ITA312H1 or ITA325H1 or ITA332H1 or ITA356Y0 or ITA357Y0 or ITA370H1 or ITA400H1 or ITA420H1 or ITA431H1 or SPA352H1 or SPA368H1 or SPA452H1 or SPA454H1 under constraint from Req25 and Req26 and Req27",
         "courses": [
           "ENG220Y1",
           "ENG301H1",
@@ -28721,7 +28721,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1",
+        "description": "At least 1.0 Credit from HIS243H1 or HIS301H1 or HIS308H1 or HIS309H1 or HIS319H1 or HIS357Y1 or HIS362H1 or HIS368H1 or HIS403H1 or HIS438H1 or HIS443H1 under constraint from Req25 and Req26 and Req27",
         "courses": [
           "HIS243H1",
           "HIS301H1",
@@ -28744,7 +28744,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1",
+        "description": "At least 1.0 Credit from FAH230H1 or FAH330H1 or FAH331H1 or FAH333H1 or FAH335H1 or FAH337H1 or FAH338H1 or FAH340H1 or FAH341H1 or FAH344H1 or FAH370H1 or FAH371H1 or FAH393Y0 or FAH430H1 or FAH432H1 or FAH433H1 or FAH434H1 or FAH435H1 or FAH436H1 or FAH440H1 or FAH470H1 under constraint from Req25 and Req26 and Req27",
         "courses": [
           "FAH230H1",
           "FAH330H1",
@@ -28786,7 +28786,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from REN392H1 or REN392Y1 or REN492H1 or REN492Y1 or VIC392H1 or VIC392Y1 or VIC492H1 or VIC492Y1",
+        "description": "At least 1.0 Credit from REN392H1 or REN392Y1 or REN492H1 or REN492Y1 or VIC392H1 or VIC392Y1 or VIC492H1 or VIC492Y1 under constraint from Req16 and Req17 and Req18 and Req19 and Req25 and Req26 and Req27",
         "courses": [
           "REN392H1",
           "REN392Y1",
@@ -28845,7 +28845,7 @@ export default {
       },
       "Req20": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 1.0 credit in a Research Course (a 299Y1 or 399Y1 course, on a Renaissance Studies topic).",
+        "description": "Requirements of this program are incomplete: 1.0 credit in a Research Course (a 299Y1 or 399Y1 course, on a Renaissance Studies topic). under constraint from Req25 and Req26 and Req27",
         "recursReqs": [
           "Req25",
           "Req26",
@@ -28854,7 +28854,7 @@ export default {
       },
       "Req21": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 2.0 credits in a language relevant to Renaissance Studies - French, Italian, Spanish, Portuguese, Latin, German (only one may be at the introductory level).",
+        "description": "Requirements of this program are incomplete: 2.0 credits in a language relevant to Renaissance Studies - French, Italian, Spanish, Portuguese, Latin, German (only one may be at the introductory level). under constraint from Req25 and Req26 and Req27",
         "recursReqs": [
           "Req25",
           "Req26",
@@ -28864,7 +28864,7 @@ export default {
       "Req22": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from REN440H1 or VIC440Y1 or AS-ASSPE0532-REQ1",
+        "description": "At least 1.0 Credit from REN440H1 or VIC440Y1 or AS-ASSPE0532-REQ1 under constraint from Req23 and Req25 and Req26 and Req27",
         "courses": [
           "REN440H1",
           "VIC440Y1"
@@ -28945,7 +28945,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of WGS360H1",
+        "description": "All of WGS360H1 under constraint from Req9",
         "courses": [
           "WGS360H1"
         ],
@@ -28955,7 +28955,7 @@ export default {
       },
       "Req4": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of WGS460Y1",
+        "description": "All of WGS460Y1 under constraint from Req8 and Req9",
         "courses": [
           "WGS460Y1"
         ],
@@ -28967,7 +28967,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from WGS4_ALL_ALL",
+        "description": "At least 1.0 Credit from WGS4_ALL_ALL under constraint from Req8 and Req9",
         "categories": [
           "WGS4_ALL_ALL"
         ],
@@ -28979,7 +28979,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-WGS-CORE_2020-21",
+        "description": "At least 4.0 Credits from AS-WGS-CORE_2020-21 under constraint from Req8 and Req9",
         "categories": [
           "AS-WGS-CORE_2020-21"
         ],
@@ -28991,7 +28991,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-WGS-GROUPA_2020-21 or AS-WGS-GROUPB_2020-21",
+        "description": "At least 2.0 Credits from AS-WGS-GROUPA_2020-21 or AS-WGS-GROUPB_2020-21 under constraint from Req8 and Req9",
         "categories": [
           "AS-WGS-GROUPA_2020-21",
           "AS-WGS-GROUPB_2020-21"
@@ -29029,7 +29029,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1",
+        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 under constraint from Req2 and Req3",
         "courses": [
           "CHM151Y1",
           "CHM135H1",
@@ -29143,7 +29143,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CHM423H1 or PHY456H1",
+        "description": "At least 0.5 Credits from CHM423H1 or PHY456H1 under constraint from Req16",
         "courses": [
           "CHM423H1",
           "PHY456H1"
@@ -29155,7 +29155,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from CHM210H1 or CHM217H1 or CHM238Y1 or CHM247H1 or CHM249H1 or CHM310H1 or CHM317H1 or CHM338H1 or CHM348H1 or CHM415H1",
+        "description": "At least 2.0 Credits from CHM210H1 or CHM217H1 or CHM238Y1 or CHM247H1 or CHM249H1 or CHM310H1 or CHM317H1 or CHM338H1 or CHM348H1 or CHM415H1 under constraint from Req14 and Req16",
         "courses": [
           "CHM210H1",
           "CHM217H1",
@@ -29185,7 +29185,7 @@ export default {
       "Req15": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-CHM4 or AS-PHY4_COURSES",
+        "description": "At least 1.5 Credits from AS-CHM4 or AS-PHY4_COURSES under constraint from Req16",
         "categories": [
           "AS-CHM4",
           "AS-PHY4_COURSES"
@@ -29283,7 +29283,7 @@ export default {
       },
       "Req8": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PSL300H1 and PSL301H1",
+        "description": "All of PSL300H1 and PSL301H1 under constraint from Req16",
         "courses": [
           "PSL300H1",
           "PSL301H1"
@@ -29294,7 +29294,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BIO220H1 and ENV234H1 and JGE321H1 and ENV334H1 and CHM210H1 and PCL302H1 and PCL362H1",
+        "description": "All of BIO220H1 and ENV234H1 and JGE321H1 and ENV334H1 and CHM210H1 and PCL302H1 and PCL362H1 under constraint from Req16",
         "courses": [
           "BIO220H1",
           "ENV234H1",
@@ -29311,7 +29311,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PCL482H1 or PCL483H1 or PCL473Y1",
+        "description": "At least 1.0 Credit from PCL482H1 or PCL483H1 or PCL473Y1 under constraint from Req16 and Req17",
         "courses": [
           "PCL482H1",
           "PCL483H1",
@@ -29336,7 +29336,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ENV421H1 or PCL367H1 or PCL474Y1 or ENV341H1 or PHY231H1 or ENV337H1 or JEE337H1 or CHM310H1 or ESS463H1 or JPM300H1 or PCL386H1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or LMP363H1",
+        "description": "At least 2.0 Credits from ENV421H1 or PCL367H1 or PCL474Y1 or ENV341H1 or PHY231H1 or ENV337H1 or JEE337H1 or CHM310H1 or ESS463H1 or JPM300H1 or PCL386H1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or LMP363H1 under constraint from Req13 and Req14 and Req15 and Req16 and Req17",
         "courses": [
           "ENV421H1",
           "PCL367H1",
@@ -29387,7 +29387,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/GROUPMIN/RECURS",
         "count": 1.0,
-        "description": "At least 1.0 Credit from ENV341H1 or PHY231H1 or ENV337H1 or JEE337H1 or CHM310H1 or ESS463H1 or JPM300H1 or PCL386H1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or LMP363H1 in Req12",
+        "description": "At least 1.0 Credit from ENV341H1 or PHY231H1 or ENV337H1 or JEE337H1 or CHM310H1 or ESS463H1 or JPM300H1 or PCL386H1 or PCL477H1 or PCL481H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or LMP363H1 in Req12 under constraint from Req16 and Req17",
         "courses": [
           "ENV341H1",
           "PHY231H1",
@@ -29470,7 +29470,7 @@ export default {
       "Req24": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req25",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -29630,7 +29630,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ACT349H1 or ACT371H1 or ACT372H1 or ACT455H1 or ACT460H1 or ACT466H1 or ACT470H1 or ACT471H1 or ACT473H1 or ACT475H1 or STA414H1 or STA457H1",
+        "description": "At least 2.0 Credits from ACT349H1 or ACT371H1 or ACT372H1 or ACT455H1 or ACT460H1 or ACT466H1 or ACT470H1 or ACT471H1 or ACT473H1 or ACT475H1 or STA414H1 or STA457H1 under constraint from Req17",
         "courses": [
           "ACT349H1",
           "ACT371H1",
@@ -29712,7 +29712,7 @@ export default {
       "Req3": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA120Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA120Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req4",
         "courses": [
           "SPA120Y1",
           "SPA320Y1",
@@ -29738,7 +29738,7 @@ export default {
       "Req5": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA220Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA220Y1 or SPA320Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req6",
         "courses": [
           "SPA220Y1",
           "SPA320Y1",
@@ -29764,7 +29764,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from SPA219Y1 or SPA420H1 or AS-SPA_ALL",
+        "description": "At least 3.5 Credits from SPA219Y1 or SPA420H1 or AS-SPA_ALL under constraint from Req8",
         "courses": [
           "SPA219Y1",
           "SPA420H1"
@@ -29828,7 +29828,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-SPA_ALL or AS-SPA-COGNATE_2020-21",
+        "description": "At least 4.0 Credits from AS-SPA_ALL or AS-SPA-COGNATE_2020-21 under constraint from Req15",
         "categories": [
           "AS-SPA_ALL",
           "AS-SPA-COGNATE_2020-21"
@@ -29857,7 +29857,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215",
+        "description": "At least 10.0 Credits from AS-HIS-ALL_20215 or AS-HIS-EQUIV_20215 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req13 and Req14 and Req19",
         "categories": [
           "AS-HIS-ALL_20215",
           "AS-HIS-EQUIV_20215"
@@ -30062,7 +30062,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CDN367H1 and CDN368H1",
+        "description": "All of CDN367H1 and CDN368H1 under constraint from Req7",
         "courses": [
           "CDN367H1",
           "CDN368H1"
@@ -30074,7 +30074,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CDN307H1 or CDN335H1 or CDN380H1 or CDN390H1 or JSU325H1",
+        "description": "At least 0.5 Credits from CDN307H1 or CDN335H1 or CDN380H1 or CDN390H1 or JSU325H1 under constraint from Req7",
         "courses": [
           "CDN307H1",
           "CDN335H1",
@@ -30089,7 +30089,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CDN420Y1 or CDN435Y1",
+        "description": "At least 1.0 Credit from CDN420Y1 or CDN435Y1 under constraint from Req7",
         "courses": [
           "CDN420Y1",
           "CDN435Y1"
@@ -30101,7 +30101,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.5",
-        "description": "At least 6.5 Credits from AS-UNI-CDN-COURSES_2019-20",
+        "description": "At least 6.5 Credits from AS-UNI-CDN-COURSES_2019-20 under constraint from Req7",
         "categories": [
           "AS-UNI-CDN-COURSES_2019-20"
         ],
@@ -30161,7 +30161,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20",
+        "description": "At least 5.5 Credits from AS-CINEMA_GROUP-B_2019-20 or AS-CINEMA_GROUP-C_2019-20 or AS-CINEMA_GROUP-D_2019-20 or AS-CINEMA_GROUP-E_2019-20 or AS-CINEMA_GROUP-F_2019-20 or AS-CINEMA_GROUP-G_2019-20 under constraint from Req6 and Req7",
         "categories": [
           "AS-CINEMA_GROUP-B_2019-20",
           "AS-CINEMA_GROUP-C_2019-20",
@@ -30230,7 +30230,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-ECO_ALL or AS-HIS-COURSES or AS-PHL_COURSES or AS-POL-COURSE-CODES or AS-PSY_COURSES or AS-SOC_ALL",
+        "description": "At least 2.0 Credits from AS-ECO_ALL or AS-HIS-COURSES or AS-PHL_COURSES or AS-POL-COURSE-CODES or AS-PSY_COURSES or AS-SOC_ALL under constraint from Req6 and Req7 and Req8",
         "categories": [
           "AS-ECO_ALL",
           "AS-HIS-COURSES",
@@ -30247,7 +30247,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CRI205H1 and CRI210H1 and CRI215H1 and CRI225H1 and CRI335H1 and CRI340H1 and CRI343H1 and CRI350H1",
+        "description": "All of CRI205H1 and CRI210H1 and CRI215H1 and CRI225H1 and CRI335H1 and CRI340H1 and CRI343H1 and CRI350H1 under constraint from Req6 and Req7 and Req8",
         "courses": [
           "CRI205H1",
           "CRI210H1",
@@ -30267,7 +30267,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-WDW-CRIMSPE-GROUP-A",
+        "description": "At least 2.5 Credits from AS-WDW-CRIMSPE-GROUP-A under constraint from Req6 and Req7 and Req8",
         "categories": [
           "AS-WDW-CRIMSPE-GROUP-A"
         ],
@@ -30280,7 +30280,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-WDW-CRIMSPE-GROUP-B",
+        "description": "At least 1.0 Credit from AS-WDW-CRIMSPE-GROUP-B under constraint from Req6 and Req7 and Req8",
         "categories": [
           "AS-WDW-CRIMSPE-GROUP-B"
         ],
@@ -30293,7 +30293,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-WDW-CRIMSPE-GROUP-A or AS-WDW-CRIMSPE-GROUP-B or AS-WDW-CRIMSPE-GROUP-C",
+        "description": "At least 1.5 Credits from AS-WDW-CRIMSPE-GROUP-A or AS-WDW-CRIMSPE-GROUP-B or AS-WDW-CRIMSPE-GROUP-C under constraint from Req6 and Req7 and Req8",
         "categories": [
           "AS-WDW-CRIMSPE-GROUP-A",
           "AS-WDW-CRIMSPE-GROUP-B",
@@ -30341,7 +30341,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-FAH-LANGUAGE or FSL_ALL or AS-FAH-ITA or AS-FAH-GER",
+        "description": "At least 2.0 Credits from AS-FAH-LANGUAGE or FSL_ALL or AS-FAH-ITA or AS-FAH-GER under constraint from Req2",
         "categories": [
           "AS-FAH-LANGUAGE",
           "FSL_ALL",
@@ -30365,7 +30365,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "9.0",
-        "description": "At least 9.0 Credits from AS-FAH-COURSES",
+        "description": "At least 9.0 Credits from AS-FAH-COURSES under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-FAH-COURSES"
         ],
@@ -30378,7 +30378,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-FAH-GROUPA",
+        "description": "At least 1.0 Credit from AS-FAH-GROUPA under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-FAH-GROUPA"
         ],
@@ -30391,7 +30391,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-FAH-GROUPB",
+        "description": "At least 1.0 Credit from AS-FAH-GROUPB under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-FAH-GROUPB"
         ],
@@ -30404,7 +30404,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPC",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPC under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-FAH-GROUPC"
         ],
@@ -30417,7 +30417,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-FAH-GROUPD",
+        "description": "At least 0.5 Credits from AS-FAH-GROUPD under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-FAH-GROUPD"
         ],
@@ -30430,7 +30430,7 @@ export default {
       "Req8": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Course from FAH102H1 or FAH100Y1",
+        "description": "At least 1 Course from FAH102H1 or FAH100Y1 under constraint from Req12 and Req13 and Req14",
         "courses": [
           "FAH102H1",
           "FAH100Y1"
@@ -30444,7 +30444,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-FAH-COURSES-400",
+        "description": "At least 1.0 Credit from AS-FAH-COURSES-400 under constraint from Req13 and Req14",
         "categories": [
           "AS-FAH-COURSES-400"
         ],
@@ -30456,7 +30456,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-FAH-COURSES-300+",
+        "description": "At least 3.5 Credits from AS-FAH-COURSES-300+ under constraint from Req14",
         "categories": [
           "AS-FAH-COURSES-300+"
         ],
@@ -30525,7 +30525,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHL245H1 or PHL246H1",
+        "description": "At least 0.5 Credits from PHL245H1 or PHL246H1 under constraint from Req8 and Req9",
         "courses": [
           "PHL245H1",
           "PHL246H1"
@@ -30538,7 +30538,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-PHL-BIOETHICS-1",
+        "description": "At least 1.5 Credits from AS-PHL-BIOETHICS-1 under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-1"
         ],
@@ -30550,7 +30550,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-PHL-BIOETHICS-2",
+        "description": "At least 1.0 Credit from AS-PHL-BIOETHICS-2 under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-2"
         ],
@@ -30562,7 +30562,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-3",
+        "description": "At least 0.5 Credits from AS-PHL-BIOETHICS-3 under constraint from Req8 and Req9",
         "categories": [
           "AS-PHL-BIOETHICS-3"
         ],
@@ -30574,7 +30574,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHL_ALL or AS-PHL-BIOETHICS-4",
+        "description": "At least 1.0 Credit from PHL_ALL or AS-PHL-BIOETHICS-4 under constraint from Req8 and Req9",
         "categories": [
           "PHL_ALL",
           "AS-PHL-BIOETHICS-4"
@@ -30587,7 +30587,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from PHL_ALL",
+        "description": "At least 4.0 Credits from PHL_ALL under constraint from Req8 and Req9",
         "categories": [
           "PHL_ALL"
         ],
@@ -30894,7 +30894,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BCH422H1 or BCH426H1 or BCH444H1 or BCH445H1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB471H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1",
+        "description": "At least 1.0 Credit from BCH422H1 or BCH426H1 or BCH444H1 or BCH445H1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB471H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1 under constraint from Req17",
         "courses": [
           "BCH422H1",
           "BCH426H1",
@@ -30927,7 +30927,7 @@ export default {
       "Req16": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-CSB-CMB-SPE",
+        "description": "At least 2.5 Credits from AS-CSB-CMB-SPE under constraint from Req17",
         "categories": [
           "AS-CSB-CMB-SPE"
         ],
@@ -31102,7 +31102,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB351Y1 or CSB352H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB447H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1",
+        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CJH332H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB351Y1 or CSB352H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB447H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB457H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1 under constraint from Req17",
         "courses": [
           "BCH422H1",
           "BCH426H1",
@@ -31295,7 +31295,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CSB340H1 or CSB350H1 or CSB352H1 or CSB353H1",
+        "description": "At least 1.0 Credit from CSB340H1 or CSB350H1 or CSB352H1 or CSB353H1 under constraint from Req15",
         "courses": [
           "CSB340H1",
           "CSB350H1",
@@ -31336,7 +31336,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CSB299Y1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB351Y1 or CSB352H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB428H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB471H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1",
+        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CSB299Y1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB351Y1 or CSB352H1 or CSB353H1 or CSB397Y0 or CSB399Y1 or CSB428H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB452H1 or CSB454H1 or CSB458H1 or CSB459H1 or CSB460H1 or CSB471H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB475H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1 under constraint from Req18",
         "courses": [
           "BCH422H1",
           "BCH426H1",
@@ -31524,7 +31524,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB352H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB458H1 or CSB460H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1",
+        "description": "At least 2.5 Credits from BCH422H1 or BCH426H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or CSB299Y1 or CSB327H1 or CSB328H1 or CSB329H1 or CSB330H1 or CSB331H1 or CSB340H1 or CSB350H1 or CSB352H1 or CSB397Y0 or CSB399Y1 or CSB427H1 or CSB428H1 or CSB429H1 or CSB430H1 or CSB431H1 or CSB435H1 or CSB450H1 or CSB458H1 or CSB460H1 or CSB472H1 or CSB473H1 or CSB474H1 or CSB483H1 or CSB490H1 or CSB491H1 or CSB492H1 or CSB497H1 or CSB498Y1 or CSB499Y1 under constraint from Req14",
         "courses": [
           "BCH422H1",
           "BCH426H1",
@@ -31669,7 +31669,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from EEB318H1 or EEB323H1 or EEB362H1",
+        "description": "At least 0.5 Credits from EEB318H1 or EEB323H1 or EEB362H1 under constraint from Req24",
         "courses": [
           "EEB318H1",
           "EEB323H1",
@@ -31682,7 +31682,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from EEB319H1 or EEB320H1 or EEB321H1 or EEB328H1",
+        "description": "At least 0.5 Credits from EEB319H1 or EEB320H1 or EEB321H1 or EEB328H1 under constraint from Req24",
         "courses": [
           "EEB319H1",
           "EEB320H1",
@@ -31696,7 +31696,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from EEB263H1 or EEB266H1 or EEB267H1 or EEB268H1 or EEB331H1 or EEB340H1 or EEB380H1 or EEB382H1 or EEB384H1 or EEB386H1 or EEB388H1",
+        "description": "At least 0.5 Credits from EEB263H1 or EEB266H1 or EEB267H1 or EEB268H1 or EEB331H1 or EEB340H1 or EEB380H1 or EEB382H1 or EEB384H1 or EEB386H1 or EEB388H1 under constraint from Req24",
         "courses": [
           "EEB263H1",
           "EEB266H1",
@@ -31717,7 +31717,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-EEB-SPEC-300+_20215",
+        "description": "At least 1.0 Credit from AS-EEB-SPEC-300+_20215 under constraint from Req24 and Req25",
         "categories": [
           "AS-EEB-SPEC-300+_20215"
         ],
@@ -31743,7 +31743,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215",
+        "description": "At least 2.0 Credits from EEB403H0 or EEB403H1 or EEB405H0 or EEB405H1 or EEB406H0 or EEB406H1 or EEB407H0 or EEB407H1 or EEB410H0 or EEB410H1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215 under constraint from Req16 and Req21 and Req22 and Req23 and Req24 and Req25",
         "courses": [
           "EEB403H0",
           "EEB403H1",
@@ -31789,7 +31789,7 @@ export default {
       "Req17": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from EEB491H1 or EEB495H1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215",
+        "description": "At least 2.0 Credits from EEB491H1 or EEB495H1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215 under constraint from Req18 and Req21 and Req22 and Req23 and Req24 and Req25",
         "courses": [
           "EEB491H1",
           "EEB495H1"
@@ -31819,7 +31819,7 @@ export default {
       "Req19": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from EEB497H1 or EEB498Y1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215",
+        "description": "At least 2.0 Credits from EEB497H1 or EEB498Y1 or AS-EEB-SPEC_20215 or AS-EEB-ELECTIVES_20215 under constraint from Req20 and Req21 and Req22 and Req23 and Req24 and Req25",
         "courses": [
           "EEB497H1",
           "EEB498Y1"
@@ -32011,7 +32011,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1",
+        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1 under constraint from Req9",
         "courses": [
           "NMC101H1",
           "NMC102H1",
@@ -32025,7 +32025,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-NML",
+        "description": "At least 4.0 Credits from AS-NML under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NML"
         ],
@@ -32042,7 +32042,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-NMC-HIS-&-SOC_2020-21 or AS-NMC-REL-&-PHIL_2020-21",
+        "description": "At least 3.0 Credits from AS-NMC-HIS-&-SOC_2020-21 or AS-NMC-REL-&-PHIL_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NMC-HIS-&-SOC_2020-21",
           "AS-NMC-REL-&-PHIL_2020-21"
@@ -32056,7 +32056,7 @@ export default {
       "Req5": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-NMC-ARCHAEOLOGY_2020-21 or AS-NMC-ART-ARC-LIT_2020-21",
+        "description": "At least 2.0 Credits from AS-NMC-ARCHAEOLOGY_2020-21 or AS-NMC-ART-ARC-LIT_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NMC-ARCHAEOLOGY_2020-21",
           "AS-NMC-ART-ARC-LIT_2020-21"
@@ -32070,7 +32070,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NMC_ALL or AS-NML",
+        "description": "At least 1.0 Credit from AS-NMC_ALL or AS-NML under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NMC_ALL",
           "AS-NML"
@@ -32121,7 +32121,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT202Y1",
+        "description": "All of LCT202Y1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT202Y1"
         ],
@@ -32133,7 +32133,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT203H1 and LCT205H1",
+        "description": "All of LCT203H1 and LCT205H1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT203H1",
           "LCT205H1"
@@ -32147,7 +32147,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1",
+        "description": "At least 3.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1 under constraint from Req4 and Req5 and Req10 and Req11 and Req12",
         "courses": [
           "VIC162H1",
           "VIC163H1",
@@ -32196,7 +32196,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req10 and Req11 and Req12",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -32208,7 +32208,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT402H1",
+        "description": "All of LCT402H1 under constraint from Req10 and Req11 and Req12",
         "courses": [
           "LCT402H1"
         ],
@@ -32220,7 +32220,7 @@ export default {
       },
       "Req8": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 4.0 FCE in ONE other discipline within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator.",
+        "description": "Requirements of this program are incomplete: 4.0 FCE in ONE other discipline within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator. under constraint from Req10 and Req11 and Req12",
         "recursReqs": [
           "Req10",
           "Req11",
@@ -32229,7 +32229,7 @@ export default {
       },
       "Req9": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 2.0 credits in courses where the primary language of study is not English, including at least 1.0 credit at the 300+ level.",
+        "description": "Requirements of this program are incomplete: 2.0 credits in courses where the primary language of study is not English, including at least 1.0 credit at the 300+ level. under constraint from Req10 and Req11 and Req12",
         "recursReqs": [
           "Req10",
           "Req11",
@@ -32275,7 +32275,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT202Y1",
+        "description": "All of LCT202Y1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT202Y1"
         ],
@@ -32287,7 +32287,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT203H1 and LCT205H1",
+        "description": "All of LCT203H1 and LCT205H1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT203H1",
           "LCT205H1"
@@ -32301,7 +32301,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1",
+        "description": "At least 3.5 Credits from VIC162H1 or VIC163H1 or VIC190Y1 or LCT204H1 or LCT301H1 or LCT302H1 or LCT303H1 or LCT304H1 or LCT305H1 or LCT306H1 or LCT307H1 or LCT308H1 or LCT401H1 or LCT401Y1 or LCT403H1 or LCT494H1 or LCT494Y1 under constraint from Req4 and Req5 and Req9 and Req10 and Req11",
         "courses": [
           "VIC162H1",
           "VIC163H1",
@@ -32350,7 +32350,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-BR-PHYSUNI",
+        "description": "At least 0.5 Credits from AS-BR-PHYSUNI under constraint from Req9 and Req10 and Req11",
         "categories": [
           "AS-BR-PHYSUNI"
         ],
@@ -32362,7 +32362,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of LCT402H1",
+        "description": "All of LCT402H1 under constraint from Req9 and Req10 and Req11",
         "courses": [
           "LCT402H1"
         ],
@@ -32374,7 +32374,7 @@ export default {
       },
       "Req8": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 6.0 credits in languages or literatures drawn from other departments. At least 4.0 of these involve reading texts in a language other than English, including at least 2.0 at the 300+ level.",
+        "description": "Requirements of this program are incomplete: 6.0 credits in languages or literatures drawn from other departments. At least 4.0 of these involve reading texts in a language other than English, including at least 2.0 at the 300+ level. under constraint from Req9 and Req10 and Req11",
         "recursReqs": [
           "Req9",
           "Req10",
@@ -32490,7 +32490,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from HMB360H1 or HMB421H1 or HMB435H1 or HMB437H1 or HMB474H1 or BCH311H1 or BCH350H1 or BCH425H1 or BCH426H1 or BCH440H1 or BCH445H1 or BCH448H1 or CSB328H1 or CSB331H1 or CSB340H1 or CSB349H1 or CSB351Y1 or CSB353H1 or CSB428H1 or CSB429H1 or EEB318H1 or EEB323H1 or EEB365H1 or EHJ352H1 or MGY314H1 or MGY315H1 or MGY340H1 or MGY428H1 or MGY470H1 or PSL350H1",
+        "description": "At least 1.5 Credits from HMB360H1 or HMB421H1 or HMB435H1 or HMB437H1 or HMB474H1 or BCH311H1 or BCH350H1 or BCH425H1 or BCH426H1 or BCH440H1 or BCH445H1 or BCH448H1 or CSB328H1 or CSB331H1 or CSB340H1 or CSB349H1 or CSB351Y1 or CSB353H1 or CSB428H1 or CSB429H1 or EEB318H1 or EEB323H1 or EEB365H1 or EHJ352H1 or MGY314H1 or MGY315H1 or MGY340H1 or MGY428H1 or MGY470H1 or PSL350H1 under constraint from Req19",
         "courses": [
           "HMB360H1",
           "HMB421H1",
@@ -32549,7 +32549,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from HMB301H1 or HMB401H1 or HMB431H1 or HMB436H1 or HMB441H1 or HMB489H1 or BCH311H1 or BCH340H1 or BCH441H1 or BCH447H1 or CSB352H1 or CSB458H1 or CSB459H1 or CSB472H1 or CSB473H1 or CSB474H1 or EEB325H1 or EEB459H1 or EEB460H1 or NFS487H1 or PHL384H1 or PSL350H1 or PSL404H1 or PSY390H1",
+        "description": "At least 1.5 Credits from HMB301H1 or HMB401H1 or HMB431H1 or HMB436H1 or HMB441H1 or HMB489H1 or BCH311H1 or BCH340H1 or BCH441H1 or BCH447H1 or CSB352H1 or CSB458H1 or CSB459H1 or CSB472H1 or CSB473H1 or CSB474H1 or EEB325H1 or EEB459H1 or EEB460H1 or NFS487H1 or PHL384H1 or PSL350H1 or PSL404H1 or PSY390H1 under constraint from Req19",
         "courses": [
           "HMB301H1",
           "HMB401H1",
@@ -32594,7 +32594,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1",
+        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1 under constraint from Req19",
         "courses": [
           "HMB306H1",
           "HMB406H1",
@@ -32630,7 +32630,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1",
+        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1 under constraint from Req19",
         "courses": [
           "HMB490Y1",
           "HMB496Y1"
@@ -32663,7 +32663,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-EAS_ALL or AS-EAS-SOC-CUL-OTHER_2019-20",
+        "description": "At least 10.0 Credits from AS-EAS_ALL or AS-EAS-SOC-CUL-OTHER_2019-20 under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req8",
         "categories": [
           "AS-EAS_ALL",
           "AS-EAS-SOC-CUL-OTHER_2019-20"
@@ -32868,7 +32868,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JPE395H1",
+        "description": "All of JPE395H1 under constraint from Req17",
         "courses": [
           "JPE395H1"
         ],
@@ -32879,7 +32879,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AST325H1 or CHM327H1 or CHM338H1 or PHY354H1 or PHY407H1 or PHY408H1",
+        "description": "At least 2.0 Credits from AST325H1 or CHM327H1 or CHM338H1 or PHY354H1 or PHY407H1 or PHY408H1 under constraint from Req17 and Req18",
         "courses": [
           "AST325H1",
           "CHM327H1",
@@ -32906,7 +32906,7 @@ export default {
       },
       "Req16": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PLN420H1 and PLN425H1",
+        "description": "All of PLN420H1 and PLN425H1 under constraint from Req18",
         "courses": [
           "PLN420H1",
           "PLN425H1"
@@ -33001,7 +33001,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR301H1 or FOR305H1 or GGR382H1",
+        "description": "At least 1.0 Credit from FOR301H1 or FOR305H1 or GGR382H1 under constraint from Req12 and Req13",
         "courses": [
           "FOR301H1",
           "FOR305H1",
@@ -33015,7 +33015,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR300H1 or FOR302H1 or FOR303H1 or FOR306H1 or FOR307H1 or EEB321H1 or FOR310H1",
+        "description": "At least 1.0 Credit from FOR300H1 or FOR302H1 or FOR303H1 or FOR306H1 or FOR307H1 or EEB321H1 or FOR310H1 under constraint from Req12 and Req13",
         "courses": [
           "FOR300H1",
           "FOR302H1",
@@ -33033,7 +33033,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT365Y1 or ENV321Y1 or GGR331H1 or GGR393H1 or HIS318Y1 or INI320Y1 or INI331H1 or INI332H1 or UNI302H1 or UNI315Y1 or UNI317Y1 or JAG321H1 or ENV320Y1 or ENV332H1 or ANT365H1 or JGE321H1 or JGE331H1 or ENV320H1 or ENV323H1 or ENV347H1 or GGR321H1",
+        "description": "At least 1.0 Credit from ANT365Y1 or ENV321Y1 or GGR331H1 or GGR393H1 or HIS318Y1 or INI320Y1 or INI331H1 or INI332H1 or UNI302H1 or UNI315Y1 or UNI317Y1 or JAG321H1 or ENV320Y1 or ENV332H1 or ANT365H1 or JGE321H1 or JGE331H1 or ENV320H1 or ENV323H1 or ENV347H1 or GGR321H1 under constraint from Req12 and Req13",
         "courses": [
           "ANT365Y1",
           "ENV321Y1",
@@ -33064,7 +33064,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR400Y1 and FOR401H1",
+        "description": "All of FOR400Y1 and FOR401H1 under constraint from Req12 and Req13",
         "courses": [
           "FOR400Y1",
           "FOR401H1"
@@ -33077,7 +33077,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ANT450H1 or ANT453H1 or FOR403H1 or FOR410H1 or FOR412H1 or FOR416H1 or FOR417H1 or INI421H1 or INI422H1 or INI447H1 or INI494H1 or INI495H1 or INI440Y1 or INI442H1 or JFG470H1 or JFG475H1 or JIE410H1 or ENV421H1 or ENV422H1 or ENV423H1 or ENV440Y1 or ENV442H1 or ENV447H1 or ENV410H1 or FOR418H1 or GGR416H1 or ENV440H1",
+        "description": "At least 1.0 Credit from ANT450H1 or ANT453H1 or FOR403H1 or FOR410H1 or FOR412H1 or FOR416H1 or FOR417H1 or INI421H1 or INI422H1 or INI447H1 or INI494H1 or INI495H1 or INI440Y1 or INI442H1 or JFG470H1 or JFG475H1 or JIE410H1 or ENV421H1 or ENV422H1 or ENV423H1 or ENV440Y1 or ENV442H1 or ENV447H1 or ENV410H1 or FOR418H1 or GGR416H1 or ENV440H1 under constraint from Req12 and Req13",
         "courses": [
           "ANT450H1",
           "ANT453H1",
@@ -33115,7 +33115,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-SPE-FORCON-ELECTIVES300+",
+        "description": "At least 1.0 Credit from AS-SPE-FORCON-ELECTIVES300+ under constraint from Req12 and Req13",
         "categories": [
           "AS-SPE-FORCON-ELECTIVES300+"
         ],
@@ -33225,7 +33225,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR301H1 and FOR305H1",
+        "description": "All of FOR301H1 and FOR305H1 under constraint from Req13 and Req14",
         "courses": [
           "FOR301H1",
           "FOR305H1"
@@ -33238,7 +33238,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from FOR300H1 or FOR302H1 or FOR303H1 or FOR306H1 or FOR307H1 or FOR310H1 or ENV334H1",
+        "description": "At least 1.0 Credit from FOR300H1 or FOR302H1 or FOR303H1 or FOR306H1 or FOR307H1 or FOR310H1 or ENV334H1 under constraint from Req13 and Req14",
         "courses": [
           "FOR300H1",
           "FOR302H1",
@@ -33256,7 +33256,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BOT307H1 or BOT322Y1 or EEB307H1 or EEB321H1 or EEB319H1 or EEB323H1 or EEB328H1 or EEB341H1 or CSB340H1",
+        "description": "At least 0.5 Credits from BOT307H1 or BOT322Y1 or EEB307H1 or EEB321H1 or EEB319H1 or EEB323H1 or EEB328H1 or EEB341H1 or CSB340H1 under constraint from Req13 and Req14",
         "courses": [
           "BOT307H1",
           "BOT322Y1",
@@ -33276,7 +33276,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from EEB324H1 or EEB360H1 or EEB361H1 or EEB365H1 or EEB386H1 or EEB388H1 or EEB389H1 or GGR305H1 or GGR310H1 or GGR314H1 or ENV320H1 or ENV322H1 or ENV323H1",
+        "description": "At least 1.0 Credit from EEB324H1 or EEB360H1 or EEB361H1 or EEB365H1 or EEB386H1 or EEB388H1 or EEB389H1 or GGR305H1 or GGR310H1 or GGR314H1 or ENV320H1 or ENV322H1 or ENV323H1 under constraint from Req13 and Req14",
         "courses": [
           "EEB324H1",
           "EEB360H1",
@@ -33299,7 +33299,7 @@ export default {
       },
       "Req11": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of FOR400Y1 and FOR401H1",
+        "description": "All of FOR400Y1 and FOR401H1 under constraint from Req13 and Req14",
         "courses": [
           "FOR400Y1",
           "FOR401H1"
@@ -33312,7 +33312,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from FOR403H1 or FOR404H1 or FOR405H1 or FOR408H1 or FOR409H1 or FOR410H1 or FOR412H1 or FOR413H1 or FOR416H1 or FOR417H1 or INI442H1 or INI447H1 or INI495H1 or JFG470H1 or JFG475H1 or ENV447H1 or ENV442H1 or FOR418H1 or FOR419H1 or FOR420H1 or FOR423H1 or ENV347H1 or EEB403H1 or EEB406H1 or EEB407H1",
+        "description": "At least 0.5 Credits from FOR403H1 or FOR404H1 or FOR405H1 or FOR408H1 or FOR409H1 or FOR410H1 or FOR412H1 or FOR413H1 or FOR416H1 or FOR417H1 or INI442H1 or INI447H1 or INI495H1 or JFG470H1 or JFG475H1 or ENV447H1 or ENV442H1 or FOR418H1 or FOR419H1 or FOR420H1 or FOR423H1 or ENV347H1 or EEB403H1 or EEB406H1 or EEB407H1 under constraint from Req13 and Req14",
         "courses": [
           "FOR403H1",
           "FOR404H1",
@@ -33550,7 +33550,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from MAT309H1 or MAT351Y1 or AS-APM/MAT400",
+        "description": "At least 2.0 Credits from MAT309H1 or MAT351Y1 or AS-APM/MAT400 under constraint from Req10",
         "courses": [
           "MAT309H1",
           "MAT351Y1"
@@ -33565,7 +33565,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-APM/MAT300+",
+        "description": "At least 3.0 Credits from AS-APM/MAT300+ under constraint from Req8 and Req10",
         "categories": [
           "AS-APM/MAT300+"
         ],
@@ -33585,7 +33585,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from MAT477H1",
+        "description": "At least 0.5 Credits from MAT477H1 under constraint from Req10",
         "courses": [
           "MAT477H1"
         ],
@@ -33616,7 +33616,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA103H1 and SLA256H1",
+        "description": "All of SLA103H1 and SLA256H1 under constraint from Req22 and Req23",
         "courses": [
           "SLA103H1",
           "SLA256H1"
@@ -33640,7 +33640,7 @@ export default {
       },
       "Req3": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA105Y1 and SLA204Y1",
+        "description": "All of SLA105Y1 and SLA204Y1 under constraint from Req22 and Req23",
         "courses": [
           "SLA105Y1",
           "SLA204Y1"
@@ -33653,7 +33653,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1",
+        "description": "At least 2.0 Credits from SLA106H1 or SLA116H1 or SLA206H1 or SLA207H1 or SLA306H1 or SLA336H1 under constraint from Req22 and Req23",
         "courses": [
           "SLA106H1",
           "SLA116H1",
@@ -33670,7 +33670,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1",
+        "description": "At least 2.0 Credits from SLA100H1 or SLA101H1 or SLA210H1 or SLA220Y1 or SLA320Y1 or SLA410H1 or SLA420Y1 under constraint from Req22 and Req23",
         "courses": [
           "SLA100H1",
           "SLA101H1",
@@ -33688,7 +33688,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1 or SLA109Y1 or SLA209H1 or SLA213H1",
+        "description": "At least 2.0 Credits from SLA107Y1 or SLA257H1 or SLA277H1 or SLA337H1 or SLA109Y1 or SLA209H1 or SLA213H1 under constraint from Req22 and Req23",
         "courses": [
           "SLA107Y1",
           "SLA257H1",
@@ -33705,7 +33705,7 @@ export default {
       },
       "Req7": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of SLA108Y1 and SLA208Y1",
+        "description": "All of SLA108Y1 and SLA208Y1 under constraint from Req22 and Req23",
         "courses": [
           "SLA108Y1",
           "SLA208Y1"
@@ -33731,7 +33731,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA200H1 or SLA215H1 or SLA230H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA435H1 or SLA465H1 or SLA475H1",
+        "description": "At least 2.0 Credits from SLA200H1 or SLA215H1 or SLA230H1 or SLA254H1 or SLA333H1 or SLA335H1 or SLA405H1 or SLA435H1 or SLA465H1 or SLA475H1 under constraint from Req21 and Req22 and Req23",
         "courses": [
           "SLA200H1",
           "SLA215H1",
@@ -33753,7 +33753,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA216H1 or SLA226H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1",
+        "description": "At least 2.0 Credits from SLA216H1 or SLA226H1 or SLA236H1 or SLA266H1 or SLA286H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 under constraint from Req11 and Req21 and Req22 and Req23",
         "courses": [
           "SLA216H1",
           "SLA226H1",
@@ -33783,7 +33783,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA216H1 or SLA226H1 or SLA236H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1",
+        "description": "At least 2.0 Credits from SLA216H1 or SLA226H1 or SLA236H1 or SLA346H1 or SLA356H1 or SLA406H1 or SLA427H1 or HIS251Y1 or HIS353Y1 or HIS433H1 or HIS461H1 under constraint from Req13 and Req21 and Req22 and Req23",
         "courses": [
           "SLA216H1",
           "SLA226H1",
@@ -33816,7 +33816,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SLA-RUSCUL",
+        "description": "At least 2.0 Credits from AS-SLA-RUSCUL under constraint from Req15 and Req21 and Req22 and Req23",
         "categories": [
           "AS-SLA-RUSCUL"
         ],
@@ -33838,7 +33838,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from SLA200H1 or SLA217H1 or SLA227H1 or SLA247H1 or SLA258H1 or SLA259H1 or SLA330H1 or SLA357H1 or SLA377H1 or SLA380H1",
+        "description": "At least 2.0 Credits from SLA200H1 or SLA217H1 or SLA227H1 or SLA247H1 or SLA258H1 or SLA259H1 or SLA330H1 or SLA357H1 or SLA377H1 or SLA380H1 under constraint from Req17 and Req21 and Req22 and Req23",
         "courses": [
           "SLA200H1",
           "SLA217H1",
@@ -33869,7 +33869,7 @@ export default {
       "Req18": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-SLA-UKRCUL",
+        "description": "At least 2.0 Credits from AS-SLA-UKRCUL under constraint from Req19 and Req21 and Req22 and Req23",
         "categories": [
           "AS-SLA-UKRCUL"
         ],
@@ -33891,7 +33891,7 @@ export default {
       "Req20": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-SLA_ALL",
+        "description": "At least 1.0 Credit from AS-SLA_ALL under constraint from Req21 and Req22 and Req23",
         "categories": [
           "AS-SLA_ALL"
         ],
@@ -34170,7 +34170,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PCJ460H1 and PCJ461H1",
+        "description": "All of PCJ460H1 and PCJ461H1 under constraint from Req18",
         "courses": [
           "PCJ460H1",
           "PCJ461H1"
@@ -34195,7 +34195,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPA_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPA_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPA_20215"
         ],
@@ -34207,7 +34207,7 @@ export default {
       "Req12": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPB_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPB_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPB_20215"
         ],
@@ -34219,7 +34219,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPC_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPC_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPC_20215"
         ],
@@ -34231,7 +34231,7 @@ export default {
       "Req14": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPD_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPD_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPD_20215"
         ],
@@ -34243,7 +34243,7 @@ export default {
       "Req15": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPE_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPE_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPE_20215"
         ],
@@ -34255,7 +34255,7 @@ export default {
       "Req16": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPF_20215",
+        "description": "At least 3.0 Credits from AS-PEACECONFLICT-GROUPF_20215 under constraint from Req17 and Req18",
         "categories": [
           "AS-PEACECONFLICT-GROUPF_20215"
         ],
@@ -34282,7 +34282,7 @@ export default {
       },
       "Req19": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: Three complementary credits with either a disciplinary, regional, or thematic focus relevant to Peace, Conflict and Justice (on approval of the Director, based on the needs of students interdisciplinary programs of study). At least two credits must be at the 300+-level. Up to 1.0 credit of MUN courses may be used to fulfill this requirement, subject to approval by the Director. DISCIPLINARY FOCUS: 3.0 credits from one of ANT, ECO, GGR and Environmental Studies (combined), HIS, PHL, POL, PSY, RLG, SLA, SOC, or from other units with a rationale approved by the Program Director. (Note: The disciplinary focus in this cluster must be different from the discipline chosen in requirement 3. For instance, HIS is excluded for students who have taken 3 HIS FCEs to meet requirement 3; POL is excluded for students who have taken 3 POL FCEs, etc.) REGIONAL STUDIES FOCUS: 3.0 credits on, for example, Canada, Southern Africa, the Middle East, Latin America, or the Slavic countries. THEMATIC FOCUS: 3.0 credits on a thematic topic proposed by the student and approved by the Program Director. Examples include negotiation and conflict resolution, diplomatic history, gender and conflict, morality of war, quantitative analysis, group-identity conflict, economic development and conflict, literature, culture, and everyday life of conflict, or environmental change and conflict.",
+        "description": "Requirements of this program are incomplete: Three complementary credits with either a disciplinary, regional, or thematic focus relevant to Peace, Conflict and Justice (on approval of the Director, based on the needs of students interdisciplinary programs of study). At least two credits must be at the 300+-level. Up to 1.0 credit of MUN courses may be used to fulfill this requirement, subject to approval by the Director. DISCIPLINARY FOCUS: 3.0 credits from one of ANT, ECO, GGR and Environmental Studies (combined), HIS, PHL, POL, PSY, RLG, SLA, SOC, or from other units with a rationale approved by the Program Director. (Note: The disciplinary focus in this cluster must be different from the discipline chosen in requirement 3. For instance, HIS is excluded for students who have taken 3 HIS FCEs to meet requirement 3; POL is excluded for students who have taken 3 POL FCEs, etc.) REGIONAL STUDIES FOCUS: 3.0 credits on, for example, Canada, Southern Africa, the Middle East, Latin America, or the Slavic countries. THEMATIC FOCUS: 3.0 credits on a thematic topic proposed by the student and approved by the Program Director. Examples include negotiation and conflict resolution, diplomatic history, gender and conflict, morality of war, quantitative analysis, group-identity conflict, economic development and conflict, literature, culture, and everyday life of conflict, or environmental change and conflict. under constraint from Req18",
         "recursReqs": [
           "Req18"
         ]
@@ -34312,7 +34312,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1",
+        "description": "At least 2.0 Credits from CHC200H1 or CHC307H1 or CHC327H1 or CHC367H1 or MST222H1 or MST230H1 or MST231H1 or MST232H1 or MST233H1 or MST234H1 or MST242H1 or MST323H1 or MST328H1 or MST358H1 or MST359H1 or MST361H1 or SMC176Y1 or SMC200H1 or SMC222H1 or SMC307H1 or SMC323H1 or SMC327H1 or SMC328H1 or SMC358H1 or SMC359H1 or SMC361H1 or SMC367H1 under constraint from Req8 and Req9",
         "courses": [
           "CHC200H1",
           "CHC307H1",
@@ -34350,7 +34350,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from LAT101H1 or LAT102H1 or LAT201H1 or LAT202H1 or MST222H1 or MST323H1 or MST328H1 or MST436H1 or SMC176Y1 or SMC222H1 or SMC323H1 or SMC328H1 or SMC436H1",
+        "description": "At least 2.0 Credits from LAT101H1 or LAT102H1 or LAT201H1 or LAT202H1 or MST222H1 or MST323H1 or MST328H1 or MST436H1 or SMC176Y1 or SMC222H1 or SMC323H1 or SMC328H1 or SMC436H1 under constraint from Req8 and Req9",
         "courses": [
           "LAT101H1",
           "LAT102H1",
@@ -34374,7 +34374,7 @@ export default {
       "Req4": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1",
+        "description": "At least 6.0 Credits from AS-SMC-MED-HISTORY_2020-21 or AS-SMC-MED-THOUGHT_2020-21 or AS-SMC-MED-LIT_2020-21 or AS-SMC-MED-ARTS_2020-21 or MST406H1 or MST407Y1 or MST435H1 or SMC457H1 or SMC406H1 or SMC407Y1 or SMC435H1 under constraint from Req5 and Req8 and Req9",
         "courses": [
           "MST406H1",
           "MST407Y1",
@@ -34407,7 +34407,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST242H1 or MST341H1 or MST442H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC370H1 or SMC371H1 or SMC383H1",
+        "description": "At least 0.5 Credits from CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST242H1 or MST341H1 or MST442H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC370H1 or SMC371H1 or SMC383H1 under constraint from Req8 and Req9",
         "courses": [
           "CHC232H1",
           "CHC370H1",
@@ -34433,7 +34433,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MST490Y1 or SMC490Y1",
+        "description": "At least 1.0 Credit from MST490Y1 or SMC490Y1 under constraint from Req8 and Req9",
         "courses": [
           "MST490Y1",
           "SMC490Y1"
@@ -34475,7 +34475,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-SDS-ELECTIVES_20215 or SDS460Y1",
+        "description": "At least 10.0 Credits from AS-SDS-ELECTIVES_20215 or SDS460Y1 under constraint from Req2 and Req4 and Req6 and Req8 and Req10 and Req11 and Req12 and Req13 and Req14 and Req15 and Req16 and Req17",
         "courses": [
           "SDS460Y1"
         ],
@@ -34676,7 +34676,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1",
+        "description": "At least 1.0 Credit from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR305H1 or GGR308H1 or GGR314H1 or GGR347H1 or GGR348H1 or ENV200H1 or ENV234H1 under constraint from Req14",
         "courses": [
           "GGR201H1",
           "GGR203H1",
@@ -34696,7 +34696,7 @@ export default {
       },
       "Req5": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of GGR223H1 and GGR270H1 and GGR271H1 and GGR272H1 and JGE331H1",
+        "description": "All of GGR223H1 and GGR270H1 and GGR271H1 and GGR272H1 and JGE331H1 under constraint from Req14",
         "courses": [
           "GGR223H1",
           "GGR270H1",
@@ -34711,7 +34711,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1",
+        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1 under constraint from Req14",
         "courses": [
           "GGR240H1",
           "GGR246H1",
@@ -34728,7 +34728,7 @@ export default {
       "Req7": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR491Y1 or GGR416H1 or GGR492H1 or GGR497H1 or AS-GGR-GROUPA&B-400_2020-21",
+        "description": "At least 1.0 Credit from GGR491Y1 or GGR416H1 or GGR492H1 or GGR497H1 or AS-GGR-GROUPA&B-400_2020-21 under constraint from Req8 and Req14 and Req15",
         "courses": [
           "GGR491Y1",
           "GGR416H1",
@@ -34762,7 +34762,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21 or AS-GGR-NEWGROUPC_2020-21",
+        "description": "At least 4.0 Credits from AS-GGR-NEWGROUPA_2020-21 or AS-GGR-NEWGROUPB_2020-21 or AS-GGR-NEWGROUPC_2020-21 under constraint from Req12 and Req13 and Req14 and Req15",
         "categories": [
           "AS-GGR-NEWGROUPA_2020-21",
           "AS-GGR-NEWGROUPB_2020-21",
@@ -34850,7 +34850,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT136H1 or PHY132H1 or PHY152H1 or ENV237H1 or ENV238H1 or BIO120H1 or CSC108H1 or ESS345H1 or JEG100H1",
+        "description": "At least 1.0 Credit from MAT136H1 or PHY132H1 or PHY152H1 or ENV237H1 or ENV238H1 or BIO120H1 or CSC108H1 or ESS345H1 or JEG100H1 under constraint from Req5 and Req6 and Req7",
         "courses": [
           "MAT136H1",
           "PHY132H1",
@@ -34898,7 +34898,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ESS241H1 or ESS223H1 or ENV233H1 or ESS262H1 or GGR201H1",
+        "description": "At least 2.0 Credits from ESS241H1 or ESS223H1 or ENV233H1 or ESS262H1 or GGR201H1 under constraint from Req9",
         "courses": [
           "ESS241H1",
           "ESS223H1",
@@ -34922,7 +34922,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ESS224H1 or ESS261H1 or ESS262H1 or STA220H1 or GGR270H1 or CHM210H1 or MAT221H1 or MAT223H1 or IMC200H1 or PHL273H1 or PHL275H1 or ABS201Y1",
+        "description": "At least 1.0 Credit from ESS224H1 or ESS261H1 or ESS262H1 or STA220H1 or GGR270H1 or CHM210H1 or MAT221H1 or MAT223H1 or IMC200H1 or PHL273H1 or PHL275H1 or ABS201Y1 under constraint from Req11 and Req12 and Req13",
         "courses": [
           "ESS224H1",
           "ESS261H1",
@@ -34985,7 +34985,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from JGA305H1 or ESS234H1 or ESS330H1 or ESS331H1 or ESS361H1 or ESS362H1 or GGR337H1 or GGR390H1 or ENV333H1 or ESS431H1 or ESS441H1 or ESS445H1 or ESS450H1 or ESS462H1 or ESS463H1 or ESS464H1 or ESS490H1 or ESS491H1 or ESS492Y1",
+        "description": "At least 4.0 Credits from JGA305H1 or ESS234H1 or ESS330H1 or ESS331H1 or ESS361H1 or ESS362H1 or GGR337H1 or GGR390H1 or ENV333H1 or ESS431H1 or ESS441H1 or ESS445H1 or ESS450H1 or ESS462H1 or ESS463H1 or ESS464H1 or ESS490H1 or ESS491H1 or ESS492Y1 under constraint from Req16 and Req17",
         "courses": [
           "JGA305H1",
           "ESS234H1",
@@ -35190,7 +35190,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PHL325H1 or PHL331H1 or PHL332H1 or PHL346H1 or PHL354H1 or PHL347H1 or PHL349H1 or PHL355H1 or PHL451H1 or PHL480H1",
+        "description": "At least 2.0 Credits from PHL325H1 or PHL331H1 or PHL332H1 or PHL346H1 or PHL354H1 or PHL347H1 or PHL349H1 or PHL355H1 or PHL451H1 or PHL480H1 under constraint from Req8 and Req12",
         "courses": [
           "PHL325H1",
           "PHL331H1",
@@ -35240,7 +35240,7 @@ export default {
       "Req11": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-PHL/APM/MAT300+",
+        "description": "At least 2.0 Credits from AS-PHL/APM/MAT300+ under constraint from Req12",
         "categories": [
           "AS-PHL/APM/MAT300+"
         ],
@@ -35272,7 +35272,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 or CHM138H1 or CHM139H1 under constraint from Req2 and Req3",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -35387,7 +35387,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from AS-CHM-ELECTIVE",
+        "description": "At least 5.5 Credits from AS-CHM-ELECTIVE under constraint from Req14 and Req15",
         "categories": [
           "AS-CHM-ELECTIVE"
         ],
@@ -35430,7 +35430,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM139H1 or CHM136H1 or CHM138H1",
+        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM139H1 or CHM136H1 or CHM138H1 under constraint from Req2 and Req3",
         "courses": [
           "CHM151Y1",
           "CHM135H1",
@@ -35569,7 +35569,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from CHM499Y1 or AS-CHM3+",
+        "description": "At least 1.5 Credits from CHM499Y1 or AS-CHM3+ under constraint from Req16",
         "courses": [
           "CHM499Y1"
         ],
@@ -35591,7 +35591,7 @@ export default {
       "Req17": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from PHC489Y1 or AS-CHM3+",
+        "description": "At least 1.5 Credits from PHC489Y1 or AS-CHM3+ under constraint from Req18",
         "courses": [
           "PHC489Y1"
         ],
@@ -35613,7 +35613,7 @@ export default {
       "Req19": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from CHM398H0 or AS-CHM3+",
+        "description": "At least 1.5 Credits from CHM398H0 or AS-CHM3+ under constraint from Req20",
         "courses": [
           "CHM398H0"
         ],
@@ -35840,7 +35840,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from MGY425H1 or MGY428H1 or MGY460H1 or MGY470H1 or MGY434H1 or MGY440H1 or MGY480Y1 or BCH428H1 or BCH440H1 or BCH441H1 or CSB472H1 or BCH447H1 or BCH448H1 or EEB460H1",
+        "description": "At least 2.5 Credits from MGY425H1 or MGY428H1 or MGY460H1 or MGY470H1 or MGY434H1 or MGY440H1 or MGY480Y1 or BCH428H1 or BCH440H1 or BCH441H1 or CSB472H1 or BCH447H1 or BCH448H1 or EEB460H1 under constraint from Req13",
         "courses": [
           "MGY425H1",
           "MGY428H1",
@@ -35997,7 +35997,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BCH350H1 or BCH428H1 or BCH441H1 or CSB472H1 or BCH445H1 or MGY360H1 or MGY420H1 or MGY425H1 or MGY470H1 or MGY480Y1 or BCH449H1 or IMM428H1 or IMM430H1 or IMM435H1 or LMP402H1 or LMP403H1 or LMP436H1 or MGY428H1 or MGY434H1 or MGY440H1 or MIJ485H1 or NFS485H1",
+        "description": "At least 1.0 Credit from BCH350H1 or BCH428H1 or BCH441H1 or CSB472H1 or BCH445H1 or MGY360H1 or MGY420H1 or MGY425H1 or MGY470H1 or MGY480Y1 or BCH449H1 or IMM428H1 or IMM430H1 or IMM435H1 or LMP402H1 or LMP403H1 or LMP436H1 or MGY428H1 or MGY434H1 or MGY440H1 or MIJ485H1 or NFS485H1 under constraint from Req13",
         "courses": [
           "BCH350H1",
           "BCH428H1",
@@ -36047,7 +36047,7 @@ export default {
       "Req1": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-GER_ALL or JGJ360H1",
+        "description": "At least 10.0 Credits from AS-GER_ALL or JGJ360H1 under constraint from Req2 and Req3 and Req5 and Req6 and Req7",
         "courses": [
           "JGJ360H1"
         ],
@@ -36342,7 +36342,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from JHA410H1 or ANA300Y1",
+        "description": "At least 0.5 Credits from JHA410H1 or ANA300Y1 under constraint from Req16",
         "courses": [
           "JHA410H1",
           "ANA300Y1"
@@ -36354,7 +36354,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from HMB360H1 or HMB420H1 or HMB430H1 or HMB440H1 or HMB450H1 or HMB471H1 or HMB473H1 or HMB490Y1 or CSB345H1 or CSB346H1 or CSB430H1 or CSB432H1 or CSB445H1 or CSC321H1 or LMP410H1 or NEW335H1 or NFS489H1 or PCL475H1 or PCL476H1 or PSL374H1 or PSL432H1 or PSL440Y1 or PSL445H1 or PSL446H1 or PSL450H1 or PSL452H1 or PSL472H1 or PSY342H1 or PSY371H1 or PSY372H1 or PSY390H1 or PSY395H1 or PSY460H1 or PSY470H1 or PSY471H1 or PSY473H1 or PSY480H1 or PSY490H1 or PSY492H1 or PSY493H1 or PSY494H1 or PSY496H1",
+        "description": "At least 2.0 Credits from HMB360H1 or HMB420H1 or HMB430H1 or HMB440H1 or HMB450H1 or HMB471H1 or HMB473H1 or HMB490Y1 or CSB345H1 or CSB346H1 or CSB430H1 or CSB432H1 or CSB445H1 or CSC321H1 or LMP410H1 or NEW335H1 or NFS489H1 or PCL475H1 or PCL476H1 or PSL374H1 or PSL432H1 or PSL440Y1 or PSL445H1 or PSL446H1 or PSL450H1 or PSL452H1 or PSL472H1 or PSY342H1 or PSY371H1 or PSY372H1 or PSY390H1 or PSY395H1 or PSY460H1 or PSY470H1 or PSY471H1 or PSY473H1 or PSY480H1 or PSY490H1 or PSY492H1 or PSY493H1 or PSY494H1 or PSY496H1 under constraint from Req16",
         "courses": [
           "HMB360H1",
           "HMB420H1",
@@ -36417,7 +36417,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1",
+        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1 under constraint from Req16",
         "courses": [
           "HMB306H1",
           "HMB406H1",
@@ -36439,7 +36439,7 @@ export default {
       },
       "Req14": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of HMB496Y1",
+        "description": "All of HMB496Y1 under constraint from Req16",
         "courses": [
           "HMB496Y1"
         ],
@@ -36525,7 +36525,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from AS-ECO3_ALL_ALL+",
+        "description": "At least 5.5 Credits from AS-ECO3_ALL_ALL+ under constraint from Req7",
         "categories": [
           "AS-ECO3_ALL_ALL+"
         ],
@@ -36719,7 +36719,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.5",
-        "description": "At least 4.5 Credits from RLG205H1 or FAH260H1 or EAS209H1 or EAS215H1 or HIS280Y1 or HIS282Y1 or HIS283Y1 or NEW214H1 or NEW232H1 or PHL237H1 or RLG311H1 or RLG316H1 or RLG356H1 or RLG361H1 or RLG363H1 or RLG366H1 or RLG368H1 or RLG372H1 or RLG373H1 or RLG374H1 or RLG375H1 or RLG371H5 or RLG373H5 or RLG374H5 or RLGC07H3 or FAH363H1 or FAH364H1 or FAH368H1 or EAS338H1 or EAS346H1 or EAS361H1 or HIS380H1 or JNR301H1 or NEW332H1 or NEW333H1 or NEW339H1 or PHL337H1",
+        "description": "At least 4.5 Credits from RLG205H1 or FAH260H1 or EAS209H1 or EAS215H1 or HIS280Y1 or HIS282Y1 or HIS283Y1 or NEW214H1 or NEW232H1 or PHL237H1 or RLG311H1 or RLG316H1 or RLG356H1 or RLG361H1 or RLG363H1 or RLG366H1 or RLG368H1 or RLG372H1 or RLG373H1 or RLG374H1 or RLG375H1 or RLG371H5 or RLG373H5 or RLG374H5 or RLGC07H3 or FAH363H1 or FAH364H1 or FAH368H1 or EAS338H1 or EAS346H1 or EAS361H1 or HIS380H1 or JNR301H1 or NEW332H1 or NEW333H1 or NEW339H1 or PHL337H1 under constraint from Req7 and Req8",
         "courses": [
           "RLG205H1",
           "FAH260H1",
@@ -36853,7 +36853,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ECO321Y1 or HIS263Y1 or POL214Y1",
+        "description": "At least 1.0 Credit from ECO321Y1 or HIS263Y1 or POL214Y1 under constraint from Req9",
         "courses": [
           "ECO321Y1",
           "HIS263Y1",
@@ -36866,7 +36866,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ECO220Y1 or IRE379H1 or PSY201H1 or PSY202H1 or SOC202H1",
+        "description": "At least 1.0 Credit from ECO220Y1 or IRE379H1 or PSY201H1 or PSY202H1 or SOC202H1 under constraint from Req9",
         "courses": [
           "ECO220Y1",
           "IRE379H1",
@@ -36881,7 +36881,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from IRE444H1 or IRE446H1 or IRE447H1 or IRE472H1",
+        "description": "At least 0.5 Credits from IRE444H1 or IRE446H1 or IRE447H1 or IRE472H1 under constraint from Req9",
         "courses": [
           "IRE444H1",
           "IRE446H1",
@@ -36895,7 +36895,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-IRHR-SPE-GROUPD",
+        "description": "At least 0.5 Credits from AS-IRHR-SPE-GROUPD under constraint from Req9",
         "categories": [
           "AS-IRHR-SPE-GROUPD"
         ],
@@ -36906,7 +36906,7 @@ export default {
       "Req8": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ECO220Y1 or ECO321Y1 or HIS263Y1 or IRE379H1 or IRE444H1 or IRE446H1 or IRE447H1 or IRE472H1 or POL214Y1 or PSY201H1 or PSY202H1 or SOC202H1 or AS-IRHR-SPE-GROUPD",
+        "description": "At least 2.0 Credits from ECO220Y1 or ECO321Y1 or HIS263Y1 or IRE379H1 or IRE444H1 or IRE446H1 or IRE447H1 or IRE472H1 or POL214Y1 or PSY201H1 or PSY202H1 or SOC202H1 or AS-IRHR-SPE-GROUPD under constraint from Req9",
         "courses": [
           "ECO220Y1",
           "ECO321Y1",
@@ -36981,7 +36981,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-NEW-CARIBBEAN-CORE_20215",
+        "description": "At least 3.5 Credits from AS-NEW-CARIBBEAN-CORE_20215 under constraint from Req5 and Req6",
         "categories": [
           "AS-NEW-CARIBBEAN-CORE_20215"
         ],
@@ -37009,7 +37009,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-NEW-CARIBBEAN-A_20215",
+        "description": "At least 2.0 Credits from AS-NEW-CARIBBEAN-A_20215 under constraint from Req8",
         "categories": [
           "AS-NEW-CARIBBEAN-A_20215"
         ],
@@ -37156,7 +37156,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT332H1 or MAT344H1 or MAT335H1 or MAT337H1 or MAT363H1 or MAT367H1",
+        "description": "At least 1.0 Credit from MAT332H1 or MAT344H1 or MAT335H1 or MAT337H1 or MAT363H1 or MAT367H1 under constraint from Req15 and Req16",
         "courses": [
           "MAT332H1",
           "MAT344H1",
@@ -37191,7 +37191,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT309H1 or MAT315H1 or STA302H1 or STA347H1",
+        "description": "At least 1.0 Credit from MAT309H1 or MAT315H1 or STA302H1 or STA347H1 under constraint from Req18",
         "courses": [
           "MAT309H1",
           "MAT315H1",
@@ -37240,7 +37240,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-ENG-FCE",
+        "description": "At least 10.0 Credits from AS-ENG-FCE under constraint from Req2 and Req3 and Req12",
         "categories": [
           "AS-ENG-FCE"
         ],
@@ -37436,7 +37436,7 @@ export default {
       },
       "Req8": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PHY408H1 and JPE493H1 and ESS452H1 and ESS441H1 and ESS445H1 and ESS450H1",
+        "description": "All of PHY408H1 and JPE493H1 and ESS452H1 and ESS441H1 and ESS445H1 and ESS450H1 under constraint from Req15",
         "courses": [
           "PHY408H1",
           "JPE493H1",
@@ -37452,7 +37452,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from JPH441H1 or ENV333H1 or IMC200H1 or PHL273H1 or PHL275H1 or INS201Y1",
+        "description": "At least 0.5 Credits from JPH441H1 or ENV333H1 or IMC200H1 or PHL273H1 or PHL275H1 or INS201Y1 under constraint from Req15",
         "courses": [
           "JPH441H1",
           "ENV333H1",
@@ -37468,7 +37468,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from CHM135H1 or ESS345H1 or CSC108H1 or STA220H1 or GGR270H1 or MAT223H1 or MAT244H1 or APM346H1 or ESS331H1 or PHY252H1 or PHY350H1 or PHY354H1 or PHY392H1 or PHY454H1 or PHY495H1 or PHY224H1 or MAT224H1 or MAT335H1 or ESS211H1 or ESS311H1 or ESS312H1 or ESS321H1 or ESS322H1 or ESS323H1 or ESS324H1 or ESS431H1 or ESS234H1 or ESS330H1 or ESS410H1 or ESS490H1 or ESS491H1 or ESS492Y1 or ESS381H1 or ESS391H1 or ESS392Y1 or ESS481H1",
+        "description": "At least 4.0 Credits from CHM135H1 or ESS345H1 or CSC108H1 or STA220H1 or GGR270H1 or MAT223H1 or MAT244H1 or APM346H1 or ESS331H1 or PHY252H1 or PHY350H1 or PHY354H1 or PHY392H1 or PHY454H1 or PHY495H1 or PHY224H1 or MAT224H1 or MAT335H1 or ESS211H1 or ESS311H1 or ESS312H1 or ESS321H1 or ESS322H1 or ESS323H1 or ESS324H1 or ESS431H1 or ESS234H1 or ESS330H1 or ESS410H1 or ESS490H1 or ESS491H1 or ESS492Y1 or ESS381H1 or ESS391H1 or ESS392Y1 or ESS481H1 under constraint from Req11 and Req12 and Req13 and Req14 and Req15",
         "courses": [
           "CHM135H1",
           "ESS345H1",
@@ -37575,7 +37575,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1",
+        "description": "At least 1.0 Credit from JEG100H1 or GGR101H1 or GGR107H1 or GGR112H1 or GGR124H1 or GGR196H1 or GGR197H1 or GGR198H1 or GGR199H1 under constraint from Req13",
         "courses": [
           "JEG100H1",
           "GGR101H1",
@@ -37621,7 +37621,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1",
+        "description": "At least 0.5 Credits from GGR240H1 or GGR246H1 or GGR254H1 or GGR341H1 or GGR342H1 or GGR343H1 or GGR344H1 under constraint from Req13 and Req14",
         "courses": [
           "GGR240H1",
           "GGR246H1",
@@ -37639,7 +37639,7 @@ export default {
       "Req7": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-GGR4_ALL_EXCL_GGR493Y",
+        "description": "At least 1.0 Credit from AS-GGR4_ALL_EXCL_GGR493Y under constraint from Req9 and Req13 and Req14",
         "categories": [
           "AS-GGR4_ALL_EXCL_GGR493Y"
         ],
@@ -37664,7 +37664,7 @@ export default {
       "Req10": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "5.5",
-        "description": "At least 5.5 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21",
+        "description": "At least 5.5 Credits from AS-GGR-GROUP-E_2020-21 or AS-GGR-GROUP-F_2020-21 under constraint from Req12 and Req13 and Req14",
         "categories": [
           "AS-GGR-GROUP-E_2020-21",
           "AS-GGR-GROUP-F_2020-21"
@@ -37733,7 +37733,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC441Y1 or SMC445H1",
+        "description": "At least 2.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC141Y1 or SMC242Y1 or SMC243Y1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC440H1 or SMC441Y1 or SMC445H1 under constraint from Req7 and Req8",
         "courses": [
           "CLT141Y1",
           "CLT242Y1",
@@ -37761,7 +37761,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC165H1 or MST226H1 or CLT250H1 or CLT333H1 or CLT334H1 or CLT335Y1 or CLT337H1 or CLT338H1 or CLT341H1 or CLT342Y1 or CLT343H1 or CLT344Y1 or CLT345H1 or CLT346H1 or CLT347H1 or CLT348H1 or CLT350H1 or CLT351H1 or CLT355H1 or CLT356H1 or CLT373H1 or CLT374H1 or CLT375H1 or CLT376H1 or CLT377H1 or CLT378H1 or CLT395Y1 or CLT396H1 or CLT411H1 or CLT412H1 or CLT413H1 or CLT416H1 or CLT440H1 or CLT441H1 or CLT444H1 or CLT445H1 or SMC441Y1 or SMC457H1 or SMC141Y1 or SMC188Y1 or SMC226H1 or SMC242Y1 or SMC243Y1 or SMC250H1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC333H1 or SMC334H1 or SMC335Y1 or SMC337H1 or SMC338H1 or SMC341H1 or SMC342Y1 or SMC343H1 or SMC344Y1 or SMC345H1 or SMC346H1 or SMC347H1 or SMC348H1 or SMC350H1 or SMC351H1 or SMC355H1 or SMC356H1 or SMC373H1 or SMC374H1 or SMC375H1 or SMC376H1 or SMC377H1 or SMC378H1 or SMC395Y1 or SMC396H1 or SMC411H1 or SMC412H1 or SMC413H1 or SMC416H1 or SMC440H1 or SMC444H1 or SMC445H1",
+        "description": "At least 6.0 Credits from CLT141Y1 or CLT242Y1 or CLT243Y1 or CLT251H1 or CLT252H1 or CLT331H1 or CLT332H1 or SMC165H1 or MST226H1 or CLT250H1 or CLT333H1 or CLT334H1 or CLT335Y1 or CLT337H1 or CLT338H1 or CLT341H1 or CLT342Y1 or CLT343H1 or CLT344Y1 or CLT345H1 or CLT346H1 or CLT347H1 or CLT348H1 or CLT350H1 or CLT351H1 or CLT355H1 or CLT356H1 or CLT373H1 or CLT374H1 or CLT375H1 or CLT376H1 or CLT377H1 or CLT378H1 or CLT395Y1 or CLT396H1 or CLT411H1 or CLT412H1 or CLT413H1 or CLT416H1 or CLT440H1 or CLT441H1 or CLT444H1 or CLT445H1 or SMC441Y1 or SMC457H1 or SMC141Y1 or SMC188Y1 or SMC226H1 or SMC242Y1 or SMC243Y1 or SMC250H1 or SMC251H1 or SMC252H1 or SMC331H1 or SMC332H1 or SMC333H1 or SMC334H1 or SMC335Y1 or SMC337H1 or SMC338H1 or SMC341H1 or SMC342Y1 or SMC343H1 or SMC344Y1 or SMC345H1 or SMC346H1 or SMC347H1 or SMC348H1 or SMC350H1 or SMC351H1 or SMC355H1 or SMC356H1 or SMC373H1 or SMC374H1 or SMC375H1 or SMC376H1 or SMC377H1 or SMC378H1 or SMC395Y1 or SMC396H1 or SMC411H1 or SMC412H1 or SMC413H1 or SMC416H1 or SMC440H1 or SMC444H1 or SMC445H1 under constraint from Req7 and Req8",
         "courses": [
           "CLT141Y1",
           "CLT242Y1",
@@ -37859,7 +37859,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CLT451Y1 or SMC451Y1",
+        "description": "At least 1.0 Credit from CLT451Y1 or SMC451Y1 under constraint from Req7 and Req8",
         "courses": [
           "CLT451Y1",
           "SMC451Y1"
@@ -37872,7 +37872,7 @@ export default {
       "Req6": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from CLT341H1 or CLT348H1 or CLT377H1 or CLT378H1 or CLT444H1 or CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST341H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC341H1 or SMC348H1 or SMC370H1 or SMC371H1 or SMC377H1 or SMC378H1 or SMC383H1 or SMC444H1",
+        "description": "At least 0.5 Credits from CLT341H1 or CLT348H1 or CLT377H1 or CLT378H1 or CLT444H1 or CHC232H1 or CHC370H1 or CHC371H1 or CHC383H1 or MST341H1 or SMC385H1 or AS-BR-PHYSUNI200+ or SMC232H1 or SMC341H1 or SMC348H1 or SMC370H1 or SMC371H1 or SMC377H1 or SMC378H1 or SMC383H1 or SMC444H1 under constraint from Req7 and Req8",
         "courses": [
           "CLT341H1",
           "CLT348H1",
@@ -38094,7 +38094,7 @@ export default {
       "Req21": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from STA303H1 or STA305H1 or STA347H1 or CSC401H1 or STA414H1 or CSC412H1 or CSC413H1 or CSC421H1 or CSC454H1 or CSC490H1 or CSC491H1 or CSC494H1 or CSC495H1 or AS-STA4_ALL or JSC470H1",
+        "description": "At least 2.0 Credits from STA303H1 or STA305H1 or STA347H1 or CSC401H1 or STA414H1 or CSC412H1 or CSC413H1 or CSC421H1 or CSC454H1 or CSC490H1 or CSC491H1 or CSC494H1 or CSC495H1 or AS-STA4_ALL or JSC470H1 under constraint from Req22 and Req23 and Req24",
         "courses": [
           "STA303H1",
           "STA305H1",
@@ -38196,7 +38196,7 @@ export default {
       "Req31": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req32",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -38360,7 +38360,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of CSC369H1 and CSC373H1",
+        "description": "All of CSC369H1 and CSC373H1 under constraint from Req31",
         "courses": [
           "CSC369H1",
           "CSC373H1"
@@ -38372,7 +38372,7 @@ export default {
       "Req14": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AS-CSC4_ALL or BCB410H1 or BCB420H1 or BCB430Y1",
+        "description": "At least 1.5 Credits from AS-CSC4_ALL or BCB410H1 or BCB420H1 or BCB430Y1 under constraint from Req15 and Req20 and Req21 and Req31",
         "courses": [
           "BCB410H1",
           "BCB420H1",
@@ -38399,7 +38399,7 @@ export default {
       "Req16": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from AS-CSC3_ALL or BCB410H1 or BCB420H1 or BCB330Y1 or BCB430Y1 or MAT224H1 or MAT247H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or AS-MAT3+_CSC_MAJ_SPEC or STA238H1 or STA248H1 or STA261H1 or AS-STA3_ALL_ALL or AS-STA4_ALL",
+        "description": "At least 3.5 Credits from AS-CSC3_ALL or BCB410H1 or BCB420H1 or BCB330Y1 or BCB430Y1 or MAT224H1 or MAT247H1 or MAT235Y1 or MAT237Y1 or MAT257Y1 or AS-MAT3+_CSC_MAJ_SPEC or STA238H1 or STA248H1 or STA261H1 or AS-STA3_ALL_ALL or AS-STA4_ALL under constraint from Req17 and Req18 and Req19 and Req20 and Req21 and Req31",
         "courses": [
           "BCB410H1",
           "BCB420H1",
@@ -38519,7 +38519,7 @@ export default {
       "Req28": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req29",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -38684,7 +38684,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AFR150Y1 or NEW150Y1",
+        "description": "At least 1.0 Credit from AFR150Y1 or NEW150Y1 under constraint from Req15 and Req16",
         "courses": [
           "AFR150Y1",
           "NEW150Y1"
@@ -38696,7 +38696,7 @@ export default {
       },
       "Req2": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of JQR360H1",
+        "description": "All of JQR360H1 under constraint from Req15 and Req16",
         "courses": [
           "JQR360H1"
         ],
@@ -38708,7 +38708,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AFR450Y1 or NEW450Y1",
+        "description": "At least 1.0 Credit from AFR450Y1 or NEW450Y1 under constraint from Req15 and Req16",
         "courses": [
           "AFR450Y1",
           "NEW450Y1"
@@ -38721,7 +38721,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.5",
-        "description": "At least 6.5 Credits from AS-AFRICAN-A_20215 or AS-AFRICAN-B_20215",
+        "description": "At least 6.5 Credits from AS-AFRICAN-A_20215 or AS-AFRICAN-B_20215 under constraint from Req5 and Req6 and Req15 and Req16 and Req17 and Req18",
         "categories": [
           "AS-AFRICAN-A_20215",
           "AS-AFRICAN-B_20215"
@@ -38768,7 +38768,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NEW280Y1 or NEW281Y1 or NEW380Y1 or AFR280Y1 or AFR380Y1",
+        "description": "At least 2.0 Credits from NEW280Y1 or NEW281Y1 or NEW380Y1 or AFR280Y1 or AFR380Y1 under constraint from Req15 and Req16",
         "courses": [
           "NEW280Y1",
           "NEW281Y1",
@@ -38784,7 +38784,7 @@ export default {
       "Req9": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from FSL221Y1 or FSL321Y1 or FSL331Y1 or FSL341Y1 or FSL421Y1 or FSL431Y1 or FSL362Y1",
+        "description": "At least 2.0 Credits from FSL221Y1 or FSL321Y1 or FSL331Y1 or FSL341Y1 or FSL421Y1 or FSL431Y1 or FSL362Y1 under constraint from Req15 and Req16",
         "courses": [
           "FSL221Y1",
           "FSL321Y1",
@@ -38802,7 +38802,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NML110Y1 or NML210Y1",
+        "description": "At least 2.0 Credits from NML110Y1 or NML210Y1 under constraint from Req15 and Req16",
         "courses": [
           "NML110Y1",
           "NML210Y1"
@@ -38815,7 +38815,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NML110Y1 or NML211Y1",
+        "description": "At least 2.0 Credits from NML110Y1 or NML211Y1 under constraint from Req15 and Req16",
         "courses": [
           "NML110Y1",
           "NML211Y1"
@@ -38828,7 +38828,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NML210Y1 or NML310Y1",
+        "description": "At least 2.0 Credits from NML210Y1 or NML310Y1 under constraint from Req15 and Req16",
         "courses": [
           "NML210Y1",
           "NML310Y1"
@@ -38841,7 +38841,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PRT100Y1 or PRT220Y1",
+        "description": "At least 2.0 Credits from PRT100Y1 or PRT220Y1 under constraint from Req15 and Req16",
         "courses": [
           "PRT100Y1",
           "PRT220Y1"
@@ -38854,7 +38854,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from PRT110Y1 or PRT220Y1",
+        "description": "At least 2.0 Credits from PRT110Y1 or PRT220Y1 under constraint from Req15 and Req16",
         "courses": [
           "PRT110Y1",
           "PRT220Y1"
@@ -39040,7 +39040,7 @@ export default {
       "Req16": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from AST320H1 or AST325H1 or MAT337H1 or MAT363H1 or MAT367H1 or PHY350H1 or PHY354H1 or PHY356H1 or PHY357H1 or PHY358H1",
+        "description": "At least 1.5 Credits from AST320H1 or AST325H1 or MAT337H1 or MAT363H1 or MAT367H1 or PHY350H1 or PHY354H1 or PHY356H1 or PHY357H1 or PHY358H1 under constraint from Req17",
         "courses": [
           "AST320H1",
           "AST325H1",
@@ -39190,7 +39190,7 @@ export default {
       },
       "Req12": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BCH478H1",
+        "description": "All of BCH478H1 under constraint from Req20",
         "courses": [
           "BCH478H1"
         ],
@@ -39201,7 +39201,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from BCH422H1 or BCH425H1 or BCH426H1 or BCH428H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or BCH446H1 or BCH448H1 or BCH449H1 or BCH450H1 or BCH479H1 or BCB420H1 or CHM447H1 or MGY420H1 or MGY425H1 or MGY428H1 or MGY450H1 or MGY470H1",
+        "description": "At least 2.0 Credits from BCH422H1 or BCH425H1 or BCH426H1 or BCH428H1 or BCH440H1 or BCH441H1 or BCH444H1 or BCH445H1 or BCH446H1 or BCH448H1 or BCH449H1 or BCH450H1 or BCH479H1 or BCB420H1 or CHM447H1 or MGY420H1 or MGY425H1 or MGY428H1 or MGY450H1 or MGY470H1 under constraint from Req14 and Req20",
         "courses": [
           "BCH422H1",
           "BCH425H1",
@@ -39240,7 +39240,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from BCH372Y1 or BCH374Y1 or BCH472Y1 or BCH473Y1 or BIO220H1 or CHM217H1 or CHM220H1 or CHM223H1 or CSC108H1 or CSC148H1 or MAT235Y1 or MAT237Y1 or STA221H1 or JPM300H1",
+        "description": "At least 2.0 Credits from BCH372Y1 or BCH374Y1 or BCH472Y1 or BCH473Y1 or BIO220H1 or CHM217H1 or CHM220H1 or CHM223H1 or CSC108H1 or CSC148H1 or MAT235Y1 or MAT237Y1 or STA221H1 or JPM300H1 under constraint from Req16 and Req17 and Req20",
         "courses": [
           "BCH372Y1",
           "BCH374Y1",
@@ -39434,7 +39434,7 @@ export default {
       "Req15": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "2",
-        "description": "At least 2 Courses from BCH210H1 or BCH311H1 or CSB349H1 or MGY311Y1",
+        "description": "At least 2 Courses from BCH210H1 or BCH311H1 or CSB349H1 or MGY311Y1 under constraint from Req16",
         "courses": [
           "BCH210H1",
           "BCH311H1",
@@ -39798,7 +39798,7 @@ export default {
       "Req16": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-PHY3_COURSES or AS-PHY-400-LEVEL or JPE395H1 or JPE493H1",
+        "description": "At least 1.0 Credit from AS-PHY3_COURSES or AS-PHY-400-LEVEL or JPE395H1 or JPE493H1 under constraint from Req17",
         "courses": [
           "JPE395H1",
           "JPE493H1"
@@ -39977,7 +39977,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM139H1 or CHM136H1 or CHM138H1",
+        "description": "At least 1.0 Credit from CHM151Y1 or CHM135H1 or CHM139H1 or CHM136H1 or CHM138H1 under constraint from Req3 and Req4",
         "courses": [
           "CHM151Y1",
           "CHM135H1",
@@ -40065,7 +40065,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM220H1 or CHM222H1 or CHM223H1",
+        "description": "At least 1.0 Credit from CHM220H1 or CHM222H1 or CHM223H1 under constraint from Req12",
         "courses": [
           "CHM220H1",
           "CHM222H1",
@@ -40251,7 +40251,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-HMB-HD-HIGHER_2020-21",
+        "description": "At least 2.0 Credits from AS-HMB-HD-HIGHER_2020-21 under constraint from Req19",
         "categories": [
           "AS-HMB-HD-HIGHER_2020-21"
         ],
@@ -40273,7 +40273,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1",
+        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1 under constraint from Req19",
         "courses": [
           "HMB306H1",
           "HMB406H1",
@@ -40308,7 +40308,7 @@ export default {
       "Req18": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1",
+        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1 under constraint from Req19",
         "courses": [
           "HMB490Y1",
           "HMB496Y1"
@@ -40337,7 +40337,7 @@ export default {
       "Req1": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-POL-COURSES_2020-21 or AS-POL_NON-POL_2020-21 or AS-POL-CANPOL_2020-21 or AS-POL_DIV&IDENTITY_2020-21 or AS-POL-Y1-FYF",
+        "description": "At least 10.0 Credits from AS-POL-COURSES_2020-21 or AS-POL_NON-POL_2020-21 or AS-POL-CANPOL_2020-21 or AS-POL_DIV&IDENTITY_2020-21 or AS-POL-Y1-FYF under constraint from Req2 and Req3 and Req4 and Req5 and Req6 and Req7 and Req10 and Req11 and Req12 and Req14 and Req15 and Req16 and Req17 and Req18",
         "categories": [
           "AS-POL-COURSES_2020-21",
           "AS-POL_NON-POL_2020-21",
@@ -40852,7 +40852,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from JEG100H1 or MAT133Y1 or MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1 or MAT223H1 or MAT240H1 or MAT224H1 or MAT247H1 or PHY132H1 or PHY131H1 or PHY151H1 or PHY152H1 or CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1 or BIO120H1 or BIO130H1",
+        "description": "At least 3.0 Credits from JEG100H1 or MAT133Y1 or MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1 or MAT223H1 or MAT240H1 or MAT224H1 or MAT247H1 or PHY132H1 or PHY131H1 or PHY151H1 or PHY152H1 or CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1 or BIO120H1 or BIO130H1 under constraint from Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10",
         "courses": [
           "JEG100H1",
           "MAT133Y1",
@@ -40965,7 +40965,7 @@ export default {
       "Req11": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or AS-GGR-GROUP-H",
+        "description": "At least 2.0 Credits from GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or AS-GGR-GROUP-H under constraint from Req12",
         "courses": [
           "GGR201H1",
           "GGR203H1",
@@ -41015,7 +41015,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from GGR273H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR373H1 or GGR347H1 or GGR348H1 or GGR416H1 or AS-GGR-GROUP-I_20215 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1",
+        "description": "At least 3.5 Credits from GGR273H1 or GGR301H1 or GGR305H1 or GGR307H1 or GGR308H1 or GGR310H1 or FOR310H1 or GGR314H1 or GGR373H1 or GGR347H1 or GGR348H1 or GGR416H1 or AS-GGR-GROUP-I_20215 or GGR201H1 or GGR203H1 or GGR205H1 or GGR206H1 or GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1 under constraint from Req16 and Req17 and Req19 and Req22",
         "courses": [
           "GGR273H1",
           "GGR301H1",
@@ -41084,7 +41084,7 @@ export default {
       "Req20": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1 or AS-GGR-GROUP-I400_20215",
+        "description": "At least 1.0 Credit from GGR401H1 or GGR405H1 or GGR406H1 or GGR413H1 or GGR414H1 or GGR491Y1 or GGR498H1 or AS-GGR-GROUP-I400_20215 under constraint from Req22",
         "courses": [
           "GGR401H1",
           "GGR405H1",
@@ -41434,7 +41434,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY151H1 or PHY132H1 or PHY152H1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY151H1 or PHY132H1 or PHY152H1 under constraint from Req4 and Req5",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -41545,7 +41545,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.5",
-        "description": "At least 3.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or JPM400Y1 or ANA300Y1 or BCH340H1 or BCH350H1 or BCH450H1",
+        "description": "At least 3.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or JPM400Y1 or ANA300Y1 or BCH340H1 or BCH350H1 or BCH450H1 under constraint from Req16 and Req17",
         "courses": [
           "JPM300H1",
           "PCL345H1",
@@ -41662,7 +41662,7 @@ export default {
       "Req28": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req29",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -41853,7 +41853,7 @@ export default {
       },
       "Req10": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of HST450Y1",
+        "description": "All of HST450Y1 under constraint from Req13",
         "courses": [
           "HST450Y1"
         ],
@@ -41864,7 +41864,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HST405H1 or HST407H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1",
+        "description": "At least 1.0 Credit from HST405H1 or HST407H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 under constraint from Req13",
         "courses": [
           "HST405H1",
           "HST407H1",
@@ -41883,7 +41883,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ANT100Y1 or BIO130H1 or GGR107H1 or HPS100H1 or HPS110H1 or HPS120H1 or PCL102H1 or PHS100H1 or PHL100Y1 or PHL101Y1 or POL101Y1 or PSY100H1 or SOC100H1 or TRN135Y1 or UNI103H1 or UNI103Y1 or WGS160Y1 or PHL281H1 or INS200H1 or ANT208H1 or HMB202H1 or HMB203H1 or INS205H1 or JSU237H1 or NFS284H1 or PCL201H1 or PCL218H1 or SOC204H1 or SOC243H1 or STA221H1 or TRN235H1 or TRN236H1 or HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or HST350Y1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HPS371H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1 or HST405H1 or HST407H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 or ANT434H1 or ANT458H1 or ANT460H1 or ANT474H1 or ENV430H1 or GGR433H1 or JFP450H1 or HIS423H1 or HIS498H1 or HMB322H1 or HMB406H1 or HMB433H1 or HMB462H1 or HST400Y1 or IRE378H1 or NEW344Y1 or CSE344Y1 or PSY333H1 or SOC412H1 or SOC488H1",
+        "description": "At least 2.0 Credits from ANT100Y1 or BIO130H1 or GGR107H1 or HPS100H1 or HPS110H1 or HPS120H1 or PCL102H1 or PHS100H1 or PHL100Y1 or PHL101Y1 or POL101Y1 or PSY100H1 or SOC100H1 or TRN135Y1 or UNI103H1 or UNI103Y1 or WGS160Y1 or PHL281H1 or INS200H1 or ANT208H1 or HMB202H1 or HMB203H1 or INS205H1 or JSU237H1 or NFS284H1 or PCL201H1 or PCL218H1 or SOC204H1 or SOC243H1 or STA221H1 or TRN235H1 or TRN236H1 or HST307H1 or HST308H1 or HST309H1 or HST330H1 or HST350H1 or HST350Y1 or ANA300Y1 or ANT345H1 or ANT348H1 or ANT358H1 or EEB324H1 or GGR340H1 or HPS319H1 or HPS370H1 or HPS371H1 or HMB303H1 or HMB323H1 or INS340Y1 or INS350H1 or JNH350H1 or PHL380H1 or PHL381H1 or PHL383H1 or PHS300H1 or SOC309H1 or SOC316H1 or SOC363H1 or SOC364H1 or WGS367H1 or HST405H1 or HST407H1 or HST409H1 or HST410H1 or HST411H1 or HST440H1 or HST451Y1 or HST464H1 or HST480H1 or ANT434H1 or ANT458H1 or ANT460H1 or ANT474H1 or ENV430H1 or GGR433H1 or JFP450H1 or HIS423H1 or HIS498H1 or HMB322H1 or HMB406H1 or HMB433H1 or HMB462H1 or HST400Y1 or IRE378H1 or NEW344Y1 or CSE344Y1 or PSY333H1 or SOC412H1 or SOC488H1 under constraint from Req13",
         "courses": [
           "ANT100Y1",
           "BIO130H1",
@@ -42024,7 +42024,7 @@ export default {
       "Req4": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "6.0",
-        "description": "At least 6.0 Credits from AS-ANT-GROUP-C-ALL_20215",
+        "description": "At least 6.0 Credits from AS-ANT-GROUP-C-ALL_20215 under constraint from Req5",
         "categories": [
           "AS-ANT-GROUP-C-ALL_20215"
         ],
@@ -42081,7 +42081,7 @@ export default {
       "Req3": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "10.0",
-        "description": "At least 10.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20",
+        "description": "At least 10.0 Credits from AS-DRM-GROUPA_2020-21 or AS-DRM-GROUPB_2020-21 or AS-DRM-GROUPC_2020-21 or AS-DRM-OTHER_2019-20 under constraint from Req4 and Req5 and Req6 and Req7",
         "categories": [
           "AS-DRM-GROUPA_2020-21",
           "AS-DRM-GROUPB_2020-21",
@@ -42240,7 +42240,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from INI333H1 or INI336H1 or INI337H1 or INI338H1 or INI339H1 or INI342H1 or INI430H1 or INI432H1 or INI433H1 or INI437Y1 or INI439H1",
+        "description": "At least 2.0 Credits from INI333H1 or INI336H1 or INI337H1 or INI338H1 or INI339H1 or INI342H1 or INI430H1 or INI432H1 or INI433H1 or INI437Y1 or INI439H1 under constraint from Req13 and Req24",
         "courses": [
           "INI333H1",
           "INI336H1",
@@ -42284,7 +42284,7 @@ export default {
       },
       "Req15": {
         "type": "UNVERIFIABLE/././RECURS",
-        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here",
+        "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here under constraint from Req24",
         "recursReqs": [
           "Req24"
         ]
@@ -42292,7 +42292,7 @@ export default {
       "Req16": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPB under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-2017-GROUPB"
         ],
@@ -42303,7 +42303,7 @@ export default {
       "Req17": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPC_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-GROUPC_20215"
         ],
@@ -42314,7 +42314,7 @@ export default {
       "Req18": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPD_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-GROUPD_20215"
         ],
@@ -42325,7 +42325,7 @@ export default {
       "Req19": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPE_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-GROUPE_20215"
         ],
@@ -42336,7 +42336,7 @@ export default {
       "Req20": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPF_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-GROUPF_20215"
         ],
@@ -42347,7 +42347,7 @@ export default {
       "Req21": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-2017-GROUPG under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-2017-GROUPG"
         ],
@@ -42358,7 +42358,7 @@ export default {
       "Req22": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 0.5 Credits from AS-INI-URBAN-GROUPH_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-GROUPH_20215"
         ],
@@ -42369,7 +42369,7 @@ export default {
       "Req23": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215",
+        "description": "At least 2.5 Credits from AS-INI-URBAN-2017-GROUPA or AS-INI-URBAN-2017-GROUPB or AS-INI-URBAN-GROUPC_20215 or AS-INI-URBAN-GROUPD_20215 or AS-INI-URBAN-GROUPE_20215 or AS-INI-URBAN-GROUPF_20215 or AS-INI-URBAN-2017-GROUPG or AS-INI-URBAN-GROUPH_20215 under constraint from Req24",
         "categories": [
           "AS-INI-URBAN-2017-GROUPA",
           "AS-INI-URBAN-2017-GROUPB",
@@ -42550,7 +42550,7 @@ export default {
       "Req16": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req17",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -42581,7 +42581,7 @@ export default {
       "Req19": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT224H1 or MAT247H1 or MAT337H1 or MAT357H1 or CSC148H1 or CSC207H1 or AS-STA3+_EXCL_STA310H5",
+        "description": "At least 1.0 Credit from MAT224H1 or MAT247H1 or MAT337H1 or MAT357H1 or CSC148H1 or CSC207H1 or AS-STA3+_EXCL_STA310H5 under constraint from Req20 and Req21",
         "courses": [
           "MAT224H1",
           "MAT247H1",
@@ -42680,7 +42680,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from HMU-COURSES or TMU-COURSES",
+        "description": "At least 1.5 Credits from HMU-COURSES or TMU-COURSES under constraint from Req7",
         "categories": [
           "HMU-COURSES",
           "TMU-COURSES"
@@ -42830,7 +42830,7 @@ export default {
       "Req13": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ACT451H1 or ACT452H1 or ACT460H1 or MAT327H1 or MAT332H1 or MAT334H1 or MAT354H1 or MAT337H1 or MAT357H1 or MAT301H1 or MAT347Y1 or MAT344H1 or CSC207H1 or CSC336H1 or CSC343H1 or AS-STA3+_EXCL_STA310H5",
+        "description": "At least 1.0 Credit from ACT451H1 or ACT452H1 or ACT460H1 or MAT327H1 or MAT332H1 or MAT334H1 or MAT354H1 or MAT337H1 or MAT357H1 or MAT301H1 or MAT347Y1 or MAT344H1 or CSC207H1 or CSC336H1 or CSC343H1 or AS-STA3+_EXCL_STA310H5 under constraint from Req14 and Req15 and Req16",
         "courses": [
           "ACT451H1",
           "ACT452H1",
@@ -42908,7 +42908,7 @@ export default {
       "Req19": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req20",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -42966,7 +42966,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req4 and Req5",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -43073,7 +43073,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or JPM400Y1",
+        "description": "At least 1.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or LMP301H1 or JPM400Y1 under constraint from Req15",
         "courses": [
           "JPM300H1",
           "PCL345H1",
@@ -43190,7 +43190,7 @@ export default {
       "Req27": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req28",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -43371,7 +43371,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-BIO-SPE-7-1_20215 or AS-BIO-SPE-7-2_2015",
+        "description": "At least 2.0 Credits from AS-BIO-SPE-7-1_20215 or AS-BIO-SPE-7-2_2015 under constraint from Req14",
         "categories": [
           "AS-BIO-SPE-7-1_20215",
           "AS-BIO-SPE-7-2_2015"
@@ -43572,7 +43572,7 @@ export default {
       "Req20": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from MSE302H1 or MSE316H1 or MSE343H1 or CHM434H1 or CHM455H1 or CHM446H1 or CHM456H1 or CHM458H1 or MSE415H1 or MSE430H1 or MSE432H1 or MSE443H1 or MSE440H1 or MSE442H1 or MSE451H1 or MSE458H1 or MSE459H1 or MSE461H1",
+        "description": "At least 1.5 Credits from MSE302H1 or MSE316H1 or MSE343H1 or CHM434H1 or CHM455H1 or CHM446H1 or CHM456H1 or CHM458H1 or MSE415H1 or MSE430H1 or MSE432H1 or MSE443H1 or MSE440H1 or MSE442H1 or MSE451H1 or MSE458H1 or MSE459H1 or MSE461H1 under constraint from Req21 and Req22 and Req23 and Req24",
         "courses": [
           "MSE302H1",
           "MSE316H1",
@@ -43768,7 +43768,7 @@ export default {
       "Req13": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from RSM3_ALL_ALL+",
+        "description": "At least 2.5 Credits from RSM3_ALL_ALL+ under constraint from Req14 and Req15",
         "categories": [
           "RSM3_ALL_ALL+"
         ],
@@ -43826,7 +43826,7 @@ export default {
     "detailAssessments": {
       "Req1": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ITA100Y1 and ITA250Y1 and ITA350Y1 and ITA450H1",
+        "description": "All of ITA100Y1 and ITA250Y1 and ITA350Y1 and ITA450H1 under constraint from Req12",
         "courses": [
           "ITA100Y1",
           "ITA250Y1",
@@ -43840,7 +43840,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ITA2_ALL_ALL",
+        "description": "At least 1.0 Credit from ITA2_ALL_ALL under constraint from Req12",
         "categories": [
           "ITA2_ALL_ALL"
         ],
@@ -43851,7 +43851,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA300H1 or ITA301H1 or ITA310H1 or ITA311H1 or ITA312H1 or ITA320H1 or ITA321H1 or ITA330H1 or ITA332H1 or ITA348H1 or ITA370H1 or ITA380H1 or ITA381H1 or ITA390H1 or ITA400H1 or ITA410H1 or ITA420H1 or ITA421H1 or ITA455H1",
+        "description": "At least 0.5 Credits from ITA300H1 or ITA301H1 or ITA310H1 or ITA311H1 or ITA312H1 or ITA320H1 or ITA321H1 or ITA330H1 or ITA332H1 or ITA348H1 or ITA370H1 or ITA380H1 or ITA381H1 or ITA390H1 or ITA400H1 or ITA410H1 or ITA420H1 or ITA421H1 or ITA455H1 under constraint from Req12",
         "courses": [
           "ITA300H1",
           "ITA301H1",
@@ -43880,7 +43880,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA300H1 or ITA311H1 or ITA312H1 or ITA320H1 or ITA321H1 or ITA332H1 or ITA370H1 or ITA400H1 or ITA420H1 or ITA455H1",
+        "description": "At least 0.5 Credits from ITA300H1 or ITA311H1 or ITA312H1 or ITA320H1 or ITA321H1 or ITA332H1 or ITA370H1 or ITA400H1 or ITA420H1 or ITA455H1 under constraint from Req12",
         "courses": [
           "ITA300H1",
           "ITA311H1",
@@ -43900,7 +43900,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA301H1 or ITA348H1 or ITA390H1 or ITA420H1 or ITA455H1",
+        "description": "At least 0.5 Credits from ITA301H1 or ITA348H1 or ITA390H1 or ITA420H1 or ITA455H1 under constraint from Req12",
         "courses": [
           "ITA301H1",
           "ITA348H1",
@@ -43915,7 +43915,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA301H1 or ITA310H1 or ITA330H1 or ITA380H1 or ITA381H1 or ITA410H1 or ITA421H1 or ITA455H1",
+        "description": "At least 0.5 Credits from ITA301H1 or ITA310H1 or ITA330H1 or ITA380H1 or ITA381H1 or ITA410H1 or ITA421H1 or ITA455H1 under constraint from Req12",
         "courses": [
           "ITA301H1",
           "ITA310H1",
@@ -43933,7 +43933,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA360H1 or ITA363H1 or ITA364H1 or ITA431H1 or ITA432H1 or ITA433H1",
+        "description": "At least 0.5 Credits from ITA360H1 or ITA363H1 or ITA364H1 or ITA431H1 or ITA432H1 or ITA433H1 under constraint from Req12",
         "courses": [
           "ITA360H1",
           "ITA363H1",
@@ -43949,7 +43949,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from ITA311H1 or ITA320H1 or ITA321H1 or ITA330H1 or ITA332H1 or ITA340H1 or ITA341H1 or ITA342H1 or ITA345H1 or ITA348H1 or ITA370H1 or ITA380H1 or ITA400H1 or ITA420H1 or ITA441H1 or ITA445H1",
+        "description": "At least 0.5 Credits from ITA311H1 or ITA320H1 or ITA321H1 or ITA330H1 or ITA332H1 or ITA340H1 or ITA341H1 or ITA342H1 or ITA345H1 or ITA348H1 or ITA370H1 or ITA380H1 or ITA400H1 or ITA420H1 or ITA441H1 or ITA445H1 under constraint from Req12",
         "courses": [
           "ITA311H1",
           "ITA320H1",
@@ -43975,7 +43975,7 @@ export default {
       "Req9": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from ITA3_ALL_ALL+ or ITA4_ALL_ALL",
+        "description": "At least 2.0 Credits from ITA3_ALL_ALL+ or ITA4_ALL_ALL under constraint from Req10 and Req12",
         "categories": [
           "ITA3_ALL_ALL+",
           "ITA4_ALL_ALL"
@@ -43995,7 +43995,7 @@ export default {
       },
       "Req11": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of ITA495H1",
+        "description": "All of ITA495H1 under constraint from Req12",
         "courses": [
           "ITA495H1"
         ],
@@ -44064,7 +44064,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req4 and Req5",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -44161,7 +44161,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or JPM400Y1 or ANA301H1 or CHM310H1 or ESS463H1 or LMP301H1",
+        "description": "At least 2.5 Credits from JPM300H1 or PCL345H1 or PCL367H1 or PCL368H1 or PCL386H1 or PCL389H1 or PCL475H1 or PCL476H1 or PCL475Y1 or PCL477H1 or PCL484H1 or PCL486H1 or PCL490H1 or JPM400Y1 or ANA301H1 or CHM310H1 or ESS463H1 or LMP301H1 under constraint from Req14 and Req15",
         "courses": [
           "JPM300H1",
           "PCL345H1",
@@ -44280,7 +44280,7 @@ export default {
       "Req26": {
         "type": "COURSES/NUM/MIN/RECURS",
         "count": "7",
-        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1",
+        "description": "At least 7 Courses from PDC220H1 or PDC221H1 or INT200H1 or PDC320H1 or PDC321H1 or INT300H1 or INT400H1 or INT450H1 under constraint from Req27",
         "courses": [
           "PDC220H1",
           "PDC221H1",
@@ -44471,7 +44471,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from HAJ453H1 or HMB323H1 or HMB433H1 or HMB436H1 or HMB437H1 or HMB440H1 or HMB443H1 or HMB462H1 or HMB473H1 or HMB474H1 or HMB496Y1 or JEH455H1 or CSB351Y1 or EEB325H1 or EHJ352H1 or MGY350H1 or MGY377H1 or MGY378H1 or MIJ485H1",
+        "description": "At least 2.0 Credits from HAJ453H1 or HMB323H1 or HMB433H1 or HMB436H1 or HMB437H1 or HMB440H1 or HMB443H1 or HMB462H1 or HMB473H1 or HMB474H1 or HMB496Y1 or JEH455H1 or CSB351Y1 or EEB325H1 or EHJ352H1 or MGY350H1 or MGY377H1 or MGY378H1 or MIJ485H1 under constraint from Req19",
         "courses": [
           "HAJ453H1",
           "HMB323H1",
@@ -44500,7 +44500,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMB303H1 or HMB306H1 or ANT345H1 or ANT348H1 or ANT358H1 or ANT458H1 or ANT460H1 or ECO314H1 or ECO324H1 or ECO333H1 or ECO334H1 or ECO342H1 or ECO369H1 or ECO402H1 or ECO428H1 or ENV341H1 or ENV430H1 or ENV432H1 or GGR433H1 or GGR434H1 or HST410H1 or HST440H1 or HST464H1 or INS240Y1 or INS250H1 or INS350H1 or INS355H1 or JNH350H1 or NEW352H1 or NEW353H1 or NEW453H1 or NFS490H1 or PHS300H1 or PSY320H1 or PSY321H1",
+        "description": "At least 1.0 Credit from HMB303H1 or HMB306H1 or ANT345H1 or ANT348H1 or ANT358H1 or ANT458H1 or ANT460H1 or ECO314H1 or ECO324H1 or ECO333H1 or ECO334H1 or ECO342H1 or ECO369H1 or ECO402H1 or ECO428H1 or ENV341H1 or ENV430H1 or ENV432H1 or GGR433H1 or GGR434H1 or HST410H1 or HST440H1 or HST464H1 or INS240Y1 or INS250H1 or INS350H1 or INS355H1 or JNH350H1 or NEW352H1 or NEW353H1 or NEW453H1 or NFS490H1 or PHS300H1 or PSY320H1 or PSY321H1 under constraint from Req19",
         "courses": [
           "HMB303H1",
           "HMB306H1",
@@ -44556,7 +44556,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1",
+        "description": "At least 0.5 Credits from HMB306H1 or HMB406H1 or PHL281H1 under constraint from Req19",
         "courses": [
           "HMB306H1",
           "HMB406H1",
@@ -44569,7 +44569,7 @@ export default {
       "Req18": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1",
+        "description": "At least 1.0 Credit from HMB490Y1 or HMB496Y1 under constraint from Req19",
         "courses": [
           "HMB490Y1",
           "HMB496Y1"
@@ -44598,7 +44598,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 or MAT157Y1 under constraint from Req6",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -44639,7 +44639,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from PHL232H1 or PHL233H1 or PHL240H1 or PHL245H1 or HPS250H1",
+        "description": "At least 1.5 Credits from PHL232H1 or PHL233H1 or PHL240H1 or PHL245H1 or HPS250H1 under constraint from Req6",
         "courses": [
           "PHL232H1",
           "PHL233H1",
@@ -44752,7 +44752,7 @@ export default {
       "Req17": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHL325H1 or PHL331H1 or PHL332H1 or PHL346H1 or PHL354H1 or PHL357H1",
+        "description": "At least 1.0 Credit from PHL325H1 or PHL331H1 or PHL332H1 or PHL346H1 or PHL354H1 or PHL357H1 under constraint from Req18",
         "courses": [
           "PHL325H1",
           "PHL331H1",
@@ -44777,7 +44777,7 @@ export default {
       "Req19": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from AS-PHL-COURSES",
+        "description": "At least 2.0 Credits from AS-PHL-COURSES under constraint from Req20",
         "categories": [
           "AS-PHL-COURSES"
         ],
@@ -44953,7 +44953,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1",
+        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC101H1",
           "NMC102H1",
@@ -44969,7 +44969,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-NME-ANCIENT-LANG_2020-21",
+        "description": "At least 4.0 Credits from AS-NME-ANCIENT-LANG_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NME-ANCIENT-LANG_2020-21"
         ],
@@ -44986,7 +44986,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from NMC245H1 or NMC248H1 or NMC270H1 or NMC276H1 or NMC277H1 or NMC343H1 or NMC344H1 or NMC346H1 or NMC347H1 or NMC359H1 or NMC370H1 or NMC446H1 or NMC447H1 or NMC449H1 or NMC471H1 or NMC472H1 or NMC247H1 or NMC254H1 or NMC289H1 or NMC380H1 or NMC382Y1",
+        "description": "At least 3.0 Credits from NMC245H1 or NMC248H1 or NMC270H1 or NMC276H1 or NMC277H1 or NMC343H1 or NMC344H1 or NMC346H1 or NMC347H1 or NMC359H1 or NMC370H1 or NMC446H1 or NMC447H1 or NMC449H1 or NMC471H1 or NMC472H1 or NMC247H1 or NMC254H1 or NMC289H1 or NMC380H1 or NMC382Y1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC245H1",
           "NMC248H1",
@@ -45019,7 +45019,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NMC260H1 or NMC261Y0 or NMC262H1 or NMC263H1 or NMC264H1 or NMC265H1 or NMC266H1 or NMC360H1 or NMC361H1 or NMC362Y1 or NMC363H1 or NMC364H1 or NMC398Y0 or NMC445H1 or NMC461H1 or NMC462H1 or NMC463H1 or NMC464H1 or NMC465H1 or NMC466H1 or NMC467H1 or NMC468H1 or NMC470H1 or NMC474H1 or NMC246H1 or NMC251H1 or NMC252H1 or NMC253H1 or NMC259H1 or NMC351H1 or NMC352H1 or NMC450H1 or NMC480H1 or NMC491H1",
+        "description": "At least 2.0 Credits from NMC260H1 or NMC261Y0 or NMC262H1 or NMC263H1 or NMC264H1 or NMC265H1 or NMC266H1 or NMC360H1 or NMC361H1 or NMC362Y1 or NMC363H1 or NMC364H1 or NMC398Y0 or NMC445H1 or NMC461H1 or NMC462H1 or NMC463H1 or NMC464H1 or NMC465H1 or NMC466H1 or NMC467H1 or NMC468H1 or NMC470H1 or NMC474H1 or NMC246H1 or NMC251H1 or NMC252H1 or NMC253H1 or NMC259H1 or NMC351H1 or NMC352H1 or NMC450H1 or NMC480H1 or NMC491H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC260H1",
           "NMC261Y0",
@@ -45065,7 +45065,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NME-GROUP-B_2020-21 or AS-NME-GROUP-C_2020-21",
+        "description": "At least 1.0 Credit from AS-NME-GROUP-B_2020-21 or AS-NME-GROUP-C_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NME-GROUP-B_2020-21",
           "AS-NME-GROUP-C_2020-21"
@@ -45117,7 +45117,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1",
+        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1 under constraint from Req9",
         "courses": [
           "NMC101H1",
           "NMC102H1",
@@ -45131,7 +45131,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-NME-MEDIEVAL-LANG_2020-21",
+        "description": "At least 4.0 Credits from AS-NME-MEDIEVAL-LANG_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NME-MEDIEVAL-LANG_2020-21"
         ],
@@ -45148,7 +45148,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from NMC270H1 or NMC273Y1 or NMC274H1 or NMC275H1 or NMC276H1 or NMC277H1 or NMC342H1 or NMC348Y1 or NMC374H1 or NMC376H1 or NMC377Y1 or NMC386H1 or NMC471H1 or NMC472H1 or NMC289H1 or NMC384H1 or NMC385H1 or NMC484H1",
+        "description": "At least 3.0 Credits from NMC270H1 or NMC273Y1 or NMC274H1 or NMC275H1 or NMC276H1 or NMC277H1 or NMC342H1 or NMC348Y1 or NMC374H1 or NMC376H1 or NMC377Y1 or NMC386H1 or NMC471H1 or NMC472H1 or NMC289H1 or NMC384H1 or NMC385H1 or NMC484H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC270H1",
           "NMC273Y1",
@@ -45178,7 +45178,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NMC261Y0 or NMC264H1 or NMC367H1 or NMC368H1 or NMC464H1 or NMC465H1 or NMC469Y1 or NMC255H1 or NMC256H1 or NMC258H1 or NMC259H1 or NMC350H1 or NMC353H1 or NMC357H1 or NMC394H1 or NMC395H1 or NMC480H1",
+        "description": "At least 2.0 Credits from NMC261Y0 or NMC264H1 or NMC367H1 or NMC368H1 or NMC464H1 or NMC465H1 or NMC469Y1 or NMC255H1 or NMC256H1 or NMC258H1 or NMC259H1 or NMC350H1 or NMC353H1 or NMC357H1 or NMC394H1 or NMC395H1 or NMC480H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC261Y0",
           "NMC264H1",
@@ -45207,7 +45207,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NME-GROUP-A_2020-21 or AS-NME-GROUP-C_2020-21",
+        "description": "At least 1.0 Credit from AS-NME-GROUP-A_2020-21 or AS-NME-GROUP-C_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NME-GROUP-A_2020-21",
           "AS-NME-GROUP-C_2020-21"
@@ -45259,7 +45259,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1",
+        "description": "At least 1.0 Credit from NMC101H1 or NMC102H1 or NMC103H1 or NMC104H1 under constraint from Req9",
         "courses": [
           "NMC101H1",
           "NMC102H1",
@@ -45273,7 +45273,7 @@ export default {
       "Req2": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "4.0",
-        "description": "At least 4.0 Credits from AS-NMC-MODERN-LANG_2020-21",
+        "description": "At least 4.0 Credits from AS-NMC-MODERN-LANG_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NMC-MODERN-LANG_2020-21"
         ],
@@ -45290,7 +45290,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from NMC241H1 or NMC270H1 or NMC274H1 or NMC275H1 or NMC276H1 or NMC277H1 or NMC278H1 or NMC348Y1 or NMC355H1 or NMC356H1 or NMC358H1 or NMC373H1 or NMC377Y1 or NMC378H1 or NMC386H1 or NMC452H1 or NMC471H1 or NMC472H1 or NMC473H1 or NMC475H1 or NMC476H1 or NMC477H1 or NMC478H1 or NMC479H1 or NMC284H1 or NMC289H1 or NMC381H1 or NMC384H1 or NMC385H1 or NMC484H1",
+        "description": "At least 3.0 Credits from NMC241H1 or NMC270H1 or NMC274H1 or NMC275H1 or NMC276H1 or NMC277H1 or NMC278H1 or NMC348Y1 or NMC355H1 or NMC356H1 or NMC358H1 or NMC373H1 or NMC377Y1 or NMC378H1 or NMC386H1 or NMC452H1 or NMC471H1 or NMC472H1 or NMC473H1 or NMC475H1 or NMC476H1 or NMC477H1 or NMC478H1 or NMC479H1 or NMC284H1 or NMC289H1 or NMC381H1 or NMC384H1 or NMC385H1 or NMC484H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC241H1",
           "NMC270H1",
@@ -45332,7 +45332,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.0",
-        "description": "At least 2.0 Credits from NMC261Y0 or NMC264H1 or NMC367H1 or NMC368H1 or NMC464H1 or NMC465H1 or NMC243H1 or NMC315H1 or NMC316H1 or NMC353H1 or NMC394H1 or NMC395H1 or NMC480H1",
+        "description": "At least 2.0 Credits from NMC261Y0 or NMC264H1 or NMC367H1 or NMC368H1 or NMC464H1 or NMC465H1 or NMC243H1 or NMC315H1 or NMC316H1 or NMC353H1 or NMC394H1 or NMC395H1 or NMC480H1 under constraint from Req7 and Req8 and Req9",
         "courses": [
           "NMC261Y0",
           "NMC264H1",
@@ -45357,7 +45357,7 @@ export default {
       "Req6": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-NME-GROUP-A_2020-21 or AS-NME-GROUP-B_2020-21",
+        "description": "At least 1.0 Credit from AS-NME-GROUP-A_2020-21 or AS-NME-GROUP-B_2020-21 under constraint from Req7 and Req8 and Req9",
         "categories": [
           "AS-NME-GROUP-A_2020-21",
           "AS-NME-GROUP-B_2020-21"
@@ -45611,7 +45611,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from ECO349H1 or ECO356H1 or ECO440H5 or ECO456H1 or ECO461H1 or ECO460H5 or ECO462H1 or ECO434H5 or ECO463H1 or ECO463H5 or ECO464H1 or ECO465H1 or ECO475H1",
+        "description": "At least 1.0 Credit from ECO349H1 or ECO356H1 or ECO440H5 or ECO456H1 or ECO461H1 or ECO460H5 or ECO462H1 or ECO434H5 or ECO463H1 or ECO463H5 or ECO464H1 or ECO465H1 or ECO475H1 under constraint from Req8 and Req9 and Req10 and Req16",
         "courses": [
           "ECO349H1",
           "ECO356H1",
@@ -45664,7 +45664,7 @@ export default {
       "Req11": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "4.5",
-        "description": "At least 4.5 Credits from AS-ECO300+ or MAT221H1 or MAT223H1 or MAT240H1 or ECO210H1 or MAT235Y1 or MAT237Y1",
+        "description": "At least 4.5 Credits from AS-ECO300+ or MAT221H1 or MAT223H1 or MAT240H1 or ECO210H1 or MAT235Y1 or MAT237Y1 under constraint from Req13 and Req15 and Req16",
         "courses": [
           "MAT221H1",
           "MAT223H1",
@@ -45730,7 +45730,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM138H1 or CHM136H1 or CHM139H1 or CHM135H1 or CHM151Y1 under constraint from Req2 and Req3 and Req19",
         "courses": [
           "CHM138H1",
           "CHM136H1",
@@ -45765,7 +45765,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 under constraint from Req19",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -45778,7 +45778,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req6 and Req7 and Req19",
         "courses": [
           "PHY131H1",
           "PHY132H1",
@@ -45811,7 +45811,7 @@ export default {
       },
       "Req8": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BIO130H1 and MAT223H1",
+        "description": "All of BIO130H1 and MAT223H1 under constraint from Req19",
         "courses": [
           "BIO130H1",
           "MAT223H1"
@@ -45822,7 +45822,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BCH210H1 and MAT244H1 and PHY250H1 and PHY252H1",
+        "description": "All of BCH210H1 and MAT244H1 and PHY250H1 and PHY252H1 under constraint from Req19",
         "courses": [
           "BCH210H1",
           "MAT244H1",
@@ -45836,7 +45836,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1",
+        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1 under constraint from Req19",
         "courses": [
           "MAT235Y1",
           "MAT237Y1"
@@ -45848,7 +45848,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1",
+        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1 under constraint from Req19",
         "courses": [
           "BIO230H1",
           "BIO255H1"
@@ -45859,7 +45859,7 @@ export default {
       },
       "Req12": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PHY224H1 and PHY254H1 and PHY256H1 and PHY354H1",
+        "description": "All of PHY224H1 and PHY254H1 and PHY256H1 and PHY354H1 under constraint from Req19",
         "courses": [
           "PHY224H1",
           "PHY254H1",
@@ -45872,7 +45872,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PHY331H1",
+        "description": "All of PHY331H1 under constraint from Req19",
         "courses": [
           "PHY331H1"
         ],
@@ -45883,7 +45883,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1",
+        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1 under constraint from Req19",
         "courses": [
           "PHY324H1",
           "BCH370H1",
@@ -45897,7 +45897,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY4_COURSES",
+        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY4_COURSES under constraint from Req16 and Req19",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -45922,7 +45922,7 @@ export default {
       },
       "Req17": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BCH311H1 and BCH340H1",
+        "description": "All of BCH311H1 and BCH340H1 under constraint from Req19",
         "courses": [
           "BCH311H1",
           "BCH340H1"
@@ -45934,7 +45934,7 @@ export default {
       "Req18": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from BCH370H1 or CSB428H1 or AS-BCH4_EXCLUDES",
+        "description": "At least 1.5 Credits from BCH370H1 or CSB428H1 or AS-BCH4_EXCLUDES under constraint from Req19",
         "courses": [
           "BCH370H1",
           "CSB428H1"
@@ -45966,7 +45966,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 under constraint from Req11",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -45979,7 +45979,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 under constraint from Req11",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -45992,7 +45992,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req11",
         "courses": [
           "PHY131H1",
           "PHY132H1",
@@ -46006,7 +46006,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from BIO130H1 or MAT223H1 or BCH210H1 or MAT244H1 or PHY250H1 or PHY252H1",
+        "description": "At least 3.0 Credits from BIO130H1 or MAT223H1 or BCH210H1 or MAT244H1 or PHY250H1 or PHY252H1 under constraint from Req11",
         "courses": [
           "BIO130H1",
           "MAT223H1",
@@ -46022,7 +46022,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1",
+        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1 under constraint from Req11",
         "courses": [
           "MAT235Y1",
           "MAT237Y1"
@@ -46034,7 +46034,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1",
+        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1 under constraint from Req11",
         "courses": [
           "BIO230H1",
           "BIO255H1"
@@ -46046,7 +46046,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from PHY224H1 or PHY254H1 or PHY256H1 or PHY354H1 or PHY331H1",
+        "description": "At least 2.5 Credits from PHY224H1 or PHY254H1 or PHY256H1 or PHY354H1 or PHY331H1 under constraint from Req11",
         "courses": [
           "PHY224H1",
           "PHY254H1",
@@ -46061,7 +46061,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1",
+        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1 under constraint from Req11",
         "courses": [
           "PHY324H1",
           "BCH370H1",
@@ -46075,7 +46075,7 @@ export default {
       "Req9": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL",
+        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL under constraint from Req10 and Req11",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -46109,7 +46109,7 @@ export default {
       "Req12": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PSL300H1 or PSL301H1",
+        "description": "At least 1.0 Credit from PSL300H1 or PSL301H1 under constraint from Req11",
         "courses": [
           "PSL300H1",
           "PSL301H1"
@@ -46121,7 +46121,7 @@ export default {
       "Req13": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.5",
-        "description": "At least 1.5 Credits from PSL304H1 or PSL305H1 or PSL372H1 or PSL4_ALL_ALL",
+        "description": "At least 1.5 Credits from PSL304H1 or PSL305H1 or PSL372H1 or PSL4_ALL_ALL under constraint from Req11 and Req14",
         "courses": [
           "PSL304H1",
           "PSL305H1",
@@ -46155,7 +46155,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM151Y1 under constraint from Req11",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -46168,7 +46168,7 @@ export default {
       "Req2": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 under constraint from Req11",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -46181,7 +46181,7 @@ export default {
       "Req3": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req11",
         "courses": [
           "PHY131H1",
           "PHY132H1",
@@ -46195,7 +46195,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "3.0",
-        "description": "At least 3.0 Credits from BIO130H1 or MAT223H1 or BCH210H1 or MAT244H1 or PHY250H1 or PHY252H1",
+        "description": "At least 3.0 Credits from BIO130H1 or MAT223H1 or BCH210H1 or MAT244H1 or PHY250H1 or PHY252H1 under constraint from Req11",
         "courses": [
           "BIO130H1",
           "MAT223H1",
@@ -46211,7 +46211,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1",
+        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1 under constraint from Req11",
         "courses": [
           "MAT235Y1",
           "MAT237Y1"
@@ -46223,7 +46223,7 @@ export default {
       "Req6": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1",
+        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1 under constraint from Req11",
         "courses": [
           "BIO230H1",
           "BIO255H1"
@@ -46235,7 +46235,7 @@ export default {
       "Req7": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "2.5",
-        "description": "At least 2.5 Credits from PHY224H1 or PHY254H1 or PHY256H1 or PHY354H1 or PHY331H1",
+        "description": "At least 2.5 Credits from PHY224H1 or PHY254H1 or PHY256H1 or PHY354H1 or PHY331H1 under constraint from Req11",
         "courses": [
           "PHY224H1",
           "PHY254H1",
@@ -46250,7 +46250,7 @@ export default {
       "Req8": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1",
+        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1 under constraint from Req11",
         "courses": [
           "PHY324H1",
           "BCH370H1",
@@ -46264,7 +46264,7 @@ export default {
       "Req9": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL",
+        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL under constraint from Req10 and Req11",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -46298,7 +46298,7 @@ export default {
       "Req12": {
         "type": "REQUIREMENTS/REQS/MIN/RECURS",
         "count": "1",
-        "description": "At least 1 Requirement from Req13 or Req14",
+        "description": "At least 1 Requirement from Req13 or Req14 under constraint from Req11",
         "dependentReqs": [
           "Req13",
           "Req14"
@@ -46310,7 +46310,7 @@ export default {
       "Req13": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from BCH311H1 or BCH340H1",
+        "description": "At least 1.0 Credit from BCH311H1 or BCH340H1 under constraint from Req11",
         "courses": [
           "BCH311H1",
           "BCH340H1"
@@ -46322,7 +46322,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PSL300H1 or PSL301H1",
+        "description": "At least 1.0 Credit from PSL300H1 or PSL301H1 under constraint from Req11",
         "courses": [
           "PSL300H1",
           "PSL301H1"
@@ -46334,7 +46334,7 @@ export default {
       "Req15": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY431H1",
+        "description": "At least 0.5 Credits from PHY431H1 under constraint from Req11",
         "courses": [
           "PHY431H1"
         ],
@@ -46345,7 +46345,7 @@ export default {
       "Req16": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL",
+        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or PHY3_ALL_ALL or PHY4_ALL_ALL under constraint from Req11",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -46371,7 +46371,7 @@ export default {
       "Req1": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1",
+        "description": "At least 1.0 Credit from CHM135H1 or CHM136H1 or CHM138H1 or CHM139H1 or CHM151Y1 under constraint from Req2 and Req3 and Req19",
         "courses": [
           "CHM135H1",
           "CHM136H1",
@@ -46406,7 +46406,7 @@ export default {
       "Req4": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1",
+        "description": "At least 1.0 Credit from MAT135H1 or MAT136H1 or MAT137Y1 under constraint from Req19",
         "courses": [
           "MAT135H1",
           "MAT136H1",
@@ -46419,7 +46419,7 @@ export default {
       "Req5": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1",
+        "description": "At least 1.0 Credit from PHY131H1 or PHY132H1 or PHY151H1 or PHY152H1 under constraint from Req6 and Req7 and Req19",
         "courses": [
           "PHY131H1",
           "PHY132H1",
@@ -46452,7 +46452,7 @@ export default {
       },
       "Req8": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BIO130H1 and MAT223H1",
+        "description": "All of BIO130H1 and MAT223H1 under constraint from Req19",
         "courses": [
           "BIO130H1",
           "MAT223H1"
@@ -46463,7 +46463,7 @@ export default {
       },
       "Req9": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of BCH210H1 and MAT244H1 and PHY250H1 and PHY252H1",
+        "description": "All of BCH210H1 and MAT244H1 and PHY250H1 and PHY252H1 under constraint from Req19",
         "courses": [
           "BCH210H1",
           "MAT244H1",
@@ -46477,7 +46477,7 @@ export default {
       "Req10": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1",
+        "description": "At least 1.0 Credit from MAT235Y1 or MAT237Y1 under constraint from Req19",
         "courses": [
           "MAT235Y1",
           "MAT237Y1"
@@ -46489,7 +46489,7 @@ export default {
       "Req11": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1",
+        "description": "At least 0.5 Credits from BIO230H1 or BIO255H1 under constraint from Req19",
         "courses": [
           "BIO230H1",
           "BIO255H1"
@@ -46500,7 +46500,7 @@ export default {
       },
       "Req12": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PHY224H1 and PHY254H1 and PHY256H1 and PHY354H1",
+        "description": "All of PHY224H1 and PHY254H1 and PHY256H1 and PHY354H1 under constraint from Req19",
         "courses": [
           "PHY224H1",
           "PHY254H1",
@@ -46513,7 +46513,7 @@ export default {
       },
       "Req13": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of PHY331H1",
+        "description": "All of PHY331H1 under constraint from Req19",
         "courses": [
           "PHY331H1"
         ],
@@ -46524,7 +46524,7 @@ export default {
       "Req14": {
         "type": "COURSES/FCES/MIN/RECURS",
         "count": "0.5",
-        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1",
+        "description": "At least 0.5 Credits from PHY324H1 or BCH370H1 or CHM327H1 or PSL372H1 under constraint from Req19",
         "courses": [
           "PHY324H1",
           "BCH370H1",
@@ -46538,7 +46538,7 @@ export default {
       "Req15": {
         "type": "COURSES_CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY4_COURSES",
+        "description": "At least 1.0 Credit from APM346H1 or MAT334H1 or MAT354H1 or AS-PHY3_COURSES or AS-PHY4_COURSES under constraint from Req16 and Req19",
         "courses": [
           "APM346H1",
           "MAT334H1",
@@ -46563,7 +46563,7 @@ export default {
       },
       "Req17": {
         "type": "COURSES/NUM/LIST/RECURS",
-        "description": "All of IMM341H1 and IMM351H1",
+        "description": "All of IMM341H1 and IMM351H1 under constraint from Req19",
         "courses": [
           "IMM341H1",
           "IMM351H1"
@@ -46575,7 +46575,7 @@ export default {
       "Req18": {
         "type": "CATEGORIES/FCES/MIN/RECURS",
         "count": "1.0",
-        "description": "At least 1.0 Credit from AS-IMM4_COURSES",
+        "description": "At least 1.0 Credit from AS-IMM4_COURSES under constraint from Req19",
         "categories": [
           "AS-IMM4_COURSES"
         ],
