@@ -24,6 +24,7 @@ export class CourseInfoPanel extends HTMLDivElement {
             display: flex;
             overflow-y: scroll;
             padding: 1vw;
+            flex: 1;
         `;
             // This div contains the actual panel.
             this.#courseInfoDiv = document.createElement('div');

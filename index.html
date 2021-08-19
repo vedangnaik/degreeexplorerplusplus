@@ -4,6 +4,7 @@
         <script type="module" src="src/main.js"></script>
         <style>
             *, *:before, *:after {
+                font-size: 1.5vh;
                 margin: 0;
                 padding: 0;
                 border: 0;
@@ -11,9 +12,12 @@
                 font-family: monospace;
                 scrollbar-width: none;
             }
-
             /* Disable all scrollbars */
             *::-webkit-scrollbar {
+                display: none;
+            }
+            /* Toggle collapsible body */
+            #help-checkbox:checked ~ .help-body {
                 display: none;
             }
         </style>
@@ -23,24 +27,29 @@
         </title>
     </head>
     
-    <body style="padding: 2vh 1vw;">
-        <div style="height: 6vh">
-            <h1 style="text-align: center;">Degree Explorer++</h1>
-        </div>
-
-        <div style="height: 90vh; display: flex; flex: 1;">
-            <!-- Toolbar -->
-            <div style="width: 13vw; display: flex; flex-direction: column;">
-                <!-- Panel with course/program search stuff -->
-                <div is="depp-profile-controls"></div>
+    <body style="padding: 1vw;">
+        <div style="height: 96vh; display: flex; flex: 1;">
+            <div style="width: 26vw; display: flex; flex-direction: column;">
+                <!-- Title -->
+                <div>
+                    <p style="font-size: 1.5vw; font-weight: bolder;">DEGREE EXPLORER++</p>
+                    <input type="checkbox" id="help-checkbox" checked="checked" style="display: none;">
+                    <div style="display: flex;">
+                        <div style="flex: 10;"></div>
+                        <label for="help-checkbox" style="border: 1px solid black; height: 2vh; background-color: lavender; padding: 0 0.5vh; font-weight: bold;">
+                            Need help? Click here!
+                        </label>
+                    </div>
+                    <div style="border: 1px solid black; margin: -1vh 0 0 0; padding: 1.5vh 0.5vh 0.5vh 0.5vh;" class="help-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nibh est, sollicitudin ut sem ut, consequat pellentesque est. Proin tristique, massa eu vestibulum placerat, sapien felis vehicula purus, sed rutrum metus orci eu metus. Nunc leo nisl, tincidunt in porttitor sit amet, vulputate in turpis. Maecenas ex turpis, gravida ut placerat ut, pulvinar vel risus. Suspendisse dapibus condimentum mi at ullamcorper. Ut consequat nibh sit amet nisl ullamcorper malesuada. Aenean ultrices sit amet massa non suscipit. Nunc porttitor ultrices est, nec efficitur nulla dignissim a. Aliquam erat ipsum, tempor at urna eget, lobortis hendrerit elit. Pellentesque eget scelerisque felis. Integer ac magna id sem imperdiet porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut interdum posuere sagittis. Vivamus quis leo non libero mattis venenatis ut nec diam.
+                    </div>
+                    
+                </div>
                 <!-- Spacer -->
-                <div style="height: 1vw;"></div>
-                <!-- Panel with Save and Load stuff -->
-                <div is="depp-profile-serializer"></div>
-                <!-- Spacer -->
-                <div style="height: 1vw;"></div>
-                <!-- Scratchpad -->
-                <div is="depp-course-scratchpad"></div>
+                <div style="height: 0.5vw;"></div>
+                <!-- Course Info Panel -->
+                <!-- If you're wondering why this div and the first one don't need a padding-top: 1px to bring them in line with the table, it's because these elements use a standard border. Due to us using the border-box model on everything, the border is counted as part of the element's height and width. However, the outline on the timetable is explicitly always outside the table, regardless of box-sizing. Hence, the table's 'top' is actually 1px below these divs, but the outline makes it look like it's level with them. -->
+                <div is="depp-course-info-panel"></div>
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>
@@ -48,22 +57,36 @@
             <!-- Why the padding of 1px on the top and bottom? This is because overflow-y adds a strange white border of some sort to the top, bottom, and sides, even though the scrollbars themselves are not visible ¯\_(ツ)_/¯ -->
             <div style="overflow-y: scroll; width: 58vw; padding: 1px 0.5vw;">
                 <!-- Course Schedule -->
-                <h2>Courses</h2>
+                <h2 style="text-align: center;">Courses</h2>
+                <!-- Spacer -->
                 <div style="height: 0.5vw;"></div>
+                <!-- Course Schedule -->
                 <table is="depp-course-schedule"></table>
                 <!-- Spacer -->
                 <div style="height: 1.5vw;"></div>
                 <!-- Program Schedule -->
-                <h2>Programs</h2>
+                <h2 style="text-align: center;">Programs</h2>
                 <div style="height: 0.5vw;"></div>
                 <div is="depp-program-schedule"></div>
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>
-            <!-- Course Info Panel -->
-            <!-- If you're wondering why this div and the first one don't need a padding-top: 1px to bring them in line with the table, it's because these elements use a standard border. Due to us using the border-box model on everything, the border is counted as part of the element's height and width. However, the outline on the timetable is explicitly always outside the table, regardless of box-sizing. Hence, the table's 'top' is actually 1px below these divs, but the outline makes it look like it's level with them. -->
-            <div style="display: flex; width: 26vw;">
-                <div is="depp-course-info-panel"></div>
+            <!-- Toolbar -->
+            <div style="width: 13vw; display: flex; flex-direction: column;">
+                <!-- Panel with course/program search stuff -->
+                <div is="depp-profile-controls"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- Panel with Save and Load stuff -->
+                <div is="depp-profile-serializer"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- Scratchpad -->
+                <div is="depp-course-scratchpad"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- GitHub link -->
+                <p>❤️ Interested in contributing? Check out <a href="https://github.com/vedangnaik/degreeexplorerplusplus">the GitHub</a>!⭐</p>
             </div>
         </div>        
     </body>
