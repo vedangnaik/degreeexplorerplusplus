@@ -17,8 +17,22 @@
                 display: none;
             }
             /* Toggle collapsible body */
-            #help-checkbox:checked ~ .help-body {
+            #help-checkbox:checked ~ div {
                 display: none;
+            }
+            /* Toggle collapsible header color */
+            #help-checkbox:checked ~ label {
+                background-color: lavender;
+            }
+            #help-checkbox ~ label {
+                background-color: salmon;
+            }
+            /* Toggle collapsible header text */
+            #help-checkbox:checked ~ label::after {
+                content: "Need help? Click here!";
+            }
+            #help-checkbox ~ label::after {
+                content: "Close Help";
             }
         </style>
         <meta charset="UTF-8">
@@ -34,13 +48,9 @@
                 <div>
                     <p style="font-size: 1.5vw; font-weight: bolder;">DEGREE EXPLORER++</p>
                     <input type="checkbox" id="help-checkbox" checked="checked" style="display: none;">
-                    <div style="display: flex;">
-                        <div style="flex: 10;"></div>
-                        <label for="help-checkbox" style="border: 1px solid black; height: 2vh; background-color: lavender; padding: 0 0.5vh; font-weight: bold;">
-                            Need help? Click here!
-                        </label>
-                    </div>
-                    <div style="border: 1px solid black; margin: -1vh 0 0 0; padding: 1.5vh 0.5vh 0.5vh 0.5vh;" class="help-body">
+                    <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
+                    <label for="help-checkbox" style="border: 1px solid black; height: 2vh; padding: 0 0.5vh; font-weight: bold; float: right;"></label>
+                    <div style="border: 1px solid black; margin: 1vh 0 0 0; padding: 1.5vh 0.5vh 0.5vh 0.5vh;">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nibh est, sollicitudin ut sem ut, consequat pellentesque est. Proin tristique, massa eu vestibulum placerat, sapien felis vehicula purus, sed rutrum metus orci eu metus. Nunc leo nisl, tincidunt in porttitor sit amet, vulputate in turpis. Maecenas ex turpis, gravida ut placerat ut, pulvinar vel risus. Suspendisse dapibus condimentum mi at ullamcorper. Ut consequat nibh sit amet nisl ullamcorper malesuada. Aenean ultrices sit amet massa non suscipit. Nunc porttitor ultrices est, nec efficitur nulla dignissim a. Aliquam erat ipsum, tempor at urna eget, lobortis hendrerit elit. Pellentesque eget scelerisque felis. Integer ac magna id sem imperdiet porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut interdum posuere sagittis. Vivamus quis leo non libero mattis venenatis ut nec diam.
                     </div>
                     
