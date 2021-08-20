@@ -8,7 +8,7 @@ export class ProgramSchedule extends HTMLDivElement {
         super();
         this.id = GLOBAL_PROGRAM_SCHEDULE_ID;
         this.style.position = "relative";
-        // This background div is present near the top of the program schedule. It's only visible when no programs are present, and serves as a sort of placeholder.
+            // This background div is present near the top of the program schedule. It's only visible when no programs are present, and serves as a sort of placeholder.
             const backgroundDiv = document.createElement("div");
             backgroundDiv.style = `
                 position: absolute;
