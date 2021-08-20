@@ -16,6 +16,13 @@
             *::-webkit-scrollbar {
                 display: none;
             }
+            /* Change the header font-weights to be relative to the base font-size of 1.5vh. According to https://www.w3schools.com/cssref/css_default_values.asp, h4 has the global font-size, while the others are relative to it.*/
+            h1 { font-size: 3vh; }
+            h2 { font-size: 2.25vh; }
+            h3 { font-size: 1.75vh; }
+            h4 { font-size: 1.5vh; }
+            h5 { font-size: 1.25vh; }
+            h6 { font-size: 1vh; }
             /* Toggle collapsible body */
             #help-checkbox:checked ~ div {
                 display: none;
@@ -46,10 +53,12 @@
             <div style="width: 26vw; display: flex; flex-direction: column;">
                 <!-- Title -->
                 <div>
-                    <p style="font-size: 1.5vw; font-weight: bolder;">DEGREE EXPLORER++</p>
-                    <input type="checkbox" id="help-checkbox" checked="checked" style="display: none;">
+                    <h1 style="font-size: 3.75vh;">DEGREE EXPLORER++</h1>
+                    <h5>University of Toronto's Degree Explorer, but better. Written completely from scratch to give you control, speed, and flexibility.</h5>
+                    <div style="height: 0.5vw;"></div>
+                    <input type="checkbox" id="help-checkbox" style="display: none;">
                     <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
-                    <label for="help-checkbox" style="border: 1px solid black; height: 2vh; padding: 0 0.5vh; font-weight: bold; float: right;"></label>
+                    <label for="help-checkbox" style="border: 1px solid black; height: 2vh; padding: 0 0.5vh; float: right;"></label>
                     <div style="border: 1px solid black; margin: 1vh 0 0 0; padding: 1.5vh 0.5vh 0.5vh 0.5vh;">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nibh est, sollicitudin ut sem ut, consequat pellentesque est. Proin tristique, massa eu vestibulum placerat, sapien felis vehicula purus, sed rutrum metus orci eu metus. Nunc leo nisl, tincidunt in porttitor sit amet, vulputate in turpis. Maecenas ex turpis, gravida ut placerat ut, pulvinar vel risus. Suspendisse dapibus condimentum mi at ullamcorper. Ut consequat nibh sit amet nisl ullamcorper malesuada. Aenean ultrices sit amet massa non suscipit. Nunc porttitor ultrices est, nec efficitur nulla dignissim a. Aliquam erat ipsum, tempor at urna eget, lobortis hendrerit elit. Pellentesque eget scelerisque felis. Integer ac magna id sem imperdiet porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut interdum posuere sagittis. Vivamus quis leo non libero mattis venenatis ut nec diam.
                     </div>
@@ -96,7 +105,7 @@
                 <!-- Spacer -->
                 <div style="height: 0.5vw;"></div>
                 <!-- GitHub link -->
-                <p>❤️ Interested in contributing? Check out <a href="https://github.com/vedangnaik/degreeexplorerplusplus">the GitHub</a>!⭐</p>
+                <p>Interested in contributing? Check out <a href="https://github.com/vedangnaik/degreeexplorerplusplus">the GitHub</a>!</p>
             </div>
         </div>        
     </body>
