@@ -36,10 +36,10 @@
             }
             /* Toggle collapsible header text */
             #help-checkbox:checked ~ label::after {
-                content: "Need help? Click here!";
+                content: "Need help? Read the tutorial here!";
             }
             #help-checkbox ~ label::after {
-                content: "Close Help";
+                content: "Close Tutorial";
             }
         </style>
         <meta charset="UTF-8">
@@ -59,8 +59,9 @@
                     <input type="checkbox" id="help-checkbox" style="display: none;">
                     <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
                     <label for="help-checkbox" style="border: 1px solid black; height: 2vh; padding: 0 0.5vh; float: right;"></label>
-                    <div style="border: 1px solid black; margin: 1vh 0 0 0; padding: 1.5vh 0.5vh 0.5vh 0.5vh;">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nibh est, sollicitudin ut sem ut, consequat pellentesque est. Proin tristique, massa eu vestibulum placerat, sapien felis vehicula purus, sed rutrum metus orci eu metus. Nunc leo nisl, tincidunt in porttitor sit amet, vulputate in turpis. Maecenas ex turpis, gravida ut placerat ut, pulvinar vel risus. Suspendisse dapibus condimentum mi at ullamcorper. Ut consequat nibh sit amet nisl ullamcorper malesuada. Aenean ultrices sit amet massa non suscipit. Nunc porttitor ultrices est, nec efficitur nulla dignissim a. Aliquam erat ipsum, tempor at urna eget, lobortis hendrerit elit. Pellentesque eget scelerisque felis. Integer ac magna id sem imperdiet porta. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut interdum posuere sagittis. Vivamus quis leo non libero mattis venenatis ut nec diam.
+                    <div style="border: 1px solid black; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw; white-space: pre-line;">Welcome to the tutorial!
+                        
+                        Degree Explorer++ centers around the <span>Profile</span>. This consists of your courses in the <span>Course Schedule</span> and your programs in the 
                     </div>
                     
                 </div>
