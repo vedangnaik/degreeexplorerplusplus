@@ -1,47 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="module" src="src/main.js"></script>
-        <style>
-            *, *:before, *:after {
-                font-size: 1.5vh;
-                margin: 0;
-                padding: 0;
-                border: 0;
-                box-sizing: border-box;
-                font-family: monospace;
-                scrollbar-width: none;
+        <script type="module" src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <script>
+            function profile_highlight() {
+                document.querySelector("body > div > div:nth-child(3)").style.outline = "2px solid yellow";
             }
-            /* Disable all scrollbars */
-            *::-webkit-scrollbar {
-                display: none;
-            }
-            /* Change the header font-weights to be relative to the base font-size of 1.5vh. According to https://www.w3schools.com/cssref/css_default_values.asp, h4 has the global font-size, while the others are relative to it.*/
-            h1 { font-size: 3vh; }
-            h2 { font-size: 2.25vh; }
-            h3 { font-size: 1.75vh; }
-            h4 { font-size: 1.5vh; }
-            h5 { font-size: 1.25vh; }
-            h6 { font-size: 1vh; }
-            /* Toggle collapsible body */
-            #help-checkbox:checked ~ div {
-                display: none;
-            }
-            /* Toggle collapsible header color */
-            #help-checkbox:checked ~ label {
-                background-color: lavender;
-            }
-            #help-checkbox ~ label {
-                background-color: salmon;
-            }
-            /* Toggle collapsible header text */
-            #help-checkbox:checked ~ label::after {
-                content: "Need help? Read the tutorial here!";
-            }
-            #help-checkbox ~ label::after {
-                content: "Close Tutorial";
-            }
-        </style>
+        </script>
         <meta charset="UTF-8">
         <title>
             Degree Explorer++
@@ -58,10 +24,10 @@
                     <div style="height: 0.5vw;"></div>
                     <input type="checkbox" id="help-checkbox" style="display: none;">
                     <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
-                    <label for="help-checkbox" style="border: 1px solid black; height: 2vh; padding: 0 0.5vh; float: right;"></label>
-                    <div style="border: 1px solid black; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw; white-space: pre-line;">Welcome to the tutorial!
+                    <label for="help-checkbox" style="border: 1px solid grey; height: 2vh; padding: 0 0.5vh; float: right;"></label>
+                    <div style="border: 1px solid grey; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw; white-space: pre-line;">Welcome to the tutorial!
                         
-                        Degree Explorer++ centers around the <span>Profile</span>. This consists of your courses in the <span>Course Schedule</span> and your programs in the 
+                        Degree Explorer++ centers around the <span onmouseover="profile_highlight()">Profile</span>. This consists of your courses in the <span>Course Schedule</span> and your programs in the 
                     </div>
                     
                 </div>
