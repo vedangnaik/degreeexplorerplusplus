@@ -4,9 +4,8 @@
         <script type="module" src="index.js"></script>
         <link rel="stylesheet" href="index.css">
         <script>
-            function profile_highlight() {
-                document.querySelector("body > div > div:nth-child(3)").style.outline = "2px solid yellow";
-            }
+            var a = document.querySelector("body > div > div:nth-child(3)");
+            
         </script>
         <meta charset="UTF-8">
         <title>
@@ -25,11 +24,11 @@
                     <input type="checkbox" id="help-checkbox" style="display: none;">
                     <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
                     <label for="help-checkbox" style="border: 1px solid grey; height: 2vh; padding: 0 0.5vh; float: right;"></label>
-                    <div style="border: 1px solid grey; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw; white-space: pre-line;">Welcome to the tutorial!
-                        
-                        Degree Explorer++ centers around the <span onmouseover="profile_highlight()">Profile</span>. This consists of your courses in the <span>Course Schedule</span> and your programs in the 
+                    <div style="border: 1px solid grey; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw;">
+                        <p>Welcome to the tutorial!</p>
+                        <p>Degree Explorer++ centers around the <span id="profile-highlight" class="highlight-span">Profile</span>. This consists of your courses in the <span id="cs-highlight" class="highlight-span">Course Schedule</span> and your programs in the <span id="ps-highlight" class="highlight-span">Program Schedule</span>.
+                        </p>
                     </div>
-                    
                 </div>
                 <!-- Spacer -->
                 <div style="height: 0.5vw;"></div>

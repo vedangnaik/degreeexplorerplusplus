@@ -40,3 +40,7 @@ h6 { font-size: 1vmin; }
     content: "Close Tutorial";
 }
 
+.highlight-span {
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
