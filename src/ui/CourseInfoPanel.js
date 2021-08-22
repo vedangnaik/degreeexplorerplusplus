@@ -41,13 +41,13 @@ export class CourseInfoPanel extends HTMLDivElement {
                 this.#courseDescriptionP.innerText = "Course Description";
             this.#courseInfoDiv.appendChild(this.#courseDescriptionP);
             this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
-                this.#prerequisitesPanel = new RequisitesPanel("PREREQUISITES");
+                this.#prerequisitesPanel = new RequisitesPanel("PREREQUISITES", "This course has no requisites.");
             this.#courseInfoDiv.appendChild(this.#prerequisitesPanel);
             this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
-                this.#corequisitesPanel = new RequisitesPanel("COREQUISITES");
+                this.#corequisitesPanel = new RequisitesPanel("COREQUISITES", `${UNIMPLEMENTED_SYMBOL} Work in progress, check back later! ${UNIMPLEMENTED_SYMBOL}`);
             this.#courseInfoDiv.appendChild(this.#corequisitesPanel);
             this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"}));
-                this.#exclusionsPanel = new RequisitesPanel("EXCLUSIONS");
+                this.#exclusionsPanel = new RequisitesPanel("EXCLUSIONS", `${UNIMPLEMENTED_SYMBOL} Work in progress, check back later! ${UNIMPLEMENTED_SYMBOL}`);
             this.#courseInfoDiv.appendChild(this.#exclusionsPanel);
             this.#courseInfoDiv.appendChild(new Spacer({"height": "2vw"})); // This is just to prevent the last element from going into the padding if it scrolls. Kinda jank TODO fix this.
         this.appendChild(this.#courseInfoDiv);
@@ -113,14 +113,14 @@ class RequisitesPanel extends HTMLDivElement {
     #requisitesTable;
     #requisitesTBody;
 
-    constructor(headerText) {
+    constructor(headerText, placeholderText) {
         super();
             this.#requisiteH3 = document.createElement('h3');
             this.#requisiteH3.innerText = headerText;
         this.appendChild(this.#requisiteH3);
         this.appendChild(new Spacer({"height": "0.25vw"}));
             this.#placeholderP = document.createElement('p');
-            this.#placeholderP.innerText = `No ${headerText.toLowerCase()}`;
+            this.#placeholderP.innerText = placeholderText;
             this.#placeholderP.style = `
                 text-align: center;
             `;
