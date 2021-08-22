@@ -46,6 +46,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             display: flex;
             flex-direction: column;
         `;
+        this.customTagName = "program-info-collapsible" // Used to easily filter for these divs
             // This is the visible header part of the collapsible. When this is clicked, the body is toggled into appearing/disappearing.
             this.collapsibleHeaderDiv = document.createElement('div');
             this.collapsibleHeaderDiv.style = `

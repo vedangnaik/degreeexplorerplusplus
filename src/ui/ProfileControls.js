@@ -17,11 +17,10 @@ export class ProfileControls extends HTMLDivElement {
             flex-direction: column;
         `;
             this.#searchInput = document.createElement('input');
-            this.#searchInput.placeholder = "CSC404H1, ASSPE1689, etc.";
+            this.#searchInput.placeholder = "CSC404H1, ASSPE1689";
             this.#searchInput.style = `
                 border: 1px solid grey;
                 border-radius: 5px;
-                font-size: 1.25em;
             `;
         this.appendChild(this.#searchInput);
         this.appendChild(new Spacer({ "height": "0.5vw" }));
@@ -58,7 +57,6 @@ export class ProfileControls extends HTMLDivElement {
                 padding: 0.25vw 0.15vw;
                 border-radius: 5px;
                 background-color: gold;
-                font-size: 1.5em;
             `;
             evaluateProfileButton.onclick = this.#evaluateProfile.bind(this);
         this.appendChild(evaluateProfileButton);

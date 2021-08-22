@@ -24,6 +24,7 @@ export class CourseInfoPanel extends HTMLDivElement {
             display: flex;
             overflow-y: scroll;
             padding: 1vw;
+            flex: 1;
         `;
             // This div contains the actual panel.
             this.#courseInfoDiv = document.createElement('div');
@@ -52,7 +53,7 @@ export class CourseInfoPanel extends HTMLDivElement {
         this.appendChild(this.#courseInfoDiv);
             // This paragraph contains the placeholder text that appears when no course has been selected
             this.#placeholderP = document.createElement('p');
-            this.#placeholderP.innerText = "Click a course to see stuff here";
+            this.#placeholderP.innerText = "Click a course to see further information here";
             this.#placeholderP.style.margin = "auto";
         this.appendChild(this.#placeholderP);
     }

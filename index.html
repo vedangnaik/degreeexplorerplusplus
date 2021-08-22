@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="module" src="src/main.js"></script>
-        <style>
-            *, *:before, *:after {
-                margin: 0;
-                padding: 0;
-                border: 0;
-                box-sizing: border-box;
-                font-family: monospace;
-                scrollbar-width: none;
-            }
-
-            /* Disable all scrollbars */
-            *::-webkit-scrollbar {
-                display: none;
-            }
-        </style>
+        <script type="module" src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <script>
+            var a = document.querySelector("body > div > div:nth-child(3)");
+            
+        </script>
         <meta charset="UTF-8">
         <title>
             Degree Explorer++
         </title>
     </head>
     
-    <body style="padding: 2vh 1vw;">
-        <div style="height: 6vh">
-            <h1 style="text-align: center;">Degree Explorer++</h1>
-        </div>
+    <body style="padding: 1vw;">
+        <div style="height: 96vh; display: flex; flex: 1;">
+            <div style="width: 26vw; display: flex; flex-direction: column;">
+                <!-- Title -->
+                <div>
+                    <h1 style="font-size: 3.75vh;">DEGREE EXPLORER++</h1>
+                    <h5>University of Toronto's Degree Explorer, but better. Written completely from scratch to give you control, speed, and flexibility.</h5>
+                    <div style="height: 0.5vw;"></div>
+                    <input type="checkbox" id="help-checkbox" style="display: none;">
+                    <!-- This label is empty because depending on the state of the checkbox, it's content will by dynamically filled with ::after -->
+                    <label for="help-checkbox" style="border: 1px solid grey; height: 2vh; padding: 0 0.5vh; float: right;"></label>
+                    <div style="border: 1px solid grey; margin: 1vh 0 0 0; padding: 1.5vh 0.5vw 0.5vh 0.5vw;">
+                        <p>Welcome to the tutorial!</p><br>
 
-        <div style="height: 90vh; display: flex; flex: 1;">
-            <!-- Toolbar -->
-            <div style="width: 13vw; display: flex; flex-direction: column;">
-                <!-- Panel with course/program search stuff -->
-                <div is="depp-profile-controls"></div>
+                        <p>Degree Explorer++ centers around the <span id="profile-highlight" class="highlight-span">Profile</span>. This consists of your courses in the <span id="cs-highlight" class="highlight-span">Course Schedule</span> and your programs in the <span id="ps-highlight" class="highlight-span">Program Schedule</span>.</p><br>
+                        
+                        <p>To add a course or program, type its <em>exact ID</em> into the <span id="searchbox-highlight" class="highlight-span">Search Box</span> and click the <span id="addbtn-highlight" class="highlight-span">Add Course or PoST button</span>. Added courses will appear in the <span id="holdzone-highlight" class="highlight-span">Holding Area</span>, from where they can be dragged onto the Course Schedule. Added programs will appear in the Program Schedule.</p><br>
+
+                        <p>Click a course to see its prerequisites, exclusions, etc. in the <span id="cip-highlight" class="highlight-span">Course Info Panel</span>. Click a program in the Program Schedule to see its requirements.</p><br>
+
+                        <p>When ready, click the <span id="evaluate-highlight" class="highlight-span">Evaluate button</span> to determine the requirements for your programs and prerequisites, etc. for your courses.</p><br>
+
+                        <p>To add a new profile, click the <span id="newprofile-highlight" class="highlight-span">New Profile button</span>. If you wish to save a profile, click the <span id="save-highlight" class="highlight-span">Save Profile button</span>; a download prompt for the currently selected profile will appear. This downloaded file can be loaded via <span id="load-highlight" class="highlight-span">Load Profile button</span> to restore the profile. You may rename the profile via the <span id="profilename-highlight" class="highlight-span">Profile Name input</span>.</p><br>
+
+                        <p>If you wish to transfer a course from one profile to another, drag it onto <span id="scratchpad-highlight" class="highlight-span">Scratchpad</span>.</p><br>
+
+                        <p>And that's it! Have fun!</p>
+                    </div>
+                </div>
                 <!-- Spacer -->
-                <div style="height: 1vw;"></div>
-                <!-- Panel with Save and Load stuff -->
-                <div is="depp-profile-serializer"></div>
-                <!-- Spacer -->
-                <div style="height: 1vw;"></div>
-                <!-- Scratchpad -->
-                <div is="depp-course-scratchpad"></div>
+                <div style="height: 0.5vw;"></div>
+                <!-- Course Info Panel -->
+                <!-- If you're wondering why this div and the first one don't need a padding-top: 1px to bring them in line with the table, it's because these elements use a standard border. Due to us using the border-box model on everything, the border is counted as part of the element's height and width. However, the outline on the timetable is explicitly always outside the table, regardless of box-sizing. Hence, the table's 'top' is actually 1px below these divs, but the outline makes it look like it's level with them. -->
+                <div is="depp-course-info-panel"></div>
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>
@@ -48,22 +54,36 @@
             <!-- Why the padding of 1px on the top and bottom? This is because overflow-y adds a strange white border of some sort to the top, bottom, and sides, even though the scrollbars themselves are not visible ¯\_(ツ)_/¯ -->
             <div style="overflow-y: scroll; width: 58vw; padding: 1px 0.5vw;">
                 <!-- Course Schedule -->
-                <h2>Courses</h2>
+                <h2 style="text-align: center;">Courses</h2>
+                <!-- Spacer -->
                 <div style="height: 0.5vw;"></div>
+                <!-- Course Schedule -->
                 <table is="depp-course-schedule"></table>
                 <!-- Spacer -->
                 <div style="height: 1.5vw;"></div>
                 <!-- Program Schedule -->
-                <h2>Programs</h2>
+                <h2 style="text-align: center;">Programs</h2>
                 <div style="height: 0.5vw;"></div>
                 <div is="depp-program-schedule"></div>
             </div>
             <!-- Spacer -->
             <div style="width: 0.5vw;"></div>
-            <!-- Course Info Panel -->
-            <!-- If you're wondering why this div and the first one don't need a padding-top: 1px to bring them in line with the table, it's because these elements use a standard border. Due to us using the border-box model on everything, the border is counted as part of the element's height and width. However, the outline on the timetable is explicitly always outside the table, regardless of box-sizing. Hence, the table's 'top' is actually 1px below these divs, but the outline makes it look like it's level with them. -->
-            <div style="display: flex; width: 26vw;">
-                <div is="depp-course-info-panel"></div>
+            <!-- Toolbar -->
+            <div style="width: 13vw; display: flex; flex-direction: column;">
+                <!-- Panel with course/program search stuff -->
+                <div is="depp-profile-controls"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- Panel with Save and Load stuff -->
+                <div is="depp-profile-serializer"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- Scratchpad -->
+                <div is="depp-course-scratchpad"></div>
+                <!-- Spacer -->
+                <div style="height: 0.5vw;"></div>
+                <!-- GitHub link -->
+                <p>Interested in contributing? Check out <a href="https://github.com/vedangnaik/degreeexplorerplusplus">the GitHub</a>!</p>
             </div>
         </div>        
     </body>

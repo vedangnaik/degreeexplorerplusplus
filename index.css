@@ -1,0 +1,46 @@
+*, *:before, *:after {
+    font-size: 1.5vmin;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    scrollbar-width: none;
+}
+
+/* Disable all scrollbars */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Change the header font-weights to be relative to the base font-size of 1.5vh. According to https://www.w3schools.com/cssref/css_default_values.asp, h4 has the global font-size, while the others are relative to it.*/
+h1 { font-size: 3vmin; }
+h2 { font-size: 2.25vmin; }
+h3 { font-size: 1.75vmin; }
+h4 { font-size: 1.5vmin; }
+h5 { font-size: 1.25vmin; }
+h6 { font-size: 1vmin; }
+
+/* Toggle collapsible body */
+#help-checkbox:checked ~ div {
+    display: none;
+}
+/* Toggle collapsible header color */
+#help-checkbox:checked ~ label {
+    background-color: lavender;
+}
+#help-checkbox ~ label {
+    background-color: salmon;
+}
+/* Toggle collapsible header text */
+#help-checkbox:checked ~ label::after {
+    content: "Need help? Read the tutorial here!";
+}
+#help-checkbox ~ label::after {
+    content: "Close Tutorial";
+}
+
+.highlight-span {
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
