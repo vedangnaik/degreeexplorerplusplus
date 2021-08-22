@@ -46,7 +46,28 @@ function connectTutorialHighlights() {
     attachSpanToElementForHighlight(document.getElementById("cs-highlight"), document.getElementById(GLOBAL_COURSE_SCHEDULE_ID));
     // For the Program Schedule
     attachSpanToElementForHighlight(document.getElementById("ps-highlight"), document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID));
+    // For the search box
+    attachSpanToElementForHighlight(document.getElementById("searchbox-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(1) > input"));
+    // For the add button
+    attachSpanToElementForHighlight(document.getElementById("addbtn-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(3) > button"));
+    // For the Holding Area/construction zone
+    attachSpanToElementForHighlight(document.getElementById("holdzone-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)"));
+    // For the Evaluate button
+    attachSpanToElementForHighlight(document.getElementById("evaluate-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(1) > button"));
+    // For the Course Info Panel
+    attachSpanToElementForHighlight(document.getElementById("cip-highlight"), document.getElementById(GLOBAL_COURSE_INFO_PANEL_ID));
+    // For the Save Button
+    attachSpanToElementForHighlight(document.getElementById("save-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)"));
+    // For the Load Button
+    attachSpanToElementForHighlight(document.getElementById("load-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)"));
+    // For the Profile Name
+    attachSpanToElementForHighlight(document.getElementById("profilename-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(3) > div > label > span"));
+    // For the New Profile button
+    attachSpanToElementForHighlight(document.getElementById("newprofile-highlight"), document.querySelector("body > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) > button"));
+    // For the scratchpad
+    attachSpanToElementForHighlight(document.getElementById("scratchpad-highlight"), document.getElementById("courseScratchpad"));
 }
+
 
 
 window.addEventListener('DOMContentLoaded', connectObservers);
