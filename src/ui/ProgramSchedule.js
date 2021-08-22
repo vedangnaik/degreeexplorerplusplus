@@ -7,7 +7,10 @@ export class ProgramSchedule extends HTMLDivElement {
     constructor() {
         super();
         this.id = GLOBAL_PROGRAM_SCHEDULE_ID;
-        this.style.position = "relative";
+        this.style = `
+            position: relative;
+            min-height: 2vh;
+        `
             // This background div is present near the top of the program schedule. It's only visible when no programs are present, and serves as a sort of placeholder.
             const backgroundDiv = document.createElement("div");
             backgroundDiv.style = `

@@ -24,10 +24,20 @@ function createNewProfile() {
     document.querySelector("body > div > div:nth-child(5) > div:nth-child(3) > div:nth-child(3) > div > label").click();
 }
 
+
+/**
+ * This function attached event listeners to the spans in the tutorial so the corresponding element is highlighted when hovered over. This must be done here since the window has finished rendering at this point.
+ */
 function connectTutorialHighlights() {
     function attachSpanToElementForHighlight(span, element) {
-        span.onmouseenter = () => { element.style.outline = "5px solid yellow"; }
-        span.onmouseleave = () => { element.style.outline = "revert"; }
+        span.onmouseenter = () => { 
+            element.style.outline = "5px solid yellow"; 
+            element.style.outlineOffset = "1px"; // This is the prevent elements which use outlines from being covered.
+        }
+        span.onmouseleave = () => { 
+            element.style.outline = "revert";
+            element.style.outlineOffset = "revert";
+        }
     }
 
     // For the Profile section
@@ -37,6 +47,7 @@ function connectTutorialHighlights() {
     // For the Program Schedule
     attachSpanToElementForHighlight(document.getElementById("ps-highlight"), document.getElementById(GLOBAL_PROGRAM_SCHEDULE_ID));
 }
+
 
 window.addEventListener('DOMContentLoaded', connectObservers);
 window.addEventListener('DOMContentLoaded', createNewProfile);
