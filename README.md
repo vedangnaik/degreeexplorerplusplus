@@ -1,7 +1,7 @@
 # Degree Explorer++
 University of Toronto's Degree Explorer, but better. Written completely from scratch to give you control, speed, and flexibility.
 
-![image](https://user-images.githubusercontent.com/25436568/128601724-c02910d1-e6a3-49ba-955a-4a24a86978d1.png)
+![image](https://user-images.githubusercontent.com/25436568/130354549-187903ca-5de6-47f6-86a9-20a0dc0ee182.png)
 
 
 ## Features
