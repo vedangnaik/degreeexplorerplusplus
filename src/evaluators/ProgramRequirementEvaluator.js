@@ -61,7 +61,7 @@ function markRequirementAsNA(programID, reqID, requirementStatuses) {
 /**
  * @param {Array} courses List of courses from which to choose numCredits worth of courses. 
  * @param {Number} numCredits Number of credits worth of courses to choose.
- * @returns [true, [...]] if the desired worth of courses has been found, else [false, []].
+ * @returns [true, [...]] if the desired worth of courses has been found, else [false, [...]].
  */
 function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
     let usedCourses = [];
@@ -78,6 +78,16 @@ function getNumCreditsWorthOfCoursesFromList(courses, numCredits) {
     return [false, usedCourses];
 }
 
+/**
+ * @param {Array} courses List of courses to determine credits worth of.
+ * @returns Total number of credits in courses
+ */
+function getNumCreditsInList(courses) {
+    return courses
+        .map(courseID => courseID[6] === "H" ? 0.5 : 1.0)
+        .reduce((x, y) => x + y, 0.0);
+}
+
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
     const requirementObj = ProgramData[programID].detailAssessments[reqID];
     switch(requirementObj["type"]) {
@@ -91,8 +101,9 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             };
         }
 
-        // NUM is redundant here really - everything in the "courses" must be fulfilled.
-        case "COURSES/NUM/LIST/RECURS": // "/RECURS" is useless here.
+        // Mistake in data.
+        case "COURSES/NUM/LIST/RECURS":
+        // NUM is redundant here - everything in "courses" must be fulfilled.
         case "COURSES/NUM/LIST": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
             const satisfied = requirementObj["courses"]
@@ -108,7 +119,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
 
         // At least "count" credits in courses belonging to "categories".
         case "CATEGORIES/FCES/MIN": {
-            const [validatable, coursesInSchdule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
+            const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             if (validatable) {
                 const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
                 return {
@@ -127,19 +138,41 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // At least "count" number of courses from "categories"
+        case "CATEGORIES/NUM/MIN": {
+            const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
+            return {
+                [reqID]: {
+                    "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                    "usedCourses": validatable ? coursesInSchedule.slice(0, requirementObj["count"]) : []
+                }
+            };
+        }
 
-        // At least "count" credits in courses belonging to "courses".
+        // At least "count" credits worth of courses from "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
             const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
             return {
                 [reqID]: {
                     "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    usedCourses: satisfied ? usedCourses : []
+                    "usedCourses": satisfied ? usedCourses : []
                 }
             };
         }
 
+        // At least "count" number of courses from "courses".
+        case "COURSES/NUM/MIN": {
+            const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+            return {
+                [reqID]: {
+                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
+                }
+            };
+        }
+
+        // At least "count" credits worth of courses in "courses" and "categories", with additional restrictions based on requirements in "recursReqs".
         case "COURSES_CATEGORIES/FCES/MIN/RECURS": {
             let coursesInSchedule = []
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
@@ -161,19 +194,21 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
         case "COURSES/FCES/GROUPMAX": {
-            const coursesToFilterWith = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            let usedCourses = scheduledCourses.filter(courseID => coursesToFilterWith.includes(courseID));
-            while (usedCourses.length > requirementObj["count"]) {
-                const courseToRemove = usedCourses.pop();
-                scheduledCourses.splice(scheduledCourses.indexOf(courseToRemove), 1);
+            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+            // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
+            while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+                scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
             }
+            // Return COMPLETE with whatever's left.
             return {
                 [reqID]: {
                     "status": STATUSES.COMPLETE,
-                    "usedCourses": usedCourses
+                    "usedCourses": coursesToFilter
                 }
-            }
+            };
         }
 
         case "CATEGORIES/FCES/GROUPMAX": {
@@ -194,8 +229,10 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
         
-        case "NOTE/./.":
-        case "NOTE/././RECURS": {
+        // Mistake in data.
+        case "NOTE/././RECURS":
+        // 'Requirement' used to inform the user of some information.
+        case "NOTE/./.": {
             return {
                 [reqID]: {
                     "status": STATUSES.NOTE,
@@ -251,6 +288,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // Requirements calculated to be impossible to fail.
         case "COMPLETE/./.": {
             return {
                 [reqID]: {
@@ -264,14 +302,11 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "CATEGORIES/FCES/GROUPMIN/RECURS":
         case "CATEGORIES/FCES/MIN/RECURS":
         case "CATEGORIES/NUM/GROUPMIN":
-        case "CATEGORIES/NUM/MIN":
         case "COURSES/FCES/GROUPMIN":
         case "COURSES/FCES/GROUPMIN/RECURS":
         case "COURSES/FCES/MIN/RECURS":
-        case "COURSES/NUM/GROUPMAX":
         case "COURSES/NUM/GROUPMIN":
         case "COURSES/NUM/LIST/RECURS":
-        case "COURSES/NUM/MIN":
         case "COURSES/NUM/MIN/RECURS":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "COURSES_CATEGORIES/FCES/MIN":

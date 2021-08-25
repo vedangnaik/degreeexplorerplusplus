@@ -24,12 +24,12 @@ export const NOT_EVALUATED_COLOR = "lightblue";
 
 // Global 'ENUM' for the various statuses that requirements, etc. can have. 
 export const STATUSES = Object.freeze({
-    COMPLETE: Symbol("COMPLETE"),
-    INCOMPLETE: Symbol("INCOMPLETE"),
-    NA: Symbol("NA"),
-    UNVERIFIABLE: Symbol("UNVERIFIABLE"),
-    NOTE: Symbol("NOTE"),
-    UNIMPLEMENTED: Symbol("UNIMPLEMENTED")
+    "COMPLETE": Symbol("COMPLETE"),
+    "INCOMPLETE": Symbol("INCOMPLETE"),
+    "NA": Symbol("NA"),
+    "UNVERIFIABLE": Symbol("UNVERIFIABLE"),
+    "NOTE": Symbol("NOTE"),
+    "UNIMPLEMENTED": Symbol("UNIMPLEMENTED")
 });
 
 // This is a generic empty profile file structure created here to back up new profiles. It is not connected to the actual classes like timetable in any way. This is to keep everything as separated as possible
