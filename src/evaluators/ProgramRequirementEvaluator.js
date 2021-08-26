@@ -245,6 +245,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
                 }
             }
         }
+
         // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
         case "COURSES/FCES/GROUPMAX": {
             // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
@@ -312,8 +313,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             let usedCourses = [];
             let count = 0;
             for (const dependentReqID in dependentReqs) {
-                const dependentStatus = dependentReqs[dependentReqID]["status"];
-                if (dependentStatus !== STATUSES.INCOMPLETE && dependentStatus !== STATUSES.UNIMPLEMENTED) {
+                if (dependentReqs[dependentReqID]["status"] === STATUSES.COMPLETE) {
                     usedPrereqs.push(dependentReqID);
                     usedCourses = usedCourses.concat(dependentReqs[dependentReqID]["usedCourses"]);
                     count += 1;
@@ -364,8 +364,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "COURSES/FCES/GROUPMIN/RECURS":
         case "COURSES/FCES/MIN/RECURS":
         case "COURSES/NUM/GROUPMIN":
-        case "COURSES/NUM/LIST/RECURS":
-        case "COURSES/NUM/MIN/RECURS":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "REQUIREMENTS/NUM/NO_REUSE":
         case "COURSES/NUM/GROUPMAX":
