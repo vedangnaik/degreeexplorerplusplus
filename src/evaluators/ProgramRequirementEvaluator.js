@@ -137,6 +137,39 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // At least "count" credits in courses belonging to "categories", with additional restrictions based on requirements in "recursReqs".
+        case "CATEGORIES/FCES/MIN/RECURS": {
+            let recursReqs = {};
+            
+            const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
+            
+            if (validatable) {
+                for (const recursReqID of requirementObj["recursReqs"]) {
+                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+                }
+                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
+                return {
+                    ...recursReqs,
+                    [reqID]: {
+                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                        "usedCourses": usedCourses
+                    }
+                }
+            } else {
+                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
+                    "status": STATUSES.NA,
+                    "usedCourses": []
+                });
+                return {
+                    ...recursReqs,
+                    [reqID]: {
+                        "status": STATUSES.UNVERIFIABLE,
+                        "usedCourses": []                    
+                    }
+                }
+            }
+        }
+
         // At least "count" number of courses from "categories"
         case "CATEGORIES/NUM/MIN": {
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
