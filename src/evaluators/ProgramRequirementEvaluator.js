@@ -172,6 +172,24 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             };
         }
 
+         // At least "count" credits worth of courses in "courses" and "categories".
+        case "COURSES_CATEGORIES/FCES/MIN": {
+            // Grab all the courses from "courses" and "categories".
+            let coursesInSchedule = [];
+            coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
+            const [validatable, coursesFromCategories] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
+            coursesInSchedule = coursesInSchedule.concat(coursesFromCategories);
+            // If validatable, check the number of credits.
+            const [satisfied, usedCourses] = validatable ? getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]) : [false, []];
+
+            return {
+                [reqID]: {
+                    "status": validatable ? (satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                    "usedCourses": usedCourses
+                }
+            };
+        }
+
         // At least "count" credits worth of courses in "courses" and "categories", with additional restrictions based on requirements in "recursReqs".
         case "COURSES_CATEGORIES/FCES/MIN/RECURS": {
             let coursesInSchedule = []
