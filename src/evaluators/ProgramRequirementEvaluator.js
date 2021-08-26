@@ -88,7 +88,7 @@ function getNumCreditsInList(courses) {
 }
 
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
-    const requirementObj = ProgramData[programID].detailAssessments[reqID];
+    const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
         case "UNVERIFIABLE/./.":
         case "UNVERIFIABLE/././RECURS": {
@@ -298,6 +298,17 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
+        case "COURSES/NUM/GROUPMAX": {
+            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+            return {
+                [reqID]: {
+                    "status": STATUSES.COMPLETE,
+                    "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
+                }
+            };
+        }
+
         // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
         case "COURSES/FCES/GROUPMAX": {
             // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
@@ -398,16 +409,14 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        case "REQUIREMENTS/NUM/NO_REUSE":
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/FCES/GROUPMIN/RECURS":
-        case "CATEGORIES/FCES/MIN/RECURS":
         case "CATEGORIES/NUM/GROUPMIN":
         case "COURSES/FCES/GROUPMIN":
         case "COURSES/FCES/GROUPMIN/RECURS":
         case "COURSES/NUM/GROUPMIN":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
-        case "REQUIREMENTS/NUM/NO_REUSE":
-        case "COURSES/NUM/GROUPMAX":
         case "REQUIREMENTS/REQS/MIN/RECURS": { 
             return {
                 [reqID]: {
