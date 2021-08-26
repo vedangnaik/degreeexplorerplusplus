@@ -43,7 +43,6 @@ function markRequirementAsNA(programID, reqID, requirementStatuses) {
         "usedCourses": []
     };
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
-    console.log(programID, reqID)
     // Mark any dependent reqs as NA
     if ("dependentReqs" in requirementObj) {
         for (const dependentReqID of requirementObj["dependentReqs"]) {
@@ -243,21 +242,28 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             };
         }
 
+        // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
         case "CATEGORIES/FCES/GROUPMAX": {
-            // Get the courses we are supposed to remove the excesses from.
-            const [validatable, coursesToFilterWith] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
-            // If we have all valid categories, grab their intersection with scheduledCourses. Else, return empty.
-            let usedCourses = validatable ? scheduledCourses.filter(courseID => coursesToFilterWith.includes(courseID)) : [];
-            // Remove an excess courses from both the usedCourses and scheduledCourses, mutating both in place
-            while (usedCourses.length > requirementObj["count"]) {
-                const courseToRemove = usedCourses.pop();
-                scheduledCourses.splice(scheduledCourses.indexOf(courseToRemove), 1);
-            }
-            return {
-                [reqID]: {
-                    "status": validatable ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
-                    "usedCourses": usedCourses
+            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+            const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
+            // If it's validatable, remove any excess courses
+            if (validatable) {
+                while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+                    scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
                 }
+                return {
+                    [reqID]: {
+                        "status": STATUSES.COMPLETE,
+                        "usedCourses": coursesToFilter
+                    }
+                };
+            } else {
+                return {
+                    [reqID]: {
+                        "status": STATUSES.UNVERIFIABLE,
+                        "usedCourses": []
+                    }
+                };
             }
         }
         
@@ -341,7 +347,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "COURSES/NUM/LIST/RECURS":
         case "COURSES/NUM/MIN/RECURS":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
-        case "COURSES_CATEGORIES/FCES/MIN":
         case "REQUIREMENTS/NUM/NO_REUSE":
         case "REQUIREMENTS/REQS/MIN/RECURS": { 
             return {
