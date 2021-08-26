@@ -228,6 +228,23 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // At least "count" courses from "courses", with additional restrictions based on requirements in "recursReqs".
+        case "COURSES/NUM/MIN/RECURS": {
+            let coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+
+            let recursReqs = {};
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+            }
+
+            return {
+                ...recursReqs,
+                [reqID]: {
+                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
+                }
+            }
+        }
         // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
         case "COURSES/FCES/GROUPMAX": {
             // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
