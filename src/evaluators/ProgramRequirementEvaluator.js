@@ -346,16 +346,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
-        // Requirements calculated to be impossible to fail.
-        case "COMPLETE/./.": {
-            return {
-                [reqID]: {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": []
-                }
-            }
-        }
-
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/FCES/GROUPMIN/RECURS":
         case "CATEGORIES/FCES/MIN/RECURS":
