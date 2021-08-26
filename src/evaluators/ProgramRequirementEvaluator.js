@@ -214,7 +214,10 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
                 }
             } else {
                 // Else, just mark each child as not needed and return UNVERIFIABLE.
-                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = STATUSES.NA);
+                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
+                    "status": STATUSES.NA,
+                    "usedCourses": []
+                });
                 return {
                     ...recursReqs,
                     [reqID]: {
@@ -348,6 +351,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "COURSES/NUM/MIN/RECURS":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "REQUIREMENTS/NUM/NO_REUSE":
+        case "COURSES/NUM/GROUPMAX":
         case "REQUIREMENTS/REQS/MIN/RECURS": { 
             return {
                 [reqID]: {
