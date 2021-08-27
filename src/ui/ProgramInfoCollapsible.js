@@ -168,7 +168,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         let evaluatedRequirements = {};
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
             if (!(reqID in evaluatedRequirements)) {
-                evaluatedRequirements = {...evaluatedRequirements, ...evaluateProgramRequirement(this.id, reqID, scheduledCourses)};
+                evaluateProgramRequirement(this.id, reqID, scheduledCourses, evaluatedRequirements);
             }
         });
 

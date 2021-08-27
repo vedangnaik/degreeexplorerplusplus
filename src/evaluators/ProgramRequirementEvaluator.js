@@ -87,7 +87,7 @@ function getNumCreditsInList(courses) {
         .reduce((x, y) => x + y, 0.0);
 }
 
-export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
+export function evaluateProgramRequirement(programID, reqID, scheduledCourses, evaluatedRequirements) {
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
         case "UNVERIFIABLE/./.":
@@ -413,20 +413,23 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
-        case "REQUIREMENTS/NUM/NO_REUSE":
+        case "CATEGORIES/FCES/GROUPMAX":
         case "CATEGORIES/FCES/GROUPMIN":
-        case "CATEGORIES/FCES/GROUPMIN/RECURS":
+        case "CATEGORIES/FCES/MIN":
         case "CATEGORIES/NUM/GROUPMIN":
+        case "CATEGORIES/NUM/MIN":
+        case "COURSES/FCES/GROUPMAX":
         case "COURSES/FCES/GROUPMIN":
-        case "COURSES/FCES/GROUPMIN/RECURS":
+        case "COURSES/FCES/MIN":
+        case "COURSES/NUM/GROUPMAX":
         case "COURSES/NUM/GROUPMIN":
-        case "COURSES_CATEGORIES/FCES/GROUPMIN": { 
-            return {
-                [reqID]: {
-                    "status": STATUSES.UNIMPLEMENTED,
-                    "usedCourses": []
-                }
-            };
-        }
+        case "COURSES/NUM/LIST":
+        case "COURSES/NUM/MIN":
+        case "COURSES_CATEGORIES/FCES/GROUPMIN":
+        case "COURSES_CATEGORIES/FCES/MIN":
+        case "NOTE/./.":
+        case "REQUIREMENTS/NUM/NO_REUSE":
+        case "REQUIREMENTS/REQS/MIN":
+        case "UNVERIFIABLE/./.": {}
     }
 }
