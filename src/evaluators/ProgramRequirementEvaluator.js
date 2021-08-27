@@ -105,13 +105,15 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         // NUM is redundant here - everything in "courses" must be fulfilled.
         case "COURSES/NUM/LIST": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+            const satisfiedCourses = requirementObj["courses"]
+                .filter(courseID => coursesInSchedule.includes(courseID));
             const satisfied = requirementObj["courses"]
                 .map(courseID => coursesInSchedule.includes(courseID))
                 .reduce((x, y) => x && y, true);
             return {
                 [reqID]: {
                     "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": requirementObj["courses"]
+                    "usedCourses": satisfiedCourses
                 }
             };
         }
