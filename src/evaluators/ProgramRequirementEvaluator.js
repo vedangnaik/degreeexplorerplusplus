@@ -363,6 +363,8 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             }
         }
 
+        // This is a strange type. There are only 8 occurences among the ~4000 requirements, and they all list recursReqs which are also applied to the dependentReqs they list. Hence, there is no point checking these again, since they'll be checked when the dependentReqs are evaluated. 
+        case "REQUIREMENTS/REQS/MIN/RECURS":
         // At least count requirements from the list.
         case "REQUIREMENTS/REQS/MIN": {
             // Evaluate all requirements this one depends on first
@@ -416,8 +418,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
         case "COURSES/FCES/GROUPMIN":
         case "COURSES/FCES/GROUPMIN/RECURS":
         case "COURSES/NUM/GROUPMIN":
-        case "COURSES_CATEGORIES/FCES/GROUPMIN":
-        case "REQUIREMENTS/REQS/MIN/RECURS": { 
+        case "COURSES_CATEGORIES/FCES/GROUPMIN": { 
             return {
                 [reqID]: {
                     "status": STATUSES.UNIMPLEMENTED,
