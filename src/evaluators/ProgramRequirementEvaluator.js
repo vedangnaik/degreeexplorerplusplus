@@ -90,18 +90,14 @@ function getNumCreditsInList(courses) {
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses, evaluatedRequirements) {
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
-        case "UNVERIFIABLE/./.":
-        case "UNVERIFIABLE/././RECURS": {
-            return {
-                [reqID]: {
-                    "status": STATUSES.UNVERIFIABLE,
-                    "usedCourses": []
-                }
-            };
+        case "UNVERIFIABLE/./.": {
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.UNVERIFIABLE,
+                "usedCourses": []
+            }
+            break;
         }
 
-        // Mistake in data.
-        case "COURSES/NUM/LIST/RECURS":
         // NUM is redundant here - everything in "courses" must be fulfilled.
         case "COURSES/NUM/LIST": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
@@ -110,12 +106,12 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             const satisfied = requirementObj["courses"]
                 .map(courseID => coursesInSchedule.includes(courseID))
                 .reduce((x, y) => x && y, true);
-            return {
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": satisfiedCourses
-                }
+            
+            evaluatedRequirements[reqID] = {
+                "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": satisfiedCourses
             };
+            break;
         }
 
         // At least "count" credits in courses belonging to "categories".
@@ -300,61 +296,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             }
         }
 
-        // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        case "COURSES/NUM/GROUPMAX": {
-            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            return {
-                [reqID]: {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
-                }
-            };
-        }
-
-        // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        case "COURSES/FCES/GROUPMAX": {
-            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
-            while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-                scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-            }
-            // Return COMPLETE with whatever's left.
-            return {
-                [reqID]: {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": coursesToFilter
-                }
-            };
-        }
-
-        // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
-        case "CATEGORIES/FCES/GROUPMAX": {
-            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-            const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
-            // If it's validatable, remove any excess courses
-            if (validatable) {
-                while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-                    scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-                }
-                return {
-                    [reqID]: {
-                        "status": STATUSES.COMPLETE,
-                        "usedCourses": coursesToFilter
-                    }
-                };
-            } else {
-                return {
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                };
-            }
-        }
-        
-        // Mistake in data.
-        case "NOTE/././RECURS":
         // 'Requirement' used to inform the user of some information.
         case "NOTE/./.": {
             return {
@@ -365,8 +306,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             }
         }
 
-        // This is a strange type. There are only 8 occurences among the ~4000 requirements, and they all list recursReqs which are also applied to the dependentReqs they list. Hence, there is no point checking these again, since they'll be checked when the dependentReqs are evaluated. 
-        case "REQUIREMENTS/REQS/MIN/RECURS":
         // At least count requirements from the list.
         case "REQUIREMENTS/REQS/MIN": {
             // Evaluate all requirements this one depends on first
@@ -413,23 +352,76 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             }
         }
 
+
+
+        // // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
+        // case "COURSES/NUM/GROUPMAX": {
+        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+        //     return {
+        //         [reqID]: {
+        //             "status": STATUSES.COMPLETE,
+        //             "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
+        //         }
+        //     };
+        // }
+
+        // // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
+        // case "COURSES/FCES/GROUPMAX": {
+        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+        //     // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
+        //     while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+        //         scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
+        //     }
+        //     // Return COMPLETE with whatever's left.
+        //     return {
+        //         [reqID]: {
+        //             "status": STATUSES.COMPLETE,
+        //             "usedCourses": coursesToFilter
+        //         }
+        //     };
+        // }
+
+        // // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
+        // case "CATEGORIES/FCES/GROUPMAX": {
+        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+        //     const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
+        //     // If it's validatable, remove any excess courses
+        //     if (validatable) {
+        //         while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+        //             scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
+        //         }
+        //         return {
+        //             [reqID]: {
+        //                 "status": STATUSES.COMPLETE,
+        //                 "usedCourses": coursesToFilter
+        //             }
+        //         };
+        //     } else {
+        //         return {
+        //             [reqID]: {
+        //                 "status": STATUSES.UNVERIFIABLE,
+        //                 "usedCourses": []
+        //             }
+        //         };
+        //     }
+        // }
+        
+        
+
         case "CATEGORIES/FCES/GROUPMAX":
         case "CATEGORIES/FCES/GROUPMIN":
-        case "CATEGORIES/FCES/MIN":
         case "CATEGORIES/NUM/GROUPMIN":
-        case "CATEGORIES/NUM/MIN":
         case "COURSES/FCES/GROUPMAX":
         case "COURSES/FCES/GROUPMIN":
-        case "COURSES/FCES/MIN":
         case "COURSES/NUM/GROUPMAX":
         case "COURSES/NUM/GROUPMIN":
-        case "COURSES/NUM/LIST":
-        case "COURSES/NUM/MIN":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
-        case "COURSES_CATEGORIES/FCES/MIN":
-        case "NOTE/./.":
-        case "REQUIREMENTS/NUM/NO_REUSE":
-        case "REQUIREMENTS/REQS/MIN":
-        case "UNVERIFIABLE/./.": {}
+        case "REQUIREMENTS/NUM/NO_REUSE": {
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.UNIMPLEMENTED,
+                "usedCourses": []
+            }
+        }
     }
 }
