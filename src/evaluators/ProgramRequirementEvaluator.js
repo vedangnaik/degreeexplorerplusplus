@@ -118,11 +118,9 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         case "CATEGORIES/FCES/MIN": {
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             if (validatable) {
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-
                 evaluatedRequirements[reqID] = {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": usedCourses
+                    "status": getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": coursesInSchedule
                 };
                 break;
             } else {
@@ -140,7 +138,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             
             evaluatedRequirements[reqID] = {
                 "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                "usedCourses": validatable ? coursesInSchedule.slice(0, requirementObj["count"]) : []
+                "usedCourses": validatable ? coursesInSchedule : []
             };
             break;
         }
@@ -148,11 +146,10 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         // At least "count" credits worth of courses from "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-            
+
             evaluatedRequirements[reqID] = {
-                "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                "usedCourses": satisfied ? usedCourses : []
+                "status": getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": coursesInSchedule
             }
             break;
         }
@@ -163,7 +160,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
 
             evaluatedRequirements[reqID] = {
                 "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
+                "usedCourses": coursesInSchedule
             };
             break;
         }
@@ -175,12 +172,11 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
             const [validatable, coursesFromCategories] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             coursesInSchedule = coursesInSchedule.concat(coursesFromCategories);
-            // If validatable, check the number of credits.
-            const [satisfied, usedCourses] = validatable ? getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]) : [false, []];
 
+            // If validatable, check number of credits.
             evaluatedRequirements[reqID] = {
-                "status": validatable ? (satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                "usedCourses": usedCourses
+                "status": validatable ? (getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? coursesInSchedule : []
             };
             break;
         }
