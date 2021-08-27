@@ -119,106 +119,53 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             if (validatable) {
                 const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
-                };
-            } else {
-                return {
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                }
-            }
-        }
 
-        // At least "count" credits in courses belonging to "categories", with additional restrictions based on requirements in "recursReqs".
-        case "CATEGORIES/FCES/MIN/RECURS": {
-            let recursReqs = {};
-            
-            const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            
-            if (validatable) {
-                for (const recursReqID of requirementObj["recursReqs"]) {
-                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-                }
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
-                }
+                evaluatedRequirements[reqID] = {
+                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": usedCourses
+                };
+                break;
             } else {
-                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
-                    "status": STATUSES.NA,
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.UNVERIFIABLE,
                     "usedCourses": []
-                });
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []                    
-                    }
-                }
+                };
+                break;
             }
         }
 
         // At least "count" number of courses from "categories"
         case "CATEGORIES/NUM/MIN": {
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            return {
-                [reqID]: {
-                    "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                    "usedCourses": validatable ? coursesInSchedule.slice(0, requirementObj["count"]) : []
-                }
+            
+            evaluatedRequirements[reqID] = {
+                "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? coursesInSchedule.slice(0, requirementObj["count"]) : []
             };
+            break;
         }
 
         // At least "count" credits worth of courses from "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
             const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-            return {
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": satisfied ? usedCourses : []
-                }
-            };
-        }
-
-        // At least "count" credits worth of courses from "courses", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES/FCES/MIN/RECURS": {            
-            let coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
             
-            let recursReqs = {};
-            for (const recursReqID of requirementObj["recursReqs"]) {
-                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+            evaluatedRequirements[reqID] = {
+                "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": satisfied ? usedCourses : []
             }
-
-            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-            return {
-                ...recursReqs,
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": usedCourses
-                }
-            };
+            break;
         }
 
         // At least "count" number of courses from "courses".
         case "COURSES/NUM/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            return {
-                [reqID]: {
-                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
-                }
+
+            evaluatedRequirements[reqID] = {
+                "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
             };
+            break;
         }
 
          // At least "count" credits worth of courses in "courses" and "categories".
@@ -231,124 +178,63 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             // If validatable, check the number of credits.
             const [satisfied, usedCourses] = validatable ? getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]) : [false, []];
 
-            return {
-                [reqID]: {
-                    "status": validatable ? (satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                    "usedCourses": usedCourses
-                }
+            evaluatedRequirements[reqID] = {
+                "status": validatable ? (satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                "usedCourses": usedCourses
             };
-        }
-
-        // At least "count" credits worth of courses in "courses" and "categories", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES_CATEGORIES/FCES/MIN/RECURS": {
-            let coursesInSchedule = []
-            let recursReqs = {};
-
-            coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
-            const [validatable, coursesFromCategories] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            coursesInSchedule = coursesInSchedule.concat(coursesFromCategories);
-
-            if (validatable) {
-                // Evaluate each recurs requirement. These recursReqs are always going to be either GROUPMAX or GROUPMIN. coursesInSchdule will be modifed in place by the recursive calls.
-                for (const recursReqID of requirementObj["recursReqs"]) {
-                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-                }
-                // Now that we have the final list, check if it has enough credits.
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
-                }
-            } else {
-                // Else, just mark each child as not needed and return UNVERIFIABLE.
-                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
-                    "status": STATUSES.NA,
-                    "usedCourses": []
-                });
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                };
-            }
-        }
-
-        // At least "count" courses from "courses", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES/NUM/MIN/RECURS": {
-            let coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-
-            let recursReqs = {};
-            for (const recursReqID of requirementObj["recursReqs"]) {
-                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-            }
-
-            return {
-                ...recursReqs,
-                [reqID]: {
-                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
-                }
-            }
+            break;
         }
 
         // 'Requirement' used to inform the user of some information.
         case "NOTE/./.": {
-            return {
-                [reqID]: {
-                    "status": STATUSES.NOTE,
-                    "usedCourses": []
-                }
-            }
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.NOTE,
+                "usedCourses": []
+            };
+            break;
         }
 
         // At least count requirements from the list.
         case "REQUIREMENTS/REQS/MIN": {
             // Evaluate all requirements this one depends on first
-            let dependentReqs = {};
             for (const dependentReqID of requirementObj["dependentReqs"]) {
-                dependentReqs = {...dependentReqs, ...evaluateProgramRequirement(programID, dependentReqID, scheduledCourses)};
+                if (!(dependentReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, dependentReqID, scheduledCourses, evaluatedRequirements);
+                }
             }
 
             // Go through them and see if there are enough to satisfy this one.
             let usedPrereqs = [];
             let usedCourses = [];
             let count = 0;
-            for (const dependentReqID in dependentReqs) {
-                if (dependentReqs[dependentReqID]["status"] === STATUSES.COMPLETE) {
+            for (const dependentReqID of requirementObj["dependentReqs"]) {
+                if (evaluatedRequirements[dependentReqID]["status"] === STATUSES.COMPLETE) {
                     usedPrereqs.push(dependentReqID);
-                    usedCourses = usedCourses.concat(dependentReqs[dependentReqID]["usedCourses"]);
+                    usedCourses = usedCourses.concat(evaluatedRequirements[dependentReqID]["usedCourses"]);
                     count += 1;
                 }
             }
             // Return INCOMPLETE on failure, but don't touch the dependents.
             if (requirementObj["count"] > count) {
-                return {
-                    ...dependentReqs,
-                    [reqID]: {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                }
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
+                };
+                break;
             }
             // Else set all the others to NA and return COMPLETE
             else {
-                for (const dependentReqID in dependentReqs) {
+                for (const dependentReqID of requirementObj["dependentReqs"]) {
                     if (!usedPrereqs.includes(dependentReqID)) {
-                        markRequirementAsNA(programID, dependentReqID, dependentReqs);
+                        markRequirementAsNA(programID, dependentReqID, evaluatedRequirements);
                     }
                 }
-                return {
-                    ...dependentReqs,
-                    [reqID]: {
-                        "status": STATUSES.COMPLETE,
-                        "usedCourses": usedCourses
-                    }
+
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.COMPLETE,
+                    "usedCourses": usedCourses
                 };
+                break;
             }
         }
 
