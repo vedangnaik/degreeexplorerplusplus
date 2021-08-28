@@ -90,7 +90,7 @@ function getNumCreditsInList(courses) {
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses, evaluatedRequirements) {
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
-        case "UNVERIFIABLE/./.": {
+        case "UNVERIFIABLE": {
             evaluatedRequirements[reqID] = {
                 "status": STATUSES.UNVERIFIABLE,
                 "usedCourses": []
@@ -182,7 +182,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         }
 
         // 'Requirement' used to inform the user of some information.
-        case "NOTE/./.": {
+        case "NOTE": {
             evaluatedRequirements[reqID] = {
                 "status": STATUSES.NOTE,
                 "usedCourses": []
@@ -288,7 +288,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         //         };
         //     }
         // }
-        
+
         // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated.
         // These two are combined since they're very similar
         case "COURSES/NUM/GROUPMAX":
