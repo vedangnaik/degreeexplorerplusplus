@@ -289,6 +289,43 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         //     }
         // }
         
+        // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated.
+        // These two are combined since they're very similar
+        case "COURSES/NUM/GROUPMAX":
+        case "COURSES/FCES/GROUPMAX": {
+            let usedCourses = [];
+
+            // Evaluate all unevaluated recursReqs, then apply the GROUPMAX to each usedCourses of each recursReqs and rerun the check to get the new status.
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                
+                let usedCoursesForThisReq = evaluatedRequirements[recursReqID]["usedCourses"];
+                // Get all the courses which we are supposed to put a GROUPMAX on from usedCoursesForThisReq.
+                const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(usedCoursesForThisReq, requirementObj["courses"]);
+
+                // From the usedCourses of this req, remove the excess, if any. Then, pass it back into the requirement for evaluation.
+                // This is a bit of a compound "branchless" while loop to compactly choose the loop's condition based on the type. A little pointless, but eh.
+                while (
+                    (requirementObj["type"] === "COURSES/FCES/GROUPMAX" && getNumCreditsInList(coursesToFilter) > requirementObj["count"]) || 
+                    (requirementObj["type"] === "COURSES/NUM/GROUPMAX"  && coursesToFilter.length > requirementObj["count"])
+                ) {
+                    usedCoursesForThisReq.splice(usedCoursesForThisReq.indexOf(coursesToFilter.pop()), 1);
+                }                
+
+                evaluateProgramRequirement(programID, recursReqID, usedCoursesForThisReq, evaluatedRequirements);
+                
+                // Save usedCourses for this req.
+                usedCourses = usedCourses.concat(coursesToFilter);
+            }
+
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.COMPLETE,
+                "usedCourses": [...new Set(usedCourses)]
+            };
+            break;
+        }
         
 
         case "CATEGORIES/FCES/GROUPMAX":
