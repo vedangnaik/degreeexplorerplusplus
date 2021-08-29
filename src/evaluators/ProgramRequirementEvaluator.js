@@ -13,10 +13,10 @@ function getAllCoursesFromScheduledListInCoursesList(scheduledCourses, listedCou
 
 function getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, listedCategories) {
     // Check whether all the categories in here are validatable. If they aren't, then there's no point checking the others, since the requirement cannot be validated anyway.
-    const validatable = listedCategories
+    const allValidatable = listedCategories
         .map(categoryID => CourseCategoriesData[categoryID]["validatable"])
         .reduce((x, y) => x && y, true);
-    if (validatable) {
+    if (allValidatable) {
         const coursesInSchedule = [];
         listedCategories
             .forEach(categoryID => {
@@ -25,9 +25,9 @@ function getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, listed
                     .filter(courseID => !coursesInSchedule.includes(courseID) && categoryRegex.test(courseID))
                     .forEach(courseID => coursesInSchedule.push(courseID));
             });
-        return [validatable, coursesInSchedule];
+        return [allValidatable, coursesInSchedule];
     } else {
-        return [validatable, []];
+        return [allValidatable, []];
     }
 }
 
@@ -87,21 +87,17 @@ function getNumCreditsInList(courses) {
         .reduce((x, y) => x + y, 0.0);
 }
 
-export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
+export function evaluateProgramRequirement(programID, reqID, scheduledCourses, evaluatedRequirements) {
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
-        case "UNVERIFIABLE/./.":
-        case "UNVERIFIABLE/././RECURS": {
-            return {
-                [reqID]: {
-                    "status": STATUSES.UNVERIFIABLE,
-                    "usedCourses": []
-                }
-            };
+        case "UNVERIFIABLE": {
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.UNVERIFIABLE,
+                "usedCourses": []
+            }
+            break;
         }
 
-        // Mistake in data.
-        case "COURSES/NUM/LIST/RECURS":
         // NUM is redundant here - everything in "courses" must be fulfilled.
         case "COURSES/NUM/LIST": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
@@ -110,119 +106,63 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             const satisfied = requirementObj["courses"]
                 .map(courseID => coursesInSchedule.includes(courseID))
                 .reduce((x, y) => x && y, true);
-            return {
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": satisfiedCourses
-                }
+            
+            evaluatedRequirements[reqID] = {
+                "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": satisfiedCourses
             };
+            break;
         }
 
         // At least "count" credits in courses belonging to "categories".
         case "CATEGORIES/FCES/MIN": {
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             if (validatable) {
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
+                evaluatedRequirements[reqID] = {
+                    "status": getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                    "usedCourses": coursesInSchedule
                 };
+                break;
             } else {
-                return {
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                }
-            }
-        }
-
-        // At least "count" credits in courses belonging to "categories", with additional restrictions based on requirements in "recursReqs".
-        case "CATEGORIES/FCES/MIN/RECURS": {
-            let recursReqs = {};
-            
-            const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            
-            if (validatable) {
-                for (const recursReqID of requirementObj["recursReqs"]) {
-                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-                }
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
-                }
-            } else {
-                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
-                    "status": STATUSES.NA,
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.UNVERIFIABLE,
                     "usedCourses": []
-                });
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []                    
-                    }
-                }
+                };
+                break;
             }
         }
 
         // At least "count" number of courses from "categories"
         case "CATEGORIES/NUM/MIN": {
             const [validatable, coursesInSchedule] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            return {
-                [reqID]: {
-                    "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                    "usedCourses": validatable ? coursesInSchedule.slice(0, requirementObj["count"]) : []
-                }
+            
+            evaluatedRequirements[reqID] = {
+                "status": validatable ? (coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? coursesInSchedule : []
             };
+            break;
         }
 
         // At least "count" credits worth of courses from "courses".
         case "COURSES/FCES/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-            return {
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": satisfied ? usedCourses : []
-                }
-            };
-        }
 
-        // At least "count" credits worth of courses from "courses", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES/FCES/MIN/RECURS": {            
-            let coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            
-            let recursReqs = {};
-            for (const recursReqID of requirementObj["recursReqs"]) {
-                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
+            evaluatedRequirements[reqID] = {
+                "status": getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": coursesInSchedule
             }
-
-            const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-            return {
-                ...recursReqs,
-                [reqID]: {
-                    "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": usedCourses
-                }
-            };
+            break;
         }
 
         // At least "count" number of courses from "courses".
         case "COURSES/NUM/MIN": {
             const coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            return {
-                [reqID]: {
-                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
-                }
+
+            evaluatedRequirements[reqID] = {
+                "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
+                "usedCourses": coursesInSchedule
             };
+            break;
         }
 
          // At least "count" credits worth of courses in "courses" and "categories".
@@ -232,201 +172,282 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses) {
             coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
             const [validatable, coursesFromCategories] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
             coursesInSchedule = coursesInSchedule.concat(coursesFromCategories);
-            // If validatable, check the number of credits.
-            const [satisfied, usedCourses] = validatable ? getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]) : [false, []];
 
-            return {
-                [reqID]: {
-                    "status": validatable ? (satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
-                    "usedCourses": usedCourses
-                }
+            // If validatable, check number of credits.
+            evaluatedRequirements[reqID] = {
+                "status": validatable ? (getNumCreditsInList(coursesInSchedule) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? coursesInSchedule : []
             };
+            break;
         }
 
-        // At least "count" credits worth of courses in "courses" and "categories", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES_CATEGORIES/FCES/MIN/RECURS": {
-            let coursesInSchedule = []
-            let recursReqs = {};
-
-            coursesInSchedule = coursesInSchedule.concat(getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]));
-            const [validatable, coursesFromCategories] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"]);
-            coursesInSchedule = coursesInSchedule.concat(coursesFromCategories);
-
-            if (validatable) {
-                // Evaluate each recurs requirement. These recursReqs are always going to be either GROUPMAX or GROUPMIN. coursesInSchdule will be modifed in place by the recursive calls.
-                for (const recursReqID of requirementObj["recursReqs"]) {
-                    recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-                }
-                // Now that we have the final list, check if it has enough credits.
-                const [satisfied, usedCourses] = getNumCreditsWorthOfCoursesFromList(coursesInSchedule, requirementObj["count"]);
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": satisfied ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                        "usedCourses": usedCourses
-                    }
-                }
-            } else {
-                // Else, just mark each child as not needed and return UNVERIFIABLE.
-                requirementObj["recursReqs"].forEach(recursReqID => recursReqs[recursReqID] = {
-                    "status": STATUSES.NA,
-                    "usedCourses": []
-                });
-                return {
-                    ...recursReqs,
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                };
-            }
-        }
-
-        // At least "count" courses from "courses", with additional restrictions based on requirements in "recursReqs".
-        case "COURSES/NUM/MIN/RECURS": {
-            let coursesInSchedule = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-
-            let recursReqs = {};
-            for (const recursReqID of requirementObj["recursReqs"]) {
-                recursReqs = {...recursReqs, ...evaluateProgramRequirement(programID, recursReqID, coursesInSchedule)};
-            }
-
-            return {
-                ...recursReqs,
-                [reqID]: {
-                    "status": coursesInSchedule.length >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE,
-                    "usedCourses": coursesInSchedule.slice(0, requirementObj["count"])
-                }
-            }
-        }
-
-        // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        case "COURSES/NUM/GROUPMAX": {
-            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            return {
-                [reqID]: {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
-                }
-            };
-        }
-
-        // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        case "COURSES/FCES/GROUPMAX": {
-            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-            const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-            // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
-            while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-                scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-            }
-            // Return COMPLETE with whatever's left.
-            return {
-                [reqID]: {
-                    "status": STATUSES.COMPLETE,
-                    "usedCourses": coursesToFilter
-                }
-            };
-        }
-
-        // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
-        case "CATEGORIES/FCES/GROUPMAX": {
-            // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-            const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
-            // If it's validatable, remove any excess courses
-            if (validatable) {
-                while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-                    scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-                }
-                return {
-                    [reqID]: {
-                        "status": STATUSES.COMPLETE,
-                        "usedCourses": coursesToFilter
-                    }
-                };
-            } else {
-                return {
-                    [reqID]: {
-                        "status": STATUSES.UNVERIFIABLE,
-                        "usedCourses": []
-                    }
-                };
-            }
-        }
-        
-        // Mistake in data.
-        case "NOTE/././RECURS":
         // 'Requirement' used to inform the user of some information.
-        case "NOTE/./.": {
-            return {
-                [reqID]: {
-                    "status": STATUSES.NOTE,
-                    "usedCourses": []
-                }
-            }
+        case "NOTE": {
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.NOTE,
+                "usedCourses": []
+            };
+            break;
         }
 
-        // This is a strange type. There are only 8 occurences among the ~4000 requirements, and they all list recursReqs which are also applied to the dependentReqs they list. Hence, there is no point checking these again, since they'll be checked when the dependentReqs are evaluated. 
-        case "REQUIREMENTS/REQS/MIN/RECURS":
         // At least count requirements from the list.
         case "REQUIREMENTS/REQS/MIN": {
             // Evaluate all requirements this one depends on first
-            let dependentReqs = {};
             for (const dependentReqID of requirementObj["dependentReqs"]) {
-                dependentReqs = {...dependentReqs, ...evaluateProgramRequirement(programID, dependentReqID, scheduledCourses)};
+                if (!(dependentReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, dependentReqID, scheduledCourses, evaluatedRequirements);
+                }
             }
 
             // Go through them and see if there are enough to satisfy this one.
             let usedPrereqs = [];
             let usedCourses = [];
             let count = 0;
-            for (const dependentReqID in dependentReqs) {
-                if (dependentReqs[dependentReqID]["status"] === STATUSES.COMPLETE) {
+            for (const dependentReqID of requirementObj["dependentReqs"]) {
+                if (evaluatedRequirements[dependentReqID]["status"] === STATUSES.COMPLETE) {
                     usedPrereqs.push(dependentReqID);
-                    usedCourses = usedCourses.concat(dependentReqs[dependentReqID]["usedCourses"]);
+                    usedCourses = usedCourses.concat(evaluatedRequirements[dependentReqID]["usedCourses"]);
                     count += 1;
                 }
             }
             // Return INCOMPLETE on failure, but don't touch the dependents.
             if (requirementObj["count"] > count) {
-                return {
-                    ...dependentReqs,
-                    [reqID]: {
-                        "status": STATUSES.INCOMPLETE,
-                        "usedCourses": []
-                    }
-                }
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.INCOMPLETE,
+                    "usedCourses": []
+                };
+                break;
             }
             // Else set all the others to NA and return COMPLETE
             else {
-                for (const dependentReqID in dependentReqs) {
+                for (const dependentReqID of requirementObj["dependentReqs"]) {
                     if (!usedPrereqs.includes(dependentReqID)) {
-                        markRequirementAsNA(programID, dependentReqID, dependentReqs);
+                        markRequirementAsNA(programID, dependentReqID, evaluatedRequirements);
                     }
                 }
-                return {
-                    ...dependentReqs,
-                    [reqID]: {
-                        "status": STATUSES.COMPLETE,
-                        "usedCourses": usedCourses
-                    }
+
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.COMPLETE,
+                    "usedCourses": usedCourses
                 };
+                break;
             }
         }
 
-        case "REQUIREMENTS/NUM/NO_REUSE":
-        case "CATEGORIES/FCES/GROUPMIN":
-        case "CATEGORIES/FCES/GROUPMIN/RECURS":
-        case "CATEGORIES/NUM/GROUPMIN":
-        case "COURSES/FCES/GROUPMIN":
-        case "COURSES/FCES/GROUPMIN/RECURS":
-        case "COURSES/NUM/GROUPMIN":
-        case "COURSES_CATEGORIES/FCES/GROUPMIN": { 
-            return {
-                [reqID]: {
-                    "status": STATUSES.UNIMPLEMENTED,
-                    "usedCourses": []
+
+
+        // // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
+        // case "COURSES/NUM/GROUPMAX": {
+        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+        //     return {
+        //         [reqID]: {
+        //             "status": STATUSES.COMPLETE,
+        //             "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
+        //         }
+        //     };
+        // }
+
+        // // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
+        // case "COURSES/FCES/GROUPMAX": {
+        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
+        //     // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
+        //     while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+        //         scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
+        //     }
+        //     // Return COMPLETE with whatever's left.
+        //     return {
+        //         [reqID]: {
+        //             "status": STATUSES.COMPLETE,
+        //             "usedCourses": coursesToFilter
+        //         }
+        //     };
+        // }
+
+        // // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
+        // case "CATEGORIES/FCES/GROUPMAX": {
+        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
+        //     const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
+        //     // If it's validatable, remove any excess courses
+        //     if (validatable) {
+        //         while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+        //             scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
+        //         }
+        //         return {
+        //             [reqID]: {
+        //                 "status": STATUSES.COMPLETE,
+        //                 "usedCourses": coursesToFilter
+        //             }
+        //         };
+        //     } else {
+        //         return {
+        //             [reqID]: {
+        //                 "status": STATUSES.UNVERIFIABLE,
+        //                 "usedCourses": []
+        //             }
+        //         };
+        //     }
+        // }
+
+        // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated. The default behaviour is evaluating the GROUPMAX on each listed requirement separately. This decision was made based on manual analysis of some GROUPMAX reqs.
+        case "COURSES/NUM/GROUPMAX":
+        case "COURSES/FCES/GROUPMAX": {
+            let usedCourses = [];
+
+            // Evaluate all unevaluated recursReqs, then apply the GROUPMAX to each usedCourses of each recursReqs and rerun the check to get the new status.
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
                 }
+                
+                let usedCoursesForThisReq = evaluatedRequirements[recursReqID]["usedCourses"];
+                // Get all the courses which we are supposed to put a GROUPMAX on from usedCoursesForThisReq.
+                const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(usedCoursesForThisReq, requirementObj["courses"]);
+
+                // From the usedCourses of this req, remove the excess, if any. Then, pass it back into the requirement for evaluation.
+                // This is a bit of a compound "branchless" while loop to compactly choose the loop's condition based on the type. A little pointless, but eh.
+                while (
+                    (requirementObj["type"] === "COURSES/FCES/GROUPMAX" && getNumCreditsInList(coursesToFilter) > requirementObj["count"]) || 
+                    (requirementObj["type"] === "COURSES/NUM/GROUPMAX"  && coursesToFilter.length > requirementObj["count"])
+                ) {
+                    usedCoursesForThisReq.splice(usedCoursesForThisReq.indexOf(coursesToFilter.pop()), 1);
+                }                
+
+                evaluateProgramRequirement(programID, recursReqID, usedCoursesForThisReq, evaluatedRequirements);
+                
+                // Save usedCourses for this req.
+                usedCourses = usedCourses.concat(coursesToFilter);
+            }
+
+            evaluatedRequirements[reqID] = {
+                "status": requirementObj["recursReqs"].length === 1 ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
+                "usedCourses": [...new Set(usedCourses)]
             };
+            break;
+        }
+
+        case "CATEGORIES/FCES/GROUPMAX": {
+            let usedCourses = [];
+            // First, we check if the categories in this req are validatable at all. If not, there's no point doing anything else.
+            // We use the empty list to keep this as fast as possible. We are only interested in validatable, not the actual list.
+            const [validatable, _] = getAllCoursesFromScheduledListInCategoriesList([], requirementObj["categories"]);
+
+            if (!validatable) {
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.UNVERIFIABLE,
+                    "usedCourses": []
+                };
+                break;
+            }
+            
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+
+                let usedCoursesForThisReq = evaluatedRequirements[recursReqID]["usedCourses"];
+                // Since we've already checked earlier, this is guaranteed to be validatable.
+                const [_, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesForThisReq, requirementObj["categories"]);
+
+                while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+                    usedCoursesForThisReq.splice(usedCoursesForThisReq.indexOf(coursesToFilter.pop()), 1);
+                }
+
+                usedCourses = usedCourses.concat(coursesToFilter);
+            }
+
+            evaluatedRequirements[reqID] = {
+                "status": requirementObj["recursReqs"].length === 1 ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
+                "usedCourses": [...new Set(usedCourses)]
+            };
+            break;
+        }
+
+        // GROUPMIN requirements have the same issue that the GROUPMAX ones do. Here however, the default action is to apply the GROUPMIN restriction to all the listed requirements together, vs. individually. This decision was taken based on some manual and rough programmatic analysis of GROPUMIN reqs.
+        case "COURSES/FCES/GROUPMIN":
+        case "COURSES/NUM/GROUPMIN": {
+            // Grab all the used courses from all the recursReqs, removing duplicates.
+            let usedCoursesInAllReqs = [];
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                usedCoursesInAllReqs = usedCoursesInAllReqs.concat(evaluatedRequirements[recursReqID]["usedCourses"]);
+            }
+            usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
+
+            // Grab all the relevant courses from the union list.
+            const usedCourses = getAllCoursesFromScheduledListInCoursesList(usedCoursesInAllReqs, requirementObj["courses"]);
+
+            // A little ridiculous ;) Unlike GROUPMAX, there's no removing of excesses to do here - if the minimum amount isn't reached, then it's a straight failure, and nothing can be done about that. And if it is reached, then excess is fine, so it's good.
+            evaluatedRequirements[reqID] = {
+                "status": requirementObj["recursReqs"].length === 1 ?
+                    (
+                        requirementObj["type"] === "COURSES/FCES/GROUPMIN" ?
+                            (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) :
+                            (usedCourses.length               >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE)
+                    ) : 
+                    STATUSES.UNVERIFIABLE,
+                "usedCourses": usedCourses
+            };
+            break;
+        }
+
+        case "CATEGORIES/FCES/GROUPMIN":
+        case "CATEGORIES/NUM/GROUPMIN": {
+            let usedCoursesInAllReqs = [];
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                usedCoursesInAllReqs = usedCoursesInAllReqs.concat(evaluatedRequirements[recursReqID]["usedCourses"]);
+            }
+            usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
+
+            const [validatable, usedCourses] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesInAllReqs, requirementObj["categories"]);
+
+            // This is almost the same as the previous two, with the addition that if it's not validatable, we return UNVERIFIABLE and an empty usedCourses.
+            evaluatedRequirements[reqID] = {
+                "status": validatable && requirementObj["recursReqs"].length === 1 ?
+                    (
+                        requirementObj["type"] === "CATEGORIES/FCES/GROUPMIN" ?
+                            (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) :
+                            (usedCourses.length               >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE)
+                    ) : 
+                    STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? usedCourses : []
+            };
+            break;
+        }
+
+        // This is just an amalgamation of the previous four.
+        case "COURSES_CATEGORIES/FCES/GROUPMIN": {
+            let usedCoursesInAllReqs = [];
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                usedCoursesInAllReqs = usedCoursesInAllReqs.concat(evaluatedRequirements[recursReqID]["usedCourses"]);
+            }
+            usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
+
+            let [validatable, usedCourses] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesInAllReqs, requirementObj["categories"]);
+            usedCourses = usedCourses.concat(getAllCoursesFromScheduledListInCoursesList(usedCoursesInAllReqs, requirementObj["courses"]));
+
+            evaluatedRequirements[reqID] = {
+                "status": validatable && requirementObj["recursReqs"].length === 1 ?
+                    (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : 
+                    STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? usedCourses : []
+            };
+            break;
+        }
+
+        case "REQUIREMENTS/NUM/NO_REUSE": {
+            evaluatedRequirements[reqID] = {
+                "status": STATUSES.UNIMPLEMENTED,
+                "usedCourses": []
+            }
         }
     }
 }
