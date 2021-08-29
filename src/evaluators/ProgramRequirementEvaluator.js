@@ -395,7 +395,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
 
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/NUM/GROUPMIN": {
-            // Grab all the used courses from all the recursReqs, removing duplicates.
             let usedCoursesInAllReqs = [];
             for (const recursReqID of requirementObj["recursReqs"]) {
                 if (!(recursReqID in evaluatedRequirements)) {
@@ -405,12 +404,11 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             }
             usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
 
-            // Grab all the relevant courses from the union list.
             const [validatable, usedCourses] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesInAllReqs, requirementObj["categories"]);
 
             // This is almost the same as the previous two, with the addition that if it's not validatable, we return UNVERIFIABLE and an empty usedCourses.
             evaluatedRequirements[reqID] = {
-                "status": (!validatable) || requirementObj["recursReqs"].length === 1 ?
+                "status": validatable && requirementObj["recursReqs"].length === 1 ?
                     (
                         requirementObj["type"] === "CATEGORIES/FCES/GROUPMIN" ?
                             (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) :
@@ -444,7 +442,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             };
             break;
         }
-
 
         case "REQUIREMENTS/NUM/NO_REUSE": {
             evaluatedRequirements[reqID] = {
