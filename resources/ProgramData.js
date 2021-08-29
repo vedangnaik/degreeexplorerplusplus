@@ -118,7 +118,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Psychology of Economics and Management Certificate - Last updated with 2018-2019 Academic Calendar."
       }
     }
@@ -144,7 +144,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students with very advanced previous knowledge of German may in consultation with the Department take a combination of other 300 or 400-level GER topics courses (taught in German) to meet the requirement. in Req1"
       },
       "Req3": {
@@ -164,11 +164,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: International Course Modules (ICM) or the GER398H0 Research Excursion Program also fulfil the global experience requirement with the previous consent of the department. in Req4"
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: CERT IN GLOBAL GERMAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -231,7 +231,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Other introductory language classes may be approved by the Director of the International Relations Program. in Req1"
       },
       "Req3": {
@@ -290,15 +290,15 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 0.5 credit gained studying international affairs as part of an international experience. Students are encouraged to discuss possible options with the Director of the International Relations Program. Transfer credit equivalents of the following courses earned from participation in an international exchange or actual courses completed via the Summer Abroad program will qualify for this requirement: ECO324H1/ ECO341H1/ ECO342H1/ ECO362H1/ ECO364H1/ ECO365H1/ ECO368H1/ ECO401H1/ ECO403H1/ ECO409H1/ ECO417H1/ ECO419H1/ ECO459H1/ ECO465H1/ GGR314H1/ GGR326H1/ GGR329H1/ HIS324H1/ HIS338H1/ HIS341Y1/ HIS343H1/ HIS344H1/ HIS359H1/ HIS361H1/ HIS377H1/ HIS379H1/ HIS397H1/ HIS401H1/ HIS402H1/ HIS416H1/ HIS419H1/ HIS429H1/ HIS439H1/ HIS451H1/ HIS457H1/ HIS465Y1/ HIS470H1/ HIS473H1/ HIS479H1/ HIS492H1/ HIS493H1/ HIS494H1/ HIS498H1/ JHA384H1/ JPA376Y0/ NMC378H1/ POL324H1/ POL326Y1/ POL329H1/ POL340Y1/ POL361H1/ POL362H1/ POL371H1/ POL372H1/ POL377H1/ POL409H1/ POL410H1/ POL412H1/ POL413H1/ POL417Y1/ POL435H1/ POL441H1/ POL442H1/ POL445H1/ POL456Y1/ POL459Y1/ POL466H1/ POL467H1/ POL468H1/ POL469H1/ POL472H1/ POL477H1/ POL481H1/ POL486H1/ POL486Y1/ POL487H1/ POL487Y1. A Global Classroom course, International Course Module, or Research Excursion Program dealing with some aspect of international affairs not captured in the above list may also fulfill the global experience requirement with approval of the Director of the International Relations Program."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies program will have the new \"AFR\" designator."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cert in International Affairs - last updated with 2021-2022 Calendar"
       }
     }
@@ -512,7 +512,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: CERT IN SUSTAINABILITY - Last updated with 2021-2022 Calendar."
       }
     }
@@ -531,7 +531,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cert in Business Fundamentals - last updated with 2021-2022 Calendar"
       }
     }
@@ -583,15 +583,15 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Some offerings of HIS389H1, HIS466H1 and HIS496H1 may also count towards this focus. Check with the department for current offerings."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 0.5 FCE from non-HIS courses may be substituted for requirement 2, with permission of the department. Substitutions will be reviewed based on a copy of the course syllabus."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Law and History (Specialist) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -643,15 +643,15 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Some offerings of HIS389H1, HIS466H1 and HIS496H1 may also count towards this focus. Check with the department for current offerings."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 0.5 FCE from non-HIS courses may be substituted for requirement 2, with permission of the department. Substitutions will be reviewed based on a copy of the course syllabus."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Law and History (Major) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -684,7 +684,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: TRN409H1 (Canadian Defense Policy since the end of the Cold War) and TRN409H1 (Nuclear Weapons and International Politics) may also be counted for credit towards Req2 above"
       }
     }
@@ -717,7 +717,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: TRN409H1 (Canadian Defense Policy since the end of the Cold War) and TRN409H1 (Nuclear Weapons and International Politics) may also be counted for credit towards Req2 above."
       }
     }
@@ -908,7 +908,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: TRN409H1 'Nuclear Weapons and International Politics' may be used for Req1."
       }
     }
@@ -966,7 +966,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: TRN409H1 'Nuclear Weapons and International Politics' may be used for Req1."
       }
     }
@@ -1041,11 +1041,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students may request that other courses not listed (such as temporary special topics courses) count towards the focus."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Data Analytics (Specialist) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -1112,11 +1112,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students may request that other courses not listed (such as temporary special topics courses) count towards the focus."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Data Analytics (Major) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -1125,7 +1125,7 @@ export default {
     "title": "FOCUS IN PLANNING",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: NOTE: No overlap is allowed between the Focus in Urban Geography and the Focus in Planning."
       },
       "Req2": {
@@ -1173,7 +1173,7 @@ export default {
     "title": "FOCUS IN PLANNING",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: NOTE: No overlap is allowed between the Focus in Urban Geography and the Focus in Planning."
       },
       "Req2": {
@@ -1262,7 +1262,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Urban Geography (Major) - Last updated with the 2019-2020 Calendar"
       }
     }
@@ -1312,7 +1312,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Urban Geography (Specialist) - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1399,7 +1399,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Scientific Computing - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1551,11 +1551,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req4 and Req6 and Req7 and Req8 and Req11"
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Artificial Intelligence - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1631,7 +1631,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Computational Linguistics & Natural Language Processing - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1681,7 +1681,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Computer Vision - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1721,7 +1721,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Computer Systems - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1760,7 +1760,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Game Design - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1875,7 +1875,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Human-Computer Interaction - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -1926,11 +1926,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students must petition to take a graduate course (CSC2221H1, CSC2401H1, CSC2410H1, CSC2412H1, CSC2420H1, CSC2421H1, CSC2426H1, CSC2451H1, CSC2556H1) in Req3"
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Notes: 1.Students who complete an independent study project (CSC494H1/​ CSC495H1) under the supervision of a faculty member from the Theory group may request to substitute one of CSC494H1/​ CSC495H1 for one of the courses in Req3 above. This request must be made directly to the department's Undergraduate Office. Students who complete a graduate Topics course in Theory may request to count it towards the completion of Req3 above. This request must be made directly to the department's Undergraduate Office."
       },
       "Req6": {
@@ -2063,7 +2063,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Theory of Computation - Last updated with 2019-20 Calendar"
       }
     }
@@ -2122,7 +2122,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Web and Internet Technologies - Last Updated with the 2019-2020 Calendar"
       }
     }
@@ -2156,11 +2156,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Health related Special Topics courses may be chosen when offered at the third or fourth year levels."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Medical Anthropology (Major: General) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -2193,11 +2193,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Health related Special Topics courses may be chosen when offered at the third or fourth year levels."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Medical Anthropology (Major: Society, Culture and Language) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -2230,11 +2230,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Health related Special Topics courses may be chosen when offered at the third or fourth year levels."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Medical Anthropology (Specialist: Society, Culture and Language) - Last updated with 2020-2021 Academic Calendar"
       }
     }
@@ -2280,11 +2280,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Marketing-themed RSM special topics and RSM Summer Abroad courses may be used for Req3 with the approval of the Rotman Commerce Program Office."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Marketing - last updated with the 2019-2020 Calendar"
       }
     }
@@ -2336,11 +2336,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Finance-themed RSM special topics and RSM Summer Abroad courses may be used for Req2 with the approval of the Rotman Commerce Program Office."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Finance - last updated with the 2019-2020 Calendar"
       }
     }
@@ -2381,11 +2381,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Leadership in organizations-themed RSM special topics and RSM Summer Abroad courses may be used for Req2 with the approval of the Rotman Commerce Program Office."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Leadership in Organizations - last updated with the 2019-2020 Calendar"
       }
     }
@@ -2430,19 +2430,19 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: RSM498Y1 (Special Topics in Management: Creative Destruction Lab) may be used for Req1 or Req2"
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Strategy, innovation and/or entrepreneurship-themed RSM special topics and RSM Summer Abroad courses as determined by the Director of Rotman Commerce may be used for Req2"
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Alternative courses may be substituted with approval of the Director, Rotman Commerce. Contact the Rotman Commerce Program office for more information."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Strategy and Innovation - last updated with the 2020-2021 Calendar"
       }
     }
@@ -2482,11 +2482,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Accounting-themed RSM special topics courses and RSM Summer Abroad courses may be used in Req3 with the approval of the Rotman Commerce Program Office"
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Focus in Financial Statement Analysis - last updated with 2019-20 Calendar"
       }
     }
@@ -2537,11 +2537,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Language courses at the 200+ level and international business-themed RSM special topics courses may be used for Req2 with the approval of the Rotman Commerce Program Office."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Note: Focus in International Business - last updated with 2019-2020 Calendar"
       }
     }
@@ -2681,7 +2681,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -2775,7 +2775,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ABORIGINAL STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -2793,11 +2793,11 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students exempted from FSL221Y1 must replace it with FSL271H1 and any FSL or FRE half-course. FSL271H1 must be completed before enrolling in any higher-level FSL course. in Req1"
       },
       "Req4": {
@@ -2811,7 +2811,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students exempted from FSL321Y1 may replace it with 1.0FCE from the following courses: FRE210H1, FRE245H1, FRE246H1, FRE274H1"
       },
       "Req6": {
@@ -2827,7 +2827,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: French Language Learning Major - Last updated with 2018-2019 Calendar."
       }
     }
@@ -2910,7 +2910,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Anthropology and East Asian Studies courses approved by the Centre for the Study of the United States may also be used for Req7"
       },
       "Req9": {
@@ -2980,7 +2980,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA AMERICAN STUDIES - last updated with 2020-2021 Calendar"
       }
     }
@@ -3004,7 +3004,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 4-27 below represent the combination of requirement 3 and 4 in the 2020-2021 calendar (3. One course from RLG201H1/​ RLG202H1/​ RLG203H1/​ RLG204H1/​ RLG205H1/​ RLG206H1/​ RLG208H1/​ RLG241H1; 4. Four RLG half-courses at the 300+ level, one of which must be in the same tradition as was chosen from #3 above.) Reqs 5&6 Indigenous Religions. Regs 7-9 Judaism. Reqs 10-12 Christianity (option 1). Reqs 13-15 Islam. Reqs 16-18 Hinduism. Reqs 19-21 Buddhism. Reqs 22-24 Sikhism. Reqs 25-27 Christianity (option 2)"
       },
       "Req4": {
@@ -3308,7 +3308,7 @@ export default {
         ]
       },
       "Req31": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA RELIGION - Last updated with 2020-2021 Calendar."
       }
     }
@@ -3317,7 +3317,7 @@ export default {
     "title": "MAJOR - ARCHAEOLOGY (B.A.)",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 7.0 credits"
       },
       "Req2": {
@@ -3438,7 +3438,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ARCHAEOLOGY - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -3518,7 +3518,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PHILOSOPHY - Last updated with 2018-2019 Calendar."
       }
     }
@@ -3598,7 +3598,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CONTEMPORARY ASIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -3663,7 +3663,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req6 means that students must complete PRT420H1 if they start their language courses in PRT219Y1, PRT220Y1, or higher. PRT420H1 is recommended for other students."
       },
       "Req8": {
@@ -3678,11 +3678,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PORTUGUESE - Last updated with 2020-2021 Calendar."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4 and Req5 and Req6"
       },
       "Req11": {
@@ -3834,7 +3834,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA HMB: ENVIRONMENT & HEALTH - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -3903,7 +3903,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CLASSICAL CIVILIZATION - Last updated with 2016-2017 Calendar."
       }
     }
@@ -3959,7 +3959,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2017-2018 calendar."
       }
     }
@@ -4016,7 +4016,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least 2.0 credits from the Christianity and Culture courses in Req3 must have a CHC or SMC designator. Students can choose courses from all course groups. Courses from other departments may be accepted on a case-by-case basis. Please contact the Program Coordinator, preferably before taking the course. It will help to have a syllabus for the course being considered."
       },
       "Req6": {
@@ -4064,11 +4064,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Christianity and Culture, Celtic Studies, and Mediaeval Studies programs will have the new \"CHC,\" \"CLT,\" and \"MST\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CHRISTIANITY & CULTURE - Last updated with 2021-2022 Calendar."
       }
     }
@@ -4283,7 +4283,7 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PHYSIOLOGY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -4357,7 +4357,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA LINGUISTICS - Last updated with 2019-2020 Calendar."
       }
     }
@@ -4457,7 +4457,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Note course progressions and prerequisites in Req7. We suggest that students consider the following logical course clusters in their higher years: (a) Earth/planetary materials and mineral resources: ESS321H1/​ ESS221H1, ESS322H1, ESS323H1, ESS324H1, ESS431H1, ESS423H1, ESS441H1 (b) Tectonics: JGA305H1, ESS345H1/​ CSC108H1, ESS321H1, ESS322H1, ESS323H1, ESS441H1, ESS445H1 (c) Environmental biogeochemistry: ESS261H1, ESS311H1, ESS312H1, ESS410H1, ESS461H1 (d) Geoarchaeology: ESS261H1, JGA305H1, ESS461H1, ESS450H1"
       },
       "Req9": {
@@ -4489,7 +4489,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA GEOSCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -4507,11 +4507,11 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students exempted from FSL221Y1 may replace it with FRE271H1 and an additional FRE or FSL half-course. in Req1"
       },
       "Req4": {
@@ -4566,7 +4566,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FRENCH LANG & FRENCH LING - Last updated with 2018-2019 Calendar."
       }
     }
@@ -4841,7 +4841,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req14 and Req15 above represent a hybrid of requirement 5 in the 2021-2022 calendar (REN440H1) and requirement 5 in the 2020-2021 calendar (VIC440Y1). For students who take REN440H1, Req14 will also pick up a half credit from requirement 1 courses for a total of 2.5 credits in requirement 1 courses (2.0 credits of requirement 1 courses will be used for Req1, and 0.5 credits will be used for Req14)."
       },
       "Req17": {
@@ -4875,11 +4875,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA RENAISSANCE STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -4969,7 +4969,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req3 and Req5 and Req7 and Req8"
       },
       "Req11": {
@@ -4983,11 +4983,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 65 for SPA220Y1 or SPA319Y1 or PRT220Y1 or SPA219Y1 in Req7 or Req8"
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA LATIN AMERICAN STUDIES - Last updated with the 2020-2021 Calendar."
       },
       "Req14": {
@@ -5143,7 +5143,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA WOMEN AND GENDER STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -5225,7 +5225,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ACTUARIAL SCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -5380,7 +5380,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA SPANISH - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -5511,7 +5511,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req11 and Req12"
       },
       "Req14": {
@@ -5594,7 +5594,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4"
       },
       "Req6": {
@@ -5618,7 +5618,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA HIST & PHIL OF SCI & TECH - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -5713,7 +5713,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CANADIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -5812,11 +5812,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students must complete CIN105Y1, CIN201Y1 and CIN301Y1 before taking any fourth-year courses"
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CINEMA STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -5885,7 +5885,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CRIMINOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -5968,7 +5968,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req9 and Req8 and Req1 and Req2 and Req3 and Req4 and Req5 and Req7"
       },
       "Req11": {
@@ -6018,11 +6018,11 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: No more than 7.5 FCEs of FAH courses may be taken in total. No more than 13 FAH and VIS FCEs may be taken in combination; of these, no more than 7.5 may be FAH FCEs. Approved courses in other programs may be substituted for up to one FAH FCE. See Department web site for details. In addition, the Faculty of Arts and Science requires Fine Art History Majors who do not complete FAH338H1 to complete at least 0.5 FCE in Arts and Science courses in Breadth Category 5: The Physical and Mathematical Universes."
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FINE ART (HISTORY OF ART) - Last updated with the 2018-2019 calendar."
       }
     }
@@ -6093,7 +6093,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CLASSICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -6194,7 +6194,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BIOETHICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -6293,7 +6293,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA IMMUNOLOGY - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -6412,7 +6412,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CELL AND MOLECULAR BIOLOGY - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -6580,11 +6580,11 @@ export default {
         ]
       },
       "Req14": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Molecular Network Learning Community (each year of focus enrolment)"
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Major: Focus in Molecular Networks of the Cell - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -6750,11 +6750,11 @@ export default {
         ]
       },
       "Req14": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Plant Biotech Learning Community (each year of focus enrolment)"
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Major: Focus in Plant Genomics and Biotechnology - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -6867,11 +6867,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Multicellularity Learning Community (each year of focus enrolment)"
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Major: Focus in Stem Cells and Developmental Biology - Last Updated with 2018-2019 Calendar"
       }
     }
@@ -7083,7 +7083,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ECOLOGY & EVOLUTIONARY BIOLOGY - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -7195,7 +7195,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA SOCIOLOGY - Last updated with 2017-2018 Calendar."
       }
     }
@@ -7268,11 +7268,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least five credits must be NMC and/or NML courses. Up to one credit may be taken from a list of pre-approved courses offered by other departments or in consultation with the Undergraduate Coordinator."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA NR & MID EAST CIV.(GENERAL) - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -7385,7 +7385,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA XTY & CULT (RLG EDUCATION)- Last Updated with 2014-2015 Calendar."
       }
     }
@@ -7472,11 +7472,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 1.0 credit in ONE other discipline offered within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator."
       },
       "Req9": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 1.0 credit in courses at the 200+ level where the primary language of study is not English ."
       },
       "Req10": {
@@ -7531,11 +7531,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Literature and Critical Theory program will have the new \"LCT\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements"
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA LIT & CRIT THEORY - CULTURAL THEORY STRM - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -7622,7 +7622,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 2.0 credits in languages or literatures drawn from other departments, that involve reading texts in a language other than English. At least 1.0 credit must be at the 300+ level."
       },
       "Req9": {
@@ -7674,11 +7674,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Literature and Critical Theory program will have the new \"LCT\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements"
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA LIT & CRIT THEORY (COMP LIT) - Last update with the 2021-2022 Calendar."
       }
     }
@@ -7872,7 +7872,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A research project from a different unit may be accepted with prior written approval from Human Biology if the course is not counting toward a different program."
       },
       "Req16": {
@@ -7889,11 +7889,11 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students cannot combine the Fundamental Genetics and its Applications Major program with any other Human Biology Major for their degree."
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -8007,7 +8007,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA EAST ASIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -8124,7 +8124,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA NUTRITIONAL SCIENCES - Last Updated with 2015-2016 Calendar."
       }
     }
@@ -8251,7 +8251,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENVIRONMENTAL SCIENCE - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -8343,7 +8343,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FINNISH STUDIES - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -8497,7 +8497,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FOREST BIOMATERIALS - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -8600,7 +8600,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FOREST CONSERVATION - Last Updated with 2014-2015 Calendar."
       }
     }
@@ -8688,7 +8688,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FOREST CONSERVATION SCIENCE - Last updated with 2018-2019 Calendar."
       }
     }
@@ -8803,7 +8803,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENVIRONMENTAL ETHICS: Last Updated with 2020-2021 Calendar."
       }
     }
@@ -8852,7 +8852,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA HUNGARIAN STUDIES - Last Updated with 2015-2016 Calendar."
       }
     }
@@ -8978,19 +8978,19 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College programs will have new three-letter designators based on the area of study: \"AFR\" (African Studies), \"BPM\" (Buddhism, Psychology and Mental Health), \"CAR\" (Caribbean Studies), and \"CSE\" (Critical Studies in Equity and Solidarity). Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Christianity and Culture program will have the new \"CHC\" designator. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Renaissance Studies and Education and Society programs will have the new \"REN\" and \"EDS\" designators respectively. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CRITICAL STUDIES IN EQUITY & SOLIDARITY - Last updated with 2021-2022 Calendar."
       }
     }
@@ -9086,7 +9086,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PSYCHOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -9231,7 +9231,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA MATHEMATICS - Last updated with 2019-2020 Calendar."
       }
     }
@@ -9301,11 +9301,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In consultation with the Undergraduate Coordinator, students may take up to 1 credit in Czech and Slovak history or political science courses taught outside the department in Req3 or Req4 above."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-4 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req4 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req7": {
@@ -9347,7 +9347,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -9478,7 +9478,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-8 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req8 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req10": {
@@ -9526,7 +9526,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -9605,7 +9605,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-5 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req5 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req7": {
@@ -9649,7 +9649,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -9748,11 +9748,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In consultation with the Undergraduate Coordinator, students may take up to 1 credit in history or political science courses taught outside the department in Req6 or Req7 above."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs6-7 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req7 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req10": {
@@ -9798,7 +9798,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -9893,11 +9893,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In consultation with the Undergraduate Coordinator, students may take up to 1 credit in Ukrainian history or political science courses taught outside the department in Req4 or Req5 above"
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-6 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req5 above are a combination of the courses listed in requirement 3 and requirement 4 in the same Calendar."
       },
       "Req8": {
@@ -9941,7 +9941,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -10094,7 +10094,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PEACE & CONFLICT STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -10248,11 +10248,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Mediaeval Studies, Christianity and Culture, and Celtic Studies programs will have the new \"MST,\" \"CHC,\" and \"CLT\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA MEDIAEVAL STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -10284,7 +10284,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In Req2 above, students may substitute with another introductory course that emphasizes intersectionality of sexuality, with the approval of the Director or Undergraduate Director."
       },
       "Req4": {
@@ -10301,7 +10301,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req6 comprise the Politics & Policy Thematic Cluster"
       },
       "Req6": {
@@ -10322,7 +10322,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req8 comprise the Formations & Practices Thematic Cluster"
       },
       "Req8": {
@@ -10343,7 +10343,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req10 comprise the Media & Aesthetics Thematic Cluster"
       },
       "Req10": {
@@ -10445,11 +10445,11 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Critical Studies in Equity and Solidarity program will have the new \"CSE\" designator. In addition, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator."
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA SEXUAL DIVERSITY STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -10458,7 +10458,7 @@ export default {
     "title": "MAJOR - ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Double majors in Geography may only overlap 1.0 FCE. Students combining any of our Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 FCEs towards both programs. Students that choose to specialize or major in one of the three Geography programs cannot minor in the same program but may do so in another Geography program."
       },
       "Req2": {
@@ -10478,7 +10478,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet Req2 above. Contact the Undergraduate Administrator to update your program."
       },
       "Req4": {
@@ -10590,7 +10590,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENVIRONMENTAL GEOGRAPHY - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -10662,7 +10662,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students may choose to take courses across the three groups above or within a particular group, depending on their interest, but only up to 1 credit from the environmental science course group in Req6"
       },
       "Req8": {
@@ -10691,7 +10691,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENVIRONMENTAL STUDIES - Last Updated with 2019-2020 Calendar."
       }
     }
@@ -10708,7 +10708,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req3": {
@@ -10791,7 +10791,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA FRENCH LANGUAGE & LIT - Last updated with 2018-2019 Calendar."
       }
     }
@@ -10852,7 +10852,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BOOKS & MEDIA STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -10924,15 +10924,15 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A capstone integrative course (0.5) credits may be used for Req7 above."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Special Topics courses with Islam content (like NMC277H1 or RLG412H1) will also count towards the program."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ISLAMIC STUDIES - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -11033,7 +11033,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req5 and Req6 and Req7"
       },
       "Req10": {
@@ -11045,7 +11045,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CHEMISTRY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -11182,11 +11182,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 0.5 credit additional are given if taking MGY311Y1 in lieu of BCH311H1/CSB349H1 in Req7"
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA MOLEC GENETICS & MICROBIOL - Last Updated with 2019-2020 Calendar."
       }
     }
@@ -11398,11 +11398,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: This program can be combined with other Environmental programs (see School of the Environment), as well as Science (e.g., Chemistry, Earth Sciences) and Social Science (e.g., Economics) programs."
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -11449,7 +11449,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: GER150H1 should be taken as early as possible; GER205H1 should be taken together with GER200Y1, and must be taken prior to completing GER300Y1"
       },
       "Req5": {
@@ -11486,15 +11486,15 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 F.C.E. in identified or preapproved cognate courses may count (i.e. courses offered by other departments containing a relevant Germanic component and a final paper on a Germanic topic); please inquire at the Department and get approved in advance."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Please note: (a) All majors should schedule an appointment with the Undergraduate Coordinator for personalized counselling as early in their studies as possible; (b) students with prior German knowledge are required to contact the department to take a placement test; self-placement is not allowed; (c) Completion of GER205H1 is a prerequisite for taking ANY 300-level literature courses taught in German; (d) completion of GER305H1 is a prerequisite for taking ANY 400-level literature courses taught in German; (e) 300-level courses may be replaced by 400-level courses (inquire in advance); (f) GER401H1 is not a program requirement, but recommended."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA GERMAN STUDIES - Last updated with 2019-20 Academic Calendar"
       }
     }
@@ -11565,7 +11565,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA DIASPORA & TRANSNAT STUDIES - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -11709,7 +11709,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ASTRONOMY & ASTROPHYSICS - Last updated with 2018-2019 Calendar."
       }
     }
@@ -11817,11 +11817,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Buddhism, Psychology and Mental Health program will have the new \"BPM\" designator. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COG SCI: ARTS - PERCEPTION & ATTENTION - Last updated with 2021-2022 Calendar."
       }
     }
@@ -11952,7 +11952,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COG SCI: ARTS - LANGUAGE & COGNITION - Last updated with 2020-2021 Calendar."
       }
     }
@@ -12067,11 +12067,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Buddhism, Psychology and Mental Health program will have the new \"BPM\" designator. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COG SCI: ARTS - THINKING & REASONING - Last updated with 2021-2022 Calendar."
       }
     }
@@ -12238,11 +12238,11 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Buddhism, Psychology and Mental Health program will have the new \"BPM\" designator. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COG SCI: SCI - COMPUTATIONAL COGNITION - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -12346,7 +12346,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COG SCI: SCI - COGNITION & THE BRAIN - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -12415,7 +12415,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA LATIN - Last Updated with 2015-2016 Calendar"
       }
     }
@@ -12569,7 +12569,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA INTERNATIONAL RELATIONS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -12710,7 +12710,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A research project from a different unit may be accepted with prior written approval from Human Biology if the course is not counting toward a different program. in Req10"
       },
       "Req12": {
@@ -12747,11 +12747,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The Neuroscience major cannot be paired with any other Human Biology Program managed major program."
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -12872,7 +12872,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Economics Major - Last updated with 2020-2021 Academic Calendar."
       }
     }
@@ -12881,7 +12881,7 @@ export default {
     "title": "MAJOR - ANTHROPOLOGY (EVOLUTIONARY)",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 6.5 full courses or their equivalent"
       },
       "Req2": {
@@ -12984,7 +12984,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ANTHROPOLOGY (EVOLUTIONARY) - Last updated with 2020-2021 Calendar."
       }
     }
@@ -13111,7 +13111,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BUDDHIST STUDIES - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -13193,7 +13193,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Industrial Relations & Human Resources Major - Last updated with 2018-2019 Calendar."
       }
     }
@@ -13375,7 +13375,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -13457,11 +13457,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies, Caribbean Studies, and Critical Studies in Equity and Solidarity programs will have the new \"AFR,\" \"CAR,\" and \"CSE\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CARIBBEAN STUDIES - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -13581,7 +13581,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: With permission of the director the following courses may be used in Req10: TRN300H1, TRN301Y1, TRN302Y1, TRN400H1, TRN404Y1, TRN405Y1, TRN377Y1, TRN477H1; one credit from TRN160Y1, TRN161Y1, TRN171Y1, TRN172Y1."
       },
       "Req13": {
@@ -13599,7 +13599,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ETHICS, SOCIETY & LAW - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -13608,7 +13608,7 @@ export default {
     "title": "MAJOR - EUROPEAN STUDIES",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs2-7 represent the First Year language requirement (1.0 credit)"
       },
       "Req2": {
@@ -13745,7 +13745,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs15-25 represent the Third Year language requirement (1.0 credit)"
       },
       "Req15": {
@@ -13941,7 +13941,7 @@ export default {
         ]
       },
       "Req30": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA EUROPEAN STUDIES - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -14062,7 +14062,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11"
       },
       "Req14": {
@@ -14080,7 +14080,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENGLISH - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -14089,7 +14089,7 @@ export default {
     "title": "MAJOR - HUMAN GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Double majors in Geography may only overlap 1.0 credit. Students combining any Geography Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 credits towards both programs."
       },
       "Req2": {
@@ -14109,7 +14109,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet Req2 abovet. Contact the Undergraduate Administrator to update your program"
       },
       "Req4": {
@@ -14166,7 +14166,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 credit can be used from GGR493Y1 in Req8 above based on suitability of placement for this program, and approved by department."
       },
       "Req10": {
@@ -14208,7 +14208,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -14409,11 +14409,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Celtic Studies, Christianity and Culture, and Mediaeval Studies programs will have the new \"CLT,\" \"CHC,\" and \"MST\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CELTIC STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -14422,7 +14422,7 @@ export default {
     "title": "MAJOR - COMPUTER SCIENCE",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The options listed in Req2 below represent the pathways to satisfy the CSC first year requirement - (CSC108H1, CSC148H1, CSC165H1/ CSC240H1)/(CSC110Y1, CSC111H1) - and the CSC236H1/ CSC240H1 second year requirement."
       },
       "Req2": {
@@ -14645,7 +14645,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req20 above meet the requirements for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meet this requirement."
       },
       "Req22": {
@@ -14656,11 +14656,11 @@ export default {
         ]
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req22 above denotes participation in the PEY Co-op (Professional Experience Year Co-op) program (PEY200Y1)"
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req25": {
@@ -14691,7 +14691,7 @@ export default {
         ]
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 25 and 26 above represent completion of the Arts & Science Internship (ASIP) stream"
       },
       "Req28": {
@@ -14706,7 +14706,7 @@ export default {
         ]
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req12 and Req20"
       },
       "Req30": {
@@ -14724,11 +14724,11 @@ export default {
         ]
       },
       "Req31": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req 29 and 30 above mean that: (1) a course that is used for Req12 may also be used for Req20; (2) no course may be used for more than one of the following requirements: Req3, Req4, Req5, Req6, Req7, Req9, Req10, Req12."
       },
       "Req32": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA COMPUTER SCIENCE - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -14813,11 +14813,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies and Caribbean Studies programs will have the new \"AFR\" and \"CAR\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA AFRICAN STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -14912,7 +14912,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The department is open to the use of 300-level non-field course(s) in CHM/CSB/EEB/HMB/IMM/LMP/MGY/PCL/PSL to fulfill Req9 requirement, but students must seek approval from the department prior to course enrolment."
       },
       "Req11": {
@@ -14946,7 +14946,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BIOCHEMISTRY - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -14955,7 +14955,7 @@ export default {
     "title": "MAJOR - ANTHROPOLOGY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 6.5 full courses or their equivalent"
       },
       "Req2": {
@@ -15057,7 +15057,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: For Requirements 10-13 - 1.0 additional full course equivalent from a Group other than that used to meet requirements #6-9"
       },
       "Req14": {
@@ -15113,7 +15113,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ANTHROPOLOGY - Last Updated with the 2020-2021 Calendar"
       }
     }
@@ -15245,7 +15245,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PHYSICS - Last updated with 2019-2020 Calendar."
       }
     }
@@ -15415,7 +15415,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A research project from a different unit may be accepted with prior written approval from Human Biology if the course is not counting toward a different program"
       },
       "Req15": {
@@ -15431,11 +15431,11 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The Health & Disease major cannot be paired with any other Human Biology managed major program"
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with 2020-2021 Calendar."
       }
     }
@@ -15533,11 +15533,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 6 and 7 above represents requirement 3 in the 2020-2021 Calendar (POL214H1/​ POL224H1 and 0.5 credit at the 200-level or higher years in Canadian Politics). The course that is used to satisfy Req6 above (POL214H1, POL224H1, POL214Y1 or POL224Y1) will also be counted in Req7."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: For Topics courses that may fulfill the Canadian Politics requirement, please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/canadian-politics-courses/"
       },
       "Req10": {
@@ -15563,7 +15563,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: For Topics courses that may fulfill the Diversity and Identity requirement, please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/diversity-identity-politics-courses/"
       },
       "Req13": {
@@ -15611,11 +15611,11 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/ for a full list of Non-Political courses approved for Political Science program requirements in Req1. Non-Political Science Topics courses will be based on the content of the course."
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA POLITICAL SCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -15678,7 +15678,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Music Major with Ensemble Option: Last Updated with 2016-2017 Calendar"
       }
     }
@@ -15687,7 +15687,7 @@ export default {
     "title": "MAJOR - PHYSICAL & ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Double majors in Geography may only overlap 1.0 credit. Students combining any Geography Minor programs with a Specialist/Major Geography program would normally be allowed to overlap only 1.5 credits towards both programs."
       },
       "Req2": {
@@ -15899,7 +15899,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 credit can be used from GGR493Y1 based on suitability of placement for this program, and approved by department. in Req15"
       },
       "Req17": {
@@ -15952,7 +15952,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PHYS & ENVIRON GEOGRAPHY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -16073,11 +16073,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The Human Biology major cannot be paired with any other Human Biology Program managed major program"
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA HUMAN BIOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -16204,11 +16204,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: NOTES: 1. Students are not allowed to enroll concurrently in the Major Program in Pharmacology and the Major Program in Toxicology. 2. Students are not allowed to enroll concurrently in the Major Program in Pharmacology and a Specialist Program in Toxicology. 3. Students are not permitted to take PCL472Y1 or PCL474Y1."
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA PHARMACOLOGY - Last Updated with 2021-2022 Calendar."
       }
     }
@@ -16267,7 +16267,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Or equivalent to STA220H1 in Req4"
       },
       "Req6": {
@@ -16465,7 +16465,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA HEALTH STUDIES -Last updated with the 2020-2021 Calendar."
       }
     }
@@ -16474,7 +16474,7 @@ export default {
     "title": "MAJOR - ANTHROPOLOGY (SOCIETY, CULTURE & LANGUAGE)",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 6.5 full courses or their equivalent"
       },
       "Req2": {
@@ -16534,11 +16534,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students who want to focus more specifically on the role of language in culture and society should take ANT253H1, ANT425H1, and courses in the C (ii) Subgroup"
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ANTHROPOLOGY (SOCIAL/CUL) - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -16614,7 +16614,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA GREEK - Last Updated with 2015-2016 Calendar"
       }
     }
@@ -16692,7 +16692,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA DRAMA - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -16812,7 +16812,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here."
       },
       "Req12": {
@@ -16906,11 +16906,11 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Requirements 10 to 20 above represent the following requirement in the 2020-2021 calendar: 2.5 FCEs in at least two groups A through H, including at least 0.5 FCEs at the 300-level or above."
       },
       "Req22": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA URBAN STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -16970,7 +16970,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MUSIC MAJOR: Last updated with 2016-2017 Calendar"
       }
     }
@@ -17109,7 +17109,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA STATISTICS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -17199,7 +17199,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BIOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -17404,7 +17404,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA QUANTITATIVE BIOLOGY MAJOR - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -17512,7 +17512,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ITALIAN - Last updated with 2019-2020 Calendar."
       }
     }
@@ -17595,7 +17595,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA ENVIRONMENTAL CHEMISTRY - Last Updated with 2021-2022 Calendar."
       }
     }
@@ -17723,15 +17723,15 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Notes: 1. Students are not allowed to enroll concurrently in the Major Program in Pharmacology and the Major Program in Toxicology. 2. Students are not allowed to enroll concurrently in the Major Program in Pharmacology and a Specialist Program in Toxicology. 3. Students are not permitted to take PCL472Y1 or PCL474Y1."
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Double Major in Pharmacology and Biomedical Toxicology is not a permissible Subject POSt combination"
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA BIOMEDICAL TOXICOLOGY - Last Updated with 2021-2022 Calendar."
       }
     }
@@ -17865,11 +17865,11 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2018-2019 Calendar."
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students cannot combine the Global Health Major program with any other Human Biology Major for their degree."
       }
     }
@@ -18016,11 +18016,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students taking CSB397Y0, CSB490H1, CSB491H1, CSB497H1/CSB498Y1/CSB499Y1, EEB397Y1/EEB497H1/EEB498Y1/EEB499Y1 or MGY480Y1 are encouraged to conduct a genomics-related research project."
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2019-2020 Calendar."
       }
     }
@@ -18188,7 +18188,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -18273,11 +18273,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least five credits must be NMC and/or NML courses. Up to one credit may be taken from a list of pre-approved courses offered by other departments or in consultation with the Undergraduate Coordinator."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA NR & MID EAST CIV.(ANCIENT) - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -18362,11 +18362,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least five credits must be NMC and/or NML courses. Up to one credit may be taken from a list of pre-approved courses offered by other departments or in consultation with the Undergraduate Coordinator."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA NR & MID EAST CIV.(MEDIEVAL) - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -18451,11 +18451,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least five credits must be NMC and/or NML courses. Up to one credit may be taken from a list of pre-approved courses offered by other departments or in consultation with the Undergraduate Coordinator."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA MR & MID EAST CIV. (MODERN) - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -18598,7 +18598,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA EARTH AND ENVIRONMENTAL SYSTEMS - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -18654,7 +18654,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ABORIGINAL STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -18679,7 +18679,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req2"
       },
       "Req4": {
@@ -18706,7 +18706,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2018-2019 Calendar"
       }
     }
@@ -18884,7 +18884,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI AMERICAN STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -18923,7 +18923,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI RELIGION - Last updated with 2020-2021 Calendar."
       }
     }
@@ -18932,7 +18932,7 @@ export default {
     "title": "MINOR - ARCHAEOLOGY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 4.0 credits"
       },
       "Req2": {
@@ -18967,7 +18967,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ARCHAEOLOGY - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -19012,7 +19012,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PHILOSOPHY - Last updated with 2018-2019 Calendar."
       }
     }
@@ -19063,7 +19063,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CONTEMPORARY ASIAN STUDIES - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -19072,7 +19072,7 @@ export default {
     "title": "MINOR - GEOGRAPHIC INFORMATION SYSTEMS",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students combining this program with a Specialist/Major sponsored by the Department of Geography will normally be allowed to count only 1.5 (of the 4.0) credits towards both programs."
       },
       "Req2": {
@@ -19092,7 +19092,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet Req2. Contact the Undergraduate Administrator to update your program."
       },
       "Req4": {
@@ -19126,7 +19126,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 0.5 of GGR493Y1 may be counted (based on internship) in Req5"
       },
       "Req7": {
@@ -19143,7 +19143,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI GEOGRAPHICAL INFO SYSTEMS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -19191,7 +19191,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3"
       },
       "Req6": {
@@ -19206,7 +19206,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PORTUGUESE - Last updated with 2016-2017 Calendar."
       }
     }
@@ -19266,7 +19266,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CLASSICAL CIVILIZATION - Last updated with 2015-2016 Calendar."
       }
     }
@@ -19303,7 +19303,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI JEWISH STUDIES - Last updated with the 2017-2018 Calendar."
       }
     }
@@ -19360,7 +19360,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least 1.5 credits from the Christianity and Culture courses in Req3 must have a CHC or SMC designator. Students can choose courses from all course groups. Courses from other departments may be accepted on a case-by-case basis. Please contact the Program Coordinator, preferably before taking the course. It will help to have a syllabus for the course being considered."
       },
       "Req6": {
@@ -19375,11 +19375,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Christianity and Culture, Celtic Studies, and Mediaeval Studies programs will have the new \"CHC,\" \"CLT,\" and \"MST\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CHRISTIANITY & CULTURE - Last updated with 2021-2022 Calendar."
       }
     }
@@ -19506,7 +19506,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PHYSIOLOGY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -19541,7 +19541,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI LINGUISTICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -19583,7 +19583,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI GEOSCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -19858,11 +19858,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI RENAISSANCE STUDIES - Last updated with 2021-2022 Calendar."
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       }
     }
@@ -19953,11 +19953,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Literature and Critical Theory program will have the new \"LCT\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements"
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI LITERARY STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -20016,7 +20016,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI LATIN AMERICAN STUDIES - Last Updated with the 2020-2021 Calendar."
       },
       "Req7": {
@@ -20117,11 +20117,11 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students exempted from this course must replace it with FRE245H1/' FRE272H1 and any half-course listed immediately below."
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req4": {
@@ -20160,7 +20160,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar."
       }
     }
@@ -20198,7 +20198,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI WOMEN AND GENDER STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -20247,11 +20247,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3"
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI SPANISH - Last updated with 2019-2020 Calendar."
       }
     }
@@ -20313,7 +20313,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI HISTORY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -20366,11 +20366,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: VIS minors are not permitted to take VIS300H0, VIS403H1, VIS404H1, VIS405H1, VIS430Y1, and VIS431Y1"
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI VISUAL STUDIES - Last updated with 2018-2019 Calendar."
       }
     }
@@ -20395,7 +20395,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Recommended: 0.5 FCE from any HPS100-level courses."
       },
       "Req3": {
@@ -20410,7 +20410,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Recommended: at least 0.5 FCE from any HPS 200-level courses"
       },
       "Req5": {
@@ -20425,7 +20425,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI HIST & PHIL OF SCI & TECH - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -20484,7 +20484,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI MUSIC HISTORY & CULTURE - Last updated with 2016-2017 Calendar."
       }
     }
@@ -20540,7 +20540,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CANADIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -20599,7 +20599,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CINEMA STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -20679,11 +20679,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI FINE ART (HISTORY OF ART) - Last updated with 2015-2016 Calendar."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req4 and Req5 and Req6 and Req7"
       },
       "Req11": {
@@ -20757,7 +20757,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BIOETHICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -20802,7 +20802,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI IMMUNOLOGY - Last updated with the 2017-2018 Calendar."
       }
     }
@@ -20874,7 +20874,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI EUROPEAN UNION STUDIES - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -20951,7 +20951,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI SOCIOLOGY - Last updated with 2017-2018 Calendar."
       }
     }
@@ -21006,7 +21006,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least 1.0 credit from the Christianity and Culture courses in Req3 must have a CHC or SMC designator. Students can choose courses from all course groups. Courses from other departments may be accepted on a case-by-case basis. Please contact the Program Coordinator, preferably before taking the course. It will help to have a syllabus for the course being considered."
       },
       "Req6": {
@@ -21022,11 +21022,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Christianity and Culture, Celtic Studies, and Mediaeval Studies programs will have the new \"CHC,\" \"CLT,\" and \"MST\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MA CHRISTIANITY & EDUCATION - Last updated with 2021-2022 Calendar."
       }
     }
@@ -21083,11 +21083,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Buddhism, Psychology and Mental Health, Caribbean Studies, and Critical Studies in Equity and Solidarity programs will have the new \"BPM,\" \"CAR,\" and \"CSE\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BUDDHISM, PSY & MENTAL HLTH - Last Updated with 2021-2022 Calendar."
       }
     }
@@ -21116,7 +21116,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI NEAR & MIDDLE EASTERN CIV. - Last updated with 2016-2017 Calendar."
       }
     }
@@ -21180,7 +21180,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A course related to Education and Society at the 300+ level selected from the offerings in disciplines such as Anthropology, English, French, Geography, History, Indigenous Studies, Psychology, Religion, Sociology, Women & Gender Studies (Arts) may be used in Req4 above. in Req4"
       },
       "Req6": {
@@ -21197,11 +21197,11 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Education and Society program will have the new \"EDS\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI EDUCATION & SOCIETY - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -21251,7 +21251,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI EAST ASIAN STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -21276,7 +21276,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI FINNISH STUDIES - Last Updated with 2014-2015 Calendar."
       }
     }
@@ -21365,7 +21365,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI FOREST BIOMATERIALS - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -21409,7 +21409,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI FOREST CONSERVATION - Last updated with 2018-19 Calendar."
       }
     }
@@ -21484,7 +21484,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Forest Conservation Science - Last Updated with 2018-2019 calendar"
       }
     }
@@ -21545,7 +21545,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL ETHICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -21589,7 +21589,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI HUNGARIAN STUDIES - Last Updated with 2015-2016 Calendar."
       }
     }
@@ -21623,11 +21623,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students not placed in FSL221Y1 or higher by the Placement test must first complete FSL121Y1 before starting this program. Students exempted from FSL221Y1 must replace it with FSL271H1 and any FRE half-course in Req1"
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI FRENCH STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -21690,15 +21690,15 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College programs will have new three-letter designators based on the area of study: \"AFR\" (African Studies), \"BPM\" (Buddhism, Psychology and Mental Health), \"CAR\" (Caribbean Studies), and \"CSE\" (Critical Studies in Equity and Solidarity). Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Christianity and Culture program will have the new \"CHC\" designator. In addition, courses associated with Victoria College's Renaissance Studies and Education and Society programs will have the new \"REN\" and \"EDS\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CRITITICAL STUDIES IN EQUITY & SOLIDARITY - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -21763,7 +21763,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PSYCHOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -21840,7 +21840,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI YIDDISH - Last updated with 2019-2020 Calendar."
       }
     }
@@ -21872,7 +21872,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 80 for MAT221H1 in Req2"
       },
       "Req4": {
@@ -21923,7 +21923,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Mathematics Minor - Last updated with 2020-2021 Academic Calendar."
       }
     }
@@ -21993,11 +21993,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In consultation with the Undergraduate Coordinator, students may take up to 0.5 credits in Czech history and political courses taught outside the department in Req3 or Req4 above."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-4 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req4 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req7": {
@@ -22015,7 +22015,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -22119,7 +22119,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-7 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req4 above are a combination of the courses listed in requirements 3(1.) and 4 in the same Calendar. The courses in Req5 above are a combination of the courses listed in requirements 3(2.) and 4 in the calendar."
       },
       "Req9": {
@@ -22137,7 +22137,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -22207,7 +22207,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-4 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req4 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req6": {
@@ -22225,7 +22225,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -22327,7 +22327,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs5-7 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req7 above are a combination of the courses listed in requirements 3(2.) and 4 in the same Calendar."
       },
       "Req9": {
@@ -22347,7 +22347,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -22438,11 +22438,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In consultation with the Undergraduate Coordinator, students may take up to 0.5 credits in Ukrainian history and political science courses taught outside the department in Req3 or Req4 above."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs3-4 above represent requirements 3 and 4 in the 2020-2021 Calendar. The courses in Req4 above are a combination of the courses listed in requirements 3 and 4 in the same Calendar."
       },
       "Req7": {
@@ -22460,7 +22460,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -22575,11 +22575,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Mediaeval Studies, Christianity and Culture, and Celtic Studies programs will have the new \"MST,\" \"CHC,\" and \"CLT\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI MEDIAEVAL STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -22609,7 +22609,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req4 comprise the Politics & Policy Thematic Cluster"
       },
       "Req4": {
@@ -22627,7 +22627,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req6 comprise the Formations & Practices Thematic Cluster"
       },
       "Req6": {
@@ -22645,7 +22645,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req8 comprise the Media & Aesthetics Thematic Cluster"
       },
       "Req8": {
@@ -22727,11 +22727,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Critical Studies in Equity and Solidarity program will have the new \"CSE\" designator. In addition, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator."
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI SEXUAL DIVERSITY STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -22795,11 +22795,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req5 and Req4 and Req3"
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ITA CULTURE & COMMUN STUD - Last updated with 2019-2020 Calendar."
       }
     }
@@ -22808,7 +22808,7 @@ export default {
     "title": "MINOR - ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Students combining any of our Geography Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 FCEs towards both programs. Double minors in Geography can overlap 1.0 FCE. Students that choose to specialize or major in one of the three Geography programs cannot minor in the same program but may do so in another Geography program."
       },
       "Req2": {
@@ -22828,7 +22828,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet Req2 above. Contact the Undergraduate Administrator to update your program"
       },
       "Req4": {
@@ -22866,7 +22866,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to a 0.5 credit from GGR493Y1, based on suitability of placement for this program, and approved by department, may be used for Req6 above."
       },
       "Req8": {
@@ -22893,7 +22893,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -22915,7 +22915,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL GEOSCI - Last updated with 2017-2018 Calendar."
       }
     }
@@ -23000,11 +23000,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Daniels Students enrolled in this program may be able to fulfill up to 1.0 credit in requirement 3, Group A, from ARC courses. Consult the School of the Environment for more information"
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL STUDIES - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -23051,7 +23051,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI RUSSIAN LIT IN TRANSLAT - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -23060,7 +23060,7 @@ export default {
     "title": "MINOR - ENVIRONMENTAL ANTHROPOLOGY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 4.0 full courses or their equivalent"
       },
       "Req2": {
@@ -23166,7 +23166,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL ANTHROPOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -23214,7 +23214,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BOOKS & MEDIA STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -23263,7 +23263,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI SOUTH ASIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -23333,11 +23333,11 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Other fourth-year courses with a significant DH practicum element, such as CDN435Y1 (Active Citizenship), can also be considered for fulfillment of the capstone requirement (Req3 above), if students receive written permission of the Digital Humanities Program Coordinator within the first two weeks of enrollment in the course."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last Updated with 2020-2021 Calendar"
       }
     }
@@ -23428,7 +23428,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req4 and Req5 and Req6"
       },
       "Req9": {
@@ -23440,7 +23440,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CHEMISTRY - Last updated with 2019-2020 Calendar"
       }
     }
@@ -23535,7 +23535,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL BIOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -23604,11 +23604,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: (a) Students registered for a German Specialist or Major may not simultaneously be registered for a German Minor program; (b) students with prior German knowledge are required to take a placement test and to see the adviser; (c) the exclusion of GER400H1 and GER401H1 does not apply if the student's entry level is post- GER100Y1."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI GERMAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -23632,7 +23632,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A maximum of 1.0 FCE in cognate courses (i.e. courses offered by other departments containing a relevant Germanic component and a final paper on a Germanic topic) is allowed toward Requirement 2; please inquire at the Department and get approved in advance"
       }
     }
@@ -23679,7 +23679,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI DIASPORA & TRANSNAT STUDIES - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -23734,11 +23734,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: PHY131H1, PHY132H1 and PHY151H1, PHY152H1 require MAT135Y1/MAT137Y1/151Y1 and PHY252H1 requires MAT235Y1/MAT237Y1/MAT257Y1."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ASTRONOMY & ASTROPHYSICS - Last updated with 2016-2017 Calendar."
       }
     }
@@ -23793,7 +23793,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL ECONOMICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -23836,7 +23836,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI LATIN - Last Updated with 2015-2016 Calendar"
       }
     }
@@ -23904,7 +23904,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ECONOMICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -23968,7 +23968,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CARIBBEAN STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -24036,7 +24036,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENT & BEHAVIOUR - Last Updated with 2017-2018 Calendar."
       }
     }
@@ -24045,7 +24045,7 @@ export default {
     "title": "MINOR - ENVIRONMENT AND ENERGY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: First Year Courses: 1.0 credit from ( MAT135H1 and MAT136H1)/ MAT137Y1, and 1.0 credit from CHM138H1/​ CHM136H1, CHM139H1/​ CHM135H1, CHM151Y1, PHY131H1, PHY132H1, PHY151H1, PHY152H1"
       },
       "Req2": {
@@ -24121,7 +24121,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENT & ENERGY - Last Updated with 2020-2021 Calendar."
       }
     }
@@ -24221,7 +24221,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL SCIENCE - Last updated with 2020-2021 Calendar"
       }
     }
@@ -24260,7 +24260,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENGLISH - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -24269,7 +24269,7 @@ export default {
     "title": "MINOR - HUMAN GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Double minors in Geography can overlap 1.0 credit. Students combining any Geography Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 credits towards both programs."
       },
       "Req2": {
@@ -24289,7 +24289,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meetReq2 above. Contact the Undergraduate Administrator to update your program."
       },
       "Req4": {
@@ -24324,7 +24324,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -24361,7 +24361,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI CELTIC STUDIES - Last updated with 2018-2019 Calendar."
       }
     }
@@ -24370,7 +24370,7 @@ export default {
     "title": "MINOR - COMPUTER SCIENCE",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The options listed in Req2 below each represent a pathway to satisfying the requirements for the Computer Science Minor."
       },
       "Req2": {
@@ -24657,7 +24657,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI COMPUTER SCIENCE - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -24718,11 +24718,11 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies and Caribbean Studies programs will have the new \"AFR\" and \"CAR\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI AFRICAN STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -24756,7 +24756,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Estonian Studies - Last Updated with 2014-2015 Calendar"
       }
     }
@@ -24765,7 +24765,7 @@ export default {
     "title": "MINOR - ANTHROPOLOGY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 4.0 full courses or their equivalent"
       },
       "Req2": {
@@ -24799,7 +24799,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ANTHROPOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -24869,7 +24869,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PHYSICS - Last updated with 2018-2019 Calendar."
       }
     }
@@ -24908,7 +24908,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI POLITICAL SCIENCE - Last updated with 2017-2018 Calendar."
       }
     }
@@ -24917,7 +24917,7 @@ export default {
     "title": "MINOR - PHYSICAL & ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Students combining any of our Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 FCEs towards both programs. Double minors can overlap 1.0 FCE. Students that choose to specialize or major in one of the three Geography programs cannot minor in the same program but may do so in another Geography program."
       },
       "Req2": {
@@ -24993,7 +24993,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to a 0.5 credit can be used from GGR493Y1, based on suitability of placement for this program, and approved by department may be applied to Req6 above."
       },
       "Req8": {
@@ -25009,7 +25009,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI PHYS & ENVIRON GEOGRAPHY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25061,7 +25061,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI GREEK - Last Updated with 2015-2016 Calendar"
       }
     }
@@ -25100,15 +25100,15 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Innis College's Writing and Rhetoric program will have the new \"WRR\" designator. Joint JEI courses will also see their designator changed to \"JWE.\" Relevant courses with the previous INI or JEI designator will count as equivalent for the purposes of program requirements."
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Creative Expression and Society, and Renaissance Studies programs will have the new \"CRE\" and \"REN\" designators respectively. In addition, active courses associated with St. Michael's College's Book and Media Studies program will have the new \"BMS\" designator. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI WRITING & RHETORIC - Last updated with 2021-2022 Calendar."
       }
     }
@@ -25163,7 +25163,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI DRAMA - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25254,7 +25254,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here"
       },
       "Req10": {
@@ -25348,11 +25348,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Requirements 8 to 18 above represent the following requirement in the 2020-2021 calendar: 1.5 credits in at least two groups A through H, including at least 0.5 credits at the 300-level or above."
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI URBAN STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25374,7 +25374,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 70 for MAT133Y1 in Req1"
       },
       "Req3": {
@@ -25398,7 +25398,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 70 for MAT221H1 in Req4"
       },
       "Req6": {
@@ -25486,7 +25486,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI STATISTICS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25587,7 +25587,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BIOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25653,15 +25653,15 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cognate courses may be substituted with approval of the department for Req5 above."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students enrolled in the German Studies Specialist of Major Program may not simultaneously enroll for a Business German Minor Program."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BUSINESS GERMAN - Last updated with 2020-2021 Calendar."
       }
     }
@@ -25690,7 +25690,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ITALIAN - Last updated with 2015-2016 Calendar."
       }
     }
@@ -25751,7 +25751,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI ENVIRONMENTAL CHEMISTRY - Last updated with 2016-2017 Calendar."
       }
     }
@@ -25805,7 +25805,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Further CHM courses to make a total of 4.0 full course equivalents"
       },
       "Req7": {
@@ -25821,7 +25821,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Nano-science -- last update with 2015-2016 calendar"
       }
     }
@@ -25877,11 +25877,11 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: This humanities-based Type 3 Minor program represents a unique opportunity to study Asian Literatures and Cultures within a Southasian location. Students take core subjects at the first-year or second-year level in Toronto and then spend the fall semester of their second, third or fourth year at the National University of Singapore where they are enrolled in lecture courses. For more information, contact the Undergraduate Office and the Centre for International Experience (CIE, www.cie.utoronto.ca)."
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Asian Literatures and Cultures - Last Updated with 2018-2019 Calendar"
       }
     }
@@ -25890,7 +25890,7 @@ export default {
     "title": "MINOR - ASIAN GEOGRAPHIES (JOINTLY OFFERED WITH NATIONAL UNIVERSITY OF SINGAPORE)",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Double majors in Geography may only overlap 1.0 FCE. Double minors can overlap 1.0 FCE. Students combining any of our Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 FCEs towards both programs."
       },
       "Req2": {
@@ -25929,7 +25929,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Based on availability. Contact department to have other NUS courses approved as necessary. in Req4"
       },
       "Req6": {
@@ -25945,7 +25945,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Asian Geographies - Last Updated with 2017-2018 Calendar"
       }
     }
@@ -26014,7 +26014,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Asian Canadian Studies - Last updated with 2019-2020 Calendar."
       }
     }
@@ -26050,11 +26050,11 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 2.0 FCEs: any available 2000+ LSM courses at the National University of Singapore for which you have the appropriate equivalent U of T course prerequisite and for which space is available (note: 1.0 FCE at NUS must be at the 3000 or 4000 level). You enrol through the NUS generic courses at U of T: NUS201H0, NUS301H0, NUS302H0, etc. For a list of LSM courses see: http://www.lifesciences.nus.edu.sg/lsm.html. To discuss exclusions and prerequisites contact the EEB Undergraduate Office."
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI BIOLOGY (offered jointly with the National University of Singapore) - Last updated with 2018-2019 Calendar."
       }
     }
@@ -26163,15 +26163,15 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Material Culture and Semiotics program will have the new \"MCS\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Book and Media Studies program will have the new \"BMS\" designator. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI MATERIAL CULTURE & SEMIOTICS - Last updated with 2021-2022 Calendar"
       }
     }
@@ -26208,7 +26208,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 77 for VIC191Y1 in Req1"
       },
       "Req4": {
@@ -26226,7 +26226,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 77 for VIC190Y1 in Req1"
       },
       "Req6": {
@@ -26263,19 +26263,19 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Creative Expression and Society, and Material Culture and Semiotics programs will have the new \"CRE\" and \"MCS\" designators respectively. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Innis College's Writing and Rhetoric program will have the new \"WRR\" designator. Relevant courses with the previous INI designator will count as equivalent for the purposes of program requirements."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, active courses associated with St. Michael's College's Book and Media Studies program will have the new \"BMS\" designator. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Creative Expression and Society - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -26305,7 +26305,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 77 for VIC121H1 or VIC122H1 or VIC170Y1 or VIC172Y1 in Req2"
       },
       "Req4": {
@@ -26350,11 +26350,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Creative Expression and Society, and Renaissance Studies programs will have the new \"CRE\" and \"REN\" designators respectively. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MI Science and Society - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -26447,7 +26447,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ABORIGINAL STUDIES - Last updated with 2017-2018 Calendar."
       }
     }
@@ -26551,7 +26551,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP RELIGION - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -26710,7 +26710,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Note that students may substitute ARH495H1 (Research Practicum) for 0.5 FCE of this requirement (assignment to Group A or B to be determined by Undergraduate Coordinator)."
       },
       "Req16": {
@@ -26776,7 +26776,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ARCHAEOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -26855,7 +26855,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHILOSOPHY - Last updated with 2018-2019 Calendar."
       }
     }
@@ -27060,7 +27060,7 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ASTRONOMY & PHYSICS - Last updated with 2018-2019 Calendar."
       }
     }
@@ -27132,7 +27132,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req2 and Req3 and Req4 and Req5 and Req6"
       },
       "Req9": {
@@ -27144,7 +27144,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PORTUGUESE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -27366,11 +27366,11 @@ export default {
         ]
       },
       "Req22": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: or any other approved course for which the student has appropriate prerequisites in Req21"
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: E&H Specialist Program Note: Not all non-ENV courses listed in Req21 above have priority enrolment for the Environment & Health Specialist. Students are responsible for checking the priority of courses, as well as meeting course prerequisites for courses they wish to take. in Req21"
       },
       "Req24": {
@@ -27385,7 +27385,7 @@ export default {
         ]
       },
       "Req25": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: or a minimum of 0.5 FCE from any approved departmental or college independent research project (*the research topic for these courses must be related to environment and health) in Req24"
       },
       "Req26": {
@@ -27427,7 +27427,7 @@ export default {
         ]
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ENVIRONMENT & HEALTH - Last updated with 2020-2021 Calendar."
       }
     }
@@ -27492,7 +27492,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP JEWISH STUDIES Last updated with the 2017-2018 Calendar."
       }
     }
@@ -27533,7 +27533,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: At least 0.5 FCE with a significant emphasis on ethics and social responsibility in Req3. Students may use the CR/NCR option with this H course and have it count toward the program in Req3"
       },
       "Req5": {
@@ -27609,7 +27609,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATHEMATICS & PHYSICS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -27755,7 +27755,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CHRISTIANITY & CULTURE - Last updated with 2014-2015 Calendar."
       }
     }
@@ -28076,7 +28076,7 @@ export default {
         ]
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHYSIOLOGY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -28172,7 +28172,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP LINGUISTICS - Last updated with the 2019-2020 Calendar."
       }
     }
@@ -28494,7 +28494,7 @@ export default {
         ]
       },
       "Req25": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP GEOLOGY - Last updated with 2020-2021 Calendar"
       }
     }
@@ -28512,11 +28512,11 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students exempted from FSL221Y1 must replace it with FSL271H1 and any FSL or FRE half-course in Req1"
       },
       "Req4": {
@@ -28559,7 +28559,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP FRENCH LANG & FRENCH LING - Last updated with 2018-2019 Calendar."
       }
     }
@@ -28883,11 +28883,11 @@ export default {
         ]
       },
       "Req20": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 1.0 credit in a Research Course (a 299Y1 or 399Y1 course, on a Renaissance Studies topic)."
       },
       "Req21": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 2.0 credits in a language relevant to Renaissance Studies - French, Italian, Spanish, Portuguese, Latin, German (only one may be at the introductory level)."
       },
       "Req22": {
@@ -28915,7 +28915,7 @@ export default {
         ]
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req22 and Req23 represent a hybrid of requirement 7 in the 2021-2022 calendar (REN440H1) and requirement 7 in the 2020-2021 calendar (VIC440Y1). For students who take REN440H1, Req22 will also pick up a half credit from requirement 1 courses for a total of 3.5 credits in requirement 1 courses (3.0 credits of requirement 1 courses will be used for Req1, and 0.5 credits will be used for Req22)."
       },
       "Req25": {
@@ -28973,11 +28973,11 @@ export default {
         ]
       },
       "Req28": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SPE Renaissance Studies- Last Updated with 2021-2022 Calendar"
       }
     }
@@ -29068,7 +29068,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP WOMEN AND GENDER STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -29253,7 +29253,7 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CHEMICAL PHYSICS - Last Updated with 2019-2020 Calendar."
       }
     }
@@ -29499,7 +29499,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req19 above meet the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meet this requirement"
       },
       "Req21": {
@@ -29510,11 +29510,11 @@ export default {
         ]
       },
       "Req22": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req21 above denotes participation in the PEY Co-op (Professional Experience Year Co-op) program (PEY200Y1)"
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req24": {
@@ -29545,15 +29545,15 @@ export default {
         ]
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 24 and 25 above represent completion of the Arts & Science Internship program (ASIP) stream"
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req12 and Req19"
       },
       "Req28": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ENVIRONMENT & TOXICOLOGY - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -29578,7 +29578,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for MAT137Y1 in Req2"
       },
       "Req4": {
@@ -29589,7 +29589,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 60 for MAT157Y1 in Req4"
       },
       "Req6": {
@@ -29637,7 +29637,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 70 for ACT240H1 or ACT245H1 or ACT247H1 in Req10"
       },
       "Req12": {
@@ -29726,11 +29726,11 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req19 is Actuarial Work-Integrated Learning Opportunity: a full-time work term in an actuarial field (at least 12-week and 420-hour long)."
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ACTUARIAL SCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -29896,7 +29896,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP SPANISH - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -30074,7 +30074,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req11 and Req12 and Req16 and Req17"
       },
       "Req19": {
@@ -30182,7 +30182,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CANADIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -30281,11 +30281,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students must complete CIN105Y1, CIN201Y1 and CIN301Y1 before taking any fourth-year courses."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CINEMA STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -30392,7 +30392,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CRIMINOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -30490,7 +30490,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: HISTORY OF ART SPECIALIST - Last updated with 2018-2019 Calendar."
       },
       "Req12": {
@@ -30545,11 +30545,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Notes: 1. It is strongly recommended that students acquire a reading knowledge of German, French, or Italian by the end of the Third Year. 2. No more than 13 FAH and VIS courses may be taken in combination. 3. Approved courses in other programs may be substituted for up to two FAH courses. See Department website for details."
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req3 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10"
       },
       "Req17": {
@@ -30657,7 +30657,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOETHICS - Last updated with 2015-2016 Calendar."
       }
     }
@@ -30794,7 +30794,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP IMMUNOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -30986,7 +30986,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CELL & MOLECULAR BIOLOGY - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -31205,11 +31205,11 @@ export default {
         ]
       },
       "Req18": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Molecular Network Learning Community (each year of focus enrolment)"
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Specialist: Focus in Molecular Networks of the Cell - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -31433,11 +31433,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Plant Biotech Learning Community (each year of focus enrolment)"
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Specialist: Focus in Plant Genomics and Biotechnology - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -31618,11 +31618,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Multicellularity Learning Community (each year of focus enrolment)"
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Cell & Molecular Biology Specialist: Focus in Stem Cells and Developmental Biology - Last Updated with 2018-2019 Calendar"
       }
     }
@@ -31756,7 +31756,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req15, Req17, and Req19 below represent a combination of requirement 7 and requirement 8 in the calendar."
       },
       "Req14": {
@@ -31933,7 +31933,7 @@ export default {
         ]
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-21 Calendar."
       }
     }
@@ -32044,7 +32044,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP SOCIOLOGY - Last updated with 2017-2018 Calendar."
       }
     }
@@ -32072,7 +32072,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The 4.0 FCEs must be in one or two primary source languages in Req2"
       },
       "Req4": {
@@ -32147,11 +32147,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: at least 9 credits must be NMC and/or NML courses. Others may be taken from a list of of pre-approved courses offered by other departments."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP NR & MID EAST CIV.(GENERAL)- Last updated with 2020-2021 Calendar."
       }
     }
@@ -32238,11 +32238,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 4.0 FCE in ONE other discipline within the Faculty of Arts & Science - African Studies, Anthropology, Art History, Caribbean Studies, Cinema Studies, Classics, Critical Studies in Equity and Solidarity, Drama, East Asian Studies, History, Music, Political Science, Philosophy, Psychology, Sociology, Women and Gender Studies, and other departments as approved by the program coordinator."
       },
       "Req9": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 2.0 credits in courses where the primary language of study is not English, including at least 1.0 credit at the 300+ level."
       },
       "Req10": {
@@ -32297,11 +32297,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Literature and Critical Theory program will have the new \"LCT\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements"
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP LIT & CRIT THEORY - CULTURAL THEORY STRM- Last Updated with 2021-2022 Calendar"
       }
     }
@@ -32388,7 +32388,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 6.0 credits in languages or literatures drawn from other departments. At least 4.0 of these involve reading texts in a language other than English, including at least 2.0 at the 300+ level."
       },
       "Req9": {
@@ -32440,11 +32440,11 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with Victoria College's Literature and Critical Theory program will have the new \"LCT\" designator. Relevant courses with the previous VIC designator will count as equivalent for the purposes of program requirements."
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP LIT & CRIT THEORY (COMP LIT) - Last Updated with 2021-2022 Calendar"
       }
     }
@@ -32662,7 +32662,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A research project from a different unit may be accepted with prior written approval from Human Biology if the course is not counting toward a different program"
       },
       "Req19": {
@@ -32680,7 +32680,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP FUNDMNTL GENETICS & ITS APP - Last updated with 2020-2021 Calendar."
       }
     }
@@ -32787,7 +32787,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP EAST ASIAN STUDIES - Last updated with 2019-2020 Calendar."
       }
     }
@@ -32970,7 +32970,7 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PLANETARY SCIENCE - Last updated with 2018-2019 Calendar"
       }
     }
@@ -33171,7 +33171,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP FOREST CONSERVATION - Last updated with 2014-2015 Calendar."
       }
     }
@@ -33384,7 +33384,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP FOREST CONSERVATION SCIENCE - Last updated with 2018-2019 Calendar."
       }
     }
@@ -33517,7 +33517,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PSYCHOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -33622,11 +33622,11 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students with a CGPA of 3.5 and above may apply to have graduate level math courses count towards their 400-level course requirements."
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATHEMATICS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -33936,7 +33936,7 @@ export default {
         ]
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SLAVIC LANGUAGES AND CULTURES SPECIALIST - Last updated with 2018-19 Calendar"
       }
     }
@@ -34094,7 +34094,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHARMACEUTICAL CHEMISTRY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -34282,11 +34282,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Three complementary credits with either a disciplinary, regional, or thematic focus relevant to Peace, Conflict and Justice (on approval of the Director, based on the needs of students interdisciplinary programs of study). At least two credits must be at the 300+-level. Up to 1.0 credit of MUN courses may be used to fulfill this requirement, subject to approval by the Director. DISCIPLINARY FOCUS: 3.0 credits from one of ANT, ECO, GGR and Environmental Studies (combined), HIS, PHL, POL, PSY, RLG, SLA, SOC, or from other units with a rationale approved by the Program Director. (Note: The disciplinary focus in this cluster must be different from the discipline chosen in requirement 3. For instance, HIS is excluded for students who have taken 3 HIS FCEs to meet requirement 3; POL is excluded for students who have taken 3 POL FCEs, etc.) REGIONAL STUDIES FOCUS: 3.0 credits on, for example, Canada, Southern Africa, the Middle East, Latin America, or the Slavic countries. THEMATIC FOCUS: 3.0 credits on a thematic topic proposed by the student and approved by the Program Director. Examples include negotiation and conflict resolution, diplomatic history, gender and conflict, morality of war, quantitative analysis, group-identity conflict, economic development and conflict, literature, culture, and everyday life of conflict, or environmental change and conflict."
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PEACE, CONFLICT & JUSTICE - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -34454,11 +34454,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Mediaeval Studies, Christianity and Culture, and Celtic Studies programs will have the new \"MST,\" \"CHC,\" and \"CLT\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MEDIAEVAL STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -34492,7 +34492,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: In Req2 above, students may substitute with another introductory course that emphasizes intersectionality of sexuality, with the approval of the Director or Undergraduate Director."
       },
       "Req4": {
@@ -34509,7 +34509,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req6 comprise the Politics & Policy Thematic Cluster"
       },
       "Req6": {
@@ -34530,7 +34530,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req8 comprise the Formations & Practices Thematic Cluster"
       },
       "Req8": {
@@ -34551,7 +34551,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses listed in Req10 comprise the Media & Aesthetics Thematic Cluster"
       },
       "Req10": {
@@ -34653,11 +34653,11 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Critical Studies in Equity and Solidarity program will have the new \"CSE\" designator. In addition, courses associated with Victoria College's Renaissance Studies program will have the new \"REN\" designator."
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP SEXUAL DIVERSITY STUDIES - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -34666,7 +34666,7 @@ export default {
     "title": "SPECIALIST - ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Students combining Geography Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 FCEs towards both programs. Students that choose to specialize or major in one of the three Geography programs cannot minor in the same program but may do so in another Geography program."
       },
       "Req2": {
@@ -34686,7 +34686,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet requirement 2 above. Contact the Undergraduate Administrator to update your program."
       },
       "Req4": {
@@ -34761,7 +34761,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 0.5 credits from GGR493Y1 may be used for Req7 above, based on suitability of placement for this program, and approved by department."
       },
       "Req10": {
@@ -34775,7 +34775,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 credit from GGR493Y1 may be used for Req10 above, based on suitability of placement for this program, and approved by department."
       },
       "Req12": {
@@ -34828,7 +34828,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ENVIRONMENTAL GEOGRAPHY - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -35057,7 +35057,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ENVIRONMENTAL GEOSCI - Last updated with 2020-2021 Calendar."
       }
     }
@@ -35074,7 +35074,7 @@ export default {
         ]
       },
       "Req2": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Minimum Grade of 63 for FSL221Y1 in Req1"
       },
       "Req3": {
@@ -35153,7 +35153,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2018-2019 Calendar."
       }
     }
@@ -35283,11 +35283,11 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students with a CGPA of 3.5 and above may apply to have graduate level math courses count towards their 400-level course requirements"
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATHEMATICS AND PHILOSOPHY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -35449,7 +35449,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CHEMISTRY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -35665,7 +35665,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP SYNTHETIC & CATALYTIC CHM - Last updated with the 2019-2020 Calendar."
       }
     }
@@ -35753,11 +35753,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: *** The above only reflect the requirements for 1st and 2nd year. Please consult the Calendar for the 3rd and 4th year requirements ***"
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MOLEC GENETICS & MICROBIOL. Last updated with 2019-2020 Calendar."
       }
     }
@@ -35905,7 +35905,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MOL GEN&MICROBIO: GENETICS - Last updated with 2018-2019 Calendar."
       }
     }
@@ -36068,7 +36068,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MOL GEN & MICROBIO: MICROBIOLOGY - Last updated with 2019-2020 Calendar."
       }
     }
@@ -36115,7 +36115,7 @@ export default {
         ]
       },
       "Req4": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: GER150H1 should be taken as early as possible; GER205H1 should be taken together with GER200Y1, and must be taken prior to completing GER300Y1"
       },
       "Req5": {
@@ -36152,15 +36152,15 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 2 F.C.E. in identified or preapproved cognate courses may count (i.e. courses offered by other departments containing a relevant Germanic component and a final paper on a Germanic topic); please inquire at the Department and get approved in advance."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: (a) All specialists should schedule an appointment with the Undergraduate Coordinator for personalized counselling as early in their studies as possible; (b) students with prior German knowledge are required to contact the department to take a placement test; self-placement is not allowed; (c) Completion of GER205H1 is a prerequisite for taking ANY 300-level literature courses taught in German; (d) completion of GER305H1 is a prerequisite for taking ANY 400-level literature courses taught in German; (e) 300-level courses may be replaced by 400-level courses (inquire in advance); (f) GER401H1 is not a program requirement, but recommended."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP GERMAN STUDIES - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -36298,7 +36298,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP INTERNATIONAL RELATIONS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -36476,7 +36476,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: A research project from a different unit may be accepted with prior written approval from Human Biology if the course is not counting toward a different program."
       },
       "Req16": {
@@ -36494,7 +36494,7 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP NEUROSCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -36576,7 +36576,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Economics Specialist - Last updated with 2018-2019 Academic Calendar."
       }
     }
@@ -36614,7 +36614,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Four half credit courses in Greek - please see the 2020-2021 Academic Calendar for this program requirement. It will be coded in Degree Explorer as soon as this is possible."
       },
       "Req6": {
@@ -36687,7 +36687,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Two half-courses in another religious tradition, preferably an Asian tradition such as Hinduism,Sikhism or Buddhism. Please see the 2020-2021 Academic Calendar regarding this requirement. This will be coded in Degree Explorer as soon as possible"
       },
       "Req10": {
@@ -36701,11 +36701,11 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: This does not fulfill the requirement of the 400 level FCE above in Req10"
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP RELIGION: CHRISTIAN ORIGINS - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -36747,7 +36747,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Two consecutive (2 credits) language courses in one of: Chinese, Japanese, Korean, Sanskrit, Pali or Tibetan. Please contact the Undergraduate Administrative Assistant in the Department of Religion to have these courses count towards your program in Degree Explorer."
       },
       "Req6": {
@@ -36846,7 +36846,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BUDDHIST STUDIES - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -36965,7 +36965,7 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Industrial Relations & Human Resources Specialist - Last updated with 2018-2019 Calendar."
       }
     }
@@ -37065,11 +37065,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies, Caribbean Studies, and Critical Studies in Equity and Solidarity programs will have the new \"AFR,\" \"CAR,\" and \"CSE\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CARIBBEAN STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -37130,7 +37130,7 @@ export default {
         ]
       },
       "Req7": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT246H1 is waived for students taking MAT157Y1"
       },
       "Req8": {
@@ -37261,7 +37261,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Mathematics & Its Applications Specialist (Teaching). Last updated with 2020-2021 academic calendar."
       }
     }
@@ -37382,7 +37382,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req1 and Req4 and Req5 and Req6 and Req7 and Req8 and Req9 and Req10 and Req11"
       },
       "Req14": {
@@ -37400,7 +37400,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ENGLISH - Last Updated with 2018-2019 Calendar."
       }
     }
@@ -37600,7 +37600,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP GEOPHYSICS - Last Update with 2020-2021 Calendar"
       }
     }
@@ -37609,7 +37609,7 @@ export default {
     "title": "SPECIALIST - HUMAN GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Students combining any Geography Minor programs with a Specialist/Major program would normally be allowed to overlap only 1.5 credits towards both programs. Students that choose to specialize or major in one of the three Geography programs cannot minor in the same program but may do so in another Geography program."
       },
       "Req2": {
@@ -37629,7 +37629,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 200/300-level GGR courses may also be used to meet Req2 above. Contact the Undergraduate Administrator to update your program."
       },
       "Req4": {
@@ -37678,7 +37678,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 0.5 FCE can be used from GGR493Y1 in Req7 above, based on suitability of placement for this program, and approved by department."
       },
       "Req9": {
@@ -37702,7 +37702,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 credit can be used from GGR493Y1 in Req10 above, based on suitability of placement for this program, and approved by department."
       },
       "Req12": {
@@ -37744,7 +37744,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP HUMAN GEOGRAPHY - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -37956,11 +37956,11 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with St. Michael's College's Celtic Studies, Christianity and Culture, and Mediaeval Studies programs will have the new \"CLT,\" \"CHC,\" and \"MST\" designators respectively. Relevant courses with the previous SMC designator will count as equivalent for the purposes of program requirements."
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP CELTIC STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -38011,7 +38011,7 @@ export default {
         ]
       },
       "Req6": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students with a strong background in an object-oriented language such as Python, Java or C++ may omit CSC108H1 and proceed directly with CSC148H1. There is no need to replace the missing half-credit for program completion; however, please base your course choice on what you are ready to take, not on \"saving\" a half-credit. Consult with the Computer Science Undergraduate Office for advice on choosing between CSC108H1 and CSC148H1."
       },
       "Req7": {
@@ -38058,7 +38058,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: CSC236H1 may be taken without CSC165H1 for students who completed CSC111H1."
       },
       "Req13": {
@@ -38215,7 +38215,7 @@ export default {
         ]
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req26 above satisfy the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meeting this requirement"
       },
       "Req28": {
@@ -38226,11 +38226,11 @@ export default {
         ]
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req28 above denotes participation in the PEY Co-op (Professional Year Co-op) program (PEY200Y1)"
       },
       "Req30": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students in Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req31": {
@@ -38261,11 +38261,11 @@ export default {
         ]
       },
       "Req33": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 31 and 32 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req34": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req21 and Req26"
       },
       "Req35": {
@@ -38277,7 +38277,7 @@ export default {
         ]
       },
       "Req36": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SPE Data Science - Last updated with the 2021-2022 Calendar"
       }
     }
@@ -38286,7 +38286,7 @@ export default {
     "title": "SPECIALIST - COMPUTER SCIENCE",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The options listed in Req2 below represent the pathways to satisfy the CSC first year requirement - (CSC108H1, CSC148H1, CSC165H1/​ CSC240H1)/( CSC110Y1, CSC111H1) - and the CSC236H1/ CSC240H1 second year requirement."
       },
       "Req2": {
@@ -38541,7 +38541,7 @@ export default {
         ]
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req23 above meet the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meet this requirement."
       },
       "Req25": {
@@ -38552,11 +38552,11 @@ export default {
         ]
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req25 above denotes participation in the PEY Co-op (Professional Experience Year Co-op) program (PEY200Y1)"
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req28": {
@@ -38587,7 +38587,7 @@ export default {
         ]
       },
       "Req30": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 28 and 29 above represent completion of the Arts & Science Internship Program (ASIP) stream."
       },
       "Req31": {
@@ -38604,7 +38604,7 @@ export default {
         ]
       },
       "Req32": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req14 and Req16 and Req23"
       },
       "Req33": {
@@ -38617,11 +38617,11 @@ export default {
         ]
       },
       "Req34": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req32 and Req33 above mean that: (1) a course that is used for Req14 may also be used for Req23; (2) a course that is used for Req16 may also be used for Req23; (3) no course may be used for more than one requirement among Req13, Req14 and Req16."
       },
       "Req35": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SPE COMPUTER SCIENCE - Last updated with the 2021-2022 Calendar"
       }
     }
@@ -38669,7 +38669,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT246H1 is waived for students taking MAT157Y1"
       },
       "Req6": {
@@ -38721,7 +38721,7 @@ export default {
         ]
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATH APPL (ECON & FINANCE) - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -38935,11 +38935,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's African Studies and Caribbean Studies programs will have the new \"AFR\" and \"CAR\" designators respectively. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP AFRICAN STUDIES - Last updated with 2021-2022 Calendar."
       }
     }
@@ -39017,7 +39017,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT246H1 is waived for students taking MAT157Y1"
       },
       "Req10": {
@@ -39119,7 +39119,7 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATH & ITS APPL (PHYS SCI) - Last updated with 2020-2021 Calendar."
       }
     }
@@ -39319,11 +39319,11 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Any suitable 300-level course from CHM / CSB / EEB / HMB / IMM / LMP / MGY / PCL / PSL (departmental approval required) in Req15"
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOCHEMISTRY - Last updated with 2020-2021 Calendar."
       },
       "Req20": {
@@ -39520,11 +39520,11 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Course substitutions are possible with written permission of the Program Director. Note that the requirements for a co-sponsoring Departments major can normally be fulfilled with 0.5 to 3.5 additional credits. All Major programs in the co-sponsoring life science departments require BIO120H1, however it is not formally a part of this Specialist Program's requirements."
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOINFO & COMPUT BIOLOGY - Last updated with the 2020-2021 Calendar."
       }
     }
@@ -39602,7 +39602,7 @@ export default {
         ]
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT246H1 is waived for students taking MAT157Y1 in Req8"
       },
       "Req10": {
@@ -39680,7 +39680,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATH & ITS APPL (PROB STAT) - Last updated with 2020-2021 Calendar."
       }
     }
@@ -39868,7 +39868,7 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHYSICS - Last Updated with 2019-2020 Calendar."
       }
     }
@@ -39998,7 +39998,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2020-2021 Calendar."
       }
     }
@@ -40180,7 +40180,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOLOGICAL CHEMISTRY - Last updated with 2019-20 Calendar."
       }
     }
@@ -40364,7 +40364,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP HEALTH AND DISEASE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -40462,11 +40462,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 6 and 7 above represent requirement 3 in the 2020-2021 Calendar (POL214H1/​ POL224H1 and 0.5 credit at the 200-level or higher years in Canadian Politics). The course that is used to satisfy Req6 above (POL214H1, POL224H1, POL214Y1 or POL224Y1) will also be counted in Req7."
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: For Topics courses that may fulfill the Canadian Politics requirement, please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/canadian-politics-courses/"
       },
       "Req10": {
@@ -40503,7 +40503,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: For Topics courses that may fulfill the Diversity and Identity requirement, please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/diversity-identity-politics-courses/"
       },
       "Req14": {
@@ -40565,11 +40565,11 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Please refer to the Department’s website https://politics.utoronto.ca/undergraduate/courses/ for a full list of Non-Political courses approved for Political Science program requirements in Req15. Non-Political Science Topics courses will be based on the content of the course."
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP POLITICAL SCIENCE - Last updated with 2020-2021 Calendar."
       }
     }
@@ -40757,7 +40757,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: If the research course LMP305Y1 is taken, an additional option from the above list (Req16 to Req20) is still required. The combination of LMP305Y1 with the options above is represented by Req22 to Req26 below."
       },
       "Req22": {
@@ -40820,11 +40820,11 @@ export default {
         ]
       },
       "Req28": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: If the research course LMP405Y1 is taken, an additional three courses from the list are still required. in Req27"
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PATHOBIOLOGY - Last updated with 2021-2022 Calendar."
       }
     }
@@ -40897,11 +40897,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: one FCE at the 100-level in a language other than English"
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MUSIC WITH ENSEMBLE OPTION - Last Updated with 2016-2017 Calendar"
       }
     }
@@ -40910,7 +40910,7 @@ export default {
     "title": "SPECIALIST - PHYSICAL & ENVIRONMENTAL GEOGRAPHY",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: OVERLAP BETWEEN GEOGRAPHY PROGRAMS: Students combining any Geography Minor programs with a Geography Specialist/Major program would normally be allowed to overlap only 1.5 credits towards both programs."
       },
       "Req2": {
@@ -41148,7 +41148,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 1.0 credit can be used from GGR493Y1 based on suitability of placement for this program, and approved by department in Req15"
       },
       "Req19": {
@@ -41180,7 +41180,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Up to 0.5 credits can be used from GGR493Y1 based on suitability of placement for this program, and approved by department in Req20"
       },
       "Req22": {
@@ -41196,7 +41196,7 @@ export default {
         ]
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHYS & ENVIRON GEOGRAPHY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -41366,7 +41366,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP FINANCE & ECONOMICS - Last Updated with 2019-2020 Calendar."
       }
     }
@@ -41487,7 +41487,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP APPLIED MATHEMATICS - Last updated with 2020-2021 Calendar."
       }
     }
@@ -41700,7 +41700,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students can take either of the courses in Req20 above as their required independent project or they may take JPM400Y1 as an additional elective (Req15)"
       },
       "Req22": {
@@ -41727,7 +41727,7 @@ export default {
         ]
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req23 above meet the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meet this requirement"
       },
       "Req25": {
@@ -41738,11 +41738,11 @@ export default {
         ]
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req25 above denotes participation in the PEY Co-op (Professional Experience Year Co-op) program (PEY200Y1)"
       },
       "Req27": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req28": {
@@ -41773,11 +41773,11 @@ export default {
         ]
       },
       "Req30": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs28 and 29 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req31": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req15 and Req20 and Req23"
       },
       "Req32": {
@@ -41789,7 +41789,7 @@ export default {
         ]
       },
       "Req33": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 31 and 32 mean that: (1) a course that is used for Req15 may also be used for Req23 (PCL389H1, JPM400Y1); and (2) a course that is used for Req20 may also be used for Req23 (PCL472Y1 or JPM400Y1); but (3) courses used for Req15 may NOT be used for Req20 (i.e., JPM400Y1 cannot be used for BOTH Req15 and Req20)."
       },
       "Req34": {
@@ -41801,7 +41801,7 @@ export default {
         ]
       },
       "Req35": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHARMACOLOGY - Last updated with 2021-2022 Calendar."
       }
     }
@@ -41860,7 +41860,7 @@ export default {
         ]
       },
       "Req5": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: or an equivalent to STA220H1 in Req4"
       },
       "Req6": {
@@ -42071,11 +42071,11 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Effective Fall 2021, courses associated with New College's Critical Studies in Equity and Solidarity program will have the new \"CSE\" designator. Relevant courses with the previous NEW designator will count as equivalent for the purposes of program requirements."
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP HEALTH STUDIES - Last Updated with 2021-2022 Calendar."
       }
     }
@@ -42084,7 +42084,7 @@ export default {
     "title": "SPECIALIST - ANTHROPOLOGY (SOCIETY, CULTURE & LANGUAGE)",
     "detailAssessments": {
       "Req1": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Total 10.0 full courses or their equivalent"
       },
       "Req2": {
@@ -42138,7 +42138,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ANTHROPOLOGY (SOCIAL/CUL) - Last updated with 2020-2021 Calendar."
       }
     }
@@ -42216,7 +42216,7 @@ export default {
         ]
       },
       "Req8": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP DRAMA - Last updated with 2020-2021 Calendar."
       }
     }
@@ -42370,7 +42370,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: 0.5 credits from Group A: Urban Studies. Please contact Urban Studies to have your Group A courses added here"
       },
       "Req16": {
@@ -42465,11 +42465,11 @@ export default {
         ]
       },
       "Req25": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Requirements 14 to 24 above represent the following requirement in the 2020-2021 calendar: 4.0 credits in at least three groups A through H, including at least 2.0 credits at the 300-level or above"
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP URBAN STUDIES - Last updated with 2020-2021 Calendar."
       }
     }
@@ -42647,7 +42647,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 16 and 17 above represent completion of the Arts & Science Internship Program (ASIP) stream."
       },
       "Req19": {
@@ -42691,11 +42691,11 @@ export default {
         ]
       },
       "Req22": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: Successful Completion of an Accompanying Focus"
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SPE STATISTICAL SCIENCE: METHODS AND PRACTICE - Last updated with 2021-2022 calendar"
       }
     }
@@ -42772,11 +42772,11 @@ export default {
         ]
       },
       "Req8": {
-        "type": "UNVERIFIABLE/./.",
+        "type": "UNVERIFIABLE",
         "description": "Requirements of this program are incomplete: one FCE at the 100- level in a language other than English"
       },
       "Req9": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MUSIC - Last Updated with the 2016-2017 Calendar"
       }
     }
@@ -43011,11 +43011,11 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 19 and 20 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req22": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with the 2021-2022 Calendar."
       }
     }
@@ -43222,7 +43222,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students can take either of the courses in Req19 above as their required independent project, or may take JPM400Y1 as an additional elective (Req14)"
       },
       "Req21": {
@@ -43249,7 +43249,7 @@ export default {
         ]
       },
       "Req23": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req22 above meet the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science (ASIP) stream or PEY Co-op will also meet this requirement."
       },
       "Req24": {
@@ -43260,11 +43260,11 @@ export default {
         ]
       },
       "Req25": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req24 above denotes participation in the PEY Co-op (Professional Year Co-op) program (PEY200Y1)"
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req27": {
@@ -43295,11 +43295,11 @@ export default {
         ]
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 27 and 28 above represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req30": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req14 and Req19 and Req22"
       },
       "Req31": {
@@ -43311,7 +43311,7 @@ export default {
         ]
       },
       "Req32": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 30 and 31 mean that: (1) a course that is used for Req14 may also be used for Req22 (PCL389H1, JPM400Y1); and (2) a course that is used for Req19 may also be used for Req22 (PCL472Y1, PCL474Y1, or JPM400Y1); but (3) courses used for Req14 may NOT be used for Req19 (i.e., JPM400Y1 cannot be used for BOTH Req14 and Req20)."
       },
       "Req33": {
@@ -43323,7 +43323,7 @@ export default {
         ]
       },
       "Req34": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP PHARM & BIOMED TOXICOLOGY - Last updated with the 2021-2022 Calendar."
       }
     }
@@ -43478,7 +43478,7 @@ export default {
         ]
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOLOGY - Last updated with 2020-2021 Calendar."
       }
     }
@@ -43732,7 +43732,7 @@ export default {
         ]
       },
       "Req26": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MATERIALS SCIENCE - Last updated with the 2021-2022 Calendar"
       }
     }
@@ -43904,7 +43904,7 @@ export default {
         ]
       },
       "Req18": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP MANAGEMENT - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -44107,7 +44107,7 @@ export default {
         ]
       },
       "Req13": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ITALIAN - Last updated with 2019-2020 Calendar."
       }
     }
@@ -44308,7 +44308,7 @@ export default {
         ]
       },
       "Req19": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Students can take either of the courses in Req18 above as their required independent project, or they make take JPM400Y1 as an additional elective (Req13)"
       },
       "Req20": {
@@ -44335,7 +44335,7 @@ export default {
         ]
       },
       "Req22": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The courses in Req21 above meet the requirement for an integrative, inquiry-based activity. Students who complete the Arts & Science Internship Program (ASIP) stream or PEY Co-op will also meet this requirement."
       },
       "Req23": {
@@ -44346,11 +44346,11 @@ export default {
         ]
       },
       "Req24": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req23 above denotes participation in the PEY Co-op (Professional Experience Year Co-op) program (PEY200Y1)."
       },
       "Req25": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: September 2021 or January 2022 will be the last opportunity for Faculty of Arts & Science students to register for PEY Co-op. Students in Year 3 in the 2021-2022 Fall/Winter session will be the last group of Faculty of Arts & Science students eligible to participate in PEY Co-op. Students starting Year 2 in Fall 2021 or later will only be eligible to participate in the Arts & Science Internship Program stream (https://www.artsci.utoronto.ca/current/academics/asip)"
       },
       "Req26": {
@@ -44381,11 +44381,11 @@ export default {
         ]
       },
       "Req28": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Req26 and 27 represent completion of the Arts & Science Internship Program (ASIP) stream"
       },
       "Req29": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Courses may be reused to satisfy requirements Req13 and Req18 and Req21"
       },
       "Req30": {
@@ -44397,7 +44397,7 @@ export default {
         ]
       },
       "Req31": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Reqs 29 and 30 mean that: (1) a course that is used for Req13 may also be used for Req21 (PCL389H1, JPM400Y1); and (2) a course that is used for Req18 may also be used for Req21 (PCL474Y1 or JPM400Y1); but (3) courses used for Req13 may NOT be used for Req18 (i.e., JPM400Y1 cannot be used for BOTH Req13 and Req18)."
       },
       "Req32": {
@@ -44409,7 +44409,7 @@ export default {
         ]
       },
       "Req33": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOMEDICAL TOXICOLOGY - Last updated with 2021-2022 Calendar."
       }
     }
@@ -44657,7 +44657,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Last updated with 2020-2021 Calendar."
       }
     }
@@ -44871,7 +44871,7 @@ export default {
         ]
       },
       "Req21": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP Physics and Philosophy - Last Updated 2019-2020 Calendar"
       }
     }
@@ -45006,11 +45006,11 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: 1. Students must meet all prerequisites for upper-year math and economics courses, and should choose their sequencing of courses accordingly. 2. MAT223H1/MAT240H1 may be taken in First Year 3. ECO475H1 is strongly recommended. 4. STA302H1/STA303H1 are not accepted in lieu of ECO375H1 5. MAT157Y1 may substitute for MAT137Y1, in which case MAT246H1 can no longer be taken, and students may substitute MAT224H1, MAT247H1, or any 300-level MAT or APM course. Similarly, MAT257Y1 may be substituted for MAT137Y1, and MAT357H1 may substitute for MAT337H1"
       },
       "Req16": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP ECONOMICS & MATHEMATICS - Last updated with 2018-2019 Calendar."
       }
     }
@@ -45038,7 +45038,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The 4.0 FCEs must be in one or two primary source languages in Req2"
       },
       "Req4": {
@@ -45166,11 +45166,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: at least 9 credits must be NMC and/or NML courses. Others may be taken from a list of of pre-approved courses offered by other departments."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP NR & MID EAST CIV.(ANCIENT)- Last Updated with 2020-2021 Calendar"
       }
     }
@@ -45198,7 +45198,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The 4.0 FCEs must be in one or two primary source languages in Req2"
       },
       "Req4": {
@@ -45304,11 +45304,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: at least 9 credits must be NMC and/or NML courses. Others may be taken from a list of of pre-approved courses offered by other departments."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP NR & MID EAST CIV(MEDIEVAL) - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -45336,7 +45336,7 @@ export default {
         ]
       },
       "Req3": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: The 4.0 credits must be in one or two primary source languages in Req2"
       },
       "Req4": {
@@ -45450,11 +45450,11 @@ export default {
         ]
       },
       "Req10": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: at least 9 credits must be NMC and/or NML courses. Others may be taken from a list of of pre-approved courses offered by other departments."
       },
       "Req11": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP NR & MID EAST CIV(MODERN) - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -45600,7 +45600,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Accounting Specialist - Last Updated with 2020-2021 Calendar"
       }
     }
@@ -45737,7 +45737,7 @@ export default {
         ]
       },
       "Req12": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT221H1/​ MAT223H1/​ MAT240H1 is recommended as preparation for ECO375H1. Students taking one of these MAT courses can have it count in lieu of a 0.5 300-level ECO credit required for this program."
       },
       "Req13": {
@@ -45754,7 +45754,7 @@ export default {
         ]
       },
       "Req14": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: MAT235Y1/​ MAT237Y1/ ECO210H1 is strongly recommended for this program. Students taking one of these courses can have it count in lieu of 0.5 300-level credit required for this program."
       },
       "Req15": {
@@ -45783,7 +45783,7 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: Financial Economics Specialist - Last Updated with 2019-2020 Academic Calendar"
       }
     }
@@ -46005,7 +46005,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOL PHY: BIOCHEMISTRY - Last Updated with 2019-2020 Calendar"
       }
     }
@@ -46178,7 +46178,7 @@ export default {
         ]
       },
       "Req15": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOL PHY: PHYSIOLOGY - Last Updated with 2016-2017 Calendar"
       }
     }
@@ -46370,7 +46370,7 @@ export default {
         ]
       },
       "Req17": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOL PHY: ADV PHYSICS - Last Updated with 2016-2017 Calendar"
       }
     }
@@ -46588,7 +46588,7 @@ export default {
         ]
       },
       "Req20": {
-        "type": "NOTE/./.",
+        "type": "NOTE",
         "description": "Note: SP BIOL PHY: IMMUNOLOGY - Last Updated with 2019-2020 Calendar"
       }
     }

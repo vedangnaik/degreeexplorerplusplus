@@ -13,10 +13,10 @@ function getAllCoursesFromScheduledListInCoursesList(scheduledCourses, listedCou
 
 function getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, listedCategories) {
     // Check whether all the categories in here are validatable. If they aren't, then there's no point checking the others, since the requirement cannot be validated anyway.
-    const validatable = listedCategories
+    const allValidatable = listedCategories
         .map(categoryID => CourseCategoriesData[categoryID]["validatable"])
         .reduce((x, y) => x && y, true);
-    if (validatable) {
+    if (allValidatable) {
         const coursesInSchedule = [];
         listedCategories
             .forEach(categoryID => {
@@ -25,9 +25,9 @@ function getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, listed
                     .filter(courseID => !coursesInSchedule.includes(courseID) && categoryRegex.test(courseID))
                     .forEach(courseID => coursesInSchedule.push(courseID));
             });
-        return [validatable, coursesInSchedule];
+        return [allValidatable, coursesInSchedule];
     } else {
-        return [validatable, []];
+        return [allValidatable, []];
     }
 }
 
@@ -321,19 +321,52 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             }
 
             evaluatedRequirements[reqID] = {
-                "status": STATUSES.COMPLETE,
+                "status": requirementObj["recursReqs"].length === 1 ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
                 "usedCourses": [...new Set(usedCourses)]
             };
             break;
         }
-        
 
-        case "CATEGORIES/FCES/GROUPMAX":
+        case "CATEGORIES/FCES/GROUPMAX": {
+            let usedCourses = [];
+            // First, we check if the categories in this req are validatable at all. If not, there's no point doing anything else.
+            // We use the empty list to keep this as fast as possible. We are only interested in validatable, not the actual list.
+            const [validatable, _] = getAllCoursesFromScheduledListInCategoriesList([], requirementObj["categories"]);
+
+            if (!validatable) {
+                evaluatedRequirements[reqID] = {
+                    "status": STATUSES.UNVERIFIABLE,
+                    "usedCourses": []
+                };
+                break;
+            }
+            
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+
+                let usedCoursesForThisReq = evaluatedRequirements[recursReqID]["usedCourses"];
+                // Since we've already checked earlier, this is guaranteed to be validatable.
+                const [_, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesForThisReq, requirementObj["categories"]);
+
+                while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
+                    usedCoursesForThisReq.splice(usedCoursesForThisReq.indexOf(coursesToFilter.pop()), 1);
+                }
+
+                usedCourses = usedCourses.concat(coursesToFilter);
+            }
+
+            evaluatedRequirements[reqID] = {
+                "status": requirementObj["recursReqs"].length === 1 ? STATUSES.COMPLETE : STATUSES.UNVERIFIABLE,
+                "usedCourses": [...new Set(usedCourses)]
+            };
+            break;
+        }
+
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/NUM/GROUPMIN":
-        case "COURSES/FCES/GROUPMAX":
         case "COURSES/FCES/GROUPMIN":
-        case "COURSES/NUM/GROUPMAX":
         case "COURSES/NUM/GROUPMIN":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "REQUIREMENTS/NUM/NO_REUSE": {
