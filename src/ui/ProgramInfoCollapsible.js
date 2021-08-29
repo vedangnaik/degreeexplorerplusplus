@@ -175,6 +175,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warnings/unimplemented reqs, it's yellow. Otherwise, it's green.
         let incomplete = false;
         let warning = false;
+        let unimplemented = false;
 
         for (const reqID in this.#requirementRows) {
             // reqID is guaranteed to be in this object so we don't have to check.
@@ -216,7 +217,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     row.children[0].innerText = `${NOTE_SYMBOL} Note`;
                     break;
                 case STATUSES.UNIMPLEMENTED:
-                    warning = true;
+                    unimplemented = true;
                     row.children[0].innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
                     row.style.background = UNIMPLEMENTED_BACKGROUND;
                     break;
@@ -227,6 +228,8 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             this.collapsibleHeaderDiv.style.backgroundColor = INCOMPLETE_COLOR;
         } else if (warning) {
             this.collapsibleHeaderDiv.style.backgroundColor = UNVERIFIABLE_COLOR;
+        } else if (unimplemented) {
+            this.collapsibleHeaderDiv.style.background = UNIMPLEMENTED_BACKGROUND;
         } else {
             this.collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
         }
