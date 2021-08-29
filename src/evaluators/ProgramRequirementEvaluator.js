@@ -289,8 +289,7 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
         //     }
         // }
 
-        // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated.
-        // These two are combined since they're very similar
+        // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated. The default behaviour is evaluating the GROUPMAX on each listed requirement separately. This decision was made based on manual analysis of some GROUPMAX reqs.
         case "COURSES/NUM/GROUPMAX":
         case "COURSES/FCES/GROUPMAX": {
             let usedCourses = [];
@@ -364,10 +363,38 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
             break;
         }
 
+        // GROUPMIN requirements have the same issue that the GROUPMAX ones do. Here however, the default action is to apply the GROUPMIN restriction to all the listed requirements together, vs. individually. This decision was taken based on some manual and rough programmatic analysis of GROPUMIN reqs.
+        case "COURSES/FCES/GROUPMIN":
+        case "COURSES/NUM/GROUPMIN": {
+            // Grab all the used courses from all the recursReqs, removing duplicates.
+            let usedCoursesInAllReqs = [];
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                usedCoursesInAllReqs = usedCoursesInAllReqs.concat(evaluatedRequirements[recursReqID]["usedCourses"]);
+            }
+            usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
+
+            // Grab all the relevant courses from the union list.
+            const usedCourses = getAllCoursesFromScheduledListInCoursesList(usedCoursesInAllReqs, requirementObj["courses"]);
+
+            // A little ridiculous ;) Unlike GROUPMAX, there's no removing of excesses to do here - if the minimum amount isn't reached, then it's a straight failure, and nothing can be done about that. And if it is reached, then excess is fine, so it's good.
+            evaluatedRequirements[reqID] = {
+                "status": requirementObj["recursReqs"].length === 1 ?
+                    (
+                        requirementObj["type"] === "COURSES/FCES/GROUPMIN" ?
+                            (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) :
+                            (usedCourses.length               >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE)
+                    ) : 
+                    STATUSES.UNVERIFIABLE,
+                "usedCourses": usedCourses
+            };
+            break;
+        }
+
         case "CATEGORIES/FCES/GROUPMIN":
         case "CATEGORIES/NUM/GROUPMIN":
-        case "COURSES/FCES/GROUPMIN":
-        case "COURSES/NUM/GROUPMIN":
         case "COURSES_CATEGORIES/FCES/GROUPMIN":
         case "REQUIREMENTS/NUM/NO_REUSE": {
             evaluatedRequirements[reqID] = {
