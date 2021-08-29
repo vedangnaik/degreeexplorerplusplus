@@ -424,7 +424,25 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
 
         // This is just an amalgamation of the previous four.
         case "COURSES_CATEGORIES/FCES/GROUPMIN": {
+            let usedCoursesInAllReqs = [];
+            for (const recursReqID of requirementObj["recursReqs"]) {
+                if (!(recursReqID in evaluatedRequirements)) {
+                    evaluateProgramRequirement(programID, recursReqID, scheduledCourses, evaluatedRequirements);
+                }
+                usedCoursesInAllReqs = usedCoursesInAllReqs.concat(evaluatedRequirements[recursReqID]["usedCourses"]);
+            }
+            usedCoursesInAllReqs = [...new Set(usedCoursesInAllReqs)];
 
+            let [validatable, usedCourses] = getAllCoursesFromScheduledListInCategoriesList(usedCoursesInAllReqs, requirementObj["categories"]);
+            usedCourses = usedCourses.concat(getAllCoursesFromScheduledListInCoursesList(usedCoursesInAllReqs, requirementObj["courses"]));
+
+            evaluatedRequirements[reqID] = {
+                "status": validatable && requirementObj["recursReqs"].length === 1 ?
+                    (getNumCreditsInList(usedCourses) >= requirementObj["count"] ? STATUSES.COMPLETE : STATUSES.INCOMPLETE) : 
+                    STATUSES.UNVERIFIABLE,
+                "usedCourses": validatable ? usedCourses : []
+            };
+            break;
         }
 
 
