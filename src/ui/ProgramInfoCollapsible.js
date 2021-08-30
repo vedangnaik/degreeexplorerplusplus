@@ -36,6 +36,10 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
     `;
 
     #requirementRows = {};
+    #collapsibleHeaderDiv;
+    #collapsibleBodyDiv;
+    #collapsibleStatusH3;
+    #requirementsStatusP;
 
     constructor(programID) {
         super();
@@ -48,29 +52,35 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
         `;
         this.customTagName = "program-info-collapsible" // Used to easily filter for these divs
             // This is the visible header part of the collapsible. When this is clicked, the body is toggled into appearing/disappearing.
-            this.collapsibleHeaderDiv = document.createElement('div');
-            this.collapsibleHeaderDiv.style = `
+            this.#collapsibleHeaderDiv = document.createElement('div');
+            this.#collapsibleHeaderDiv.style = `
                 width: 57vw;
                 height: 1.5vw;
                 display: flex;
                 outline: 1px solid grey;
                 background-color: ${NOT_EVALUATED_COLOR};
             `;
-            this.collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
-                this.collapsibleStatusH3 = document.createElement('h3');
-                this.collapsibleStatusH3.innerText = '▼';
-                this.collapsibleStatusH3.style = `
+            this.#collapsibleHeaderDiv.onclick = this.#toggleCollapsible.bind(this);
+                this.#collapsibleStatusH3 = document.createElement('h3');
+                this.#collapsibleStatusH3.innerText = '▼';
+                this.#collapsibleStatusH3.style = `
                     margin: auto;
                     padding: 0 10px;
                 `;
-            this.collapsibleHeaderDiv.appendChild(this.collapsibleStatusH3);
+            this.#collapsibleHeaderDiv.appendChild(this.#collapsibleStatusH3);
                 const programNameH3 = document.createElement('h3');
                 programNameH3.innerText = `${programID}: ${ProgramData[programID]['title']}`;
                 programNameH3.style = `
                     margin: auto;
                     flex: 1;
                 `;
-            this.collapsibleHeaderDiv.appendChild(programNameH3);
+            this.#collapsibleHeaderDiv.appendChild(programNameH3);
+                this.#requirementsStatusP = document.createElement("p");
+                this.#requirementsStatusP.style = `
+                    margin: auto;
+                    padding: 0 10px;
+                `;
+            this.#collapsibleHeaderDiv.appendChild(this.#requirementsStatusP);
                 const deleteProgramButton = document.createElement('button');
                 deleteProgramButton.innerText = DELETE_SYMBOL;
                 deleteProgramButton.style = `
@@ -78,11 +88,11 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                     background-color: ${DELETE_COLOR};
                 `;
                 deleteProgramButton.onclick = this.deleteProgram.bind(this);
-            this.collapsibleHeaderDiv.appendChild(deleteProgramButton);
-        this.appendChild(this.collapsibleHeaderDiv);
+            this.#collapsibleHeaderDiv.appendChild(deleteProgramButton);
+        this.appendChild(this.#collapsibleHeaderDiv);
             // This is the body of the collapsible. It mainly contains the table which enumerates the requirements for the program.
-            this.collapsibleBodyDiv = document.createElement('div');
-            this.collapsibleBodyDiv.style = `
+            this.#collapsibleBodyDiv = document.createElement('div');
+            this.#collapsibleBodyDiv.style = `
                 width: 57vw;
                 display: none;
                 outline: 1px solid grey;
@@ -130,20 +140,20 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                         tbody.appendChild(tr);
                     });
                 requirementsTable.appendChild(tbody);
-            this.collapsibleBodyDiv.appendChild(requirementsTable);
-        this.appendChild(this.collapsibleBodyDiv);
+            this.#collapsibleBodyDiv.appendChild(requirementsTable);
+        this.appendChild(this.#collapsibleBodyDiv);
             // This is to give some space between this course and the next. It's a little crude, but it works OK. This was originally going to be handled by ProgramSchedule, but deletion becomes an issue.
             const spacer = new Spacer({"height": "1vw"});
         this.appendChild(spacer);
     }
 
     #toggleCollapsible() {
-        if (this.collapsibleBodyDiv.style.display === "none") {
-            this.collapsibleBodyDiv.style.display = "block";
-            this.collapsibleStatusH3.innerText = '▲';
+        if (this.#collapsibleBodyDiv.style.display === "none") {
+            this.#collapsibleBodyDiv.style.display = "block";
+            this.#collapsibleStatusH3.innerText = '▲';
         } else {
-            this.collapsibleBodyDiv.style.display = "none";
-            this.collapsibleStatusH3.innerText = '▼';
+            this.#collapsibleBodyDiv.style.display = "none";
+            this.#collapsibleStatusH3.innerText = '▼';
         }
     }
 
@@ -160,22 +170,26 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             row.children[3].innerText = '';
             row.children[4].innerText = '';
         }
-        this.collapsibleHeaderDiv.style.backgroundColor = NOT_EVALUATED_COLOR;
+        this.#collapsibleHeaderDiv.style.backgroundColor = NOT_EVALUATED_COLOR;
     }
 
     evaluateRequirements(scheduledCourses) {
-        // Yeah, don't ask why it's called this.
         let evaluatedRequirements = {};
+        // Yeah, don't ask why it's called this.
         Object.keys(ProgramData[this.id]["detailAssessments"]).forEach(reqID => {
             if (!(reqID in evaluatedRequirements)) {
                 evaluateProgramRequirement(this.id, reqID, scheduledCourses, evaluatedRequirements);
             }
         });
 
-        // Flags used to decide the header's color. If any failure is detected, it's red. If there are no failures but some warnings/unimplemented reqs, it's yellow. Otherwise, it's green.
+        // Flags used to decide the header's color. If there are any unimplemented, it's the construction background color. If there are any failures, it's red. Otherwise, it's green. The actual number of requirements with each status is given in the right side.
         let incomplete = false;
-        let warning = false;
         let unimplemented = false;
+
+        let numComplete = 0;
+        let numIncomplete = 0;
+        let numUnverifiable = 0;
+        let numOther = 0;
 
         for (const reqID in this.#requirementRows) {
             // reqID is guaranteed to be in this object so we don't have to check.
@@ -188,6 +202,7 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
             const status = evaluatedRequirements[reqID]["status"];
             switch (status) {
                 case STATUSES.COMPLETE:
+                    numComplete += 1;
                     row.children[0].innerText = `${COMPLETE_SYMBOL} Complete`;
                     row.style.backgroundColor = COMPLETE_COLOR;
                     row.children[4].innerText = usedCourses
@@ -195,17 +210,22 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                         .reduce((x, y) => x + y, 0.0)
                         .toFixed(2);
                     break;
+
                 case STATUSES.INCOMPLETE:
                     incomplete = true;
+                    numIncomplete += 1;
                     row.children[0].innerText = `${INCOMPLETE_SYMBOL} Incomplete`;
                     row.style.backgroundColor = INCOMPLETE_COLOR;
                     break;
+
                 case STATUSES.NA:
+                    numOther += 1;
                     row.children[0].innerText = `${NOT_USED_SYMBOL} Not Used`;
                     row.style.backgroundColor = NOT_USED_COLOR;
                     break;
+
                 case STATUSES.UNVERIFIABLE:
-                    warning = true;
+                    numUnverifiable += 1;
                     row.children[0].innerText = `${UNVERIFIABLE_SYMBOL} Unverifiable`;
                     row.style.backgroundColor = UNVERIFIABLE_COLOR;
                     row.children[4].innerText = usedCourses
@@ -213,25 +233,38 @@ export class ProgramInfoCollapsible extends HTMLDivElement {
                         .reduce((x, y) => x + y, 0.0)
                         .toFixed(2);
                     break;
+
                 case STATUSES.NOTE:
+                    numOther += 1;
                     row.children[0].innerText = `${NOTE_SYMBOL} Note`;
                     break;
+
                 case STATUSES.UNIMPLEMENTED:
                     unimplemented = true;
+                    numOther += 1;
                     row.children[0].innerText = `${UNIMPLEMENTED_SYMBOL} Unimplemented`;
                     row.style.background = UNIMPLEMENTED_BACKGROUND;
                     break;
             }
         }
 
-        if (incomplete) {
-            this.collapsibleHeaderDiv.style.backgroundColor = INCOMPLETE_COLOR;
-        } else if (warning) {
-            this.collapsibleHeaderDiv.style.backgroundColor = UNVERIFIABLE_COLOR;
-        } else if (unimplemented) {
-            this.collapsibleHeaderDiv.style.background = UNIMPLEMENTED_BACKGROUND;
+        // Set the number of statuses in the left side.
+        // Poor man's padding with the HTML whitespace thing.
+        numOther = numOther <= 9 ? `&nbsp;${numOther}` : numOther.toString();
+        numComplete = numComplete <= 9 ? `&nbsp;${numComplete}` : numComplete.toString();
+        numIncomplete = numIncomplete <= 9 ? `&nbsp;${numIncomplete}` : numIncomplete.toString();
+        numUnverifiable = numUnverifiable <= 9 ? `&nbsp;${numUnverifiable}` : numUnverifiable.toString();
+        let numReqs = Object.keys(evaluatedRequirements).length;
+        numReqs = numReqs <= 9 ? `&nbsp;${numReqs}` : numReqs.toString();
+        this.#requirementsStatusP.innerHTML = `${numComplete} ${COMPLETE_SYMBOL} ${numIncomplete} ${INCOMPLETE_SYMBOL} ${numUnverifiable} ${UNVERIFIABLE_SYMBOL} Other: ${numOther} Total: ${numReqs}`;
+
+        // Set the background color.
+        if (unimplemented) {
+            this.#collapsibleHeaderDiv.style.background = UNIMPLEMENTED_BACKGROUND;
+        } else if (incomplete) {
+            this.#collapsibleHeaderDiv.style.backgroundColor = INCOMPLETE_COLOR;
         } else {
-            this.collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
+            this.#collapsibleHeaderDiv.style.backgroundColor = COMPLETE_COLOR;
         }
     }
 }
