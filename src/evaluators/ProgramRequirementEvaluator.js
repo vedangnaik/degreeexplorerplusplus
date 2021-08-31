@@ -90,6 +90,9 @@ function getNumCreditsInList(courses) {
 export function evaluateProgramRequirement(programID, reqID, scheduledCourses, evaluatedRequirements) {
     const requirementObj = ProgramData[programID]["detailAssessments"][reqID];
     switch(requirementObj["type"]) {
+        
+        // NO_REUSE is likely to be too computationally intensive to check given that the usedCourses aren't minimal; there could be overlaps between the usedCourses of the requirements that could be removed to satisfy NO_REUSE and also keep the new usedCourses valid for each requirement. However, checking and decisively determining this would require multiple recomputations of each requirement, which will likely take too long. This might be takled at a later date, but for now, it's UNVERIFIABLE.  
+        case "REQUIREMENTS/NUM/NO_REUSE":
         case "UNVERIFIABLE": {
             evaluatedRequirements[reqID] = {
                 "status": STATUSES.UNVERIFIABLE,
@@ -233,61 +236,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
                 break;
             }
         }
-
-
-
-        // // At most "count" number of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        // case "COURSES/NUM/GROUPMAX": {
-        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-        //     return {
-        //         [reqID]: {
-        //             "status": STATUSES.COMPLETE,
-        //             "usedCourses": coursesToFilter.slice(0, requirementObj["count"])
-        //         }
-        //     };
-        // }
-
-        // // At most "count" credits worth of courses in "courses" - excess is removed from scheduledCourses. Always returns COMPLETE.
-        // case "COURSES/FCES/GROUPMAX": {
-        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-        //     const coursesToFilter = getAllCoursesFromScheduledListInCoursesList(scheduledCourses, requirementObj["courses"]);
-        //     // If this list has more credits than allowed, start popping them one by one from both this list and scheduledCourses.
-        //     while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-        //         scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-        //     }
-        //     // Return COMPLETE with whatever's left.
-        //     return {
-        //         [reqID]: {
-        //             "status": STATUSES.COMPLETE,
-        //             "usedCourses": coursesToFilter
-        //         }
-        //     };
-        // }
-
-        // // At most "count" credits worth of courses in "categories" - excess is removed from scheduledCourses. Returns COMPLETE or UNVERIFIABLE.
-        // case "CATEGORIES/FCES/GROUPMAX": {
-        //     // Get all the courses which we are supposed to put a GROUPMAX on from scheduledCourses.
-        //     const [validatable, coursesToFilter] = getAllCoursesFromScheduledListInCategoriesList(scheduledCourses, requirementObj["categories"])
-        //     // If it's validatable, remove any excess courses
-        //     if (validatable) {
-        //         while (getNumCreditsInList(coursesToFilter) > requirementObj["count"]) {
-        //             scheduledCourses.splice(scheduledCourses.indexOf(coursesToFilter.pop()), 1);
-        //         }
-        //         return {
-        //             [reqID]: {
-        //                 "status": STATUSES.COMPLETE,
-        //                 "usedCourses": coursesToFilter
-        //             }
-        //         };
-        //     } else {
-        //         return {
-        //             [reqID]: {
-        //                 "status": STATUSES.UNVERIFIABLE,
-        //                 "usedCourses": []
-        //             }
-        //         };
-        //     }
-        // }
 
         // There are some GROUPMAX requirements which apply to multiple requirements *simulatenously* e.g. some restriction on the combined usedCourses of both Req1 and Req2. Here, these are not being calculated, since currently there is no way to identify such GROUPMAXes. Thus, some requirements may not be correctly evaluated. The default behaviour is evaluating the GROUPMAX on each listed requirement separately. This decision was made based on manual analysis of some GROUPMAX reqs.
         case "COURSES/NUM/GROUPMAX":
@@ -441,13 +389,6 @@ export function evaluateProgramRequirement(programID, reqID, scheduledCourses, e
                 "usedCourses": validatable ? usedCourses : []
             };
             break;
-        }
-
-        case "REQUIREMENTS/NUM/NO_REUSE": {
-            evaluatedRequirements[reqID] = {
-                "status": STATUSES.UNIMPLEMENTED,
-                "usedCourses": []
-            }
         }
     }
 }
