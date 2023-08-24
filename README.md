@@ -17,22 +17,15 @@ Degree Explorer++ supports nearly 5000 undergraduate courses and 400 programs fr
 ## Contributing
 Contributions are handled via the forking model. Please make a fork of this repository, then follow the steps below to set up the site locally. To submit your changes, make a pull request back to this repository.
 
-### Build
-#### Docker
-The provided `Dockerfile` creates a Python image and automatically installs all the necessary requirements to run the `utils` scripts, as well as start up the Python HTTP server for development. Clone this repository, build the image, and start a container with the repo mounted to `/root/Desktop/degreeexplorerplusplus` and serving on http://localhost:8000/.
-```
-$ git clone https://github.com/vedangnaik/degreeexplorerplusplus.git
-$ cd degreeexplorerplusplus
-$ docker build -t depp_dev_img .
-$ docker run -d -t -p 8000:8000 --name depp_dev_cont --mount type=bind,source=<absolute path to degreeexplorerplusplus>,target="/root/Desktop/degreeexplorerplusplus" depp_dev_img
-```
+Thank you for your contributions! ❤️
 
-#### Normal
+### Development
 Degree Explorer++ itself has zero dependencies, so if you just want to work on the website itself, you can simply clone this repository and start up your server of choice. The Python server via `python -m http.server` is one choice, as is Visual Studio Code's [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension. 
 
 If you wish to use the `utils` scripts for scraping data from UofT's Degree Explorer, please install the requirements via `pip install -r utils/requirements.txt` and download the driver for your browser of choice. See the [depp-utils](https://github.com/vedangnaik/depp-utils) repository for more details.
 
-Thank you for your contributions! ❤️
+## Deployment
+The provided `prod.Dockerfile` can be used to build an image which serves Degree Explorer++ using a Python HTTP server at port 8000. Simply run `docker build . -f prod.Dockerfile` to build the image, and `docker run --rm -p 8000:8000 <image-name>` to serve it as http://localhost:8000.
 
 ## Disclaimer
 Degree Explorer++ is an **UNOFFICIAL** tool. It is not affiliated with or endorsed by the University of Toronto in any way. @vedangnaik and other contributors are not responsible for any adverse effects such as loss of enrollment spots, etc. caused by decisions taken based on this tool's information.

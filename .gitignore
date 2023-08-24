@@ -8,8 +8,7 @@
 !utils
 !.gitignore
 !.gitmodules
-!CNAME
-!Dockerfile
+!prod.Dockerfile
 !favicon.ico
 !index.css
 !index.html
